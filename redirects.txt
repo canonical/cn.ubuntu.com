@@ -1,0 +1,5 @@
+# Redirect file format:
+# source [space] [space] destination [space] [space] # optional comment
+# please note that redirects should not have a preceding slash. Also note
+# that comments do not strictly need a #hdevices/androidash but include it for clarity.
+# The web server needs to be reloaded when changes are made to this file

@@ -1,0 +1,5 @@
+.DS_Store
+Gemfile.lock
+db.sqlite3
+env
+.sass-cache
