@@ -1,0 +1,352 @@
+body.phone {
+	.row strong {
+		font-weight: bold;
+	}
+  .clever-convos {
+    background: url("../img/phone/phone-conversations-324x576.jpg") no-repeat scroll 580px 30px;
+    height: 450px;
+  }
+
+  .edge-magic {
+    padding-bottom: 0;
+    padding-top: 0;
+    z-index: 5;
+
+    .replay {
+      background: url('../img/phone-animation-repeat.png') no-repeat;
+      width: 25px;
+      height: 21px;
+      overflow: hidden;
+      position: absolute;
+      top: 360px;
+      left: 0;
+      outline: none;
+    }
+    .replay:hover {
+      background-position: 0 -21px;
+    }
+  }
+  .edge-top {
+    margin-top: 0;
+    z-index: 20;
+  }
+  .edge-left {
+    z-index: 10;
+
+    .edge-magic-content {
+        padding-right: 0;
+      }
+  }
+  .edge-bottom {
+    z-index: 1;
+  }
+
+ .slider-animation {
+  width: 275px;
+  height: 447px;
+  position: relative;
+  background: url('../img/phone/image-phone-portrait.jpg') no-repeat center 0;
+  margin: 0 auto;
+
+    .screen {
+      width: 182px;
+      height: 324px;
+      position: absolute;
+      top: 55px;
+      left: 46px;
+      overflow: hidden;
+
+      .launcher {
+        width: 44px;
+        height: 324px;
+        position: absolute;
+        top: 0;
+        left: -100px;
+      }
+    }
+  }
+
+  .edge-magic-animation .screen {
+    background: url('../img/phone/image-phone-music.jpg') no-repeat;
+    .launcher {
+      background: url('../img/phone/image-phone-launcher.png') no-repeat;
+    }
+    .screen-fade {
+      background: #000;
+      opacity: 0;
+      width: 182px;
+      height: 324px;
+    }
+  }
+
+  .go-back {
+    background: url('../img/phone/image-phone-portrait.jpg') no-repeat center 0;
+    .screen {
+      .camera-screen {
+        background: url('../img/phone/image-phone-camera-portrait.jpg') no-repeat;
+        width: 182px;
+        height: 324px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .gallery-screen {
+        background: url('../img/phone/image-phone-gallery-edge.jpg') no-repeat scroll center center #000;
+        background-size: 142px 250px;
+        height: 324px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 182px;
+      }
+    }
+  }
+
+  .content-controls {
+    background: url('../img/phone/image-phone-portrait.jpg') no-repeat center 0;
+    margin-bottom: $gutter_width;
+    .screen {
+      .gallery-screen {
+        background: url('../img/phone/image-phone-gallery.jpg') no-repeat;
+        width: 182px;
+        height: 324px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      .gallery-controls {
+        background: url('../img/phone/phone-edge-magic-gallery-controls.png') no-repeat;
+        width: 182px;
+        height: 324px;
+        position: absolute;
+        top: 317px;
+        left: 0;
+      }
+    }
+  }
+
+  .edge-magic-animation.run {
+    .screen .launcher {
+        -moz-transition: left 1s;
+        -webkit-transition: left 1s;
+        -o-transition: left 1s;
+      transition: left 1s;
+      left: 0;
+    }
+    .screen .screen-fade {
+        -moz-transition-delay: 1s;
+        -webkit-transition-delay: 1s;
+        -o-transition-delay: 1s;
+      transition-delay: 1s;
+        -moz-transition: opacity 1s;
+        -webkit-transition: opacity 1s;
+        -o-transition: opacity 1s;
+      transition: opacity 1s;
+      opacity: 0.3;
+    }
+  }
+
+  .full-swipe.run .screen {
+    .launcher{
+      left: 0;
+        -moz-transition: left 1s;
+        -webkit-transition: left 1s;
+        -o-transition: left 1s;
+      transition: left 1s;
+    }
+    .launcher.return {
+      left: -100px;
+    }
+    .fb-screen {
+       left: 182px;
+
+        -moz-transition: left 1s;
+        -webkit-transition: left 1s;
+        -o-transition: left 1s;
+      transition: left 1s;
+        -moz-transition-delay: .7s;
+        -webkit-transition-delay: .7s;
+        -o-transition-delay: .7s;
+      transition-delay: .7s;
+    }
+  }
+
+  .go-back.run .screen {
+    .camera-screen{
+      left: -182px;
+          -moz-transition: left 1s;
+          -webkit-transition: left 1s;
+          -o-transition: left 1s;
+        transition: left 1s;
+    }
+    .gallery-screen {
+      background-size: 182px 324px;
+        -moz-transition: left 1s ease 1.5s;
+          -webkit-transition: left 1s ease 1.5s;
+          -o-transition: left 1s ease 1.5s;
+        transition: left 1s ease 1.5s;
+          -moz-transition: background-size 1s ease;
+          -webkit-transition: background-size 1s ease;
+          -o-transition: background-size 1s ease;
+        transition: background-size 1s ease;
+    }
+  }
+
+  .content-controls.run {
+    .screen .gallery-controls {
+      top: 280px;
+        -moz-transition: top 0.5s;
+        -webkit-transition: top 0.5s;
+        -o-transition: top 0.5s;
+      transition: top 0.5s;
+    }
+  }
+
+} // end body.phone
+
+  .cag-list {
+    margin-top: 35px;
+    margin-right: -20px;
+    text-align: center;
+    li {
+      margin-right: 20px;
+      margin-bottom: 20px;
+      padding: 20px 10px 14px;
+      /*width: 117px;*/
+      width: 63px;
+    }
+    li img {
+    	float: none;
+    }
+    li.five {
+      margin-right: 25px;
+    }
+    li.verizon img {
+      position: relative;
+      top: -8px;
+    }
+  }
+
+/* Medium / Tablet viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width : 768px) {
+
+	body.phone {
+	
+    .row-app-grid {
+    	overflow: hidden;
+    	img {
+      	margin-left: -80px;
+				margin-top: 0;
+			}
+    }
+    
+	  .row-pictures .pictures-landscape {
+	    background: url('../img/phone/image-phone-camera-landscape.jpg') 51px 15px no-repeat;
+	    width: 500px;
+	    height: 258px;
+	
+	    img {
+	      display: block;
+	      position: relative;
+	      z-index: -1;
+	    }
+	  }
+	  
+    .edge-magic-content {
+      margin-top: 95px;
+      padding-right: 60px;
+    }
+    .edge-magic {
+      padding-bottom: 0;
+      padding-top: 0;
+      margin-top: -70px;
+      z-index: 5;
+
+      .replay {
+        background: url("../img/phone-animation-repeat.png") no-repeat;
+        width: 25px;
+        height: 21px;
+        overflow: hidden;
+        position: absolute;
+        top: 360px;
+        left: 335px;
+        outline: none;
+      }
+      .replay:hover {
+        background-position: 0 -21px;
+      }
+    }
+    .edge-top {
+      margin-top: 0;
+      z-index: 20;
+    }
+    .edge-left {
+      z-index: 10;
+
+      .edge-magic-content {
+          padding-left: 100px;
+      }
+
+    }
+	  
+		.row-notifications {
+	
+	    .screen {
+			  background: url('../img/phone/image-phone-notifications.jpg') no-repeat;
+			}
+	
+			.settings-screen {
+			  transition: height .8s;
+			  background: url('../img/phone/image-phone-messages.jpg') no-repeat;
+			  width: 182px;
+	      height: 0;
+	      position: absolute;
+	      top: 0;
+	      left: 0;
+			}
+	
+			.slider-knot {
+			  transition: top .8s;
+			  background: url('../img/phone/phone-anim-slider-knot.png') no-repeat;
+			  width: 182px;
+			  height: 15px;
+			  position: absolute;
+			  top: -15px;
+			  left: 0;
+			}
+	
+			.run {
+			   .slider-knot {
+			     top: 309px;
+			   }
+			   .settings-screen {
+			     height: 324px;
+			   }
+			}
+		}
+		
+    .cag-list li {
+      width: 140px;
+    }
+	  	  	  
+	} // end body.phone
+  
+  
+} // end @media only screen and (min-width : 768px)
+
+    .cag-list li {
+      width: 140px;
+    }
+
+
+/* Large / Desktop viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width : 984px) {
+	body.phone {
+    .cag-list li {
+      width: 189px;
+    }
+  }
+} // end @media only screen and (min-width : 984px)

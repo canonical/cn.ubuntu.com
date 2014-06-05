@@ -1,0 +1,202 @@
+/* assets database path */
+$asset_path: "//assets.ubuntu.com/sites/ubuntu/latest/u/img/";
+/* usage: background: url(#{$asset_path}/site/background.jpg) no-repeat 0 0; */
+
+@import "core-constants";
+@import "core-mixins";
+
+@mixin background_size($size: 100% 100%) {
+  -moz-background-size: $size;
+  -webkit-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+
+//$header_bg: $light_aubergine;
+//$header_bg: $mid_aubergine;
+$header_bg: $canonical_aubergine;
+//$header_bg: $ubuntu_orange;
+
+$nav_bg:			#f0f0f0;
+$nav_link_color:	#333;
+$nav_border_dark:	#d4d7d4;
+$nav_border_light:	#f2f2f4;
+$nav_hover_bg:      #d0d0d0;
+$nav_active_bg:     #ddd;
+
+
+/* @section general 
+-------------------------------------------------------------- */
+html, body { height: 100%; }
+
+html {
+	background: url(../img/backgrounds/image-background-paper.png) repeat-y fixed center top #f1f1f1;
+	-webkit-transition: background-position 100 ease;
+	-moz-transition: background-position 100 ease;
+	-o-transition: background-position 100 ease;
+	transition: background-position 100 ease;
+}
+
+
+/* @section main nav 
+-------------------------------------------------------------- */
+header.banner {
+	overflow: visible;
+
+	.nav-primary {
+		overflow: visible;
+		ul {
+			a.active {
+				background-color: #333;
+			}
+		}
+		
+		li ul {
+		    background: #F7F7F7;
+		    border: 1px solid #D5D5D5;
+		    border-radius: 10px;
+		    box-shadow: 0 2px 2px -1px #777;
+		    display: none;
+		    float: none;
+		    margin: 0;
+		    padding: 10px 0 0;
+		    position: absolute;
+		    top: 51px;
+		    width: 200px;
+		}
+				
+		li ul li {
+		    border: 0 none;
+		    float: none;
+		}
+		
+		li ul li a:link, 
+		li ul li a:visited {
+		    border: 0 none;
+		    color: #333333;
+		    padding: 0 0 11px 14px;
+		    text-align: left;
+		    width: 185px;
+		}		
+
+		li ul li a:hover {
+		    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+		    box-shadow: none;
+		    color: #DD4814;
+		}
+
+		li:hover ul {
+		    display: block;
+		}
+		
+		ul li a:active, 
+		ul li a:hover, 
+		ul li a:link, 
+		ul li a:visited {
+		    transition: padding 0.4s ease 0s;
+		}		
+		
+		.arrow-up {
+			width: 150px;
+		}
+
+		
+	} /* end nav-primary */
+} /* end header.banner */
+
+header.banner .nav-primary ul {
+  background: transparent;
+  border-right: 1px solid lighten($ubuntu_orange, 10%);
+}
+
+header.banner .nav-primary ul li {
+  border-left: 1px solid darken($ubuntu_orange, 5%);
+}
+
+header.banner .nav-primary ul li:last-child {
+  border-right: 1px solid darken($ubuntu_orange, 5%);
+  border-left: 1px solid darken($ubuntu_orange, 5%);
+}
+
+header.banner .nav-primary ul li a:link, 
+header.banner .nav-primary ul li a:visited{
+  border-left: 1px solid lighten($ubuntu_orange, 7%);
+}
+
+header.banner .nav-primary ul li a.active {
+  background: #B83A10;
+  border-left: 1px solid lighten($ubuntu_orange, 7%);
+}
+
+header.banner .nav-primary ul li a:hover {
+	background-color: #E1662F;
+}
+
+/* @section footer 
+-------------------------------------------------------------- */
+footer.global {
+	background-color: transparent;
+	box-shadow: none;
+	padding-top: 0;
+
+	ul.inline li:last-child {
+		width: auto;
+	}
+
+	.row {
+		padding: 20px 0 0;
+	}
+
+	.two-col {
+		width: 46%;
+		float: left;
+		display: inline-block;
+		min-height: 200px;
+	}
+	h2 {
+		color: $warm_grey;
+		letter-spacing: .05em;
+		padding-bottom: .75em;
+	}
+	nav .canonlist ul li {
+		min-height: 0;
+		width: 48%;
+		float: left;
+		display: inline;
+	}
+	li {
+		margin-bottom: 0.5em
+	}
+
+	ul.inline li:after {
+		color: $warm_grey;
+		content: "\00b7";
+		vertical-align: middle;
+		margin: 0 5px;
+	}
+}
+
+/* @section UA service-description 
+-------------------------------------------------------------- */
+#service-description {
+	h3,
+	h4 {
+		font-size: 1em;
+		font-weight: normal;
+		float: left;
+		display: inline;
+		margin: 0;
+		padding: 0;
+		line-height: 1.4;
+		margin-right: 6px;
+	}
+}
+
+/* Large / Desktop viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width : 984px) {
+	.for-mobile {
+	    display: none;
+	}
+} // end @media only screen and (min-width : 984px)
+

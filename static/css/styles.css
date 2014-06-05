@@ -15,7 +15,6 @@
 	@section main nav
 	@section footer
 	@section UA service-description
-	@section Cookie policy site specific style updates
 
 	Colour definitiions are in /sites/core/static/core-constants.scss
 	-----------------------------------------------------------------
@@ -29,8 +28,6 @@
 	$light_grey:			#f7f7f7; light grey
 -----------------------------------------------------------------
 -------------------------------------------------------------- */
-/* assets database path */
-/* usage: background: url(//assets.ubuntu.com/sites/ubuntu/latest/u/img//site/background.jpg) no-repeat 0 0; */
 /**
  * Ubuntu Patterns Stylesheet
  *
@@ -75,178 +72,6 @@
  *
  * @section mixins
  */
-/* @section general 
--------------------------------------------------------------- */
-html, body {
-  height: 100%; }
-
-html {
-  background: url(../img/backgrounds/image-background-paper.png) repeat-y fixed center top #f1f1f1;
-  -webkit-transition: background-position 100 ease;
-  -moz-transition: background-position 100 ease;
-  -o-transition: background-position 100 ease;
-  transition: background-position 100 ease; }
-
-/* @section main nav 
--------------------------------------------------------------- */
-header.banner {
-  overflow: visible;
-  /* end nav-primary */ }
-  header.banner .nav-primary {
-    overflow: visible; }
-    header.banner .nav-primary ul a.active {
-      background-color: #333; }
-    header.banner .nav-primary li ul {
-      background: #F7F7F7;
-      border: 1px solid #D5D5D5;
-      border-radius: 10px;
-      box-shadow: 0 2px 2px -1px #777;
-      display: none;
-      float: none;
-      margin: 0;
-      padding: 10px 0 0;
-      position: absolute;
-      top: 51px;
-      width: 200px; }
-    header.banner .nav-primary li ul li {
-      border: 0 none;
-      float: none; }
-    header.banner .nav-primary li ul li a:link,
-    header.banner .nav-primary li ul li a:visited {
-      border: 0 none;
-      color: #333333;
-      padding: 0 0 11px 14px;
-      text-align: left;
-      width: 185px; }
-    header.banner .nav-primary li ul li a:hover {
-      background: none repeat scroll 0 0 transparent;
-      box-shadow: none;
-      color: #DD4814; }
-    header.banner .nav-primary li:hover ul {
-      display: block; }
-    header.banner .nav-primary ul li a:active,
-    header.banner .nav-primary ul li a:hover,
-    header.banner .nav-primary ul li a:link,
-    header.banner .nav-primary ul li a:visited {
-      transition: padding 0.4s ease 0s; }
-    header.banner .nav-primary .arrow-up {
-      width: 150px; }
-
-/* end header.banner */
-header.banner .nav-primary ul {
-  background: transparent;
-  border-right: 1px solid #ed6637; }
-
-header.banner .nav-primary ul li {
-  border-left: 1px solid #c64012; }
-
-header.banner .nav-primary ul li:last-child {
-  border-right: 1px solid #c64012;
-  border-left: 1px solid #c64012; }
-
-header.banner .nav-primary ul li a:link,
-header.banner .nav-primary ul li a:visited {
-  border-left: 1px solid #ec5b29; }
-
-header.banner .nav-primary ul li a.active {
-  background: #B83A10;
-  border-left: 1px solid #ec5b29; }
-
-header.banner .nav-primary ul li a:hover {
-  background-color: #E1662F; }
-
-/* @section footer 
--------------------------------------------------------------- */
-footer.global {
-  background-color: transparent;
-  box-shadow: none;
-  padding-top: 0; }
-  footer.global ul.inline li:last-child {
-    width: auto; }
-  footer.global .row {
-    padding: 20px 0 0; }
-  footer.global .two-col {
-    width: 46%;
-    float: left;
-    display: inline-block;
-    min-height: 200px; }
-  footer.global h2 {
-    color: #aea79f;
-    letter-spacing: .05em;
-    padding-bottom: .75em; }
-  footer.global nav .canonlist ul li {
-    min-height: 0;
-    width: 48%;
-    float: left;
-    display: inline; }
-  footer.global li {
-    margin-bottom: 0.5em; }
-  footer.global ul.inline li:after {
-    color: #aea79f;
-    content: "\00b7";
-    vertical-align: middle;
-    margin: 0 5px; }
-
-/* @section UA service-description 
--------------------------------------------------------------- */
-#service-description h3,
-#service-description h4 {
-  font-size: 1em;
-  font-weight: normal;
-  float: left;
-  display: inline;
-  margin: 0;
-  padding: 0;
-  line-height: 1.4;
-  margin-right: 6px; }
-
-/* @section Cookie policy site specific style updates
--------------------------------------------------------------- */
-.cookie-policy {
-  -moz-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background: #333;
-  bottom: 0;
-  color: #fff;
-  padding-left: 10px;
-  padding-right: 30px;
-  position: fixed;
-  width: 100%;
-  z-index: 100; }
-  .cookie-policy .wrapper {
-    background: transparent; }
-  .cookie-policy p {
-    font-size: 13px;
-    margin-bottom: 0;
-    margin-left: 0;
-    padding: 8px 0;
-    width: 100%; }
-  .cookie-policy .link-cta {
-    -moz-background-size: 16px 15px;
-    -webkit-background-size: 16px 15px;
-    -o-background-size: 16px 15px;
-    background-size: 16px 15px;
-    background: url("//assets.ubuntu.com/sites/ubuntu/latest/u/img/icons/close.svg") no-repeat;
-    background-size: 15px;
-    color: #fff;
-    float: right;
-    font-size: 1em;
-    height: 15px;
-    margin-right: -20px;
-    margin-top: 12px;
-    padding: 0;
-    text-decoration: none;
-    text-indent: -999em;
-    width: 16px; }
-
-html.opera-mini .cookie-policy .link-cta,
-html.no-svg .cookie-policy .link-cta {
-  background-image: url("url(//assets.ubuntu.com/sites/ubuntu/latest/u/img//img/icons/close.png"); }
-
 /*	@section tablet
 -------------------------------------------------------------- */
 /*	@section tablet
@@ -552,6 +377,578 @@ body.tablet {
 
   .for-tablet {
     display: none; } }
+/*	@section phone
+-------------------------------------------------------------- */
+body.phone .row strong {
+  font-weight: bold; }
+body.phone .clever-convos {
+  background: url("../img/phone/phone-conversations-324x576.jpg") no-repeat scroll 580px 30px;
+  height: 450px; }
+body.phone .edge-magic {
+  padding-bottom: 0;
+  padding-top: 0;
+  z-index: 5; }
+  body.phone .edge-magic .replay {
+    background: url("../img/phone-animation-repeat.png") no-repeat;
+    width: 25px;
+    height: 21px;
+    overflow: hidden;
+    position: absolute;
+    top: 360px;
+    left: 0;
+    outline: none; }
+  body.phone .edge-magic .replay:hover {
+    background-position: 0 -21px; }
+body.phone .edge-top {
+  margin-top: 0;
+  z-index: 20; }
+body.phone .edge-left {
+  z-index: 10; }
+  body.phone .edge-left .edge-magic-content {
+    padding-right: 0; }
+body.phone .edge-bottom {
+  z-index: 1; }
+body.phone .slider-animation {
+  width: 275px;
+  height: 447px;
+  position: relative;
+  background: url("../img/phone/image-phone-portrait.jpg") no-repeat center 0;
+  margin: 0 auto; }
+  body.phone .slider-animation .screen {
+    width: 182px;
+    height: 324px;
+    position: absolute;
+    top: 55px;
+    left: 46px;
+    overflow: hidden; }
+    body.phone .slider-animation .screen .launcher {
+      width: 44px;
+      height: 324px;
+      position: absolute;
+      top: 0;
+      left: -100px; }
+body.phone .edge-magic-animation .screen {
+  background: url("../img/phone/image-phone-music.jpg") no-repeat; }
+  body.phone .edge-magic-animation .screen .launcher {
+    background: url("../img/phone/image-phone-launcher.png") no-repeat; }
+  body.phone .edge-magic-animation .screen .screen-fade {
+    background: #000;
+    opacity: 0;
+    width: 182px;
+    height: 324px; }
+body.phone .go-back {
+  background: url("../img/phone/image-phone-portrait.jpg") no-repeat center 0; }
+  body.phone .go-back .screen .camera-screen {
+    background: url("../img/phone/image-phone-camera-portrait.jpg") no-repeat;
+    width: 182px;
+    height: 324px;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  body.phone .go-back .screen .gallery-screen {
+    background: url("../img/phone/image-phone-gallery-edge.jpg") no-repeat scroll center center black;
+    background-size: 142px 250px;
+    height: 324px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 182px; }
+body.phone .content-controls {
+  background: url("../img/phone/image-phone-portrait.jpg") no-repeat center 0;
+  margin-bottom: 20px; }
+  body.phone .content-controls .screen .gallery-screen {
+    background: url("../img/phone/image-phone-gallery.jpg") no-repeat;
+    width: 182px;
+    height: 324px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none; }
+  body.phone .content-controls .screen .gallery-controls {
+    background: url("../img/phone/phone-edge-magic-gallery-controls.png") no-repeat;
+    width: 182px;
+    height: 324px;
+    position: absolute;
+    top: 317px;
+    left: 0; }
+body.phone .edge-magic-animation.run .screen .launcher {
+  -moz-transition: left 1s;
+  -webkit-transition: left 1s;
+  -o-transition: left 1s;
+  transition: left 1s;
+  left: 0; }
+body.phone .edge-magic-animation.run .screen .screen-fade {
+  -moz-transition-delay: 1s;
+  -webkit-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  transition-delay: 1s;
+  -moz-transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+  opacity: 0.3; }
+body.phone .full-swipe.run .screen .launcher {
+  left: 0;
+  -moz-transition: left 1s;
+  -webkit-transition: left 1s;
+  -o-transition: left 1s;
+  transition: left 1s; }
+body.phone .full-swipe.run .screen .launcher.return {
+  left: -100px; }
+body.phone .full-swipe.run .screen .fb-screen {
+  left: 182px;
+  -moz-transition: left 1s;
+  -webkit-transition: left 1s;
+  -o-transition: left 1s;
+  transition: left 1s;
+  -moz-transition-delay: .7s;
+  -webkit-transition-delay: .7s;
+  -o-transition-delay: .7s;
+  transition-delay: .7s; }
+body.phone .go-back.run .screen .camera-screen {
+  left: -182px;
+  -moz-transition: left 1s;
+  -webkit-transition: left 1s;
+  -o-transition: left 1s;
+  transition: left 1s; }
+body.phone .go-back.run .screen .gallery-screen {
+  background-size: 182px 324px;
+  -moz-transition: left 1s ease 1.5s;
+  -webkit-transition: left 1s ease 1.5s;
+  -o-transition: left 1s ease 1.5s;
+  transition: left 1s ease 1.5s;
+  -moz-transition: background-size 1s ease;
+  -webkit-transition: background-size 1s ease;
+  -o-transition: background-size 1s ease;
+  transition: background-size 1s ease; }
+body.phone .content-controls.run .screen .gallery-controls {
+  top: 280px;
+  -moz-transition: top 0.5s;
+  -webkit-transition: top 0.5s;
+  -o-transition: top 0.5s;
+  transition: top 0.5s; }
+
+.cag-list {
+  margin-top: 35px;
+  margin-right: -20px;
+  text-align: center; }
+  .cag-list li {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 20px 10px 14px;
+    /*width: 117px;*/
+    width: 63px; }
+  .cag-list li img {
+    float: none; }
+  .cag-list li.five {
+    margin-right: 25px; }
+  .cag-list li.verizon img {
+    position: relative;
+    top: -8px; }
+
+/* Medium / Tablet viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width: 768px) {
+  body.phone .row-app-grid {
+    overflow: hidden; }
+    body.phone .row-app-grid img {
+      margin-left: -80px;
+      margin-top: 0; }
+  body.phone .row-pictures .pictures-landscape {
+    background: url("../img/phone/image-phone-camera-landscape.jpg") 51px 15px no-repeat;
+    width: 500px;
+    height: 258px; }
+    body.phone .row-pictures .pictures-landscape img {
+      display: block;
+      position: relative;
+      z-index: -1; }
+  body.phone .edge-magic-content {
+    margin-top: 95px;
+    padding-right: 60px; }
+  body.phone .edge-magic {
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-top: -70px;
+    z-index: 5; }
+    body.phone .edge-magic .replay {
+      background: url("../img/phone-animation-repeat.png") no-repeat;
+      width: 25px;
+      height: 21px;
+      overflow: hidden;
+      position: absolute;
+      top: 360px;
+      left: 335px;
+      outline: none; }
+    body.phone .edge-magic .replay:hover {
+      background-position: 0 -21px; }
+  body.phone .edge-top {
+    margin-top: 0;
+    z-index: 20; }
+  body.phone .edge-left {
+    z-index: 10; }
+    body.phone .edge-left .edge-magic-content {
+      padding-left: 100px; }
+  body.phone .row-notifications .screen {
+    background: url("../img/phone/image-phone-notifications.jpg") no-repeat; }
+  body.phone .row-notifications .settings-screen {
+    transition: height .8s;
+    background: url("../img/phone/image-phone-messages.jpg") no-repeat;
+    width: 182px;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  body.phone .row-notifications .slider-knot {
+    transition: top .8s;
+    background: url("../img/phone/phone-anim-slider-knot.png") no-repeat;
+    width: 182px;
+    height: 15px;
+    position: absolute;
+    top: -15px;
+    left: 0; }
+  body.phone .row-notifications .run .slider-knot {
+    top: 309px; }
+  body.phone .row-notifications .run .settings-screen {
+    height: 324px; }
+  body.phone .cag-list li {
+    width: 140px; } }
+.cag-list li {
+  width: 140px; }
+
+/* Large / Desktop viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width: 984px) {
+  body.phone .cag-list li {
+    width: 189px; } }
+/*	@section desktop
+-------------------------------------------------------------- */
+/*	@section UbuntuKylin
+-------------------------------------------------------------- */
+body.desktop .lang-switch {
+  position: absolute;
+  top: -20px;
+  right: 40px; }
+body.desktop .screenshot-shadowed {
+  margin-left: -5px; }
+body.desktop .row-partnership ul {
+  margin-left: -40px; }
+  body.desktop .row-partnership ul li {
+    margin-left: 40px; }
+body.desktop .row-ubuntu-kylin-more img {
+  margin-top: -95px; }
+body.desktop .right {
+  float: right; }
+body.desktop .pull-left-40,
+body.desktop .pull-right-40 {
+  margin-left: 0;
+  margin-right: 0; }
+
+/* end body.desktop-ubuntukylin */
+/* Medium / Tablet viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width: 768px) {
+  body.desktop .row-hero {
+    background: url("../img/desktop/image-ubuntukylin.jpg") 200% center no-repeat;
+    padding-bottom: 55px; }
+  body.desktop .row-ubuntu-kylin-more h2 {
+    margin-top: 60px; }
+  body.desktop .pull-left-40 {
+    margin-left: -30px;
+    margin-bottom: -30px; }
+  body.desktop .pull-right-40 {
+    margin-right: -30px;
+    margin-bottom: -10px; }
+  body.desktop .row-free p.first {
+    padding-right: 186px; }
+  body.desktop .row-free > div.open-source {
+    background: url("../img/pictograms/picto-pack/picto-projectswelove-orange.svg") 93% 40% no-repeat;
+    background-size: 140px 140px; }
+  body.desktop .row-free > div.backed-by-canonical {
+    background: url("../img/pictograms/picto-pack/picto-canonical.svg") 93% 40% no-repeat;
+    background-size: 140px 140px; }
+
+  html.no-svg body.desktop .row-free > div.open-source,
+  html.opera-mini body.desktop .row-free > div.open-source {
+    background-image: url("../img/pictograms/picto-pack/picto-projectswelove-orange.png"); }
+  html.no-svg body.desktop .row-free > div.backed-by-canonical,
+  html.opera-mini body.desktop .row-free > div.backed-by-canonical {
+    background-image: url("../img/pictograms/picto-pack/picto-canonical.png"); } }
+@media only screen and (min-width: 984px) {
+  body.desktop .row-hero {
+    background: url("../img/desktop/image-ubuntukylin.jpg") 498px 80px no-repeat;
+    padding-bottom: 85px; }
+
+  body.desktop .pull-left-40 {
+    margin-bottom: -44px;
+    margin-left: -40px; }
+  body.desktop .pull-right-40 {
+    margin-bottom: -41px;
+    margin-right: -41px; } }
+/*	@section download
+-------------------------------------------------------------- */
+body.download .row-zh-CN .box-highlight h2,
+body.download .row-zh-CN .box-highlight p {
+  padding-right: 20px; }
+body.download .inner-wrapper form fieldset {
+  background: none;
+  margin: 0;
+  padding-left: 20px;
+  padding: 0; }
+body.download .inner-wrapper form button,
+body.download .inner-wrapper form .link-cta-download {
+  font-size: 1.21875 em;
+  margin-bottom: 0.61538 em;
+  padding: 10px 14px;
+  border: 0;
+  float: left;
+  text-align: center;
+  width: 100%;
+  margin-left: 0; }
+body.download #main-content .row-background {
+  background: url("../img/backgrounds/image-background-wallpaper1404.jpg") no-repeat scroll 0 bottom #4b1827;
+  margin-top: 0;
+  padding-top: 40px; }
+  body.download #main-content .row-background h1,
+  body.download #main-content .row-background p {
+    color: #ffffff; }
+  body.download #main-content .row-background a:link,
+  body.download #main-content .row-background a:visited {
+    text-decoration: underline;
+    color: #fff; }
+  body.download #main-content .row-background a:hover {
+    color: rgba(255, 255, 255, 0.6); }
+  body.download #main-content .row-background a.external {
+    background-image: url("../img/icons/icon-externallink-white.svg"); }
+  body.download #main-content .row-background a.external:hover {
+    background-image: url("../img/icons/icon-externallink-warmgrey.svg"); }
+  body.download #main-content .row-background .box-highlight {
+    border: none;
+    -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #ffffff; }
+  body.download #main-content .row-background .vertical-divider > div,
+  body.download #main-content .row-background .vertical-divider > li {
+    border-color: rgba(255, 255, 255, 0.2);
+    /*#78515f;*/ }
+
+.row-community {
+  background: white url("../img/backgrounds/background-dots.png");
+  color: #333333;
+  padding: 40px 20px 20px;
+  margin-bottom: -20px; }
+
+.row-community .six-col,
+.row-community .nine-col {
+  padding: 20px; }
+
+.row-community div.six-col,
+.row-community div.eight-col {
+  background: white;
+  position: relative; }
+
+.where-to-find-us {
+  background: #fff;
+  margin: 0;
+  padding: 15px 20px; }
+
+.where-to-find-us ul {
+  margin-bottom: 0; }
+
+.row-community .where-to-find-us h3 {
+  font-size: 1 em;
+  margin-bottom: 0.75 em;
+  border-bottom: 1px dotted #aea79f;
+  padding-bottom: 10px;
+  margin-bottom: 10px; }
+
+.where-to-find-us a {
+  padding: 2px 0 2px 26px; }
+
+.where-to-find-us a {
+  background: url("../img/icons/icon-irc.png") 0 2px no-repeat; }
+
+.row-community .nine-col div.six-col {
+  background: #fff;
+  display: block; }
+
+.row-community .three-col:nth-of-type(2) {
+  margin-right: 0; }
+
+/*	@section scratch
+-------------------------------------------------------------- */
+/* assets database path */
+/* usage: background: url(//assets.ubuntu.com/sites/ubuntu/latest/u/img//site/background.jpg) no-repeat 0 0; */
+/**
+ * Ubuntu Patterns Stylesheet
+ *
+ * The CSS file required by Ubuntu patterns page
+ * 
+ * @project		Ubuntu Patterns
+ * @author		Web Team at Canonical Ltd
+ * @copyright	2012 Canonical Ltd
+ *
+ * @see 		http://design.ubuntu.com
+ */
+/**
+ * standard colors
+ *
+ * @colordef standard colors
+ */
+/* ubuntu orange (used for text links also on any site except canonical) */
+/* used as background on pre text */
+/* canonical aubergine */
+/* light aubergine (consumer) */
+/* mid aubergine (both) */
+/* dark aubergine (enterprise) */
+/* warm grey */
+/* cool grey */
+/* light grey */
+/* notifications */
+/* red */
+/* yellow */
+/* green */
+/* cyan */
+/* colour coded status - from negative to positive (Icon: canonical circle) */
+/* red, for status that require immediate attention */
+/* grey, for disabled status or ones that don’t require attention */
+/* yellow, for status that require attention */
+/* blue, for status that don’t require action */
+/* green, for positive status */
+/* misc colours */
+/* This is the global link color, mainly used for links in content */
+/* grid variables */
+/**
+ * mixins
+ *
+ * @section mixins
+ */
+/* @section general 
+-------------------------------------------------------------- */
+html, body {
+  height: 100%; }
+
+html {
+  background: url(../img/backgrounds/image-background-paper.png) repeat-y fixed center top #f1f1f1;
+  -webkit-transition: background-position 100 ease;
+  -moz-transition: background-position 100 ease;
+  -o-transition: background-position 100 ease;
+  transition: background-position 100 ease; }
+
+/* @section main nav 
+-------------------------------------------------------------- */
+header.banner {
+  overflow: visible;
+  /* end nav-primary */ }
+  header.banner .nav-primary {
+    overflow: visible; }
+    header.banner .nav-primary ul a.active {
+      background-color: #333; }
+    header.banner .nav-primary li ul {
+      background: #F7F7F7;
+      border: 1px solid #D5D5D5;
+      border-radius: 10px;
+      box-shadow: 0 2px 2px -1px #777;
+      display: none;
+      float: none;
+      margin: 0;
+      padding: 10px 0 0;
+      position: absolute;
+      top: 51px;
+      width: 200px; }
+    header.banner .nav-primary li ul li {
+      border: 0 none;
+      float: none; }
+    header.banner .nav-primary li ul li a:link,
+    header.banner .nav-primary li ul li a:visited {
+      border: 0 none;
+      color: #333333;
+      padding: 0 0 11px 14px;
+      text-align: left;
+      width: 185px; }
+    header.banner .nav-primary li ul li a:hover {
+      background: none repeat scroll 0 0 transparent;
+      box-shadow: none;
+      color: #DD4814; }
+    header.banner .nav-primary li:hover ul {
+      display: block; }
+    header.banner .nav-primary ul li a:active,
+    header.banner .nav-primary ul li a:hover,
+    header.banner .nav-primary ul li a:link,
+    header.banner .nav-primary ul li a:visited {
+      transition: padding 0.4s ease 0s; }
+    header.banner .nav-primary .arrow-up {
+      width: 150px; }
+
+/* end header.banner */
+header.banner .nav-primary ul {
+  background: transparent;
+  border-right: 1px solid #ed6637; }
+
+header.banner .nav-primary ul li {
+  border-left: 1px solid #c64012; }
+
+header.banner .nav-primary ul li:last-child {
+  border-right: 1px solid #c64012;
+  border-left: 1px solid #c64012; }
+
+header.banner .nav-primary ul li a:link,
+header.banner .nav-primary ul li a:visited {
+  border-left: 1px solid #ec5b29; }
+
+header.banner .nav-primary ul li a.active {
+  background: #B83A10;
+  border-left: 1px solid #ec5b29; }
+
+header.banner .nav-primary ul li a:hover {
+  background-color: #E1662F; }
+
+/* @section footer 
+-------------------------------------------------------------- */
+footer.global {
+  background-color: transparent;
+  box-shadow: none;
+  padding-top: 0; }
+  footer.global ul.inline li:last-child {
+    width: auto; }
+  footer.global .row {
+    padding: 20px 0 0; }
+  footer.global .two-col {
+    width: 46%;
+    float: left;
+    display: inline-block;
+    min-height: 200px; }
+  footer.global h2 {
+    color: #aea79f;
+    letter-spacing: .05em;
+    padding-bottom: .75em; }
+  footer.global nav .canonlist ul li {
+    min-height: 0;
+    width: 48%;
+    float: left;
+    display: inline; }
+  footer.global li {
+    margin-bottom: 0.5em; }
+  footer.global ul.inline li:after {
+    color: #aea79f;
+    content: "\00b7";
+    vertical-align: middle;
+    margin: 0 5px; }
+
+/* @section UA service-description 
+-------------------------------------------------------------- */
+#service-description h3,
+#service-description h4 {
+  font-size: 1em;
+  font-weight: normal;
+  float: left;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  margin-right: 6px; }
+
 /* Large / Desktop viewport
 -------------------------------------------------------------- */
 @media only screen and (min-width: 984px) {

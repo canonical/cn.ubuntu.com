@@ -4,12 +4,83 @@
 {% block meta_description %}{% endblock %}
 {% block meta_keywords %}{% endblock %}
 
+{% block second_level_nav_items %}
+	{% include "templates/_nav_breadcrumb.html" with section_title="Download" page_title="Download"  %}
+{% endblock second_level_nav_items %}
+
 {% block content %}
-<div class="row row-hero">
-	<h1>Download</h1>
-		<div class="eight-col">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ligula nibh, tincidunt quis metus pretium, ullamcorper egestas lectus. Nullam iaculis ullamcorper sem, at fringilla felis fringilla id. Etiam varius, risus a vestibulum hendrerit, mi elit.</p>
-		</div><!-- ./eight-col -->
+<div class="row row-hero row-background">
+	<div class="eight-col append-four">
+		<h1>下载 Ubuntu 麒麟</h1>
+	</div>
+	<div class="twelve-col">
+		<div class="box box-highlight clearfix vertical-divider">
+			<div class="eight-col no-margin-bottom">
+				<h2>Ubuntu 麒麟 14.04 长期支持版</h2>
+				<p>请点击右边的橙色按钮下载最新的Ubuntu 麒麟 14.04 长期支持版 ISO 镜像文件。把镜像文件烧制到光盘上，或是创建一个可启动U盘，即可安装Ubuntu 麒麟&#12290;</p>
+			</div>
+			<div class="four-col last-col no-margin-bottom">
+				<p>选择版本</p>
+				<form class="form-download lts" action="http://cdimage.ubuntu.com/ubuntukylin/releases/14.04/release/ubuntukylin-14.04-desktop-amd64.iso" method="get">
+					<fieldset>
+						<div>
+							<button type="submit" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '14.04', 'From English-language Chinese download']);">64位下载键 [ 下载  ]</button>
+						</div>
+					</fieldset>
+				</form>
+				<form class="form-download lts" action="http://cdimage.ubuntu.com/ubuntukylin/releases/14.04/release/ubuntukylin-14.04-desktop-i386.iso" method="get">
+					<fieldset>
+						<div>
+							<button type="submit" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '14.04', 'From English-language Chinese download']);">32位下载键  (如果你电脑的内存少于2GB,选择32位下载)</button>
+						</div>
+					</fieldset>
+				</form>
+			</div><!-- /.four-col -->
+		</div><!-- /.box -->
+	</div><!-- /.twelve-col -->
+</div><!-- /.row -->
+
+<div class="row equal-height">
+	<h2>其他下载</h2>
+	<div class="box four-col">
+		<h3>Ubuntu 云</h3>
+		<p>Ubuntu OpenStack 使您能够配置服务器并在 Ubuntu 上创建一个 OpenStack 云（来自同一个 Ubuntu Server 下载）&#12290;</p>
+		<p><a href="http://www.ubuntu.com/download/cloud">下载 Ubuntu 云&nbsp;&rsaquo;</a></p>
+	</div>
+	<div class="box four-col">
+		<h3>Ubuntu 服务器 (Ubuntu Server)</h3>
+		<p>不管您是要配置一个简单的文件服务器或构建一个五万个节点的云，您都可以信赖 Ubuntu 服务器，并且它将为您提供五年免费升级保证&#12290;</p>
+		<p><a href="http://www.ubuntu.com/download/server">下载 Ubuntu 服务器&nbsp;&rsaquo;</a></p>
+	</div>
+	<div class="box four-col last-col">
+		<h3>Ubuntu 桌面 (Ubuntu Desktop)</h3>
+		<p>此系统是 Ubuntu Kylin/优麒麟的基石。如果您不需要 Ubuntu Kylin/优麒麟自带的中文界面和应用程序，请选择此选项&#12290;</p>
+		<p><a href="http://www.ubuntu.com/download/desktop">下载 Ubuntu 桌面&nbsp;&rsaquo;</a></p>
+	</div>
+</div><!-- /.row -->
+
+<div class="row row-community no-border">
+
+	<div class="nine-col">
+		<div class="six-col">
+			<h2 id="a-thriving-community">社区为您提供帮助</h2>
+			<p>要了解更多关于Ubuntu麒麟的信息，或获取有关安装和使用它的帮助，请访问</p>
+			<p><a href="http://www.ubuntukylin.com/ukylin/portal.php">www.ubuntukylin.com</a></p>
+		</div>
+		<div class="three-col last-col box where-to-find-us smaller">
+			<h3>援助之手</h3>
+			<!-- <p>如果您遇到问题, 帮助总是在身边&#12290;</p> -->
+			<ul class="list">
+				<li class="ask-ubuntu"><a href="http://askubuntu.com">Ubuntu 问答</a></li>
+				<li class="ubuntu-forums"><a href="http://ubuntuforums.org">Ubuntu 论坛</a></li>
+				<li class="discourse"><a href="https://discourse.ubuntu.com/">Ubuntu 论述</a></li>
+			</ul>
+		</div><!-- /.three-col -->
+	</div><!-- /.nine-col -->
+	<div class="three-col last-col text-center no-margin">
+		<img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-community-orange.svg" alt="" width="136" height="136" />
+	</div>
+
 </div><!-- /.row -->
 
 {% endblock %}

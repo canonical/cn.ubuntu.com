@@ -4,12 +4,182 @@
 {% block meta_description %}{% endblock %}
 {% block meta_keywords %}{% endblock %}
 
+{% block extra_body_class %}phone-home{% endblock %}
+
+{% block second_level_nav_items %}
+	{% include "templates/_nav_breadcrumb.html" with section_title="Phone" page_title="Phone"  %}
+{% endblock second_level_nav_items %}
+
 {% block content %}
 <div class="row row-hero">
-	<h1>Phone</h1>
-		<div class="eight-col">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ligula nibh, tincidunt quis metus pretium, ullamcorper egestas lectus. Nullam iaculis ullamcorper sem, at fringilla felis fringilla id. Etiam varius, risus a vestibulum hendrerit, mi elit.</p>
-		</div><!-- ./eight-col -->
+	<div class="five-col">
+		<h1>Ubuntu 手机系统</h1>
+		<p> Ubuntu 使用户能更容易地发现和访问 移动内容和服务，无论它们是存 储在手机上、网络上还是云中&#12290;</p>
+	</div><!-- /.five-col -->
+	<div class="seven-col last-col text-center">
+		<img src="{{ STATIC_URL }}img/phone/image-phone-overview.jpg" width="567" height="302" alt="Ubuntu phone's with different state of screens" />
+	</div>
 </div><!-- /.row -->
+
+{# ================ Content and apps at your fingertips ================ #}
+<div class="row">
+	<div class="eight-col">
+		<h2>内容和应用程序触手可及</h2>
+		<p>使用智能炫酷 Scopes 直接搜索内容和应用程 序。Scopes 能将内容巧妙地分类（如视频和 音乐），能同时显示网络搜索结果和手机上存 储的内容。这意味着用户可以按其思考方式找 到内容：按类型而不是按位置。这一可视化、 快速和轻松的查找新方式能帮助用户找到所需 内容，也方便运营商展示内容&#12290;</p>
+	</div>
+	<div class="twelve-col"><!--TODO: update image -->
+		<div class="naturallyneat-image-load" data-width="924" data-src="{{ STATIC_URL }}img/phone/image-phone-naturallyneat{width}.jpg" data-alt="Ubuntu phones side by side show the consistancy between different screens"></div>
+		<script>
+		    new Imager('.naturallyneat-image-load', {
+		        availableWidths: {
+		            320: '-small',
+		            924: '-medium'
+		        }
+		    });
+		</script>
+	</div>
+</div><!-- /.row -->
+
+{# ================ A life in pictures ================ #}
+<div class="row row-pictures no-border edge-top"><!-- may also need phone-photos -->
+	<div class="six-col">
+		<div class="pictures-landscape"><img src="{{ STATIC_URL }}img/phone/image-phone-landscape.jpg" alt="" width="410" height="212" /></div>
+		<div></div>
+	</div>
+	<div class="edge-magic-content six-col last-col">
+		<h3>照片人生</h3>
+		<p>Gallery 让您比以前更轻松地整理、查找和分 享您的照片。现在，用户可以专注处理他们的 照片—只在需要时才调入控制面板&#12290;</p>
+	</div>
+</div><!-- / .row -->
+
+{# ================ Favourite apps ================ #}
+<div class="row no-border edge-magic edge-left">
+	<div class="edge-magic-content six-col">
+		<h3>最喜欢的应用</h3>
+		<p>只需从屏幕左边缘轻滑指尖即可显示  Launcher（一个显示用户最喜爱的应用程序的 工具栏）。瞬间呈现，只需轻轻一触欢迎屏幕 或任何应用程序&#12290;</p>
+	</div>
+	<div class="six-col text-center last-col">
+		<div class="slider-animation edge-magic-animation">
+			<div class="screen">
+				<div class="screen-fade"></div>
+				<div class="launcher"></div>
+			</div>
+		</div>
+		<a href="#" class="slideless replay"></a>
+	</div>
+</div><!-- /.row -->
+
+{# ================ Always running ================ #}
+<div class="row no-border edge-magic edge-top">
+	<div class="six-col">
+		<div class="slider-animation go-back">
+			<div class="screen">
+				<div class="gallery-screen"></div>
+				<div class="camera-screen"></div>
+			</div>
+		</div>
+		<a href="#" class="slideless replay"></a>
+	</div>
+	<div class="edge-magic-content six-col last-col">
+		<h3>始终运行</h3>
+		<p>有正在运行的应用程序吗？从左至右滑动整个 屏幕即可显示所有正在运行的应用程序；从屏 幕右边滑动可立即显示您最后使用过的应用程 序。正在运行的应用程序之间的切换从未如此 方便和快捷&#12290;</p>
+	</div>
+</div><!-- /.row -->
+
+{# ================ Content not controls ================ #}
+<div class="row row-notifications edge-magic edge-left  no-border">
+	<div class="edge-magic-content six-col">
+		<h3>内容隐藏控件</h3>
+		<p>从手机的下边缘往上轻轻一扫，即可显示当前 使用的应用程序特有的控件。不扫则不会显示 任何控件，让您全身心地专注于照片、网页、 音乐、消息和应用程序等重要事务&#12290;</p>
+	</div>
+	<div class="six-col last-col">
+		<div class="slider-animation content-controls">
+			<div class="screen">
+				<div class="gallery-screen"></div>
+				<div class="gallery-controls"></div>
+			</div>
+		</div>
+		<a href="#" class="slideless replay"></a>
+	</div>
+</div><!-- / .row -->
+
+{# ================ Clever control of settings ================ #}
+<div class="row row-notifications edge-magic">
+	<div class="six-col text-center">
+		<div class="slider-animation notification-slider">
+			<div class="screen">
+				<div class="settings-screen"></div>
+				<div class="slider-knot"></div>
+			</div>
+		</div>
+		<a href="#" class="slideless replay"></a>
+	</div>
+	<div class="edge-magic-content six-col last-col">
+		<h3>巧妙控制设置</h3>
+		<p>在 Ubuntu 系统下，用户可以在方便的时候随 时查看全部通知—只需从屏幕顶部边缘向下滑 动即可。用户可以回复文字或图片信息、在不 离开通知栏的情况下回电话、检查手机状态和 访问核心设置&#12290;</p>
+	</div>
+</div><!-- / .row -->
+
+{# ================ Empowering OEMs and operators ================ #}
+<div class="row">
+	<h2>赋权原始设备制造商和运营商</h2>
+	<div class="eight-col">
+		<p>Ubuntu 是使您拥有服务层所有权的唯一平 台。它提供了诸多选项，包括创建用户账户、默认内容和服务套餐&#12290;</p>
+		<p>它还让您有机会在手机上打上视觉识别品牌标 志和整合您自己的服务（如付款）（运营商计 费服务完整后端集成）&#12290;</p>
+		<p>Ubuntu 旨在推动服务和数据使用，与 4G/LTE </p>
+		<p>投资步调一致&#12290;</p>
+	</div>
+</div><!-- / .row -->
+
+{# ================ Easy for developers to adopt ================ #}
+<div class="row row-app-grid row-grey no-margin">
+	<div class="six-col priority-0">
+		<img width="498" height="373" src="{{ STATIC_URL }}img/phone/image-phone-aqualitycoreofapps.jpg" alt="Collection of top apps available on Ubuntu Phone"/>
+	</div>
+	<div class="six-col last-col">
+		<h2>方便开发者采用</h2>
+		<p>应用合作伙伴和开发者可从多个切入点将内 容和服务搬到 Ubuntu 平台。Scopes 易于创 建，仅需最少的开发工作。采用 Qt 框架可开 发原生应用。由于使用 Webkit/Blink 渲染引擎 和用于脱机封装的 Apache Cordova API，现 有的 HTML5 应用可快速方便地移植&#12290;</p>
+		<p><a href="http://developer.ubuntu.com">访问 Ubuntu 开发者网站&nbsp;&rsaquo;</a></p>
+	</div>
+</div><!-- / .row -->
+
+{# ================ Help shape the Ubuntu mobile strategy ================ #}
+<div class="row">
+	<h2>帮助制定 Ubuntu 移动战略</h2>
+	<div class="twelve-col">
+		<ul class="inline cag-list">
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-h3g.png" width="160" height="80" alt="H3G" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-china-unicom.png" width="160" height="80" alt="China Unicom" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-deutsche-telekom.png" width="160" height="80" alt="Deutsche telekom" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-everything-everywhere.png" width="160" height="80" alt="Everywhere everywhere" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-korea-telecom.png" width="160" height="80" alt="Korea telecom" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-lg-uplus.png" width="160" height="80" alt="LG uplus" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-mtn.png" width="160" height="80" alt="MTN Group" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-portugal-telecom.png" width="160" height="80" alt="Portugal telecom" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-smart.png" width="160" height="80" alt="Smart" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-smartfren.png" width="160" height="80" alt="Smartfren" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-south-korea-telecom.png" width="160" height="80" alt="South Korea telecom" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-tmobile.png" width="160" height="80" alt="T Mobile" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-telecom-italia.png" width="160" height="80" alt="Telecom Italia" /></li>
+			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-telstra.png" width="160" height="80" alt="Telstra" /></li>
+			<li class="box verizon"><img src="{{ STATIC_URL }}img/logos/logo-verizon.png" width="160" height="80" alt="Verizon" /></li>
+			<li class="box last"><img src="{{ STATIC_URL }}img/logos/logo-vodafone.png" width="160" height="80" alt="Vodafone" /></li>
+		</ul>
+	</div>
+	<div class="six-col">
+		<p>Ubuntu 服务商顾问小组 (CAG) 欢迎中国移动运营商为 Ubuntu 移动战略出谋划策。CAG 会员会 提前收到机密简报并为我们提供行业洞察意见，确保 Ubuntu 能满足他们的需求&#12290;</p>
+	</div>
+	<div class="six-col last-col">
+		<p>CAG 会员有机会成为产品发布合作伙伴&#12290;</p>
+		<p><a href="http://www.ubuntu.com/phone/carrier-advisory-
+group">进一步了解如何加入 CAG&nbsp;&rsaquo;</a></p>
+	</div>
+</div><!-- / .row -->
+
+<div class="row no-border">
+	<div class="eight-cpcolol">
+		<p><a href="http://ubuntu.com/phone">Learn more about Ubuntu on phones at www.ubuntu.com&nbsp;&rsaquo;</a></p>
+	</div>
+</div><!-- / .row -->
 
 {% endblock %}

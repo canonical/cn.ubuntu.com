@@ -4,6 +4,10 @@
 {% block meta_description %}{% endblock %}
 {% block meta_keywords %}{% endblock %}
 
+{% block second_level_nav_items %}
+	{% include "templates/_nav_breadcrumb.html" with section_title="Server" page_title="Server"  %}
+{% endblock second_level_nav_items %}
+
 {% block content %}
 <div class="row row-hero">
 	<h1>Server</h1>

@@ -26,7 +26,7 @@ core.resizeListener = function() {
 
 	core.setupAnimations = function(){
 		var yOffset = 150;
-		if(Y.one('body').hasClass('phone-features') || Y.one('body').hasClass('phone-scopes')){
+		if(Y.one('body').hasClass('phone') || Y.one('body').hasClass('phone-scopes')){
 			var searchScreen = false;
 			var edgeMagic = Y.all('.edge-magic');
 			if(Y.one('.search-screen')){
@@ -346,7 +346,7 @@ core.svgFallback = function() {
 core.setupAccordion();
 core.resizeListener();
 core.mobileNav();
-core.cookiePolicy();
+//core.cookiePolicy();
 core.setupGlobalNavAccordion();
 core.setupAnimations();
 core.setupHtmlClass();
