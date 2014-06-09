@@ -1,0 +1,23 @@
+{% extends "templates/base.html" %}
+
+{% block title %}Ubuntu | Server error{% endblock %}
+
+{% block extra_body_class %}error404{% endblock %}
+
+{% block head_extra %}{% endblock %}
+
+{% block header %}
+<div class="row no-border hero-box">
+	<div class="inner-wrapper">
+		<div class="six-col">
+			<img src="{{ STATIC_URL }}img/image-404.svg" alt="Error owl" />
+			</div>
+			<div class="six-col last-col">
+				<h1>500: Server error.</h1>
+				<p>Sorry for the inconvenience, please pop back soon.</p>
+			</div>
+		</div>
+</div><!-- / .row -->
+{% endblock %}
+{% block content %}
+{% endblock content %}

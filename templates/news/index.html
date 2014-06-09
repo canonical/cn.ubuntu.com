@@ -1,0 +1,40 @@
+{% extends "news/base_news.html" %}
+
+{% block title %}News{% endblock %}
+
+{% block extra_body_class %}news-home{% endblock %}
+
+{% block second_level_nav_items %}
+	{% include "templates/_nav_breadcrumb.html" with section_title="News" page_title="News"  %}
+{% endblock second_level_nav_items %}
+
+{% block content %}
+<div class="row row-hero">
+	<div class="eight-col">
+		<h1>Ubuntu news</h1>
+		<p>Get the latest news, events and information about Ubuntu.</p>
+	</div><!-- /.eight-col -->
+</div><!-- /.row -->
+
+<div class="row">
+	<h2>Ubuntu for phones and tablets</h2>
+		<ul class="">
+			<li><a href="/news/mobile-asia-expo-mae-2014">Ubuntu将参展2014亚洲移动展</a></li>
+			<li><a href="/news/2013/02/ubuntu-unveils-tablet-experience-with-multi-tasking">Ubuntu多任务平板电脑体验</a></li>
+			<li><a href="/news/2014/02/19/canonical-announces-first-partners-to-ship-ubuntu-phones-around-the-globe">Canonical公司宣布魅族科技作为其首家合作伙伴发布Ubuntu手机</li>
+		</ul>
+</div><!-- /.row -->
+
+<div class="row">
+	<h2>Ubuntu Kylin</h2>
+</div><!-- /.row -->
+
+{% comment %}<div class="row no-border">
+	<h2>Ubuntu cloud</h2>
+		<ul>
+			<li><a href="/news/juju-top-twelve">关于 Juju 的十二个热点问题</a></li>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+		</ul>
+</div><!-- /.row -->{% endcomment %}
+{% endblock %}

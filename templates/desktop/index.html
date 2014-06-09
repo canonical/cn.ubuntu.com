@@ -1,8 +1,8 @@
-{% extends "base_index.html" %}
+{% extends "desktop/base_cloud.html" %}
 
-{% block title %}中国人自己的Ubuntu{% endblock %}
-{% block meta_description %}{% endblock %}
-{% block meta_keywords %}{% endblock %}
+{% block title %}Ubuntu 桌面系统{% endblock %}
+{% block meta_description %}Ubuntu Kylin/优麒麟是用于笔记本和桌面电脑的操作系统。该系统是开源的而且免费。系统在中国开发，为中国用户服务。 {% endblock %}
+{% block meta_keywords %}Ubuntu, Ubuntu Kylin/优麒麟, Ubuntu 操作系统, 桌面, OS, 平台, Windows 替代, 苹果替代, Microsoft Office 兼容, 中国, 中国制造, 中文笔划, 中文日历, Kingsoft, Kuaipan, Sogou 键入方法, 百度, 免费软件, 开源软件, 瘦终端, Landscape, Ubuntu Advantage, 下载 Ubuntu, 部署, 配置, 服务编排, 服务, 商务支持, 付费服务,长期服务, LTS, 14.04, Trusty Tahr{% endblock %}
 
 {% block second_level_nav_items %}
 	{% include "templates/_nav_breadcrumb.html" with section_title="Desktop" page_title="Desktop"  %}
@@ -15,7 +15,8 @@
 		<h1>中国人自己的Ubuntu</h1>
 		<p>UbuntuKylin是专门为中国市场打造的免费桌面操作系统。它包括Ubuntu用户期待的各种功能，并配有必需的中文软件及程序。与竞争对手不同，Ubunt Kylinu的用户界面专门为中国用户设计，并且最新支持触摸屏以及HiDPI高清显示屏，在各种不同硬件上完美运行&#12290;</p>
 		<p>作为2013年开始的Ubuntu项目的一部分，最新版的Ubuntu Kylin将提供五年的支持服务, 确保您的电脑在未来几年能安全顺畅地使用&#12290;</p>
-		<p><a href="">下载Ubuntu Kylin</a></p>
+		<p><a class="link-cta-ubuntu" href="/download">下载Ubuntu Kylin</a></p>
+		<p><img src="{{ STATIC_URL }}img/desktop/image-ubuntukylin.jpg" alt="" class="for-mobile" /></p>
 	</div><!-- / .five-col -->
 </div><!-- / .row -->
 
@@ -53,11 +54,11 @@
 
 {# ================ 5. Sogou Input Method ================ #}
 <div class="row row-sogou">
-	<div class="six-col">
+	<div class="six-col no-margin-bottom">
 		<h2>搜狗输入法</h2>
 		<p>Ubuntu Kylin为中文输入精心打造，允许字词语句自动补全。更重要的是，通过与具有内置互联网搜索提示功能的搜狗输入法合作，不论是浏览网页或创建新文件，都能使你的Ubuntu Kylin电脑使用起来更方便更快捷&#12290;</p>
 	</div>
-	<div class="six-col  no-margin-bottom last-col">
+	<div class="six-col no-margin-bottom last-col">
 		<img src="{{ STATIC_URL }}img/desktop/image-sogouinputmethod.jpg" alt="" width="482" height="248" class="touch-border pull-right-40 right" />
 	</div>
 </div><!-- / .row -->
@@ -75,17 +76,17 @@
 
 {# ================ 7. Smart Scopes ================ #}
 <div class="row row-scopes">
-	<div class="six-col">
+	<div class="six-col no-margin-bottom">
 		<h2>智能搜索Smart Scopes</h2>
 		<p>中国用户在Ubuntu Kylin Dash中可以发现专用的本地化智能搜索，它将使在线内容的搜索变得更快捷更有针对性。图片搜索将会给您提供搜狗在线搜索的结果；视频搜索将会把流行的优酷视频带到您的眼前；音乐搜索的结果则来自百度 --- 这一切都将和本机内容的搜索结果同时呈现。智能搜索使内容搜索更聪明&#12290;</p>
 	</div>
-	<div class="six-col  no-margin-bottom last-col">
+	<div class="six-col no-margin-bottom last-col">
 		<img class="touch-border pull-right-40 right" src="{{ STATIC_URL }}img/desktop/image-smartscopes.jpg" alt="" width="482" height="302"/>
 	</div>
 </div><!-- / .row -->
 
 {# ================ 8. Kingsoft WPS Office ================ #}
-<div class="row row-grey row-wps-office">
+<div class="row row-wps-office">
 	<div class="six-col no-margin-bottom">
 		<img class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-kingsoft-wps-office.png" alt="" width="488" height="260" />
 	</div>

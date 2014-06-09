@@ -20,6 +20,7 @@ body.download {
 		text-align: center;
 		width: 100%;
 		margin-left: 0;
+		margin-bottom: 0.615em;
 	}
 	
 	#main-content .row-background {
@@ -70,45 +71,47 @@ body.download {
 	padding: 40px 20px 20px;
 	margin-bottom: -20px;
 	
-}
+	.picto { }
 
-.row-community .six-col,
-.row-community .nine-col {
-	padding: 20px;
-}
+	.six-col,
+	.nine-col {
+		padding: 20px;
+	}
+	
+	div.six-col, 
+	div.eight-col, {
+		background: rgba(255,255,255,1);
+		position: relative;
+	}
+	
+	.where-to-find-us {
+	  background: #fff;
+	  margin: 0;
+	  padding: 15px 20px;
+	}
+	
+	.where-to-find-us ul {
+		margin-bottom: 0;
+	}
+	
+	.where-to-find-us h3 {
+		@include font_size (16);
+		border-bottom: 1px dotted $warm_grey;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+	}
+	
+	.where-to-find-us a { padding: 2px 0 2px 26px; }
+	
+	.where-to-find-us a { background: url("../img/icons/icon-irc.png") 0 2px no-repeat; }
+	
+	.nine-col div.six-col {
+	    background: #fff;
+	    display: block;
+	}
+	
+	.three-col:nth-of-type(2) {
+	    margin-right: 0;
+	}
+} //end .row-community 
 
-.row-community div.six-col, 
-.row-community div.eight-col, {
-	background: rgba(255,255,255,1);
-	position: relative;
-}
-
-.where-to-find-us {
-  background: #fff;
-  margin: 0;
-  padding: 15px 20px;
-}
-
-.where-to-find-us ul {
-	margin-bottom: 0;
-}
-
-.row-community .where-to-find-us h3 {
-	@include font_size (16);
-	border-bottom: 1px dotted $warm_grey;
-	padding-bottom: 10px;
-	margin-bottom: 10px;
-}
-
-.where-to-find-us a { padding: 2px 0 2px 26px; }
-
-.where-to-find-us a { background: url("../img/icons/icon-irc.png") 0 2px no-repeat; }
-
-.row-community .nine-col div.six-col {
-    background: #fff;
-    display: block;
-}
-
-.row-community .three-col:nth-of-type(2) {
-    margin-right: 0;
-}

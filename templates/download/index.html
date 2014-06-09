@@ -1,8 +1,8 @@
-{% extends "base_index.html" %}
+{% extends "download/base_download.html" %}
 
-{% block title %}Download{% endblock %}
-{% block meta_description %}{% endblock %}
-{% block meta_keywords %}{% endblock %}
+{% block title %}下载{% endblock %}
+{% block meta_description %}下载Ubuntu 云, Ubuntu 服务器 和 Ubuntu Kylin/优麒麟。优麒麟是在中国设计的桌面操作系统，为中国用户服务。{% endblock %}
+{% block meta_keywords %}Ubuntu Kylin/优麒麟, Ubuntu, 下载, 用于中国的Ubuntu, 中文Ubuntu, 免费软件, linux{% endblock %}
 
 {% block second_level_nav_items %}
 	{% include "templates/_nav_breadcrumb.html" with section_title="Download" page_title="Download"  %}
@@ -31,7 +31,7 @@
 				<form class="form-download lts" action="http://cdimage.ubuntu.com/ubuntukylin/releases/14.04/release/ubuntukylin-14.04-desktop-i386.iso" method="get">
 					<fieldset>
 						<div>
-							<button type="submit" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '14.04', 'From English-language Chinese download']);">32位下载键  (如果你电脑的内存少于2GB,选择32位下载)</button>
+							<button type="submit" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '14.04', 'From English-language Chinese download']);">32位下载键  <span class="smaller">(如果你电脑的内存少于2GB,选择32位下载)</smaller></button>
 						</div>
 					</fieldset>
 				</form>
@@ -60,8 +60,10 @@
 </div><!-- /.row -->
 
 <div class="row row-community no-border">
-
-	<div class="nine-col">
+	<div class="three-col text-center no-margin">
+		<img class="picto" src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-community-orange.svg" alt="" width="150" height="150" />
+	</div>
+	<div class="nine-col last-col">
 		<div class="six-col">
 			<h2 id="a-thriving-community">社区为您提供帮助</h2>
 			<p>要了解更多关于Ubuntu麒麟的信息，或获取有关安装和使用它的帮助，请访问</p>
@@ -77,10 +79,6 @@
 			</ul>
 		</div><!-- /.three-col -->
 	</div><!-- /.nine-col -->
-	<div class="three-col last-col text-center no-margin">
-		<img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-community-orange.svg" alt="" width="136" height="136" />
-	</div>
-
 </div><!-- /.row -->
 
 {% endblock %}

@@ -29,24 +29,33 @@
 -----------------------------------------------------------------
 -------------------------------------------------------------- */
 
+@import "../fonts/font.css";
 @import "core-constants";
 @import "core-mixins";
 
-/*	@section tablet
+/*	@section homepage
 -------------------------------------------------------------- */
-@import "section/tablet.scss";
-
-/*	@section phone
--------------------------------------------------------------- */
-@import "section/phone.scss";
+@import "section/homepage.scss";
 
 /*	@section desktop
 -------------------------------------------------------------- */
 @import "section/desktop.scss";
 
+/*	@section phone
+-------------------------------------------------------------- */
+@import "section/phone.scss";
+
+/*	@section tablet
+-------------------------------------------------------------- */
+@import "section/tablet.scss";
+
 /*	@section download
 -------------------------------------------------------------- */
 @import "section/download.scss";
+
+/*	@section about
+-------------------------------------------------------------- */
+@import "section/about.scss";
 
 /*	@section scratch
 -------------------------------------------------------------- */

@@ -7,8 +7,8 @@
 <head>
 
 <meta charset="UTF-8" />
-<meta name="description" content="{% block meta_description %}{% endblock %}" />
-<meta name="keywords" content="{% block meta_keywords %}{% endblock %}" />
+<meta name="description" content="{% block meta_description %}Ubuntu 是一个开源的软件平台。应用广泛，包括智能手机，平板电脑，PC，服务器和云&#12290;{% endblock %}" />
+<meta name="keywords" content="{% block meta_keywords %}Ubuntu, Ubuntu Kylin/优麒麟, Ubuntu 操作系统, OS, 平台, Linux, 分布, OpenStack, Ubuntu OpenStack, Ubuntu 云, 服务器, 平板电脑, 智能手机, 电话, Windows 替代, 苹果替代,免费软件, 开源软件, 瘦终端, Juju, MAAS, Landscape, Ubuntu Advantage, 下载 Ubuntu, 部署, 配置, 服务编排, 服务, 商务支持, 付费服务, 长期支持, LTS, 14.04, Trusty Tahr, Icehouse, Utopic Unicorn{% endblock %}" />
 <meta name="author" content="Canonical" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -18,22 +18,22 @@
 
 <title>{% block title %}{% endblock %} | Ubuntu</title>
 
-<link rel="shortcut icon" href="//assets.ubuntu.com/sites/ubuntu/latest/u/img/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" type="image/x-icon" />
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//assets.ubuntu.com/sites/ubuntu/latest/u/img/apple-touch-icon-144x144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//assets.ubuntu.com/sites/ubuntu/latest/u/img/apple-touch-icon-114x114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//assets.ubuntu.com/sites/ubuntu/latest/u/img/apple-touch-icon-72x72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="//assets.ubuntu.com/sites/ubuntu/latest/u/img/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}img/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}img/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}img/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}img/apple-touch-icon-precomposed.png">
 <link type="text/plain" rel="author" href="{{ STATIC_URL }}files/humans.txt" />
 
 <!-- google fonts -->
 <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic%7CUbuntu+Mono' rel='stylesheet' type='text/css' />
 
 <!-- Ubuntu guidlines -->
-<link rel="stylesheet" type="text/css" media="screen" href="//assets.ubuntu.com/sites/guidelines/css/dev/beta/ubuntu-styles.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/ubuntu-styles.css" />
 
 <!-- global nav -->
-<link rel="stylesheet" type="text/css" media="screen and (min-width: 768px)" href="//assets.ubuntu.com/sites/ubuntu/latest/u/css/global.css" />
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 768px)" href="{{ STATIC_URL }}css/global.css" />
 
 <!-- site specific -->
 <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/styles.css" />
@@ -53,19 +53,19 @@
 	<nav role="navigation" class="nav-primary nav-right">
 		<div class="logo">
 			<a class="logo-ubuntu" href="/">
-				<img width="106" height="25" src="//assets.ubuntu.com/sites/ubuntu/latest/u/img/logos/logo-ubuntu-orange.svg" alt="" />
+				<img width="106" height="25" src="{{ STATIC_URL }}img/logos/logo-ubuntu-orange.svg" alt="" />
 			</a>
 		</div>
 		<ul>
 			<li class="accessibility-aid"><a accesskey="s" href="#main-content">Jump to content</a></li>
 			<li>
-				<a class="first{% if level_1 == 'desktop' %} active{% endif %}" href="/desktop">Desktop</a>
+				<a class="first{% if level_1 == 'desktop' %} active{% endif %}" href="/desktop">Ubuntu 桌面系统</a>
 			</li>
 			<li>
-				<a{% if level_1 == 'phone' %} class="active"{% endif %} href="/phone">Phone</a>
+				<a{% if level_1 == 'phone' %} class="active"{% endif %} href="/phone">手机</a>
 			</li>
 			<li>
-				<a{% if level_1 == 'tablet' %} class="active"{% endif %} href="/tablet">Tablet</a>
+				<a{% if level_1 == 'tablet' %} class="active"{% endif %} href="/tablet">平板电脑</a>
 			</li>
 			<!-- <li>
 				<a{% if level_1 == 'server' %} class="active"{% endif %} href="/server">Server</a>
@@ -74,24 +74,28 @@
 				<a{% if level_1 == 'cloud' %} class="active"{% endif %} href="/cloud">Cloud</a>
 			</li> -->
 			<li>
-				<a{% if level_1 == 'download' %} class="active"{% endif %} href="/download">Download</a>
+				<a{% if level_1 == 'download' %} class="active"{% endif %} href="/download">下载</a>
 			</li>
 			<li>
-				<a{% if level_1 == 'about' %} class="active"{% endif %} href="/about">About</a>
+				<a{% if level_1 == 'news' %} class="active"{% endif %} href="/news">News</a>
+			</li>
+			<li> 
+				<a{% if level_1 == 'about' %} class="active"{% endif %} href="/about">关于</a>
 			</li>
 		</ul>
 		<a href="#canonlist" class="nav-toggle no-script">☰</a>
-		{% include "templates/search.html" %}
+		{# include "templates/search.html" #}
 	</nav>
 {% endblock header_banner %}
 </header>
 <div class="wrapper">
 <div id="main-content" class="inner-wrapper">
+{% comment %}
 {% if level_1 %}
 {% block second_level_nav %}
 <nav role="navigation" class="nav-secondary clearfix">{% spaceless %}{% block second_level_nav_items %}{% endblock second_level_nav_items %}{% endspaceless %}</nav>
 {% endblock second_level_nav %}
-{% endif %}
+{% endif %}{% endcomment %}
 
 {% block header %}{% endblock %}
 {% block content_container %}
@@ -124,29 +128,6 @@
 <script src="{{ STATIC_URL }}js/plugins/respond.min.js"></script>
 
 {% block footer_extra %}{% endblock %}
-
-{% if google_analytics_id %}
-<!-- google analytics -->
-<script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{ google_analytics_id }}']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-{% endif %}
-
-<!-- crazy egg -->
-<script type="text/javascript">
-   setTimeout(function(){var a=document.createElement("script");
-   var b=document.getElementsByTagName('script')[0];
-   a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/8875.js?"+Math.floor(new Date().getTime()/3600000);
-   a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-</script>
 
 </body>
 </html>

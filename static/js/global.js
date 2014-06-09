@@ -1,21 +1,10 @@
 
 var ai = [{ url: "http://www.ubuntu.com", title:"Ubuntu" },
-{ url: "http://community.ubuntu.com/", title:"Community" },
-{ url: "http://askubuntu.com", title:"Ask!" },
+{ url: "http://www.ubuntukylin.com", title:"Ubuntu Kylin" },
 { url: "http://developer.ubuntu.com", title:"Developer" },
-{ url: "http://design.ubuntu.com", title:"Design" },
-{ url: "http://discourse.ubuntu.com", title:"Discourse" },
-{ url: "http://www.ubuntu.com/certification", title:"Hardware" },
-{ url: "http://insights.ubuntu.com", title:"Insights" },
-{ url: "https://juju.ubuntu.com", title:"Juju" },
-{ url: "http://shop.ubuntu.com", title:"Shop" }];
-
-var more = [{ url: "http://apps.ubuntu.com", title:"Apps" },
-{ url: "https://help.ubuntu.com", title:"Help" },
-{ url: "http://ubuntuforums.org", title:"Forum" },
-{ url: "http://www.launchpad.net", title:"Launchpad" },
-{ url: "http://maas.ubuntu.com", title:"MAAS" },
 { url: "http://www.canonical.com", title:"Canonical" }];
+
+var more = [];
 
 
 if(!core){ var core = {}; }

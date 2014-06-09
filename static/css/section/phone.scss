@@ -205,28 +205,77 @@ body.phone {
 
 } // end body.phone
 
-  .cag-list {
-    margin-top: 35px;
-    margin-right: -20px;
-    text-align: center;
-    li {
-      margin-right: 20px;
-      margin-bottom: 20px;
-      padding: 20px 10px 14px;
-      /*width: 117px;*/
-      width: 63px;
-    }
-    li img {
-    	float: none;
-    }
-    li.five {
-      margin-right: 25px;
-    }
-    li.verizon img {
-      position: relative;
-      top: -8px;
-    }
+.cag-list {
+  margin-top: 35px;
+  margin-right: -20px;
+  text-align: center;
+  li {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 20px 10px 14px;
+    width: 118px;
   }
+  li img {
+  	float: none;
+  }
+  li.five {
+    margin-right: 25px;
+  }
+  li.verizon img {
+    position: relative;
+    top: -8px;
+  }
+}
+
+.row-notifications {
+
+  .screen {
+	  background: url('../img/phone/image-phone-notifications.jpg') no-repeat;
+	}
+
+	.settings-screen {
+	  transition: height .8s;
+	  background: url('../img/phone/image-phone-messages.jpg') no-repeat;
+	  width: 182px;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+	}
+
+	.slider-knot {
+	  transition: top .8s;
+	  background: url('../img/phone/phone-anim-slider-knot.png') no-repeat;
+	  width: 182px;
+	  height: 15px;
+	  position: absolute;
+	  top: -15px;
+	  left: 0;
+	}
+
+	.run {
+	   .slider-knot {
+	     top: 309px;
+	   }
+	   .settings-screen {
+	     height: 324px;
+	   }
+	}
+}
+
+.row-pictures .pictures-landscape {
+  background: url('../img/phone/image-phone-camera-landscape.jpg') 51px 15px no-repeat;
+  width: 100%;
+  height: auto;
+	background-size: 80% 83%;
+
+  img {
+    display: block;
+    position: relative;
+    z-index: -1;
+  }
+}
+
 
 /* Medium / Tablet viewport
 -------------------------------------------------------------- */
@@ -234,6 +283,9 @@ body.phone {
 
 	body.phone {
 	
+    .cag-list li {
+      width: 140px;
+    }
     .row-app-grid {
     	overflow: hidden;
     	img {
@@ -244,8 +296,9 @@ body.phone {
     
 	  .row-pictures .pictures-landscape {
 	    background: url('../img/phone/image-phone-camera-landscape.jpg') 51px 15px no-repeat;
-	    width: 500px;
-	    height: 258px;
+	    background-size: 80% 83%;
+	    width: 100%;
+	    height: auto;
 	
 	    img {
 	      display: block;
@@ -289,64 +342,46 @@ body.phone {
           padding-left: 100px;
       }
 
-    }
-	  
-		.row-notifications {
-	
-	    .screen {
-			  background: url('../img/phone/image-phone-notifications.jpg') no-repeat;
-			}
-	
-			.settings-screen {
-			  transition: height .8s;
-			  background: url('../img/phone/image-phone-messages.jpg') no-repeat;
-			  width: 182px;
-	      height: 0;
-	      position: absolute;
-	      top: 0;
-	      left: 0;
-			}
-	
-			.slider-knot {
-			  transition: top .8s;
-			  background: url('../img/phone/phone-anim-slider-knot.png') no-repeat;
-			  width: 182px;
-			  height: 15px;
-			  position: absolute;
-			  top: -15px;
-			  left: 0;
-			}
-	
-			.run {
-			   .slider-knot {
-			     top: 309px;
-			   }
-			   .settings-screen {
-			     height: 324px;
-			   }
+    }		
+    
+	  .row-pictures {
+			.edge-magic-content {
+				margin-top: 30px;
 			}
 		}
-		
-    .cag-list li {
-      width: 140px;
-    }
+
 	  	  	  
 	} // end body.phone
   
   
 } // end @media only screen and (min-width : 768px)
 
-    .cag-list li {
-      width: 140px;
-    }
-
 
 /* Large / Desktop viewport
 -------------------------------------------------------------- */
 @media only screen and (min-width : 984px) {
 	body.phone {
+	  .row-pictures .pictures-landscape {
+	    background: url('../img/phone/image-phone-camera-landscape.jpg') 51px 15px no-repeat;
+	    background-size: 78% 85%;
+	    width: 100%;
+	    height: auto;
+	
+	    img {
+	      display: block;
+	      position: relative;
+	      z-index: -1;
+	    }
+	  }
+	  
+	  .row-pictures {
+			.edge-magic-content {
+				margin-top: 50px;
+			}
+		}
+
     .cag-list li {
       width: 189px;
     }
-  }
+  }// end body.phone
 } // end @media only screen and (min-width : 984px)

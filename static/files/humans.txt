@@ -1,0 +1,19 @@
+/* TEAM */
+	Chef: Peter Mahnke
+	Contact: webmaster[at]ubuntu.com
+	From: London, England
+
+	Web developer: Anthony Dillon
+	From: London, England
+
+	Web developer: Graham Bancroft
+	From: London, England
+
+	Web designer: Inayaili de LeÃ³n
+	From: London, England
+
+/* SITE */
+	Last update: 2014/06/06
+	Language: Chinese
+	Doctype: HTML5
+	IDE: Bazaar, Aptana Studio 3, Photoshop

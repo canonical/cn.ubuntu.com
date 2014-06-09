@@ -1,23 +1,21 @@
-{% extends "base_index.html" %}
+{% extends "about/base_about.html" %}
 
-{% block title %}About{% endblock %}
-{% block meta_description %}{% endblock %}
-{% block meta_keywords %}{% endblock %}
+{% block title %}关于{% endblock %}
 
 {% block second_level_nav_items %}
-	{% include "templates/_nav_breadcrumb.html" with section_title="About" page_title="About"  %}
+	{% include "templates/_nav_breadcrumb.html" with section_title="关于" page_title="关于"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
 {# ================ 1. About Ubuntu ================ #}
-<div class="row row-hero">
-	<h1>关于 Ubuntu</h1>
+<div class="row row-hero no-border">
 	<div class="eight-col">
+		<h1>关于 Ubuntu</h1>
 		<p>Ubuntu 是一款开源操作系统，可在个人电脑、智能手机、平板电脑、服务器和云上使用。这是全球社区基于 Canonical 策略和设计指南进行开发的结果；Canonical 是一家为配合 Ubuntu 开发而成立的软件公司&#12290;</p>
 		<p>Canonical 还为 Ubuntu 提供支持和服务，以扩大其全球市场覆盖率；这是因为推进创新的最佳方式就是为创新者提供他们所需要的技术&#12290;</p>
 	</div><!-- ./eight-col -->
 	<div class="twelve-col no-margin-bottom">
-		<img src="{{ STATIC_URL }}img/about/partners-hero.jpg" width="1600" height="800" alt="" />
+		<img class="full-width" src="{{ STATIC_URL }}img/about/partners-hero.jpg" width="1600" height="800" alt="" />
 	</div>
 </div><!-- /.row -->
 
