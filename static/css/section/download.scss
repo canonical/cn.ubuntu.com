@@ -69,10 +69,7 @@ body.download {
 	background: #fff url('../img/backgrounds/background-dots.png');
 	color: $cool_grey;
 	padding: 40px 20px 20px;
-	margin-bottom: -20px;
 	
-	.picto { }
-
 	.six-col,
 	.nine-col {
 		padding: 20px;
@@ -115,3 +112,25 @@ body.download {
 	}
 } //end .row-community 
 
+
+/* Medium / Tablet viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width : 768px) {
+	.row-community {	
+		margin-bottom: -10px;
+		
+		.picto { 
+			margin-top: 30px;
+		}
+	}
+}
+// end @media only screen and (min-width : 768px)
+
+/* Large / Desktop viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width : 984px) {
+	.row-community {	
+		margin-bottom: -20px;
+	}
+}
+// end @media only screen and (min-width : 984px)

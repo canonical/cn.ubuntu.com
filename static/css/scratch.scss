@@ -33,6 +33,10 @@ html {
 	transition: background-position 100 ease;
 }
 
+.inner-wrapper {
+	padding-bottom: 0;
+}
+
 /* @section main nav 
 -------------------------------------------------------------- */
 header.banner {
@@ -111,6 +115,8 @@ header.banner {
 
 footer.global {
 	background-color: transparent;
+	box-shadow: 0 2px 2px -1px #D3D3D3 inset;
+	padding-top: 0;
 
 	ul.inline li:last-child {
 		width: auto;
@@ -323,12 +329,19 @@ footer #nav-global {
 
 	.for-mobile	{ display:none }
 
+	footer.global {
+		padding-top: 30px;
+	}
+	
 } // end @media only screen and (min-width : 768px) 
 
 
 /* Large / Desktop viewport
 -------------------------------------------------------------- */
 @media only screen and (min-width : 984px) {
+	.inner-wrapper {
+		padding-bottom: 20px;
+	}
 	header.banner .nav-primary ul {
 	  background: transparent;
 	  border-right: 1px solid lighten($ubuntu_orange, 10%);
@@ -361,10 +374,6 @@ footer #nav-global {
 	}
 	.for-mobile {
 	    display: none;
-	}
-	footer.global {
-		box-shadow: none;
-		padding-top: 0;
 	}
 	
 } // end @media only screen and (min-width : 984px)

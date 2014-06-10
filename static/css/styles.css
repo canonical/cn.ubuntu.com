@@ -381,7 +381,7 @@ body.desktop .row-scopes .last-col {
     bottom: -4px;
     position: relative; }
   body.desktop .row-scopes .last-col {
-    bottom: -9px;
+    bottom: 0px;
     position: relative; }
   body.desktop .row-free p.first {
     padding-right: 186px; }
@@ -1035,8 +1035,7 @@ body.download #main-content .row-background {
 .row-community {
   background: white url("../img/backgrounds/background-dots.png");
   color: #333333;
-  padding: 40px 20px 20px;
-  margin-bottom: -20px; }
+  padding: 40px 20px 20px; }
   .row-community .six-col,
   .row-community .nine-col {
     padding: 20px; }
@@ -1066,6 +1065,18 @@ body.download #main-content .row-background {
   .row-community .three-col:nth-of-type(2) {
     margin-right: 0; }
 
+/* Medium / Tablet viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width: 768px) {
+  .row-community {
+    margin-bottom: -10px; }
+    .row-community .picto {
+      margin-top: 30px; } }
+/* Large / Desktop viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width: 984px) {
+  .row-community {
+    margin-bottom: -20px; } }
 /*	@section about
 -------------------------------------------------------------- */
 body.about .row-hero {
@@ -1148,6 +1159,9 @@ html {
   -o-transition: background-position 100 ease;
   transition: background-position 100 ease; }
 
+.inner-wrapper {
+  padding-bottom: 0; }
+
 /* @section main nav 
 -------------------------------------------------------------- */
 header.banner {
@@ -1200,7 +1214,9 @@ header.banner {
 /* @section footer 
 -------------------------------------------------------------- */
 footer.global {
-  background-color: transparent; }
+  background-color: transparent;
+  box-shadow: 0 2px 2px -1px #D3D3D3 inset;
+  padding-top: 0; }
   footer.global ul.inline li:last-child {
     width: auto; }
   footer.global .row {
@@ -1372,10 +1388,16 @@ footer #nav-global {
     width: auto; }
 
   .for-mobile {
-    display: none; } }
+    display: none; }
+
+  footer.global {
+    padding-top: 30px; } }
 /* Large / Desktop viewport
 -------------------------------------------------------------- */
 @media only screen and (min-width: 984px) {
+  .inner-wrapper {
+    padding-bottom: 20px; }
+
   header.banner .nav-primary ul {
     background: transparent;
     border-right: 1px solid #ed6637; }
@@ -1402,8 +1424,4 @@ footer #nav-global {
     width: 984px; }
 
   .for-mobile {
-    display: none; }
-
-  footer.global {
-    box-shadow: none;
-    padding-top: 0; } }
+    display: none; } }
