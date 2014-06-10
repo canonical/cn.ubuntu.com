@@ -10,7 +10,7 @@
 
 {% block content %}
 {# ================ 1. Ubuntu Kylin ================ #}
-<div class="row row-hero">
+<div id="ubuntu-kyin" class="row row-hero">
 	<div class="six-col">
 		<h1>中国人自己的Ubuntu</h1>
 		<p>UbuntuKylin是专门为中国市场打造的免费桌面操作系统。它包括Ubuntu用户期待的各种功能，并配有必需的中文软件及程序。与竞争对手不同，Ubunt Kylinu的用户界面专门为中国用户设计，并且最新支持触摸屏以及HiDPI高清显示屏，在各种不同硬件上完美运行&#12290;</p>
@@ -21,7 +21,7 @@
 </div><!-- / .row -->
 
 {# ================ 2. Who is behind Ubuntu Kylin? ================ #}
-<div class="row">
+<div id="ubuntu-kylin-backers" class="row">
 		<h2>谁开发了 Ubuntu Kylin/优麒麟&#65311;</h2>
 	<div class="eight-col">
 		<p>Ubuntu Kylin是由 Canonical，工业和信息化部软件与集成电路促进中心（CSIP）以及国</p>
@@ -34,7 +34,7 @@
 </div><!-- /.row -->
 
 {# ================ 3. Who is Ubuntu Kylin made for? ================ #}
-<div class="row equal-height vertical-divider">
+<div id="ubuntu-kylin-user" class="row equal-height vertical-divider">
 	<h2 class="twelve-col">Ubuntu Kylin/优麒麟的目标用户是谁&#65311;</h2>
 	<div class="four-col for-you">
 		<h3>为您服务</h3>
@@ -53,7 +53,7 @@
 {# ================ 4. Features of Ubuntu Kylin ================ #}
 
 {# ================ 5. Sogou Input Method ================ #}
-<div class="row row-sogou">
+<div id="row-sogou" class="row row-sogou">
 	<div class="six-col no-margin-bottom">
 		<h2>搜狗输入法</h2>
 		<p>Ubuntu Kylin为中文输入精心打造，允许字词语句自动补全。更重要的是，通过与具有内置互联网搜索提示功能的搜狗输入法合作，不论是浏览网页或创建新文件，都能使你的Ubuntu Kylin电脑使用起来更方便更快捷&#12290;</p>
@@ -64,7 +64,7 @@
 </div><!-- / .row -->
 
 {# ================ 6. Youker Assistant ================ #}
-<div class="row row-grey row-youker">
+<div id="row-youker" class="row row-grey row-youker">
 	<div class="six-col no-margin-bottom">
 		<img  class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-youkerassistant.jpg" alt="" width="469" height="308" />
 	</div>
@@ -75,7 +75,7 @@
 </div><!-- / .row -->
 
 {# ================ 7. Smart Scopes ================ #}
-<div class="row row-scopes">
+<div id="row-scopes" class="row row-scopes">
 	<div class="six-col no-margin-bottom">
 		<h2>智能搜索Smart Scopes</h2>
 		<p>中国用户在Ubuntu Kylin Dash中可以发现专用的本地化智能搜索，它将使在线内容的搜索变得更快捷更有针对性。图片搜索将会给您提供搜狗在线搜索的结果；视频搜索将会把流行的优酷视频带到您的眼前；音乐搜索的结果则来自百度 --- 这一切都将和本机内容的搜索结果同时呈现。智能搜索使内容搜索更聪明&#12290;</p>
@@ -86,7 +86,7 @@
 </div><!-- / .row -->
 
 {# ================ 8. Kingsoft WPS Office ================ #}
-<div class="row row-wps-office">
+<div id="row-wps-office" class="row row-wps-office">
 	<div class="six-col no-margin-bottom">
 		<img class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-kingsoft-wps-office.png" alt="" width="488" height="260" />
 	</div>
@@ -97,7 +97,7 @@
 </div><!-- / .row -->
 
 {# ================ 9. Kingsoft Kuaipan cloud storage ================ #}
-<div class="row row-grey row-kuaipen">
+<div id="row-kuaipen" class="row row-grey row-kuaipen">
 	<div class="six-col">
 		<h2>金山快盘云存储</h2>
 		<p>最新版的Ubuntu Kylin不止是一款中文操作系统它还给您提供100GB的个人云存储空间，让您能通过网络或是任何金山快盘兼容设备读取重要文件和内容&#12290;</p>
@@ -108,7 +108,7 @@
 </div><!-- / .row -->
 
 {# ================ 10. Chinese lunar calendar ================ #}
-<div class="row row-calendar">
+<div id="row-calendar" class="row row-calendar">
 	<div class="six-col no-margin-bottom">
 		<img  class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-chinese-lunar-calendar.png" alt="" width="469" height="260" />
 	</div>
@@ -119,7 +119,7 @@
 </div><!-- / .row -->
 
 {# ================ 11. Lotus instant messaging ================ #}
-<div class="row row-lotus">
+<div id="row-lotus" class="row row-lotus">
 	<div class="seven-col">
 		<h2>莲花即时通信</h2>
 		<p>莲花即时通信是由国科大全新开发。考虑了企业应用场景。您不仅可以用它和亲朋好友聊天，也可以在办公环境下与同事联络&#12290;</p>
@@ -130,7 +130,7 @@
 </div><!-- / .row -->
 
 {# ================ 12. Why is it free? ================ #}
-<div class="row row-grey row-free vertical-divider">
+<div id="row-free" class="row row-grey row-free vertical-divider">
 	<h2 class="twelve-col">为何它是免费的&#65311;</h2>
 	<div class="open-source six-col">
 		<h3>它是开源系统&#12290;</h3>
@@ -144,7 +144,7 @@
 </div><!-- /.row -->
 
 {# ================ 13. Find out more ================ #}
-<div class="row no-border">
+<div id="row-more" class="row no-border">
 	<div class="eight-col">
 		<h2>了解更多详情</h2>
 		<p>欲知关于Ubuntu Kylin的更多详情，请加入我们的社区或浏览我们的官方网站</p>

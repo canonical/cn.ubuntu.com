@@ -1,6 +1,6 @@
 
 var ai = [{ url: "http://www.ubuntu.com", title:"Ubuntu" },
-{ url: "http://www.ubuntukylin.com", title:"Ubuntu Kylin" },
+{ url: "http://www.ubuntukylin.com", title:"Ubuntu 麒麟" },
 { url: "http://developer.ubuntu.com", title:"Developer" },
 { url: "http://www.canonical.com", title:"Canonical" }];
 

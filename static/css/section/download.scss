@@ -98,9 +98,20 @@ body.download {
 		margin-bottom: 10px;
 	}
 	
-	.where-to-find-us a { padding: 2px 0 2px 26px; }
+	.where-to-find-us li { 
+		padding: 0 0 8px 26px; 
+		background: url("../img/icons/icon-irc.png") 0 4px no-repeat; 
+		margin-bottom: 8px;
+	}
+
+	.where-to-find-us li a { 
+		padding-bottom: 2px; 
+	}
 	
-	.where-to-find-us a { background: url("../img/icons/icon-irc.png") 0 2px no-repeat; }
+	.where-to-find-us li:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
 	
 	.nine-col div.six-col {
 	    background: #fff;

@@ -190,10 +190,6 @@ body.homepage .box-highlight {
   border: 1px solid #f7f7f7; }
 body.homepage footer.global {
   padding-top: 20px; }
-body.homepage .strip-inner-wrapper div.six-col:first-of-type {
-  border-right: 1px dotted #888888; }
-body.homepage .strip-inner-wrapper img {
-  margin-top: 20px; }
 
 /* end body.homepage */
 /* body.homepage-default
@@ -1055,10 +1051,15 @@ body.download #main-content .row-background {
     border-bottom: 1px dotted #aea79f;
     padding-bottom: 10px;
     margin-bottom: 10px; }
-  .row-community .where-to-find-us a {
-    padding: 2px 0 2px 26px; }
-  .row-community .where-to-find-us a {
-    background: url("../img/icons/icon-irc.png") 0 2px no-repeat; }
+  .row-community .where-to-find-us li {
+    padding: 0 0 8px 26px;
+    background: url("../img/icons/icon-irc.png") 0 4px no-repeat;
+    margin-bottom: 8px; }
+  .row-community .where-to-find-us li a {
+    padding-bottom: 2px; }
+  .row-community .where-to-find-us li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0; }
   .row-community .nine-col div.six-col {
     background: #fff;
     display: block; }

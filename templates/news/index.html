@@ -1,6 +1,9 @@
 {% extends "news/base_news.html" %}
 
-{% block title %}News{% endblock %}
+{% block title %}Ubuntu新闻{% endblock %}
+
+{% block meta_description %}来自友帮拓的最新优麒麟以及Ubuntu云、平板电脑、手机和服务器的新闻{% endblock %}
+{% block meta_keywords %}Ubuntu, 优麒麟, 新闻, 文章, Ubuntu操作系统, 操作系统, 平台, Linux, 发行版, OpenStack, Ubuntu OpenStack, Ubuntu云, 服务器, 平板电脑, 智能手机, 手机, Windows替代者, Mac替代者, 自由软件, 开放源码, 瘦客户端, Juju, MAAS, Landscape, Ubuntu Advantage, 下载Ubuntu, 部署, 准备, 服务协作, 服务, 商业支持, 付费支持, 长期支持, LTS, 14.04, Trusty Tahr, Icehourse, Utopic Unicorn{% endblock %}
 
 {% block extra_body_class %}news-home{% endblock %}
 
@@ -11,33 +14,44 @@
 {% block content %}
 <div class="row row-hero">
 	<div class="eight-col">
-		<h1>Ubuntu news</h1>
-		<p>Get the latest news, events and information about Ubuntu.</p>
+		<h1>Ubuntu新闻</h1>
+		<p>获取Ubuntu最新新闻事件和信息</p>
 	</div><!-- /.eight-col -->
 </div><!-- /.row -->
 
 <div class="row">
-	<h2>Ubuntu for phones and tablets</h2>
-		<ul class="">
-			<li><a href="/news/2014/06/11/mobile-asia-expo-mae-2014">Ubuntu将参展2014亚洲移动展</a></li>
-			<li><a href="/news/2014/02/20/canonical-announces-first-partners-to-ship-ubuntu-phones-around-the-globe">Canonical公司宣布魅族科技作为其首家合作伙伴发布Ubuntu手机</li>
-			<li><a href="/news/2013/02/19/ubuntu-unveils-tablet-experience-with-multi-tasking">Ubuntu多任务平板电脑体验</a></li>
+	<h2>Ubuntu手机和平板电脑</h2>
+		<ul>
+			<li><a href="/news/2014/06/04/showcasing-ubuntu-at-mobile-asia-expo-2014">Ubuntu将参展2014亚洲移动展&nbsp;&rsaquo;</a></li>
+			<li><a href="/news/2014/02/20/canonical-announces-first-partners-to-ship-ubuntu-phones-around-the-globe">Canonical公司宣布魅族科技作为其首家合作伙伴发布Ubuntu手机&nbsp;&rsaquo;</a></li>
+			<li><a href="/news/2013/02/19/ubuntu-unveils-tablet-experience-with-multi-tasking">Ubuntu多任务平板电脑体验&nbsp;&rsaquo;</a></li>
 		</ul>
 </div><!-- /.row -->
 
-<div class="row no-border">
-	<h2>中国人自己的Ubuntu</h2>
+<div class="row">
+	<h2>Ubuntu 麒麟</h2>
 		<ul class="">
-			<li><a href="/news/2013/04/25/ubuntukylin-1304-launches">UbuntuKylin 13.04 launches today</a></li>
+			<li><a href="/news/2014/04/22/ubuntu-14-04-lts">UbuntuKylin 14.04 LTS 正式发布!&nbsp;&rsaquo;</a></li>
+			<li><a href="/news/2013/10/17/ubuntukylin-13-10">面向 OEM 和消费者的 UbuntuKylin 13.10 版本今日正式发布&nbsp;&rsaquo;</a></li>
+			<li><a href="/news/2013/04/25/ubuntukylin-1304-launches">UbuntuKylin 13.04&nbsp;&rsaquo;</a></li>
 		</ul>
 </div><!-- /.row -->
 
 {% comment %}<div class="row no-border">
-	<h2>Ubuntu cloud</h2>
+	<h2>Ubuntu 云</h2>
 		<ul>
-			<li><a href="/news/juju-top-twelve">关于 Juju 的十二个热点问题</a></li>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
+			<li><a href="/news/juju-top-twelve">关于 Juju 的十二个热点问题&nbsp;&rsaquo;</a></li>
+			<li><a href="">&nbsp;&rsaquo;</a></li>
+			<li><a href="">&nbsp;&rsaquo;</a></li>
 		</ul>
 </div><!-- /.row -->{% endcomment %}
+
+<div class="row no-border">
+	<h2>Videos</h2>
+		<ul class="">
+			<li><a class="external" href="http://i.youku.com/u/UNTU5ODQxNjg0">Celebrate Ubuntu YouKy channel</a></li>
+			<li><a class="external" href="http://v.youku.com/v_show/id_XNTA2NDczNDE2">视频: 友帮拓手机 - 产业专题</a></li>
+		</ul>
+</div><!-- /.row -->
+
 {% endblock %}
