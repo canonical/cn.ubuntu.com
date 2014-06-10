@@ -106,7 +106,6 @@ body.tablet .safer-sharing {
   background: url("../img/tablet/image-tablet-safersharing-background.png") no-repeat scroll 0 0 #290E18;
   color: #fff;
 }
-
 /*	@section Get in touch and thank you
 -------------------------------------------------------------- */
 body.tablet-contact-us,
@@ -387,6 +386,12 @@ body.tablet {
       margin-top: 30px;
     }
   }
+  
+	body.tablet .safer-sharing {
+	  span {
+		  display: inherit;
+	  }
+	}
 }
 /* Large / Desktop viewport
 -------------------------------------------------------------- */
