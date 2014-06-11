@@ -269,12 +269,12 @@ footer #nav-global {
     color: $cool_grey;
     display: block;
     float: left;
+    margin-bottom: 0;
     overflow: hidden;
     padding: 8px 10px;
     text-align: left;
     white-space: normal;
     width: 100%;
-    margin-bottom: 0;
   }
 
   li a.external:after {
