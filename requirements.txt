@@ -1,0 +1,4 @@
+Django==1.6
+Werkzeug==0.9.4
+django-extensions==1.3.3
+-e bzr+ssh://bazaar.launchpad.net/fenchurch/3.0.0/#egg=fenchurch

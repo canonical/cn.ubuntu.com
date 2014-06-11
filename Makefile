@@ -38,7 +38,7 @@ setup-venv:
 	##
 	# Install python dependencies
 	##
-	env/bin/pip install -r requirements/dev.txt
+	env/bin/pip install -r requirements.txt
 
 	##
 	#
