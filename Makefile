@@ -8,6 +8,10 @@ develop:
 sass-watch:
 	bundle exec sass --watch static/css/styles.scss:static/css/styles.css &
 
+sass:
+	sass --update --force --style compressed static/css/styles.scss:static/css/styles.css
+	sass --update --force --style compressed static/css/core-print.scss:static/css/core-print.css
+
 # Install dependencies etc
 setup: setup-ruby setup-venv
 
