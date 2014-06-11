@@ -1443,7 +1443,8 @@ footer #nav-global {
   .for-mobile {
     display: none; }
 
-  body.homepage footer.global {
+  body.homepage footer.global,
+  footer.global {
     padding-top: 20px; } }
 /* Large / Desktop viewport
 -------------------------------------------------------------- */
