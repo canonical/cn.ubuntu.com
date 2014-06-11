@@ -1263,6 +1263,9 @@ header.banner {
 /* end header.banner */
 /* @section footer 
 -------------------------------------------------------------- */
+body.homepage footer.global {
+  padding-top: 0; }
+
 footer.global {
   background-color: transparent;
   box-shadow: 0 2px 2px -1px #D3D3D3 inset;
@@ -1440,8 +1443,8 @@ footer #nav-global {
   .for-mobile {
     display: none; }
 
-  footer.global {
-    padding-top: 30px; } }
+  body.homepage footer.global {
+    padding-top: 20px; } }
 /* Large / Desktop viewport
 -------------------------------------------------------------- */
 @media only screen and (min-width: 984px) {

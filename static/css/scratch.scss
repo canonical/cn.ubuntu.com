@@ -116,6 +116,9 @@ header.banner {
 
 /* @section footer 
 -------------------------------------------------------------- */
+body.homepage footer.global {
+    padding-top: 0;
+}
 
 footer.global {
 	background-color: transparent;
@@ -332,10 +335,11 @@ footer #nav-global {
 	}
 
 	.for-mobile	{ display:none }
-
-	footer.global {
-		padding-top: 30px;
+	
+	body.homepage footer.global {
+		padding-top: 20px;
 	}
+
 	
 } // end @media only screen and (min-width : 768px) 
 
