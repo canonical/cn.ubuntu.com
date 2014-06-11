@@ -4,3 +4,5 @@ db.sqlite3
 env
 .sass-cache
 pip-cache
+static/css/styles.css
+static/css/core-print.css
