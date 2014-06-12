@@ -1478,7 +1478,7 @@ html {
 body {
   background: url('../img/backgrounds/image-background-paper.png') repeat-y center top #f7f7f7;
   color: #333;
-  font-family: Ubuntu, Arial, "libra sans", sans-serif;
+  font-family: ubuntulight, Arial, "libra sans", sans-serif;
   font-weight: 300; }
 
 blockquote, q {
@@ -1713,7 +1713,7 @@ button,
 input,
 select,
 textarea {
-  font-family: Ubuntu,Arial,"libra sans",sans-serif;
+  font-family: ubuntulight,Arial,"libra sans",sans-serif;
   margin: 0;
   vertical-align: baseline;
   *vertical-align: middle; }
@@ -1746,7 +1746,7 @@ input[type="search"] {
   -webkit-appearance: none;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-  font-family: Ubuntu,Arial,"libra sans",sans-serif;
+  font-family: ubuntulight,Arial,"libra sans",sans-serif;
   font-weight: 300;
   outline: none;
   padding: 4px; }
@@ -1793,7 +1793,7 @@ form textarea {
   background: #fff;
   border: 1px solid #999;
   display: block;
-  font-family: Ubuntu,Arial,"libra sans",sans-serif;
+  font-family: ubuntulight,Arial,"libra sans",sans-serif;
   font-size: 1em;
   padding: 4px; }
 
@@ -1857,7 +1857,7 @@ form li {
 form button[type="submit"] {
   border: 0;
   display: inline-block;
-  font-family: Ubuntu, Arial, "libra sans", sans-serif;
+  font-family: ubuntulight, Arial, "libra sans", sans-serif;
   text-decoration: none;
   font-weight: 300; }
 
@@ -3614,7 +3614,7 @@ form input[type="submit"] {
   text-decoration: none;
   display: inline-block;
   margin: 0;
-  font-family: Ubuntu, Arial, 'libra sans', sans-serif;
+  font-family: ubuntulight, Arial, 'libra sans', sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-font-smoothing: subpixel-antialiased;
