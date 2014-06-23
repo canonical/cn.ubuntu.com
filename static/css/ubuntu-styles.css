@@ -4431,10 +4431,9 @@ ul.inline-logos {
     line-height: 60px;
     padding: 0 40px; }
     ul.inline-logos li img {
-      float: none;
-      vertical-align: middle;
-      width: auto;
-      height: 45px; } }
+    float: none;
+    vertical-align: middle;
+    width: auto; } }
 @media only screen and (min-width: 984px) {
   .inline-icons {
     text-align: left;

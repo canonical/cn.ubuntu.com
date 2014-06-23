@@ -8,7 +8,7 @@
 
 <meta charset="UTF-8" />
 <meta name="description" content="{% block meta_description %}Ubuntu 是一个开源的软件平台。应用广泛，包括智能手机，平板电脑，PC，服务器和云&#12290;{% endblock %}" />
-<meta name="keywords" content="{% block meta_keywords %}Ubuntu, Ubuntu Kylin/优麒麟, Ubuntu 操作系统, OS, 平台, Linux, 分布, OpenStack, Ubuntu OpenStack, Ubuntu 云, 服务器, 平板电脑, 智能手机, 电话, Windows 替代, 苹果替代,免费软件, 开源软件, 瘦终端, Juju, MAAS, Landscape, Ubuntu Advantage, 下载 Ubuntu, 部署, 配置, 服务编排, 服务, 商务支持, 付费服务, 长期支持, LTS, 14.04, Trusty Tahr, Icehouse, Utopic Unicorn{% endblock %}" />
+<meta name="keywords" content="{% block meta_keywords %}Ubuntu, Ubuntu Kylin, 中国, 操作系统, OS, PC, 平台, Linux, 行版, OpenStack, Ubuntu OpenStack, Ubuntu 云, 服务器, 平板电脑, 智能手, 电话, Windows 替代, 苹果替代, 自由软件, 开源软件, 瘦服务器, Juju, MAAS, Landscape, Ubuntu Advantage, 下载 Ubuntu, 部署, 配置, 服务编排, 服务, 商务服务, 付费服务, 长期支持, LTS, 14.04, Trusty Tahr, Icehouse{% endblock %}" />
 <meta name="author" content="Canonical" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -64,12 +64,12 @@
 			<li>
 				<a{% if level_1 == 'tablet' %} class="active"{% endif %} href="/tablet">平板电脑</a>
 			</li>
-			<!-- <li>
+			<li>
 				<a{% if level_1 == 'server' %} class="active"{% endif %} href="/server">Server</a>
-			</li> -->
-			<!-- <li>
-				<a{% if level_1 == 'cloud' %} class="active"{% endif %} href="/cloud">Cloud</a>
-			</li> -->
+			</li>
+			<li>
+				<a{% if level_1 == 'cloud' %} class="active"{% endif %} href="/cloud">云</a>
+			</li>
 			<li>
 				<a{% if level_1 == 'download' %} class="active"{% endif %} href="/download">下载</a>
 			</li>
@@ -86,7 +86,7 @@
 {% endblock header_banner %}
 </header>
 <div class="wrapper">
-<div id="main-content" class="inner-wrapper">
+<main id="main-content" class="inner-wrapper">
 {% comment %}
 {% if level_1 %}
 {% block second_level_nav %}
@@ -100,7 +100,7 @@
 {% endblock outer_content %}
 {% endblock content_container %}
 
-</div><!-- /.inner-wrapper -->
+</main>
 </div><!-- /.wrapper -->
 
 <!-- footer content goes here -->
