@@ -35,6 +35,9 @@ body.cloud-home {
 @media only screen and (min-width : 984px) {
 
 	body.cloud-home {
+		.row-hero {
+			padding-bottom: 40px;
+		}
 		.row-cloud-tools .landscape img {
 			margin-top: -117px;
 		}
