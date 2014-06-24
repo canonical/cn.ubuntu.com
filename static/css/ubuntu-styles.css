@@ -4052,7 +4052,7 @@ div.row-image-centered span,div.box-image-centered span,div.row.row-image-center
 div.row-image-centered span img,div.box-image-centered span img,div.row.row-image-centered span img {
 	height:auto;
 	max-width:100%;
-	//display:block;
+	/*display:block;*/
 	padding:0;
 	margin:0 auto;
 	margin-bottom:20px;
