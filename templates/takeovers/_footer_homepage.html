@@ -14,24 +14,26 @@
 
 
 <section class="row strip row-aux no-border">
-		<div class="strip-inner-wrapper">
-	{# ================ A better smartphone experience ================ #}
-		<a href="/phone">
-			<div class="five-col text-center">
-				<img alt="" src="{{ STATIC_URL }}img/homepage/image-phone.png" />
-			</div>
-			<div class="seven-col last-col">
-					<h2>更佳智能手机体验&nbsp;&rsaquo;</h2>
-					<p>Ubuntu 使所有人能更容易地找到和使用自己的移动内容&#12290;</p>
-			</div><!-- /.seven-col -->
-		</a>
-	{% comment %} {# ================ Number one for cloud ================ #}
+	<div class="strip-inner-wrapper">
+		{# ================ A better smartphone experience ================ #}
+		<div class="six-col">
+			<a href="/phone">
+				<h2>更佳智能手机体验&nbsp;&rsaquo;</h2>
+				<p>Ubuntu 使所有人能更容易地找到和使用自己的移动内容&#12290;</p>
+				<div class="text-center">
+					<img alt="" src="{{ STATIC_URL }}img/homepage/image-phone.png" />
+				</div>
+			</a>
+		</div>
+		{# ================ Number one for cloud ================ #}
 		<div class="six-col last-col">
-			<h2>头号云服务平台</h2>
-			<p>OpenStack Icehouse，还提供最好的工具和五年支持服务&#12290;</p>
+			<a href="/cloud">
+				<h2>头号云服务平台</h2>
+				<p>OpenStack Icehouse，还提供最好的工具和五年支持服务&#12290;</p>
 				<div class="text-center">
 					<img alt="" src="{{ STATIC_URL }}img/homepage/image-cloud.png" />
 				</div>
-		</div>{% endcomment %}
+			</a>
+		</div>
 	</div><!-- /.strip-inner-wrapper -->
 </section><!-- /.row -->

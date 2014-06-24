@@ -1,6 +1,16 @@
-.server-home ul.inline-logos li img {
-    height: 45px;
-}
+.server-home {
+	ul.inline-logos li img {
+	    height: 45px;
+	}
+	
+	.inline-icons {
+		text-align: center;
+		
+		li {
+			text-align: center;
+		}
+	}
+} //server-home
 
 //.row-hyperscale {
 	//background: url('../img/server/image-server-hyperscale.svg') 100% 60px no-repeat;

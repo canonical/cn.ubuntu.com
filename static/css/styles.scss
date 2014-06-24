@@ -18,16 +18,19 @@
 
 	Colour definitiions are in /sites/core/static/core-constants.scss
 	-----------------------------------------------------------------
-	$ubuntu_orange:			#dd4814; ubuntu orange (used for text links also on any site except canonical)
+	$ubuntu_orange:				#dd4814; ubuntu orange (used for text links also on any site except canonical)
 	$canonical_aubergine:	#772953; @warmcanonical aubergine
-	$light_aubergine:		#77216f; light aubergine (consumer)
-	$mid_aubergine:			#5e2750; mid aubergine (both)
-	$dark_aubergine:		#2c001e; dark aubergine (enterprise)
-	$warm_grey:				#aea79f; warm grey
-	$cool_grey:				#333333; cool grey
-	$light_grey:			#f7f7f7; light grey
+	$light_aubergine:			#77216f; light aubergine (consumer)
+	$mid_aubergine:				#5e2750; mid aubergine (both)
+	$dark_aubergine:			#2c001e; dark aubergine (enterprise)
+	$warm_grey:						#aea79f; warm grey
+	$cool_grey:						#333333; cool grey
+	$light_grey:					#f7f7f7; light grey
 -----------------------------------------------------------------
 -------------------------------------------------------------- */
+
+@import "ubuntu-styles.css";
+@import "global.css";
 
 @import "../fonts/font.css";
 @import "core-constants";
