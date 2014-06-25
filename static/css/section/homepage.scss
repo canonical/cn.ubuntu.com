@@ -314,3 +314,16 @@ body.homepage {
     }
   }
 }
+
+body.homepage {
+	.box {
+  	@include rounded_corners(0);
+		border: none;
+		border-top: 1px dotted #AEA79F;
+		background-color: none;
+		background: none;
+		margin-top: 20px;
+		padding: 20px 0 0;
+	}
+
+} // body.homepage-kylin
