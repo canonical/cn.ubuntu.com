@@ -56,6 +56,14 @@ setup-venv:
 	#
 	##
 
+rebuild-dependencies-cache:
+	rm -rf pip-cache
+	bzr branch lp:~webteam-backend/ubuntu-chinese-website/dependencies pip-cache
+	pip install --exists-action=w --download pip-cache/ -r requirements/standard.txt
+	bzr commit pip-cache/ -m 'automatically updated chinese requirements'
+	bzr push --directory pip-cache lp:~webteam-backend/ubuntu-chinese-website/dependencies
+	rm -rf pip-cache src
+
 # Alises
 
 it:
