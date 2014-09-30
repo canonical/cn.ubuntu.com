@@ -1587,11 +1587,11 @@ a:hover,a:active,a:focus {
 }
 
 a.link-arrow:after {
-	content:"\0000a0â€º";
+	content:"\0000a0Ã¢â¬Âº";
 }
 
 nav ul li h2 a:after {
-	content:"\0000a0â€º";
+	content:"\0000a0Ã¢â¬Âº";
 }
 
 nav ul li a:after,.carousel ul li a:after,ul li p a:after {
@@ -2409,6 +2409,26 @@ div.box-image-centered span img.priority-0,div.row-image-centered span img.prior
 	img.touch-border {
 		float:left;
 		margin-bottom:-30px;
+	}
+	/* 
+		alternative to row-image-centered
+		requires equal-height class on row 
+		add align-vertically to the div containing the image
+		http://caniuse.com/transforms2d
+	*/
+	.js .align-vertically {
+		-moz-transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		
+		img, 
+		div {
+		  -ms-transform: translateY(-50%); // for IE9
+		  -webkit-transform: translateY(-50%);
+		  position: relative;
+		  top: 50%;
+		  transform: translateY(-50%);
+		}
 	}
 }
 
