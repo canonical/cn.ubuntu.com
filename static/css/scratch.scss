@@ -13,12 +13,20 @@
 $header_bg: $canonical_aubergine;
 //$header_bg: $ubuntu_orange;
 
-$nav_bg:			#f0f0f0;
-$nav_link_color:	#333;
-$nav_border_dark:	#d4d7d4;
-$nav_border_light:	#f2f2f4;
-$nav_hover_bg:      #d0d0d0;
-$nav_active_bg:     #ddd;
+$nav_bg:								#f0f0f0;
+$nav_link_color:				#333333;
+$nav_border_dark:				#d4d7d4;
+$nav_border_light:			#f2f2f4;
+$nav_hover_bg:      		#d0d0d0;
+$nav_active_bg:     		#dddddd;
+$light-grey:						#f7f7f7;
+$ubuntu-orange:					#dd4814;	
+$canonical-aubergine:		#772953;
+$light-aubergine:				#77216f;
+$mid-aubergine:					#5E2750;
+$dark-aubergine:				#2c001e;
+$warm-grey:							#888888;
+$cool-grey:							#333333;
 
 
 /* @section general 
@@ -51,12 +59,12 @@ header.banner {
 		overflow: visible;
 		ul {
 			a.active {
-				background-color: #333;
+				background-color: $cool-grey;
 			}
 		}
 		
 		li ul {
-		    background: #F7F7F7;
+		    background: $light-grey;
 		    border: 1px solid #D5D5D5;
 		    border-radius: 10px;
 		    box-shadow: 0 2px 2px -1px #777;
@@ -77,7 +85,7 @@ header.banner {
 		li ul li a:link, 
 		li ul li a:visited {
 		    border: 0 none;
-		    color: #333333;
+		    color: $cool-grey;
 		    padding: 0 0 11px 14px;
 		    text-align: left;
 		    width: 185px;
@@ -86,7 +94,7 @@ header.banner {
 		li ul li a:hover {
 		    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
 		    box-shadow: none;
-		    color: #DD4814;
+		    color: $ubuntu-orange;
 		}
 
 		li:hover ul {
@@ -101,7 +109,7 @@ header.banner {
 		}		
 		
 		ul li a:hover {
-	  	background: darken(#F7F7F7, 5%);
+	  	background: darken($light-grey, 5%);
 		}
 
 		

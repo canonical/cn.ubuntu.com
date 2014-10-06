@@ -1,0 +1,44 @@
+footer.global .list--social {
+
+	
+	&__item {
+		height: 37px;
+		margin-right: 20px;
+		padding: 0;
+		text-indent: -999em;
+		width: 37px;
+		float: left;
+		display: inline-block;
+		
+		&:after { 
+			content: " " !important; 
+		}
+		
+		a {
+			display: block;
+			height: 37px;
+			width: 37px;
+			margin: 0;
+			overflow: hidden;
+		}
+		
+		&--wechat a {
+			background: url('../img/icons/icon-wechat.svg') no-repeat;
+		}
+
+		&.active a {
+			background-image: 
+				url('../img/icons/icon-wechat.svg'),
+				url('../img/desktop/QR-Code-wechat-3.png');
+			background-repeat: no-repeat;
+			background-position: left bottom, right top;
+			width: 80px;
+		}
+	
+		&--weibo a {
+			background: url('../img/icons/icon-weibo.svg') no-repeat;
+		}
+		
+	} // &__item
+	
+} // footer.global .list--social

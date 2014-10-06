@@ -276,6 +276,10 @@ body.homepage {
 
   }
   @media only screen and (min-width : 984px) {
+	  footer.global .wrapper {
+		  width: 984px;
+		  margin: 0 auto;
+	  }
     .row {
       padding: 40px 0;
     }

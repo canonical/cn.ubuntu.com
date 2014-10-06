@@ -342,11 +342,23 @@ core.svgFallback = function() {
 	}
 };
 
+core.socialLinks = function() {
+	if (document.documentElement.clientWidth > 769) {
+		Y.one('.list--social__item--wechat').on("click", function(e) {
+			if(!Y.one('.list--social__item--wechat').hasClass('active')){ 
+				e.preventDefault();
+			}
+			this.toggleClass('active');
+		});
+	}
+};
+
 
 core.setupAccordion();
 core.resizeListener();
 core.mobileNav();
 //core.cookiePolicy();
+core.socialLinks();
 core.setupGlobalNavAccordion();
 core.setupAnimations();
 core.setupHtmlClass();
