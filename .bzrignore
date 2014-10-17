@@ -6,3 +6,4 @@ env
 pip-cache
 static/css/styles.css
 static/css/core-print.css
+*.css.map
