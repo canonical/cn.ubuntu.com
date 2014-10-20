@@ -16,7 +16,7 @@ sys.path.append(BASE_DIR)
 
 os.environ.setdefault(
     "DJANGO_SETTINGS_MODULE",
-    "ubuntu-chinese-website.settings"
+    "webapp.settings"
 )
 
 # third party
@@ -25,4 +25,3 @@ from dj_static import Cling
 
 application = get_wsgi_application()
 application = Cling(get_wsgi_application())
-
