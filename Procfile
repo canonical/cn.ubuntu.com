@@ -1,1 +1,1 @@
-web: gunicorn webapp.wsgi:application
+web: make dokku-start

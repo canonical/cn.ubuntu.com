@@ -15,6 +15,7 @@ endef
 ##
 
 ENVPATH=${VIRTUAL_ENV}
+DEPENDENCIES_REPOSITORY="bzr branch lp:~webteam-backend/ubuntu-chinese-website/dependencies pip-cache"
 VEX=vex --path ${ENVPATH}
 
 ifeq ($(ENVPATH),)
@@ -26,7 +27,9 @@ ifeq ($(PORT),)
 endif
 
 # Phone targets (don't correspond to files or directories)
-.PHONY: help develop setup dev-server watch-sass sass 
+.PHONY: help develop setup dev-server watch-sass sass update-env create-env
+.PHONY: install-requirements install-dependencies apt-dependencies brew-dependencies
+.PHONY: clean clean-all rebuild-dependencies-cache 
 
 help:
 	$(info ${HELP_TEXT})
@@ -59,7 +62,7 @@ watch-sass:
 # Build SASS
 ##
 sass:
-	sass --force --style compressed --update static/css/
+	sass --force --style compressed --update static/css
 
 ##
 # Get virtualenv ready
@@ -80,7 +83,7 @@ create-env:
 # Only if inside a virtualenv
 ##
 install-requirements:
-	if [ "${VIRTUAL_ENV}" ]; then pip install -r requirements/dev.txt; fi
+	if [ "${VIRTUAL_ENV}" ]; then pip install --exists-action=w -r requirements/dev.txt; fi
 
 ##
 # Install required system dependencies
@@ -103,6 +106,37 @@ brew-dependencies:
 	if [ ! $$(command -v sass) ]; then sudo gem install sass; fi
 
 ##
+# Clean mojo
+##
+pip-cache:
+	if bzr info pip-cache > /dev/null 2>&1; then \
+		bzr branch ${DEPENDENCIES_REPOSITORY} pip-cache; \
+	else \
+		bzr pull --directory pip-cache; \
+	fi
+
+##
+# Rebuild the pip requirements cache, for non-internet-visible builds
+##
+rebuild-dependencies-cache:
+	$(MAKE) pip-cache
+	pip install --exists-action=w --download pip-cache/ -r requirements/standard.txt
+	bzr commit pip-cache/ -m 'automatically updated ubuntu-china requirements'
+	bzr push --directory pip-cache lp:~webteam-backend/ubuntu-chinese-website/dependencies
+	$(MAKE) clean-pip-cache
+
+##
+# For dokku - build sass and run gunicorn
+##
+dokku-start: sass gunicorn
+
+##
+# Run the gunicorn app
+##
+gunicorn:
+	gunicorn webapp.wsgi
+
+##
 # Delete any generated files that effect the site
 ##
 clean:
@@ -112,61 +146,13 @@ clean:
 ##
 # Also delete pip-cache
 ##
-clean-all: clean
-	rm -rf pip-cache
-
-
-setup-venv:
-	##
-	# Install virtualenv dependencies
-	##
-	if [ ! $$(command -v pip) ]; then sudo apt-get install python-pip; fi
-	if [ ! $$(command -v virtualenv) ]; then sudo apt-get install python-virtualenv; fi
-
-	##
-	# Make virtualenv directory if it doesn't exist
-	##
-	if [ ! -d "env" ]; then virtualenv env; fi
-
-	##
-	# Install python dependencies
-	##
-	env/bin/pip install -r requirements/standard.txt
-
-	##
-	#
-	# Now run:
-	#
-	# > source env/bin/activate
-	#
-	# And when you're done:
-	#
-	# > deactivate
-	#
-	##
-
+clean-all: clean clean-pip-cache
 
 ##
-# Rebuild the pip requirements cache, for non-internet-visible builds
+# Clean pip-cache
 ##
-rebuild-dependencies-cache:
-	rm -rf pip-cache
-	bzr branch lp:~webteam-backend/ubuntu-chinese-website/dependencies pip-cache
-	pip install --exists-action=w --download pip-cache/ -r requirements/standard.txt
-	bzr commit pip-cache/ -m 'automatically updated chinese requirements'
-	bzr push --directory pip-cache lp:~webteam-backend/ubuntu-chinese-website/dependencies
-	rm -rf pip-cache src
-
-##
-# For dokku - build sass and run gunicorn
-##
-dokku-start: sass run-gunicorn
-
-##
-# Run the gunicorn app
-##
-run-gunicorn:
-	gunicorn webapp.wsgi
+clean-pip-cache:
+	rm -rf pip-cache src/
 
 # The below targets
 # are just there to allow you to type "make it so"
