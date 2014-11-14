@@ -6,10 +6,10 @@ Ubuntu-china.cn website project
 
 Usage:
 
-> make build       # Build the ubuntu-china docker image
-> make run         # Run the app from the ubuntu-china docker image
+> make run         # Prepare Docker images and run the Django site
 
 # or, if you want more control
+> make build       # Build the ubuntu-china docker image
 > make watch-sass  # Setup the sass watcher, to compile CSS
 > make run-site    # Use Docker to run the website
 
@@ -31,18 +31,21 @@ endif
 help:
 	$(info ${HELP_TEXT})
 
+# Use docker to run the sass watcher and the website
+run:
+	${MAKE} build
+	${MAKE} watch-sass &
+	${MAKE} run-site
+
 # Build the ubuntu-china docker image
 build:
 	docker build -t ubuntu-china .
 
-# Use docker to run the sass watcher and the website
-run:
-	${MAKE} watch-sass &
-	${MAKE} run-site
-
+# Run the Django site using the docker image
 run-site:
 	docker run -p 0.0.0.0:${PORT}:8000 -v `pwd`:/app -w=/app ubuntu-china ./manage.py runserver 0.0.0.0:8000
 
+# Watch sass using our sass docker image
 watch-sass:
 	docker run -v `pwd`:/app ubuntudesign/sass sass --debug-info --watch /app/static/css
 
