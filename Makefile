@@ -69,6 +69,10 @@ rebuild-dependencies-cache:
 	bzr push --directory pip-cache ${dependency_repo}
 	$(MAKE) clean-pip-cache
 
+# Build the sass files once, and in compact mode
+sass:
+	sass --style compact --update static/css
+
 # Delete any generated files that effect the site
 clean:
 	rm -rf env .sass-cache
