@@ -44,7 +44,7 @@ run-site:
 	docker run -p 0.0.0.0:${PORT}:8000 -v `pwd`:/app -w=/app ubuntu-china ./manage.py runserver 0.0.0.0:8000
 
 watch-sass:
-	docker run -v `pwd`:/app saulshanabrook/sass sass --debug-info --watch /app/static/css
+	docker run -v `pwd`:/app ubuntudesign/sass sass --debug-info --watch /app/static/css
 
 ##
 # Targets for deployment
