@@ -3,10 +3,12 @@ from fenchurch import TemplateFinder
 from views import custom_404, custom_500
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import HttpResponse
 
 # Standard patterns
 urlpatterns = patterns(
     '',
+    url(r'^ccotp/chinacachehealthtest.txt$', lambda r: HttpResponse('UP')),
     url(r'^(?P<template>.*)$', TemplateFinder.as_view()),  # Fenchurch
 )
 
