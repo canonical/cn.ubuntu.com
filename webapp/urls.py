@@ -8,6 +8,7 @@ from django.http import HttpResponse
 # Standard patterns
 urlpatterns = patterns(
     '',
+    # chinacachehealthtest is a dummy file that our china cache partner needs.
     url(r'^ccotp/chinacachehealthtest.txt$', lambda r: HttpResponse('UP')),
     url(r'^(?P<template>.*)$', TemplateFinder.as_view()),  # Fenchurch
 )
