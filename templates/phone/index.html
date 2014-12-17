@@ -2,7 +2,7 @@
 
 {% block title %}手机{% endblock %}
 {% block meta_description %}Ubuntu 的用户界面美观而、易用，是移动业界久候的新生类开源操作系统。{% endblock %}
-{% block meta_keywords %}ubuntu, Ubuntu, 乌班图, 手机操作系统, 手机, 智能手机, 电话, OS, operating system, 操作系统, 平台, 开源, open source, 开源软件, Linux, android, 安卓, oem, OEM, 触屏,设备, 电信运营商, 多重触摸, form factor, 外形规格, 设计规格, 手势识别, PC, 个人电脑, desktop, 桌面电脑, convergence, 融合, 技能融合, 软件集合, 硬件集合, 商企, ios, 运营商, 服务层面开放, scope, SCOPE, Scope, app, APP, 应用, 应用开发, bq, meizu, 魅族{% endblock %}
+{% block meta_keywords %}Ubuntu, 乌邦图, 电话, 智能手机, 移动手机, 手机, OS, 操作系统, 平台, 开源软件, Linux, 内容, 服务, Canonical, OEM, 服务界面,  Android, 触摸, 手握, 多重触摸, 边缘导航, Ubuntu Scopes, 设备, 种类, 姿势, 边幻效果, PC, 桌面, 融合, Scope, 新范例, 新一代, 移动生态环境{% endblock %}
 
 {% block extra_body_class %}phone-home{% endblock %}
 
@@ -13,167 +13,102 @@
 {% block content %}
 <div class="row row-hero">
 	<div class="five-col">
-		<h1>Ubuntu 手机系统</h1>
-		<p> Ubuntu 使用户能更容易地发现和访问 移动内容和服务，无论它们是存 储在手机上、网络上还是云中&#12290;</p>
+		<h1>Ubuntu 手机</h1>
+		<p>Ubuntu提供一种新的手机玩法 &dash; 它远离了传统应用图标网格形式。</p>
 	</div><!-- /.five-col --> 
 	<div class="seven-col last-col text-center">
 		<img src="{{ STATIC_URL }}img/phone/image-phone-overview.jpg" width="567" height="302" alt="Ubuntu phones with different state of screens" />
 	</div>
 </div><!-- /.row -->
 
-{# ================ Content and apps at your fingertips ================ #}
+{# ================ Engaging experiences delivered directly to the screen ================ #}
 <div id="fingertips" class="row">
-	<div class="eight-col">
-		<h2>内容和应用程序触手可及</h2>
-		<p>使用智能炫酷 Scopes 直接搜索内容和应用程 序。Scopes 能将内容巧妙地分类（如视频和 音乐），能同时显示网络搜索结果和手机上存 储的内容。这意味着用户可以按其思考方式找 到内容：按类型而不是按位置。这一可视化、 快速和轻松的查找新方式能帮助用户找到所需 内容，也方便运营商展示内容&#12290;</p>
-	</div>
-	<div class="twelve-col"><!--TODO: update image -->
-		<div class="naturallyneat-image-load" data-width="924" data-src="{{ STATIC_URL }}img/phone/image-phone-naturallyneat{width}.jpg" data-alt="Ubuntu phones side by side show the consistancy between different screens"></div>
-		<script>
-		    new Imager('.naturallyneat-image-load', {
-		        availableWidths: {
-		            320: '-small',
-		            924: '-medium'
-		        }
-		    });
-		</script>
-	</div>
-</div><!-- /.row -->
-
-{# ================ A life in pictures ================ #}
-<div id="pictures" class="row row-pictures no-border edge-top"><!-- may also need phone-photos -->
-	<div class="six-col">
-		<div class="pictures-landscape"><img src="{{ STATIC_URL }}img/phone/image-phone-landscape.jpg" alt="" width="410" height="212" /></div>
-		<div></div>
-	</div>
-	<div class="edge-magic-content six-col last-col">
-		<h3>照片人生</h3>
-		<p>Gallery 让您比以前更轻松地整理、查找和分 享您的照片。现在，用户可以专注处理他们的 照片—只在需要时才调入控制面板&#12290;</p>
-	</div>
-</div><!-- / .row -->
-
-{# ================ Favourite apps ================ #}
-<div id="favourite-apps" class="row no-border edge-magic edge-left">
-	<div class="edge-magic-content six-col">
-		<h3>最喜欢的应用</h3>
-		<p>只需从屏幕左边缘轻滑指尖即可显示  Launcher（一个显示用户最喜爱的应用程序的 工具栏）。瞬间呈现，只需轻轻一触欢迎屏幕 或任何应用程序&#12290;</p>
-	</div>
-	<div class="six-col text-center last-col">
-		<div class="slider-animation edge-magic-animation">
-			<div class="screen">
-				<div class="screen-fade"></div>
-				<div class="launcher"></div>
-			</div>
-		</div>
-		<a href="#" class="slideless replay"></a>
-	</div>
-</div><!-- /.row -->
-
-{# ================ Always running ================ #}
-<div id="always-running" class="row no-border edge-magic edge-top">
-	<div class="six-col">
-		<div class="slider-animation go-back">
-			<div class="screen">
-				<div class="gallery-screen"></div>
-				<div class="camera-screen"></div>
-			</div>
-		</div>
-		<a href="#" class="slideless replay"></a>
-	</div>
-	<div class="edge-magic-content six-col last-col">
-		<h3>始终运行</h3>
-		<p>有正在运行的应用程序吗？从左至右滑动整个 屏幕即可显示所有正在运行的应用程序；从屏 幕右边滑动可立即显示您最后使用过的应用程 序。正在运行的应用程序之间的切换从未如此 方便和快捷&#12290;</p>
-	</div>
-</div><!-- /.row -->
-
-{# ================ Content not controls ================ #}
-<div id="content-not-controls" class="row row-notifications edge-magic edge-left  no-border">
-	<div class="edge-magic-content six-col">
-		<h3>内容隐藏控件</h3>
-		<p>从手机的下边缘往上轻轻一扫，即可显示当前 使用的应用程序特有的控件。不扫则不会显示 任何控件，让您全身心地专注于照片、网页、 音乐、消息和应用程序等重要事务&#12290;</p>
+	<div class="append-one five-col priority-0">
+		<img src="{{ STATIC_URL }}img/phone/image-apps.jpg" />
+		<img src="{{ STATIC_URL }}img/phone/image-video.jpg" />
 	</div>
 	<div class="six-col last-col">
-		<div class="slider-animation content-controls">
-			<div class="screen">
-				<div class="gallery-screen"></div>
-				<div class="gallery-controls"></div>
-			</div>
-		</div>
-		<a href="#" class="slideless replay"></a>
+		<h2>Ubuntu Scopes &dash; 贴心用户的手机新体验</h2>
+		<p>首次，将有一台这样的手机， 它会围绕着你提供对你来说最重要的内容和服务。 是时候向每天重复开关多个应用的时代说再见了 - 让Ubuntu Scopes把一切都直接带到你的屏幕上吧。</p>
+		<p>Ubuntu Scopes是Ubuntu特有的一款范例, 它是为能够直接将内容和服务分类呈现在屏幕上定制而成的。 它为用户提供了一个丰富、快速且不碎片化的体验，同时为开发者们提供了一种新的创造类似传统应用的方式，但却更加容易被发现、简便创建及维护、而且可以被深入的结合到手机上。</p>
+		<p>Ubuntu手机会默认自带几个类型的主页屏幕，包括音乐、视频和新闻， 这些内容将会定义设备自身的体验。这些集合类的Scopes将不同渠道源的内容和服务用统一的体验展现出来。 例如， 视频Scope将会呈现不同渠道源的视频内容， 音乐Scope能拥有不同音乐提供商的音乐 - 他们都会被呈现在一个Scope之内</p>
+		<p>每个单独的渠道源同样可以展开成为一个类似传统应用形式的完全独立品牌化的体验。 对于开发者来说， 这也是创造丰富移动体验最快捷的途径， 相比传统应用只需一小部分精力来完成。 通过使用现有Scope集合来展
 	</div>
-</div><!-- / .row -->
+</div><!-- /.row -->
 
-{# ================ Clever control of settings ================ #}
-<div id="clever-controls" class="row row-notifications edge-magic">
-	<div class="six-col text-center">
-		<div class="slider-animation notification-slider">
-			<div class="screen">
-				<div class="settings-screen"></div>
-				<div class="slider-knot"></div>
-			</div>
-		</div>
-		<a href="#" class="slideless replay"></a>
-	</div>
-	<div class="edge-magic-content six-col last-col">
-		<h3>巧妙控制设置</h3>
-		<p>在 Ubuntu 系统下，用户可以在方便的时候随 时查看全部通知—只需从屏幕顶部边缘向下滑 动即可。用户可以回复文字或图片信息、在不 离开通知栏的情况下回电话、检查手机状态和 访问核心设置&#12290;</p>
-	</div>
-</div><!-- / .row -->
 
-{# ================ Empowering OEMs and operators ================ #}
-<div id="operators-and-oems" class="row">
-	<h2>赋权原始设备制造商和运营商</h2>
+{# ================ Life on the edge ================ #}
+<div class="row row-edge">
+	<h2 class="twelve-col">边缘导航</h2>
+	
+	<div class="three-col">
+
+		<div class="first swipe-from-left">
+				<h3>从左向内划</h3>
+				<p class="three-col">从屏幕左边缘向内轻划，可以展开启动栏，提供快捷访问你最喜爱的内容和应用。</p>
+			<div class="three-col">
+				<img class="right" src="{{ STATIC_URL }}img/phone/image-swipe-from-left.png" alt="" />
+			</div>
+		</div><!--/#swipe-from-left -->
+
+		<div class="three-col swipe-from-top">
+			<div class="three-col">
+				<img src="{{ STATIC_URL }}img/phone/image-swipe-from-top.png" alt="" />
+			</div>
+			<h3>从上往下划</h3>
+			<p class="three-col">从屏幕上边缘往下划，可以访问提示栏和关键手机设置，而且这个操作不会打断你正在进行的某个事情。</p>
+		</div><!--/#swipe-from-top -->
+		
+	</div><!-- /.three-col -->
+	
+	<div class="six-col align-center">
+		<img src="{{ STATIC_URL }}img/phone/phone-greeter-14.10.png" alt="" />
+	</div><!-- /.six-col -->
+	
+	<div class="three-col last-col">
+	
+		<div class="three-col first swipe-from-right">
+			<h3>从右向内划</h3>
+			<p class="three-col">从屏幕右边缘向内全幅划过，可以展开你所有正在运行的Scopes和应用。 屏幕内左右滑动可以在不同应用中切换。</p>
+			<div class="clearfix">
+				<img src="{{ STATIC_URL }}img/phone/image-swipe-from-right.png" alt="" />
+			</div>
+		</div><!-- /#swipe-from-right -->
+		
+		<div class="three-col swipe-from-bottom">
+			<div class="three-col">
+				<img class="right" src="{{ STATIC_URL }}img/phone/image-swipe-from-bottom.png" alt="" />
+			</div>
+			<h3>从下往上划</h3>
+			<p>当你想要看到所有控件时, 你只需要从屏幕最下边缘轻轻一划。</p>
+		</div><!-- /#swipe-from-bottom -->
+		
+	</div><!-- /.three-col -->
+
+</div><!-- /.row -->
+
+{# ================ Open for business partners a unique opportunity ================ #}
+<div class="row">
 	<div class="eight-col">
-		<p>Ubuntu 是使您拥有服务层所有权的唯一平 台。它提供了诸多选项，包括创建用户账户、默认内容和服务套餐&#12290;</p>
-		<p>它还让您有机会在手机上打上视觉识别品牌标 志和整合您自己的服务（如付款）（运营商计 费服务完整后端集成）&#12290;</p>
-		<p>Ubuntu 旨在推动服务和数据使用，与 4G/LTE </p>
-		<p>投资步调一致&#12290;</p>
+		<h2>为行业伙伴们开启的独特机遇</h2>
+		<p>对于移动运营商和硬件制造商来说除了硬件和连通性， 更加至关重要的是需要为用户创造价值，分异化以及新的盈利模式。 而当服务层是由平台主操控，或当所谓的开源仅仅是针对内核层面时；这都将是一个非常大的挑战。</p>
+		<p>Ubuntu手机平台是专门为实现您的生态环境而打造的。 它为运营商，硬件制造商和互联网公司提供了一个前所未有的机遇，它将整个服务层面都授权于行业伙伴们， 这包括用户身份、付费、整套数据生活服务、甚至应用商店。 而这一切都是为了保证在Ubuntu设备上能有一个一致，不碎片化的用户体验.</p>
 	</div>
-</div><!-- / .row -->
+</div>
 
 {# ================ Easy for developers to adopt ================ #}
-<div id="developers" class="row row-app-grid row-grey no-margin">
-	<div class="six-col priority-0">
-		<img width="498" height="373" src="{{ STATIC_URL }}img/phone/image-phone-aqualitycoreofapps.jpg" alt="收集关于Ubuntu的手机可用的应用程序顶部"/>
+<div class="row">
+	<div class="six-col align-center priority-0">
+		<img src="{{ STATIC_URL }}img/phone/image-developers.jpg" alt="收集关于Ubuntu的手机可用的应用程序顶部"/>
 	</div>
 	<div class="six-col last-col">
 		<h2>方便开发者采用</h2>
-		<p>应用合作伙伴和开发者可从多个切入点将内 容和服务搬到 Ubuntu 平台。Scopes 易于创 建，仅需最少的开发工作。采用 Qt 框架可开 发原生应用。由于使用 Webkit/Blink 渲染引擎 和用于脱机封装的 Apache Cordova API，现 有的 HTML5 应用可快速方便地移植&#12290;</p>
-		<p><a class="external" href="http://developer.ubuntu.com">访问 Ubuntu 开发者网站</a></p>
+		<p>应用合作伙伴和开发者可从多个切入点将内 容和服务带入 Ubuntu 平台。Scopes 易于创 建，仅需最少的开发工作。但它却可以将内容和服务在手机上最大限度的呈现出来。</p>
+		<p>而且通过使用Webkit/Blink渲染引擎和Apache Cordova API来进行离线封包，现有的HTML5应用可以快速方便地移植。丰富的本地应用则可以通过Qt框架来完成开发。</p>
+		<p><a href="http://developer.ubuntu.com" class="external">Visit the Ubuntu developer site&nbsp;&rsaquo;</a></p>
+		{# TODO: do we need this link?<p><a href="http://cn.developer.ubuntu.com" class="external">访问 Ubuntu 开发者网站&nbsp;&rsaquo;</a></p> #}
 	</div>
-</div><!-- / .row -->
-
-{# ================ Help shape the Ubuntu mobile strategy ================ #}
-<div id="cag" class="row">
-	<h2>帮助制定 Ubuntu 移动战略</h2>
-	<div class="twelve-col">
-		<ul class="inline cag-list">
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-h3g.png" width="160" height="80" alt="H3G" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-china-unicom.png" width="160" height="80" alt="China Unicom" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-deutsche-telekom.png" width="160" height="80" alt="Deutsche telekom" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-everything-everywhere.png" width="160" height="80" alt="Everywhere everywhere" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-korea-telecom.png" width="160" height="80" alt="Korea telecom" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-lg-uplus.png" width="160" height="80" alt="LG uplus" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-mtn.png" width="160" height="80" alt="MTN Group" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-portugal-telecom.png" width="160" height="80" alt="Portugal telecom" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-smart.png" width="160" height="80" alt="Smart" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-smartfren.png" width="160" height="80" alt="Smartfren" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-south-korea-telecom.png" width="160" height="80" alt="South Korea telecom" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-tmobile.png" width="160" height="80" alt="T Mobile" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-telecom-italia.png" width="160" height="80" alt="Telecom Italia" /></li>
-			<li class="box"><img src="{{ STATIC_URL }}img/logos/logo-telstra.png" width="160" height="80" alt="Telstra" /></li>
-			<li class="box verizon"><img src="{{ STATIC_URL }}img/logos/logo-verizon.png" width="160" height="80" alt="Verizon" /></li>
-			<li class="box last"><img src="{{ STATIC_URL }}img/logos/logo-vodafone.png" width="160" height="80" alt="Vodafone" /></li>
-		</ul>
-	</div>
-	<div class="six-col">
-		<p>Ubuntu 服务商顾问小组 (CAG) 欢迎中国移动运营商为 Ubuntu 移动战略出谋划策。CAG 会员会 提前收到机密简报并为我们提供行业洞察意见，确保 Ubuntu 能满足他们的需求&#12290;</p>
-	</div>
-	<div class="six-col last-col">
-		<p>CAG 会员有机会成为产品发布合作伙伴&#12290;</p>
-		<p><a class="external" href="http://www.ubuntu.com/phone/carrier-advisory-group">进一步了解如何加入 CAG</a></p>
-	</div>
-</div><!-- / .row -->
+</div>
 
 <div class="row no-border">
 	<div class="eight-col">

@@ -350,6 +350,15 @@ body.phone {
 			}
 		}
 
+    .row-edge {
+      .swipe-from-right,
+      .swipe-from-left {
+        margin-top: 100px;
+      }
+      .six-col img {
+        margin-top: -60px;
+      }
+    }
 	  	  	  
 	} // end body.phone
   
