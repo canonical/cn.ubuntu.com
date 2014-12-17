@@ -50,6 +50,10 @@ body.homepage {
   }
   .row-aux {
   	background-color: rgba(255, 255, 255, 0.6);
+    
+    img {
+      margin-top: 20px;
+    }
 	}
 
   .inner-wrapper .box li img { vertical-align: middle; }
@@ -90,18 +94,6 @@ body.homepage {
 
 	footer.global {
 		padding-top: 20px;
-	}
-	
-	.strip-inner-wrapper {
-	
-		div.six-col:first-of-type {
-			border-right: 1px dotted #888888;
-		}
-		
-		img {
-			margin-top: 20px;
-		}
-	
 	}
 
 } /* end body.homepage */
