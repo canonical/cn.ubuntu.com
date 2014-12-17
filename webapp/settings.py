@@ -17,8 +17,8 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = ['django_versioned_static_url']
 MIDDLEWARE_CLASSES = []
-ROOT_URLCONF = 'ubuntu-chinese-website.urls'
-WSGI_APPLICATION = 'ubuntu-chinese-website.wsgi.application'
+ROOT_URLCONF = 'webapp.urls'
+WSGI_APPLICATION = 'webapp.wsgi.application'
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = False
