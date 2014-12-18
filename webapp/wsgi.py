@@ -16,7 +16,7 @@ sys.path.append(BASE_DIR)
 
 os.environ.setdefault(
     "DJANGO_SETTINGS_MODULE",
-    "ubuntu-chinese-website.settings"
+    "webapp.settings"
 )
 
 # third party
