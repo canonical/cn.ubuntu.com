@@ -16,7 +16,11 @@ SECRET_KEY = 'o@kjnphb9#+3fl80i#$v$+0la3u^atow)b33h*bafbcwir0w04'
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = ['django_versioned_static_url']
-MIDDLEWARE_CLASSES = []
+MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
+)
 ROOT_URLCONF = 'webapp.urls'
 WSGI_APPLICATION = 'webapp.wsgi.application'
 LANGUAGE_CODE = 'en-us'
@@ -31,23 +35,9 @@ STATICFILES_FINDERS = ['django_static_root_finder.finders.StaticRootFinder']
 STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'error_file': {
-            'level': 'WARNING',
-            'filename': os.path.join(BASE_DIR, 'django-error.log'),
-            'class':'logging.handlers.RotatingFileHandler',
-            'maxBytes': 1 * 1024 * 1024,
-            'backupCount': 2
-        }
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['error_file'],
-            'level': 'WARNING',
-            'propagate': True
-        }
+CACHE_MIDDLEWARE_SECONDS = 3600 / 2
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
