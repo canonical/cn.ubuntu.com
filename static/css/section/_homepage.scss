@@ -372,6 +372,8 @@ body.phone-launch-takeover {
       
         .row-hero div.strip-inner-wrapper:before {
             background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
             content: " ";
             height: 100%;
             left: 0;
@@ -384,6 +386,8 @@ body.phone-launch-takeover {
     
         .row-hero div.strip-inner-wrapper:after {
             background-image: -moz-linear-gradient(right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+            background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+            background-image: linear-gradient(right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
             content: " ";
             height: 100%;
             position: absolute;
