@@ -338,6 +338,7 @@ body.phone-launch-takeover {
         
         .row-hero {
             background: url('../img/homepage/takeovers/phone.jpg') 55% 0 no-repeat;
+            background-size: cover;
             margin-top: 0;
             padding-bottom: 0;
             overflow: hidden;
@@ -368,36 +369,6 @@ body.phone-launch-takeover {
 } // end body.phone-launch-takeover
 
 body.phone-launch-takeover {  
-    @media only screen and (min-width : 1600px) {
-      
-        .row-hero div.strip-inner-wrapper:before {
-            background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-            background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-            background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-            content: " ";
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            transition-duration: 5s;
-            width: 18%;
-            z-index: 999;
-        }
-    
-        .row-hero div.strip-inner-wrapper:after {
-            background-image: -moz-linear-gradient(right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-            background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-            background-image: linear-gradient(right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-            content: " ";
-            height: 100%;
-            position: absolute;
-            right: 0;
-            top: 0;
-            transition-duration: 5s;
-            width: 16%;
-            z-index: 999;
-        }
-    } // @media only screen and (min-width : 1600px)
     
     @media only screen and (min-width : 768px) {
         #main-content .row-hero {
