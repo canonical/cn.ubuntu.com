@@ -1,7 +1,7 @@
 
 var ai = [{ url: "http://www.ubuntu.com", title:"Ubuntu" },
-{ url: "http://www.ubuntukylin.com", title:"Ubuntu 麒麟" },
-{ url: "http://cn.developer.ubuntu.com", title:"Developer" },
+{ url: "http://www.ubuntukylin.com", title:"优麒麟" },
+{ url: "http://cn.developer.ubuntu.com", title:"开发者站" },
 { url: "http://www.canonical.com", title:"Canonical" }];
 
 var more = [];
