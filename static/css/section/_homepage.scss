@@ -50,9 +50,14 @@ body.homepage {
   }
   .row-aux {
   	background-color: rgba(255, 255, 255, 0.6);
-    
+
     img {
       margin-top: 20px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 0.571em;
     }
 	}
 
@@ -326,16 +331,16 @@ body.homepage {
 
 // phone launch Feb 2015
 body.phone-launch-takeover {
-    
+
     header.banner {
         margin-bottom: 0;
         box-shadow: none;
     }
-    
+
     #main-content {
-        
+
         margin-top: 0;
-        
+
         .row-hero {
             background: url('../img/homepage/takeovers/phone.jpg') 55% 0 no-repeat;
             background-size: cover;
@@ -344,38 +349,38 @@ body.phone-launch-takeover {
             overflow: hidden;
             color: #fff;
             min-height: 840px;
-            
+
             a {
                 color: #fff;
             }
-            
+
             h1 {
                 margin-top: 40px;
                 font-size: 4.625em;
                 margin-bottom: 0;
             }
-            
+
             .intro {
                 font-size: 1.8em;
             }
-            
+
             .strap {
                 margin-top: 560px;
             }
         }
-        
+
     } // end #main-content
-    
+
 } // end body.phone-launch-takeover
 
-body.phone-launch-takeover {  
-    
+body.phone-launch-takeover {
+
     @media only screen and (min-width : 768px) {
         #main-content .row-hero {
-            
+
             background-position: 36% -160px;
             min-height: 730px;
-            
+
             h1 {
                 margin-top: 250px;
             }
@@ -385,22 +390,22 @@ body.phone-launch-takeover {
                 margin-left: 0;
                 width: 75%;
             }
-            
+
             .strap {
                 margin-top: 170px;
             }
         }
     }
-    
+
     @media only screen and (min-width : 984px) {
         .row-aux .bootstack a p {
             margin-bottom: 0;
         }
-    
+
         #main-content .row-hero {
-            
+
             background-position: 50% -160px;
-            
+
             img {
                 margin-top: 100px;
                 margin-left: 0;
@@ -410,3 +415,36 @@ body.phone-launch-takeover {
     }
 
 } // body.phone-launch-takeover
+
+
+.vivid-release-takeover {
+  header.banner {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  #main-content .row-hero {
+    background-image: url('../img/homepage/vivid-hero-takeover-medium.jpg');
+    background-size: cover;
+    background-position: right 55%;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    margin-top: -40px;
+    padding-top: 60px;
+  }
+
+  @media only screen and (min-width : 768px) {
+    #main-content .row-hero {
+      padding-top: 10%;
+      background-image: url('../img/homepage/vivid-hero-takeover.jpg');
+      min-height: 700px;
+    }
+  }
+
+  @media only screen and (min-width : 984px) {
+    #main-content .row-hero {
+      padding-top: 7%;
+    }
+  }
+}
