@@ -10,9 +10,10 @@ body.download {
 		padding-left: $gutter_width;
 		padding: 0;
 	}
-	
+
 	.inner-wrapper form button,
-	.inner-wrapper form .link-cta-download {
+	.inner-wrapper form .link-cta-download,
+	.inner-wrapper .link-cta-ubuntu {
 		@include font_size (19.5);
 		padding: 10px 14px;
 		border: 0;
@@ -21,8 +22,9 @@ body.download {
 		width: 100%;
 		margin-left: 0;
 		margin-bottom: 0.615em;
+		text-decoration: none;
 	}
-	
+
 	#main-content .row-background {
 		background: url("../img/backgrounds/image-background-wallpaper1404.jpg") no-repeat scroll 0 bottom #4B1827;
 		margin-top: 0;
@@ -34,7 +36,6 @@ body.download {
 		}
 		a:link,
 		a:visited {
-			text-decoration: underline;
 			color: #fff;
 		}
 		a:hover {
@@ -69,68 +70,68 @@ body.download {
 	background: #fff url('../img/backgrounds/background-dots.png');
 	color: $cool_grey;
 	padding: 40px 20px 20px;
-	
+
 	.six-col,
 	.nine-col {
 		padding: 20px;
 	}
-	
-	div.six-col, 
+
+	div.six-col,
 	div.eight-col, {
 		background: rgba(255,255,255,1);
 		position: relative;
 	}
-	
+
 	.where-to-find-us {
 	  background: #fff;
 	  margin: 0;
 	  padding: 15px 20px;
 	}
-	
+
 	.where-to-find-us ul {
 		margin-bottom: 0;
 	}
-	
+
 	.where-to-find-us h3 {
 		@include font_size (16);
 		border-bottom: 1px dotted $warm_grey;
 		padding-bottom: 10px;
 		margin-bottom: 10px;
 	}
-	
-	.where-to-find-us li { 
-		padding: 0 0 8px 26px; 
-		background: url("../img/icons/icon-irc.png") 0 4px no-repeat; 
+
+	.where-to-find-us li {
+		padding: 0 0 8px 26px;
+		background: url("../img/icons/icon-irc.png") 0 4px no-repeat;
 		margin-bottom: 8px;
 	}
 
-	.where-to-find-us li a { 
-		padding-bottom: 2px; 
+	.where-to-find-us li a {
+		padding-bottom: 2px;
 	}
-	
+
 	.where-to-find-us li:last-child {
 		margin-bottom: 0;
 		padding-bottom: 0;
 	}
-	
+
 	.nine-col div.six-col {
 	    background: #fff;
 	    display: block;
 	}
-	
+
 	.three-col:nth-of-type(2) {
 	    margin-right: 0;
 	}
-} //end .row-community 
+} //end .row-community
 
 
 /* Medium / Tablet viewport
 -------------------------------------------------------------- */
 @media only screen and (min-width : 768px) {
-	.row-community {	
+	.row-community {
 		margin-bottom: -10px;
-		
-		.picto { 
+
+		.picto {
 			margin-top: 30px;
 		}
 	}
@@ -140,7 +141,7 @@ body.download {
 /* Large / Desktop viewport
 -------------------------------------------------------------- */
 @media only screen and (min-width : 984px) {
-	.row-community {	
+	.row-community {
 		margin-bottom: -20px;
 	}
 }
