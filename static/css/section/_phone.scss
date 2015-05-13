@@ -7,6 +7,11 @@ body.phone {
     height: 450px;
   }
 
+  .row-edge {
+    background: #edeeee url(../img/phone/background-origami.png) no-repeat;
+    background-size: cover;
+  }
+
   .edge-magic {
     padding-bottom: 0;
     padding-top: 0;
@@ -203,6 +208,27 @@ body.phone {
     }
   }
 
+  .row-slideshow {
+      min-height: 0;
+      
+      #carousel-container {
+          display: none;
+      }
+  }
+
+  .row-developer-programme {
+    background-image: url('../img/phone/suru-orange.png');
+    background-position: 100% -843px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+
+    a.external {
+      color: #fff;
+      background-image: url('../img/icons/external-link-white.svg');
+    }
+
+  }
 } // end body.phone
 
 .cag-list {
@@ -282,7 +308,17 @@ body.phone {
 @media only screen and (min-width : 768px) {
 
 	body.phone {
-	
+    #main-content .row-hero {
+      background: url('../img/phone/image-life-at-your-fingertips.jpg');
+      color: #fff;
+      margin-top: 0;
+      min-height: 565px;
+
+      h1 {
+        padding-top: 200px;
+      }
+    }
+
     .cag-list li {
       width: 140px;
     }
@@ -359,6 +395,67 @@ body.phone {
         margin-top: -60px;
       }
     }
+
+    .row-developers {
+      background: url('../img/phone/image-developer-scopes.png') 150% 30px no-repeat;
+    }
+
+    .row-qt {
+      img {
+        margin-top: 30%;
+      }
+    }
+
+    .row-slideshow {
+        overflow: hidden;
+        min-height: 460px;
+        
+        .carousel-container-overlay {
+            background: rgba(255, 255, 255, .95);
+            content: ' ';
+            position: absolute;
+            left: 363px;
+            top: -59px;
+            height: 520px;
+            width: 652px;
+            z-index: 999;
+        }
+        
+        .carousel-topbar {
+            position: relative;
+            height: 32px;
+            display: block;
+            background: #000 url('../img/phone/slideshow/topbar.png') bottom left no-repeat;
+            z-index: 10;
+            left: 1px;
+            width: 100%;
+        }
+        
+        #carousel-container {
+            display: block;
+            position: absolute;
+            left: -1px;
+            top: 0;
+        }
+        
+        #carousel-container ul {
+            background: #333;
+            float: left;
+            height: 520px !important;
+            display: block;
+            margin-top: -32px;
+        }
+        
+        .yui3-carousel-nav {
+            display: none;
+        }
+        
+        #scopes-content {
+            position: relative;
+            z-index: 999;
+            padding-left: 60px;
+        }
+    } // end row-slideshow 
 	  	  	  
 	} // end body.phone
   
@@ -392,5 +489,54 @@ body.phone {
     .cag-list li {
       width: 189px;
     }
+
+    .row-developers {
+      background-position: 110% 55px;
+      padding-bottom: 50px;
+    }
+
+    .row-slideshow {
+        overflow: hidden;
+        min-height: 460px;
+        
+        .carousel-container-overlay {
+            background: rgba(255, 255, 255, 0.95);
+            content: ' ';
+            position: absolute;
+            left: 363px;
+            top: -59px;
+            height: 520px;
+            width: 652px;
+            z-index: 999;
+        }
+        
+        #carousel-container {
+            position: absolute;
+            left: -1px;
+            top: 0;
+        }        
+        
+        #carousel-container ul li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            list-style: none;
+            display: inline;
+            width: 363px;
+        }
+        
+        .yui3-carousel-content { // webkit needs this otherwise the whole thing fails, ffs
+            ///width: 363px;
+        }
+                
+        .yui3-carousel-nav {
+            display: none;
+        }
+        
+        #scopes-content {
+            padding-left: 60px;
+        }
+    } // end row-slideshow 
+
   }// end body.phone
 } // end @media only screen and (min-width : 984px)
