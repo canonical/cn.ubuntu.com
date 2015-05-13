@@ -218,7 +218,6 @@ body.phone {
 
   .row-developer-programme {
     background-image: url('../img/phone/suru-orange.png');
-    background-position: 100% -843px;
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
@@ -537,6 +536,10 @@ body.phone {
             padding-left: 60px;
         }
     } // end row-slideshow 
+
+    .row-developer-programme {
+      background-position: 100% -843px;
+    }
 
   }// end body.phone
 } // end @media only screen and (min-width : 984px)
