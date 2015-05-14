@@ -2,174 +2,117 @@
 
 {% block title %}手机{% endblock %}
 {% block meta_description %}Ubuntu 的用户界面美观而、易用，是移动业界久候的新生类开源操作系统。{% endblock %}
-{% block meta_keywords %}ubuntu, Ubuntu, 乌班图, 手机操作系统, 手机, 智能手机, 电话, OS, operating system, 操作系统, 平台, 开源, open source, 开源软件, Linux, android, 安卓, oem, OEM, 触屏,设备, 电信运营商, 多重触摸, form factor, 外形规格, 设计规格, 手势识别, PC, 个人电脑, desktop, 桌面电脑, convergence, 融合, 技能融合, 软件集合, 硬件集合, 商企, ios, 运营商, 服务层面开放, scope, scopes, SCOPE, Scope, app, APP, 应用, 应用开发, bq, meizu, 魅族, MX4, 四妹{% endblock %}
+{% block meta_keywords %}Ubuntu, 乌邦图, 电话, 智能手机, 移动手机, 手机, OS, 操作系统, 平台, 开源软件, Linux, 内容, 服务, Canonical, OEM, 服务界面,  Android, 触摸, 手握, 多重触摸, 边缘导航, Ubuntu Scopes, 设备, 种类, 姿势, 边幻效果, PC, 桌面, 融合, Scope, 新范例, 新一代, 移动生态环境{% endblock %}
 
 {% block extra_body_class %}phone-home{% endblock %}
 
 {% block second_level_nav_items %}
-    {% include "templates/_nav_breadcrumb.html" with section_title="Phone" page_title="Phone"  %}
+	{% include "templates/_nav_breadcrumb.html" with section_title="Phone" page_title="Phone"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
+<div class="row row-hero">
+	<div class="five-col">
+		<h1>Ubuntu 手机系统</h1>
+		<p>世界首款运载Ubuntu的手机已经着陆欧洲市场，目前在欧洲由手机制造商BQ开始售卖。 Ubuntu手机即将在2015年搭乘Meizu设备来到中国。</p>
+	</div><!-- /.five-col -->
+	<div class="seven-col last-col text-center">
+		<img src="{{ STATIC_URL }}img/phone/image-phone-overview.png" width="519" height="277" alt="Ubuntu phones with different state of screens" />
+	</div>
+</div><!-- /.row -->
 
-{# ================ 1. Life at your fingertips ================ #}
-<div id="fingertips" class="row row-hero no-border">
-    <div class="twelve-col for-mobile">
-        <img src="{{ STATIC_URL }}img/phone/image-life-at-your-fingertips.jpg" class="for-mobile" />
-    </div>
-    <div class="five-col">
-        <h1>让触指生活更简单</h1>
-        <p>Ubuntu带来了智能手机的一种新玩法，无需依赖传统APP来填满你的主屏。通过Ubuntu的Scope，你可以将自己最关心的内容直接呈现到你的主屏，你查询的内容和服务无需隐藏在迷宫般的APP网格背后</p>
-    </div>
-</div>
+{# ================ 2. Life at your fingertips ================ #}
+<div id="fingertips" class="row">
+	<div class="append-one five-col priority-0">
+		<img src="{{ STATIC_URL }}img/phone/image-music---soundcloud.jpg" alt="" />
+		<img src="{{ STATIC_URL }}img/phone/image-video---news.jpg" alt="" />
+	</div>
+	<div class="six-col last-col">
+		<h2>触指生活</h2>
+		<p>首次，将有一台这样的手机， 它会围绕着你提供对你来说最重要的内容和服务。 是时候向每天重复开关多个应用的时代说再见了 - 让Ubuntu Scope把一切都直接带到你的屏幕上吧。</p>
+		<p>Ubuntu Scope是Ubuntu特有的一款范例, 它是为能够直接将内容和服务分类呈现在屏幕上定制而成的。 它为用户提供了一个丰富、快速且不碎片化的体验，同时为开发者们提供了一种新的创造类似传统应用的方式，但却更加容易被发现、简便创建及维护、而且可以被深入的结合到手机上。</p>
+		<p>Ubuntu手机会默认自带几个类型的主页屏幕，包括音乐、照片和新闻， 这些内容将会定义设备自身的体验。这些集合类的Scope将不同渠道源的内容和服务用统一的体验展现出来。 例如， 视频Scope将会呈现不同渠道源的视频内容， 音乐Scope能拥有不同音乐提供商的音乐 - 他们都会被呈现在一个Scope之内</p>
+		<p>每个单独的渠道源同样可以展开成为一个类似传统应用形式的完全独立品牌化的体验。 对于开发者来说， 这也是创造丰富移动体验最快捷的途径， 相比传统应用只需一小部分精力来完成。 通过使用现有Scope集合来展示品牌化的Scope, 用户可以在默认集合类Scopes和商店中两处发现他们。并且当用户将一个Scope添加为最爱时， 它会自动成为设备上默认屏幕.</p>
+	</div>
+</div><!-- /.row -->
 
-{# ================ 2. Introducing scopes ================ #}
-<div id="scopes" class="row row-slideshow">
-    <div class="carousel-container-overlay not-for-small"></div>
-    <div id="carousel-container" class="carousel not-for-small">
-        <div class="carousel-topbar"></div>
-        <ul>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-one.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-two.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-three.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-four.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-one.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-two.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-three.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-four.png" alt="Cave"></li>
-        </ul>
-    </div>
-    <div class="six-col for-mobile">
-        <img class="left" src="{{ STATIC_URL }}img/phone/image-introducing-scopes.png" alt="" />
-    </div>
-
-    <div id="scopes-content" class="six-col last-col prepend-five">
-        <h2>Scope是什么</h2>
-        <p>Ubuntu的Scope可以理解为手机上根据不同内容类别呈现的一页页的主屏，通过主屏你可以直接看到听到所有你需要的内容服务， 从电影、音乐、周边服务、头条新闻、以及日程提醒。 根据每个用户的喜好习惯，每一页的Scope内容都可以按用户习惯个性化调整。 </p>
-    </div>
-</div>
 
 {# ================ 3. Life on the edge ================ #}
 <div class="row row-edge">
-    <h2 class="twelve-col">边缘导航</h2>
+	<h2 class="twelve-col">边缘导航</h2>
 
-    <div class="three-col">
+	<div class="three-col">
 
-        <div class="first swipe-from-left">
-                <h3>从左向内划</h3>
-                <p class="three-col">从屏幕左边缘向内轻划，可以展开启动栏，提供快捷访问你最喜爱的内容和应用</p>
-            <div class="three-col">
-                <img class="right" src="{{ STATIC_URL }}img/phone/image-swipe-from-left.png" alt="" />
-            </div>
-        </div><!--/#swipe-from-left -->
+		<div class="first swipe-from-left">
+				<h3>从左向内划</h3>
+				<p class="three-col">从屏幕左边缘向内轻划，可以展开启动栏，提供快捷访问你最喜爱的内容和应用</p>
+			<div class="three-col">
+				<img class="right" src="{{ STATIC_URL }}img/phone/image-swipe-from-left.png" alt="" />
+			</div>
+		</div><!--/#swipe-from-left -->
 
-        <div class="three-col swipe-from-top">
-            <div class="three-col">
-                <img src="{{ STATIC_URL }}img/phone/image-swipe-from-top.png" alt="" />
-            </div>
-            <h3>从上往下划</h3>
-            <p class="three-col">从屏幕上边缘往下划，可以访问提示栏和关键手机设置，而且这个操作不会打断你正在进行的某个事情。</p>
-        </div><!--/#swipe-from-top -->
+		<div class="three-col swipe-from-top">
+			<div class="three-col">
+				<img src="{{ STATIC_URL }}img/phone/image-swipe-from-top.png" alt="" />
+			</div>
+			<h3>从上往下划</h3>
+			<p class="three-col">从屏幕上边缘往下划，可以访问提示栏和关键手机设置，而且这个操作不会打断你正在进行的某个事情。</p>
+		</div><!--/#swipe-from-top -->
 
-    </div><!-- /.three-col -->
+	</div><!-- /.three-col -->
 
-    <div class="six-col align-center">
-        <img src="{{ STATIC_URL }}img/phone/phone-meizu-greeter-14.10.png" alt="Meizu phone" />
-    </div><!-- /.six-col -->
+	<div class="six-col align-center">
+		<img src="{{ STATIC_URL }}img/phone/phone-greeter-14.10.png" alt="" />
+	</div><!-- /.six-col -->
 
-    <div class="three-col last-col">
+	<div class="three-col last-col">
 
-        <div class="three-col first swipe-from-right">
-            <h3>从右向内划</h3>
-            <p class="three-col">从屏幕右边缘向内全幅划过，可以展开你所有正在运行的Scopes和应用。 屏幕内左右滑动可以在不同应用中切换。</p>
-            <div class="clearfix">
-                <img src="{{ STATIC_URL }}img/phone/image-swipe-from-right.png" alt="" />
-            </div>
-        </div><!-- /#swipe-from-right -->
+		<div class="three-col first swipe-from-right">
+			<h3>从右向内划</h3>
+			<p class="three-col">从屏幕右边缘向内全幅划过，可以展开你所有正在运行的Scopes和应用。 屏幕内左右滑动可以在不同应用中切换。</p>
+			<div class="clearfix">
+				<img src="{{ STATIC_URL }}img/phone/image-swipe-from-right.png" alt="" />
+			</div>
+		</div><!-- /#swipe-from-right -->
 
-        <div class="three-col swipe-from-bottom">
-            <div class="three-col">
-                <img class="right" src="{{ STATIC_URL }}img/phone/image-swipe-from-bottom.png" alt="" />
-            </div>
-            <h3>从下往上划</h3>
-            <p>当你想要看到所有控件时, 你只需要从屏幕最下边缘轻轻一划。</p>
-        </div><!-- /#swipe-from-bottom -->
+		<div class="three-col swipe-from-bottom">
+			<div class="three-col">
+				<img class="right" src="{{ STATIC_URL }}img/phone/image-swipe-from-bottom.png" alt="" />
+			</div>
+			<h3>从下往上划</h3>
+			<p>当你想要看到所有控件时, 你只需要从屏幕最下边缘轻轻一划。</p>
+		</div><!-- /#swipe-from-bottom -->
 
-    </div><!-- /.three-col -->
+	</div><!-- /.three-col -->
 
 </div><!-- /.row -->
 
-{# ================ 4. For developers by design ================ #}
-<div id="developers" class="row row-developers">
-    <div class="six-col">
-        <h2>为开发者贴心打造</h2>
-        <p>通过巧妙使用Scope， 你的内容和服务可以更加紧密的结合到手机的核心体验中。 相比开发及维护更新一个传统APP所需要的时间和精力投资，开发一个Scope是微乎其微的。开发一款移动体验从未如此轻松。Ubuntu的SDK同时还完美的支持主流HTML5应用， 而通过使用Qt/QML框架，可以开发出丰富多元化本地应用，例如本地游戏等等。</p>
-        <p><a href="http://cn.developer.ubuntu.com/zh-cn/start/" class="link-cta-ubuntu">安装SDK</a></p>
-    </div>
+{# ================ 4. A unique opportunity for industry partners ================ #}
+<div class="row">
+	<div class="eight-col">
+		<h2>为行业伙伴们开启的独特机遇</h2>
+		<p>对于移动运营商和硬件制造商来说除了硬件和连通性， 更加至关重要的是需要为用户创造价值，分异化以及新的盈利模式。 而当服务层是由平台主操控，或当所谓的开源仅仅是针对内核层面时；这都将是一个非常大的挑战。</p>
+		<p>Ubuntu手机平台是专门为实现您的生态环境而打造的。 它为运营商，硬件制造商和互联网公司提供了一个前所未有的机遇，它将整个服务层面都授权于行业伙伴们， 这包括用户身份、付费、整套数据生活服务、甚至应用商店。 而这一切都是为了保证在Ubuntu设备上能有一个一致，不碎片化的用户体验.</p>
+	</div>
 </div>
 
-{# ================ 5. International Edition is coming with Meizu Device ================ #}
-<div id="meizu" class="row no-border">
-    <div class="four-col">
-        <img src="{{ STATIC_URL }}img/phone/image-international-edition.png" alt="Meizu international edition" />
-    </div>
-    <div class="seven-col prepend-one last-col">
-        <h2>国际版承载魅族而来</h2>
-        <p>这款拥有5.36 英寸屏幕，2070 万有效像素的怪兽级相机，被称为更好用的手机的魅族MX4，此次承载Ubuntu国际版先一步登陆中国市场。不为别人， 就为默默敲着代码的你们。让子弹飞，让你写的Scope跑吧！</p>
-        <p><a href="http://cn.developer.ubuntu.com/zh-cn/start/" class="link-cta-ubuntu">立刻下单</a></p>
-        <p><a href="">产品详请</a></p>
-    </div>
+{# ================ 5. Easy for developers to adopt ================ #}
+<div class="row">
+	<div class="six-col align-center priority-0">
+		<img src="{{ STATIC_URL }}img/phone/image-developers.jpg" alt="收集关于Ubuntu的手机可用的应用程序顶部"/>
+	</div>
+	<div class="six-col last-col">
+		<h2>方便开发者采用</h2>
+		<p>应用合作伙伴和开发者可从多个切入点将内 容和服务带入 Ubuntu 平台。Scopes 易于创 建，仅需最少的开发工作。但它却可以将内容和服务在手机上最大限度的呈现出来。</p>
+		<p>而且通过使用Webkit/Blink渲染引擎和Apache Cordova API来进行离线封包，现有的HTML5应用可以快速方便地移植。丰富的本地应用则可以通过Qt框架来完成开发。</p>
+		<p><a href="http://cn.developer.ubuntu.com" class="external">访问 Ubuntu 开发者网站&nbsp;&rsaquo;</a></p>
+	</div>
 </div>
 
-<div id="html5" class="row row-grey no-border">
-    <div class="four-col align-center">
-        <img src="{{ STATIC_URL }}img/phone/image-html5-logo.png" alt="HTML5" />
-    </div>
-    <div class="eight-col last-col">
-        <h3>HTML5和网页APP:搭乘Ubuntu的最快捷径 </h3>
-        <p>如果你曾为其他平台创建 HTML5 应用或移动网页的话，我们有一个超棒的消息和你分享：通往 Ubuntu 平台的最短捷径。我们同时支持 Webkit/Blink 和 Cordova 开发标准 - 能快速的让网页转化并脱离浏览器运转，同时所有的网页应用有额外 API 能够让应用全面访问手机提示和设置内容。</p>
-    </div>
-</div>
-
-<div id="qt" class="row row-qt">
-    <div class="eight-col">
-        <h3>本地化应用</h3>
-        <p>Ubuntu SDK 包含了众多你需要的功能；可以用来打造你自己的Scope，转化你现有的网页或HTML5版本的内容，或开发本地化的应用。</p>
-        <ul class="list-ubuntu">
-            <li>QtCreator IDE (2.8.1) 拥有增强的设备检测及管理功能    </li>
-            <li>全面本地的 OpenGL    </li>
-            <li>可以访问硬件传感器和闹钟的系统及服务类API  </li>
-            <li>可自由结合QML, C 或 C++ 以及 JavaScript</li>
-            <li>最新的Ubuntu设计纲要，让你的应用符合UI</li>
-        </ul>
-    </div>
-    <div class="not-for-small four-col last-col align-center">
-        <img src="{{ STATIC_URL }}img/phone/logo-qt.svg" alt="QT" />
-    </div>
-</div>
-
-{# ================ 6. China Mobile and Ubuntu Developer Program ================ #}
-<div id="deveoper-programme" class="row row-developer-programme">
-    <div class="five-col append-one">
-        <img src="{{ STATIC_URL }}img/phone/image-competition.png" alt="Meizu phones" />
-    </div>
-    <div class="six-col last-col">
-        <div class="six-col">
-            <img src="{{ STATIC_URL }}img/logos/china-mobile-white.svg" alt="China mobile" />
-        </div>
-        <h2>中国移动 &amp; Ubuntu开发者创新大赛</h2>
-        <p>2014年底，&ldquo;中国移动 &amp; Ubuntu开发者创新大赛&rdquo;正式开启。旨在为青年开发者率先接触新兴的移动生态系统，从而获得崭新的创业机遇。&ldquo;中国移动 &amp; Ubuntu开发者创新大赛&rdquo;是中国移动&ldquo;和你圆梦&rdquo;百万青年创业就业计划最新开启的子赛事。</p>
-        <p>大赛时间：2015年12月18日 - 2015年8月23日</p>
-        <p><a href="http://dev.10086.cn/cmdn/supesite/newdev.loginout.php?refererUrl=http%3A%2F%2Fdev.10086.cn%2Fmatch%3Faction%3Duplan" class="link-cta-ubuntu link-cta-inverted">马上报名</a></p>
-        <p><a href="http://dream.10086.cn/yecp/match?action=ubuntu" class="external">大赛详情</a></p>
-    </div>
-</div>
-
-{# ================ Links ================ #}
 <div class="row no-border">
-    <div class="six-col">
-        <p><a href="http://ubuntu.com/phone" class="external">Learn more about Ubuntu on phones at www.ubuntu.com</a></p>
-        <p><a href="http://cn.developer.ubuntu.com/ " class="external">访问 Ubuntu 开发者网站</a></p>
-    </div>
-</div>
+	<div class="eight-col">
+		<p><a class="external" href="http://ubuntu.com/phone">登录 www.ubuntu.com 进一步了解 Ubuntu 手机系统</a></p>
+	</div>
+</div><!-- / .row -->
+
 {% endblock %}
