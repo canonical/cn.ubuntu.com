@@ -11,7 +11,7 @@ String.prototype.format = function() {
 	});
 };
 
-YUI().use('node', 'cookie', "event-resize", "transition", "event", function(Y) {
+YUI().use('node', 'gallery-carousel', 'gallery-carousel-anim', 'substitute', 'cookie', "event-resize", "transition", "event", function(Y) {
 
 core.setupHtmlClass = function() {
 	Y.all('html').removeClass('no-js').addClass('yes-js');
@@ -353,18 +353,36 @@ core.socialLinks = function() {
 	}
 };
 
+core.scopesSlideshow = function() {
 
-core.setupAccordion();
-core.resizeListener();
-core.mobileNav();
-//core.cookiePolicy();
-core.socialLinks();
-core.setupGlobalNavAccordion();
-core.setupAnimations();
-core.setupHtmlClass();
-core.tabbedContent();
-core.parallaxBackground();
-core.homeAnimation();
-core.svgFallback();
+    if(Y.one('.row-slideshow')){
+        var carousel = new Y.Carousel({
+            boundingBox: "#carousel-container",
+            contentBox: "#carousel-container > ul", 
+            numVisible: 1, 
+            autoPlayInterval: 3500,
+            height: 480,
+            width: 363
+        });
+        
+        carousel.plug(Y.CarouselAnimPlugin,{animation:{speed: 0.8,effect: Y.Easing.easeOutStrong }});
+        carousel.render(); 
+        carousel.startAutoPlay();
+    }
+};
 
+
+	core.setupAccordion();
+	core.resizeListener();
+	core.mobileNav();
+	//core.cookiePolicy();
+	core.socialLinks();
+	core.setupGlobalNavAccordion();
+	core.setupAnimations();
+	core.setupHtmlClass();
+	core.tabbedContent();
+	core.parallaxBackground();
+	core.homeAnimation();
+	core.svgFallback();
+	core.scopesSlideshow();
 });
