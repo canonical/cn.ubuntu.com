@@ -314,7 +314,7 @@ body.phone {
       min-height: 565px;
 
       h1 {
-        padding-top: 100px;
+        padding-top: 200px;
       }
     }
 
@@ -455,7 +455,10 @@ body.phone {
             padding-left: 60px;
         }
     } // end row-slideshow 
-	  	  	  
+
+    .row-html5 img {
+      margin-top: 40px;
+    }
 	} // end body.phone
   
   
