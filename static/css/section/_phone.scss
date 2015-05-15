@@ -1,7 +1,7 @@
 body.phone {
-	.row strong {
-		font-weight: bold;
-	}
+  .row strong {
+    font-weight: bold;
+  }
   .clever-convos {
     background: url("../img/phone/phone-conversations-324x576.jpg") no-repeat scroll 580px 30px;
     height: 450px;
@@ -133,20 +133,20 @@ body.phone {
 
   .edge-magic-animation.run {
     .screen .launcher {
-        -moz-transition: left 1s;
-        -webkit-transition: left 1s;
-        -o-transition: left 1s;
+      -moz-transition: left 1s;
+      -webkit-transition: left 1s;
+      -o-transition: left 1s;
       transition: left 1s;
       left: 0;
     }
     .screen .screen-fade {
-        -moz-transition-delay: 1s;
-        -webkit-transition-delay: 1s;
-        -o-transition-delay: 1s;
+      -moz-transition-delay: 1s;
+      -webkit-transition-delay: 1s;
+      -o-transition-delay: 1s;
       transition-delay: 1s;
-        -moz-transition: opacity 1s;
-        -webkit-transition: opacity 1s;
-        -o-transition: opacity 1s;
+      -moz-transition: opacity 1s;
+      -webkit-transition: opacity 1s;
+      -o-transition: opacity 1s;
       transition: opacity 1s;
       opacity: 0.3;
     }
@@ -155,24 +155,23 @@ body.phone {
   .full-swipe.run .screen {
     .launcher{
       left: 0;
-        -moz-transition: left 1s;
-        -webkit-transition: left 1s;
-        -o-transition: left 1s;
+      -moz-transition: left 1s;
+      -webkit-transition: left 1s;
+      -o-transition: left 1s;
       transition: left 1s;
     }
     .launcher.return {
       left: -100px;
     }
     .fb-screen {
-       left: 182px;
-
-        -moz-transition: left 1s;
-        -webkit-transition: left 1s;
-        -o-transition: left 1s;
+      left: 182px;
+      -moz-transition: left 1s;
+      -webkit-transition: left 1s;
+      -o-transition: left 1s;
       transition: left 1s;
-        -moz-transition-delay: .7s;
-        -webkit-transition-delay: .7s;
-        -o-transition-delay: .7s;
+      -moz-transition-delay: .7s;
+      -webkit-transition-delay: .7s;
+      -o-transition-delay: .7s;
       transition-delay: .7s;
     }
   }
@@ -180,21 +179,21 @@ body.phone {
   .go-back.run .screen {
     .camera-screen{
       left: -182px;
-          -moz-transition: left 1s;
-          -webkit-transition: left 1s;
-          -o-transition: left 1s;
-        transition: left 1s;
+      -moz-transition: left 1s;
+      -webkit-transition: left 1s;
+      -o-transition: left 1s;
+      transition: left 1s;
     }
     .gallery-screen {
       background-size: 182px 324px;
-        -moz-transition: left 1s ease 1.5s;
-          -webkit-transition: left 1s ease 1.5s;
-          -o-transition: left 1s ease 1.5s;
-        transition: left 1s ease 1.5s;
-          -moz-transition: background-size 1s ease;
-          -webkit-transition: background-size 1s ease;
-          -o-transition: background-size 1s ease;
-        transition: background-size 1s ease;
+      -moz-transition: left 1s ease 1.5s;
+      -webkit-transition: left 1s ease 1.5s;
+      -o-transition: left 1s ease 1.5s;
+      transition: left 1s ease 1.5s;
+      -moz-transition: background-size 1s ease;
+      -webkit-transition: background-size 1s ease;
+      -o-transition: background-size 1s ease;
+      transition: background-size 1s ease;
     }
   }
 
@@ -241,7 +240,7 @@ body.phone {
     width: 118px;
   }
   li img {
-  	float: none;
+    float: none;
   }
   li.five {
     margin-right: 25px;
@@ -255,44 +254,44 @@ body.phone {
 .row-notifications {
 
   .screen {
-	  background: url('../img/phone/image-phone-notifications.jpg') no-repeat;
-	}
+    background: url('../img/phone/image-phone-notifications.jpg') no-repeat;
+  }
 
-	.settings-screen {
-	  transition: height .8s;
-	  background: url('../img/phone/image-phone-messages.jpg') no-repeat;
-	  width: 182px;
+  .settings-screen {
+    transition: height .8s;
+    background: url('../img/phone/image-phone-messages.jpg') no-repeat;
+    width: 182px;
     height: 0;
     position: absolute;
     top: 0;
     left: 0;
-	}
+  }
 
-	.slider-knot {
-	  transition: top .8s;
-	  background: url('../img/phone/phone-anim-slider-knot.png') no-repeat;
-	  width: 182px;
-	  height: 15px;
-	  position: absolute;
-	  top: -15px;
-	  left: 0;
-	}
+  .slider-knot {
+    transition: top .8s;
+    background: url('../img/phone/phone-anim-slider-knot.png') no-repeat;
+    width: 182px;
+    height: 15px;
+    position: absolute;
+    top: -15px;
+    left: 0;
+  }
 
-	.run {
-	   .slider-knot {
-	     top: 309px;
-	   }
-	   .settings-screen {
-	     height: 324px;
-	   }
-	}
+  .run {
+     .slider-knot {
+       top: 309px;
+     }
+     .settings-screen {
+       height: 324px;
+     }
+  }
 }
 
 .row-pictures .pictures-landscape {
   background: url('../img/phone/image-phone-camera-landscape.jpg') 51px 15px no-repeat;
   width: 100%;
   height: auto;
-	background-size: 80% 83%;
+  background-size: 80% 83%;
 
   img {
     display: block;
@@ -306,7 +305,7 @@ body.phone {
 -------------------------------------------------------------- */
 @media only screen and (min-width : 768px) {
 
-	body.phone {
+  body.phone {
     #main-content .row-hero {
       background: url('../img/phone/image-life-at-your-fingertips.jpg');
       color: #fff;
@@ -322,26 +321,26 @@ body.phone {
       width: 140px;
     }
     .row-app-grid {
-    	overflow: hidden;
-    	img {
-      	margin-left: -80px;
-				margin-top: 0;
-			}
+      overflow: hidden;
+      img {
+        margin-left: -80px;
+        margin-top: 0;
+      }
     }
     
-	  .row-pictures .pictures-landscape {
-	    background: url('../img/phone/image-phone-camera-landscape.jpg') 51px 15px no-repeat;
-	    background-size: 80% 83%;
-	    width: 100%;
-	    height: auto;
-	
-	    img {
-	      display: block;
-	      position: relative;
-	      z-index: -1;
-	    }
-	  }
-	  
+    .row-pictures .pictures-landscape {
+      background: url('../img/phone/image-phone-camera-landscape.jpg') 51px 15px no-repeat;
+      background-size: 80% 83%;
+      width: 100%;
+      height: auto;
+  
+      img {
+        display: block;
+        position: relative;
+        z-index: -1;
+      }
+    }
+    
     .edge-magic-content {
       margin-top: 95px;
       padding-right: 60px;
@@ -377,13 +376,13 @@ body.phone {
           padding-left: 100px;
       }
 
-    }		
+    }   
     
-	  .row-pictures {
-			.edge-magic-content {
-				margin-top: 30px;
-			}
-		}
+    .row-pictures {
+      .edge-magic-content {
+        margin-top: 30px;
+      }
+    }
 
     .row-edge {
       .swipe-from-right,
@@ -406,60 +405,60 @@ body.phone {
     }
 
     .row-slideshow {
-        overflow: hidden;
-        min-height: 460px;
-        
-        .carousel-container-overlay {
-            background: rgba(255, 255, 255, .95);
-            content: ' ';
-            position: absolute;
-            left: 363px;
-            top: -59px;
-            height: 520px;
-            width: 652px;
-            z-index: 999;
-        }
-        
-        .carousel-topbar {
-            position: relative;
-            height: 32px;
-            display: block;
-            background: #000 url('../img/phone/slideshow/topbar.png') bottom left no-repeat;
-            z-index: 10;
-            left: 1px;
-            width: 100%;
-        }
-        
-        #carousel-container {
-            display: block;
-            position: absolute;
-            left: -1px;
-            top: 0;
-        }
-        
-        #carousel-container ul {
-            background: #333;
-            float: left;
-            height: 520px !important;
-            display: block;
-            margin-top: -32px;
-        }
-        
-        .yui3-carousel-nav {
-            display: none;
-        }
-        
-        #scopes-content {
-            position: relative;
-            z-index: 999;
-            padding-left: 60px;
-        }
+      overflow: hidden;
+      min-height: 460px;
+      
+      .carousel-container-overlay {
+        background: rgba(255, 255, 255, .95);
+        content: ' ';
+        position: absolute;
+        left: 363px;
+        top: -59px;
+        height: 520px;
+        width: 652px;
+        z-index: 999;
+      }
+      
+      .carousel-topbar {
+        position: relative;
+        height: 32px;
+        display: block;
+        background: #000 url('../img/phone/slideshow/topbar.png') bottom left no-repeat;
+        z-index: 10;
+        left: 1px;
+        width: 100%;
+      }
+      
+      #carousel-container {
+        display: block;
+        position: absolute;
+        left: -1px;
+        top: 0;
+      }
+      
+      #carousel-container ul {
+        background: #333;
+        float: left;
+        height: 520px !important;
+        display: block;
+        margin-top: -32px;
+      }
+      
+      .yui3-carousel-nav {
+        display: none;
+      }
+      
+      #scopes-content {
+        position: relative;
+        z-index: 999;
+        padding-left: 60px;
+      }
     } // end row-slideshow 
 
     .row-html5 img {
       margin-top: 40px;
     }
-	} // end body.phone
+  } // end body.phone
   
   
 } // end @media only screen and (min-width : 768px)
@@ -468,25 +467,25 @@ body.phone {
 /* Large / Desktop viewport
 -------------------------------------------------------------- */
 @media only screen and (min-width : 984px) {
-	body.phone {
-	  .row-pictures .pictures-landscape {
-	    background: url('../img/phone/image-phone-camera-landscape.jpg') 51px 15px no-repeat;
-	    background-size: 78% 85%;
-	    width: 100%;
-	    height: auto;
-	
-	    img {
-	      display: block;
-	      position: relative;
-	      z-index: -1;
-	    }
-	  }
-	  
-	  .row-pictures {
-			.edge-magic-content {
-				margin-top: 50px;
-			}
-		}
+  body.phone {
+    .row-pictures .pictures-landscape {
+      background: url('../img/phone/image-phone-camera-landscape.jpg') 51px 15px no-repeat;
+      background-size: 78% 85%;
+      width: 100%;
+      height: auto;
+  
+      img {
+        display: block;
+        position: relative;
+        z-index: -1;
+      }
+    }
+    
+    .row-pictures {
+      .edge-magic-content {
+        margin-top: 50px;
+      }
+    }
 
     .cag-list li {
       width: 189px;
@@ -498,46 +497,42 @@ body.phone {
     }
 
     .row-slideshow {
-        overflow: hidden;
-        min-height: 460px;
-        
-        .carousel-container-overlay {
-            background: rgba(255, 255, 255, 0.95);
-            content: ' ';
-            position: absolute;
-            left: 363px;
-            top: -59px;
-            height: 520px;
-            width: 652px;
-            z-index: 999;
-        }
-        
-        #carousel-container {
-            position: absolute;
-            left: -1px;
-            top: 0;
-        }        
-        
-        #carousel-container ul li {
-            position: absolute;
-            left: 0;
-            top: 0;
-            list-style: none;
-            display: inline;
-            width: 363px;
-        }
-        
-        .yui3-carousel-content { // webkit needs this otherwise the whole thing fails, ffs
-            ///width: 363px;
-        }
-                
-        .yui3-carousel-nav {
-            display: none;
-        }
-        
-        #scopes-content {
-            padding-left: 60px;
-        }
+      overflow: hidden;
+      min-height: 460px;
+      
+      .carousel-container-overlay {
+        background: rgba(255, 255, 255, 0.95);
+        content: ' ';
+        position: absolute;
+        left: 363px;
+        top: -59px;
+        height: 520px;
+        width: 652px;
+        z-index: 999;
+      }
+      
+      #carousel-container {
+        position: absolute;
+        left: -1px;
+        top: 0;
+      }        
+      
+      #carousel-container ul li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        list-style: none;
+        display: inline;
+        width: 363px;
+      }
+
+      .yui3-carousel-nav {
+        display: none;
+      }
+      
+      #scopes-content {
+        padding-left: 60px;
+      }
     } // end row-slideshow 
 
     .row-developer-programme {
