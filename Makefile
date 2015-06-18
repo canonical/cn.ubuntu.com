@@ -70,9 +70,13 @@ build-app-image:
 # Run the Django site using the docker image
 ##
 run-app-image:
+	# Make sure IP is correct for mac etc.
+	$(eval docker_ip := 127.0.0.1)
+	if hash boot2docker 2> /dev/null; then `eval docker_ip := $(boot2docker ip)`; fi
+
 	@echo ""
 	@echo "======================================="
-	@echo "Running server on http://127.0.0.1:${PORT}"
+	@echo "Running server on http://${docker_ip}:${PORT}"
 	@echo "======================================="
 	@echo ""
 	docker run -p ${PORT}:8000 -v `pwd`:/app -w=/app ${APP_IMAGE}
