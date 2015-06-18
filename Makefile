@@ -33,10 +33,10 @@ All commands
 ---
 
 > make help               # This message
-> make run                # build, watch-sass and run-site
+> make run                # build, watch-sass and run-app-image
 > make it so              # a fun alias for "make run"
 > make build-app-image    # Build the docker image
-> make run-site           # Use Docker to run the website
+> make run-app-image      # Use Docker to run the website
 > make watch-sass         # Setup the sass watcher, to compile CSS
 > make compile-sass       # Setup the sass watcher, to compile CSS
 > make stop-sass-watcher  # If the watcher is running in the background, stop it
@@ -58,7 +58,7 @@ help:
 run:
 	${MAKE} build-app-image
 	${MAKE} watch-sass &
-	${MAKE} run-site
+	${MAKE} run-app-image
 
 ##
 # Build the docker image
@@ -69,13 +69,13 @@ build-app-image:
 ##
 # Run the Django site using the docker image
 ##
-run-site:
+run-app-image:
 	@echo ""
 	@echo "======================================="
 	@echo "Running server on http://127.0.0.1:${PORT}"
 	@echo "======================================="
 	@echo ""
-	docker run -p 0.0.0.0:${PORT}:8000 -v `pwd`:/app -w=/app ${APP_IMAGE} ./manage.py runserver 0.0.0.0:8000
+	docker run -p ${PORT}:8000 -v `pwd`:/app -w=/app ${APP_IMAGE}
 
 ##
 # Create or start the sass container, to rebuild sass files when there are changes
@@ -109,13 +109,12 @@ clean:
 	-docker rm -f ${SASS_CONTAINER}
 	-docker rmi -f ${APP_IMAGE}
 
-# The below targets
-# are just there to allow you to type "make it so"
-# as a replacement for "make develop"
-# - Thanks to https://directory.canonical.com/list/ircnick/deadlight/
-
+##
+# "make it so" alias for "make run" (thanks @karlwilliams)
+##
 it:
 so: run
 
-# Phone targets (don't correspond to files or directories)
-.PHONY: help build run run-site watch-sass compile-sass stop-sass-watcher rebuild-app-image it so
+# Phony targets (don't correspond to files or directories)
+all: help build run run-app-image watch-sass compile-sass stop-sass-watcher rebuild-app-image it so
+.PHONY: all
