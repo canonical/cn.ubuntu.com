@@ -71,8 +71,7 @@ build-app-image:
 ##
 run-app-image:
 	# Make sure IP is correct for mac etc.
-	$(eval docker_ip := 127.0.0.1)
-	if hash boot2docker 2> /dev/null; then `eval docker_ip := $(boot2docker ip)`; fi
+	$(eval docker_ip := `hash boot2docker 2> /dev/null && echo "\`boot2docker ip\`" || echo "127.0.0.1"`)
 
 	@echo ""
 	@echo "======================================="
