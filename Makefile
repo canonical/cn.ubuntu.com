@@ -79,7 +79,7 @@ run-app-image:
 	@echo "Running server on http://${docker_ip}:${PORT}"
 	@echo "======================================="
 	@echo ""
-	docker run -p ${PORT}:8000 -v `pwd`:/app -w=/app ${APP_IMAGE}
+	docker run -p ${PORT}:5000 -v `pwd`:/app -w=/app ${APP_IMAGE}
 
 ##
 # Create or start the sass container, to rebuild sass files when there are changes
