@@ -6,13 +6,7 @@ The Django project behind <http://ubuntu-china.cn>.
 Local development
 ---
 
-First build the Docker image, ready to run the site:
-
-``` bash
-make build  # Build the docker image to run the site
-```
-
-Then run the local development server:
+Prepare the containers and run the local development server:
 
 ``` bash
 make run  # watch sass files and run the site from Docker images
