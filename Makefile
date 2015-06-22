@@ -1,96 +1,120 @@
-SHELL := /bin/bash
+SHELL := /bin/bash  # Use bash syntax
 
-define HELP_TEXT
-Ubuntu-china.cn website project
-===
+# Settings
+# ===
 
-Usage:
-
-> make run         # Prepare Docker images and run the Django site
-
-# or, if you want more control
-> make build       # Build the ubuntu-china docker image
-> make watch-sass  # Setup the sass watcher, to compile CSS
-> make run-site    # Use Docker to run the website
-
-endef
-
-# Variables
-##
-
-dependency_repo="lp:~webteam-backend/ubuntu-chinese-website/dependencies"
-
+# Default port for the dev server - can be overridden e.g.: "PORT=1234 make run"
 ifeq ($(PORT),)
 	PORT=8004
 endif
 
-# Phone targets (don't correspond to files or directories)
-.PHONY: help build run run-site watch-sass pip-cache rebuild-dependencies-cache
-.PHONY: clean clean-all clean-pip-cache it so
+# Settings
+# ===
+PROJECT_NAME=ubuntu-china
+APP_IMAGE=${PROJECT_NAME}
+SASS_CONTAINER=${PROJECT_NAME}-sass
 
+# Help text
+# ===
+
+define HELP_TEXT
+
+${PROJECT_NAME} - A Django website by the Canonical web team
+===
+
+Basic usage
+---
+
+> make run         # Prepare Docker images and run the Django site
+
+Now browse to http://127.0.0.1:${PORT} to run the site
+
+All commands
+---
+
+> make help               # This message
+> make run                # build, watch-sass and run-app-image
+> make it so              # a fun alias for "make run"
+> make build-app-image    # Build the docker image
+> make run-app-image      # Use Docker to run the website
+> make watch-sass         # Setup the sass watcher, to compile CSS
+> make compile-sass       # Setup the sass watcher, to compile CSS
+> make stop-sass-watcher  # If the watcher is running in the background, stop it
+> make clean              # Delete all created images and containers
+
+(To understand commands in more details, simply read the Makefile)
+
+endef
+
+##
+# Print help text
+##
 help:
 	$(info ${HELP_TEXT})
 
+##
 # Use docker to run the sass watcher and the website
+##
 run:
-	${MAKE} build
+	${MAKE} build-app-image
 	${MAKE} watch-sass &
-	${MAKE} run-site
+	${MAKE} run-app-image
 
-# Build the ubuntu-china docker image
-build:
-	docker build -t ubuntu-china .
+##
+# Build the docker image
+##
+build-app-image:
+	docker build -t ${APP_IMAGE} .
 
+##
 # Run the Django site using the docker image
-run-site:
-	docker run -p 0.0.0.0:${PORT}:8000 -v `pwd`:/app -w=/app ubuntu-china ./manage.py runserver 0.0.0.0:8000
+##
+run-app-image:
+	@echo ""
+	@echo "======================================="
+	@echo "Running server on http://127.0.0.1:${PORT}"
+	@echo "======================================="
+	@echo ""
+	docker run -p ${PORT}:8000 -v `pwd`:/app -w=/app ${APP_IMAGE}
 
-# Watch sass using our sass docker image
+##
+# Create or start the sass container, to rebuild sass files when there are changes
+##
 watch-sass:
-	docker run -v `pwd`:/app ubuntudesign/sass sass --debug-info --watch /app/static/css
+	docker attach ${SASS_CONTAINER} || docker start -a ${SASS_CONTAINER} || docker run --name ${SASS_CONTAINER} -v `pwd`:/app ubuntudesign/sass sass --debug-info --watch /app/static/css
 
 ##
-# Targets for deployment
+# Force a rebuild of the sass files
 ##
+compile-sass:
+	docker run -v `pwd`:/app ubuntudesign/sass sass --debug-info --update /app/static/css --force
 
-# Update the pip cache
-pip-cache:
-	if [ -d pip-cache ]; then \
-	    bzr pull --directory pip-cache --overwrite ${dependency_repo}; \
-	else \
-	    bzr branch ${dependency_repo} pip-cache; \
-	fi
+##
+# If the watcher is running in the background, stop it
+##
+stop-sass-watcher:
+	docker stop ${SASS_CONTAINER}
 
-# Rebuild the pip requirements cache, for non-internet-visible builds
-rebuild-dependencies-cache:
-	${MAKE} pip-cache
-	pip install --exists-action=w --download pip-cache/ -r requirements/standard.txt
-	bzr commit pip-cache/ -m 'automatically updated ubuntu-china requirements'
-	bzr push --directory pip-cache ${dependency_repo}
-	$(MAKE) clean-pip-cache
+##
+# Re-create the app image (e.g. to update dependencies)
+##
+rebuild-app-image:
+	-docker rmi -f ${APP_IMAGE}
+	${MAKE} build-app-image
 
-# Build the sass files once, and in compact mode
-sass:
-	sass --style compact --update static/css
-
-# Delete any generated files that effect the site
+##
+# Delete all created images and containers
+##
 clean:
-	rm -rf env .sass-cache
-	find static/css -name '*.css*' -exec rm {} +  # Remove any .css files - should only be .sass files
+	-docker rm -f ${SASS_CONTAINER}
+	-docker rmi -f ${APP_IMAGE}
 
-# Also delete pip-cache
-clean-all: clean clean-pip-cache
+##
+# "make it so" alias for "make run" (thanks @karlwilliams)
+##
+it:
+so: run
 
-# Clean pip-cache
-clean-pip-cache:
-	rm -rf pip-cache src/
-
-# The below targets
-# are just there to allow you to type "make it so"
-# as a replacement for "make develop"
-# - Thanks to https://directory.canonical.com/list/ircnick/deadlight/
-
-it:	
-	${MAKE} watch-sass &
-
-so: run-site
+# Phony targets (don't correspond to files or directories)
+all: help build run run-app-image watch-sass compile-sass stop-sass-watcher rebuild-app-image it so
+.PHONY: all
