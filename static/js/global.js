@@ -51,13 +51,13 @@ core.deployNav = function(mu) {
 				e.stopPropagation();
 			});
 			ml.one('ul').on('click',function(e){ e.stopPropagation(); });
+			Y.one('body').on('click', function(e){
+				var ml = Y.one('#nav-global .more');
+				if(ml.hasClass('open')){
+					ml.removeClass('open');
+				}
+			});
 		}
-		Y.one('body').on('click', function(e){
-			var ml = Y.one('#nav-global .more');
-			if(ml.hasClass('open')){
-				ml.removeClass('open');
-			}
-		});
 	});
 };
 
