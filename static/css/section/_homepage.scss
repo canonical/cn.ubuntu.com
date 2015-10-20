@@ -578,3 +578,39 @@ body.phone-launch-takeover {
     }
   }
 }
+
+.wily-release-takeover {
+  header.banner {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  #main-content .row-hero {
+    background-image: url('../img/homepage/wily-hero-takeover-medium.jpg');
+    background-size: cover;
+    background-position: right 55%;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    margin-top: -40px;
+    padding-top: 60px;
+
+    .learn-more {
+      color: #333;
+    }
+  }
+
+  @media only screen and (min-width : 768px) {
+    #main-content .row-hero {
+      padding-top: 10%;
+      background-image: url('../img/homepage/wily-hero-takeover.jpg');
+      min-height: 700px;
+    }
+  }
+
+  @media only screen and (min-width : 984px) {
+    #main-content .row-hero {
+      padding-top: 7%;
+    }
+  }
+}
