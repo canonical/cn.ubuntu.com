@@ -12,22 +12,22 @@
 
 {% block content %}
 {# ================ 1. Ubuntu Server ================ #}
-<div class="row row-hero row-image-centered">
+<div class="row row-hero">
 	<div class="six-col">
-	<h1>Ubuntu 服务器 (Ubuntu Server)</h1>
-			<p>Ubuntu 服务器是自如扩展计算的领先平台。无论您是想部署一个 OpenStack 云、一个 Hadoop 集群还是一个 50,000 个节点的渲染农场，没有任何服务器能比 Ubuntu 服务器提供更有价值的自如扩展性能&#12290;</p>
-		</div><!-- /.six-col -->
-		<span>
+		<h1>Ubuntu 服务器 (Ubuntu Server)</h1>
+		<p>Ubuntu 服务器是自如扩展计算的领先平台。无论您是想部署一个 OpenStack 云、一个 Hadoop 集群还是一个 50,000 个节点的渲染农场，没有任何服务器能比 Ubuntu 服务器提供更有价值的自如扩展性能&#12290;</p>
+	</div><!-- /.six-col -->
+		<div class="six-col last-col align-center">
 			<img src="{{ STATIC_URL }}/img/server/image-server.svg" width="400" height="121" alt="" />
-		</span>
+		</div>
 </div><!-- /.row -->
 
 {# ================ 2. Ubuntu Server on Power ================ #}
 <div class="row row-image-centered">
-	<span>
+	<div class="four-col align-center">
 		<img src="{{ STATIC_URL }}/img/logos/logo-pack/logo-ibm.svg" alt="IBM logo" width="200" />
-	</span>
-	<div class="eight-col">
+	</div>
+	<div class="eight-col last-col">
 		<h2>Ubuntu 服务器适用于Power</h2>
 		<p>除 x86 和 ARM 服务器外，Ubuntu 还适用于 Power 架构。因此，企业数据中心得以在选定的任何硬件上构建 Ubuntu 基础设施&#12290;</p>
 	</div>
@@ -41,7 +41,7 @@
 		<p class="six-col">无论您是想部署一个 NoSQL 数据库、一个Web 农场还是一个云，Ubuntu 的性能和多功能性都能满足您的需求。经领先原始设备制造商认证，其部署和管理工具可帮助您节约时间和降低成本&#12290;</p>
 		<p class="six-col last-col">我们定期升级，这意味着我们支持大多数最新应用程序。精简化初始安装和集成服务编排技术使 Ubuntu 服务器成为大规模部署的优秀解决方案&#12290;</p>
 	</div><!-- /.twelve-col -->
-	
+
 	<h3 class="caps-centered">适用于所有硬件和软件</h3>
 	<ul class="inline-logos no-bullets">
 		<li><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-lenovo.svg" width="108" height="45" alt="Lenovo" /></li>
@@ -177,16 +177,17 @@
 </div><!-- /.row -->
 
 {# ================ 11. The fast track to virtualisation ================ #}
-<div class="row row-image-centered">
+<div class="row">
 	<div class="eight-col">
 		<h2>虚拟化快车道</h2>
 		<p>准备提高效率和降低成本吗？使用 Ubuntu 服务器和 KVM 虚拟化您 的服务器。如果您将 Ubuntu 用作应用程序客户机操作系统，您只需 几分钟就可创建虚拟机映像。支持 KVM、Xen、VMware 和 LXC；KVM 现在也适用于基于 Ubuntu 的 ARM 服务器。</p>
 	</div>
-	<span><img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-startfirst-darkaubergine.svg" width="153" height="153" alt="" /></span>
+	<div class="four-col last-col align-center">
+		<img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-startfirst-darkaubergine.svg" width="153" height="153" alt="" />
+	</div>
 </div><!-- /.row -->
 
 <div class="row no-border">
 	<p><a class="external" href="http://www.ubuntu.com/server">Learn more on www.ubuntu.com</a></p>
 </div>
 {% endblock %}
-
