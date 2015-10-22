@@ -209,7 +209,7 @@ body.phone {
 
   .row-slideshow {
       min-height: 0;
-      
+
       #carousel-container {
           display: none;
       }
@@ -300,6 +300,15 @@ body.phone {
   }
 }
 
+.row-links .list--social {
+  margin: 0;
+  padding: 0;
+}
+
+.phone footer .list--social {
+  display: none;
+}
+
 
 /* Medium / Tablet viewport
 -------------------------------------------------------------- */
@@ -327,20 +336,20 @@ body.phone {
         margin-top: 0;
       }
     }
-    
+
     .row-pictures .pictures-landscape {
       background: url('../img/phone/image-phone-camera-landscape.jpg') 51px 15px no-repeat;
       background-size: 80% 83%;
       width: 100%;
       height: auto;
-  
+
       img {
         display: block;
         position: relative;
         z-index: -1;
       }
     }
-    
+
     .edge-magic-content {
       margin-top: 95px;
       padding-right: 60px;
@@ -376,8 +385,8 @@ body.phone {
           padding-left: 100px;
       }
 
-    }   
-    
+    }
+
     .row-pictures {
       .edge-magic-content {
         margin-top: 30px;
@@ -407,7 +416,7 @@ body.phone {
     .row-slideshow {
       overflow: hidden;
       min-height: 460px;
-      
+
       .carousel-container-overlay {
         background: rgba(255, 255, 255, .95);
         content: ' ';
@@ -418,7 +427,7 @@ body.phone {
         width: 652px;
         z-index: 999;
       }
-      
+
       .carousel-topbar {
         position: relative;
         height: 32px;
@@ -428,14 +437,14 @@ body.phone {
         left: 1px;
         width: 100%;
       }
-      
+
       #carousel-container {
         display: block;
         position: absolute;
         left: -1px;
         top: 0;
       }
-      
+
       #carousel-container ul {
         background: #333;
         float: left;
@@ -443,24 +452,24 @@ body.phone {
         display: block;
         margin-top: -32px;
       }
-      
+
       .yui3-carousel-nav {
         display: none;
       }
-      
+
       #scopes-content {
         position: relative;
         z-index: 999;
         padding-left: 60px;
       }
-    } // end row-slideshow 
+    } // end row-slideshow
 
     .row-html5 img {
       margin-top: 40px;
     }
   } // end body.phone
-  
-  
+
+
 } // end @media only screen and (min-width : 768px)
 
 
@@ -473,14 +482,14 @@ body.phone {
       background-size: 78% 85%;
       width: 100%;
       height: auto;
-  
+
       img {
         display: block;
         position: relative;
         z-index: -1;
       }
     }
-    
+
     .row-pictures {
       .edge-magic-content {
         margin-top: 50px;
@@ -499,7 +508,7 @@ body.phone {
     .row-slideshow {
       overflow: hidden;
       min-height: 460px;
-      
+
       .carousel-container-overlay {
         background: rgba(255, 255, 255, 0.95);
         content: ' ';
@@ -510,13 +519,13 @@ body.phone {
         width: 652px;
         z-index: 999;
       }
-      
+
       #carousel-container {
         position: absolute;
         left: -1px;
         top: 0;
-      }        
-      
+      }
+
       #carousel-container ul li {
         position: absolute;
         left: 0;
@@ -529,11 +538,11 @@ body.phone {
       .yui3-carousel-nav {
         display: none;
       }
-      
+
       #scopes-content {
         padding-left: 60px;
       }
-    } // end row-slideshow 
+    } // end row-slideshow
 
     .row-developer-programme {
       background-position: 100% -843px;

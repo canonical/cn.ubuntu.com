@@ -7,7 +7,8 @@ body.cloud-home {
 		}
 	}
 	ul.inline-logos li img {
-	    height: auto;
+		height: auto;
+		max-width: 160px;
 	}
 }
 /* Medium / Tablet viewport
@@ -22,7 +23,7 @@ body.cloud-home {
 			.row-services {
 				overflow: hidden;
 				margin-bottom: -20px;
-	
+
 				img {
 					position: absolute;
 					top: 0;
@@ -42,7 +43,5 @@ body.cloud-home {
 			margin-top: -117px;
 		}
 	} // body.cloud-home
-	
+
 } // @media only screen and (min-width : 984px)
-
-
