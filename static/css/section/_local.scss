@@ -9,8 +9,8 @@
     background-size: 37px 37px;
   }
 
-  .list--social__item.active a {    
-    background-image: 
+  .list--social__item.active a {
+    background-image:
       url('../img/icons/icon-wechat-orange.svg'),
       url('../img/desktop/qr-code-wechat.png');
   }
@@ -24,11 +24,11 @@
   width: 37px;
   float: left;
   display: inline-block;
-  
-  &:after { 
-    content: " " !important; 
+
+  &:after {
+    content: " " !important;
   }
-  
+
   a {
     display: block;
     height: 37px;
@@ -38,7 +38,7 @@
   }
 
   &.active a {
-    background-image: 
+    background-image:
       url('../img/icons/icon-wechat.svg'),
       url('../img/desktop/qr-code-wechat.png');
     background-repeat: no-repeat;
@@ -68,4 +68,51 @@ main .list--social {
 
 .homepage footer .list--social {
   display: none;
+}
+
+@media only screen and (min-width : 768px) {
+  .equal-height {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+
+    > div,
+    > li {
+      box-sizing: border-box;
+      display: flex;
+      flex: auto;
+      flex-direction: column;
+    }
+  }
+
+  .align-vertically {
+    transform-style: preserve-3d;
+
+    img,
+    div {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.align-center {
+  text-align: center;
+
+  * {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .row-quote blockquote p {
+    font-size: 0.8em;
+  }
+}
+
+ul.inline-logos li {
+  border: none;
+  max-width: 160px;
 }

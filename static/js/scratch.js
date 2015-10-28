@@ -11,7 +11,7 @@ String.prototype.format = function() {
     });
 };
 
-YUI().use('node', 'gallery-carousel', 'gallery-carousel-anim', 'substitute', 'cookie', "event-resize", "transition", "event", function(Y) {
+YUI().use('node', 'gallery-carousel', 'gallery-carousel-anim', 'substitute', 'cookie', "event-resize", "transition", "event", 'jsonp', 'json-parse', function(Y) {
 
     core.setupHtmlClass = function() {
         Y.all('html').removeClass('no-js').addClass('yes-js');
@@ -345,7 +345,7 @@ YUI().use('node', 'gallery-carousel', 'gallery-carousel-anim', 'substitute', 'co
     core.socialLinks = function() {
         if (document.documentElement.clientWidth > 769) {
             Y.one('.list--social__item--wechat').on("click", function(e) {
-                if(!Y.one('.list--social__item--wechat').hasClass('active')){ 
+                if(!Y.one('.list--social__item--wechat').hasClass('active')){
                     e.preventDefault();
                 }
                 this.toggleClass('active');
@@ -357,17 +357,46 @@ YUI().use('node', 'gallery-carousel', 'gallery-carousel-anim', 'substitute', 'co
         if(Y.one('.row-slideshow')){
             var carousel = new Y.Carousel({
                 boundingBox: "#carousel-container",
-                contentBox: "#carousel-container > ul", 
-                numVisible: 1, 
+                contentBox: "#carousel-container > ul",
+                numVisible: 1,
                 autoPlayInterval: 3500,
                 height: 480,
                 width: 363
             });
 
             carousel.plug(Y.CarouselAnimPlugin,{animation:{speed: 0.8,effect: Y.Easing.easeOutStrong }});
-            carousel.render(); 
+            carousel.render();
             carousel.startAutoPlay();
         }
+    };
+
+    core.renderJSON = function (response, id) {
+        if (id == undefined) {
+            id = '#dynamic-logos';
+        }
+        if (! Y.one(id)) {
+            return;
+        }
+        var JSON = response;
+        var numberPartners = JSON.length;
+        var numberToDisplay = numberPartners < 10 ? numberPartners : 10;
+
+        for (var i = 0; i < numberToDisplay; i++) {
+            Y.one(id).append(Y.Node.create('<li><img onload="this.style.opacity=\'1\';" src="'+JSON[i].logo+'" alt="'+JSON[i].name+'"></li>'));
+        }
+    };
+
+    core.loadPartners = function (params, elementID, feedName) {
+        if (typeof feedName === 'undefined') {
+            feedName = 'partners';
+        }
+
+        var partnersAPI = "http://partners.ubuntu.com/" + feedName + ".json";
+        var url = partnersAPI + params + "&callback={callback}";
+        var callback = function(response) {
+            return core.renderJSON(response, elementID);
+        }
+        Y.jsonp(url, callback);
     };
 
 
@@ -383,4 +412,12 @@ YUI().use('node', 'gallery-carousel', 'gallery-carousel-anim', 'substitute', 'co
     core.homeAnimation();
     core.svgFallback();
     core.scopesSlideshow();
+});
+
+
+
+
+
+YUI().use('node','gallery-carousel','gallery-carousel-anim','substitute', 'gallery-effects','cookie','event-resize','jsonp', 'io', 'dump', 'json-parse', function(Y) {
+
 });
