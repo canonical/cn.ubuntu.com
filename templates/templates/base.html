@@ -48,45 +48,45 @@
 
 <header class="banner global" role="banner">
 {% block header_banner %}
-	<nav role="navigation" class="nav-primary nav-right">
-		<div class="logo">
-			<a class="logo-ubuntu" href="/">
-				<img width="106" height="25" src="{{ STATIC_URL }}img/logos/logo-ubuntu-orange.svg" alt="" />
-			</a>
-		</div>
-		<ul>
-			<li class="accessibility-aid"><a accesskey="s" href="#main-content">Jump to content</a></li>
-			<li>
-				<a class="first{% if level_1 == 'desktop' %} active{% endif %}" href="/desktop">桌面</a>
-			</li>
-			<li>
-				<a{% if level_1 == 'phone' %} class="active"{% endif %} href="/phone">手机</a>
-			</li>
-			<li>
-				<a{% if level_1 == 'tablet' %} class="active"{% endif %} href="/tablet">平板电脑</a>
-			</li>
-			<li>
-				<a{% if level_1 == 'internet-of-things' %} class="active"{% endif %} href="/internet-of-things">智物</a>
-			</li>
-			<li>
-				<a{% if level_1 == 'server' %} class="active"{% endif %} href="/server">服务器</a>
-			</li>
-			<li>
-				<a{% if level_1 == 'cloud' %} class="active"{% endif %} href="/cloud">云</a>
-			</li>
-			<li>
-				<a{% if level_1 == 'download' %} class="active"{% endif %} href="/download">下载</a>
-			</li>
-			<li>
-				<a{% if level_1 == 'news' %} class="active"{% endif %} href="/news">新闻</a>
-			</li>
-			<li>
-				<a{% if level_1 == 'about' %} class="active"{% endif %} href="/about">关于</a>
-			</li>
-		</ul>
-		<a href="#canonlist" class="nav-toggle no-script">☰</a>
-		{# include "templates/search.html" #}
-	</nav>
+    <nav role="navigation" class="nav-primary nav-right">
+        <div class="logo">
+            <a class="logo-ubuntu" href="/">
+                <img width="106" height="25" src="{{ STATIC_URL }}img/logos/logo-ubuntu-orange.svg" alt="" />
+            </a>
+        </div>
+        <ul>
+            <li class="accessibility-aid"><a accesskey="s" href="#main-content">Jump to content</a></li>
+            <li>
+                <a class="first{% if level_1 == 'desktop' %} active{% endif %}" href="/desktop">桌面</a>
+            </li>
+            <li>
+                <a{% if level_1 == 'phone' %} class="active"{% endif %} href="/phone">手机</a>
+            </li>
+            <li>
+                <a{% if level_1 == 'tablet' %} class="active"{% endif %} href="/tablet">平板电脑</a>
+            </li>
+            <li>
+                <a{% if level_1 == 'internet-of-things' %} class="active"{% endif %} href="/internet-of-things">智物</a>
+            </li>
+            <li>
+                <a{% if level_1 == 'server' %} class="active"{% endif %} href="/server">服务器</a>
+            </li>
+            <li>
+                <a{% if level_1 == 'cloud' %} class="active"{% endif %} href="/cloud">云</a>
+            </li>
+            <li>
+                <a{% if level_1 == 'download' %} class="active"{% endif %} href="/download">下载</a>
+            </li>
+            <li>
+                <a{% if level_1 == 'news' %} class="active"{% endif %} href="/news">新闻</a>
+            </li>
+            <li>
+                <a{% if level_1 == 'about' %} class="active"{% endif %} href="/about">关于</a>
+            </li>
+        </ul>
+        <a href="#canonlist" class="nav-toggle no-script">☰</a>
+        {# include "templates/search.html" #}
+    </nav>
 {% endblock header_banner %}
 </header>
 <div class="wrapper">
@@ -112,16 +112,16 @@
 
 <!-- Use this only until Modernizr fixes Opera Mini background-size detection -->
 <script>
-	var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
-	if(isOperaMini) {
-		var root = document.documentElement;
-		root.className += " opera-mini";
-	}
+    var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
+    if(isOperaMini) {
+        var root = document.documentElement;
+        root.className += " opera-mini";
+    }
 </script>
 <script src="{{ STATIC_URL }}js/plugins/yui-combined.min.js"></script>
 <script>
-	if(!core){ var core = {}; }
-	core.globalPrepend = 'body';
+    if(!core){ var core = {}; }
+    core.globalPrepend = 'body';
 </script>
 <script src="{{ STATIC_URL }}js/core.js"></script>
 <script src="{{ STATIC_URL }}js/scratch.js"></script>
