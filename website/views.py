@@ -1,11 +1,8 @@
-
 # Modules
 from django_template_finder_view import TemplateFinder
-from django.http import (
-    HttpResponseNotFound,
-    HttpResponseServerError
-)
-from django.template import RequestContext, loader, Context
+
+# Local
+from models import Page
 
 
 class CmsTemplateFinder(TemplateFinder):
@@ -17,20 +14,20 @@ class CmsTemplateFinder(TemplateFinder):
         # Get any existing context
         context = super(CmsTemplateFinder, self).get_context_data(**kwargs)
 
-        # Add level_* context variables
+        # Get CMS data for this page
         clean_path = self.request.path.strip('/')
+        page_set = Page.objects.filter(url=clean_path)
+
+        # Add level_* context variables
         for index, path, in enumerate(clean_path.split('/')):
             context["level_" + str(index + 1)] = path
 
+        # If CMS data exists, add it to context
+        if page_set.exists():
+            page = page_set.first()
+            context['page_title'] = page.title
+
+            for element in page.elements.all():
+                context[element.name] = element.text
+
         return context
-
-
-def custom_404(request):
-    t = loader.get_template('templates/404.html')
-    context = RequestContext(request, {'request_path': request.path})
-    return HttpResponseNotFound(t.render(context))
-
-
-def custom_500(request):
-    t = loader.get_template('templates/500.html')
-    return HttpResponseServerError(t.render(Context({})))

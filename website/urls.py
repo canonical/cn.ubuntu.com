@@ -1,20 +1,10 @@
-from django.conf.urls import patterns, url
-from .views import CmsTemplateFinder, custom_404, custom_500
-from django.conf import settings
-from django.conf.urls.static import static
-from django.http import HttpResponse
+from django.conf.urls import include, url
+from django.contrib import admin
 
-# Standard patterns
-urlpatterns = patterns(
-    '',
-    # chinacachehealthtest is a dummy file that our china cache partner needs.
-    url(r'^ccotp/chinacachehealthtest.txt$', lambda r: HttpResponse('UP')),
-    url(r'^(?P<template>.*)$', CmsTemplateFinder.as_view()),  # Fenchurch
-)
+from views import CmsTemplateFinder
 
-# Static files
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-# Error handlers
-handler404 = custom_404
-handler500 = custom_500
+urlpatterns = [
+    url(r'^admin/?', include(admin.site.urls)),
+    url('^markdown/', include('django_markdown.urls')),
+    url(r'^(?P<template>.*/)?$', CmsTemplateFinder.as_view())
+]
