@@ -1,23 +1,22 @@
-ubuntu-china.cn
-===
+# ubuntu-china-cms
+A redesign of the Chinese site to have a database-backed CMS, and an insights-style `/news/` section.
 
-The Django project behind <http://ubuntu-china.cn>.
+## Pre-requisites
+1. [docker](https://robinwinslow.co.uk/2015/04/02/installing-docker-on-ubuntu/)
+2. [docker-compose](https://docs.docker.com/compose/install/) (install with `pip`)
 
-Local development
----
+## Running the site
+`$ make clean run logs`
 
-Prepare the containers and run the local development server:
+## Login details
 
-``` bash
-make run  # watch sass files and run the site from Docker images
-...
+[http://localhost:8010/admin/]
 
-Now visit <http://127.0.0.1:8004>
+### Admin
+User: `ubuntu`
+Password: `ubuntu`
 
-Fenchurch dependency
----
+### Editor
+User: `editor`
+Password: `editor`
 
-This site depends on [Fenchurch](https://bitbucket.org/nottrobin/fenchurch) - which is currently a private repository. Make sure you have SSH access to the above repository before attempting to install dependencies.
-```
-
-With ♥ from Canonical
