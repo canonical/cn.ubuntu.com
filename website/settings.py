@@ -103,9 +103,12 @@ DATABASES['default'].update(dj_database_url.config())
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
+ugettext = lambda s: s
+LANGUAGES = (('zh-hans', ugettext('Chinese')),)
 LANGUAGE_CODE = 'zh-hans'
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale/')]
+
 TIME_ZONE = 'Asia/Shanghai'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale/')]
