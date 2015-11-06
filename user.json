@@ -1,0 +1,20 @@
+[
+{
+  "fields": {
+    "username": "ubuntu",
+    "first_name": "",
+    "last_name": "",
+    "is_active": true,
+    "is_superuser": true,
+    "is_staff": true,
+    "last_login": "2015-09-01T14:49:20.640Z",
+    "groups": [],
+    "user_permissions": [],
+    "password": "pbkdf2_sha256$20000$clhEI4jXJUku$gtgNk4ctCYwV8qEBZT0pwwgcfvPX7VTkOHWGrloXruE=",
+    "email": "ubuntu@example.com",
+    "date_joined": "2015-09-01T14:49:15.769Z"
+  },
+  "model": "auth.user",
+  "pk": 2
+}
+]
