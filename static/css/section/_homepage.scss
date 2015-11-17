@@ -614,3 +614,42 @@ body.phone-launch-takeover {
     }
   }
 }
+
+// homepage-russia
+body.bq-russia-takeover {
+  header.banner {
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+
+  #main-content {
+    margin-top: 0;
+
+    @media only screen and (max-width : 767px) {
+      div.strip-inner-wrapper.strip-dark {
+        color: #333;
+      }
+    }
+
+    .row-hero {
+      @media only screen and (min-width : 768px) {
+        margin-top: 0;
+        overflow: hidden;
+        padding-bottom: 0;
+        background: url('../img/homepage/takeovers/bq-ru-takeover.jpg') 50% 50% no-repeat;
+        background-size: cover;
+        min-height: 80vh;
+      }
+
+      h1 {
+          @media only screen and (min-width : 768px) {
+            margin-top: 50px;
+          }
+
+          @media only screen and (min-width : 1600px) {
+            margin-top: 60px;
+          }
+      }
+    }
+  }
+}
