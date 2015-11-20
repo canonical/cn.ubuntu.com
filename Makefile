@@ -12,6 +12,7 @@ endif
 # ===
 PROJECT_NAME=ubuntu-china
 APP_IMAGE=${PROJECT_NAME}
+APP_CONTAINER=${PROJECT_NAME}-app
 SASS_CONTAINER=${PROJECT_NAME}-sass
 
 # Help text
@@ -78,7 +79,7 @@ run-app-image:
 	@echo "Running server on http://${docker_ip}:${PORT}"
 	@echo "======================================="
 	@echo ""
-	docker run -p ${PORT}:5000 -v `pwd`:/app -w=/app ${APP_IMAGE}
+	docker run -p ${PORT}:5000 -v `pwd`:/app --name ${APP_CONTAINER} -w=/app ${APP_IMAGE}
 
 ##
 # Create or start the sass container, to rebuild sass files when there are changes
@@ -114,7 +115,10 @@ rebuild-app-image:
 clean:
 	@echo "Removing images and containers:"
 	@docker rm -f ${SASS_CONTAINER} 2>/dev/null && echo "${SASS_CONTAINER} removed" || echo "Sass container not found: Nothing to do"
+	@docker rm -f ${APP_CONTAINER} 2>/dev/null && echo "${APP_CONTAINER} removed" || echo "App container not found: Nothing to do"
 	@docker rmi -f ${APP_IMAGE} 2>/dev/null && echo "${APP_IMAGE} removed" || echo "App image not found: Nothing to do"
+# Clean-all - an alias for clean
+clean-all: clean
 
 ##
 # "make it so" alias for "make run" (thanks @karlwilliams)
