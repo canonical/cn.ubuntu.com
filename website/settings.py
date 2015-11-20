@@ -103,8 +103,8 @@ DATABASES['default'].update(dj_database_url.config())
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-ugettext = lambda s: s
-LANGUAGES = (('zh-hans', ugettext('Chinese')),)
+from django.utils.translation import ugettext_lazy
+LANGUAGES = (('zh-hans', ugettext_lazy('Chinese')),)
 LANGUAGE_CODE = 'zh-hans'
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale/')]
 
