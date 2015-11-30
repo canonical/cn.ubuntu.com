@@ -48,6 +48,8 @@ All commands
 > make db-reset                  # Re-create the database from scratch (discards existing data)
 > make db-update                 # Update the database from local fixtures
 > make db-connect                # Connect to the database to hack around with it
+> make export-page               # Given a URL, export the page data for that URL as JSON
+> make import-new-pages          # Import pages from the existing JSON data
 > make clean-css                 # Delete any compiled CSS files
 > make clean-db                  # Remove the database and web containers (discards existing data)
 > make clean-web                 # Remove the web container (doesn't remove the application image)
@@ -149,6 +151,19 @@ db-update:
 # Connect to the database to hack around with it
 db-connect:
 	docker run -it --link ${DB_CONTAINER}:postgres --rm postgres sh -c 'exec psql -h "$$POSTGRES_PORT_5432_TCP_ADDR" -p "$$POSTGRES_PORT_5432_TCP_PORT" -U postgres'
+
+# Given a URL, export the page data for that URL as JSON
+export-page:
+	@read -p "Enter page URL path (without preceding slash): " url; \
+	if [[ -n "$${url}" ]]; then \
+		echo "Exporting to website/page-data/$${url}.json"; \
+		docker-compose run web ./manage.py export-page $${url} > website/page-data/$${url}.json; \
+	fi
+
+# Import pages from the existing JSON data
+import-new-pages:
+	echo "Importing pages from website/page-data/*"
+	docker-compose run web ./manage.py import-new-pages website/page-data/
 
 # Delete any compiled CSS files
 clean-css:
