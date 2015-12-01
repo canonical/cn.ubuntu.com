@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 
 # System
-import os
 import json
-import glob
 
 # Modules
 from django.core.management.base import BaseCommand
@@ -20,26 +18,22 @@ class Command(BaseCommand):
     from a directory of JSON files.
     """
 
-    help = 'Import all JSON page data files from a specified directory'
+    help = 'Import all JSON page data from a list of files'
 
     def add_arguments(self, parser):
         """
-        One argument: The location of the folder to import from
+        One argument: A list of files containing JSON data
         """
 
-        parser.add_argument('pages-folder')
+        parser.add_argument('files', nargs='+')
 
     def handle(self, *args, **options):
         """
         Process the command
         """
 
-        pages_folder = options['pages-folder']
-
-        file_search = os.path.join(pages_folder, '*.json')
-
-        for page_filepath in glob.glob(file_search):
-            with open(page_filepath) as page_file:
+        for filepath in options['files']:
+            with open(filepath) as page_file:
                 data = json.load(page_file)
 
                 page = next(

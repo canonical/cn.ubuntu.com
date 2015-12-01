@@ -162,8 +162,8 @@ export-page:
 
 # Import pages from the existing JSON data
 import-new-pages:
-	echo "Importing pages from website/page-data/*"
-	docker-compose run web ./manage.py import-new-pages website/page-data/
+	@echo "Importing pages from website/page-data/*"
+	docker-compose run web ./manage.py import-new-pages website/page-data/*.json
 
 # Delete any compiled CSS files
 clean-css:
