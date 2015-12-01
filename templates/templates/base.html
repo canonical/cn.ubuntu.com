@@ -25,17 +25,17 @@
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}img/apple-touch-icon-114x114-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}img/apple-touch-icon-72x72-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}img/apple-touch-icon-precomposed.png">
-<link type="text/plain" rel="author" href="{{ STATIC_URL }}files/humans.txt" />
+<link type="text/plain" rel="author" href="{% versioned_static 'files/humans.txt' %}" />
 
 <!-- Ubuntu guidelines -->
-<link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/ubuntu-styles.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/ubuntu-styles.css' %}" />
 
 <!-- global nav -->
-<link rel="stylesheet" type="text/css" media="screen and (min-width: 768px)" href="{{ STATIC_URL }}css/global.css" />
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 768px)" href="{% versioned_static 'css/global.css' %}" />
 
 <!-- site specific -->
 <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/styles.css' %}" />
-<link rel="stylesheet" type="text/css" media="print" href="{{ STATIC_URL }}css/core-print.css" />
+<link rel="stylesheet" type="text/css" media="print" href="{% versioned_static 'css/core-print.css' %}" />
 
 <!-- scripts -->
 <script src="{{ STATIC_URL }}js/plugins/modernizr.2.7.1.js"></script>
