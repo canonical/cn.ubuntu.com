@@ -1,177 +1,164 @@
 {% extends "desktop/base_cloud.html" %}
+{% load markdown_deux_tags %}
 
-{% block title %}桌面{% endblock %}
-{% block meta_description %}Ubuntu Kylin/优麒麟是一款开源免费的用于笔记本和桌面电脑的操作系统。优麒麟（Ubuntu Kylin）操作系统开发于中国，致力于为中国用户服务。{% endblock %}
-{% block meta_keywords %}ubuntu, Ubuntu, 乌班图, ubuntu操作系统, 乌班图操作系统, Ubuntu OS, 桌面, OS, Linux, 桌面系统, Ubuntu Kylin, 优麒麟, ubuntu 麒麟, 中国定制, Windows替代, 苹果替代, thin client, 瘦客户端, Business desktop, 商务桌面, 微软办公软件兼容, Microsoft Office 兼容, 触屏, HiDPI高清显示屏, 中文输入, Kingsoft, Kuaipan, Sogou, 搜狗输入法, 金山WPS办公软件 , 优客助手, Smart Scope, 智能搜索, 金山快盘云存储, 莲花即时通信, 开源, open source, Landscape, Ubuntu Advantage, 下载Ubuntu, 下载优麒麟, 下载乌班图, 部署, 配置, 服务编排, 商务支持, 无中断服务, LTS, 14.04, Vivid Vervet, 15.04, 生动长尾黑颚猴, Willy Werewolf, 锐敏足智的狼人, 15.10{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
 
 {% block second_level_nav_items %}
-	{% include "templates/_nav_breadcrumb.html" with section_title="Desktop" page_title="Desktop"  %}
+    {% include "templates/_nav_breadcrumb.html" with section_title="Desktop" page_title="Desktop"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
 {# ================ 1. Ubuntu Kylin ================ #}
 <div id="ubuntu-kyin" class="row row-hero">
-	<div class="six-col no-margin-bottom">
-		<h1>Ubuntu Kylin / 优麒麟</h1>
-		<p>Ubuntu是世界最受欢迎操作系统之一，目前拥有超过2500万的桌面用户排名第三，而它在服务器和云计算上的应用更为广泛。它是一款完全开源的由国际软件商家Canonical作为坚实后盾的操作系统。因为它对不同硬件的支持和易用，以及它至核心的安全机制，目前在全世界有众多商业，政府及教育机构已经采用Ubuntu操作系统。</p>
-		<p>Ubuntu Kylin （中文又被称为优麒麟）是基于Ubuntu的一款官方衍生版。  它是一款专门为中国市场打造的免费操作系统，而且它已经被录入中国政府采购条例名单中。它包括Ubuntu用户期待的各种功能，并配有必备的中文软件及程序。与竞争对手不同，优麒麟的用户界面专门为中国用户设计，并且支持触摸屏以及HiDPI高清显示屏，在各种不同硬件上都可以完美运行。</p>
-		<p><a class="link-cta-ubuntu" href="/download">下载优麒麟</a></p>
-		<p><img src="{{ STATIC_URL }}img/desktop/image-ubuntukylin.jpg" alt="" class="for-mobile" /></p>
-	</div><!-- / .five-col -->
-</div><!-- / .row -->
+    <div class="six-col">
+        {% include "templates/_cms-block.html" with block_content=hero %}
+    </div>
+    <div class="six-col no-margin-bottom">
+        <p><a class="link-cta-ubuntu" href="/download">下载优麒麟</a></p>
+        <p><img src="{{ STATIC_URL }}img/desktop/image-ubuntukylin.jpg" alt="" class="for-mobile" /></p>
+    </div>
+
+</div>
 
 {# ================ 2. Who is behind Ubuntu Kylin? ================ #}
 <div id="ubuntu-kylin-backers" class="row">
-	<div class="six-col">
-		<h2>优麒麟背后的团队</h2>
-		<p>优麒麟是由 Canonical，工业和信息化部软件与集成电路促进中心（CSIP）以及国防科学技术大学（NUDT）携手打造。</p>
-		<p>目前，开发团队正在与开源社区合作打造Ubuntu的核心功能，以更好地适应中国用户。 除了Ubuntu软件中心推出的本土化版本以外，优麒麟还带最常用的中文程序。 </p>
-	</div>
-	<div class="six-col text-center last-col">
-	    	<ul class="no-bullets clearfix align-center">
-	    		<li><img src="{{ STATIC_URL }}img/desktop/logo-canonical-288.png" alt="Canonical" width="288" height="40"></li>
-	    		<li><img src="{{ STATIC_URL }}img/desktop/logo-csip-180.png" alt="CSIP" width="180" height="71"></li>
-	    		<li><img src="{{ STATIC_URL }}img/desktop/logo-nudt-288.png" alt="NUDT" width="288" height="72"></li>
-	    	</ul>
-		</div>
-</div><!-- /.row -->
+    <div class="six-col">
+        {% include "templates/_cms-block.html" with block_content=who_is_behind_kylin %}
+    </div>
+    <div class="six-col text-center last-col">
+            <ul class="no-bullets clearfix align-center">
+                <li><img src="{{ STATIC_URL }}img/desktop/logo-canonical-288.png" alt="Canonical" width="288" height="40"></li>
+                <li><img src="{{ STATIC_URL }}img/desktop/logo-csip-180.png" alt="CSIP" width="180" height="71"></li>
+                <li><img src="{{ STATIC_URL }}img/desktop/logo-nudt-288.png" alt="NUDT" width="288" height="72"></li>
+            </ul>
+        </div>
+</div>
 
 {# ================ 3. Who is Ubuntu Kylin made for? ================ #}
-<div id="ubuntu-kylin-user" class="row equal-height vertical-divider">
-	<h2 class="twelve-col">优麒麟的目标用户是谁？</h2>
-	<div class="four-col for-you">
-		<h3>为您服务</h3>
-		<p>既快速又安全，有数以千计的应用程序可供选择，方便您在您的个人电脑上进行任何操作 。</p>
-	</div>
-	<div class="four-col for-business">
-		<h3>为企业用户服务</h3>
-		<p>安全、直观且易于管理，可节省许可费用但丝毫不影响其性能，从而降低您的总拥有成本。 </p>
-	</div>
-	<div class="four-col last-col for-developers">
-		<h3>为开发者服务</h3>
-		<p>提供最广泛的工具、最大的开发者社区和将应用程序部署到云的最快方法。 </p>
-	</div>
-</div><!-- /.row  -->
+<div id="ubuntu-kylin-user" class="row">
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=who_is_kylin_for %}
+    </div>
+    <div class="twelve-col equal-height vertical-divider">
+        <div class="four-col for-you">
+            {% include "templates/_cms-block.html" with block_content=for_you %}
+        </div>
+        <div class="four-col for-business">
+            {% include "templates/_cms-block.html" with block_content=for_business %}
+        </div>
+        <div class="four-col last-col for-developers">
+            {% include "templates/_cms-block.html" with block_content=for_developers %}
+        </div>
+    </div>
+</div>
 
 {# ================ 4. Whats new in Ubuntu Kylin 15.10? ================ #}
 <div id="row-whats-new" class="row row-grey">
-	<div class="eight-col append-four">
-		<h2>优麒麟15.10版本新亮点？</h2>
-		<p>优麒麟15.04版本除了内核版本的更新之外，重点做了一些对现有软件的优化和更新。</p>
-	</div>
-	<ul class="list six-col append-six last-col">
-		<li> Linux 内核 4.2</li>
-		<li>Dash中的智能搜索可以通过混搭中英文输入进行搜索</li>
-		<li>搜狗输入法新增双拼输入</li>
-		<li>优麒麟软件中心界面优化</li>
-		<li>优客助手也同时进行了界面优化 </li>
-		<li class="last-item">火狐41，雷鸟38.2，以及Chromium 45 版本更新</li>
-	</ul>
-	<p><a href="https://wiki.ubuntu.com/WilyWerewolf/ReleaseNotes" class="external">详细版本注释</a></p>
-</div><!-- / .row -->
+    <div class="seven-col">
+        {% include "templates/_cms-block.html" with block_content=features %}
+    </div>
+</div>
 
 {# ================ 5. Features of Ubuntu Kylin ================ #}
 
 {# ================ Ubuntu Kylin Store =================== #}
 <div class="row row-">
-	<div class="six-col no-margin-bottom">
-		<img  class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-store.png" alt="" width="469" height="308" />
-	</div>
-	<div class="six-col last-col">
-		<h2>优麒麟软件商店</h2>
-		<p>优麒麟软件商店由软件中心、开发者平台和软件仓库三部分组成，界面简洁、功能强大，同时支持Ubuntu和优麒麟软件仓库，提供开发者入门导航和软件提交管理等强大支持，便于快速安装优麒麟团队合作推出的特色软件！ </p>
-	</div>
+    <div class="six-col no-margin-bottom">
+        <img  class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-store.png" alt="" width="469" height="308" />
+    </div>
+    <div class="six-col last-col">
+        {% include "templates/_cms-block.html" with block_content=kylin_store %}
+    </div>
 </div>
 
 {# ================ 6. Sogou Input Method ================ #}
 <div id="row-sogou" class="row row-sogou">
-	<div class="six-col no-margin-bottom">
-		<h2>搜狗输入法</h2>
-		<p>优麒麟为中文输入精心打造的搜狗输入法，允许字词语句自动补全。更重要的是，它具有互联网搜索的云输入功能，不论是浏览网页或创建新文件，都能使你的优麒麟电脑使用起来更方便更快捷。最新发布的优麒麟15.10版本新增了搜狗输入法的双拼输入。 </p>
-	</div>
-	<div class="six-col no-margin-bottom last-col">
-		<img src="{{ STATIC_URL }}img/desktop/image-sogouinputmethod.jpg" alt="" width="482" height="248" class="touch-border pull-right-40 right" />
-	</div>
-</div><!-- / .row -->
+    <div class="six-col no-margin-bottom">
+        {% include "templates/_cms-block.html" with block_content=sogou %}
+    </div>
+    <div class="six-col no-margin-bottom last-col">
+        <img src="{{ STATIC_URL }}img/desktop/image-sogouinputmethod.jpg" alt="" width="482" height="248" class="touch-border pull-right-40 right" />
+    </div>
+</div>
 
 {# ================ 7. Youker Assistant ================ #}
 <div id="row-youker" class="row row-grey row-youker">
-	<div class="six-col no-margin-bottom">
-		<img  class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-youkerassistant.jpg" alt="" width="469" height="308" />
-	</div>
-	<div class="six-col last-col">
-		<h2>优客助手</h2>
-		<p>优客助手是一个协助Windows用户在最短的时间内以最便捷的方式切换到Ubuntu操作系统的简单有效的工具。这个内建的工具有助于日常的系统管理工作，比如硬件检测和界面个性化处理等。有了优客助手，您就再也不必担心如何使用优麒麟了。最新版本优化程序架构，更加节省系统资源，增加文件粉碎机功能、UKID登陆、西班牙语言支持和Cinnamon桌面环境的美化配置，并完善进程管理器。</p>
-	</div>
-</div><!-- / .row -->
+    <div class="six-col no-margin-bottom">
+        <img  class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-youkerassistant.jpg" alt="" width="469" height="308" />
+    </div>
+    <div class="six-col last-col">
+        {% include "templates/_cms-block.html" with block_content=youker %}
+    </div>
+</div>
 
 {# ================ 8. Smart Scopes ================ #}
 <div id="row-scopes" class="row row-scopes">
-	<div class="six-col no-margin-bottom">
-		<h2>智能搜索</h2>
-		<p>用户在优麒麟Dash中可以发现专用的本地化智能搜索，它将使在线内容的搜索变得更快捷更有针对性。通过智能搜索，用户可以直接搜到搜狗在线的图片内容， 优酷的视频内容，以及来自百度的音乐内容；这一切都会和本地内容搜索的结果同时呈现。智能搜索让你在桌面上的内容搜索更聪明广泛。 </p>
-	</div>
-	<div class="six-col no-margin-bottom last-col">
-		<img class="touch-border pull-right-40 right" src="{{ STATIC_URL }}img/desktop/image-smartscopes.jpg" alt="" width="482" height="302"/>
-	</div>
-</div><!-- / .row -->
+    <div class="six-col no-margin-bottom">
+        {% include "templates/_cms-block.html" with block_content=scopes %}
+    </div>
+    <div class="six-col no-margin-bottom last-col">
+        <img class="touch-border pull-right-40 right" src="{{ STATIC_URL }}img/desktop/image-smartscopes.jpg" alt="" width="482" height="302"/>
+    </div>
+</div>
 
 {# ================ 9. Kingsoft WPS Office ================ #}
 <div id="row-wps-office" class="row row-wps-office">
-	<div class="six-col no-margin-bottom">
-		<img class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-kingsoft-wps-office.png" alt="" width="488" height="260" />
-	</div>
-	<div class="six-col last-col">
-		<h2>金山WPS办公软件</h2>
-		<p>优麒麟也配有中国最受欢迎的办公套件。我们和金山的密切合作让您能充分利用金山WPS办公软件进行文字、表格和幻灯片的处理。</p>
-	</div>
-</div><!-- / .row -->
+    <div class="six-col no-margin-bottom">
+        <img class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-kingsoft-wps-office.png" alt="" width="488" height="260" />
+    </div>
+    <div class="six-col last-col">
+        {% include "templates/_cms-block.html" with block_content=kingsoft_office %}
+    </div>
+</div>
 
 {# ================ 10. Kingsoft Kuaipan cloud storage ================ #}
 <div id="row-kuaipen" class="row row-grey row-kuaipen">
-	<div class="six-col">
-		<h2>迅雷快盘云存储</h2>
-		<p>迅雷快盘让您在优麒麟上能通过网络或是任何迅雷快盘兼容设备读取重要文件和内容。</p>
-	</div>
-	<div class="six-col last-col no-margin-bottom">
-		<img class="touch-border pull-right-40 right" src="{{ STATIC_URL }}img/desktop/image-kuaipancloudstorage.jpg" alt="" width="487" height="283" />
-	</div>
-</div><!-- / .row -->
+    <div class="six-col">
+        {% include "templates/_cms-block.html" with block_content=kingsoft_storage %}
+    </div>
+    <div class="six-col last-col no-margin-bottom">
+        <img class="touch-border pull-right-40 right" src="{{ STATIC_URL }}img/desktop/image-kuaipancloudstorage.jpg" alt="" width="487" height="283" />
+    </div>
+</div>
 
 {# ================ 11. Chinese lunar calendar ================ #}
 <div id="row-calendar" class="row row-calendar">
-	<div class="six-col no-margin-bottom">
-		<img  class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-chinese-lunar-calendar.png" alt="" width="469" height="260" />
-	</div>
-	<div class="six-col last-col no-margin-bottom">
-		<h2>中国传统农历</h2>
-		<p>除了公历以外，优麒麟同时提供传统农历日历，让中国用户能在有效管理他们的日常计划的同时确知国家法定节假日。  </p>
-	</div>
-</div><!-- / .row -->
+    <div class="six-col no-margin-bottom">
+        <img  class="touch-border pull-left-40" src="{{ STATIC_URL }}img/desktop/image-chinese-lunar-calendar.png" alt="" width="469" height="260" />
+    </div>
+    <div class="six-col last-col no-margin-bottom">
+        {% include "templates/_cms-block.html" with block_content=lunar_calendar %}
+    </div>
+</div>
 
 {# ================ 13. Why is it free? ================ #}
 <div id="row-free" class="row row-grey row-free vertical-divider">
-	<h2 class="twelve-col">为何它是免费的&#65311;</h2>
-	<div class="open-source six-col">
-		<h3>它是开源系统&#12290;</h3>
-		<p class="first">因为优麒麟是基于开源系统Ubuntu而生。Ubuntu的全球社区拥有成千上万的用户，他们帮助创建了全球最佳开源操作系统。他们自愿奉献时间和技能，确保 Ubuntu 日臻完善。</p>
-	</div><!-- /.six-col -->
-
-	<div class="backed-by-canonical six-col last-col">
-		<h3>由 Canonical 提供支持</h3>
-		<p class="first">Canonical 是 Ubuntu 的首要服务提供商。企业可选择参加专业培训、获得支持或进行咨询，但需支付一定费用。所支付的费用将用于 Ubuntu 的进一步开发。</p>
-	</div><!-- /.six-col -->
-</div><!-- /.row -->
+    <h2 class="twelve-col">为何它是免费的&#65311;</h2>
+    <div class="six-col">
+        <div class="open-source four-col">
+            {% include "templates/_cms-block.html" with block_content=open_source %}
+        </div>
+        <div class="two-col last-col">
+            <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-projectswelove-orange.svg" alt="" width="140" height="140" class="not-for-small" />
+        </div>
+    </div>
+    <div class="six-col last-col">
+        <div class="backed-by-canonical four-col">
+            {% include "templates/_cms-block.html" with block_content=canonical %}
+        </div>
+        <div class="two-col last-col">
+            <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-canonical.svg" alt="" width="140" height="140" class="not-for-small" />
+        </div>
+    </div>
+</div>
 
 {# ================ 14. Find out more ================ #}
 <div id="row-more" class="row no-border">
-	<div class="eight-col">
-		<h2>了解更多详情</h2>
-		<p>欲知关于优麒麟的更多详情，请加入我们的社区或浏览我们的官方网站</p>
-		<p><a href="http://www.ubuntukylin.com">点击进入官网&nbsp;&rsaquo;</a></p>
-{# ================ 15. Or learn more about Ubuntu on desktop ================ #}
-		<p><a href="http://www.ubuntu.com/desktop">您也可以访问以下网站进一步了解 Ubuntu 桌面系统 www.ubuntu.com&nbsp;&rsaquo;</a></p>
-	</div>
-</div><!-- /.row -->
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=find_out_more %}
+    </div>
+</div>
 
 {% endblock %}

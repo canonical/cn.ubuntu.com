@@ -39,37 +39,6 @@ YUI().use('node', 'anim', function(Y) {
 	    });
 	}
 
-	core.hashBang = function() {
-		Y.all('#main-content a').each(function (node) {
-			var hrefValue = node.get('href');
-			if( hrefValue.indexOf("#") != -1 ) {
-				var cleanTarget = core.qualifyURL(hrefValue.substr(0,hrefValue.indexOf('#')));
-				var hashValue = hrefValue.substr(hrefValue.indexOf('#')+1);
-				var cleanURL = window.location.href;
-				node.setAttribute('data-hash',hashValue);
-				node.set('href',hrefValue.substr(0,hrefValue.indexOf('#')));
-				if(cleanURL == cleanTarget){
-					node.on("click", function (e) {
-						e.preventDefault();
-						window.name = null;
-						if(!this.hasClass('slideless')) {
-							core.slideToAnchor(this.getAttribute('data-hash'));
-						}
-					});
-				}else{
-					node.on("click", function (e) {
-						window.name = '¬'+node.getAttribute('data-hash');
-					});
-				}
-			}else{
-				node.on("click", function (e) {
-					window.name = null;
-				});
-			}
-		});
-		core.checkForSession();
-	}
-
 	core.qualifyURL = function($url) {
 	    var img = document.createElement('img');
 	    img.src = $url;
@@ -184,7 +153,6 @@ YUI().use('node', 'anim', function(Y) {
 	};
 
 	core.sectionTabs();
-	core.hashBang();
 	core.setEqualHeight('equal-height');
 	core.getPullQuotes();
 	core.setupTooltips();
