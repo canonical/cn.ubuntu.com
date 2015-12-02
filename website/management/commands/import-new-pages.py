@@ -66,12 +66,6 @@ class Command(BaseCommand):
                     fields = item['fields']
                     fields['page'] = page
 
-                    # Replace unicode double encodings, like `\\r`
-                    # Created by django.serializers
-                    for key, value in fields.items():
-                        if type(value) is unicode:
-                            fields[key] = value.decode('unicode_escape')
-
                     print "Creating element: " + fields['name']
 
                     Element.objects.get_or_create(**fields)
