@@ -57,7 +57,8 @@ YUI().use('node', 'gallery-carousel', 'gallery-carousel-anim', 'substitute', 'co
                 }
             }
 
-            Y.all('.replay').on('click', function(e){
+            Y.all('.replay').on('click', function(e) {
+                e.preventDefault();
                 core.rerunAnimation(e.target.get('parentNode').one('.slider-animation').getAttribute('class').replace('slider-animation ','').replace(' run',''));
             });
             if(Y.one('.content-controls .gallery-screen')){
@@ -87,7 +88,8 @@ YUI().use('node', 'gallery-carousel', 'gallery-carousel-anim', 'substitute', 'co
                 core.rerunAnimation(e.target.get('parentNode').get('parentNode').get('parentNode').one('.slider-animation').getAttribute('class').replace('slider-animation ','').replace(' run',''));
             });
 
-            Y.all('.replay').on('click', function(e){
+            Y.all('.replay').on('click', function(e) {
+                e.preventDefault();
                 core.rerunAnimation(e.target.get('parentNode').one('.slider-animation').getAttribute('class').replace('slider-animation ','').replace(' run',''));
             });
             if(Y.one('.show-video')){
