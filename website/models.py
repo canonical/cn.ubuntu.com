@@ -1,7 +1,7 @@
 # Modules
 from django.db import models
 from django_markdown.models import MarkdownField
-import reversion
+from reversion import revisions as reversion
 
 
 class PageManager(models.Manager):
@@ -77,6 +77,6 @@ class Element(models.Model):
     class Meta:
         unique_together = (('page', 'name'),)
 
-
 reversion.register(Element)
 reversion.register(Page, follow=['elements'])
+
