@@ -156,7 +156,10 @@ db-connect:
 export-page:
 	@read -p "Enter page URL path (without preceding slash): " url; \
 	if [[ -n "$${url}" ]]; then \
-		docker-compose run web ./manage.py export-page $${url}; \
+		echo "Exporting to website/page-data/$${url}.json"; \
+		data=$$(docker-compose run web ./manage.py export-page-json $${url}); \
+		if [[ $$? > 0 ]]; then echo -e "ERROR:\n$${data}"; exit 1; \
+		else echo "$${data}" > website/page-data/$${url}.json; fi; \
 	fi
 
 # Delete any compiled CSS files
