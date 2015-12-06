@@ -160,6 +160,8 @@ export-page:
 		data=$$(docker-compose run web ./manage.py export-page-json $${url}); \
 		if [[ $$? > 0 ]]; then echo -e "ERROR:\n$${data}"; exit 1; \
 		else echo "$${data}" > website/page-data/$${url}.json; fi; \
+		echo "Creating migration for $${url}"; \
+		docker-compose run web ./manage.py create-page-migration website/page-data/$${url}.json; \
 	fi
 
 # Delete any compiled CSS files
