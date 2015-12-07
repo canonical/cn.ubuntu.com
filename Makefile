@@ -157,20 +157,17 @@ export-page:
 	@read -p "Enter page URL path (without preceding slash): " url; \
 	if [[ -n "$${url}" ]]; then \
 		echo "Exporting to website/page-data/$${url}.json"; \
-		data=$$(docker-compose run web ./manage.py export-page $${url}); \
+		data=$$(docker-compose run web ./manage.py export-page-json $${url}); \
 		if [[ $$? > 0 ]]; then echo -e "ERROR:\n$${data}"; exit 1; \
-		else echo "$${data}" > website/page-data/$${url}.json; fi \
+		else echo "$${data}" > website/page-data/$${url}.json; fi; \
+		echo "Creating migration for $${url}"; \
+		docker-compose run web ./manage.py create-page-migration website/page-data/$${url}.json; \
 	fi
-
-# Import pages from the existing JSON data
-import-new-pages:
-	@echo "Importing pages from website/page-data/*"
-	docker-compose run web ./manage.py import-new-pages website/page-data/*.json
 
 # Delete any compiled CSS files
 clean-css:
 	rm -rf .sass-cache
-	find . -name '*.css' | xargs rm -f
+	find . -name 'statis/css/*.css' | xargs rm -f
 
 # Remove the database container (discards existing data, and deletes web as well)
 clean-db:

@@ -6,7 +6,7 @@ A redesign of the Chinese site to have a database-backed CMS, and an insights-st
 2. [docker-compose](https://docs.docker.com/compose/install/) (install with `pip`)
 
 ## Running the site
-`$ make clean run logs`
+`$ make clean-all run`
 
 ## Login details
 

@@ -57,6 +57,9 @@ docs/_build/
 
 # PyBuilder
 target/
-*.css
+
+# Sass
+static/css/**/*.css
 .sass-cache/
 *.css.map
+
