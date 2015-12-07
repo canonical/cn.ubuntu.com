@@ -170,7 +170,7 @@ import-new-pages:
 # Delete any compiled CSS files
 clean-css:
 	rm -rf .sass-cache
-	find . -name '*.css' | xargs rm -f
+	find . -name 'statis/css/*.css' | xargs rm -f
 
 # Remove the database container (discards existing data, and deletes web as well)
 clean-db:
