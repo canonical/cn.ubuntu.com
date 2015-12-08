@@ -8,26 +8,6 @@
 },
 {
   "fields": {
-    "text": " ",
-    "page": [
-      "about"
-    ],
-    "name": "meta_description"
-  },
-  "model": "website.element"
-},
-{
-  "fields": {
-    "text": " ",
-    "page": [
-      "about"
-    ],
-    "name": "meta_keywords"
-  },
-  "model": "website.element"
-},
-{
-  "fields": {
     "text": "\u5173\u4e8e",
     "page": [
       "about"
@@ -73,6 +53,26 @@
       "about"
     ],
     "name": "careers"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": " Canonical\u516c\u53f8\u5f00\u53d1\u7684Ubuntu \u662f\u4e00\u6b3e\u5f00\u6e90\u64cd\u4f5c\u7cfb\u7edf\uff0c\u53ef\u5728\u4e2a\u4eba\u7535\u8111\u3001\u667a\u80fd\u624b\u673a\u3001\u5e73\u677f\u7535\u8111\u3001\u670d\u52a1\u5668\u548c\u4e91\u4e0a\u7b49\u5e73\u53f0\u4e0a\u4f7f\u7528\u3002",
+    "page": [
+      "about"
+    ],
+    "name": "meta_description"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": " Canonical,Canonical\u516c\u53f8,\u79d1\u80fd\u516c\u53f8,ubuntu,\u4e4c\u73ed\u56fe,\u53cb\u90a6\u62d3,\u4e2a\u4eba\u7535\u8111\u7cfb\u7edf",
+    "page": [
+      "about"
+    ],
+    "name": "meta_keywords"
   },
   "model": "website.element"
 }
