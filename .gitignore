@@ -63,3 +63,6 @@ static/css/**/*.css
 .sass-cache/
 *.css.map
 
+static/admin/
+static/bootstrap_admin/
+static/django_markdown/
