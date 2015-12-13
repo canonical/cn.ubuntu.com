@@ -10,4 +10,5 @@ dj-static==0.0.6
 django-static-root-finder==0.2.1
 django-versioned-static-url==0.6
 django-template-finder-view==0.2
+django-openid-auth==0.7
 Jinja2==2.8
