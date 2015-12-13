@@ -146,7 +146,6 @@ db-update:
 	# Wait for DB to be ready
 	docker run --link $$(docker-compose ps -q db):db aanand/wait
 	docker-compose run web python manage.py migrate --noinput
-	docker-compose run web python manage.py loaddata cms.json
 
 # Connect to the database to hack around with it
 db-connect:
