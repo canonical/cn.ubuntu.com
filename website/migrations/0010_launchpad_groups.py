@@ -17,13 +17,13 @@ def create_launchpad_groups(apps, schema_editor):
         Group.objects.create(name=group_name)
 
     # Create permissions
-    apps.models_module = True
-    create_permissions(apps)
+    for app in apps.get_app_configs():
+        create_permissions(app)
 
     # Special permissions for content editors
     content_people = Group.objects.get(name="canonical-content-people")
 
-    permissions = [
+    permission_codenames = [
         'change_element',
         'change_page',
         'add_revision',
@@ -34,10 +34,13 @@ def create_launchpad_groups(apps, schema_editor):
         'delete_version'
     ]
 
-    for permission in permissions:
-        content_people.permissions.add(
-            Permission.objects.get(codename=permission)
+    for permission_codename in permission_codenames:
+        permissions = Permission.objects.filter(
+            codename=permission_codename
         )
+
+        for permission in permissions:
+            content_people.permissions.add(permission)
 
 
     content_people.save()
