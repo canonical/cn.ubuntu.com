@@ -1,4 +1,5 @@
 {% extends "internet-of-things/base_internet-of-things.html" %}
+{% load markdown_deux_tags %}
 
 {% block title %}物联网世界的 Ubuntu Core{% endblock %}
 {% block meta_description %}崭新极具影响力且专为物联网世界更新的一版Ubuntu操作系统。{% endblock %}
@@ -14,10 +15,9 @@
 {# ================ 1. Ubuntu Core on the Internet of Things ================ #}
 <section class="row row-hero equal-height">
     <div class="seven-col append-one">
-        <h2>物联网世界的 Ubuntu Core</h2>
-        <p>Snappy Ubuntu Core 使稳固的安全性、可靠的更新和庞大的 Ubuntu 生态系统变得触手可及，并将深受开发人员喜爱的云平台带到各种物联网、联网设备和自主设备。</p>
-        <p>Ubuntu Core是一套安全、轻量级、应用激活且具有事务化更新的Ubuntu。 &ldquo;snappy&rdquo;英文原意可以理解为简洁轻快，而&ldquo;snappy&rdquo;应用在这里是指一款全新更加简便的应用程序打包系统。</p>
-        <p>现在，众多 32 位和 64 位 ARM 和 X86 平台上均可运行 snappy Ubuntu Core。</p>
+        <div class="seven-col">
+            {% include "templates/_cms-block.html" with block_content=hero %}
+        </div>
         <p><a class="link-cta-ubuntu" href="http://cn.developer.ubuntu.com/zh-cn/snappy/">开启 Ubuntu Core 的精彩之旅</a></p>
         <p><a href="mailto:ubuntu-china@canonical.com" class="external">如果您对成品设备感兴趣，请联系我们</a></p>
     </div>
@@ -29,17 +29,13 @@
 {# ============== 2. Secure critical infrastructure and devices ============= #}
 <section class="row row-grey no-border no-padding-bottom">
     <div class="eight-col">
-        <h2>保护关键基础架构和设备</h2>
-        <p>关键基础架构系统是间谍和破坏活动的一种攻击媒介。Ubuntu Core 设备会自动进行更新，快速修补系统漏洞。Ubuntu Core 还提供一流的基于内核容器的应用程序隔离功能，尽量减少第三方应用程序中的错误和漏洞的影响。</p>
-        <p>经过认证且受支持的 Ubuntu Core 平台为联网设备的安全和防护树立了全新的标准。在认证平台上选择 Ubuntu Core 的设备制造商现在有了一个非常受欢迎的平台，该平台可以满足企业和政府对于安全更新和管理的要求。</p>
+        {% include "templates/_cms-block.html" with block_content=protection %}
     </div>
 </section>
 
 <section class="row row-grey no-border no-padding-bottom">
     <div class="six-col">
-        <h2>更聪明、更安全且令人惊叹的自主智能设备</h2>
-        <p>早期在联网设备上使用 Ubuntu 的用户是活跃于机器人、无人机和开放式物联网中心领域的开拓者。Ubuntu Core 是超级智能设备的安全平台，它提供一个应用商店，可将最新的软件直接推送到您的设备，并轻松与每个云建立连接。</p>
-        <p>无人机和其他智能设备的商业供应商现在可以通过一个开放的平台自动提供可靠的软件更新，以及向客户销售软件。</p>
+        {% include "templates/_cms-block.html" with block_content=intelligent_devices %}
     </div>
     <div class="six-col last-col">
         <img src="{{ STATIC_URL }}img/internet-of-things/erle_robotics_ubuntu_drone.png" alt="Erle drone" />
@@ -56,8 +52,7 @@
 {# ============ 3. Software-defined appliances simplify telco CPE =========== #}
 <section class="row equal-height no-border no-padding-bottom ">
     <div class="eight-col">
-        <h2>利用软件定义的设备简化电信行业的 CPE</h2>
-        <p>Canonical 正在与电信运营商开展合作，以 snappy Ubuntu Core 内置的运营商级系统和应用程序更新机制为基础，简化用户端设备 (Customer Premises Equipment, CPE) 的采购、部署和维护。对于众多以 Snappy 应用程序和框架形式交付的软件定义 CPE 设备而言，用户可以期待在普通商用 X86 和 ARM 硬件上构建标准管理系统，而不必选择管理系统分散的品牌硬件设备。</p>
+        {% include "templates/_cms-block.html" with block_content=telecoms %}
     </div>
 </section>
 
@@ -66,23 +61,18 @@
         <img src="{{ STATIC_URL }}img/internet-of-things/penguin_4806.png" alt="Penguin router" />
     </div>
     <div class="eight-col last-col">
-        <h3>更智能的交换机、不同凡响的路由器</h3>
-        <p>新一代交换机能够运行 Ubuntu Core 和一系列以网络为中心的应用程序。</p>
-        <p>Snappy Ubuntu Core 15.04 现在可作为白牌交换机和 OCP 交换机设计的开发用 Linux 内核。得益于此，任何 ODM、网络操作系统供应商或白牌交换机经销商提供的交换机，都可以带有与客户在其服务器和 OpenStack 环境中所用相同的主流 Linux 发行版。</p>
-        <p><a class="external" href="https://insights.ubuntu.com/2015/05/13/iot-world-snappy-for-whitebox-switches/">进一步了解适用于白牌交换机的 Snappy</a></p>
+        {% include "templates/_cms-block.html" with block_content=switches_routers %}
     </div>
 </section>
 
 {# ================= 4. Enterprise grade, industry hardened ================= #}
 <section class="row row-grey">
     <div class="eight-col">
-        <h2>企业级性能在工业领域的再一次提升</h2>
-        <p>Ubuntu 在企业数据中心的广泛部署为其进入工业控制和管理系统奠定了基础。</p>
+        {% include "templates/_cms-block.html" with block_content=industry %}
     </div>
     <div class="equal-height">
         <div class="six-col">
-            <h3>获取出色的企业软件</h3>
-            <p>随着智能设备进入企业，人们需要将它们与现有的身份识别、管理和监控系统相集成，而 Ubuntu 在这方面提供了极其广泛的云时代解决方案。例如，Forgerock 是一个在身份及访问权限管理领域被广泛采用的领先平台，能够管理包括人员、物品、场所和活动在内的所有要素。现在，该平台将面向 Ubuntu Core 系统的开发人员提供其解决方案。</p>
+            {% include "templates/_cms-block.html" with block_content=enterprise_software %}
         </div>
         <div class="six-col last-col align-center align-vertically">
             <img src="{{ STATIC_URL }}img/logos/logo-forgerock.png" alt="Forgerock logo" />
@@ -96,15 +86,13 @@
         <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-shop-orange.svg" width="167" height="167" alt="" />
     </div>
     <div class="eight-col last-col ">
-        <h2>面向开放设备的精彩应用市场</h2>
-        <p>通用的可扩展设备，如集线器、机顶盒和网关等，为全球开发人员社区开发的各类应用开辟了一个庞大的应用市场。Ubuntu 让人们可以轻松在笔记本电脑上为各种新奇设备开发精彩的应用，在云中测试这些应用，然后直接将它们发布到涵盖各种设备的全球市场。</p>
+        {% include "templates/_cms-block.html" with block_content=open_devices %}
     </div>
 </section>
 
 <section class="row no-border equal-height no-padding-bottom">
    <div class="eight-col">
-        <h3>开发人员的最爱</h3>
-        <p>Ubuntu 平台拥有大量软件帮助开发人员进行复杂的处理工作，例如视觉处理、传感器处理以及运动和位置数据的处理。Ubuntu在开发人员中颇受欢迎，因此经常能在无人驾驶汽车、娱乐控制系统、深空任务控制中心和智能显示系统等诸多项目中看到“Ubuntu 的实战应用”。Ubuntu Core 为那些面向全球推出、很难以物理方式实际访问、连接到互联网获取更新和安全修补程序的产品提供了一个随时可以投入生产的平台。</p>
+        {% include "templates/_cms-block.html" with block_content=developers_favourite %}
    </div>
    <div class="four-col last-col align-center align-vertically not-for-small">
        <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-developer-orange.svg" width="167" height="167" alt="" />
@@ -116,16 +104,13 @@
         <img src="{{ STATIC_URL }}img/logos/logo-microsoftazure.svg" height="167" alt="Microsoft logo" />
     </div>
     <div class="eight-col last-col">
-        <h3>与 Azure 和 AWS 建立云连接</h3>
-        <p>微软和亚马逊已同意在 Ubuntu Core 上为开发人员发布其物联网开发人员 API。</p>
-        <p>&#8220;智能工业系统需要安全的云后端来存储和分析数据。微软和 Canonical 正在开展合作，为 开发人员提供开发人员 API 来支持Ubuntu Core。这次合作将简化云支持的设备开发。&#8221; 微软的技术研究员 John Shewchuk 说。</p>
+        {% include "templates/_cms-block.html" with block_content=azure_aws %}
     </div>
 </section>
 
 <section class="row equal-height">
     <div class="eight-col">
-        <h3>从云到设备，只需一个平台</h3>
-        <p>Ubuntu Core 从云到设备均采用同一个平台。为嵌入式设备进行开发从未如此简单。云中的 Ubuntu Core 是一个理想的测试和开发平台。你可以在线模拟你的设备，并可根据需要启动数千个模拟设备。 Canonical 确保云和设备中的 Ubuntu Core 具有完全相同的 API，并能接收完全相同的安全更新。</p>
+        {% include "templates/_cms-block.html" with block_content=one_platform %}
     </div>
     <div class="four-col last-col align-center align-vertically not-for-small">
         <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-accessories-orange.svg" width="167" height="167" alt="" />
@@ -135,14 +120,10 @@
 {# ====================== 6. Range of supported devices ===================== #}
 <section class="row no-border no-margin-bottom no-padding-bottom row-grey">
     <div class="eight-col">
-        <h2>支持极其广泛的设备</h2>
-        <p>同时支持 ARMv7 和 X86-64。使用标准 PC 设备使设备的原型开发变得简单轻松。一台空闲的笔记本电脑或 PC 就能作为你最初的开发板。你可以将一台旧 PC 变成一个家庭存储服务器，或是在空闲的笔记本电脑或虚拟机上开发机器人应用的原型。</p>
+        {% include "templates/_cms-block.html" with block_content=range_of_equipment %}
     </div>
     <div class="eight-col">
-        <h3>从低成本的消费级开发板&hellip;</h3>
-        <p>从 35 美元的 ARMv7 Odroid-C1（提供 1 GB RAM、千兆网络连接和众多 RaspberryPi 式的扩展端口和引脚）到 179 美元的 2 GHz Octacore Odroid-XU3（具有 2 GB RAM 和多种显示及 I/0 支持），Ubuntu 适用于各种 ARM 开发板。由于知道可以在制造时选择合适的芯片，您可以胸有成竹地开发应用程序。缩短从概念创新到产品上市的时间，是基于 Ubuntu 的设备的一项关键优势。</p>
-        <p>Ubuntu Core 需要具有 128 MB RAM 的 600 MHZ 处理器。设备需要 4 GB 闪存用于恢复出厂设置和系统回滚。Ubuntu Core 本身将使用 40 MB RAM，其余 RAM 留给应用程序使用。建议使用 <a href="http://beagleboard.org/black-snappy" class="external">Beaglebone Black</a>、<a href="http://www.hardkernel.com/main/products/prdt_info.php?g_code=G141578608433" class="external">Odroid-C1</a> 和 <a href="https://insights.ubuntu.com/2015/02/02/snappy-ubuntu-core-on-raspberry-pi-2/" class="external">Raspberry Pi 2</a> 作为 ARM 开发板。对于 x86，任何空闲的笔记本电脑、PC 或虚拟机都可以作为开发平台。</p>
-        <p><a href="http://cn.developer.ubuntu.com/snappy" class="external">了解更多安装详细信息</a></p>
+        {% include "templates/_cms-block.html" with block_content=from_dev_boards %}
     </div>
     <div class="four-col last-col align-center">
         <img src="{{ STATIC_URL }}img/internet-of-things/beaglebone_black.png" width="167" height="247" alt="BeagleBone Black board" />
@@ -154,8 +135,7 @@
         <img src="{{ STATIC_URL }}img/logos/logo-cavium.png" alt="Cavium Logo" />
     </div>
     <div class="seven-col prepend-one">
-        <h3>&hellip; 到高端服务器设备</h3>
-        <p>Ubuntu Core 同样可为速度最快的 Xeon 服务器和大规模多核心 ARM CPU（如 Cavium 的迅雷）提供良好支持。从为新一代交换机和路由器提供支持的高端服务器设备，到面向容器的超大规模基础架构和以机架为中心的转码引擎，Ubuntu Core 为设备设计人员和开发人员支持众多服务器级芯片，并且在企业数据中心也已得到普遍认可。</p>
+        {% include "templates/_cms-block.html" with block_content=to_servers %}
     </div>
 </section>
 
@@ -170,13 +150,6 @@
 {# ================ Links ================ #}
 <div class="row row-links no-border">
     <div class="six-col">
-        <p>关注我们：</p>
-        <div class="six-col">
-            <ul class="list--social">
-                <li class="list--social__item list--social__item--weibo"><a href="http://weibo.com/u/1278359237">Weibo</a></li>
-                <li class="list--social__item list--social__item--wechat"><a href="http://weixin.qq.com/r/-3WAmA7EM1NMrUr79yDt">WeChat</a></li>
-            </ul>
-        </div>
         <p><a href="http://ubuntu.com/phone" class="external">Learn more about Ubuntu on phones at www.ubuntu.com</a></p>
         <p><a href="http://cn.developer.ubuntu.com/ " class="external">访问 Ubuntu 开发者网站</a></p>
     </div>
