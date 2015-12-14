@@ -35,7 +35,6 @@ def create_launchpad_groups(apps, schema_editor):
     ]
 
     for permission in permissions:
-        import ipdb; ipdb.set_trace()
         content_people.permissions.add(
             Permission.objects.get(codename=permission)
         )
@@ -47,7 +46,7 @@ def create_launchpad_groups(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('website', '0002_desktop_page'),
+        ('website', '0009_server_page'),
     ]
 
     operations = [
