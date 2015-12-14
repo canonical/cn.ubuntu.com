@@ -115,6 +115,16 @@ LOGIN_URL = '/openid/login/'
 LOGIN_REDIRECT_URL = '/'
 
 SUPERUSER_GROUP = 'canonical-webmonkeys'
+GROUP_PERMISSIONS = [
+    'change_element',
+    'change_page',
+    'add_revision',
+    'change_revision',
+    'delete_revision',
+    'add_version',
+    'change_version',
+    'delete_version'
+]
 
 OPENID_CREATE_USERS = True
 OPENID_SSO_SERVER_URL = 'https://login.launchpad.net/'

@@ -13,37 +13,22 @@ def create_launchpad_groups(apps, schema_editor):
     Create groups needed for SSO
     """
 
+    # Make sure permissions exist
+    apps.models_module = True
+    create_permissions(apps)
+
     for group_name in settings.OPENID_LAUNCHPAD_TEAMS_REQUIRED:
-        Group.objects.create(name=group_name)
+        new_group = Group.objects.create(name=group_name)
 
-    # Create permissions
-    for app in apps.get_app_configs():
-        create_permissions(app)
+        for permission_codename in settings.GROUP_PERMISSIONS:
+            permissions = Permission.objects.filter(
+                codename=permission_codename
+            )
 
-    # Special permissions for content editors
-    content_people = Group.objects.get(name="canonical-content-people")
+            for permission in permissions:
+                new_group.permissions.add(permission)
 
-    permission_codenames = [
-        'change_element',
-        'change_page',
-        'add_revision',
-        'change_revision',
-        'delete_revision',
-        'add_version',
-        'change_version',
-        'delete_version'
-    ]
-
-    for permission_codename in permission_codenames:
-        permissions = Permission.objects.filter(
-            codename=permission_codename
-        )
-
-        for permission in permissions:
-            content_people.permissions.add(permission)
-
-
-    content_people.save()
+        new_group.save()
 
 
 class Migration(migrations.Migration):
