@@ -16,10 +16,11 @@ APPEND_SLASH = True
 
 # Application definition
 INSTALLED_APPS = [
+    'django.contrib.auth',
+    'django_openid_auth',
     'bootstrap_admin',  # always before django.contrib.admin
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -29,7 +30,7 @@ INSTALLED_APPS = [
     'website',
     'reversion',
     'reversion_compare',
-    'django_versioned_static_url'
+    'django_versioned_static_url',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -99,6 +100,40 @@ DATABASES = {
 # Update database settings from DATABASE_URL environment variable
 import dj_database_url
 DATABASES['default'].update(dj_database_url.config())
+
+# Django openID auth
+# ===
+
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+
+AUTHENTICATION_BACKENDS = (
+    'django_openid_auth.auth.OpenIDBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_URL = '/openid/login/'
+LOGIN_REDIRECT_URL = '/'
+
+SUPERUSER_GROUP = 'canonical-webmonkeys'
+GROUP_PERMISSIONS = [
+    'change_element',
+    'change_page',
+    'add_revision',
+    'change_revision',
+    'delete_revision',
+    'add_version',
+    'change_version',
+    'delete_version'
+]
+
+OPENID_CREATE_USERS = True
+OPENID_SSO_SERVER_URL = 'https://login.launchpad.net/'
+OPENID_LAUNCHPAD_TEAMS_REQUIRED = [
+    'canonical-content-people',
+    'canonical-webmonkeys'
+]
+OPENID_USE_AS_ADMIN_LOGIN = True
+OPENID_LAUNCHPAD_TEAMS_MAPPING_AUTO = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
