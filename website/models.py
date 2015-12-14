@@ -82,15 +82,18 @@ class Element(models.Model):
         unique_together = (('page', 'name'),)
 
 
-def make_user_admin(sender, **kwargs):
+def make_user_admin(sender, openid_response, **kwargs):
     """
     Update all created users to become admin users (is_staff)
     and make them superusers if they're in the SUPERUSER_GROUP
     """
 
-    # Get user from openid object
-    user_id = sender.objects.first().user_id
-    user = User.objects.get(id=user_id)
+    # Get username from openid response
+    username = openid_response.message.args[
+        (u'http://openid.net/srv/ax/1.0', u'value.nickname.1')
+    ]
+
+    user = User.objects.get(username=username)
 
     # All users are staff (can use admin)
     user.is_staff = True
@@ -106,4 +109,3 @@ reversion.register(Element)
 reversion.register(Page, follow=['elements'])
 
 openid_login_complete.connect(make_user_admin)
-
