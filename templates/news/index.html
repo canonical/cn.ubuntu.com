@@ -2,64 +2,65 @@
 
 {% block title %}Ubuntu新闻{% endblock %}
 
-{% block meta_description %}Canonical 发布的与 Ubuntu Kylin个人电脑操作系统相关的最新新闻及与在云、平板电脑、智能手机和服务器上部署 Ubuntu 相关的最新新闻&#12290;{% endblock %}
-{% block meta_keywords %}ubuntu, 乌班图, ubuntu操作系统, 操作系统, 乌班图操作系统, OS, Operating System, operating system, os, 平台，PC, Linux, Ubuntu OpenStack, Ubuntu cloud, 云，ubuntu云,server, 服务器, tablet,平板电脑, 智能手机，手机，windows替代品, 苹果电脑替代品, windows, mac, 免费软件， 开源软件, 开发者, app, APP, scope,open source, thin client, 瘦客户端, Juju, MAAS, Landscape, Ubuntu Advantage, ubuntu advantage, 下载ubuntu, 下载乌班图, 部署，deployment, 配置, provisioning, 服务编排, service orchestration, 商务服务, 服务, 付费服务, 长期支持, LTS, 14.04, 14.10, Trusty Tahr, trusty tahr, Icehouse, icehouse, Canonical, canonical, convergence, 融合{% endblock %}
+{% block meta_description %}Canonical 发布关于魅族ubuntu手机，BQ手机 Ubuntu版，最新桌面系统优麒麟ubuntu15.04，Ubuntu云等其他即时新闻和信息。{% endblock %}
+{% block meta_keywords %}ubuntu系统手机,ubuntu14.04, ubuntu15.04, ubuntu 15.10,BQ手机,BQ手机 E5,ubuntu BQ手机,ubuntu 魅族MX4, 魅族ubuntu,魅族ubuntu手机, ubuntu mx4,购买ubuntu手机,全触屏手机, LTS版本， Trusty Tahr{% endblock %}
 
 {% block extra_body_class %}news-home{% endblock %}
 
 {% block second_level_nav_items %}
-	{% include "templates/_nav_breadcrumb.html" with section_title="News" page_title="News"  %}
+    {% include "templates/_nav_breadcrumb.html" with section_title="News" page_title="News"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
 <div class="row row-hero">
-	<div class="eight-col">
-		<h1>Ubuntu新闻</h1>
-		<p>获取Ubuntu最新新闻事件和信息</p>
-	</div><!-- /.eight-col -->
+    <div class="eight-col">
+        <h1>Ubuntu新闻</h1>
+        <p>获取Ubuntu最新新闻事件和信息</p>
+    </div><!-- /.eight-col -->
 </div><!-- /.row -->
 
 {# ================ Phone and tablet ================ #}
 <div class="row">
-	<h2>Ubuntu手机和平板电脑</h2>
-		<ul>
-			<li><a href="/news/2015/05/21/meizu-ubuntu">中国开发者们将会最先拿到魅族 MX4 Ubuntu版&nbsp;&rsaquo;</a></li>
-			<li><a href="/news/2014/06/04/showcasing-ubuntu-at-mobile-asia-expo-2014">Ubuntu将参展2014亚洲移动展&nbsp;&rsaquo;</a></li>
-			<li><a href="/news/2014/02/20/canonical-announces-first-partners-to-ship-ubuntu-phones-around-the-globe">Canonical公司宣布魅族科技作为其首家合作伙伴发布Ubuntu手机&nbsp;&rsaquo;</a></li>
-			<li><a href="/news/2013/02/19/ubuntu-unveils-tablet-experience-with-multi-tasking">Ubuntu多任务平板电脑体验&nbsp;&rsaquo;</a></li>
-			<li><a href="/news/2025/02/06/bqs-new-aquaris-e4-5-ubuntu-edition-the-smartphone-that-puts-content-and-services-at-your-fingertips">最新BQ Aquaris E4.5 Ubuntu版 - 是一款将内容和服务带到您指尖的智能手机</a></li>
-		</ul>
+    <h2>Ubuntu手机和平板电脑</h2>
+    <ul>
+        <li><a href="/news/2015/12/18/china-mobile-conference">2015年中国移动全球合作伙伴大会亮点后序&nbsp;&rsaquo;</a></li>
+        <li><a href="/news/2015/05/21/meizu-ubuntu">中国开发者们将会最先拿到魅族 MX4 Ubuntu版&nbsp;&rsaquo;</a></li>
+        <li><a href="/news/2014/06/04/showcasing-ubuntu-at-mobile-asia-expo-2014">Ubuntu将参展2014亚洲移动展&nbsp;&rsaquo;</a></li>
+        <li><a href="/news/2014/02/20/canonical-announces-first-partners-to-ship-ubuntu-phones-around-the-globe">Canonical公司宣布魅族科技作为其首家合作伙伴发布Ubuntu手机&nbsp;&rsaquo;</a></li>
+        <li><a href="/news/2013/02/19/ubuntu-unveils-tablet-experience-with-multi-tasking">Ubuntu多任务平板电脑体验&nbsp;&rsaquo;</a></li>
+        <li><a href="/news/2025/02/06/bqs-new-aquaris-e4-5-ubuntu-edition-the-smartphone-that-puts-content-and-services-at-your-fingertips">最新BQ Aquaris E4.5 Ubuntu版 - 是一款将内容和服务带到您指尖的智能手机</a></li>
+    </ul>
 </div><!-- /.row -->
 
 {# ================ Ubuntu Kylin ================ #}
 <div class="row">
-	<h2>Ubuntu Kylin</h2>
-		<ul>
-			<li><a href="/news/2015/10/22/1510-release">嚎喔喔~~ 优麒麟15.10来了&nbsp;&rsaquo;</a></li>
-			<li><a href="/news/2015/07/03/asus-china-ubuntu-kylin">优麒麟系统，新添华硕电脑系列&nbsp;&rsaquo;</a></li>
-			<li><a href="/news/2015/05/13/hp-kylin">CCN合作实验室让优麒麟在中国市场的发展再进一步&nbsp;&rsaquo;</a></li>
-			<li><a href="/news/2015/04/22/ubuntukylin-15-04">优麒麟15.04桌面版本现在已可下载&nbsp;&rsaquo;</a></li>
-			<li><a href="/news/2014/04/22/ubuntu-14-04-lts">Ubuntu Kylin 14.04 LTS 正式发布!&nbsp;&rsaquo;</a></li>
-			<li><a href="/news/2013/10/17/ubuntukylin-13-10">面向 OEM 和消费者的 Ubuntu Kylin 13.10 版本今日正式发布&nbsp;&rsaquo;</a></li>
-			<li><a href="/news/2013/04/25/ubuntukylin-1304-launches">Ubuntu Kylin 13.04&nbsp;&rsaquo;</a></li>
-		</ul>
+    <h2>Ubuntu Kylin</h2>
+    <ul>
+        <li><a href="/news/2015/10/22/1510-release">嚎喔喔~~ 优麒麟15.10来了&nbsp;&rsaquo;</a></li>
+        <li><a href="/news/2015/07/03/asus-china-ubuntu-kylin">优麒麟系统，新添华硕电脑系列&nbsp;&rsaquo;</a></li>
+        <li><a href="/news/2015/05/13/hp-kylin">CCN合作实验室让优麒麟在中国市场的发展再进一步&nbsp;&rsaquo;</a></li>
+        <li><a href="/news/2015/04/22/ubuntukylin-15-04">优麒麟15.04桌面版本现在已可下载&nbsp;&rsaquo;</a></li>
+        <li><a href="/news/2014/04/22/ubuntu-14-04-lts">Ubuntu Kylin 14.04 LTS 正式发布!&nbsp;&rsaquo;</a></li>
+        <li><a href="/news/2013/10/17/ubuntukylin-13-10">面向 OEM 和消费者的 Ubuntu Kylin 13.10 版本今日正式发布&nbsp;&rsaquo;</a></li>
+        <li><a href="/news/2013/04/25/ubuntukylin-1304-launches">Ubuntu Kylin 13.04&nbsp;&rsaquo;</a></li>
+    </ul>
 </div><!-- /.row -->
 
 {# ================ Cloud news ================ #}
 <div class="row">
-	<h2>Ubuntu 云</h2>
-		<ul>
-			<li><a href="/news/juju-top-twelve">关于 Juju 的十二个热点问题&nbsp;&rsaquo;</a></li>
-		</ul>
+    <h2>Ubuntu 云</h2>
+    <ul>
+        <li><a href="/news/juju-top-twelve">关于 Juju 的十二个热点问题&nbsp;&rsaquo;</a></li>
+    </ul>
 </div><!-- /.row -->
 
 {# ================ Videos ================ #}
 <div class="row no-border">
-	<h2>Videos</h2>
-		<ul class="">
-			<li><a class="external" href="http://i.youku.com/u/UNTU5ODQxNjg0">Celebrate Ubuntu YouKy channel</a></li>
-			<li><a class="external" href="http://v.youku.com/v_show/id_XNTA2NDczNDE2">视频: 友帮拓手机 - 产业专题</a></li>
-		</ul>
+    <h2>Videos</h2>
+    <ul class="">
+        <li><a class="external" href="http://i.youku.com/u/UNTU5ODQxNjg0">Celebrate Ubuntu YouKy channel</a></li>
+        <li><a class="external" href="http://v.youku.com/v_show/id_XNTA2NDczNDE2">视频: 友帮拓手机 - 产业专题</a></li>
+    </ul>
 </div><!-- /.row -->
 
 {% endblock %}
