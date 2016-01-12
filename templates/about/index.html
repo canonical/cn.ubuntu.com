@@ -1,59 +1,49 @@
 {% extends "about/base_about.html" %}
+{% load markdown_deux_tags %}
 
-{% block title %}关于{% endblock %}
-
-{% block meta_description %}Canonical公司开发的Ubuntu 是一款开源操作系统，可在个人电脑、智能手机、平板电脑、服务器和云上等平台上使用。{% endblock %}
-
-{% block meta_keywords %}Canonical,Canonical公司,科能公司,ubuntu,乌班图,友邦拓,个人电脑系统{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
 
 {% block second_level_nav_items %}
-	{% include "templates/_nav_breadcrumb.html" with section_title="关于" page_title="关于"  %}
+    {% include "templates/_nav_breadcrumb.html" with section_title="关于" page_title="关于"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
 {# ================ 1. About Ubuntu ================ #}
 <div id="about-ubuntu" class="row row-hero no-border">
-	<div class="eight-col">
-		<h1>关于 Ubuntu</h1>
-		<p>Ubuntu 是一款开源操作系统，可在个人电脑、智能手机、平板电脑、服务器和云上使用。这是全球社区基于 Canonical 策略和设计指南进行开发的结果；Canonical 是一家为配合 Ubuntu 开发而成立的软件公司&#12290;</p>
-		<p>Canonical 还为 Ubuntu 提供支持和服务，以扩大其全球市场覆盖率；这是因为推进创新的最佳方式就是为创新者提供他们所需要的技术&#12290;</p>
-	</div><!-- ./eight-col -->
-	<div class="twelve-col no-margin-bottom">
-		<img class="full-width" src="{{ STATIC_URL }}img/about/partners-hero.jpg" width="1600" height="800" alt="" />
-	</div>
-</div><!-- /.row -->
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=hero %}
+    </div>
+    <div class="twelve-col no-margin-bottom">
+        <img class="full-width" src="{{ STATIC_URL }}img/about/partners-hero.jpg" width="1600" height="800" alt="" />
+    </div>
+</div>
 
 {# ================ 2. Ubuntu and Canonical ================ #}
 <div id="ubuntu-and-canonical" class="row">
-	<div class="eight-col">
-		<h2>Ubuntu 和 Canonical</h2>
-		<p>Canonical 的服务确保 Ubuntu 通过认证，可在移动设备、个人电脑、服务器和云基础设施（公共或私人）上使用。世界各地的领先组织都对我们的服务和专业知识（包括系统管理以及在他们自己的云、服务器和桌面上部署 Ubuntu）青睐有加&#12290;</p>
-		<p><a class="external" href="http://ubuntu.com">进一步了解 Ubuntu</a></p>
-		<p><a class="external" href="http://canonical.com">进一步了解 Canonical</a></p>
-	</div><!-- ./eight-col -->
-</div><!-- /.row -->
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=ubuntu_and_canonical %}
+    </div>
+</div>
 
 {# ================ 3. We help partners take Ubuntu to market ================ #}
 <div id="ubuntu-partners" class="row">
-	<div class="eight-col">
-		<h2>我们帮助合作伙伴将 Ubuntu 推向市场&#12290;</h2>
-		<p>我们与最大的硬件、软件和云提供商建立合作伙伴关系，帮助他们优化、扩展和大规模交付 Ubuntu&#12290;</p>
-		<p><a class="external" href="http://canonical.com/partners">Canonical 合作伙伴&</a></p>
-	</div><!-- ./eight-col -->
-	<div class="four-col last-col">
-		<img src="{{ STATIC_URL }}img/about/partners-main.jpg" width="490" height="290" alt="" />
-	</div>
-</div><!-- /.row -->
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=partners %}
+    </div>
+    <div class="four-col last-col">
+        <img src="{{ STATIC_URL }}img/about/partners-main.jpg" width="490" height="290" alt="" />
+    </div>
+</div>
 
 {# ================ 4. We need big thinkers like you ================ #}
 <div id="canonical-careers" class="row no-border">
-	<div class="four-col">
-		<img src="{{ STATIC_URL }}img/about/hero-careers-small.png" width="290" height="204" alt="" />
-	</div>
-	<div class="eight-col last-col">
-		<h2>我们需要像您一样有想法的人</h2>
-		<p>不管您是开发人员、设计师还是商务专业人士，如果您希望您的工作能改变世界，那就来对地方了&#12290;</p>
-		<p><a class="external" href="http://www.canonical.com/careers">Canonical 工作机会</a></p>
-	</div><!-- ./eight-col -->
-</div><!-- /.row -->
+    <div class="four-col">
+        <img src="{{ STATIC_URL }}img/about/hero-careers-small.png" width="290" height="204" alt="" />
+    </div>
+    <div class="eight-col last-col">
+        {% include "templates/_cms-block.html" with block_content=careers %}
+    </div>
+</div>
 {% endblock %}

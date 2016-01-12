@@ -1,5 +1,4 @@
 -r standard.txt
-django-extensions
-werkzeug
-ipdb
-gunicorn
+django-extensions==1.5.6
+Werkzeug==0.10.4
+ipdb==0.8.1

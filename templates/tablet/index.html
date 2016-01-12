@@ -1,183 +1,167 @@
 {% extends "tablet/base_tablet.html" %}
+{% load markdown_deux_tags %}
 
-{% block title %}Ubuntu 平板电脑系统{% endblock %}
-
-{% block meta_description %}ubuntu平板操作系统支持多窗口功能和多任务处理，Ubuntu平板电脑可以在同一屏幕上同时并排运行程序。{% endblock %}
-
-{% block meta_keywords %}ubuntu平板操作系统,ubuntu平板电脑,多窗口功能,多任务处理{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
 
 {% block second_level_nav_items %}
-	{% include "templates/_nav_breadcrumb.html" with section_title="平板电脑" page_title="平板电脑"  %}
+    {% include "templates/_nav_breadcrumb.html" with section_title="平板电脑" page_title="平板电脑"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
 <div class="row row-hero">
-	<div class="four-col">
-		<h1>Ubuntu 平板电脑系统</h1>
-		<p>凭借真正多任务、多用户帐户和优雅且易于使用的界面，Ubuntu 提供更精彩的平板电脑体验。 再加上较低单位成本和整合原始设备制造商服务和品牌的商机，其为设备制造商开辟了新的天地&#12290;</p>
-	</div><!-- /.four-col -->
-	<div class="eight-col last-col text-center priority-0">
-		<img src="{{ STATIC_URL }}img/tablet/tablet-hero.jpg" alt="" width="625" height="363" />
-	</div><!-- /.eight-col -->
-</div><!-- /.row -->
+    <div class="four-col">
+        {% include "templates/_cms-block.html" with block_content=hero %}
+    </div>
+    <div class="eight-col last-col text-center priority-0">
+        <img src="{{ STATIC_URL }}img/tablet/tablet-hero.jpg" alt="" width="625" height="363" />
+    </div>
+</div>
 
 {# ================ Multitasking magic ================ #}
 <div class="row">
-	<div class="eight-col">
-		<h2>神奇的多任务功能</h2>
-		<p>真正的平板电脑多任务功能终于千呼万唤始出来。Ubuntu 独特的 side stage 多窗口功能使用户可以在同一屏幕上同时并排运行一个手机应用程序和一个平板电脑应用程序—这样，他们就可以一边使用 Skype 打电话一边处理文档，还可以一边做笔记一边浏览网页，或一边刷微博一边看电影。提供无穷可能性&#12290;</p>
-	</div>
-	<div class="six-col">
-		<img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-multitaskingmojo-1.jpg" width="512" height="321" alt="Ubuntu tablet running multiple applications side by side" />
-	</div>
-	<div class="six-col last-col">
-		<img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-multitaskingmojo-2.jpg" width="512" height="321" alt="Ubuntu tablet running multipule applications side by side" />
-	</div>
-</div><!-- /.row -->
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=multitasking %}
+    </div>
+    <div class="six-col">
+        <img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-multitaskingmojo-1.jpg" width="512" height="321" alt="Ubuntu tablet running multiple applications side by side" />
+    </div>
+    <div class="six-col last-col">
+        <img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-multitaskingmojo-2.jpg" width="512" height="321" alt="Ubuntu tablet running multipule applications side by side" />
+    </div>
+</div>
 
 {# ================ Everything at your users’ fingertips ================ #}
 <div class="row">
-	<div class="twelve-col no-margin-bottom">
-		<img src="{{ STATIC_URL }}img/tablet/image-tablet-scopes.jpg" width="975" height="622" alt="Searching for New york on Ubuntu tablet" />
-	</div>
-	<div class="eight-col">
-		<h2>一切皆触手可及</h2>
-		<p>Ubuntu 的 scopes 使查找内容和文件变得前所未有的容易—无论是存储在网络上还是本地设备上。用户可以在任一 scope 内查看任何类型的内容，如应用程序、音乐、视频和照片等。这符合用户的搜索习惯（按内容类型而不是按内容位置进行搜索）&#12290;</p>
-	</div>
-</div><!-- /.row -->
+    <div class="twelve-col no-margin-bottom">
+        <img src="{{ STATIC_URL }}img/tablet/image-tablet-scopes.jpg" width="975" height="622" alt="Searching for New york on Ubuntu tablet" />
+    </div>
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=scopes %}
+    </div>
+</div>
 
 {# ================ Built for safer sharing ================ #}
 <div class="row safer-sharing">
-	<div class="six-col text-center">
-		<div class="safer-sharing-image-load" data-width="293" data-src="{{ STATIC_URL }}img/tablet/image-tablet-safersharing{width}.png" data-alt="Ubuntu login screen with multiple users"></div>
-		<script>
-		    new Imager('.safer-sharing-image-load', {
-		        availableWidths: {
-		            300: '-small',
-		            293: '-medium'
-		        }
-		    });
-		</script>
-	</div>
-	<div class="six-col last-col">
-		<h2>安全共享</h2>
-		<p>Ubuntu 平板电脑可以共享，但不会影响用户账户安全。跟其竞争对手不同，该系统支持多个用户安全账户，还支持一个访客账户，就像一台个人电脑。因此家人、朋友和办公室同事可以共享同一台设备&#12290;</p>
-		<p>Ubuntu 使用世界一流的全磁盘加密数据保护技术，还对个人数据进行额外加密，非常适合敏感环境，也是医疗、教育、政府、工业和金融行业实现法规合规性的完美之选&#12290;</p>
-	</div>
-</div><!-- /.row -->
+    <div class="six-col text-center">
+        <div class="safer-sharing-image-load" data-width="293" data-src="{{ STATIC_URL }}img/tablet/image-tablet-safersharing{width}.png" data-alt="Ubuntu login screen with multiple users"></div>
+        <script>
+            new Imager('.safer-sharing-image-load', {
+                availableWidths: {
+                    300: '-small',
+                    293: '-medium'
+                }
+            });
+        </script>
+    </div>
+    <div class="six-col last-col">
+        {% include "templates/_cms-block.html" with block_content=sharing %}
+    </div>
+</div>
 
 {# ================ Effortless navigation with magic edges ================ #}
 <div class="row no-border">
-	<div class="eight-col append-four">
-		<h2>边幻设计实现轻松导航</h2>
-		<p>Ubuntu 平板电脑不需要实体按钮，也不需要返回主屏幕切换应用程序—只需从任一屏幕边缘轻轻滑动指尖即可访问所有内容。这意味着有了 Ubuntu 后就可以设计更精简、更清洁和更优雅的硬件&#12290;</p>
-	</div>
-</div><!-- /.row -->
+    <div class="eight-col append-four">
+        {% include "templates/_cms-block.html" with block_content=edge %}
+    </div>
+</div>
 
 {# ================ Instant launch ================ #}
 <div class="row row-tight no-border">
-	<div class="eight-col priority-0">
-		<div class="slider-animation instant-launch">
-			<div class="screen">
-				<div class="screen-fade"></div>
-				<div class="launcher"></div>
-			</div>
-		</div>
-		<a href="#" class="slideless replay"></a>
-	</div>
-	<div class="four-col last-col">
-		<h3>即时启动</h3>
-		<p>屏幕左边缘显示启动器，包含用户最喜爱的应用程序。从右至左滑动整个屏幕即可显示您的浏览历史记录和您最近使用的应用程序&#12290;</p>
-	</div>
-</div><!-- /.row -->
+    <div class="eight-col priority-0">
+        <div class="slider-animation instant-launch">
+            <div class="screen">
+                <div class="screen-fade"></div>
+                <div class="launcher"></div>
+            </div>
+        </div>
+        <a href="#" class="slideless replay"></a>
+    </div>
+    <div class="four-col last-col">
+        {% include "templates/_cms-block.html" with block_content=left_edge %}
+    </div>
+</div>
 
 {# ================ The system at your service ================ #}
 <div class="row row-tight no-border">
-	<div class="four-col">
-		<h3>系统由您掌控</h3>
-		<p>从屏幕顶部边缘向下滑动即可访问服务、通知和设置，所以用户可以在不离开当前应用程序的情况下完成自己想做的任何事情&#12290;</p>
-	</div>
-	<div class="eight-col last-col priority-0">
-		<div class="slider-animation system-service">
-			<div class="screen">
-				<div class="screen-fade"></div>
-				<div class="messages"></div>
-			</div>
-		</div>
-		<a href="#" class="slideless replay"></a>
-	</div>
-</div><!-- /.row -->
+    <div class="four-col">
+        {% include "templates/_cms-block.html" with block_content=top_edge %}
+    </div>
+    <div class="eight-col last-col priority-0">
+        <div class="slider-animation system-service">
+            <div class="screen">
+                <div class="screen-fade"></div>
+                <div class="messages"></div>
+            </div>
+        </div>
+        <a href="#" class="slideless replay"></a>
+    </div>
+</div>
 
 {# ================ Celebrate content not controls ================ #}
 <div class="row row-tight">
-	<div class="eight-col priority-0">
-		<div class="slider-animation content-controls">
-			<div class="screen">
-				<div class="menu"></div>
-			</div>
-		</div>
-		<a href="#" class="slideless replay"></a>
-	</div>
-	<div class="four-col last-col">
-		<h3>突出内容隐藏控件</h3>
-		<p>在需要的时候，只需从屏幕下边缘往上轻轻滑动即可显示应用程序控件。这使用户能够专注于音乐、消息、视频和其他内容。在 Ubuntu 上，内容至上&#12290;</p>
-	</div>
-</div><!-- /.row -->
+    <div class="eight-col priority-0">
+        <div class="slider-animation content-controls">
+            <div class="screen">
+                <div class="menu"></div>
+            </div>
+        </div>
+        <a href="#" class="slideless replay"></a>
+    </div>
+    <div class="four-col last-col">
+        {% include "templates/_cms-block.html" with block_content=bottom_edge %}
+    </div>
+</div>
 
 {# ================ A gorgeous gallery for your digital life ================ #}
 <div class="row gorgeous-gallery row-grey">
-	<div class="six-col for-mobile">
-		<img src="{{ STATIC_URL }}img/tablet/image-tablet-gorgeousgallery.jpg" alt="" />
-	</div>
-	<div class="six-col prepend-three">
-		<h2>精彩绝伦的图库</h2>
-		<p>TGallery 应用程序是一个时尚美观的 Ubuntu 原生应用程序，方便您整理和共享照片。它是收敛性应用程序设计和工程的完美典范：即能在手机和平板电脑上运行的应用程序—在每一个环境下都同样美观和适用&#12290;</p>
-	</div>
-</div><!-- /.row -->
+    <div class="six-col for-mobile">
+        <img src="{{ STATIC_URL }}img/tablet/image-tablet-gorgeousgallery.jpg" alt="" />
+    </div>
+    <div class="six-col prepend-three">
+        {% include "templates/_cms-block.html" with block_content=gallery %}
+    </div>
+</div>
 
 {# ================ Build amazing apps easily ================ #}
 <div class="row world-of-apps">
-	<div class="six-col for-tablet">
-		<img src="{{ STATIC_URL }}img/tablet/image-tablet-worldofapps-small.jpg" alt=""/>
-	</div>
-	<div class="six-col last-col">
-		<h2>轻松打造令人惊叹的应用程序</h2>
-		<p>对 Ubuntu 来说，Web 应用程序和原生应用程序的地位是平等的—有自己的图标，均可访问系统服务。但并不局限于 HTML5。原生应用程序充分利用了处理器和图形硬件的全部功能。我们的软件开发工具包 (SDK) 包括 HTML5、apache cordova、OpenGL 和一个原生工具包，为您提供全方位的现代应用程序开发选项。开发者、发行商和独立软件开发商能方便快捷地为平板电脑创建 scopes。最重要的是，Ubuntu 采用通用平台，所开发的应用程序能够在所有平台上使用（手机、平板电脑、台式机）。从开发者上传到用户下载仅需短短五分钟&#12290;</p>
-		<p><a class="external" href="http://developer.ubuntu.com">要进一步了解 Ubuntu 平板电脑系统开发工作，请访问</a></p>
-	</div>
-</div><!-- /.row -->
+    <div class="six-col for-tablet">
+        <img src="{{ STATIC_URL }}img/tablet/image-tablet-worldofapps-small.jpg" alt=""/>
+    </div>
+    <div class="six-col last-col">
+        {% include "templates/_cms-block.html" with block_content=apps %}
+    </div>
+</div>
 
 {# ================ Differentiate where it matters ================ #}
 <div class="row row-grey row-grey row-build-a-tablet">
-	<div class="six-col">
-		<img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-perfectforpartners.jpg" width="512" height="321" alt="Partner styled greeter screen" />
-	</div>
-	<div class="six-col last-col">
-		<img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-customisedbutnotfragmented-2.jpg" width="512" height="321" alt="" />
-	</div>
-	<div class="eight-col">
-		<h2>诸多重要特征，与众不同</h2>
-		<p>Ubuntu 平板电脑可以完全为您量身定制，包括品牌徽标、在主屏幕上打上品牌标识等。在默认情况下，您的应用程序可以被添加到启动器 (Launcher )；通过自定义 Scopes 还可以优先显示您的内容。甚至您的服务（例如内容存储、计费和付款）也可以无缝集成到手机上，方便您从用户打开盒子的那一刻起就控制用户体验&#12290;</p>
-	</div>
-</div><!-- /.row -->
+    <div class="six-col">
+        <img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-perfectforpartners.jpg" width="512" height="321" alt="Partner styled greeter screen" />
+    </div>
+    <div class="six-col last-col">
+        <img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-customisedbutnotfragmented-2.jpg" width="512" height="321" alt="" />
+    </div>
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=differentiate %}
+    </div>
+</div>
+
 {# ================ Working with Canonical ================ #}
 <div class="row">
-	<div class="eight-col">
-		<h2>与 Canonical 合作</h2>
-		<p>Canonical 为世界上最大的个人电脑制造商提供硬件启用服务。因此，现在预装了 Ubuntu 的电脑能够销往全球所有主要市场&#12290;</p>
-		<p>Canonical 拥有一支启用和优化全球专家团队，能为您提供打造惊艳的 Ubuntu 平板电脑系统所需的资源。我们在台北、上海、伦敦、北京和波士顿的团队能直接与您的工程和生产运营部门接洽。我们全心专注于在您的设备上为您提供卓越的 Ubuntu 体验&#12290;</p>
-	</div>
-	<div class="four-col last-col text-center">
-		<img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-canonical.svg" width="167" height="167" alt="Canonical logo" />
-	</div>
-</div><!-- /.row -->
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=canonical %}
+    </div>
+    <div class="four-col last-col text-center">
+        <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-canonical.svg" width="167" height="167" alt="Canonical logo" />
+    </div>
+</div>
+
 {# ================ Find out more ================ #}
 <div class="row no-border">
-	<div class="eight-col">
-		<h2>了解更多</h2>
-		<p>要进一步了解 Ubuntu 平板电脑系统，请使用以下链接访问 Ubuntu 全球网站上的平板电脑版块&#12290;</p>
-		<p><a class="external" href="www.ubuntu.com/tablet">进一步了解 Ubuntu 平板电脑系统</a></p>
-	</div>
-</div><!-- /.row -->
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=find_out_more %}
+    </div>
+</div>
 
 {% endblock %}

@@ -20,7 +20,7 @@ $nav_border_light:			#f2f2f4;
 $nav_hover_bg:      		#d0d0d0;
 $nav_active_bg:     		#dddddd;
 $light-grey:						#f7f7f7;
-$ubuntu-orange:					#dd4814;	
+$ubuntu-orange:					#dd4814;
 $canonical-aubergine:		#772953;
 $light-aubergine:				#77216f;
 $mid-aubergine:					#5E2750;
@@ -29,7 +29,7 @@ $warm-grey:							#888888;
 $cool-grey:							#333333;
 
 
-/* @section general 
+/* @section general
 -------------------------------------------------------------- */
 html, body { height: 100%; }
 
@@ -49,7 +49,7 @@ html {
 	overflow: hidden;
 }
 
-/* @section main nav 
+/* @section main nav
 -------------------------------------------------------------- */
 header.banner {
 	overflow: visible;
@@ -62,7 +62,7 @@ header.banner {
 				background-color: $cool-grey;
 			}
 		}
-		
+
 		li ul {
 		    background: $light-grey;
 		    border: 1px solid #D5D5D5;
@@ -76,20 +76,20 @@ header.banner {
 		    top: 51px;
 		    width: 200px;
 		}
-				
+
 		li ul li {
 		    border: 0 none;
 		    float: none;
 		}
-		
-		li ul li a:link, 
+
+		li ul li a:link,
 		li ul li a:visited {
 		    border: 0 none;
 		    color: $cool-grey;
 		    padding: 0 0 11px 14px;
 		    text-align: left;
 		    width: 185px;
-		}		
+		}
 
 		li ul li a:hover {
 		    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -100,29 +100,29 @@ header.banner {
 		li:hover ul {
 		    display: block;
 		}
-		
-		ul li a:active, 
-		ul li a:hover, 
-		ul li a:link, 
+
+		ul li a:active,
+		ul li a:hover,
+		ul li a:link,
 		ul li a:visited {
 		    transition: padding 0.4s ease 0s;
-		}		
-		
+		}
+
 		ul li a:hover {
 	  	background: darken($light-grey, 5%);
 		}
 
-		
+
 		.arrow-up {
 			width: 150px;
 		}
 
-		
+
 	} /* end nav-primary */
 } /* end header.banner */
 
 
-/* @section footer 
+/* @section footer
 -------------------------------------------------------------- */
 body.homepage footer.global {
     padding-top: 0;
@@ -319,7 +319,16 @@ footer #nav-global {
   li:nth-child(odd) { border-left: 0; }
 }
 
-/* @section UA service-description 
+/* override for cms content in dark strips */
+.strip-dark .cms-content li {
+	background-image:url(../img/icons/tick-orange.svg);
+	background-position:0 1em;
+	background-repeat:no-repeat;
+	padding-left:25px;
+  border: none;
+}
+
+/* @section UA service-description
 -------------------------------------------------------------- */
 #service-description {
 	h3,
@@ -343,14 +352,14 @@ footer #nav-global {
 	}
 
 	.for-mobile	{ display:none }
-	
+
 	body.homepage footer.global,
 	footer.global {
 		padding-top: 20px;
 	}
 
-	
-} // end @media only screen and (min-width : 768px) 
+
+} // end @media only screen and (min-width : 768px)
 
 
 /* Large / Desktop viewport
@@ -363,26 +372,26 @@ footer #nav-global {
 	  background: transparent;
 	  border-right: 1px solid lighten($ubuntu_orange, 10%);
 	}
-	
+
 	header.banner .nav-primary ul li {
 	  border-left: 1px solid darken($ubuntu_orange, 5%);
 	}
-	
+
 	header.banner .nav-primary ul li:last-child {
 	  border-right: 1px solid darken($ubuntu_orange, 5%);
 	  border-left: 1px solid darken($ubuntu_orange, 5%);
 	}
-	
-	header.banner .nav-primary ul li a:link, 
+
+	header.banner .nav-primary ul li a:link,
 	header.banner .nav-primary ul li a:visited{
 	  border-left: 1px solid lighten($ubuntu_orange, 7%);
 	}
-	
+
 	header.banner .nav-primary ul li a.active {
 	  background: #B83A10;
 	  border-left: 1px solid lighten($ubuntu_orange, 7%);
 	}
-	
+
 	header.banner .nav-primary ul li a:hover {
 		background-color: #E1662F;
 	}
@@ -392,6 +401,5 @@ footer #nav-global {
 	.for-mobile {
 	    display: none;
 	}
-	
-} // end @media only screen and (min-width : 984px)
 
+} // end @media only screen and (min-width : 984px)

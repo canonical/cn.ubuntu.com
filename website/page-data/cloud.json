@@ -1,0 +1,140 @@
+[
+{
+  "fields": {
+    "url": "cloud",
+    "title": "Cloud"
+  },
+  "model": "website.page"
+},
+{
+  "fields": {
+    "text": "\u4e91",
+    "page": [
+      "cloud"
+    ],
+    "name": "title"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "\u4e91\u7528 Ubuntu\r\n=========\r\n\r\n\u65e0\u8bba\u60a8\u662f\u6784\u5efa\u81ea\u5df1\u7684\u4e91\uff0c\u8fd8\u662f\u60f3\u4f7f\u7528 \u516c\u5171\u4e91\uff0cUbuntu \u4e3a\u60a8\u63d0\u4f9b\u60a8\u9700\u8981\u7684 \u6240\u6709\u8f6f\u4ef6\u57fa\u7840\u8bbe\u65bd\u3001\u5de5\u5177\u548c\u670d\u52a1&#12290;",
+    "page": [
+      "cloud"
+    ],
+    "name": "hero"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "Ubuntu \u4e3a\u60a8\u63d0\u4f9b\u54ea\u4e9b\u670d\u52a1\r\n------------\r\n\r\n - \u65b9\u4fbf\u60a8\u6709\u6548\u6784\u5efa OpenStack \u4e91\u6240\u9700\u7684\u4e00\u5207\u670d\u52a1\r\n - \u5728\u9886\u5148\u7684\u516c\u5171\u4e91\u4e0a\u4f7f\u7528\u7ecf\u8ba4\u8bc1\u7684Ubuntu \u670d\u52a1\u5668\u6620\u50cf\r\n - \u6210\u719f\u7684\u5de5\u5177\u5e2e\u60a8\u5927\u89c4\u6a21\u914d\u7f6e\u3001\u6784\u5efa\u3001\u7ba1\u7406\u548c\u652f\u6301\u60a8\u7684\u4e91\r\n - \u5b9a\u5236\u5316\u54a8\u8be2\u4e1a\u52a1\u548c\u540e\u7ee7 Ubuntu Advantage \u652f\u6301\u8ba2\u8d2d\u670d\u52a1\u7b49\u5546\u4e1a\u670d\u52a1",
+    "page": [
+      "cloud"
+    ],
+    "name": "ubuntu_offers"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "\u4f7f\u7528 Ubuntu OpenStack \u6784\u5efa\u81ea\u5df1\u7684\u4e91\r\n---------------\r\n\r\nUbuntu OpenStack \u662f Ubuntu \u670d\u52a1\u5668\u6700\u65b0\u7248\u672c\u548cOpenStack \u6700\u65b0\u7248\u672c\u7684\u7ec4\u5408\u7248\u3002OpenStack \u4e3b\u8981\u53d1\u884c\u7248\u672c\u83b7\u5f97 Ubuntu LTS \u7248\u4e94\u5e74\u652f\u6301\uff0c\u5177\u6709 OpenStack \u6700\u65b0\u529f\u80fd\uff0c\u65b9\u4fbf\u7528\u6237\u5b89\u5fc3\u4f7f\u7528&#12290;\r\n\r\nUbuntu \u62e5\u6709\u4e0e\u4e91\u7aef\u6574\u5408\u7684\u60a0\u4e45\u5386\u53f2\uff0c\u80fd\u6bd4\u4efb\u4f55\u5176\u4ed6\u64cd\u4f5c\u7cfb\u7edf\u90fd\u66f4\u5feb\u901f\u548c\u66f4\u7b80\u5355\u5730\u8fdb\u884c\u90e8\u7f72&#12290;\r\n\r\n[\u8fdb\u4e00\u6b65\u4e86\u89e3 Ubuntu OpenStack](http://www.ubuntu.com/cloud/ubuntu-openstack)",
+    "page": [
+      "cloud"
+    ],
+    "name": "openstack"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "\u5728\u516c\u5171\u4e91\u4e0a\u4f7f\u7528 Ubuntu\r\n----------\r\n\r\nUbuntu \u662f\u9886\u5148\u516c\u5171\u4e91\u4e0a\u6700\u6d41\u884c\u7684\u64cd\u4f5c\u7cfb\u7edf\uff0c\u4e5f\u662f\u4e16\u754c\u4e0a\u53d1\u5c55\u6700\u5feb\u7684\u81ea\u5982\u6269\u5c55\u5e73\u53f0\u3002\u4ee5\u4e0b\u516c\u5171\u4e91\u63d0\u4f9b\u7ecf\u8ba4\u8bc1\u7684 Ubuntu\u670d\u52a1\u5668\u6620\u50cf\uff08\u7531 Canonical \u521b\u5efa\uff09&#12290;\r\n\r\n[\u8fdb\u4e00\u6b65\u4e86\u89e3\u5982\u4f55\u5728\u4e91\u4e2d\u4f7f\u7528 Ubuntu](http://www.ubuntu.com/cloud/use-a-cloud)",
+    "page": [
+      "cloud"
+    ],
+    "name": "public_cloud"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "\u4e00\u5957\u5b8c\u6574\u7684\u4e91\u8ba1\u7b97\u5de5\u5177\r\n---------\r\n\r\nUbuntu \u63d0\u4f9b\u7684\u5de5\u5177\u65b9\u4fbf\u60a8\u957f\u671f\u521b\u5efa\u3001\u6269\u5c55\u548c\u7ba1\u7406\u60a8\u7684\u4e91&#12290;",
+    "page": [
+      "cloud"
+    ],
+    "name": "cloud_tools"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "\u7f51\u7edc\u8fd0\u8425\u5546\u9996\u9009\r\n---------\r\n\r\n\u5982\u679c\u60a8\u662f\u7535\u4fe1\u8fd0\u8425\u5546\u6216\u670d\u52a1\u63d0\u4f9b\u5546\uff0c\u4e14\u60a8\u60f3\u4e3a\u60a8\u7684\u5ba2\u6237\u63d0\u4f9b\u4e91\u670d\u52a1\uff0c\u90a3\u4e48 Ubuntu OpenStack \u5c31\u662f\u60a8\u6700\u53ef\u9760\u4e5f\u662f\u6700\u53d7\u6b22\u8fce\u7684\u57fa\u7840\u8bbe\u65bd\u3002\u6211\u4eec\u5df2\u7ecf\u5e2e\u52a9\u4e16\u754c\u4e0a\u5927\u591a\u6570\u7535\u4fe1\u8fd0\u8425\u5546\u548c\u670d\u52a1\u63d0\u4f9b\u5546\u5de8\u5934\u5b9e\u73b0\u4e86 OpenStack \u4e91&#12290;\r\n",
+    "page": [
+      "cloud"
+    ],
+    "name": "network_operators"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "### [MAAS](http://www.ubuntu.com/cloud/tools/maas)\r\n\r\n#### \u514d\u8d39\u8f6f\u4ef6\r\n\r\nMAAS \u8d1f\u8d23\u60a8\u7684\u670d\u52a1\u5668\u7684\u521d\u59cb\u5b89\u88c5\u548c\u914d\u7f6e\u5de5\u4f5c\uff0c\u5e76\u5c06\u5176\u96c6\u6210\u5230\u60a8\u7684\u7f51\u7edc\u4e2d&#12290;\r\n\r\n[\u8fdb\u4e00\u6b65\u4e86\u89e3 MAAS](http://www.ubuntu.com/cloud/tools/maas)",
+    "page": [
+      "cloud"
+    ],
+    "name": "tools_maas"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "### [Juju](http://www.ubuntu.com/cloud/tools/juju)\r\n\r\n#### \u514d\u8d39\u8f6f\u4ef6\r\n\r\nJuju \u662f\u670d\u52a1\u7f16\u6392\u7684\u4e00\u573a\u9769\u547d\u3002\u80fd\u5728\u51e0\u79d2\u949f\u5185\u5728\u8fd0\u884c Ubuntu \u7684\u4efb\u4e00\u4e91\u4e0a\u90e8\u7f72\u670d\u52a1\uff08\u5982 MySQL \u548c Hadoop&#65289;\r\n\r\n[\u8fdb\u4e00\u6b65\u4e86\u89e3 Juju](http://www.ubuntu.com/cloud/tools/juju)",
+    "page": [
+      "cloud"
+    ],
+    "name": "tools_juju"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "### [Autopilot](http://www.ubuntu.com/management/working-with-landscape)\r\n\r\n#### \u524d10\u53f0\u673a\u5668\u514d\u8d39\r\n\r\nAutopilot\u662f\u5f00\u53d1\uff0c\u90e8\u7f72\u53ca\u6269\u5c55OpenStack\u4e91\u7684\u5f3a\u5927\u65b0\u65b9\u5f0f\u3002\r\n\r\n[\u4e86\u89e3\u66f4\u591a\u76f8\u5173Autopilot\u7684\u5185\u5bb9](http://www.ubuntu.com/cloud/openstack/autopliot)",
+    "page": [
+      "cloud"
+    ],
+    "name": "tools_autopilot"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "Ubuntu\u4e91\u670d\u52a1\u63d0\u4f9b\u6240\u6709\u4e91\u57fa\u7840\u8bbe\u65bd\u3001\u4e91\u8ba1\u7b97\u5de5\u5177\u548c\u4e91\u670d\u52a1\u3002\u65e0\u8bba\u662f\u6784\u5efaubuntu OpenStack\u4e91\u8fd8\u662f\u5728\u516c\u5171\u4e91\u4e0a\u4f7f\u7528Ubuntu\u670d\u52a1\u5668\u6620\u50cf\u90fd\u80fd\u66f4\u5feb\u901f\u548c\u66f4\u7b80\u5355\u5730\u8fdb\u884c\u90e8\u7f72\u3002",
+    "page": [
+      "cloud"
+    ],
+    "name": "meta_description"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "ubuntu OpenStack\u4e91,ubuntu\u6570\u636e\u4e2d\u5fc3,ubuntu\u865a\u62df\u673a,ubuntu\u4e91,ubuntu\u4e91\u670d\u52a1,ubuntu\u4e91\u7ba1\u7406,ubuntu\u4e91\u57fa\u7840\u8bbe\u65bd,\u516c\u5171\u4e91,\u5ba2\u6237\u673a,\u6269\u5c55\u4e91,\u5185\u6838\u865a\u62df\u673a,\u6570\u636e\u4e2d\u5fc3,\u79c1\u6709\u4e91,\u865a\u62df\u5316\u670d\u52a1\u5668,\u865a\u62df\u673a,\u865a\u62df\u673a\u955c\u50cf,\u4e91\u670d\u52a1,\u4e91\u7ba1\u7406,\u4e91\u57fa\u7840\u8bbe\u65bd,\u4e91\u8ba1\u7b97,\u5de5\u5177\u4e91,\u6280\u672f\u4e91,\u6269\u5c55\u5e73\u53f0,\u4e91\u652f\u6301",
+    "page": [
+      "cloud"
+    ],
+    "name": "meta_keywords"
+  },
+  "model": "website.element"
+},
+{
+  "fields": {
+    "text": "\u9700\u8981\u670d\u52a1\u6216\u652f\u6301&#65311;\r\n---------\r\n\r\nCanonical \u662f Ubuntu \u7684\u6280\u672f\u652f\u6301\u516c\u53f8\uff0c\u5176\u76f4\u63a5\u53c2\u4e0e\u5f00\u53d1 Ubuntu \u548c OpenStack \u7684\u5de5\u7a0b\u5e08\u4f1a\u4e3a\u7528\u6237\u63d0\u4f9b\u73b0\u573a\u54a8\u8be2\u670d\u52a1\u548c\u57f9\u8bad\u670d\u52a1\u3002\u5982\u679c\u8981\u5728\u60a8\u7684\u4e91\u542f\u52a8\u548c\u8fd0\u884c\u540e\u83b7\u5f97\u540e\u7ee7\u652f\u6301\u670d\u52a1\uff0c\u60a8\u53ef\u4ee5\u8ba2\u9605 Ubuntu Advantage \u670d\u52a1\u5305\uff08\u5305\u62ec Canonical \u4f01\u4e1a\u4e91\u7ba1\u7406\u8f6f\u4ef6 Landscape\uff09&#12290;</p>\r\n\r\n[\u8bf7\u8bbf\u95ee www.ubuntu.com \u8fdb\u4e00\u6b65\u4e86\u89e3 Ubuntu Advantage](http://www.ubuntu.com/management/ubuntu-advantage)",
+    "page": [
+      "cloud"
+    ],
+    "name": "support"
+  },
+  "model": "website.element"
+}
+]
+

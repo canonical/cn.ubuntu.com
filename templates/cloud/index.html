@@ -1,122 +1,95 @@
 {% extends "cloud/base_cloud.html" %}
+{% load markdown_deux_tags %}
 
-{% block title %}云{% endblock %}
-{% block meta_description %}Ubuntu云服务提供所有云基础设施、云计算工具和云服务。无论是构建ubuntu OpenStack云还是在公共云上使用Ubuntu服务器映像都能更快速和更简单地进行部署。{% endblock %}
-{% block meta_keywords %}ubuntu OpenStack云,ubuntu数据中心,ubuntu虚拟机,ubuntu云,ubuntu云服务,ubuntu云管理,ubuntu云基础设施,公共云,客户机,扩展云,内核虚拟机,数据中心,私有云,虚拟化服务器,虚拟机,虚拟机镜像,云服务,云管理,云基础设施,云计算,工具云,技术云,扩展平台,云支持{% endblock %}
-
+{% block title %}{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
 {% block extra_body_class %}cloud-home{% endblock %}
 
 {% block second_level_nav_items %}
-	{% include "templates/_nav_breadcrumb.html" with section_title="云" page_title="云"  %}
+    {% include "templates/_nav_breadcrumb.html" with section_title="云" page_title="云"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
 {# ================ 1. Ubuntu for cloud ================ #}
 <div class="row row-hero no-border">
-	<div class="seven-col">
-		<h1>云用 Ubuntu</h1>
-		<p>无论您是构建自己的云，还是想使用 公共云，Ubuntu 为您提供您需要的 所有软件基础设施、工具和服务&#12290;</p>
-		</div><!-- /.seven-col -->
-		<div class="five-col last-col text-center">
-			<img src="{{ STATIC_URL }}/img/cloud/image-ecosystem.svg" width="250" height="250" alt="" />
-		</div>
-</div><!-- /.row -->
+    <div class="seven-col">
+        {% include "templates/_cms-block.html" with block_content=hero %}
+    </div>
+    <div class="five-col last-col text-center">
+        <img src="{{ STATIC_URL }}/img/cloud/image-ecosystem.svg" width="250" height="250" alt="" />
+    </div>
+</div>
 
 {# ================ 2. What Ubuntu offers you ================ #}
 <div id="ubuntu-offers" class="row no-border strip-dark">
-	<div class="twelve-col">
-		<h2>Ubuntu 为您提供哪些服务</h2>
-		<ul class="list-ubuntu">
-			<li class="six-col">方便您有效构建 OpenStack 云所需的一切服务</li>
-			<li class="six-col last-col">在领先的公共云上使用经认证的Ubuntu 服务器映像</li>
-			<li class="six-col last-item">成熟的工具帮您大规模配置、构建、管理和支持您的云</li>
-			<li class="six-col last-col">定制化咨询业务和后继 Ubuntu Advantage 支持订购服务等商业服务</li>
-		</ul>
-	</div><!-- ./eight-col -->
-</div><!-- /.row -->
+    <div class="twelve-col">
+        {% include "templates/_cms-block.html" with block_content=ubuntu_offers %}
+    </div>
+</div>
 
 {# ================ 3. Build your own cloud with Ubuntu OpenStack ================ #}
 <div id="build-with-openstack" class="row">
-	<div class="eight-col">
-		<h2>使用 Ubuntu OpenStack 构建自己的云</h2>
-		<p>Ubuntu OpenStack 是 Ubuntu 服务器最新版本和OpenStack 最新版本的组合版。OpenStack 主要发行版本获得 Ubuntu LTS 版五年支持，具有 OpenStack 最新功能，方便用户安心使用&#12290;</p>
-		<p>Ubuntu 拥有与云端整合的悠久历史，能比任何其他操作系统都更快速和更简单地进行部署&#12290;</p>
-		<p><a class="external" href="http://www.ubuntu.com/cloud/ubuntu-openstack">进一步了解 Ubuntu OpenStack</a></p>
-	</div><!-- ./eight-col -->
-	<div class="four-col last-col">
-		<blockquote class="pull-quote">
-			<p><span>“</span>Ubuntu 始终是用来部署 OpenStack 的最流行的操作系统&nbsp;<span>”</span></p>
-			<p><cite>OpenStack 用户调查（2013 年 11 月&#65289;</cite></p>
-		</blockquote>
-	</div>
-</div><!-- /.row -->
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=openstack %}
+    </div>
+    <div class="four-col last-col">
+        <blockquote class="pull-quote">
+            <p><span>“</span>Ubuntu 始终是用来部署 OpenStack 的最流行的操作系统&nbsp;<span>”</span></p>
+            <p><cite>OpenStack 用户调查（2013 年 11 月&#65289;</cite></p>
+        </blockquote>
+    </div>
+</div>
 
 {# ================ 4. Using Ubuntu in the public cloud ================ #}
 <div id="public-cloud" class="row">
-	<div class="eight-col">
-		<h2>在公共云上使用 Ubuntu</h2>
-		<p>Ubuntu 是领先公共云上最流行的操作系统，也是世界上发展最快的自如扩展平台。以下公共云提供经认证的 Ubuntu服务器映像（由 Canonical 创建）&#12290;</p>
-		<p><a class="external" href="http://www.ubuntu.com/cloud/use-a-cloud">进一步了解如何在云中使用 Ubuntu</a></p>
-	</div><!-- ./eight-col -->
-	<div class="twelve-col">
-		<ul class="inline-logos no-bullets no-margin">
-			<li class="first-item"><img src="{{ STATIC_URL }}img/logos/logo-amazonwebservices-160.png" alt="AWS"></li>
-			<li><img src="{{ STATIC_URL }}img/logos/logo-hp-cloud-160.png" alt="HP cloud"></li>
-			<li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-joyent-160.png" alt="Joyent"></li>
-			<li><img src="{{ STATIC_URL }}img/logos/logo-ibm-160.png" alt="IBM"></li>
-			<li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-microsoftazure.svg" alt="Azure"></li>
-		</ul>
-	</div><!-- ./eight-col -->
-</div><!-- /.row -->
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=public_cloud %}
+    </div>
+    <div class="twelve-col">
+        <ul class="inline-logos no-bullets no-margin">
+            <li class="first-item"><img src="{{ STATIC_URL }}img/logos/logo-amazonwebservices-160.png" alt="AWS"></li>
+            <li><img src="{{ STATIC_URL }}img/logos/logo-hp-cloud-160.png" alt="HP cloud"></li>
+            <li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-joyent-160.png" alt="Joyent"></li>
+            <li><img src="{{ STATIC_URL }}img/logos/logo-ibm-160.png" alt="IBM"></li>
+            <li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-microsoftazure.svg" alt="Azure"></li>
+        </ul>
+    </div>
+</div>
 
 {# ================ 5. A complete set of cloud tools ================ #}
 <div id="cloud-tools" class="row row-cloud-tools">
-	<div class="eight-col">
-		<h2>一套完整的云计算工具</h2>
-		<p>Ubuntu 提供的工具方便您长期创建、扩展和管理您的云&#12290;</p>
-	</div><!-- ./eight-col -->
-	<div class="twelve-col vertical-divider">
-		<div class="four-col">
-			<p class="text-center"><img src="{{ STATIC_URL }}/img/cloud/image-maascharts.png" alt="MAAS"></p>
-			<h3><a class="external" href="http://www.ubuntu.com/cloud/tools/maas">MAAS</a></h3>
-			<h4 class="note">免费软件</h4>
-			<p>MAAS 负责您的服务器的初始安装和配置工作，并将其集成到您的网络中&#12290;</p>
-			<p><a class="external" href="http://www.ubuntu.com/cloud/tools/maas">进一步了解 MAAS</a></p>
-		</div><!-- /.four-col -->
-		<div class="four-col">
-			<p class="text-center"><img src="{{ STATIC_URL }}/img/cloud/image-jujucharms.png" alt="Juju"></p>
-			<h3><a class="external" href="http://www.ubuntu.com/cloud/tools/juju">Juju</a></h3>
-			<h4 class="note">免费软件</h4>
-			<p>Juju 是服务编排的一场革命。能在几秒钟内在运行 Ubuntu 的任一云上部署服务（如 MySQL 和 Hadoop&#65289;</p>
-			<p><a class="external" href="http://www.ubuntu.com/cloud/tools/juju">进一步了解 Juju</a></p>
-		</div><!-- /.four-col -->
-		<div class="four-col last-col">
-			<p class="text-center"><img src="{{ STATIC_URL }}/img/cloud/image-autopilot.jpg" alt="Autopilot"></p>
-			<h3><a class="external" href="http://www.ubuntu.com/management/working-with-landscape">Autopilot</a></h3>
-			<h4 class="note">前10台机器免费</h4>
-			<p>Autopilot是开发，部署及扩展OpenStack云的强大新方式。</p>
-			<p><a class="external" href="http://www.ubuntu.com/cloud/openstack/autopliot">了解更多相关Autopilot的内容</a></p>
-		</div><!-- /.four-col -->
-	</div><!-- /.vertical-divider -->
-</div><!-- /.row -->
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=cloud_tools %}
+    </div>
+    <div class="twelve-col vertical-divider">
+        <div class="four-col">
+            <p class="text-center"><img src="{{ STATIC_URL }}/img/cloud/image-maascharts.png" alt="MAAS"></p>
+            {% include "templates/_cms-block.html" with block_content=tools_maas %}
+        </div>
+        <div class="four-col">
+            <p class="text-center"><img src="{{ STATIC_URL }}/img/cloud/image-jujucharms.png" alt="Juju"></p>
+            {% include "templates/_cms-block.html" with block_content=tools_juju %}
+        </div>
+        <div class="four-col last-col">
+            <p class="text-center"><img src="{{ STATIC_URL }}/img/cloud/image-autopilot.jpg" alt="Autopilot"></p>
+            {% include "templates/_cms-block.html" with block_content=tools_autopilot %}
+        </div>
+    </div>
+</div>
 
 {# ================ 6. Number one for network operators ================ #}
 <div id="network-operators" class="row">
-	<div class="eight-col">
-		<h2>网络运营商首选</h2>
-		<p>如果您是电信运营商或服务提供商，且您想为您的客户提供云服务，那么 Ubuntu OpenStack 就是您最可靠也是最受欢迎的基础设施。我们已经帮助世界上大多数电信运营商和服务提供商巨头实现了 OpenStack 云&#12290;</p>
-	</div><!-- ./eight-col -->
-</div><!-- /.row -->
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=network_operators %}
+    </div>
+</div>
 
 {# ================ 7. Need services or support? ================ #}
 <div id="services-or-support" class="row row-services no-border">
-	<div class="six-col">
-		<h2>需要服务或支持&#65311;</h2>
-		<p>Canonical 是 Ubuntu 的技术支持公司，其直接参与开发 Ubuntu 和 OpenStack 的工程师会为用户提供现场咨询服务和培训服务。如果要在您的云启动和运行后获得后继支持服务，您可以订阅 Ubuntu Advantage 服务包（包括 Canonical 企业云管理软件 Landscape）&#12290;</p>
-		<p><a class="external" href="">请访问 www.ubuntu.com 进一步了解 Ubuntu Advantage </a></p>
-	</div><!-- /.six-col -->
-	<img src="{{ STATIC_URL }}/img/cloud/image-landscape.jpg" alt="Landscape" />
-</div><!-- /.row -->
-
-
+    <div class="six-col">
+        {% include "templates/_cms-block.html" with block_content=support %}
+    </div>
+    <img src="{{ STATIC_URL }}/img/cloud/image-landscape.jpg" alt="Landscape" />
+</div>
 {% endblock %}

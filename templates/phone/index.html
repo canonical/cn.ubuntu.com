@@ -1,8 +1,9 @@
 {% extends "phone/base_phone.html" %}
+{% load markdown_deux_tags %}
 
-{% block title %}手机{% endblock %}
-{% block meta_description %}Ubuntu手机操作系统特有的Scope，是Ubuntu手机独有的内容展示服务。Ubuntu手机现已进入中国市场，给用户带来不一样的智能手机系统体验。{% endblock %}
-{% block meta_keywords %}ubuntu Scope,ubuntu, ubuntu touch,ubuntu国际版,ubuntu手机,ubuntu手机版,ubuntu手机操作系统,ubuntu手机功能,ubuntu手机购买,ubuntu手机平台,ubuntu手机特点,ubuntu手机系统,ubuntu手机应用,ubuntu智能手机,手机linux操作系统,手机操作系统,手机开源系统,应用开发,智能手机系统{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
 
 {% block extra_body_class %}phone-home{% endblock %}
 
@@ -18,8 +19,7 @@
         <img src="{{ STATIC_URL }}img/phone/image-life-at-your-fingertips.jpg" class="for-mobile" />
     </div>
     <div class="five-col">
-        <h1>让触指生活更简单</h1>
-        <p>Ubuntu带来了智能手机的一种新玩法，无需依赖传统APP来填满你的主屏。通过Ubuntu的Scope，你可以将自己最关心的内容直接呈现到你的主屏，你查询的内容和服务无需隐藏在迷宫般的APP网格背后</p>
+        {% include "templates/_cms-block.html" with block_content=hero %}
     </div>
 </div>
 
@@ -44,8 +44,7 @@
     </div>
 
     <div id="scopes-content" class="six-col last-col prepend-five">
-        <h2>Scope是什么</h2>
-        <p>Ubuntu的Scope可以理解为手机上根据不同内容类别呈现的一页页的主屏，通过主屏你可以直接看到听到所有你需要的内容服务， 从电影、音乐、周边服务、头条新闻、以及日程提醒。 根据每个用户的喜好习惯，每一页的Scope内容都可以按用户习惯个性化调整。 </p>
+        {% include "templates/_cms-block.html" with block_content=scopes %}
     </div>
 </div>
 
@@ -102,35 +101,27 @@
 {# ================ 4. For developers by design ================ #}
 <div id="developers" class="row row-developers">
     <div class="six-col">
-        <h2>为开发者贴心打造</h2>
-        <p>通过巧妙使用Scope， 你的内容和服务可以更加紧密的结合到手机的核心体验中。 相比开发及维护更新一个传统APP所需要的时间和精力投资，开发一个Scope是微乎其微的。开发一款移动体验从未如此轻松。Ubuntu的SDK同时还完美的支持主流HTML5应用， 而通过使用Qt/QML框架，可以开发出丰富多元化本地应用，例如本地游戏等等。</p>
+        {% include "templates/_cms-block.html" with block_content=developers %}
+    </div>
+    <div class="six-col">
         <p><a href="http://cn.developer.ubuntu.com/zh-cn/start/" class="link-cta-ubuntu">安装SDK</a></p>
     </div>
+
 </div>
 
 {# ================ 5. HTML5 and SDK ================ #}
-<div id="html5" class="row row-grey no-border row-html5">
+<div id="html5" class="row row-grey row-html5">
     <div class="four-col align-center">
         <img src="{{ STATIC_URL }}img/phone/image-html5-logo.png" alt="HTML5" />
     </div>
     <div class="eight-col last-col">
-        <h3>HTML5和网页APP:搭乘Ubuntu的最快捷径 </h3>
-        <p>如果你曾为其他平台创建 HTML5 应用或移动网页的话，我们有一个超棒的消息和你分享：这是通往 Ubuntu 平台的最短捷径。我们同时支持 Webkit/Blink 和 Cordova 开发标准 - 能快速的让网页转化并脱离浏览器运转，同时所有的网页应用有额外API 能够让应用全面访问手机提示和设置内容。目前我们已有在线打包表格，上传现有应用只是一键之远。</p>
-        <p><a href="https://developer.ubuntu.com/webapp-generator/" class="link-cta-ubuntu">立刻上传</a></p>
+        {% include "templates/_cms-block.html" with block_content=html5_sdk %}
     </div>
 </div>
 
-<div id="qt" class="row row-qt">
+<div id="qt" class="row row-qt no-border">
     <div class="eight-col">
-        <h3>本地应用</h3>
-        <p>Ubuntu SDK 包含了众多你需要的功能；可以用来打造你自己的Scope，转化你现有的网页或HTML5版本的内容，或开发本地应用。</p>
-        <ul class="list-ubuntu">
-            <li>QtCreator IDE (2.8.1) 拥有增强的设备检测及管理功能    </li>
-            <li>全面本地的 OpenGL    </li>
-            <li>可以访问硬件传感器和闹钟的系统及服务类API  </li>
-            <li>可自由结合QML, C 或 C++ 以及 JavaScript</li>
-            <li>最新的Ubuntu设计纲要，让你的应用符合UI</li>
-        </ul>
+        {% include "templates/_cms-block.html" with block_content=sdk %}
     </div>
     <div class="not-for-small four-col last-col align-center">
         <img src="{{ STATIC_URL }}img/phone/logo-qt.svg" alt="QT" />
@@ -138,7 +129,7 @@
 </div>
 
 {# ================ 6. China Mobile and Ubuntu Developer Program ================ #}
-<div id="deveoper-programme" class="row row-developer-programme">
+<div id="deveoper-programme" class="row row-developer-programme no-border">
     <div class="five-col append-one">
         <img src="{{ STATIC_URL }}img/phone/image-competition.png" alt="Meizu phones" />
     </div>
@@ -146,25 +137,14 @@
         <div class="six-col">
             <img src="{{ STATIC_URL }}img/logos/china-mobile-white.svg" alt="China mobile" />
         </div>
-        <h2>中国移动 &amp; Ubuntu开发者创新大赛</h2>
-        <p>2014年底，&ldquo;中国移动 &amp; Ubuntu开发者创新大赛&rdquo;正式开启。旨在为青年开发者率先接触新兴的移动生态系统，从而获得崭新的创业机遇。&ldquo;中国移动 &amp; Ubuntu开发者创新大赛”是中国移动“和你圆梦&rdquo;百万青年创业就业计划最新开启的子赛事。</p>
-        <p>大赛时间：2014年12月18日 &mdash; 2015年8月23日</p>
-        <p>其他大赛详情请关注页面下方微博微信</p>
+        {% include "templates/_cms-block.html" with block_content=dev_programme %}
     </div>
 </div>
 
 {# ================ Links ================ #}
 <div class="row row-links no-border">
     <div class="six-col">
-        <p>关注我们：</p>
-        <div class="six-col">
-            <ul class="list--social">
-                <li class="list--social__item list--social__item--weibo"><a href="http://weibo.com/u/1278359237">Weibo</a></li>
-                <li class="list--social__item list--social__item--wechat"><a href="http://weixin.qq.com/r/-3WAmA7EM1NMrUr79yDt">WeChat</a></li>
-            </ul>
-        </div>
-        <p><a href="http://ubuntu.com/phone" class="external">Learn more about Ubuntu on phones at www.ubuntu.com</a></p>
-        <p><a href="http://cn.developer.ubuntu.com/ " class="external">访问 Ubuntu 开发者网站</a></p>
+        {% include "templates/_cms-block.html" with block_content=links %}
     </div>
 </div>
 {% endblock %}
