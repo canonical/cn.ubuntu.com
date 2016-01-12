@@ -1,87 +1,76 @@
 {% extends "download/base_download.html" %}
+{% load markdown_deux_tags %}
 
-{% block title %}下载{% endblock %}
-{% block meta_description %}官方提供ubuntu Kylin下载，ubuntu云下载，ubuntu服务器下载等ubuntu系统下载。用户可以在Ubuntu帮助社区和ubuntu官方论坛里获取安装使用信息。{% endblock %}
-{% block meta_keywords %}ubuntu Kylin下载,ubuntu安装,ubuntu官方论坛,ubuntu系统安装,ubuntu云下载,ubuntu服务器,下载ubuntu系统,下载ubuntu系统中文版,ubuntu下载,ubuntu帮助,下载ubuntu,下载乌班图,ubuntu桌面下载,{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
 
 {% block second_level_nav_items %}
-	{% include "templates/_nav_breadcrumb.html" with section_title="Download" page_title="Download"  %}
+    {% include "templates/_nav_breadcrumb.html" with section_title="Download" page_title="Download"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
 <div class="row row-grey">
-	<div class="eight-col append-four">
-		<h1>下载 Ubuntu Kylin</h1>
-	</div>
-	<div class="twelve-col">
-		<div class="box box-highlight clearfix vertical-divider">
-			<div class="eight-col no-margin-bottom">
-				<h2>Ubuntu Kylin 14.04 长期支持版</h2>
-				<p>请点击右边的橙色按钮下载最新的Ubuntu Kylin 14.04 长期支持版 ISO 镜像文件。把镜像文件烧制到光盘上，或是创建一个可启动U盘，即可安装Ubuntu Kylin。</p>
-			</div>
-			<div class="four-col last-col no-margin-bottom">
-				<p>选择版本</p>
-				<p><a href="http://cdimage.ubuntu.com/ubuntukylin/releases/14.04.2/release/ubuntukylin-14.04.2-desktop-amd64.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '14.04 64 bit', 'From English-language Chinese download']);">64位下载键</a>
-				<a href="http://cdimage.ubuntu.com/ubuntukylin/releases/14.04.2/release/ubuntukylin-14.04.2-desktop-i386.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '14.04 32 bit', 'From English-language Chinese download']);">32位下载键</a></p>
-				<p><span class="clearfix smaller">(如果你电脑的内存少于2GB,选择32位下载)</span></p>
-			</div><!-- /.four-col -->
-		</div><!-- /.box -->
-	</div><!-- /.twelve-col -->
-	<div class="twelve-col no-margin-bottom">
-		<div class="box box-highlight clearfix vertical-divider">
-			<div class="eight-col no-margin-bottom">
-				<h2>Ubuntu Kylin 15.10</h2>
-				<p>下载最新版的Ubuntu Kylin 15.10 ISO 镜像文件。為安裝Ubuntu Kylin，把镜像文件烧制到DVD光盘上，或是创建一个可启动 U 盘。</p>
-			</div>
-			<div class="four-col last-col no-margin-bottom download-button">
-				<p>选择版本</p>
-				<p><a href="http://cdimage.ubuntu.com/ubuntukylin/releases/15.10/release/ubuntukylin-15.10-desktop-amd64.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '15.10 64 bit', 'From English-language Chinese download']);">下载64位镜像</a>
-				<a href="http://cdimage.ubuntu.com/ubuntukylin/releases/15.10/release/ubuntukylin-15.10-desktop-i386.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '15.10 32 bit', 'From English-language Chinese download']);">下载32位镜像</a></p>
-				<p><span class="clearfix smaller">(如果你电脑的内存少于2GB,选择32位下载)</span></p>
-			</div><!-- /.four-col -->
-		</div><!-- /.box -->
-	</div>
+    <div class="eight-col append-four">
+        {% include "templates/_cms-block.html" with block_content=hero %}
+    </div>
+    <div class="twelve-col">
+        <div class="box box-highlight clearfix vertical-divider">
+            <div class="eight-col no-margin-bottom">
+                {% include "templates/_cms-block.html" with block_content=lts_release %}
+            </div>
+            <div class="four-col last-col no-margin-bottom">
+                <p>选择版本</p>
+                <p><a href="http://cdimage.ubuntu.com/ubuntukylin/releases/14.04.2/release/ubuntukylin-14.04.2-desktop-amd64.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '14.04 64 bit', 'From English-language Chinese download']);">64位下载键</a>
+                <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/14.04.2/release/ubuntukylin-14.04.2-desktop-i386.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '14.04 32 bit', 'From English-language Chinese download']);">32位下载键</a></p>
+                <p><span class="clearfix smaller">(如果你电脑的内存少于2GB,选择32位下载)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="twelve-col no-margin-bottom">
+        <div class="box box-highlight clearfix vertical-divider">
+            <div class="eight-col no-margin-bottom">
+                {% include "templates/_cms-block.html" with block_content=latest_release %}
+            </div>
+            <div class="four-col last-col no-margin-bottom download-button">
+                <p>选择版本</p>
+                <p><a href="http://cdimage.ubuntu.com/ubuntukylin/releases/15.10/release/ubuntukylin-15.10-desktop-amd64.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '15.10 64 bit', 'From English-language Chinese download']);">下载64位镜像</a>
+                <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/15.10/release/ubuntukylin-15.10-desktop-i386.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '15.10 32 bit', 'From English-language Chinese download']);">下载32位镜像</a></p>
+                <p><span class="clearfix smaller">(如果你电脑的内存少于2GB,选择32位下载)</span></p>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="row equal-height">
-	<h2>其他下载</h2>
-	<div class="box four-col">
-		<h3>Ubuntu 云</h3>
-		<p>Ubuntu OpenStack 使您能够配置服务器并在 Ubuntu 上创建一个 OpenStack 云（来自同一个 Ubuntu Server 下载）&#12290;</p>
-		<p><a class="external" href="http://www.ubuntu.com/download/cloud">下载 Ubuntu 云</a></p>
-	</div>
-	<div class="box four-col">
-		<h3>Ubuntu 服务器 (Ubuntu Server)</h3>
-		<p>不管您是要配置一个简单的文件服务器或构建一个五万个节点的云，您都可以信赖 Ubuntu 服务器，并且它将为您提供五年免费升级保证&#12290;</p>
-		<p><a class="external" href="http://www.ubuntu.com/download/server">下载 Ubuntu 服务器</a></p>
-	</div>
-	<div class="box four-col last-col">
-		<h3>Ubuntu 桌面 (Ubuntu Desktop)</h3>
-		<p>此系统是 Ubuntu Kylin的基石。如果您不需要 Ubuntu Kylin自带的中文界面和应用程序，请选择此选项&#12290;</p>
-		<p><a class="external" href="http://www.ubuntu.com/download/desktop">下载 Ubuntu 桌面</a></p>
-	</div>
-</div><!-- /.row -->
+<div class="row">
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=other_downloads %}
+    </div>
+    <div class="equal-height">
+        <div class="box four-col">
+            {% include "templates/_cms-block.html" with block_content=cloud %}
+        </div>
+        <div class="box four-col">
+            {% include "templates/_cms-block.html" with block_content=server %}
+        </div>
+        <div class="box four-col last-col">
+            {% include "templates/_cms-block.html" with block_content=desktop %}
+        </div>
+    </div>
+</div>
 
 <div class="row row-community no-border">
-	<div class="three-col text-center no-margin">
-		<img class="picto" src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-community-orange.svg" alt="" width="150" height="150" />
-	</div>
-	<div class="nine-col last-col">
-		<div class="six-col">
-			<h2 id="a-thriving-community">社区为您提供帮助</h2>
-			<p>要了解更多关于Ubuntu Kylin的信息，或获取有关安装和使用它的帮助，请访问</p>
-			<p><a class="external" href="http://www.ubuntukylin.com/ukylin/portal.php">www.ubuntukylin.com</a></p>
-		</div>
-		<div class="three-col last-col box where-to-find-us smaller">
-			<h3>援助之手</h3>
-			<p>如果您遇到问题, 帮助总是在身边。</p>
-			<ul class="list">
-				<li class="ask-ubuntu"><a class="external" href="http://askubuntu.com">Ubuntu 问答</a></li>
-				<li class="ubuntu-forums"><a class="external" href="http://ubuntuforums.org">Ubuntu 论坛</a></li>
-				<li class="external discourse"><a class="external" href="https://discourse.ubuntu.com/">Ubuntu 闲谈</a></li>
-			</ul>
-		</div><!-- /.three-col -->
-	</div><!-- /.nine-col -->
-</div><!-- /.row -->
+    <div class="three-col text-center no-margin">
+        <img class="picto" src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-community-orange.svg" alt="" width="150" height="150" />
+    </div>
+    <div class="nine-col last-col">
+        <div class="six-col">
+            {% include "templates/_cms-block.html" with block_content=community %}
+        </div>
+        <div class="three-col last-col box where-to-find-us smaller">
+            {% include "templates/_cms-block.html" with block_content=community_links %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

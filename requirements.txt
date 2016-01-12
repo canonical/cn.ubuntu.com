@@ -1,2 +1,0 @@
--r requirements/standard.txt
-gunicorn==19.1.1

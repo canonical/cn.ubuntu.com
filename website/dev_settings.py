@@ -1,5 +1,5 @@
 from settings import *
 
 INSTALLED_APPS += ['django_extensions']
-TEMPLATE_DEBUG = True
+TEMPLATES[0]['OPTIONS']['debug'] = True
 DEBUG = True
