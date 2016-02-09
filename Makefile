@@ -1,12 +1,8 @@
 SHELL := /bin/bash  # Use bash syntax
 
-# Settings
-# ===
-
-# Default port for the dev server - can be overridden e.g.: "PORT=1234 make run"
-ifeq ($(PORT),)
-	PORT=8010
-endif
+export COMPOSE_PROJECT_NAME ?= $(shell echo $(subst _,,$(subst -,,$(shell basename `pwd`))) | tr A-Z a-z)make
+export COMPOSE_FILE ?= docker-compose.makefile.yml
+export PORT ?= 8010
 
 # Settings
 # ===

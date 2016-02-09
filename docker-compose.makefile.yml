@@ -1,0 +1,16 @@
+web:
+  extends: {'service': 'base', 'file': 'docker-compose.yml'}
+  build: .
+  ports:
+    - "${PORT}:5000"
+  links:
+     - db
+
+sass:
+  extends: {'service': 'sass', 'file': 'docker-compose.yml'}
+
+sass-watch:
+  extends: {'service': 'sass-watch', 'file': 'docker-compose.yml'}
+
+db:
+  extends: {'service': 'db', 'file': 'docker-compose.yml'}
