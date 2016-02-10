@@ -10,7 +10,7 @@ A redesign of the Chinese site to have a database-backed CMS, and an insights-st
 
 ## Login details
 
-[http://localhost:8010/admin/]
+<http://localhost:8010/admin/>
 
 ### Admin
 User: `ubuntu`
