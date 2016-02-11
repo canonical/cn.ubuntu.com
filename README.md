@@ -1,4 +1,4 @@
-# ubuntu-china-cms
+# [cn.ubuntu.com](http://cn.ubuntu.com)
 A redesign of the Chinese site to have a database-backed CMS, and an insights-style `/news/` section.
 
 ## Pre-requisites
