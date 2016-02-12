@@ -1,4 +1,5 @@
 # Modules
+from django.utils.cache import patch_response_headers
 from django_template_finder_view import TemplateFinder
 
 # Local
@@ -31,3 +32,16 @@ class CmsTemplateFinder(TemplateFinder):
                 context[element.name] = element.text
 
         return context
+
+    def render_to_response(self, context, **response_kwargs):
+        """
+        Add caching headers to the standard render_to_response from the parent
+        """
+
+        response = super(CmsTemplateFinder, self).render_to_response(
+            context, **response_kwargs
+        )
+
+        patch_response_headers(response, cache_timeout=300)
+
+        return response
