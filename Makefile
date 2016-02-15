@@ -159,6 +159,18 @@ export-page:
 		docker-compose run web ./manage.py create-page-migration website/page-data/$${url}.json; \
 	fi
 
+# Given a URL, export the page data for that URL as JSON
+replace-page:
+	@read -p "Enter page URL path (without preceding slash): " url; \
+	if [[ -n "$${url}" ]]; then \
+		echo "Exporting to website/page-data/$${url}.json"; \
+		data=$$(docker-compose run web ./manage.py export-page-json $${url}); \
+		if [[ $$? > 0 ]]; then echo -e "ERROR:\n$${data}"; exit 1; \
+		else echo "$${data}" > website/page-data/$${url}.json; fi; \
+		echo "Creating migration to replace page data at $${url}"; \
+		docker-compose run web ./manage.py replace-page-migration $${url} website/page-data/$${url}.json; \
+	fi
+
 # Delete any compiled CSS files
 clean-css:
 	rm -rf .sass-cache
