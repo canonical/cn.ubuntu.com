@@ -1,6 +1,6 @@
 SHELL := /bin/bash  # Use bash syntax
 
-export COMPOSE_PROJECT_NAME ?= $(shell echo $(subst _,,$(subst -,,$(shell basename `pwd`))) | tr A-Z a-z)make
+export COMPOSE_PROJECT_NAME ?= $(shell echo $(subst .,,$(subst _,,$(subst -,,$(shell basename `pwd`)))) | tr A-Z a-z)
 export COMPOSE_FILE ?= docker-compose.makefile.yml
 export PORT ?= 8010
 
@@ -57,6 +57,9 @@ All commands
 (To understand commands in more details, simply read the Makefile)
 
 endef
+
+test:
+	echo ${COMPOSE_PROJECT_NAME}
 
 # Print help text
 help:
