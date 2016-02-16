@@ -15,11 +15,12 @@ web:
 sass:
   extends: {'service': 'base'}
   image: ubuntudesign/sass
-  command: /bin/bash -c 'umask 0000 && sass --cache-location /.sass-cache --update static/css --force -E "UTF-8"'
+  command: sass --cache-location /.sass-cache --update static/css --force -E "UTF-8"
 
 sass-watch:
   extends: {'service': 'sass', 'file': 'docker-compose.yml'}
-  command: /bin/bash -c 'umask 0000 && sass --cache-location /.sass-cache --watch static/css -E "UTF-8"'
+  command: sass --cache-location /.sass-cache --watch static/css -E "UTF-8"
 
 db:
   image: postgres
+
