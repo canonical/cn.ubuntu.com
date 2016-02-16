@@ -15,4 +15,4 @@ done
 echo "Database ready"
 
 python manage.py migrate --noinput
-python manage.py runserver_plus 0.0.0.0:5000
+python manage.py runserver_plus --nostatic 0.0.0.0:5000
