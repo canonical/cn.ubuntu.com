@@ -31,6 +31,80 @@
 @import "../fonts/font.css";
 @import "core-constants";
 @import "core-mixins";
+@import "cms-content";
+
+.strip-light {
+  background-color: #fff;
+}
+
+// Full width sections
+.tablet {
+  .wrapper {
+    background: none;
+    width: 100%;
+  }
+
+  @media only screen and (min-width : 769px) {
+    .strip-inner-wrapper {
+      background: none;
+      border: none;
+      margin: 0;
+      padding: 0 8px;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      box-sizing: border-box;
+      margin: 0 auto;
+      max-width: 984px;
+      float: none;
+      display: block;
+    }
+  }
+
+  #main-content {
+    background: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .nav-secondary ul.breadcrumb {
+    margin-left: 0;
+
+    @media only screen and (max-width : 984px) {
+      margin-left: 10px;
+    }
+
+    @media only screen and (max-width : 768px) {
+      margin-left: 0;
+    }
+  }
+
+  .footer-wrapper .wrapper {
+    max-width: 984px;
+  }
+
+  @media only screen and (min-width : 768px) {
+    .strip-inner-wrapper {
+      padding: 0 30px;
+    }
+  }
+
+  @media only screen and (min-width : 984px) {
+    .row {
+      padding: 100px 40px 100px;
+    }
+
+    .strip-inner-wrapper {
+      padding: 0;
+    }
+  }
+}
 
 /*	@section homepage
 -------------------------------------------------------------- */

@@ -10,158 +10,72 @@
 {% endblock second_level_nav_items %}
 
 {% block content %}
-<div class="row row-hero">
-    <div class="four-col">
-        {% include "templates/_cms-block.html" with block_content=hero %}
+<section class="row row-hero">
+    <div class="strip-inner-wrapper">
+        <div class="six-col">
+            <!--Everything you need from a PC – in a tablet -->
+            {% include "templates/_cms-block.html" with block_content=hero %}
+        </div>
     </div>
-    <div class="eight-col last-col text-center priority-0">
-        <img src="{{ STATIC_URL }}img/tablet/tablet-hero.jpg" alt="" width="625" height="363" />
-    </div>
-</div>
+</section>
 
-{# ================ Multitasking magic ================ #}
-<div class="row">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=multitasking %}
+<section class="row strip-light">
+    <div class="strip-inner-wrapper">
+        <div class="five-col append-one">
+            <!-- Latest tablet hardware -->
+            {% include "templates/_cms-block.html" with block_content=latest_tablet %}
+        </div>
+        <div class="device-image five-col prepend-one align-center last-col not-for-small">
+            <p><img src="https://assets.ubuntu.com/v1/8d86e93b-tablet-devices-bq-aquaris-m10.jpg?w=800" alt="BQ Aquaris M10" /></p>
+        </div>
     </div>
-    <div class="six-col">
-        <img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-multitaskingmojo-1.jpg" width="512" height="321" alt="Ubuntu tablet running multiple applications side by side" />
-    </div>
-    <div class="six-col last-col">
-        <img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-multitaskingmojo-2.jpg" width="512" height="321" alt="Ubuntu tablet running multipule applications side by side" />
-    </div>
-</div>
+</section>
 
-{# ================ Everything at your users’ fingertips ================ #}
-<div class="row">
-    <div class="twelve-col no-margin-bottom">
-        <img src="{{ STATIC_URL }}img/tablet/image-tablet-scopes.jpg" width="975" height="622" alt="Searching for New york on Ubuntu tablet" />
+<section class="row row--developers">
+    <div class="strip-inner-wrapper">
+        <div class="six-col">
+            <img class="for-small" src="https://assets.ubuntu.com/v1/619a89e6-Convergence_Devices_david_music.png?w=480" alt="" />
+            <!--Develop once for multiple form factors-->
+            {% include "templates/_cms-block.html" with block_content=developers %}
+        </div>
+        <div class="twelve-col not-for-small">
+            <img class="row--developers__image" src="https://assets.ubuntu.com/v1/619a89e6-Convergence_Devices_david_music.png?w=984" srcset="https://assets.ubuntu.com/v1/619a89e6-Convergence_Devices_david_music.png?w=700 880w, https://assets.ubuntu.com/v1/619a89e6-Convergence_Devices_david_music.png?w=800 980w, https://assets.ubuntu.com/v1/619a89e6-Convergence_Devices_david_music.png?w=984 1064w" alt="Ubuntu on a phone, tablet and PC monitor" />
+        </div>
     </div>
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=scopes %}
-    </div>
-</div>
+</section>
 
-{# ================ Built for safer sharing ================ #}
-<div class="row safer-sharing">
-    <div class="six-col text-center">
-        <div class="safer-sharing-image-load" data-width="293" data-src="{{ STATIC_URL }}img/tablet/image-tablet-safersharing{width}.png" data-alt="Ubuntu login screen with multiple users"></div>
-        <script>
-            new Imager('.safer-sharing-image-load', {
-                availableWidths: {
-                    300: '-small',
-                    293: '-medium'
-                }
-            });
-        </script>
+<section class="row strip-light no-border">
+    <div class="strip-inner-wrapper">
+        <div class="eight-col">
+            <!--Perfect for partners-->
+            {% include "templates/_cms-block.html" with block_content=partners %}
+        </div>
+        <div class="three-col prepend-one last-col not-for-small">
+            <img src="https://assets.ubuntu.com/v1/03c5463a-picto-business-warmgrey.svg" alt="" />
+        </div>
     </div>
-    <div class="six-col last-col">
-        {% include "templates/_cms-block.html" with block_content=sharing %}
-    </div>
-</div>
+</section>
 
-{# ================ Effortless navigation with magic edges ================ #}
-<div class="row no-border">
-    <div class="eight-col append-four">
-        {% include "templates/_cms-block.html" with block_content=edge %}
-    </div>
-</div>
-
-{# ================ Instant launch ================ #}
-<div class="row row-tight no-border">
-    <div class="eight-col priority-0">
-        <div class="slider-animation instant-launch">
-            <div class="screen">
-                <div class="screen-fade"></div>
-                <div class="launcher"></div>
+<section class="row row--canonical">
+    <div class="strip-inner-wrapper">
+        <div class="row--canonical__inner">
+            <div class="five-col">
+                <!--Backed by Canonical-->
+                {% include "templates/_cms-block.html" with block_content=canonical %}
+            </div>
+            <div class="six-col prepend-one not-for-small align-center last-col">
+                <img src="https://assets.ubuntu.com/v1/18c51edd-canonical-bulb.png" alt="" />
             </div>
         </div>
-        <a href="#" class="slideless replay"></a>
     </div>
-    <div class="four-col last-col">
-        {% include "templates/_cms-block.html" with block_content=left_edge %}
-    </div>
-</div>
+</section>
 
-{# ================ The system at your service ================ #}
-<div class="row row-tight no-border">
-    <div class="four-col">
-        {% include "templates/_cms-block.html" with block_content=top_edge %}
-    </div>
-    <div class="eight-col last-col priority-0">
-        <div class="slider-animation system-service">
-            <div class="screen">
-                <div class="screen-fade"></div>
-                <div class="messages"></div>
-            </div>
+<section class="row no-border strip-light">
+    <div class="strip-inner-wrapper">
+        <div class="eight-col">
+            <!--Follow us-->
+            {% include "templates/_cms-block.html" with block_content=follow_us %}
         </div>
-        <a href="#" class="slideless replay"></a>
     </div>
-</div>
-
-{# ================ Celebrate content not controls ================ #}
-<div class="row row-tight">
-    <div class="eight-col priority-0">
-        <div class="slider-animation content-controls">
-            <div class="screen">
-                <div class="menu"></div>
-            </div>
-        </div>
-        <a href="#" class="slideless replay"></a>
-    </div>
-    <div class="four-col last-col">
-        {% include "templates/_cms-block.html" with block_content=bottom_edge %}
-    </div>
-</div>
-
-{# ================ A gorgeous gallery for your digital life ================ #}
-<div class="row gorgeous-gallery row-grey">
-    <div class="six-col for-mobile">
-        <img src="{{ STATIC_URL }}img/tablet/image-tablet-gorgeousgallery.jpg" alt="" />
-    </div>
-    <div class="six-col prepend-three">
-        {% include "templates/_cms-block.html" with block_content=gallery %}
-    </div>
-</div>
-
-{# ================ Build amazing apps easily ================ #}
-<div class="row world-of-apps">
-    <div class="six-col for-tablet">
-        <img src="{{ STATIC_URL }}img/tablet/image-tablet-worldofapps-small.jpg" alt=""/>
-    </div>
-    <div class="six-col last-col">
-        {% include "templates/_cms-block.html" with block_content=apps %}
-    </div>
-</div>
-
-{# ================ Differentiate where it matters ================ #}
-<div class="row row-grey row-grey row-build-a-tablet">
-    <div class="six-col">
-        <img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-perfectforpartners.jpg" width="512" height="321" alt="Partner styled greeter screen" />
-    </div>
-    <div class="six-col last-col">
-        <img class="shadow-fix" src="{{ STATIC_URL }}img/tablet/image-tablet-customisedbutnotfragmented-2.jpg" width="512" height="321" alt="" />
-    </div>
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=differentiate %}
-    </div>
-</div>
-
-{# ================ Working with Canonical ================ #}
-<div class="row">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=canonical %}
-    </div>
-    <div class="four-col last-col text-center">
-        <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-canonical.svg" width="167" height="167" alt="Canonical logo" />
-    </div>
-</div>
-
-{# ================ Find out more ================ #}
-<div class="row no-border">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=find_out_more %}
-    </div>
-</div>
-
+</section>
 {% endblock %}
