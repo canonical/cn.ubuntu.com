@@ -11,6 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'cao6_8kd&1+_k42gm0gvhx36!idz1-jexggr3^d=b=@wmxy@od'
 
 WHITENOISE_MAX_AGE = 31557600
+WHITENOISE_ALLOW_ALL_ORIGINS = False
 
 DEBUG = False
 ALLOWED_HOSTS = ["*"]
