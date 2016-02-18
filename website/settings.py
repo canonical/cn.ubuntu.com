@@ -51,7 +51,6 @@ MIDDLEWARE_CLASSES = [
 ROOT_URLCONF = 'website.urls'
 
 STATICFILES_FINDERS = [
-    'django_static_root_finder.finders.StaticRootFinder',
     "django.contrib.staticfiles.finders.AppDirectoriesFinder"
 ]
 STATIC_ROOT = 'static'
