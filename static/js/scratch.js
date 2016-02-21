@@ -11,7 +11,7 @@ String.prototype.format = function() {
     });
 };
 
-YUI().use('node', 'gallery-carousel', 'gallery-carousel-anim', 'substitute', 'cookie', "event-resize", "transition", "event", 'jsonp', 'json-parse', function(Y) {
+YUI().use('node', 'substitute', 'cookie', "event-resize", "transition", "event", 'jsonp', 'json-parse', function(Y) {
 
     core.setupHtmlClass = function() {
         Y.all('html').removeClass('no-js').addClass('yes-js');
@@ -355,23 +355,6 @@ YUI().use('node', 'gallery-carousel', 'gallery-carousel-anim', 'substitute', 'co
         }
     };
 
-    core.scopesSlideshow = function() {
-        if(Y.one('.row-slideshow')){
-            var carousel = new Y.Carousel({
-                boundingBox: "#carousel-container",
-                contentBox: "#carousel-container > ul",
-                numVisible: 1,
-                autoPlayInterval: 3500,
-                height: 480,
-                width: 363
-            });
-
-            carousel.plug(Y.CarouselAnimPlugin,{animation:{speed: 0.8,effect: Y.Easing.easeOutStrong }});
-            carousel.render();
-            carousel.startAutoPlay();
-        }
-    };
-
     core.renderJSON = function (response, id) {
         if (id == undefined) {
             id = '#dynamic-logos';
@@ -413,13 +396,12 @@ YUI().use('node', 'gallery-carousel', 'gallery-carousel-anim', 'substitute', 'co
     core.parallaxBackground();
     core.homeAnimation();
     core.svgFallback();
-    core.scopesSlideshow();
 });
 
 
 
 
 
-YUI().use('node','gallery-carousel','gallery-carousel-anim','substitute', 'gallery-effects','cookie','event-resize','jsonp', 'io', 'dump', 'json-parse', function(Y) {
+YUI().use('node','substitute', 'gallery-effects','cookie','event-resize','jsonp', 'io', 'dump', 'json-parse', function(Y) {
 
 });
