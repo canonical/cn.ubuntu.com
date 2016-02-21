@@ -653,3 +653,63 @@ body.bq-russia-takeover {
     }
   }
 }
+
+// Meizu Pro 5 takeover - 22-02-2016
+.meizu-pro5-takeover {
+  header.banner {
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+
+  .inner-wrapper {
+    margin-top: 0;
+  }
+
+  #main-content .row-hero {
+    background-image: url('../img/homepage/takeovers/meizu-pro5-background-small.png');
+    background-size: cover;
+    margin-top: 0;
+    padding-top: 30px;
+
+    @media only screen and (min-width : 768px) {
+      background-image: url('../img/homepage/takeovers/meizu-pro5-background.png');
+    }
+
+    .strip-inner-wrapper {
+      min-height: 50vw;
+      position: relative;
+
+      @media only screen and (min-width : 768px) {
+        min-height: 550px;
+
+        .row-hero-text {
+          margin-top: 100px;
+        }
+
+        .large-screen-graphic {
+          position: absolute;
+          left: 450px;
+          top: 50px;
+        }
+      }
+
+      @media only screen and (min-width : 984px) {
+        min-height: 700px;
+
+        .row-hero-text {
+          margin-top: 135px;
+        }
+
+        .large-screen-graphic {
+          position: absolute;
+          left: 500px;
+          top: 100px;
+        }
+      }
+
+      .small-screen-graphic img {
+        margin: 10px 0;
+      }
+    }
+  }
+}
