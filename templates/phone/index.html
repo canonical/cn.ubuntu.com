@@ -24,26 +24,11 @@
 </div>
 
 {# ================ 2. Introducing scopes ================ #}
-<div id="scopes" class="row row-slideshow">
-    <div class="carousel-container-overlay not-for-small"></div>
-    <div id="carousel-container" class="carousel not-for-small">
-        <div class="carousel-topbar"></div>
-        <ul>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-one.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-two.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-three.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-four.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-one.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-two.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-three.png" alt="Cave"></li>
-            <li><img src="{{ STATIC_URL }}img/phone/slideshow/slide-four.png" alt="Cave"></li>
-        </ul>
+<div id="scopes" class="row row-scopes">
+    <div class="seven-col">
+        <img class="left" src="{{ STATIC_URL }}img/phone/image-phone-scopes.png" alt="" />
     </div>
-    <div class="six-col for-mobile">
-        <img class="left" src="{{ STATIC_URL }}img/phone/image-introducing-scopes.png" alt="" />
-    </div>
-
-    <div id="scopes-content" class="six-col last-col prepend-five">
+    <div id="scopes-content" class="prepend-one four-col last-col">
         {% include "templates/_cms-block.html" with block_content=scopes %}
     </div>
 </div>
@@ -73,7 +58,7 @@
     </div><!-- /.three-col -->
 
     <div class="six-col align-center">
-        <img src="{{ STATIC_URL }}img/phone/phone-meizu-greeter-14.10.png" alt="Meizu phone" />
+        <img src="{{ STATIC_URL }}img/phone/phone-greeter-16.04.png" alt="Ubuntu phone" />
     </div><!-- /.six-col -->
 
     <div class="three-col last-col">
@@ -97,6 +82,61 @@
     </div><!-- /.three-col -->
 
 </div><!-- /.row -->
+
+{# ================ 4. Ubuntu phone lineup ================ #}
+
+<section class="row row-lineup">
+    <div class="eight-col">
+        <h2>现有Ubuntu手机</h2>
+        <p>目前Ubuntu手机通过越来越多的合作厂商有一系列上市手机。其中包括和西班牙BQ厂商合作发布的手机和魅族合作发布的手机。</p>
+    </div>
+    <div class="twelve-col row-lineup--featured">
+        <div class="five-col">
+            <img src="{{ STATIC_URL }}img/phone/pro5.jpg" alt="Meizu Pro 5" />
+        </div>
+        <div class="prepend-one six-col last-col">
+            <h2>最新款Ubuntu手机 - 魅族 PRO 5 Ubuntu版本</h2>
+            <ul class="list-ubuntu">
+                <li>前置相机：OV5670 500万像素、F2.0光圈、FotoNation 2.0 智能美颜、Face AE 面部曝光增强</li>
+                <li>后置相机：2116 万像素、F2.2光圈、激光辅助对焦、6片式镜头、双色温闪光灯、全景模式、蓝宝石镜头保护玻璃、PDAF相位对焦</li>
+                <li>使用康宁大猩猩第三代保护玻璃打造的5.7英寸1080P AMOLED显示屏</li>
+                <li>Exynos 7420 8核处理器, Mali T760 图像处理器，3GB/4GB LPDDR4内存，和第二代Sensor Hub.</li>
+                <li>双卡槽，卡槽一兼容Nano SIM和Micro SD卡， 最大可支持128GB扩展。</li>
+                <li>Hi-Fi音响 2.0</li>
+                <li>现有32GB金色款</li>
+                <li>机身大小: 78 x 7.5 x 156.7mm</li>
+                <li>重量: 168g</li>
+            </ul>
+            <p><a href="http://www.meizu.com/en/products/pro5ubuntu" class="link-cta-ubuntu">Pre-Order</a></p>
+        </div>
+    </div>
+    <div class="twelve-col vertical-divider">
+        <div class="four-col">
+            <h3>BQ Aquaris E5 HD</h3>
+            <div class="twelve-col align-center">
+                <img src="{{ STATIC_URL }}img/phone/bq-e5-single.png" height="180" alt="BQ Aquaris E5 HD" />
+            </div>
+            <p><a href="https://store.bq.com/gl/ubuntu-edition-e5/" class="external">如何购买</a></p>
+        </div>
+        <div class="four-col">
+            <h3>BQ Aquaris E4.5</h3>
+            <div class="twelve-col align-center">
+                <img src="{{ STATIC_URL }}img/phone/bq-e4.5-single.png" height="180" alt="BQ Aquaris E4.5" />
+            </div>
+            <p><a href="https://store.bq.com/gl/ubuntu-edition-e-4-5-fr/" class="external">如何购买</a></p>
+        </div>
+        <div class="four-col last-col">
+            <h3>魅族MX4 Ubuntu版本</h3>
+            <div class="twelve-col align-center">
+                <img src="{{ STATIC_URL }}img/phone/meizu-mx4-single.png" height="180" alt="魅族MX4 Ubuntu版本" />
+            </div>
+            <p>售罄</p>
+        </div>
+    </div>
+    <div class="eight-col">
+        <p>敬请<a href="http://weibo.com/officialubuntu" class="external">关注</a>，未来我们预期会有更多合作伙伴合力推出不同款式的Ubuntu手机。</p>
+    </div>
+</section>
 
 {# ================ 4. For developers by design ================ #}
 <div id="developers" class="row row-developers">
