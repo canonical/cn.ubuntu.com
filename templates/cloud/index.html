@@ -17,7 +17,7 @@
         {% include "templates/_cms-block.html" with block_content=hero %}
     </div>
     <div class="five-col last-col text-center">
-        <img src="{{ STATIC_URL }}/img/cloud/image-ecosystem.svg" width="250" height="250" alt="" />
+        <img src="{{ STATIC_URL }}img/cloud/image-ecosystem.svg" width="250" height="250" alt="" />
     </div>
 </div>
 
@@ -64,15 +64,15 @@
     </div>
     <div class="twelve-col vertical-divider">
         <div class="four-col">
-            <p class="text-center"><img src="{{ STATIC_URL }}/img/cloud/image-maascharts.png" alt="MAAS"></p>
+            <p class="text-center"><img src="{{ STATIC_URL }}img/cloud/image-maascharts.png" alt="MAAS"></p>
             {% include "templates/_cms-block.html" with block_content=tools_maas %}
         </div>
         <div class="four-col">
-            <p class="text-center"><img src="{{ STATIC_URL }}/img/cloud/image-jujucharms.png" alt="Juju"></p>
+            <p class="text-center"><img src="{{ STATIC_URL }}img/cloud/image-jujucharms.png" alt="Juju"></p>
             {% include "templates/_cms-block.html" with block_content=tools_juju %}
         </div>
         <div class="four-col last-col">
-            <p class="text-center"><img src="{{ STATIC_URL }}/img/cloud/image-autopilot.jpg" alt="Autopilot"></p>
+            <p class="text-center"><img src="{{ STATIC_URL }}img/cloud/image-autopilot.jpg" alt="Autopilot"></p>
             {% include "templates/_cms-block.html" with block_content=tools_autopilot %}
         </div>
     </div>
@@ -90,6 +90,6 @@
     <div class="six-col">
         {% include "templates/_cms-block.html" with block_content=support %}
     </div>
-    <img src="{{ STATIC_URL }}/img/cloud/image-landscape.jpg" alt="Landscape" />
+    <img src="{{ STATIC_URL }}img/cloud/image-landscape.jpg" alt="Landscape" />
 </div>
 {% endblock %}

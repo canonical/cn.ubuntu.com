@@ -5134,6 +5134,10 @@ html.yui3-js-enabled .accordion-button.active {
 	padding-bottom:40px;
 }
 
+.vertical-divider {
+	display: table;
+}
+
 .vertical-divider div,.vertical-divider li {
 	border-right:0;
 	display:block;
