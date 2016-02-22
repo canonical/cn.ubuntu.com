@@ -669,10 +669,11 @@ body.bq-russia-takeover {
     background-image: url('../img/homepage/takeovers/meizu-pro5-background-small.png');
     background-size: cover;
     margin-top: 0;
-    padding-top: 30px;
+    overflow: hidden;
 
     @media only screen and (min-width : 768px) {
       background-image: url('../img/homepage/takeovers/meizu-pro5-background.png');
+      padding-top: 30px;
     }
 
     .strip-inner-wrapper {
@@ -683,27 +684,27 @@ body.bq-russia-takeover {
         min-height: 550px;
 
         .row-hero-text {
-          margin-top: 100px;
+          margin-top: 180px;
         }
 
         .large-screen-graphic {
+          left: 400px;
           position: absolute;
-          left: 450px;
           top: 50px;
         }
       }
 
       @media only screen and (min-width : 984px) {
-        min-height: 700px;
+        min-height: 580px;
 
         .row-hero-text {
-          margin-top: 135px;
+          margin-top: 165px;
         }
 
         .large-screen-graphic {
-          position: absolute;
           left: 500px;
-          top: 100px;
+          position: absolute;
+          top: 60px;
         }
       }
 
