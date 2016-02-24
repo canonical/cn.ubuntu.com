@@ -38,9 +38,11 @@ class Command(BaseCommand):
     """
 
     def add_arguments(self, parser):
+        parser.add_argument('page_url')
         parser.add_argument('json_filepath')
 
     def handle(self, *args, **options):
+        page_url = options['page_url']
         json_filepath = options['json_filepath']
 
         app_name = 'website'
@@ -52,14 +54,6 @@ class Command(BaseCommand):
         migration_suffix = (
             '_' + re.sub('\.[^.]+$', '', json_filename) + '_page.py'
         )
-
-        existing_migration = glob.glob(
-            os.path.join(migration_dir, '*' + migration_suffix)
-        )
-
-        if existing_migration:
-            print "Migration already exists at " + existing_migration[0]
-            return
 
         previous_migration = latest_migration(migration_dir)
         migration_prefix = next_migration_number(previous_migration)
@@ -75,6 +69,7 @@ class Command(BaseCommand):
             parser = Template(template.read())
             migration_contents = parser.render(
                 filepath=json_filepath,
+                page_url=page_url,
                 previous_migration=previous_migration
             )
 

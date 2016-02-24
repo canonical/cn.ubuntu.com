@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 from django.db import migrations
 
 # Local
+from website.models import Page
 from website.db_helpers import import_page_from_json_file
 
 
@@ -12,6 +13,9 @@ def import_page(apps, schema_editor):
     """
     Import a new page from a JSON data in the "page-data" directory
     """
+
+    if Page.objects.filter(url="{{ page_url }}").exists():
+        Page.objects.get(url="{{ page_url }}").delete()
 
     import_page_from_json_file('{{ filepath }}')
 
