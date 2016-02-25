@@ -70,9 +70,6 @@
   .row-hero {
     overflow: hidden;
   }
-  .row-hero__image {
-    margin: 10px 0;
-  }
 
   .row-hero:before {
     @media only screen and (min-width : 768px) {
@@ -100,11 +97,21 @@
     }
   }
 
-  .row--canonical {
+  .row-developers {
+    &--image {
+      margin-top: 60px;
+    }
+
+    &--small-image {
+      margin-bottom: 20px;
+    }
+  }
+
+  .row-canonical {
     background: $dark-aubergine;
     color: #fff;
 
-    &__inner {
+    &--inner {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
