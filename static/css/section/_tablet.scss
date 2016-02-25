@@ -73,7 +73,7 @@
 
   .row-hero:before {
     @media only screen and (min-width : 768px) {
-      background: url('https://assets.ubuntu.com/v1/da3c58e9-tablet-overview-hero.png?w=800') center center no-repeat;
+      background: url('../img/tablet/tablet-hero.png') center center no-repeat;
       background-size: contain;
       content: "";
       display: block;
