@@ -1,0 +1,80 @@
+{% extends "news/base_news.html" %}
+{% block title %}Ubuntu手机OTA-10更新发布{% endblock %}
+{% block content %}
+
+<div class="row row-hero no-border">
+    <div class="eight-col">
+        <h1>Ubuntu手机OTA-10更新发布</h1>
+        <p>Ubuntu手机OTA-10已发布，比起OTA-9，本次更新不仅仅在UI上有所改善，修复了存在的bug，还迎来诸多新功能，新增了更多预装应用。</p>
+
+        <div class="twelve-col">
+            <img src="{{ STATIC_URL }}img/news/news-ota10-1.png" width="45%" class="left" alt="phone greeter screen" />
+            <img src="{{ STATIC_URL }}img/news/news-ota10-2.png" width="45%" class="left" alt="phone weather screen" />
+        </div>
+
+        <p>Ubuntu手机和常见的IOS和安卓系统使用方式有很大的区别，它采用手势滑动操作完全不需要使用手机按钮。 对于首次使用Ubuntu手机的用户来说， 会需要经过简单的学习来熟悉这个系统界面，OTA-10对首次开机使用教程进行了重新设计，上手Ubuntu手机更加容易。虽然和传统智能手机器的操作方式有很大区别， 但实际操作更加合理，新用户上手也极快。</p>
+
+        <div class="twelve-col">
+          <img src="{{ STATIC_URL }}img/news/news-ota10-3.png" width="65%" class="left" alt="phone switcher h screen" />
+          <img src="{{ STATIC_URL }}img/news/news-ota10-4.png" width="25%" class="left" alt="phone switcher v screen" />
+        </div>
+
+        <p>这是Ubuntu手机从去年上市以来， 的第10次的系统更新了。 这次的OTA-10本版中有一下的几项重大新特征</p>
+
+        <h2>新增3个预装应用</h2>
+        <p>OTA-10最新增加了3个预装应用，分别是邮件（Dekko）、日历、和导航应用（uNav），这也是日常工作、生活中会重度使用的应用，现在无需再单独进行安装。</p>
+
+          <div class="twelve-col">
+            <img src="{{ STATIC_URL }}img/news/news-ota10-5.png" width="28%" class="left" alt="phone dekko screen" />
+            <img src="{{ STATIC_URL }}img/news/news-ota10-6.png" width="28%" class="left" alt="phone calendar screen" />
+            <img src="{{ STATIC_URL }}img/news/news-ota10-7.png" width="28%" class="left" alt="phone uNav screen" />
+          </div>
+
+          <h2>新增VPN功能</h2>
+          <p>智能手机的功能早已不是仅仅局限于拨打电话和发送短信了，上网功能的使用需求越来越频繁、重要。尤其是对网络有特殊要求的用户。以往需要在Ubuntu桌面端上使用VPN，现在在OTA-10上也可以使用VPN服务了。使用方法和Ubuntu桌面端一致，在设置——网络，点击开启即可。</p>
+
+          <div class="twelve-col">
+            <img src="{{ STATIC_URL }}img/news/news-ota10-8.png" width="45%" class="left" alt="phone settings screen" />
+            <img src="{{ STATIC_URL }}img/news/news-ota10-9.png" width="45%" class="left" alt="phone vpn screen" />
+          </div>
+
+          <h2>浏览器——针对桌面融合模式优化</h2>
+          <p>说到网络，OTA-10另一项改进就是对它默认浏览器应用的优化。在手机或平板的触控模式下，可使用长按操作呼出选择功能，选择网页内容进行复制/粘贴。在桌面融合模式下，终端打开的某个网页链接，系统会自动开启浏览器应用并打开一个新的页面， 而不是另外再打开一个浏览器应用。不仅如此，当手机、平板连接到鼠标后，浏览器底部提示自动变成可点击的侧边栏。除了上面的功能，还针对内存占用进行了优化。</p>
+
+          <div class="twelve-col">
+            <img src="{{ STATIC_URL }}img/news/news-ota10-10.png" width="45%" class="left" alt="phone browser screen" />
+            <img src="{{ STATIC_URL }}img/news/news-ota10-11.png" width="45%" class="left" alt="phone copy screen" />
+          </div>
+
+          <h2>Web应用功能丰富</h2>
+          <p>Ubuntu手机支持三类原生app、Scope、Webapp应用，作为现在普遍使用的HTML5语言的Webapp，OTA-10增加相机（可通过开启webrtc视频参数实现）、麦克风、震动、加速器接口调用功能，Webapp的功能、体验将变得更好。SoundCloud用户可在Web应用登陆自己的账户，查看歌手信息，查看、发表歌曲评论，获取精心制作的精选集，欣赏喜欢的音乐。</p>
+
+          <div class="twelve-col">
+            <img src="{{ STATIC_URL }}img/news/news-ota10-12.png" width="28%" class="left" alt="phone soundcloud screen" />
+            <img src="{{ STATIC_URL }}img/news/news-ota10-13.png" width="28%" class="left" alt="phone soundcloud explore screen" />
+            <img src="{{ STATIC_URL }}img/news/news-ota10-14.png" width="28%" class="left" alt="phone soundcloud album screen" />
+          </div>
+
+          <h2>中文输入法</h2>
+          <p>在OTA-10中，拼音输入法更新libpinyin7了，进一步改善中文输入体验。如果你喜欢日语，本次更新也加入了对日语键盘布局支持。</p>
+
+          <div class="twelve-col">
+            <img src="{{ STATIC_URL }}img/news/news-ota10-15.png" width="45%" class="left" alt="phone messaging 1 screen" />
+            <img src="{{ STATIC_URL }}img/news/news-ota10-16.png" width="45%" class="left" alt="phone messaging 2 screen" />
+          </div>
+
+          <h2>桌面融合模式</h2>
+          <p>OTA-10修复了在融合模式下部分bug，并提供更多设置的选择。例如，新增显示器设置，可选的语言输入方式，桌面融合模式开关按钮等。</p>
+
+          <div class="twelve-col">
+            <img src="{{ STATIC_URL }}img/news/news-ota10-17.png" width="45%" class="left" alt="phone settings screen" />
+            <img src="{{ STATIC_URL }}img/news/news-ota10-4.png" width="45%" class="left" alt="phone select screen" />
+          </div>
+
+          <h2>其他</h2>
+          <p>手机系统更新除了可在WiFi模式下载，亦可使用手机3G/4G网络进行下载更新。改善对外置麦克风及音量控制的识别、支持。</p>
+          <p>以上为Ubuntu手机OTA-10更新信息，如果你还没有更新的话，请打开手机，点击设置—软件更新进行更新。详细的更新日志见：<a class="external" href="https://wiki.ubuntu.com/Touch/ReleaseNotes/OTA-10">链接</a></p>
+
+    </div>
+</div>
+{% endblock %}
