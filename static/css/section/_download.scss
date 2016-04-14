@@ -1,149 +1,84 @@
 body.download {
+  @media only screen and (min-width : 984px) {
+    .inner-wrapper {
+      padding-bottom: 0;
+    }
+  }
 
-	.row-zh-CN .box-highlight h2,
-	.row-zh-CN .box-highlight p {
-		padding-right: 20px;
-	}
-	.inner-wrapper form fieldset {
-		background: none;
-		margin: 0;
-		padding-left: $gutter_width;
-		padding: 0;
-	}
+  .row-zh-CN .box-highlight h2,
+  .row-zh-CN .box-highlight p {
+    padding-right: 20px;
+  }
+  .inner-wrapper form fieldset {
+    background: none;
+    margin: 0;
+    padding-left: $gutter_width;
+    padding: 0;
+  }
 
-	.inner-wrapper form button,
-	.inner-wrapper form .link-cta-download,
-	.inner-wrapper .link-cta-ubuntu {
-		@include font_size (19.5);
-		padding: 10px 14px;
-		border: 0;
-		float: left;
-		text-align: center;
-		width: 100%;
-		margin-left: 0;
-		margin-bottom: 0.615em;
-		text-decoration: none;
-	}
+  .inner-wrapper form button,
+  .inner-wrapper form .link-cta-download,
+  .inner-wrapper .link-cta-ubuntu {
+    @include font_size (19.5);
+    padding: 10px 14px;
+    border: 0;
+    float: left;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0.615em;
+    text-decoration: none;
+  }
 
-	#main-content .row-background {
-		background: url("../img/backgrounds/image-background-wallpaper1404.jpg") no-repeat scroll 0 bottom #4B1827;
-		margin-top: 0;
-		padding-top: 40px;
+  #main-content .row-background {
+    background: url("../img/backgrounds/image-background-wallpaper1404.jpg") no-repeat scroll 0 bottom #4B1827;
+    margin-top: 0;
+    padding-top: 40px;
 
-		h1,
-		p {
-			color: #ffffff;
-		}
-		a:link,
-		a:visited {
-			color: #fff;
-		}
-		a:hover {
-			color: rgba(255,255,255,0.6);
-		}
+    h1,
+    p {
+      color: #ffffff;
+    }
+    a:link,
+    a:visited {
+      color: #fff;
+    }
+    a:hover {
+      color: rgba(255,255,255,0.6);
+    }
 
-		a.external {
-			background-image: url("../img/icons/icon-externallink-white.svg");
-		}
+    a.external {
+      background-image: url("../img/icons/icon-externallink-white.svg");
+    }
 
-		a.external:hover {
-			background-image: url("../img/icons/icon-externallink-warmgrey.svg");
-		}
+    a.external:hover {
+      background-image: url("../img/icons/icon-externallink-warmgrey.svg");
+    }
 
-		.box-highlight {
-			border: none;
-				-moz-box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
-				-webkit-box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
-   			box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
-			background-color: rgba(0, 0, 0, .25);
-			color: #ffffff;
-		}
+    .box-highlight {
+      -moz-box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+      -webkit-box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+      background-color: rgba(0, 0, 0, .25);
+      border: none;
+      color: #ffffff;
+       box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+    }
 
-		.vertical-divider > div,
-		.vertical-divider > li {
-			border-color: rgba(255,255,255,0.2); /*#78515f;*/
-		}
-	}
+    .vertical-divider > div,
+    .vertical-divider > li {
+      border-color: rgba(255,255,255,0.2); /*#78515f;*/
+    }
+  }
 } // end body.download
 
-.row-community {
-	background: #fff url('../img/backgrounds/background-dots.png');
-	color: $cool_grey;
-	padding: 40px 20px 20px;
-
-	.six-col,
-	.nine-col {
-		padding: 20px;
-	}
-
-	div.six-col,
-	div.eight-col, {
-		background: rgba(255,255,255,1);
-		position: relative;
-	}
-
-	.where-to-find-us {
-	  background: #fff;
-	  margin: 0;
-	  padding: 15px 20px;
-	}
-
-	.where-to-find-us ul {
-		margin-bottom: 0;
-	}
-
-	.where-to-find-us h3 {
-		@include font_size (16);
-		border-bottom: 1px dotted $warm_grey;
-		padding-bottom: 10px;
-		margin-bottom: 10px;
-	}
-
-	.where-to-find-us li {
-		padding: 0 0 8px 26px;
-		background: url("../img/icons/icon-irc.png") 0 4px no-repeat;
-		border: none;
-		margin-bottom: 8px;
-	}
-
-	.where-to-find-us li a {
-		padding-bottom: 2px;
-	}
-
-	.where-to-find-us li:last-child {
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
-
-	.nine-col div.six-col {
-	    background: #fff;
-	    display: block;
-	}
-
-	.three-col:nth-of-type(2) {
-	    margin-right: 0;
-	}
-} //end .row-community
-
-
-/* Medium / Tablet viewport
--------------------------------------------------------------- */
 @media only screen and (min-width : 768px) {
-	.row-community {
-		margin-bottom: -10px;
+  .row-community {
+    img {
+      padding-top: 60px;
+    }
 
-		.picto {
-			margin-top: 30px;
-		}
-	}
+    .community {
+      padding-top: 65px;
+    }
+  }
 }
-// end @media only screen and (min-width : 768px)
-
-/* Large / Desktop viewport
--------------------------------------------------------------- */
-@media only screen and (min-width : 984px) {
-	.row-community {
-		margin-bottom: -20px;
-	}
-}
-// end @media only screen and (min-width : 984px)
