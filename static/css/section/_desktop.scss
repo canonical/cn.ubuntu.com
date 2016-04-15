@@ -3,133 +3,137 @@
 $item_margin: 40px;
 
 body.desktop {
-	.lang-switch {
-		position: absolute;
-		top: -20px;
-		right: 40px;
-	}
-	.screenshot-shadowed {
-		margin-left: -5px;
-	}
+  .lang-switch {
+    position: absolute;
+    top: -20px;
+    right: 40px;
+  }
 
-	.row-partnership ul {
-		margin-left: -$item_margin;
+  .screenshot-shadowed {
+    margin-left: -5px;
+  }
 
-		li {
-			margin-left: $item_margin;
-		}
-	}
-	.row-ubuntu-kylin-more img {
-		margin-top: -95px;
-	}
-	.right {
-		float: right;
-	}
-	.pull-left-40,
-	.pull-right-40 {
-		margin-left: 0;
-		margin-right: 0;
-		margin-bottom: 20px;
-	}
-		.row-sogou {
-			.last-col {
-				margin-top: 20px;
-			}
-		}
-		.row-scopes {
-			.last-col {
-				margin-top: 20px;
-			}
-		}
+  .row-partnership ul {
+    margin-left: -$item_margin;
 
+    li {
+      margin-left: $item_margin;
+    }
+  }
 
+  .row-ubuntu-kylin-more img {
+    margin-top: -95px;
+  }
+
+  .right {
+    float: right;
+  }
+
+  .pull-left-40,
+  .pull-right-40 {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .row-sogou {
+    .last-col {
+      margin-top: 20px;
+    }
+  }
+
+  .row-scopes {
+    .last-col {
+      margin-top: 20px;
+    }
+  }
 } /* end body.desktop-ubuntukylin */
 
 /* Medium / Tablet viewport
 -------------------------------------------------------------- */
 @media only screen and (min-width : 768px) {
 
-	body.desktop {
-		.row-hero {
-			background: url('../img/desktop/image-ubuntukylin.jpg') 200% center no-repeat;
-			padding-bottom: 55px;
-		}
-		.row-ubuntu-kylin-more h2 {
-			margin-top: 60px;
-		}
-		.pull-left-40 {
-			margin-left: -30px;
-			margin-bottom: -30px;
-		}
-		.pull-right-40 {
-			margin-right: -30px;
-			margin-bottom: -30px;
-		}
-		.row-sogou {
-			.last-col {
-				bottom: -4px;
-				position: relative;
-			}
-		}
-		.row-scopes {
-			.last-col {
-				bottom: 0px;
-				position: relative;
-			}
-		}
-		.row-free p.first {
-			padding-right: 186px;
-		}
-		.row-free > div.open-source {
-			background: url('../img/pictograms/picto-pack/picto-projectswelove-orange.svg') 93% 40% no-repeat;
-			background-size: 140px 140px;
-		}
+  body.desktop {
+    .row-hero {
+      background: url('../img/desktop/image-ubuntukylin.jpg') 200% center no-repeat;
+      padding-bottom: 55px;
+    }
+    .row-ubuntu-kylin-more h2 {
+      margin-top: 60px;
+    }
+    .pull-left-40 {
+      margin-left: -30px;
+      margin-bottom: -30px;
+    }
+    .pull-right-40 {
+      margin-right: -30px;
+      margin-bottom: -30px;
+    }
+    .row-sogou {
+      .last-col {
+        bottom: -4px;
+        position: relative;
+      }
+    }
+    .row-scopes {
+      .last-col {
+        bottom: 0px;
+        position: relative;
+      }
+    }
+    .row-free p.first {
+      padding-right: 186px;
+    }
+    .row-free > div.open-source {
+      background: url('../img/pictograms/picto-pack/picto-projectswelove-orange.svg') 93% 40% no-repeat;
+      background-size: 140px 140px;
+    }
 
-		.row-free > div.backed-by-canonical {
-			background: url('../img/pictograms/picto-pack/picto-canonical.svg') 93% 40% no-repeat;
-			background-size: 140px 140px;
-		}
+    .row-free > div.backed-by-canonical {
+      background: url('../img/pictograms/picto-pack/picto-canonical.svg') 93% 40% no-repeat;
+      background-size: 140px 140px;
+    }
 
-	}
+  }
 
-	html.no-svg,
-	html.opera-mini {
-		body.desktop .row-free > div.open-source {
-			background-image: url('../img/pictograms/picto-pack/picto-projectswelove-orange.png');
-		}
-		body.desktop .row-free > div.backed-by-canonical {
-			background-image: url('../img/pictograms/picto-pack/picto-canonical.png');
-		}
-	}
+  html.no-svg,
+  html.opera-mini {
+    body.desktop .row-free > div.open-source {
+      background-image: url('../img/pictograms/picto-pack/picto-projectswelove-orange.png');
+    }
+    body.desktop .row-free > div.backed-by-canonical {
+      background-image: url('../img/pictograms/picto-pack/picto-canonical.png');
+    }
+  }
 }
 
 
 
 @media only screen and (min-width : 984px) {
-	body.desktop {
-		.row-hero {
-			background: url('../img/desktop/image-ubuntukylin.jpg') 498px 80px no-repeat;
-		}
-	}
+  body.desktop {
+    .row-hero {
+      background: url('../img/desktop/image-ubuntukylin.jpg') 498px 80px no-repeat;
+    }
+  }
 
-	body.desktop {
-		.pull-left-40 {
-			margin-bottom: -40px;
-		  margin-left: -40px;
-		}
-		.pull-right-40 {
-			margin-bottom: -40px;
-			margin-right: -40px;
-		}
-		.row-sogou {
-			.last-col {
-				bottom: 0;
-			}
-		}
-		.row-scopes {
-			.last-col {
-				bottom: 0;
-			}
-		}
-	}
+  body.desktop {
+    .pull-left-40 {
+      margin-bottom: -40px;
+      margin-left: -40px;
+    }
+    .pull-right-40 {
+      margin-bottom: -40px;
+      margin-right: -40px;
+    }
+    .row-sogou {
+      .last-col {
+        bottom: 0;
+      }
+    }
+    .row-scopes {
+      .last-col {
+        bottom: 0;
+      }
+    }
+  }
 }
