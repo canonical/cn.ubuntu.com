@@ -14,31 +14,31 @@ body.cloud-home {
 /* Medium / Tablet viewport
 -------------------------------------------------------------- */
 @media only screen and (min-width : 768px) {
+  .row-cloud-tools .landscape img {
+    margin-top: -26px;
+  }
 
-    .row-cloud-tools .landscape img { margin-top: -26px; }
+  .row-cloud-tools p.text-center {
+    min-height: 170px;
+  }
 
-    .row-cloud-tools p.text-center { min-height: 170px; }
+  body.cloud-home {
+    .row-services {
+      overflow: hidden;
+      margin-bottom: -20px;
 
-    body.cloud-home {
-      .row-services {
-        overflow: hidden;
-        margin-bottom: -20px;
-
-        img {
-          position: absolute;
-          top: 0;
-          left: 50.9362%;
-        }
+      img {
+        position: absolute;
+        top: 0;
+        left: 50.9362%;
       }
     }
+  }
 } // @media only screen and (min-width : 768px)
 
 @media only screen and (min-width : 984px) {
 
   body.cloud-home {
-    .row-hero {
-      //padding-bottom: 40px;
-    }
     .row-cloud-tools .landscape img {
       margin-top: -117px;
     }

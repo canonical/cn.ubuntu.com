@@ -8,6 +8,7 @@ body.desktop {
     top: -20px;
     right: 40px;
   }
+
   .screenshot-shadowed {
     margin-left: -5px;
   }
@@ -19,30 +20,33 @@ body.desktop {
       margin-left: $item_margin;
     }
   }
+
   .row-ubuntu-kylin-more img {
     margin-top: -95px;
   }
+
   .right {
     float: right;
   }
+
   .pull-left-40,
   .pull-right-40 {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 20px;
   }
-    .row-sogou {
-      .last-col {
-        margin-top: 20px;
-      }
-    }
-    .row-scopes {
-      .last-col {
-        margin-top: 20px;
-      }
-    }
 
+  .row-sogou {
+    .last-col {
+      margin-top: 20px;
+    }
+  }
 
+  .row-scopes {
+    .last-col {
+      margin-top: 20px;
+    }
+  }
 } /* end body.desktop-ubuntukylin */
 
 /* Medium / Tablet viewport
