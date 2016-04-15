@@ -1,24 +1,19 @@
 .server-home {
-	@media only screen and (min-width : 768px) {
-		.row-hero img {
-			margin-top: 13%;
-		}
-	}
+  @media only screen and (min-width : 768px) {
+    .row-hero img {
+      margin-top: 13%;
+    }
+  }
 
-	ul.inline-logos li img {
-	    height: 45px;
-	}
+  ul.inline-logos li img {
+      height: 45px;
+  }
 
-	.inline-icons {
-		text-align: center;
+  .inline-icons {
+    text-align: center;
 
-		li {
-			text-align: center;
-		}
-	}
-} //server-home
-
-//.row-hyperscale {
-	//background: url('../img/server/image-server-hyperscale.svg') 100% 60px no-repeat;
-	//background-size: 360px 288px;
-//}
+    li {
+      text-align: center;
+    }
+  }
+}
