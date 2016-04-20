@@ -145,3 +145,38 @@ body.desktop {
     }
   }
 }
+
+// CMS content-specific
+.cta-links a {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  font-size:1.14286em;
+  margin-bottom:.75em;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  background:#dd4814;
+  color:#fff;
+  text-decoration:none;
+  display:inline-block;
+  margin:0;
+  font-family:ubuntulight,Ubuntu,Arial,'libra sans',sans-serif;
+  font-weight:300;
+  -webkit-font-smoothing:subpixel-antialiased;
+  -moz-font-smoothing:subpixel-antialiased;
+  -o-font-smoothing:subpixel-antialiased;
+  font-smoothing:subpixel-antialiased;
+  padding:8px 14px;
+  width:100%;
+  text-align:center;
+
+  @media only screen and (min-width : 768px) {
+    width: auto;
+  }
+
+  &:hover {
+    background:#c03f11;
+    text-decoration:none;
+  }
+}
