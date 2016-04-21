@@ -21,22 +21,6 @@
 </div>
 {% endif %}
 
-{# ================ Who is behind Ubuntu? ================ #}
-{% if who_is_behind_kylin %}
-<div id="ubuntu-kylin-backers" class="row">
-    <div class="six-col">
-        {% include "templates/_cms-block.html" with block_content=who_is_behind_kylin %}
-    </div>
-    <div class="six-col text-center last-col">
-            <ul class="no-bullets clearfix align-center">
-                <li><img src="{{ STATIC_URL }}img/desktop/logo-canonical-288.png" alt="Canonical" width="288" height="40"></li>
-                <li><img src="{{ STATIC_URL }}img/desktop/logo-csip-180.png" alt="CSIP" width="180" height="71"></li>
-                <li><img src="{{ STATIC_URL }}img/desktop/logo-nudt-288.png" alt="NUDT" width="288" height="72"></li>
-            </ul>
-        </div>
-</div>
-{% endif %}
-
 {# ================ Who is Ubuntu made for? ================ #}
 {% if for_you and for_business and for_developers %}
 <div id="ubuntu-kylin-user" class="row row-grey">
@@ -72,6 +56,22 @@
     <div class="six-col last-col">
         <img src="{{ STATIC_URL }}img/desktop/desktop-kylin-laptop.jpg" alt="Kylin on an XPS laptop">
     </div>
+</div>
+{% endif %}
+
+{# ================ Who is behind Ubuntu? ================ #}
+{% if who_is_behind_kylin %}
+<div id="ubuntu-kylin-backers" class="row">
+    <div class="six-col">
+        {% include "templates/_cms-block.html" with block_content=who_is_behind_kylin %}
+    </div>
+    <div class="six-col text-center last-col">
+            <ul class="no-bullets clearfix align-center">
+                <li><img src="{{ STATIC_URL }}img/desktop/logo-canonical-288.png" alt="Canonical" width="288" height="40"></li>
+                <li><img src="{{ STATIC_URL }}img/desktop/logo-csip-180.png" alt="CSIP" width="180" height="71"></li>
+                <li><img src="{{ STATIC_URL }}img/desktop/logo-nudt-288.png" alt="NUDT" width="288" height="72"></li>
+            </ul>
+        </div>
 </div>
 {% endif %}
 
