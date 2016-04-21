@@ -12,7 +12,7 @@
 {% endblock second_level_nav_items %}
 
 {% block content %}
-{# ================ 1. Ubuntu Kylin ================ #}
+{# ================ Ubuntu Desktop ================ #}
 {% if hero %}
 <div id="ubuntu-kyin" class="row row-hero">
     <div class="six-col">
@@ -21,7 +21,7 @@
 </div>
 {% endif %}
 
-{# ================ 2. Who is behind Ubuntu Kylin? ================ #}
+{# ================ Who is behind Ubuntu? ================ #}
 {% if who_is_behind_kylin %}
 <div id="ubuntu-kylin-backers" class="row">
     <div class="six-col">
@@ -37,9 +37,9 @@
 </div>
 {% endif %}
 
-{# ================ 3. Who is Ubuntu Kylin made for? ================ #}
+{# ================ Who is Ubuntu made for? ================ #}
 {% if for_you and for_business and for_developers %}
-<div id="ubuntu-kylin-user" class="row">
+<div id="ubuntu-kylin-user" class="row row-grey">
     <div class="eight-col">
         {% include "templates/_cms-block.html" with block_content=who_is_kylin_for %}
     </div>
@@ -51,13 +51,31 @@
             {% include "templates/_cms-block.html" with block_content=for_business %}
         </div>
         <div class="four-col last-col for-developers">
-            {% include "templates/_cms-block.html" with block_content=for_developers extra_classes="cta-links" %}
+            <div class="twelve-col">
+                {% include "templates/_cms-block.html" with block_content=for_developers extra_classes="cta-links" %}
+            </div>
+            {% include "templates/_cms-block.html" with block_content=for_developers_additional %}
         </div>
     </div>
 </div>
 {% endif %}
 
-{# ================ 4. Whats new in Ubuntu Kylin 15.10? ================ #}
+{# ================ ubuntu kylin ============== #}
+{% if ubuntu_kylin %}
+<div class="row">
+    <div class="six-col">
+        <div class="twelve-col">
+            {% include "templates/_cms-block.html" with block_content=ubuntu_kylin extra_classes="ubuntu-kylin cta-links" %}
+        </div>
+        {% include "templates/_cms-block.html" with block_content=ubuntu_kylin_additional extra_classes="ubuntu-kylin-additional" %}
+    </div>
+    <div class="six-col last-col">
+        <img src="{{ STATIC_URL }}img/desktop/desktop-kylin-laptop.jpg" alt="Kylin on an XPS laptop">
+    </div>
+</div>
+{% endif %}
+
+{# ================ Whats new? ================ #}
 {% if features %}
 <div id="row-whats-new" class="row row-grey">
     <div class="seven-col">
@@ -66,7 +84,7 @@
 </div>
 {% endif %}
 
-{# ================ 14. Find out more ================ #}
+{# ================ Find out more ================ #}
 {% if find_out_more %}
 <div id="row-more" class="row no-border">
     <div class="eight-col">
