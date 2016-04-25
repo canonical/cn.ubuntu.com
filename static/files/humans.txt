@@ -1,19 +1,47 @@
+              %(((((((((((%
+          (((((((((((((((((((((
+       (((((((((((((((((((())(((((
+     ((((((((((((((((((((.    )(((((
+   (((((((((((((((,   ,((     )(((((((
+  (((((((((((/(/        *(   )(((((((((
+ ((((((((((     ( .///.       )(((((((((
+%(((((((((     (((((((((((     )((((((((%
+(((((())(    /((((((((((((((    )((((((((
+((((,   )/  .(((((((((((((((.   ,)(((((((
+(((,     )  /((((((((((((((((    )(((((((
+((((,   )(  .(((((((((((((((.   ,)(((((((
+(((((())(    /((((((((((((((    )((((((((
+%(((((((((     (((((((((((     ))(((((((%
+ ((((((((((      (./(/.       )(((((((((
+  ((((((((((((          ,(   )(((((((((
+   (((((((((((((((,   ,/(     )(((((((
+     ((((((((((((((((((((.    )(((((
+       ((((((((((((((((((((())((((
+          (((((((((((((((((((((
+              %(((((((((((%
+
 /* TEAM */
-	Chef: Peter Mahnke
-	Contact: webmaster[at]ubuntu.com
-	From: London, England
+  Title:           Ubuntu China
+  Site:            cn.ubuntu.com
+  Contact:         chinamarketing@canonical.com
+  Location:        London, United Kingdom
 
-	Web developer: Anthony Dillon
-	From: London, England
-
-	Web developer: Graham Bancroft
-	From: London, England
-
-	Web designer: Inayaili de LeÃ³n
-	From: London, England
+Heads:           Peter Mahnke and Alejandra Obregon
+  Developer:       Anthony Dillon
+  Developer:       Barry McGee
+  Developer:       Karl Williams
+  Developer:       Graham Bancroft
+  Developer:       Richard McCartney
+  Developer:       Robin Winslow
+  Developer:       William Moggridge
+  Designer:        Inayaili de LeÃ³n
+  Project manager: Magdalena Mirowicz
+  UX designer:     Francesca Granato
+  Marketing:       April Wang 王姝霞
 
 /* SITE */
-	Last update: 2014/06/06
-	Language: Chinese
-	Doctype: HTML5
-	IDE: Bazaar, Aptana Studio 3, Photoshop
+  Last update:     22 April 2016
+  Language:        English
+  Standards:       HTML5, CSS3
+  Components:      Django, Moderniser, jQuery, Vanilla
+  IDEs:            Atom, Coda, Vim, emacs
