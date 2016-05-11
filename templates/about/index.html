@@ -10,40 +10,42 @@
 {% endblock second_level_nav_items %}
 
 {% block content %}
-{# ================ 1. About Ubuntu ================ #}
-<div id="about-ubuntu" class="row row-hero no-border">
+<section class="row row-hero">
     <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=hero %}
+        {% include "templates/_cms-block.html" with block_content=ubuntu_story %}
     </div>
-    <div class="twelve-col no-margin-bottom">
-        <img class="full-width" src="{{ STATIC_URL }}img/about/partners-hero.jpg" width="1600" height="800" alt="" />
-    </div>
-</div>
+</section>
 
-{# ================ 2. Ubuntu and Canonical ================ #}
-<div id="ubuntu-and-canonical" class="row">
+<section class="row">
     <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=ubuntu_and_canonical %}
+        {% include "templates/_cms-block.html" with block_content=beginning %}
     </div>
-</div>
+</section>
 
-{# ================ 3. We help partners take Ubuntu to market ================ #}
-<div id="ubuntu-partners" class="row">
+<section class="row">
     <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=partners %}
+        {% include "templates/_cms-block.html" with block_content=releases %}
     </div>
-    <div class="four-col last-col">
-        <img src="{{ STATIC_URL }}img/about/partners-main.jpg" width="490" height="290" alt="" />
-    </div>
-</div>
+</section>
 
-{# ================ 4. We need big thinkers like you ================ #}
-<div id="canonical-careers" class="row no-border">
-    <div class="four-col">
-        <img src="{{ STATIC_URL }}img/about/hero-careers-small.png" width="290" height="204" alt="" />
+<section class="row">
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=governance %}
     </div>
-    <div class="eight-col last-col">
-        {% include "templates/_cms-block.html" with block_content=careers %}
+</section>
+
+<section class="row no-border">
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=flavours %}
     </div>
-</div>
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=flavours_list extra_classes="list-ubuntu" %}
+    </div>
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=localisations %}
+    </div>
+    <div class="eight-col">
+        {% include "templates/_cms-block.html" with block_content=other_editions %}
+    </div>
+</section>
 {% endblock %}
