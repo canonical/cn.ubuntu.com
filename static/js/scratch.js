@@ -346,8 +346,8 @@ YUI().use('node', 'substitute', 'cookie', "event-resize", "transition", "event",
 
     core.socialLinks = function() {
         if (document.documentElement.clientWidth > 769) {
-            Y.one('.list--social__item--wechat').on("click", function(e) {
-                if(!Y.one('.list--social__item--wechat').hasClass('active')){
+            Y.one('.list-social__item--wechat').on("click", function(e) {
+                if(!Y.one('.list-social__item--wechat').hasClass('active')){
                     e.preventDefault();
                 }
                 this.toggleClass('active');
