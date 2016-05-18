@@ -1,0 +1,45 @@
+{% extends "contact/base_contact.html" %}
+{% load markdown_deux_tags %}
+
+{% if title %}{% block title %}{{ title }}{% endblock %}{% endif %}
+
+{% if meta_description %}{% block meta_description %}{{ meta_description }}{% endblock %}{% endif %}
+
+{% if meta_keywords %}{% block meta_keywords %}{{ meta_keywords }}{% endblock %}{% endif %}
+
+{% block second_level_nav_items %}
+    {% include "templates/_nav_breadcrumb.html" with section_title="Contact" page_title="Contact"  %}
+{% endblock second_level_nav_items %}
+
+{% block content %}
+{# ================ Ubuntu Desktop ================ #}
+
+<div class="row row-hero no-border no-padding-bottom">
+    <div class="six-col no-margin-bottom">
+        {% if hero %}
+            {% include "templates/_cms-block.html" with block_content=hero %}
+        {% endif %}
+        {% if marketing %}
+            {% include "templates/_cms-block.html" with block_content=marketing extra_classes="six-col" %}
+        {% endif %}
+        {% if developers %}
+            {% include "templates/_cms-block.html" with block_content=developers extra_classes="four-col no-margin-bottom" %}
+        {% endif %}
+    </div>
+    <div class="prepend-two four-col last-col no-margin-bottom">
+        <img src="{{ STATIC_URL }}img/contact/qr.png" alt="" width="223" />
+    </div>
+</div>
+<div class="row equal-height no-border">
+    {% if beijing %}
+    <div class="six-col box">
+        {% include "templates/_cms-block.html" with block_content=beijing %}
+    </div>
+    {% endif %}
+    {% if shanghai %}
+    <div class="six-col last-col box">
+        {% include "templates/_cms-block.html" with block_content=shanghai %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
