@@ -179,10 +179,10 @@ footer #nav-global {
   -webkit-box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.3) inset;
   box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.3) inset;
   display: block;
-  margin-bottom: 10px;
   margin-top: 0;
   margin: 0 -10px;
   overflow: hidden;
+  padding-bottom: 10px;
   padding-top: 0;
 
   div {
@@ -350,6 +350,10 @@ footer #nav-global {
     margin: 0;
     padding: 0;
   }
+}
+
+footer.global {
+  overflow: hidden;
 }
 
 /* Medium / Tablet viewport
