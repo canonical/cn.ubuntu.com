@@ -841,7 +841,7 @@ body.bq-russia-takeover {
     &:before,
     &:after {
       display: block;
-      background: url('#{$asset-server}bcb69486-image-intro-dots.svg') repeat-x right center;
+      background: url('../img/homepage/intro/image-intro-dots.svg') repeat-x right center;
       background-size: 10px;
       content: "";
       position: absolute;
@@ -869,7 +869,7 @@ body.bq-russia-takeover {
 }
 
 .intro-middle li a.intro-cloud {
-  background-image: url('#{$asset-server}7153d45d-icon-intro-cloud.svg');
+  background-image: url('../img/homepage/intro/icon-intro-cloud.svg');
 
   &:before {
     width: 36px;
@@ -882,7 +882,7 @@ body.bq-russia-takeover {
 }
 
 .intro-middle li a.intro-server {
-  background-image: url('#{$asset-server}949bb7ae-icon-intro-server.svg');
+  background-image: url('../img/homepage/intro/icon-intro-server.svg');
 
   &:before {
     width: 38px;
@@ -895,7 +895,7 @@ body.bq-russia-takeover {
 }
 
 .intro-middle li a.intro-desktop {
-  background-image: url('#{$asset-server}0a347261-icon-intro-desktop.svg');
+  background-image: url('../img/homepage/intro/icon-intro-desktop.svg');
 
   &:before {
     width: 38px;
@@ -907,7 +907,7 @@ body.bq-russia-takeover {
 }
 
 .intro-middle li a.intro-phone {
-  background-image: url('#{$asset-server}1f6d7af8-icon-intro-phone.svg');
+  background-image: url('../img/homepage/intro/icon-intro-phone.svg');
 
   &:before {
     width: 54px;
@@ -919,7 +919,7 @@ body.bq-russia-takeover {
 }
 
 .intro-middle li a.intro-tablet {
-  background-image: url('#{$asset-server}08d4cf5a-icon-intro-tablet.svg');
+  background-image: url('../img/homepage/intro/icon-intro-tablet.svg');
 
   &:before {
     width: 34px;
@@ -932,7 +932,7 @@ body.bq-russia-takeover {
 }
 
 .intro-middle li a.intro-iot {
-  background-image: url('#{$asset-server}473ea07f-icon-intro-iot.svg');
+  background-image: url('../img/homepage/intro/icon-intro-iot.svg');
 
   &:before {
     width: 39px;
