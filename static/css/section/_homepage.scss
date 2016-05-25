@@ -49,7 +49,7 @@ body.homepage {
     padding-right: 20px;
   }
   .row-aux {
-  	background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
 
     img {
       margin-top: 20px;
@@ -59,7 +59,7 @@ body.homepage {
       font-size: 1.5em;
       margin-bottom: 0.571em;
     }
-	}
+  }
 
   .inner-wrapper .box li img { vertical-align: middle; }
 
@@ -97,9 +97,9 @@ body.homepage {
     border: 1px solid #f7f7f7;
   }
 
-	footer.global {
-		padding-top: 20px;
-	}
+  footer.global {
+    padding-top: 20px;
+  }
 
 } /* end body.homepage */
 
@@ -267,16 +267,16 @@ body.homepage {
     .number-one-for-cloud {
       position: relative;
     }
-  	footer.global {
-			padding-top: 30px;
-		}
+    footer.global {
+      padding-top: 30px;
+    }
   }
 
   @media only screen and (min-width : 984px) {
-	  footer.global .wrapper {
-		  width: 984px;
-		  margin: 0 auto;
-	  }
+    footer.global .wrapper {
+      width: 984px;
+      margin: 0 auto;
+    }
     .row {
       padding: 40px 0;
     }
@@ -317,15 +317,15 @@ body.homepage {
 }
 
 body.homepage {
-	.box {
-  	@include rounded_corners(0);
-		border: none;
-		border-top: 1px dotted #AEA79F;
-		background-color: none;
-		background: none;
-		margin-top: 20px;
-		padding: 20px 0 0;
-	}
+  .box {
+    @include rounded_corners(0);
+    border: none;
+    border-top: 1px dotted #AEA79F;
+    background-color: none;
+    background: none;
+    margin-top: 20px;
+    padding: 20px 0 0;
+  }
 
 } // body.homepage-kylin
 
