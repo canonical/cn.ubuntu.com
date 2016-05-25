@@ -6,6 +6,72 @@
     {% include "takeovers/_meizu_pro5_takeover.html" %}
 {% endblock takeover_content %}
 
+{% block page_content %}
+
+    <!-- Ubuntu Intro -->
+    <section class="row row--intro strip no-border">
+        <div class="ubuntu-intro">
+            <div class="intro-left"></div>
+                <div class="intro-middle">
+                    <ul class="ubuntu-intro__list no-bullets inline">
+                        <li><a class="intro-cloud" href="/cloud">Cloud</a></li>
+                        <li><a class="intro-server" href="/server">Server</a></li>
+                        <li><a class="intro-desktop" href="/desktop">Desktop</a></li>
+                        <li><a class="intro-phone" href="/phone">Phone</a></li>
+                        <li><a class="intro-tablet" href="/tablet">Tablet</a></li>
+                        <li><a class="intro-iot" href="/internet-of-things">IoT</a></li>
+                    </ul>
+                </div>
+                <div class="intro-right"></div>
+            </div>
+            <div class="strip-inner-wrapper">
+                <h2 class="text-center twelve-col">
+                    Ubuntu是一个广泛应用于个人电脑，智能手机，服务器，云计算，以及智能物联网设备的开源操作系统。
+                </h2>
+            </div>
+    </section>
+
+    <!-- Desktop -->
+    <section class="row">
+        <div class="strip-inner-wrapper">
+            <div class="eight-col">
+                <h2><a href="/download">Ubuntu 桌面系统&nbsp;›</a></h2>
+                <p>体验一下简洁直观的Ubuntu桌面操作系统。安全、快速、易用。</p>
+                <a href="/download">立刻下载&nbsp;›</a>
+            </div>
+            <div class="four-col last-col align-center">
+                image
+            </div>
+        </div>
+    </section>
+
+    <!-- IoT -->
+    <section class="row">
+        <div class="strip-inner-wrapper">
+            <div class="eight-col">
+                <h2><a href="/internet-of-things">专为智能物联网定制的操作系统&nbsp;›</a></h2>
+                <p>Snappy Ubuntu Core 是一套基于Ubuntu操作系统的更加安全，轻量级，专为智能物联网订制的开源操作系统。它已被广泛应用于物联网，智能设备和自主设备行业中，它自身的系统更新更加轻便可控；同时它让搭建自有应用商店和生态环境触手可及。</p>
+            </div>
+            <div class="four-col last-col align-center">
+                image
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud -->
+    <section class="row">
+        <div class="strip-inner-wrapper">
+            <div class="eight-col">
+                <h2><a href="/cloud">头号云服务平台&nbsp;›</a></h2>
+                <p>OpenStack Juno，还提供最好的工具和五年支持服务。</p>
+            </div>
+            <div class="four-col last-col align-center">
+                image
+            </div>
+        </div>
+    </section>
+{% endblock page_content %}
+
 {% block footer_content %}
     {% include "takeovers/_footer_homepage.html" %}
 {% endblock footer_content %}
