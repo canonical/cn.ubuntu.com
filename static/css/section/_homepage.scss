@@ -746,7 +746,7 @@ body.bq-russia-takeover {
     position: relative;
 
     &:before {
-      background-image: url('#{$asset-server}bcb69486-image-intro-dots.svg');
+      background-image: url('../img/homepage/intro/image-intro-dots.svg');
       background-position:  right center;
       background-repeat: repeat-x;
       background-size: 10px;
@@ -779,7 +779,7 @@ body.bq-russia-takeover {
   .intro-left,
   .intro-right {
     @media only screen and (min-width : 984px) {
-      background: url('#{$asset-server}bcb69486-image-intro-dots.svg') repeat-x right center;
+      background: url('../img/homepage/intro/image-intro-dots.svg') repeat-x right center;
       background-size: 10px;
     }
   }
