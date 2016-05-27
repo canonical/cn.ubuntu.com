@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" style="enable-background:new -248 370.9 99 100" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="100px" viewBox="-248 370.9 99 100" width="99px" version="1.1" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:4;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:#BF3E2B;}
+</style>
+<title>Slice 1</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1" sketch:type="MSPage">
+		<g id="g4845" sketch:type="MSLayerGroup" transform="translate(49.362 49.5) scale(-1 1) rotate(-90) translate(-49.5 -49)">
+			<g id="g4778" sketch:type="MSShapeGroup" transform="translate(49.997 49.5) scale(-1 1) translate(-49 -48.5)">
+				<g id="g4780" transform="translate(49.461 48.5) scale(-1 1) translate(-48.5 -48.5)">
+					<rect id="rect4782" transform="matrix(-.0000025352 -1 1 -.0000025352 -618.29 -25.563)" width="96" y="344.4" x="-369.9" height="-96" class="st0"/>
+				<path id="path4205" d="m-359.9 336.4v-80" class="st1"/>
+				<path id="path4207" d="m-346.9 296.4h-14" class="st1"/>
+				<path id="rect4236" d="m-349.9 336.3h16v-4h-12v-72h12v-4h-16v80zm22 0h16v-4h-16v4zm0-75.9h16v-4h-16v4zm22 75.9h26v-80h-26v4h22v72h-22v4z" class="st2"/>
+				<path id="path4238" d="m-303.9 336.4v-80" class="st1"/>
+				<path id="path4240" d="m-325.9 336.4v-80" class="st1"/>
+					<rect id="rect4242" transform="matrix(-.0000025352 -1 1 -.0000025352 -565.29 -20.563)" width="12" y="275.4" x="-298.9" height="-6" class="st2"/>
+					<rect id="rect4244" transform="matrix(-.0000025352 -1 1 -.0000025352 -587.29 -42.563)" width="12" y="275.4" x="-320.9" height="-6" class="st2"/>
+					<rect id="rect4246" transform="matrix(-.0000025352 -1 1 -.0000025352 -609.29 -64.563)" width="12" y="275.4" x="-342.9" height="-6" class="st2"/>
+					<ellipse id="path4208" ry="-6" rx="6" transform="matrix(-.0000025352 -1 1 -.0000025352 -656.29 -63.563)" cy="296.4" cx="-359.9" class="st2"/>
+			</g>
+		</g>
+	</g>
+	<path id="Path-9" d="m-248 370.9" class="st3" sketch:type="MSShapeGroup"/>
+</g>
+</svg>

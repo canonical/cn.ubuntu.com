@@ -1,14 +1,16 @@
 {% extends "templates/base.html" %}
 
-{% block title %}Ubuntu 是一个开源的软件平台。应用广泛，包括智能手机，平板电脑，PC，服务器和云。{% endblock %}
+{% block title %}适用于PC，手机，平板，IoT，服务器和云端的领先开源操作系统|Ubuntu中国官网{% endblock %}
 {% block extra_body_class %}homepage {% block takeover_body_class %}{% endblock takeover_body_class %}{% endblock extra_body_class %}
 
 {% block outer_content %}
-	{% block content %}
-		{% block takeover_content %}
-		{% endblock takeover_content %}
-    	{% block footer_content %}
-    		{% include "takeovers/_footer_homepage.html" %}
-     	{% endblock footer_content %}
+    {% block content %}
+        {% block takeover_content %}
+        {% endblock takeover_content %}
+        {% block page_content %}
+        {% endblock page_content %}
+        {% block footer_content %}
+            {% include "takeovers/_footer_homepage.html" %}
+        {% endblock footer_content %}
    {% endblock content %}
 {% endblock outer_content %}
