@@ -75,3 +75,9 @@
     font-size: 0.8em;
   }
 }
+
+// Fix for an emergent main logo bug, overriding a very specific rule
+header.banner .nav-primary.nav-right .logo-ubuntu {
+  height: 100%;
+  margin-right: 0;
+}
