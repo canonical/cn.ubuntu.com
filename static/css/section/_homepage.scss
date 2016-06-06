@@ -242,7 +242,7 @@ body.homepage {
   .strip__img {
     width: 75%;
   }
-  
+
   .row {
     padding-left: 0;
     padding-right: 0;
@@ -957,4 +957,58 @@ body.homepage .row--intro .intro-middle li a:hover {
   color: #fff;
   display: block;
   text-indent: 0;
+}
+
+// m10 convergence takeover
+.m10-convergence-takeover {
+  header.banner {
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+
+  .inner-wrapper {
+    margin-top: 0;
+  }
+
+  #main-content .row-hero {
+    background: url('../img/homepage/hero-background-sm.jpg') bottom center no-repeat;
+    background-size: cover;
+    margin-top: 0;
+    overflow: hidden;
+    padding-top: 30px;
+
+    @media only screen and (min-width : 768px) {
+      background-image: url('../img/homepage/hero-background-lg.jpg');
+      background-position: center center;
+      padding-top: 30px;
+    }
+
+    .strip-inner-wrapper {
+      min-height: 40vw;
+      overflow: visible;
+      position: relative;
+
+      @media only screen and (min-width : 768px) {
+        background: url('../img/homepage/hero-tablet-2x.png') 0 50px no-repeat;
+        min-height: 400px;
+
+        .row-hero__text {
+          margin-top: 50px;
+        }
+      }
+
+      .row-hero__image--small-screen {
+        padding-top: 20px;
+      }
+
+      @media only screen and (min-width : 984px) {
+        background: url('../img/homepage/hero-tablet-2x-630.png') -30px 100px no-repeat;
+        min-height: 630px;
+
+        .row-hero__text {
+          margin-top: 150px;
+        }
+      }
+    }
+  }
 }
