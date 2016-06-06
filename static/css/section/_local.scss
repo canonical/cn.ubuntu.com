@@ -62,34 +62,6 @@
   margin-right: 40px;
 }
 
-@media only screen and (min-width : 768px) {
-  .equal-height {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-
-    > div,
-    > li {
-      box-sizing: border-box;
-      display: flex;
-      flex: auto;
-      flex-direction: column;
-    }
-  }
-
-  .align-vertically {
-    transform-style: preserve-3d;
-
-    img,
-    div {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-}
-
 .align-center {
   text-align: center;
 
@@ -102,9 +74,4 @@
   .row-quote blockquote p {
     font-size: 0.8em;
   }
-}
-
-ul.inline-logos li {
-  border: none;
-  max-width: 160px;
 }
