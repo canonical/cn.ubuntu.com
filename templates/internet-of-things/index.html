@@ -12,156 +12,73 @@
 {% endblock second_level_nav_items %}
 
 {% block content %}
-{# ================ 1. Ubuntu Core on the Internet of Things ================ #}
-<section class="row row-hero equal-height">
-    <div class="seven-col append-one">
-        <div class="seven-col">
-            {% include "templates/_cms-block.html" with block_content=hero %}
-        </div>
-        <p><a class="link-cta-ubuntu" href="http://cn.developer.ubuntu.com/zh-cn/snappy/">开启 Ubuntu Core 的精彩之旅</a></p>
-        <p><a href="mailto:chinamarketing@canonical.com" class="external">如果您对成品设备感兴趣，请联系我们</a></p>
+<!-- Ubuntu for the Internet of Things -->
+<div class="row row-hero row-grey equal-height">
+    <div class="twelve-col for-small align-center">
+        <img src="{{ STATIC_URL }}img/internet-of-things/darwin.png" alt="Darwin robot" />
     </div>
-    <div class="four-col last-col align-center align-vertically">
-        <img src="{{ STATIC_URL }}img/cloud/snappy.png" alt="Snappy logo" />
+    <div class="six-col equal-height__item equal-height__align-vertically">
+        {% include "templates/_cms-block.html" with block_content=hero %}
     </div>
-</section>
-
-{# ============== 2. Secure critical infrastructure and devices ============= #}
-<section class="row row-grey no-border no-padding-bottom">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=protection %}
-    </div>
-</section>
-
-<section class="row row-grey no-border no-padding-bottom">
-    <div class="six-col">
-        {% include "templates/_cms-block.html" with block_content=intelligent_devices %}
-    </div>
-    <div class="six-col last-col">
-        <img src="{{ STATIC_URL }}img/internet-of-things/erle_robotics_ubuntu_drone.png" alt="Erle drone" />
-    </div>
-</section>
-
-<section class="row row-quote row-grey">
-        <blockquote>
-            <p><span>&ldquo;</span>我们很高兴地宣布 Erle-Copter 的诞生。它是世界首款由 Ubuntu Core 提供支持的无人机，能够自动确保安全，并可从应用商店升级其他附加功能。开放的平台会吸引创新者和专家开展合作与竞争，我们很激动能够引领开源无人机的教育、研究和发明之路。<span>&rdquo;</span></p>
-            <p><cite>Erle Robotics首席技术官， Victor Mayoral Vilches</cite></p>
-        </blockquote>
-</section>
-
-{# ============ 3. Software-defined appliances simplify telco CPE =========== #}
-<section class="row equal-height no-border no-padding-bottom ">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=telecoms %}
-    </div>
-</section>
-
-<section id="smarter-switches" class="row equal-height">
-    <div class="four-col align-center align-vertically">
-        <img src="{{ STATIC_URL }}img/internet-of-things/penguin_4806.png" alt="Penguin router" />
-    </div>
-    <div class="eight-col last-col">
-        {% include "templates/_cms-block.html" with block_content=switches_routers %}
-    </div>
-</section>
-
-{# ================= 4. Enterprise grade, industry hardened ================= #}
-<section class="row row-grey">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=industry %}
-    </div>
-    <div class="equal-height">
-        <div class="six-col">
-            {% include "templates/_cms-block.html" with block_content=enterprise_software %}
-        </div>
-        <div class="six-col last-col align-center align-vertically">
-            <img src="{{ STATIC_URL }}img/logos/logo-forgerock.png" alt="Forgerock logo" />
-        </div>
-    </div>
-</section>
-
-{# ========== 5. A marketplace for incredible apps on open devices ========== #}
-<section class="row no-border equal-height no-padding-bottom">
-    <div class="four-col align-center align-vertically not-for-small">
-        <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-shop-orange.svg" width="167" height="167" alt="" />
-    </div>
-    <div class="eight-col last-col ">
-        {% include "templates/_cms-block.html" with block_content=open_devices %}
-    </div>
-</section>
-
-<section class="row no-border equal-height no-padding-bottom">
-   <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=developers_favourite %}
-   </div>
-   <div class="four-col last-col align-center align-vertically not-for-small">
-       <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-developer-orange.svg" width="167" height="167" alt="" />
-   </div>
-</section>
-
-<section class="row equal-height no-border no-padding-bottom">
-    <div class="four-col align-center align-vertically not-for-small">
-        <img src="{{ STATIC_URL }}img/logos/logo-microsoftazure.svg" height="167" alt="Microsoft logo" />
-    </div>
-    <div class="eight-col last-col">
-        {% include "templates/_cms-block.html" with block_content=azure_aws %}
-    </div>
-</section>
-
-<section class="row equal-height">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=one_platform %}
-    </div>
-    <div class="four-col last-col align-center align-vertically not-for-small">
-        <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-accessories-orange.svg" width="167" height="167" alt="" />
-    </div>
-</section>
-
-{# ====================== 6. Range of supported devices ===================== #}
-<section class="row no-border no-margin-bottom no-padding-bottom row-grey">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=range_of_equipment %}
-    </div>
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=from_dev_boards %}
-    </div>
-    <div class="four-col last-col align-center">
-        <img src="{{ STATIC_URL }}img/internet-of-things/beaglebone_black.png" width="167" height="247" alt="BeagleBone Black board" />
-    </div>
-</section>
-
-<section class="row row-grey equal-height">
-    <div class="four-col last-col align-center align-vertically">
-        <img src="{{ STATIC_URL }}img/logos/logo-cavium.png" alt="Cavium Logo" />
-    </div>
-    <div class="seven-col prepend-one">
-        {% include "templates/_cms-block.html" with block_content=to_servers %}
-    </div>
-</section>
-
-<section class="row">
-    <div class="twelve-col">
-        <h2 class="muted-heading">我们合作伙伴的一部分</h2>
-        <ul id="iot-partners" class="inline-logos no-bullets no-margin dynamic-logos"></ul>
-        <p class="align-center"><a class="external" href="http://partners.ubuntu.com/programmes/iot">See all Internet of Things partners</a></p>
-    </div>
-</section>
-
-{# ================ Links ================ #}
-<div class="row row-links no-border">
-    <div class="six-col">
-        <p><a href="http://ubuntu.com/phone" class="external">Learn more about Ubuntu on phones at www.ubuntu.com</a></p>
-        <p><a href="http://cn.developer.ubuntu.com/ " class="external">访问 Ubuntu 开发者网站</a></p>
+    <div class="six-col last-col align-center equal-height__item  equal-height__item not-for-small">
+        <img src="{{ STATIC_URL }}img/internet-of-things/darwin.png" alt="Darwin robot" />
     </div>
 </div>
-{% endblock %}
 
-{% block footer_extra %}
-  <script>
-      YUI().use('event-base', function (Y) {
-          Y.on('domready', function () {
-              core.loadPartners('?programme__name=Internet%20of%20Things', '#iot-partners');
-          });
-      });
-  </script>
+<!-- Why Ubuntu Core -->
+<div class="row equal-height">
+    <div class="four-col equal-height__item equal-height__align-vertically align-center">
+        <img src="{{ STATIC_URL }}img/internet-of-things/snappy-ubuntu-core-logo.svg" width="200" height="175" alt="Snappy logo" />
+    </div>
+    <div class="eight-col last-col equal-height__item">
+        {% include "templates/_cms-block.html" with block_content=why_core extra_classes="list-ubuntu" %}
+    </div>
+</div>
+
+<!-- For partners -->
+<div class="row row--partners strip-dark">
+    <div class="six-col">
+        {% include "templates/_cms-block.html" with block_content=for_partners  extra_classes="cta-links" %}
+    </div>
+</div>
+
+<!-- Industry leaders use Ubuntu Core -->
+<div class="row row--leaders equal-height">
+    <div class="five-col equal-height__item equal-height__align-vertically">
+        {% include "templates/_cms-block.html" with block_content=industry_leaders %}
+    </div>
+    <div class="seven-col last-col equal-height__item">
+        <ul class="inline-logos inline-logos--large no-bullets no-margin">
+            <li class="inline-logos__item">
+                <img class="inline-logos__image" src="{{ STATIC_URL }}img/internet-of-things/logo-microsoft-azure.svg" alt="Azure" />
+            </li>
+            <li class="inline-logos__item">
+                <img class="inline-logos__image" src="{{ STATIC_URL }}img/internet-of-things/logo-raspberry-pi-001.svg" width="60" alt="Raspberry Pi" />
+            </li>
+            <li class="inline-logos__item">
+                <img class="inline-logos__image" src="{{ STATIC_URL }}img/internet-of-things/logo-dell.svg" alt="Dell" />
+            </li>
+            <li class="inline-logos__item">
+                <img class="inline-logos__image" src="{{ STATIC_URL }}img/internet-of-things/logo-intel.svg" alt="Intel" />
+            </li>
+            <li class="inline-logos__item">
+                <img class="inline-logos__image" src="{{ STATIC_URL }}img/internet-of-things/logo-ros.svg" width="160" alt="Ros" />
+            </li>
+            <li class="inline-logos__item">
+                <img class="inline-logos__image" src="{{ STATIC_URL }}img/internet-of-things/logo-dji.svg" alt="dji" />
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- For developers -->
+<div class="row row--developers no-border">
+    <div class="six-col for-mobile align-center">
+        <img src="{{ STATIC_URL }}img/internet-of-things/iot-overview-developer.jpg" alt="" />
+    </div>
+    <div class="billboard__content six-col">
+        {% include "templates/_cms-block.html" with block_content=for_developers  extra_classes="six-col list-ubuntu" %}
+        {% include "templates/_cms-block.html" with block_content=for_developers_cta extra_classes="cta-links" %}
+    </div>
+</div>
 {% endblock %}

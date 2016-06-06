@@ -1,0 +1,30 @@
+.internet-of-things {
+  #main-content {
+    padding-bottom: 0;
+
+    .row-hero {
+      margin-top: 0;
+      padding-top: 40px;
+    }
+  }
+
+  .row--partners {
+    background-image: url('../img/internet-of-things/iot-partners-hero-house.jpg');
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+  }
+
+  .row--developers {
+    @media only screen and (min-width: $breakpoint-medium) {
+      background-image: url('../img/internet-of-things/iot-overview-developer.jpg');
+      background-position: 0 0;
+      background-repeat: no-repeat;
+
+      .billboard__content {
+        background: rgba(255,255,255,0.85);
+        color: #333;
+        padding: 20px;
+      }
+    }
+  }
+}
