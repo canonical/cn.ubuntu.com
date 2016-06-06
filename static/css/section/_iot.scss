@@ -21,8 +21,8 @@
       background-repeat: no-repeat;
 
       .billboard__content {
-        background: rgba(255,255,255,0.85);
-        color: #333;
+        background: rgba(255, 255, 255, .85);
+        color: $cool_grey;
         padding: 20px;
       }
     }
