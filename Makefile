@@ -34,6 +34,7 @@ All commands
 > make db-update          # Migrate database to latest app code
 > make clean-images       # Delete all created images and containers
 > make clean-css          # Delete compiled css
+> make clean-npm          # Delete node_modules
 > make clean-all          # Run all clean commands
 > make export-page        # Export JSON data for a local CMS page and create a DB migration to import/overwrite that page
 > make it so              # A fun alias for "make run"
@@ -67,8 +68,12 @@ clean-images:
 	docker-compose rm -f
 	docker rmi -f ${COMPOSE_PROJECT_NAME}_web || true
 
+clean-npm:
+	docker-compose run npm rm -rf node_modules || true
+
 clean-all:
 	${MAKE} clean-css
+	${MAKE} clean-npm
 	${MAKE} clean-images
 
 # Given a URL, export the page data for that URL as JSON

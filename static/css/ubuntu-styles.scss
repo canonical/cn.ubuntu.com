@@ -2414,26 +2414,6 @@ div.box-image-centered span img.priority-0,div.row-image-centered span img.prior
 		float:left;
 		margin-bottom:-30px;
 	}
-	/*
-		alternative to row-image-centered
-		requires equal-height class on row
-		add align-vertically to the div containing the image
-		http://caniuse.com/transforms2d
-	*/
-	.js .align-vertically {
-		-moz-transform-style: preserve-3d;
-		-webkit-transform-style: preserve-3d;
-		transform-style: preserve-3d;
-
-		img,
-		div {
-		  -ms-transform: translateY(-50%); // for IE9
-		  -webkit-transform: translateY(-50%);
-		  position: relative;
-		  top: 50%;
-		  transform: translateY(-50%);
-		}
-	}
 }
 
 @media only screen and (min-width: 769px) {
@@ -4600,31 +4580,6 @@ html.no-svg .list-dark li,.opera-mini .list-dark li {
 	}
 }
 
-ul.inline-logos {
-	float:left;
-	margin-left:0;
-	padding:0;
-	text-align:center;
-	width:100%;
-}
-
-ul.inline-logos li {
-	clear:none;
-	display:inline-block;
-	float:none;
-	height:50px;
-	margin:10px 20px;
-	padding:0;
-}
-
-ul.inline-logos li.clear-row {
-	clear:left;
-}
-
-ul.inline-logos li.last-item {
-	border:0;
-}
-
 .inline-icons {
 	margin:0 0 20px;
 }
@@ -4647,25 +4602,6 @@ ul.inline-logos li.last-item {
 .inline-icons img {
 	vertical-align:middle;
 	min-height:30px;
-}
-
-@media only screen and (min-width: 769px) {
-	ul.inline-logos li {
-		clear:none;
-		display:inline-block;
-		height:auto;
-		margin:20px 0;
-		border-right:1px dotted #bbb;
-		line-height:60px;
-		padding:0 40px;
-	}
-
-	ul.inline-logos li img {
-		float:none;
-		vertical-align:middle;
-		width:auto;
-		height:45px;
-	}
 }
 
 @media only screen and (min-width: 984px) {
@@ -5166,10 +5102,6 @@ html.yui3-js-enabled .accordion-button.active {
 
 	.row.vertical-divider {
 		padding-bottom:0;
-	}
-
-	.equal-height div,.equal-height li {
-		height:auto!important;
 	}
 }
 

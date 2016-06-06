@@ -66,3 +66,6 @@ static/css/**/*.css
 static/admin/
 static/bootstrap_admin/
 static/django_markdown/
+
+# Node deps
+node_modules/

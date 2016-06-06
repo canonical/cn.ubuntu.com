@@ -12,6 +12,11 @@ web:
   links:
     - db
 
+npm:
+  extends: {'service': 'base', 'file': 'docker-compose.yml'}
+  image: node:argon
+  command: /bin/bash -c 'umask 0000 && npm install'
+
 sass:
   extends: {'service': 'base'}
   image: ubuntudesign/sass

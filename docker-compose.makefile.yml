@@ -6,6 +6,9 @@ web:
   links:
      - db
 
+npm:
+  extends: {'service': 'npm', 'file': 'docker-compose.yml'}
+
 sass:
   extends: {'service': 'sass', 'file': 'docker-compose.yml'}
 

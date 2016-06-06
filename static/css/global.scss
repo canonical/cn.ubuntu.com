@@ -171,8 +171,9 @@ body #nav-global li:first-of-type a {
 	z-index: 5;
 }
 
-@media only screen 
-and (min-device-width : 768px) 
+// Position logo correctly at medium viewport
+@media only screen
+and (min-device-width : 768px)
 and (max-device-width : 1024px) {
 	body #nav-global li:first-of-type a {
 		margin-left: 10px;
