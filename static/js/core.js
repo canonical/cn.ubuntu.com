@@ -15,7 +15,6 @@
  * Table of contents
  *
  * Core
- * - setEqualHeight
  * - hashBang
  * - getPullQuotes
  * - setupTooltips
@@ -24,21 +23,6 @@
 
 if(!core){ var core = {}; }
 YUI().use('node', 'anim', function(Y) {
-	core.setEqualHeight = function($className) {
-	  	var maxHeight = 0;
-	    var heightArray = Array();
-	    var collection = Y.all('.'+$className);
-	    collection.each(function(node) {
-	    	node.all(' > div, > ul li').each(function(node) {
-		    	if(node.get('clientHeight') > maxHeight){
-		    		maxHeight = node.get('clientHeight');
-		    	}
-	    	});
-	    	node.all('> div, > ul li').setStyle('height', maxHeight);
-	    	maxHeight = 0;
-	    });
-	}
-
 	core.qualifyURL = function($url) {
 	    var img = document.createElement('img');
 	    img.src = $url;
@@ -153,7 +137,6 @@ YUI().use('node', 'anim', function(Y) {
 	};
 
 	core.sectionTabs();
-	core.setEqualHeight('equal-height');
 	core.getPullQuotes();
 	core.setupTooltips();
 	core.svgFallback();

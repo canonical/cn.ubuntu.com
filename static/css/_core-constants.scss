@@ -61,3 +61,15 @@ $base:                16;
 $gutter_width:        20px;
 $grid_gutter:         20px;
 $gutter:              2.12766%;
+
+// Site maximum width
+$site-max-width:        1030px !default;
+
+/// Medium breakpoint
+$breakpoint-medium:     768px !default;
+
+/// Large breakpoint
+$breakpoint-large:      $site-max-width !default;
+
+/// Threshold to switch to small screen naviagtion
+$navigation-threshold:  620px !default;

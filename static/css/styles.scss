@@ -33,6 +33,12 @@
 @import "core-mixins";
 @import "cms-content";
 
+// ubuntu vanilla theme components
+@import "../../node_modules/ubuntu-vanilla-theme/scss/theme";
+
+@include vf-equal-heights;
+@include vf-inline-logos;
+
 .strip-light {
   background-color: #fff;
 }
@@ -111,6 +117,10 @@
 /*	@section phone
 -------------------------------------------------------------- */
 @import "section/phone";
+
+/*	@section iot
+-------------------------------------------------------------- */
+@import "section/iot";
 
 /*	@section tablet
 -------------------------------------------------------------- */
