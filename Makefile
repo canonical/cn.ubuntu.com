@@ -69,7 +69,7 @@ clean-images:
 	docker rmi -f ${COMPOSE_PROJECT_NAME}_web || true
 
 clean-npm:
-	docker-compose run npm rm -rf node_modules
+	docker-compose run npm rm -rf node_modules || true
 
 clean-all:
 	${MAKE} clean-css
