@@ -17,7 +17,7 @@
     <div class="twelve-col">
         <div class="box box-highlight clearfix vertical-divider">
             <div class="eight-col no-margin-bottom">
-                {% include "templates/_cms-block.html" with block_content=lts_release extra_classes="lts-content" %}
+                {% include "templates/_cms-block.html" with block_content=lts_ubuntu_release extra_classes="lts-ubuntu-content" %}
             </div>
             <div class="four-col last-col no-margin-bottom">
                 <p>选择版本</p>
@@ -30,12 +30,41 @@
     <div class="twelve-col no-margin-bottom">
         <div class="box box-highlight clearfix vertical-divider">
             <div class="eight-col no-margin-bottom">
-                {% include "templates/_cms-block.html" with block_content=latest_release extra_classes="latest-release" %}
+                {% include "templates/_cms-block.html" with block_content=lts_kylin_release extra_classes="lts-kylin-content" %}
             </div>
             <div class="four-col last-col no-margin-bottom download-button">
                 <p>选择版本</p>
                 <p><a href="http://cdimage.ubuntu.com/ubuntukylin/releases/16.04/release/ubuntukylin-16.04-desktop-amd64.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 64 bit', 'From English-language Chinese download']);">下载64位镜像</a>
                 <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/16.04/release/ubuntukylin-16.04-desktop-i386.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 32 bit', 'From English-language Chinese download']);">下载32位镜像</a></p>
+                <p><span class="clearfix smaller">(如果你电脑的内存少于2GB,选择32位下载)</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row row-grey">
+    <div class="twelve-col">
+        <div class="box box-highlight clearfix vertical-divider">
+            <div class="eight-col no-margin-bottom">
+                {% include "templates/_cms-block.html" with block_content=latest_ubuntu_release extra_classes="latest-ubuntu-content" %}
+            </div>
+            <div class="four-col last-col no-margin-bottom">
+                <p>选择版本</p>
+                <p><a href="http://releases.ubuntu.com/16.10/ubuntu-16.10-desktop-amd64.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 64 bit', 'From English-language Chinese download']);">64位下载键</a>
+                <a href="http://releases.ubuntu.com/16.10/ubuntu-16.10-desktop-i386.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 32 bit', 'From English-language Chinese download']);">32位下载键</a></p>
+                <p><span class="clearfix smaller">(如果你电脑的内存少于2GB,选择32位下载)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="twelve-col no-margin-bottom">
+        <div class="box box-highlight clearfix vertical-divider">
+            <div class="eight-col no-margin-bottom">
+                {% include "templates/_cms-block.html" with block_content=latest_kylin_release extra_classes="latest-kylin-content" %}
+            </div>
+            <div class="four-col last-col no-margin-bottom download-button">
+                <p>选择版本</p>
+                <p><a href="http://cdimage.ubuntu.com/ubuntukylin/releases/16.10/release/ubuntukylin-16.10-desktop-amd64.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 64 bit', 'From English-language Chinese download']);">下载64位镜像</a>
+                <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/16.10/release/ubuntukylin-16.10-desktop-i386.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 32 bit', 'From English-language Chinese download']);">下载32位镜像</a></p>
                 <p><span class="clearfix smaller">(如果你电脑的内存少于2GB,选择32位下载)</span></p>
             </div>
         </div>
