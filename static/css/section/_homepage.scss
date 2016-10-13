@@ -1043,63 +1043,58 @@ body.homepage .row--intro .intro-middle li a:hover {
     margin-bottom: 0;
   }
 
-  .row-hero {
-    background-image: url('../img/homepage/takeovers/1610/mobile_background.png');
-    background-size: cover;
-    border: none;
-    box-sizing: border-box;
-    display: block;
-    margin-bottom: 20px;
-    overflow: hidden;
-    padding-top: 40px;
-
-    &__heading {
-      margin-top: 20px;
-    }
-
-    @media only screen and (min-width : $breakpoint-medium) {
-      background-image: url('../img/homepage/takeovers/1610/tablet_background.png');
-      margin: 20px;
-      min-height: 600px;
+  #main-content {
+    margin-top: 0;
+      .row-hero {
+      background-image: url('../img/homepage/takeovers/1610/mobile_background.png');
+      background-size: cover;
+      border: none;
+      box-sizing: border-box;
+      display: block;
+      margin-bottom: 20px;
+      overflow: hidden;
       padding-top: 40px;
-      width: -moz-calc(100% - 40px);
-      width: -webkit-calc(100% - 40px);
-      width: -o-calc(100% - 40px);
-      width: calc(100% - 40px);
-
-      .row-hero__heading,
-      .six-col {
-        margin-left: 20px;
-      }
 
       &__heading {
-        margin-top: 80px;
-      }
-    }
-
-    @media only screen and (min-width : $breakpoint-large) {
-      background-image: url('../img/homepage/takeovers/1610/takeover.16.10.background.desktop.png');
-      margin: 40px;
-      min-height: 680px;
-      padding: 80px 40px 0;
-      width: -moz-calc(100% - 80px);
-      width: -webkit-calc(100% - 80px);
-      width: -o-calc(100% - 80px);
-      width: calc(100% - 80px);
-
-      &__heading {
-        margin-top: 80px;
+        margin-top: 20px;
       }
 
-      .six-col {
-        margin-bottom: 30px;
-      }
-    }
+      @media only screen and (min-width : $breakpoint-medium) {
+        background-image: url('../img/homepage/takeovers/1610/tablet_background.png');
+        margin: 20px;
+        min-height: 600px;
+        padding-top: 40px;
+        width: -moz-calc(100% - 40px);
+        width: -webkit-calc(100% - 40px);
+        width: -o-calc(100% - 40px);
+        width: calc(100% - 40px);
 
-    @media only screen and (max-width : $animation-width) and (min-width : $breakpoint-medium) {
-      .row-hero__heading,
-      .six-col {
-        margin-left: 40px;
+        .row-hero__heading,
+        .six-col {
+          margin-left: 20px;
+        }
+      }
+
+      @media only screen and (min-width : $breakpoint-large) {
+        background-image: url('../img/homepage/takeovers/1610/takeover.16.10.background.desktop.png');
+        margin: 40px;
+        min-height: 680px;
+        padding: 80px 40px 0;
+        width: -moz-calc(100% - 80px);
+        width: -webkit-calc(100% - 80px);
+        width: -o-calc(100% - 80px);
+        width: calc(100% - 80px);
+
+        .six-col {
+          margin-bottom: 30px;
+        }
+      }
+
+      @media only screen and (max-width : $animation-width) and (min-width : $breakpoint-medium) {
+        .row-hero__heading,
+        .six-col {
+          margin-left: 40px;
+        }
       }
     }
   }
