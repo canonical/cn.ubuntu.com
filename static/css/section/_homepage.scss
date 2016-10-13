@@ -1055,10 +1055,6 @@ body.homepage .row--intro .intro-middle li a:hover {
       overflow: hidden;
       padding-top: 40px;
 
-      &__heading {
-        margin-top: 20px;
-      }
-
       @media only screen and (min-width : $breakpoint-medium) {
         background-image: url('../img/homepage/takeovers/1610/tablet_background.png');
         margin: 20px;
