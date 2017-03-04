@@ -171,6 +171,17 @@ body #nav-global li:first-of-type a {
 	z-index: 5;
 }
 
+// Hide global navigation on older browsers
+.no-svg {
+    body {
+        padding-top: 0 !important;
+    }
+
+    .nav-global-wrapper {
+        display: none !important;
+    }
+}
+
 // Position logo correctly at medium viewport
 @media only screen
 and (min-device-width : 768px)
