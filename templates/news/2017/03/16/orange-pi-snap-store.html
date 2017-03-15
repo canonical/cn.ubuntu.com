@@ -1,0 +1,33 @@
+{% extends "news/base_news.html" %}
+{% block title %}Orange Pi 社区迎来全新 Snap 商店{% endblock %}
+{% block content %}
+
+<div class="row row-hero no-border">
+  <div class="twelve-col">
+    <h1>Orange Pi 社区迎来全新 Snap 商店</h1>
+    <div class="twelve-col">
+        <img src="{{ STATIC_URL }}img/news/orange-pi-brand-store.png" alt="Orange Pi brand store" />
+    </div>
+  </div>
+  <div class="eight-col">
+    <ul class="list-ubuntu">
+      <li>深圳市迅龙软件有限公司与 Canonical 联手为 Orange Pi 打造全新应用商店</li>
+      <li>开发者可将应用程序打包成 snap 软件包分发给 Orange Pi 用户</li>
+      <li>广大技术爱好者可在极短时间内完成复杂 IoT 和服务器项目的安装</li>
+      <li>深圳市迅龙软件有限公司借助 Canonical 提供的品牌应用商店从现有 snap 社区中获益</li>
+    </ul>
+    <p>2017 年 3 月 14 日：Orange Pi 制造厂商 —— 深圳市迅龙软件有限公司与 Canonical 联手推出全新应用商店，以培养活跃的开发者和用户群体。通过这个应用商店，开发者能以一种简单的机制与更广泛的 Orange Pi 社区分享他们的应用程序、项目和脚本。</p>
+    <p>该商店中的应用程序采用 snap 格式，这是一种通用的 Linux 应用程序包格式。借助 snap，开发者可将自己的应用程序及所有依赖项打包成一个安全的、受严格约束的程序包来分发应用程序。这样，用户只需短短几秒钟，便可完成原来要半个小时才能完成的程序安装。</p>
+    <p>Orange Pi 商店使用 Canonial 提供的白标应用商店解决方案，这种方案使其能够以自己的品牌向 Orange Pi 社区分发应用程序。商店为开发者分享针对 Orange Pi 打造的应用程序提供了便捷的平台。此外，用户还可通过该商店获得 Ubuntu snap 商店中丰富的应用程序资源。整个社区已经为 Ubuntu snap 商店贡献了上百个 snap，涵盖从服务器到 IoT 应用在内的众多领域，可满足 Orange Pi 系列开发板多样的使用案例需求。</p>
+    <p>在围绕 Orange Pi 构建活跃开发者社区的同时，商店还在为设备制造商的整个项目生命周期提供支持方面发挥着关键作用。</p>
+    <p>迅龙软件的CEO，赵一帆表示：“这个全新的应用商店不仅为 Orange Pi 用户获得和使用应用程序开辟了绝佳途径，还为开发者提供了一套强大工具，让他们可通过 CI 集成、跨平台构建、Beta 版本分发等功能，加快从产品开发到实际投产的速度。客户的梦想，我们来协助实现”</p>
+    <p>有些垂直行业应用还可加快 IoT 项目的开发速度，例如针对家庭 IoT 用途的 openHAB、面向中小企业的 Rocket.chat 或 NextCloud，以及针对网络的 wifi-ap。</p>
+    <p>Orange Pi 基于 64 位 ARM Cortex A7 架构，后者是全志科技 (Allwinner) 推出的一款四核 SoC。Orange Pi 提供多个型号，从入门级的 Orange Pi Zero 到配有 2GB RAM 的 Orange Pi Plus 2。这种配置的多样化意味着制造商可选择最适合他们设备的开发板，同时在开发时获得良好的软硬件兼容性。</p>
+    <h2>关于 Canonical</h2>
+    <p>Canonical 公司是领先的云操作系统 Ubuntu 背后的坚实后盾。大多数公共云，以及大多数新的智能网关、交换机、无人驾驶汽车和高级机器人，都使用 Ubuntu。Canonical 为 Ubuntu 的商业用户提供企业级支持和服务。</p>
+    <p>Canonical 成立于 2004 年，是一家私人持有公司。</p>
+    <p>有关更多详细信息，请访问 <a href="https://www.ubuntu.com/iot">https://www.ubuntu.com/iot</a></p>
+    <p>更多有关Canonical提供的应用商店解决方案， 可以访问这里: <a href="http://docs.ubuntu.com/core/en/build-store">http://docs.ubuntu.com/core/en/build-store</a></p>
+  </div>
+</div>
+{% endblock %}
