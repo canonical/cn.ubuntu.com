@@ -372,6 +372,9 @@ footer.global {
     padding-top: 20px;
   }
 
+  header.banner .nav-primary ul li a:hover {
+    background-color: #E1662F;
+  }
 
 } // end @media only screen and (min-width : 768px)
 
@@ -403,10 +406,6 @@ footer.global {
   header.banner .nav-primary ul li a.active {
     background: #B83A10;
     border-left: 1px solid lighten($ubuntu_orange, 7%);
-  }
-
-  header.banner .nav-primary ul li a:hover {
-    background-color: #E1662F;
   }
 
   #nav-global .nav-global-wrapper {
