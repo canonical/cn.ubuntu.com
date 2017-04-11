@@ -814,10 +814,6 @@ body.bq-russia-takeover {
   position: relative;
   width: 50%;
 
-  @media only screen and (max-width : 768px) {
-    width: 32%;
-  }
-
   @media only screen and (max-width : 667px) and (orientation : landscape) {
     width: 20%;
   }
@@ -911,7 +907,8 @@ body.bq-russia-takeover {
   }
 
   &:after {
-    right: -36px;
+    right: -22px;
+    width: 50px;
   }
 }
 
@@ -949,7 +946,7 @@ body.bq-russia-takeover {
 
   &:after {
     right: 20px;
-    width: 14px;
+    width: 16px;
   }
 }
 
