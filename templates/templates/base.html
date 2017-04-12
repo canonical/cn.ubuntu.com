@@ -92,13 +92,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </header>
 <div class="wrapper">
 <main id="main-content" class="inner-wrapper">
-{% comment %}
-{% if level_1 %}
-{% block second_level_nav %}
-<nav role="navigation" class="nav-secondary clearfix">{% spaceless %}{% block second_level_nav_items %}{% endblock second_level_nav_items %}{% endspaceless %}</nav>
-{% endblock second_level_nav %}
-{% endif %}{% endcomment %}
-
 {% block header %}{% endblock %}
 {% block content_container %}
 {% block outer_content %}
