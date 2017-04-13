@@ -1266,7 +1266,7 @@ body.homepage-1704 {
     box-sizing: border-box;
     color: $white;
     display: block;
-    margin: -10px 0 0;
+    margin: 0;
     padding: 0;
     overflow: hidden;
     
@@ -1275,7 +1275,16 @@ body.homepage-1704 {
     }
     
     @media only screen and (min-width : $breakpoint-large) {
+      margin: -10px 0 0;
       padding-top: 40px;
+    }
+    
+    .align-center * {
+      margin: 0;
+    }
+    
+    &__content {
+      padding-top: 20px;
     }
     
     .countdown {
@@ -1339,30 +1348,17 @@ body.homepage-1704 {
       
       &__list--years {
         @include countdown-list;
-        left: 40px;
-        
-        @media only screen and (min-width : $breakpoint-medium) {
-          left: 25px;
-        }
-        
-        @media only screen and (min-width : $breakpoint-large) {
-          left: 40px;
-        }
       }
       
       &__list--months {
         @include countdown-list;
-        right: 40px;
+        margin-left: 10px;
         
-        @media only screen and (min-width : $breakpoint-medium) {
-          right: 25px;
-        }
-
         @media only screen and (min-width : $breakpoint-large) {
-          right: 40px;
+          margin-left: 20px;
         }
       }
-      
+            
       @mixin transition {
         $total: 26;
         $start: 1;
