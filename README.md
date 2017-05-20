@@ -1,24 +1,26 @@
 # [cn.ubuntu.com](http://cn.ubuntu.com)
+
 A paired-down, Chinese-language version of the ubuntu.com website utilising Django's CMS.
 
-## Pre-requisites
-1. [docker](https://robinwinslow.co.uk/2015/04/02/installing-docker-on-ubuntu/)
-2. [docker-compose](https://docs.docker.com/compose/install/) (install with `pip`)
+## Local development
 
-## Running the site
-`$ make clean-all run`
+The simplest way to run the site locally is to first [install Docker](https://docs.docker.com/engine/installation/) (on Linux you may need to [add your user to the `docker` group](https://docs.docker.com/engine/installation/linux/linux-postinstall/)), and then use the `./run` script:
 
-## Login details
+``` bash
+./run
+```
 
-<http://localhost:8010/admin/>
+Once the containers are setup, you can visit <http://127.0.0.1:8004> in your browser.
 
-### Admin
-User: `ubuntu`
-Password: `ubuntu`
+### Building CSS
 
-### Editor
-User: `editor`
-Password: `editor`
+For working on [Sass files](_sass), you may want to dynamically watch for changes to rebuild the CSS whenever something changes.
+
+To setup the watcher, open a new terminal window and run:
+
+``` bash
+./run watch
+```
 
 License
 ---
