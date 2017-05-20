@@ -1,7 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from views import CmsTemplateFinder
+from .views import CmsTemplateFinder
 
 urlpatterns = [
     url(r'^openid/', include('django_openid_auth.urls')),

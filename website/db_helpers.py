@@ -35,15 +35,17 @@ def import_new_page(page_data):
     # Create the page
     ##
 
-    print "Creating page {}: {}".format(
-        page['fields']['url'],
-        page['fields']['title']
+    print(
+        "Creating page {}: {}".format(
+            page['fields']['url'],
+            page['fields']['title']
+        )
     )
     (page, created) = Page.objects.get_or_create(**page['fields'])
 
     # Stop if page already existed
     if not created:
-        print "Page already exists. Moving on."
+        print("Page already exists. Moving on.")
         return False
 
     # Create the elements for the page
@@ -52,6 +54,6 @@ def import_new_page(page_data):
         fields = item['fields']
         fields['page'] = page
 
-        print "Creating element: " + fields['name']
+        print("Creating element: " + fields['name'])
 
         Element.objects.get_or_create(**fields)

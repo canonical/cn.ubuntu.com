@@ -7,13 +7,12 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'cao6_8kd&1+_k42gm0gvhx36!idz1-jexggr3^d=b=@wmxy@od'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'no_secret')
 
 WHITENOISE_MAX_AGE = 31557600
 WHITENOISE_ALLOW_ALL_ORIGINS = False
 
-DEBUG = False
+DEBUG = os.environ.get('DJANGO_DEBUG', 'false').lower() == 'true'
 ALLOWED_HOSTS = ["*"]
 APPEND_SLASH = True
 
@@ -22,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django_openid_auth',
     'bootstrap_admin',  # always before django.contrib.admin
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.contenttypes',

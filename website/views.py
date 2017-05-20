@@ -3,7 +3,7 @@ from django.utils.cache import patch_response_headers
 from django_template_finder_view import TemplateFinder
 
 # Local
-from models import Page
+from .models import Page
 
 
 class CmsTemplateFinder(TemplateFinder):

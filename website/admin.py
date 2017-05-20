@@ -1,8 +1,7 @@
 from django.contrib import admin
-from reversion.helpers import patch_admin
-from reversion_compare.helpers import patch_admin as compare_patch_admin
+from reversion_compare.helpers import patch_admin
 
-from models import Page, Element
+from .models import Page, Element
 
 
 def remove_from_admin(admin_class, fields):
@@ -63,4 +62,3 @@ models_needing_patching = [
 ]
 
 map(patch_admin, models_needing_patching)
-map(compare_patch_admin, models_needing_patching)
