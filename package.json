@@ -1,17 +1,16 @@
 {
   "name": "cn.ubuntu.com",
-  "version": "0.0.1",
   "description": "Django website for cn.ubuntu.com",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "sass-lint static/**/*.scss --verbose --no-exit",
+    "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite _site/ build/ .jekyll-metadata",
+    "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
+    "build": "node-sass --include-path node_modules static/sass --output static/css"
   },
-  "keywords": [
-    "website",
-    "ubuntu"
-  ],
   "author": "Canonical webteam",
-  "dependencies": {
-    "ubuntu-vanilla-theme": "0.0.34"
+  "devDependencies": {
+    "sass-lint": "^1.10.2",
+    "node-sass": "^4.5.3",
+    "ubuntu-vanilla-theme": "0.0.35"
   }
 }
