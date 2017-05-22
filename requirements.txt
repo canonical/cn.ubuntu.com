@@ -1,6 +1,6 @@
 bootstrap-admin==0.3.6
 dj-database-url==0.3.0
-Django==1.8.13
+Django==1.8.18
 django-markdown==0.8.4
 Markdown==2.6.8
 psycopg2==2.6.1
