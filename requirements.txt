@@ -1,5 +1,5 @@
 bootstrap-admin==0.3.6
-canonicalwebteam.versioned-static==1.0.0
+canonicalwebteam.versioned-static==1.0.1
 dj-database-url==0.3.0
 Django==1.8.18
 django-markdown==0.8.4
