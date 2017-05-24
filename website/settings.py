@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'website',
     'reversion',
     'reversion_compare',
-    'django_versioned_static_url',
+    'canonicalwebteam',
 ]
 
 MIDDLEWARE_CLASSES = [

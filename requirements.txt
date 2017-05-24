@@ -1,4 +1,5 @@
 bootstrap-admin==0.3.6
+canonicalwebteam.versioned-static==1.0.0
 dj-database-url==0.3.0
 Django==1.8.18
 django-markdown==0.8.4
@@ -9,7 +10,6 @@ django-reversion==2.0.8
 django-reversion-compare==0.7.5
 whitenoise==3.3.0
 django-static-root-finder==0.2.1
-django-versioned-static-url==0.8
 django-template-finder-view==0.2
 django-openid-auth==0.14
 Jinja2==2.8
