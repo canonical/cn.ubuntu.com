@@ -1269,24 +1269,24 @@ body.homepage-1704 {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    
+
     @media only screen and (min-width : $breakpoint-medium) {
       padding: 20px 20px 40px;
     }
-    
+
     @media only screen and (min-width : $breakpoint-large) {
       margin: -10px 0 0;
       padding-top: 40px;
     }
-    
+
     .align-center * {
       margin: 0;
     }
-    
+
     &__content {
       padding-top: 20px;
     }
-    
+
     .countdown {
       align-items: center;
       background-image: url('../img/homepage/takeovers/1704/Laptop.svg');
@@ -1299,14 +1299,14 @@ body.homepage-1704 {
       margin: 20px auto 30px;
       position: relative;
       text-align: center;
-      
+
       @media only screen and (min-width : $breakpoint-medium) {
         background-size: 100% auto;
         min-height: 278px;
         margin: 0 auto;
         width: 100%;
       }
-                 
+
       .laptop-final {
         background-image: url('../img/homepage/takeovers/1704/laptop-17-04-final-edited.svg');
         background-repeat: no-repeat;
@@ -1318,12 +1318,12 @@ body.homepage-1704 {
         width: 100%;
         height: 100%;
         animation: fadein 5.555555s ease-in forwards;
-        
+
         @media only screen and (min-width : $breakpoint-medium) {
           background-size: 100% auto;
         }
       }
-      
+
       @mixin countdown-list {
         height: 4rem;
         overflow: hidden;
@@ -1332,7 +1332,7 @@ body.homepage-1704 {
         top: -6px;
         width: 4rem;
 
-        
+
         @media only screen and (min-width : $breakpoint-medium) {
           height: 4.5rem;
           top: -4px;
@@ -1345,20 +1345,20 @@ body.homepage-1704 {
           width: 6rem;
         }
       }
-      
+
       &__list--years {
         @include countdown-list;
       }
-      
+
       &__list--months {
         @include countdown-list;
         margin-left: 10px;
-        
+
         @media only screen and (min-width : $breakpoint-large) {
           margin-left: 20px;
         }
       }
-            
+
       @mixin transition {
         $total: 26;
         $start: 1;
@@ -1373,7 +1373,7 @@ body.homepage-1704 {
           }
         }
       }
-            
+
       @function sin($angle) {
         $sin: 0;
         $angle: rad($angle);
@@ -1383,7 +1383,7 @@ body.homepage-1704 {
         }
         @return $sin;
       }
-      
+
       @function pow($number, $exp) {
         $value: 1;
         @if $exp > 0 {
@@ -1408,7 +1408,7 @@ body.homepage-1704 {
         }
         @return $unitless;
       }
-      
+
       @function fact($number) {
         $value: 1;
         @if $number > 0 {
@@ -1418,7 +1418,7 @@ body.homepage-1704 {
         }
         @return $value;
       }
-      
+
       @function cos($angle) {
         $cos: 0;
         $angle: rad($angle);
@@ -1428,7 +1428,7 @@ body.homepage-1704 {
         }
         @return $cos;
       }
-      
+
       @function tan($angle) {
         @return sin($angle) / cos($angle);
       }
@@ -1452,7 +1452,7 @@ body.homepage-1704 {
         top: 0;
         vertical-align: middle;
         width: 100%;
-        
+
         @media only screen and (min-width : $breakpoint-medium) {
           font-size: 350%;
         }
@@ -1462,39 +1462,62 @@ body.homepage-1704 {
         }
       }
     }
-    
+
     &__inner {
       background-image: url('../img/homepage/takeovers/1704/background.png');
       background-size: cover;
       transition-duration: 1s;
       padding: 0 20px;
       margin: 0;
-            
+
       @media only screen and (min-width : $breakpoint-large) {
         max-width: 1084px;
         margin: 0 auto;
         padding: 0 50px 0;
       }
     }
-    
+
     .equal-height__align-vertically {
       align-items: flex-start;
     }
-    
+
     &__heading {
       text-align: left;
     }
-    
+
     &__content {
       @media only screen and (min-width : $breakpoint-medium) {
         min-height: 380px;
       }
-      
+
       @media only screen and (min-width : $breakpoint-large) {
         min-height: 580px;
       }
     }
-        
+
   }
 }
 
+// Hackathon takeover
+.homepage-hackathon {
+  header.banner {
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+
+  .inner-wrapper {
+    margin-top: 0;
+  }
+
+  #main-content .row-hero {
+    background: url('../img/homepage/takeovers/hackathon/ubuntu-hackaton-takeover-bkg.png') bottom center no-repeat;
+    background-size: cover;
+    margin-top: 0;
+    overflow: hidden;
+    padding: 30px 0;
+    
+    @media only screen and (min-width : $breakpoint-medium) {
+      padding: 60px 0;
+    }
+  }
+}
