@@ -1,115 +1,102 @@
 {% load versioned_static %}
 <!doctype html>
 <html class="no-js{% block extra_html_class %}{% endblock %}" lang="zh" dir="ltr">
-<head>
+  <head>
   <meta charset="UTF-8" />
   <meta name="description" content="{% block meta_description %}Ubuntu 是世界领先的开源操作系统。目前广泛应用于个人电脑，平板，智能手机，IoT/智能物联网， 服务器和云端上。{% endblock %}" />
   <meta name="author" content="Canonical" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>{% block title %}{% endblock %} | Ubuntu</title>
-
   <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" type="image/x-icon" />
-
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}img/apple-touch-icon-144x144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}img/apple-touch-icon-114x114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}img/apple-touch-icon-72x72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}img/apple-touch-icon-precomposed.png">
   <link type="text/plain" rel="author" href="{% versioned_static 'files/humans.txt' %}" />
-
   <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/styles.css' %}" />
-
   <!-- scripts -->
   <script src="{{ STATIC_URL }}js/plugins/modernizr.2.7.1.js"></script>
   <script src="{{ STATIC_URL }}js/plugins/Imager.js"></script>
-
   {% block head_extra %}{% endblock %}
-
 </head>
+  <body>
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MCKGLV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MCKGLV');</script>
+  <!-- End Google Tag Manager -->
 
-<body>
+  <header class="banner global" role="banner">
+    {% block header_banner %}
+    <nav role="navigation" class="nav-primary nav-right">
+      <div class="logo">
+          <a class="logo-ubuntu" href="/">
+            <img width="106" height="25" src="{{ STATIC_URL }}img/logos/logo-ubuntu-orange.svg" alt="" />
+          </a>
+        </div>
+      <ul>
+            <li class="accessibility-aid"><a accesskey="s" href="#main-content">Jump to content</a></li>
+            <li>
+              <a{% if level_1 == 'internet-of-things' %} class="active"{% endif %} href="/internet-of-things">IoT</a>
+            </li>
+            <li>
+              <a class="first{% if level_1 == 'desktop' %} active{% endif %}" href="/desktop">桌面OS</a>
+            </li>
+            <li>
+              <a{% if level_1 == 'server' %} class="active"{% endif %} href="/server">服务器</a>
+            </li>
+            <li>
+              <a{% if level_1 == 'cloud' %} class="active"{% endif %} href="/cloud">云</a>
+            </li>
+            <li>
+              <a{% if level_1 == 'download' %} class="active"{% endif %} href="/download">下载</a>
+            </li>
+            <li>
+              <a{% if level_1 == 'news' %} class="active"{% endif %} href="/news">最新资讯</a>
+            </li>
+        </ul>
+      <a href="#canonlist" class="nav-toggle no-script">☰</a> {# include "templates/search.html" #}
+    </nav>
+    {% endblock header_banner %}
+  </header>
+  <div class="wrapper">
+    <main id="main-content" class="inner-wrapper">
+      {% block header %}{% endblock %} {% block content_container %} {% block outer_content %} {% endblock outer_content %} {% endblock content_container %}
+    </main>
+  </div>
+  <!-- /.wrapper -->
 
-    <!-- Google Tag Manager -->
-    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MCKGLV"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MCKGLV');</script>
-    <!-- End Google Tag Manager -->
+  <!-- footer content goes here -->
+  {% include "templates/footer.html" %}
 
-    <header class="banner global" role="banner">
-        {% block header_banner %}
-        <nav role="navigation" class="nav-primary nav-right">
-            <div class="logo">
-                <a class="logo-ubuntu" href="/">
-                <img width="106" height="25" src="{{ STATIC_URL }}img/logos/logo-ubuntu-orange.svg" alt="" />
-            </a>
-            </div>
-            <ul>
-                <li class="accessibility-aid"><a accesskey="s" href="#main-content">Jump to content</a></li>
-                <li>
-                    <a{% if level_1 == 'internet-of-things' %} class="active"{% endif %} href="/internet-of-things">IoT</a>
-                </li>
-                <li>
-                    <a class="first{% if level_1 == 'desktop' %} active{% endif %}" href="/desktop">桌面OS</a>
-                </li>
-                <li>
-                    <a{% if level_1 == 'server' %} class="active"{% endif %} href="/server">服务器</a>
-                </li>
-                <li>
-                    <a{% if level_1 == 'cloud' %} class="active"{% endif %} href="/cloud">云</a>
-                </li>
-                <li>
-                    <a{% if level_1 == 'download' %} class="active"{% endif %} href="/download">下载</a>
-                </li>
-                <li>
-                    <a{% if level_1 == 'news' %} class="active"{% endif %} href="/news">最新资讯</a>
-                </li>
-            </ul>
-            <a href="#canonlist" class="nav-toggle no-script">☰</a> {# include "templates/search.html" #}
-        </nav>
-        {% endblock header_banner %}
-    </header>
-    <div class="wrapper">
-        <main id="main-content" class="inner-wrapper">
-            {% block header %}{% endblock %} {% block content_container %} {% block outer_content %} {% endblock outer_content %} {% endblock content_container %}
+  <!-- Use this only until Modernizr fixes Opera Mini background-size detection -->
+  <script>
+      var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
+      if (isOperaMini) {
+        var root = document.documentElement;
+        root.className += " opera-mini";
+      }
+  </script>
+  <script src="{{ STATIC_URL }}js/plugins/yui-combined.min.js"></script>
+  <script>
+    if (!core) {
+      var core = {};
+    }
+    core.globalPrepend = 'body';
+  </script>
+  <script src="{{ STATIC_URL }}js/core.js"></script>
+  <script src="{{ STATIC_URL }}js/scratch.js"></script>
 
-        </main>
-    </div>
-    <!-- /.wrapper -->
+  {% block footer_extra %}{% endblock %}
 
-    <!-- footer content goes here -->
-    {% include "templates/footer.html" %}
-
-    <!-- Use this only until Modernizr fixes Opera Mini background-size detection -->
-    <script>
-        var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
-        if (isOperaMini) {
-            var root = document.documentElement;
-            root.className += " opera-mini";
-        }
-    </script>
-    <script src="{{ STATIC_URL }}js/plugins/yui-combined.min.js"></script>
-    <script>
-        if (!core) {
-            var core = {};
-        }
-        core.globalPrepend = 'body';
-    </script>
-    <script src="{{ STATIC_URL }}js/core.js"></script>
-    <script src="{{ STATIC_URL }}js/scratch.js"></script>
-
-    {% block footer_extra %}{% endblock %}
-
-    <!-- baidu -->
-    <script>
-        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4ee06d994b22c33cd3732c3e69c97b8f' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-
+  <!-- baidu -->
+  <script>
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4ee06d994b22c33cd3732c3e69c97b8f' type='text/javascript'%3E%3C/script%3E"));
+  </script>
 </body>
-
 </html>
-<!-- This comment was updated on 2nd March 2016 at 12:47:35 -->
