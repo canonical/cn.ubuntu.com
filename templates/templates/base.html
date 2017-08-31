@@ -30,45 +30,15 @@
   })(window,document,'script','dataLayer','GTM-MCKGLV');</script>
   <!-- End Google Tag Manager -->
 
-  <header role="banner">
-    {% block header_banner %}
-    <nav role="navigation" class="nav-primary nav-right">
-      <div class="logo">
-          <a class="logo-ubuntu" href="/">
-            <img width="106" height="25" src="{{ STATIC_URL }}img/logos/logo-ubuntu-orange.svg" alt="" />
-          </a>
-        </div>
-      <ul>
-            <li class="accessibility-aid"><a accesskey="s" href="#main-content">Jump to content</a></li>
-            <li>
-              <a{% if level_1 == 'internet-of-things' %} class="active"{% endif %} href="/internet-of-things">IoT</a>
-            </li>
-            <li>
-              <a class="first{% if level_1 == 'desktop' %} active{% endif %}" href="/desktop">桌面OS</a>
-            </li>
-            <li>
-              <a{% if level_1 == 'server' %} class="active"{% endif %} href="/server">服务器</a>
-            </li>
-            <li>
-              <a{% if level_1 == 'cloud' %} class="active"{% endif %} href="/cloud">云</a>
-            </li>
-            <li>
-              <a{% if level_1 == 'download' %} class="active"{% endif %} href="/download">下载</a>
-            </li>
-            <li>
-              <a{% if level_1 == 'news' %} class="active"{% endif %} href="/news">最新资讯</a>
-            </li>
-        </ul>
-      <a href="#canonlist" class="nav-toggle no-script">☰</a> {# include "templates/search.html" #}
-    </nav>
-    {% endblock header_banner %}
-  </header>
-  <div class="wrapper">
+  <!-- footer content goes here -->
+  {% include "templates/header.html" %}
+
+  <div class="wrapper u-no-margin--top">
     <main id="main-content">
       {% block header %}
       {% endblock %}
       {% block content_container %}
-          {% block outer_content %} 
+          {% block outer_content %}
           {% endblock outer_content %}
       {% endblock content_container %}
     </main>
