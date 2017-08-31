@@ -30,7 +30,7 @@
   })(window,document,'script','dataLayer','GTM-MCKGLV');</script>
   <!-- End Google Tag Manager -->
 
-  <header class="banner global" role="banner">
+  <header role="banner">
     {% block header_banner %}
     <nav role="navigation" class="nav-primary nav-right">
       <div class="logo">
@@ -64,11 +64,15 @@
     {% endblock header_banner %}
   </header>
   <div class="wrapper">
-    <main id="main-content" class="inner-wrapper">
-      {% block header %}{% endblock %} {% block content_container %} {% block outer_content %} {% endblock outer_content %} {% endblock content_container %}
+    <main id="main-content">
+      {% block header %}
+      {% endblock %}
+      {% block content_container %}
+          {% block outer_content %} 
+          {% endblock outer_content %}
+      {% endblock content_container %}
     </main>
   </div>
-  <!-- /.wrapper -->
 
   <!-- footer content goes here -->
   {% include "templates/footer.html" %}
