@@ -17,7 +17,6 @@
   <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}img/apple-touch-icon-precomposed.png">
   <link type="text/plain" rel="author" href="{% versioned_static 'files/humans.txt' %}" />
 
-  <!-- site specific -->
   <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/styles.css' %}" />
 
   <!-- scripts -->
@@ -101,8 +100,6 @@
     </script>
     <script src="{{ STATIC_URL }}js/core.js"></script>
     <script src="{{ STATIC_URL }}js/scratch.js"></script>
-    <script src="{{ STATIC_URL }}js/global.js"></script>
-    <script src="{{ STATIC_URL }}js/plugins/respond.min.js"></script>
 
     {% block footer_extra %}{% endblock %}
 
