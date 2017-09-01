@@ -1,6 +1,6 @@
 {% load versioned_static %}
 <!doctype html>
-<html class="no-js{% block extra_html_class %}{% endblock %}" lang="zh" dir="ltr">
+<html class="no-js" lang="zh" dir="ltr">
   <head>
   <meta charset="UTF-8" />
   <meta name="description" content="{% block meta_description %}Ubuntu 是世界领先的开源操作系统。目前广泛应用于个人电脑，平板，智能手机，IoT/智能物联网， 服务器和云端上。{% endblock %}" />
@@ -14,9 +14,6 @@
   <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}img/apple-touch-icon-precomposed.png">
   <link type="text/plain" rel="author" href="{% versioned_static 'files/humans.txt' %}" />
   <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/styles.css' %}" />
-  <!-- scripts -->
-  <script src="{{ STATIC_URL }}js/plugins/modernizr.2.7.1.js"></script>
-  <script src="{{ STATIC_URL }}js/plugins/Imager.js"></script>
   {% block head_extra %}{% endblock %}
 </head>
   <body>
@@ -46,26 +43,6 @@
 
   <!-- footer content goes here -->
   {% include "templates/footer.html" %}
-
-  <!-- Use this only until Modernizr fixes Opera Mini background-size detection -->
-  <script>
-      var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
-      if (isOperaMini) {
-        var root = document.documentElement;
-        root.className += " opera-mini";
-      }
-  </script>
-  <script src="{{ STATIC_URL }}js/plugins/yui-combined.min.js"></script>
-  <script>
-    if (!core) {
-      var core = {};
-    }
-    core.globalPrepend = 'body';
-  </script>
-  <script src="{{ STATIC_URL }}js/core.js"></script>
-  <script src="{{ STATIC_URL }}js/scratch.js"></script>
-
-  {% block footer_extra %}{% endblock %}
 
   <!-- baidu -->
   <script>
