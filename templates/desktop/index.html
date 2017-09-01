@@ -1,5 +1,4 @@
 {% extends "desktop/base_desktop.html" %}
-{% load markdown_deux_tags %}
 
 {% if title %}{% block title %}{{ title }}{% endblock %}{% endif %}
 
@@ -10,60 +9,47 @@
 {% endblock second_level_nav_items %}
 
 {% block content %}
-{# ================ Ubuntu Desktop ================ #}
-{% if hero %}
+
 <div id="ubuntu-kyin" class="row row-hero">
     <div class="six-col">
-        {% include "templates/_cms-block.html" with block_content=hero %}
-        {% include "templates/_cms-block.html" with block_content=hero_cta extra_classes="cta-links" %}
-        {% include "templates/_cms-block.html" with block_content=hero_links %}
+
     </div>
 </div>
-{% endif %}
 
-{# ================ Who is Ubuntu made for? ================ #}
-{% if for_you and for_business and for_developers %}
 <div id="ubuntu-kylin-user" class="row row-grey">
     <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=who_is_kylin_for %}
+
     </div>
     <div class="twelve-col equal-height vertical-divider">
         <div class="four-col for-you">
-            {% include "templates/_cms-block.html" with block_content=for_you %}
+
         </div>
         <div class="four-col for-business">
-            {% include "templates/_cms-block.html" with block_content=for_business %}
+
         </div>
         <div class="four-col last-col for-developers">
             <div class="twelve-col">
-                {% include "templates/_cms-block.html" with block_content=for_developers extra_classes="cta-links" %}
+
             </div>
-            {% include "templates/_cms-block.html" with block_content=for_developers_additional %}
         </div>
     </div>
 </div>
-{% endif %}
 
-{# ================ ubuntu kylin ============== #}
-{% if ubuntu_kylin %}
 <div class="row">
     <div class="six-col">
         <div class="twelve-col">
-            {% include "templates/_cms-block.html" with block_content=ubuntu_kylin extra_classes="ubuntu-kylin cta-links" %}
+
         </div>
-        {% include "templates/_cms-block.html" with block_content=ubuntu_kylin_additional extra_classes="ubuntu-kylin-additional" %}
+
     </div>
     <div class="six-col last-col">
         <img src="{{ STATIC_URL }}img/homepage/dell-xps-laptop-front.png" alt="Kylin on an XPS laptop">
     </div>
 </div>
-{% endif %}
 
-{# ================ Who is behind Ubuntu? ================ #}
-{% if who_is_behind_kylin %}
 <div id="ubuntu-kylin-backers" class="row">
     <div class="six-col">
-        {% include "templates/_cms-block.html" with block_content=who_is_behind_kylin %}
+
     </div>
     <div class="six-col text-center last-col">
             <ul class="no-bullets clearfix align-center">
@@ -73,24 +59,17 @@
             </ul>
         </div>
 </div>
-{% endif %}
 
-{# ================ Whats new? ================ #}
-{% if features %}
 <div id="row-whats-new" class="row row-grey">
     <div class="seven-col">
-        {% include "templates/_cms-block.html" with block_content=features %}
+
     </div>
 </div>
-{% endif %}
 
-{# ================ Find out more ================ #}
-{% if find_out_more %}
 <div id="row-more" class="row no-border">
     <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=find_out_more %}
+    
     </div>
 </div>
-{% endif %}
 
 {% endblock %}
