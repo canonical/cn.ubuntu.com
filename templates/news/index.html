@@ -3,78 +3,91 @@
 {% block title %}Ubuntu新闻{% endblock %}
 
 {% block meta_description %}Canonical 发布关于魅族ubuntu手机，BQ手机 Ubuntu版，最新桌面系统优麒麟ubuntu15.04，Ubuntu云等其他即时新闻和信息。{% endblock %}
-{% block meta_keywords %}ubuntu系统手机,ubuntu14.04, ubuntu15.04, ubuntu 15.10,BQ手机,BQ手机 E5,ubuntu BQ手机,ubuntu 魅族MX4, 魅族ubuntu,魅族ubuntu手机, ubuntu mx4,购买ubuntu手机,全触屏手机, LTS版本， Trusty Tahr{% endblock %}
-
-{% block extra_body_class %}news-home{% endblock %}
 
 {% block second_level_nav_items %}
     {% include "templates/_nav_breadcrumb.html" with section_title="News" page_title="News"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
-<div class="row row-hero">
+
+<div class="p-strip is-shallow is-bordered">
+  <div class="row">
     <div class="col-8">
-        <h1>Ubuntu新闻</h1>
-        <p>获取Ubuntu最新新闻事件和信息</p>
+      <h1>Ubuntu新闻</h1>
+      <p>获取Ubuntu最新新闻事件和信息</p>
+    </div>
+  </div>
+</div>
+
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <h2>Ubuntu手机和平板电脑</h2>
+      <ul>
+      <li><a href="/news/2016/04/08/phone-ota10">Ubuntu手机OTA-10更新发布&nbsp;&rsaquo;</a></li>
+      <li><a href="/news/2015/12/18/china-mobile-conference">2015年中国移动全球合作伙伴大会亮点后序&nbsp;&rsaquo;</a></li>
+      <li><a href="/news/2015/05/21/meizu-ubuntu">中国开发者们将会最先拿到魅族 MX4 Ubuntu版&nbsp;&rsaquo;</a></li>
+      <li><a href="/news/2014/06/04/showcasing-ubuntu-at-mobile-asia-expo-2014">Ubuntu将参展2014亚洲移动展&nbsp;&rsaquo;</a></li>
+      <li><a href="/news/2014/02/20/canonical-announces-first-partners-to-ship-ubuntu-phones-around-the-globe">Canonical公司宣布魅族科技作为其首家合作伙伴发布Ubuntu手机&nbsp;&rsaquo;</a></li>
+      <li><a href="/news/2013/02/19/ubuntu-unveils-tablet-experience-with-multi-tasking">Ubuntu多任务平板电脑体验&nbsp;&rsaquo;</a></li>
+      <li><a href="/news/2025/02/06/bqs-new-aquaris-e4-5-ubuntu-edition-the-smartphone-that-puts-content-and-services-at-your-fingertips">最新BQ Aquaris E4.5 Ubuntu版 - 是一款将内容和服务带到您指尖的智能手机</a></li>
+    </ul>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <h2>IoT</h2>
+      <ul>
+      <li><a href="/news/2017/03/16/orange-pi-snap-store">Orange Pi 社区迎来全新 Snap 商店&nbsp;&rsaquo;</a></li>
+      <li><a href="/news/2016/12/19/ubuntu-core-iot/">和Ubuntu Core的一场黑马 - 将物联网的进化革命进行到底&nbsp;&rsaquo;</a></li>
+      <li><a href="/news/2016/11/18/ubuntu-core-16-launches">Ubuntu Core 16 为打造安全的物联网奠定基础&nbsp;&rsaquo;</a></li>
+      <li><a href="/news/2016/06/15/ubuntu-core-qnap-nas">Canonical与QNAP联手将Ubuntu Core 带入NAS&nbsp;&rsaquo;</a></li>
+    </ul>
     </div>
 </div>
+</section>
 
-{# ================ Phone and tablet ================ #}
-<div class="row">
-    <h2>Ubuntu手机和平板电脑</h2>
-    <ul>
-        <li><a href="/news/2016/04/08/phone-ota10">Ubuntu手机OTA-10更新发布&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2015/12/18/china-mobile-conference">2015年中国移动全球合作伙伴大会亮点后序&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2015/05/21/meizu-ubuntu">中国开发者们将会最先拿到魅族 MX4 Ubuntu版&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2014/06/04/showcasing-ubuntu-at-mobile-asia-expo-2014">Ubuntu将参展2014亚洲移动展&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2014/02/20/canonical-announces-first-partners-to-ship-ubuntu-phones-around-the-globe">Canonical公司宣布魅族科技作为其首家合作伙伴发布Ubuntu手机&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2013/02/19/ubuntu-unveils-tablet-experience-with-multi-tasking">Ubuntu多任务平板电脑体验&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2025/02/06/bqs-new-aquaris-e4-5-ubuntu-edition-the-smartphone-that-puts-content-and-services-at-your-fingertips">最新BQ Aquaris E4.5 Ubuntu版 - 是一款将内容和服务带到您指尖的智能手机</a></li>
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <h2>Ubuntu Kylin</h2>
+      <ul>
+    <li><a href="/news/2016/04/25/ubuntu-1604-released">Canonical  发布第6个LTS Ubuntu系统16.04&nbsp;&rsaquo;</a></li>
+    <li><a href="/news/2016/04/21/ubuntu-kylin-1604-lts">全新便捷体验，优麒麟(Ubuntu Kylin)16.04 LTS火热发布&nbsp;&rsaquo;</a></li>
+    <li><a href="/news/2015/10/22/1510-release">嚎喔喔~~ 优麒麟15.10来了&nbsp;&rsaquo;</a></li>
+    <li><a href="/news/2015/07/03/asus-china-ubuntu-kylin">优麒麟系统，新添华硕电脑系列&nbsp;&rsaquo;</a></li>
+    <li><a href="/news/2015/05/13/hp-kylin">CCN合作实验室让优麒麟在中国市场的发展再进一步&nbsp;&rsaquo;</a></li>
+    <li><a href="/news/2015/04/22/ubuntukylin-15-04">优麒麟15.04桌面版本现在已可下载&nbsp;&rsaquo;</a></li>
+    <li><a href="/news/2014/04/22/ubuntu-14-04-lts">Ubuntu Kylin 14.04 LTS 正式发布!&nbsp;&rsaquo;</a></li>
+    <li><a href="/news/2013/10/17/ubuntukylin-13-10">面向 OEM 和消费者的 Ubuntu Kylin 13.10 版本今日正式发布&nbsp;&rsaquo;</a></li>
+    <li><a href="/news/2013/04/25/ubuntukylin-1304-launches">Ubuntu Kylin 13.04&nbsp;&rsaquo;</a></li>
+  </ul>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h2>Ubuntu 云</h2>
+      <ul>
+      <li><a href="/news/2016/04/07/ubuntu-on-windows">Ubuntu在Windows，为Windows开发者准备的Ubuntu开发环境&nbsp;&rsaquo;</a></li>
+      <li><a href="/news/juju-top-twelve">关于 Juju 的十二个热点问题&nbsp;&rsaquo;</a></li>
     </ul>
-</div>
+    </div>
+  </div>
+</section>
 
-{# ================ IoT ================= #}
-<div class="row">
-    <h2>IoT</h2>
-    <ul>
-        <li><a href="/news/2017/03/16/orange-pi-snap-store">Orange Pi 社区迎来全新 Snap 商店&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2016/12/19/ubuntu-core-iot/">和Ubuntu Core的一场黑马 - 将物联网的进化革命进行到底&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2016/11/18/ubuntu-core-16-launches">Ubuntu Core 16 为打造安全的物联网奠定基础&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2016/06/15/ubuntu-core-qnap-nas">Canonical与QNAP联手将Ubuntu Core 带入NAS&nbsp;&rsaquo;</a></li>
-    </ul>
-</div>
-
-{# ================ Ubuntu Kylin ================ #}
-<div class="row">
-    <h2>Ubuntu Kylin</h2>
-    <ul>
-        <li><a href="/news/2016/04/25/ubuntu-1604-released">Canonical  发布第6个LTS Ubuntu系统16.04&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2016/04/21/ubuntu-kylin-1604-lts">全新便捷体验，优麒麟(Ubuntu Kylin)16.04 LTS火热发布&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2015/10/22/1510-release">嚎喔喔~~ 优麒麟15.10来了&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2015/07/03/asus-china-ubuntu-kylin">优麒麟系统，新添华硕电脑系列&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2015/05/13/hp-kylin">CCN合作实验室让优麒麟在中国市场的发展再进一步&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2015/04/22/ubuntukylin-15-04">优麒麟15.04桌面版本现在已可下载&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2014/04/22/ubuntu-14-04-lts">Ubuntu Kylin 14.04 LTS 正式发布!&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2013/10/17/ubuntukylin-13-10">面向 OEM 和消费者的 Ubuntu Kylin 13.10 版本今日正式发布&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/2013/04/25/ubuntukylin-1304-launches">Ubuntu Kylin 13.04&nbsp;&rsaquo;</a></li>
-    </ul>
-</div>
-
-{# ================ Cloud news ================ #}
-<div class="row">
-    <h2>Ubuntu 云</h2>
-    <ul>
-        <li><a href="/news/2016/04/07/ubuntu-on-windows">Ubuntu在Windows，为Windows开发者准备的Ubuntu开发环境&nbsp;&rsaquo;</a></li>
-        <li><a href="/news/juju-top-twelve">关于 Juju 的十二个热点问题&nbsp;&rsaquo;</a></li>
-    </ul>
-</div>
-
-{# ================ Videos ================ #}
-<div class="row no-border">
+<section class="p-strip">
+  <div class="row">
     <h2>Videos</h2>
     <ul class="">
-        <li><a class="p-link--external" href="http://i.youku.com/u/UNTU5ODQxNjg0">Celebrate Ubuntu Youku channel</a></li>
+      <li><a class="p-link--external" href="http://i.youku.com/u/UNTU5ODQxNjg0">Celebrate Ubuntu Youku channel</a></li>
     </ul>
-</div>
+  </div>
+</section>
 
 {% endblock %}

@@ -33,7 +33,7 @@
 
 {# ================ 3. Performance and versatility ================ #}
 <div class="row">
-    <div class="twelve-col">
+    <div class="col-12">
         {% include "templates/_cms-block.html" with block_content=performance %}
     </div>
 
@@ -70,19 +70,7 @@
 {# ================ 6. A release schedule you can rely on ================ #}
 <div class="row row-grey row-release-schedule">
     <div class="col-8">
-        <div class="releasecycle-image-load" data-width="580" data-src="{{ STATIC_URL }}img/graphs/image-release-cycle{width}.png" data-alt="Ubuntu Desktop release cycle, 5 year long term support"></div>
-        <script>
-            new Imager('.releasecycle-image-load', {
-                availableWidths: {
-                    305: '-small',
-                    431: '-medium',
-                    580: '-large'
-                }
-            });
-        </script>
-        <noscript>
-            <img src="{{ STATIC_URL }}u/img/graphs/image-release-cycle-large.png" width="580" height="427" alt="Ubuntu Desktop release cycle, 5 year long term support" />
-        </noscript>
+        <img src="{{ STATIC_URL }}u/img/graphs/image-release-cycle-large.png" width="580" height="427" alt="Ubuntu Desktop release cycle, 5 year long term support" />
     </div>
     <div class="four-col last-col">
         {% include "templates/_cms-block.html" with block_content=release_schedule %}
