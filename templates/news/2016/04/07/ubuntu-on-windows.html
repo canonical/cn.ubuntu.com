@@ -2,55 +2,57 @@
 {% block title %}Ubuntu在Windows，为Windows开发者准备的Ubuntu开发环境{% endblock %}
 {% block content %}
 
-<div class="row">
+<div class="p-strip">
+  <div class="row">
     <div class="col-8">
-        <h1>Ubuntu在Windows，为Windows开发者准备的Ubuntu开发环境</h1>
-        <div class="col-12">
-            <img src="{{ STATIC_URL }}img/news/news-20160407-Build_2016.jpg" alt="Microsoft Build 2016 conference" />
-        </div>
+      <h1>Ubuntu在Windows，为Windows开发者准备的Ubuntu开发环境</h1>
+      <div class="col-12">
+        <img src="{{ STATIC_URL }}img/news/news-20160407-Build_2016.jpg" alt="Microsoft Build 2016 conference" />
+      </div>
 
-        <p>在昨天举行的微软2015 Build大会上，微软公布了与Canonical合作在windows上运行原生Ubuntu环境，包括在windows的CMD命令界面运行bash shell，这听起来不可思议，因为.exe和Ubuntu的linux命令非常不同，不过也没有看错，这是真实的。</p>
+      <p>在昨天举行的微软2015 Build大会上，微软公布了与Canonical合作在windows上运行原生Ubuntu环境，包括在windows的CMD命令界面运行bash shell，这听起来不可思议，因为.exe和Ubuntu的linux命令非常不同，不过也没有看错，这是真实的。</p>
 
-        <div class="col-12">
-          <img src="{{ STATIC_URL }}img/news/news-20160407-bash-coming-to-windows-10.jpg" alt="Bash coming to Windows" />
-        </div>
+      <div class="col-12">
+        <img src="{{ STATIC_URL }}img/news/news-20160407-bash-coming-to-windows-10.jpg" alt="Bash coming to Windows" />
+      </div>
 
-        <p>下面来告诉大家正确的打开方式</p>
+      <p>下面来告诉大家正确的打开方式</p>
 
-          <ul>
-            <li>如果你是一个windows 10用户；</li>
-            <li>打开开始菜单</li>
-            <li>输入“bash”然后回车</li>
-            <li>这样会打开cmd命令界面</li>
-            <li>运行Ubuntu的/bin/bash</li>
-            <li>经过上述操作后即可进入Ubuntu用户环境</li>
-            <li>在Ubuntu用户空间下，可以使用如下的命令：apt, ssh, rsync, find, grep, awk, sed, sort, xargs, md5sum, gpg, curl, wget, apache, mysql, python, perl, ruby, php, gcc, tar, vim, emacs, diff, patch…</li>
-            <li>除了以上的命令，还可以运行Ubuntu收录的成千上万的二进制包</li>
-          </ul>
+      <ul>
+        <li>如果你是一个windows 10用户；</li>
+        <li>打开开始菜单</li>
+        <li>输入“bash”然后回车</li>
+        <li>这样会打开cmd命令界面</li>
+        <li>运行Ubuntu的/bin/bash</li>
+        <li>经过上述操作后即可进入Ubuntu用户环境</li>
+        <li>在Ubuntu用户空间下，可以使用如下的命令：apt, ssh, rsync, find, grep, awk, sed, sort, xargs, md5sum, gpg, curl, wget, apache, mysql, python, perl, ruby, php, gcc, tar, vim, emacs, diff, patch…</li>
+        <li>除了以上的命令，还可以运行Ubuntu收录的成千上万的二进制包</li>
+      </ul>
 
-          <div class="col-12">
-            <img src="{{ STATIC_URL }}img/news/news-20160407-bash_shell.png" alt="example Bash shell" />
-          </div>
+      <div class="col-12">
+        <img src="{{ STATIC_URL }}img/news/news-20160407-bash_shell.png" alt="example Bash shell" />
+      </div>
 
-          <p>为此你可能有以下疑问：</p>
-          <p>疑问1：Ubuntu是作为一个虚拟机运行的吗？<br />
-            答：这种运行模式不是虚拟机，并没有启动Linux内核，而只是Ubuntu的用户环境。</p>
+      <p>为此你可能有以下疑问：</p>
+      <p>疑问1：Ubuntu是作为一个虚拟机运行的吗？<br />
+        答：这种运行模式不是虚拟机，并没有启动Linux内核，而只是Ubuntu的用户环境。</p>
 
-          <p>疑问2：这是Ubuntu的一种容器技术吗？</p>
-          <p>答：同样不是，而是直接在windows环境运行Ubuntu二进制文件。</p>
+      <p>疑问2：这是Ubuntu的一种容器技术吗？</p>
+      <p>答：同样不是，而是直接在windows环境运行Ubuntu二进制文件。</p>
 
-          <p>事实上这是一种cygwin技术，cygwin包含了重新编译过开源软件的工具集，这里谈论的是比特和比特，校验和进行校验Ubuntu的ELF可执行文件在Windows中直接运行事情。</p>
+      <p>事实上这是一种cygwin技术，cygwin包含了重新编译过开源软件的工具集，这里谈论的是比特和比特，校验和进行校验Ubuntu的ELF可执行文件在Windows中直接运行事情。</p>
 
-          <p>这种模拟器听起来像一个模拟器，现在可以放心了，因为模拟器的运行效率比虚拟机好很多。微软的开发团队也在进行紧张工作确保这个运行模式正常运行。通过sysbench工具显示，Ubuntu在windows的运行效率非常接近原生windows程序的运行效率。</p>
+      <p>这种模拟器听起来像一个模拟器，现在可以放心了，因为模拟器的运行效率比虚拟机好很多。微软的开发团队也在进行紧张工作确保这个运行模式正常运行。通过sysbench工具显示，Ubuntu在windows的运行效率非常接近原生windows程序的运行效率。</p>
 
-          <p>在使用Ubuntu在windows用户模式时，windows的C盘将会被挂在到/mnt目录下，可以使用直接使用ssh，cp等工具，apt upgrade命令同样可以。</p>
+      <p>在使用Ubuntu在windows用户模式时，windows的C盘将会被挂在到/mnt目录下，可以使用直接使用ssh，cp等工具，apt upgrade命令同样可以。</p>
 
-          <div class="col-12">
-            <img src="{{ STATIC_URL }}img/news/news-20160407-ubuntu-on-windows.png" alt="example Bash shell" />
-          </div>
+      <div class="col-12">
+        <img src="{{ STATIC_URL }}img/news/news-20160407-ubuntu-on-windows.png" alt="example Bash shell" />
+      </div>
 
-          <p>当前，Ubuntu在windows用户模式使用的是Ubuntu LTS 14.04，即将发布的LTS版本在发布后会上传到windows商店。</p>
-
+      <p>当前，Ubuntu在windows用户模式使用的是Ubuntu LTS 14.04，即将发布的LTS版本在发布后会上传到windows商店。</p>
     </div>
+  </div>
 </div>
+
 {% endblock %}
