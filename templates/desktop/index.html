@@ -5,8 +5,6 @@
 
 {% if meta_description %}{% block meta_description %}{{ meta_description }}{% endblock %}{% endif %}
 
-{% if meta_keywords %}{% block meta_keywords %}{{ meta_keywords }}{% endblock %}{% endif %}
-
 {% block second_level_nav_items %}
     {% include "templates/_nav_breadcrumb.html" with section_title="Desktop" page_title="Desktop"  %}
 {% endblock second_level_nav_items %}
