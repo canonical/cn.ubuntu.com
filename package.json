@@ -11,6 +11,6 @@
   "devDependencies": {
     "sass-lint": "^1.10.2",
     "node-sass": "^4.5.3",
-    "ubuntu-vanilla-theme": "0.0.35"
+    "vanilla-framework": "1.4.3"
   }
 }

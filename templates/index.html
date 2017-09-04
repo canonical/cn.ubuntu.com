@@ -1,59 +1,90 @@
 {% extends "base_index.html" %}
 
-{% block extra_body_class %}homepage homepage-hackathon{% endblock %}
-
 {% block takeover_content %}
-    {% include "takeovers/_hackathon.html" %}
+  {% include "takeovers/_hackathon.html" %}
 {% endblock takeover_content %}
 
 {% block page_content %}
 
 <!-- Ubuntu Intro -->
-<section class="row row--intro strip no-border">
-    <div class="ubuntu-intro">
-        <div class="intro-left"></div>
-        <div class="intro-middle">
-            <ul class="ubuntu-intro__list no-bullets inline">
-                <li><a class="intro-cloud" href="/cloud">云</a></li>
-                <li><a class="intro-server" href="/server">服务器</a></li>
-                <li><a class="intro-desktop" href="/desktop">桌面</a></li>
-                <li><a class="intro-iot" href="/internet-of-things">IoT</a></li>
-            </ul>
-        </div>
-        <div class="intro-right"></div>
+<section class="p-strip row--intro">
+  <div class="ubuntu-intro">
+    <div class="intro-left"></div>
+    <div class="intro-middle">
+      <ul class="ubuntu-intro__list no-bullets inline">
+        <li><a class="intro-cloud" href="/cloud">云</a></li>
+        <li><a class="intro-server" href="/server">服务器</a></li>
+        <li><a class="intro-desktop" href="/desktop">桌面</a></li>
+        <li><a class="intro-iot" href="/internet-of-things">IoT</a></li>
+      </ul>
     </div>
-    <div class="strip-inner-wrapper">
-        <h2 class="text-center twelve-col">
-            Ubuntu是一个广泛应用于个人电脑，云计算，以及所有智能物联网设备的开源操作系统。
-        </h2>
+    <div class="intro-right"></div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="u-align--center">Ubuntu是一个广泛应用于个人电脑，云计算，以及所有智能物联网设备的开源操作系统。</h2>
     </div>
+  </div>
 </section>
 
 <!-- Desktop -->
-<section class="row row--white">
-    <div class="strip-inner-wrapper">
-        <div class="six-col">
-            <h2><a href="/download">Ubuntu 桌面系统&nbsp;›</a></h2>
-            <p>体验一下简洁直观的Ubuntu桌面操作系统。安全、快速、易用。Ubuntu还有专为中文用户定制的Ubuntu Kylin(优麒麟)版本，是Ubuntu官方认证的版本之一。</p>
-            <a href="/download">立刻下载&nbsp;›</a>
-        </div>
-        <div class="six-col last-col align-center">
-            <img class="strip__img" src="{{ STATIC_URL }}img/homepage/dell-xps-laptop-front.png" alt="" />
-        </div>
-    </div>
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-6">
+    <h2><a href="/download">Ubuntu 桌面系统&nbsp;›</a></h2>
+    <p>体验一下简洁直观的Ubuntu桌面操作系统。安全、快速、易用。Ubuntu还有专为中文用户定制的Ubuntu Kylin(优麒麟)版本，是Ubuntu官方认证的版本之一。</p>
+    <a href="/download">立刻下载&nbsp;›</a>
+  </div>
+    <div class="col-6">
+    <img src="{{ STATIC_URL }}img/homepage/dell-xps-laptop-front.png" alt="" />
+  </div>
+  </div>
 </section>
 
 <!-- IoT -->
-<section class="row row--white">
-    <div class="strip-inner-wrapper">
-        <div class="six-col">
-            <h2><a href="/internet-of-things">用于智能物联网的操作系统&nbsp;›</a></h2>
-            <p>Ubuntu Core 是一套基于Ubuntu操作系统的更加安全，轻量级，专为智能物联网订制的开源操作系统。它已被广泛应用于物联网，智能设备和自主设备行业中，它自身的系统更新更加轻便可控；同时它让搭建自有应用商店和生态环境触手可及。</p>
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-6">
+      <h2><a href="/internet-of-things">用于智能物联网的操作系统&nbsp;›</a></h2>
+      <p>Ubuntu Core 是一套基于Ubuntu操作系统的更加安全，轻量级，专为智能物联网订制的开源操作系统。它已被广泛应用于物联网，智能设备和自主设备行业中，它自身的系统更新更加轻便可控；同时它让搭建自有应用商店和生态环境触手可及。</p>
+    </div>
+    <div class="col-6">
+      <img class="strip__img" src="{{ STATIC_URL }}img/homepage/image-iot.jpg" alt="" />
+    </div>
+  </div>
+</section>
+
+<!-- Contextual footer -->
+<section class="p-strip--light">
+    <div class="row p-divider">
+        <div class="col-4 p-divider__block">
+          <a href="/download">
+            <h2>下载优麒麟&nbsp;&rsaquo;</h2>
+            <p>马上可升级优麒麟最新的15.04版本</p>
+            <div class="u-align--center">
+              <img alt="" src="{{ STATIC_URL }}img/homepage/image-dell-xps-laptop.png" />
+            </div>
+          </a>
         </div>
-        <div class="six-col last-col align-center">
-            <img class="strip__img" src="{{ STATIC_URL }}img/homepage/image-iot.jpg" alt="" />
+        <div class="col-4 p-divider__block">
+          <a href="/cloud">
+            <h2>头号云服务平台&nbsp;&rsaquo;</h2>
+            <p>OpenStack Juno，还提供最好的工具和五年支持服务&#12290;</p>
+            <div class="u-align--center">
+                <img alt="" src="{{ STATIC_URL }}img/homepage/cn-home-juju.svg" />
+            </div>
+          </a>
+        </div>
+        <div class="col-4 p-divider__block">
+          <a href="https://landscape.canonical.com/">
+              <h2>Landscape free for 30 days&nbsp;&rsaquo;</h2>
+              <p>用于Ubuntu系统管理的最佳工具</p>
+              <div class="u-align--center">
+                  <img alt="" src="{{ STATIC_URL }}img/homepage/screenshot-landscape.png" />
+              </div>
+          </a>
         </div>
     </div>
 </section>
 
-{% endblock page_content %} {% block footer_content %} {% include "takeovers/_footer_homepage.html" %} {% endblock footer_content %}
+{% endblock page_content %}
