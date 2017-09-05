@@ -1,24 +1,23 @@
 {% extends "templates/base.html" %}
 
-{% block title %}Page not found{% endblock %}
-
-{% block extra_body_class %}error404{% endblock %}
-
-{% block head_extra %}{% endblock %}
+{% block title %}404 - Page not found{% endblock %}
 
 {% block header %}
-<div class="row no-border">
-    <div class="six-col">
+
+<div class="p-strip">
+  <div class="row">
+    <div class="u-equal-height u-vertically-center">
+      <div class="col-6">
         <img src="{{ STATIC_URL }}img/image-404.svg" alt="Error owl" />
-    </div>
-    <div class="six-col last-col">
+      </div>
+      <div class="col-6">
         <h1>404: Page not found.</h1>
-        <p>Sorry, we couldn&rsquo;t find that page.</p>
+        <p>Sorry, we couldn&rsquo;t find that page</p>
+      </div>
     </div>
+  </div>
 </div>
+
 {% endblock %}
 {% block content %}
 {% endblock content %}
-{% block footer_extra %}
-<script src="/static/x/js/error.js"></script>
-{% endblock footer_extra %}
