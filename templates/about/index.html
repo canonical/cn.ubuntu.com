@@ -1,51 +1,77 @@
 {% extends "about/base_about.html" %}
-{% load markdown_deux_tags %}
 
 {% block title %}{{ title }}{% endblock %}
 {% block meta_description %}{{ meta_description }}{% endblock %}
-{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
 
 {% block second_level_nav_items %}
-    {% include "templates/_nav_breadcrumb.html" with section_title="关于" page_title="关于"  %}
+  {% include "templates/_nav_breadcrumb.html" with section_title="关于" page_title="关于"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
-<section class="row row-hero">
-    <div class="col-8">
-        {% include "templates/_cms-block.html" with block_content=ubuntu_story %}
-    </div>
-</section>
 
-<section class="row">
+<div class="p-strip is-bordered">
+  <div class="row">
     <div class="col-8">
-        {% include "templates/_cms-block.html" with block_content=beginning %}
+      <h1>关于Ubuntu</h1>
+      <p>ubuntu |oǒ'boǒntoō|</p>
+      <p>Ubuntu 是一个古老的非洲语单词，意思是“Humanity to Others”（以人道善待他人），同时还有着“群在故我在”的意味。Ubuntu 操作系统将 Ubuntu 精神带到了计算机世界。 Ubuntu 也是Canonical公司的产品和所有的品牌商标，而科能（上海）软件科技有限公司则是Canonical公司在中国注册的子公司，公司总部位于英国伦敦。</p>
     </div>
-</section>
+  </div>
+</div>
 
-<section class="row">
+<div class="p-strip is-bordered">
+  <div class="row">
     <div class="col-8">
-        {% include "templates/_cms-block.html" with block_content=releases %}
+      <h2>Ubuntu的起源</h2>
+      <p>2004 年，当时的 Linux 已建立了作为企业服务器平台的地位，但自由软件还未走进大多数计算机用户的日常生活。为了让自由软件为大众所用，Mark Shuttleworth 聚集了一群来自著名 Linux 项目“Debian”的开发者，着手创造了一个易用的 Linux 桌面系统：Ubuntu。</p>
+      <p>Ubuntu 的愿景一部分面向大众，一部分面向商用：作为自由软件，按照同样的条款提供给每个人使用，同时也通过科能（上海）软件科技有限公司提供的一系列服务获得资金来源。</p>
     </div>
-</section>
+  </div>
+</div>
 
-<section class="row">
+<div class="p-strip is-bordered">
+  <div class="row">
     <div class="col-8">
-        {% include "templates/_cms-block.html" with block_content=governance %}
+      <h2>Ubuntu 的版本发布</h2>
+      <p>Ubuntu 团队在发行版计划方面独辟蹊径，按照可预计的每六个月一次的频率发行新版本，并决定每两年发布一次的每个第四版将获得长期支持 (LTS)。LTS 发行版通常用于大规模及企业级部署。</p>
+      <p>Ubuntu 与之前的商用 Linux 产品有所不同，它并不分别开发高质量的商用版本和自由的“社区”版本，而是商用和社区产品团队协作开发一个高质量发行版，并在规定的一段时间内提供持续的维护。所有用户均可自由地获取该发行版和持续的更新。</p>
     </div>
-</section>
+  </div>
+</div>
 
-<section class="row no-border">
+<div class="p-strip is-bordered">
+  <div class="row">
     <div class="col-8">
-        {% include "templates/_cms-block.html" with block_content=flavours %}
+      <h2>Ubuntu的统管</h2>
+      <p>第一个正式的 Ubuntu 发行版是代号为“Warty Warthog”的 4.10 版本。该版本于 2004 年 10 月发布，引起了全球的广泛关注，成千上万的自由软件爱好者和专家随之加入了 Ubuntu 社区。</p>
+      <p>Ubuntu 的管理有所独立于 Canonical 公司，项目的许多关键部分是由来自全球各地的众多志愿者负责的。它秉承 Ubuntu 项目的一个核心宗旨，即 Ubuntu 是 Canonical 公司、其他公司和成千上万志愿者共同努力的成果，他们分享各自的专业知识，目标是将 Ubuntu 打造成人人可以使用的一流平台。</p>
     </div>
+  </div>
+</div>
+
+<div class="p-strip is-bordered">
+  <div class="row">
     <div class="col-8">
-        {% include "templates/_cms-block.html" with block_content=flavours_list extra_classes="list-ubuntu" %}
+      <h1>分支版本</h1>
+      <p>Ubuntu 是一款流行的操作系统，同时也是人们创建自己的操作系统时喜欢选择的一个基础系统。</p>
+      <h3>认证的 Ubuntu 分支版本</h3>
+      <p>下面是以 Ubuntu 为基础并为 Ubuntu 项目做出巨大贡献的分支版本。</p>
+      <ul class="p-list--divided">
+        <li class="p-list__item is-ticked"><a href="http://www.edubuntu.org/">Edubuntu</a> — 面向教育领域的 Ubuntu</li>
+        <li class="p-list__item is-ticked"><a href="http://ubuntugnome.org/">Ubuntu GNOME</a> — 具有 GNOME 桌面环境的 Ubuntu</li>
+        <li class="p-list__item is-ticked"><a href="http://www.kubuntu.org/">Kubuntu</a> — 具有 K Desktop 环境的 Ubuntu</li>
+        <li class="p-list__item is-ticked"><a href="http://www.ubuntukylin.com/">Ubuntu Kylin</a> — 针对中国用户进行本地化设计的 Ubuntu</li>
+        <li class="p-list__item is-ticked"><a href="https://wiki.ubuntu.com/Lubuntu?_ga=1.214374615.1590733534.1425993218">Lubuntu</a> — 采用 LXDE 的 Ubuntu</li>
+        <li class="p-list__item is-ticked"><a href="http://www.mythbuntu.org/">Mythbuntu</a> — 为使用 MythTV 打造家庭影院电脑而设计的 Ubuntu</li>
+        <li class="p-list__item is-ticked"><a href="http://ubuntustudio.org/">Ubuntu Studio</a> — 为多媒体剪辑和制作而设计的 Ubuntu</li>
+        <li class="p-list__item is-ticked"><a href="http://xubuntu.org/">Xubuntu</a> — 具有 XFCE 桌面环境的 Ubuntu</li>
+        <li class="p-list__item is-ticked"><a href="https://ubuntu-mate.org/">Ubuntu MATE</a> — 具有 MATE 桌面环境的 Ubuntu</li>
+      </ul>
+      <h3>本地化</h3>
+      <p>出于空间方面的考虑，标准 Ubuntu 映像仅随附了少数几种语言。用户可以通过系统设置或使用网络安装器来添加其他语言的支持。标准映像直接提供对一下相关语言的完整支持。</p>
+      <p>德语 英语（美国、英国、澳大利亚） 西班牙语 葡萄牙语 巴西葡萄牙语 简体中文</p>
+      <h3>其他版本</h3>
+      <p>有关已知分支版本的完整列表，请参阅 Ubuntu Wiki 的衍生版本团队页面。</p>
     </div>
-    <div class="col-8">
-        {% include "templates/_cms-block.html" with block_content=localisations %}
-    </div>
-    <div class="col-8">
-        {% include "templates/_cms-block.html" with block_content=other_editions %}
-    </div>
-</section>
+
 {% endblock %}
