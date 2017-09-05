@@ -9,57 +9,63 @@
 
 {% block content %}
 
-<section class="p-strip">
-  <div class="col-6">
-    <h1>物联网时代的 Ubuntu</h1>
-    <p>Ubuntu Core 是 Ubuntu 的一个精简版本，可在具有自主性的机器、设备和其他通过互联网相连的数字化产品上安全地运行。从智能家居到无人机，这些设备将给我们生活的诸多方面带来彻底变革，但是它们需要一套与传统 PC 系统不同的操作系统, 确保它更加安全可控。</p>
-  </div>
-  <div class="col-6">
-    <img src="{{ STATIC_URL }}img/internet-of-things/darwin.png" alt="Darwin robot" />
-  </div>
-</section>
-
-<section class="p-strip">
-  <div class="col-4">
-    <img src="{{ STATIC_URL }}img/internet-of-things/snappy-ubuntu-core-logo.svg" alt="">
-  </div>
-  <div class="col-8">
-    <h2>为何选择 Ubuntu Core</h2>
-    <p>Ubuntu Core提供了一个易于更新和升级的软件平台，让厂商们可以轻易打造差异化的设备，通过软件升级让产品使用寿命期不断延伸，持续创造收入。它几乎可以支持任何类型和规模的设备，并提供全面型操作系统所具有的出色安全性和可扩展性。</p>
-    <ul class="p-list--divided">
-      <li class="p-list__item is-ticked">为应用和用户提供更快、更可靠、更强大的安全保障。</li>
-      <li class="p-list__item is-ticked">可对应用和 Ubuntu Core 软件本身进行原子级事务性更新；为了实现简单的维护和升级，这些更新可根据需要恢复原状。</li>
-      <li class="p-list__item is-ticked">将操作系统和应用程序文件分离开来并作为一组独特的只读映像存在，从而确保能够轻松安全地为单个设备添加多个应用和功能。</li>
-      <li class="p-list__item is-ticked">提供全新的、更简单的应用程序打包系统，更便于开发者构建和维护应用。</li>
-    </ul>
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-6">
+      <h1>物联网时代的 Ubuntu</h1>
+      <p>Ubuntu Core 是 Ubuntu 的一个精简版本，可在具有自主性的机器、设备和其他通过互联网相连的数字化产品上安全地运行。从智能家居到无人机，这些设备将给我们生活的诸多方面带来彻底变革，但是它们需要一套与传统 PC 系统不同的操作系统, 确保它更加安全可控。</p>
+    </div>
+    <div class="col-6">
+      <img src="{{ STATIC_URL }}img/internet-of-things/darwin.png" alt="Darwin robot" />
+    </div>
   </div>
 </section>
 
-<section class="p-strip">
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-4">
+      <img src="{{ STATIC_URL }}img/internet-of-things/snappy-ubuntu-core-logo.svg" alt="">
+    </div>
+    <div class="col-8 prefix-1">
+      <h2>为何选择 Ubuntu Core</h2>
+      <p>Ubuntu Core提供了一个易于更新和升级的软件平台，让厂商们可以轻易打造差异化的设备，通过软件升级让产品使用寿命期不断延伸，持续创造收入。它几乎可以支持任何类型和规模的设备，并提供全面型操作系统所具有的出色安全性和可扩展性。</p>
+      <ul class="p-list--divided">
+        <li class="p-list__item is-ticked">为应用和用户提供更快、更可靠、更强大的安全保障。</li>
+        <li class="p-list__item is-ticked">可对应用和 Ubuntu Core 软件本身进行原子级事务性更新；为了实现简单的维护和升级，这些更新可根据需要恢复原状。</li>
+        <li class="p-list__item is-ticked">将操作系统和应用程序文件分离开来并作为一组独特的只读映像存在，从而确保能够轻松安全地为单个设备添加多个应用和功能。</li>
+        <li class="p-list__item is-ticked">提供全新的、更简单的应用程序打包系统，更便于开发者构建和维护应用。</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="p-strip--image" style="background-image:url('/static/img/internet-of-things/iot-partners-hero-house.jpg'); background-position:center">
   <div class="row">
     <div class="col-12 suffix-6">
       <h2>对于合作伙伴</h2>
       <p>Ubuntu Core 是一套安全、稳定、易于更新的操作系统，适用于从无人机、工业网关到智能供暖、照明和安全系统在内的任何支持互联网的设备。</p>
       <ul class="p-list--divided">
-    <li class="p-list__item is-ticked">企业级的安全模型</li>
-    <li class="p-list__item is-ticked">可靠且能满足未来需求</li>
-    <li class="p-list__item is-ticked">事务性更新特征可以有效降低支持成本</li>
-    <li class="p-list__item is-ticked">提供各种工具便于管理您的物联网部署</li>
-  </ul>
+        <li class="p-list__item is-ticked">企业级的安全模型</li>
+        <li class="p-list__item is-ticked">可靠且能满足未来需求</li>
+        <li class="p-list__item is-ticked">事务性更新特征可以有效降低支持成本</li>
+        <li class="p-list__item is-ticked">提供各种工具便于管理您的物联网部署</li>
+      </ul>
+      <p>
+        <a href="mailto:chinamarketing@canonical.com" class="p-button--brand">联系我们</a>
+      </p>
     </div>
   </div>
-  <p>
-    <a href="" class="p-button">联系我们</a>
-  </p>
 </section>
 
-<section class="p-strip">
+<section class="p-strip is-bordered">
   <div class="row">
-    <div class="col-6 suffix-1">
+    <div class="u-equal-height u-vertically-center">
+      <div class="col-5">
       <h2>行业领先企业纷纷选择 <br /> Ubuntu Core</h2>
       <p>从戴尔和微软等老牌厂商到众多开拓创新的科技初创公司，整个物联网都在拥抱 Ubuntu Core。</p>
     </div>
-    <div class="col-6">
+      <div class="col-7">
       <ul class="p-inline-images">
         <li class="p-inline-images__item">
           <img src="http://cn.ubuntu.com/static/img/internet-of-things/logo-microsoft-azure.svg" alt="Microsoft Azure logo">
@@ -81,10 +87,11 @@
         </li>
       </ul>
     </div>
+    </div>
   </div>
 </section>
 
-<section class="p-strip">
+<section class="p-strip--image" style="background-image: url('/static/img/internet-of-things/iot-overview-developer.jpg');background-position:center">
   <div class="row">
     <div class="col-6">
       <div class="p-card--overlay">
@@ -98,7 +105,7 @@
       </ul>
         <p><a class="p-link--external" href="https://developer.ubuntu.com/core">Ubuntu Core入门</a></p>
         <p>如果你是设备制造商，请</p>
-        <p><a href="mailto:chinamarketing@canonical.com" class="p-button">联系我们</a></p>
+        <p><a href="mailto:chinamarketing@canonical.com" class="p-button--brand">联系我们</a></p>
       </div>
     </div>
   </div>
