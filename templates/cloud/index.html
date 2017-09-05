@@ -12,7 +12,7 @@
 
 {% block content %}
 {# ================ 1. Ubuntu for cloud ================ #}
-<div class="row row-hero no-border">
+<div class="row">
     <div class="seven-col">
         {% include "templates/_cms-block.html" with block_content=hero %}
     </div>
@@ -23,14 +23,14 @@
 
 {# ================ 2. What Ubuntu offers you ================ #}
 <div id="ubuntu-offers" class="row no-border strip-dark">
-    <div class="twelve-col">
+    <div class="col-12">
         {% include "templates/_cms-block.html" with block_content=ubuntu_offers %}
     </div>
 </div>
 
 {# ================ 3. Build your own cloud with Ubuntu OpenStack ================ #}
 <div id="build-with-openstack" class="row">
-    <div class="eight-col">
+    <div class="col-8">
         {% include "templates/_cms-block.html" with block_content=openstack %}
     </div>
     <div class="four-col last-col">
@@ -43,10 +43,10 @@
 
 {# ================ 4. Using Ubuntu in the public cloud ================ #}
 <div id="public-cloud" class="row">
-    <div class="eight-col">
+    <div class="col-8">
         {% include "templates/_cms-block.html" with block_content=public_cloud %}
     </div>
-    <div class="twelve-col">
+    <div class="col-12">
         <ul class="inline-logos no-bullets no-margin">
             <li class="first-item"><img src="{{ STATIC_URL }}img/logos/logo-amazonwebservices-160.png" alt="AWS"></li>
             <li><img src="{{ STATIC_URL }}img/logos/logo-hp-cloud-160.png" alt="HP cloud"></li>
@@ -59,7 +59,7 @@
 
 {# ================ 5. A complete set of cloud tools ================ #}
 <div id="cloud-tools" class="row row-cloud-tools">
-    <div class="eight-col">
+    <div class="col-8">
         {% include "templates/_cms-block.html" with block_content=cloud_tools %}
     </div>
     <div class="twelve-col vertical-divider">
@@ -80,7 +80,7 @@
 
 {# ================ 6. Number one for network operators ================ #}
 <div id="network-operators" class="row">
-    <div class="eight-col">
+    <div class="col-8">
         {% include "templates/_cms-block.html" with block_content=network_operators %}
     </div>
 </div>
