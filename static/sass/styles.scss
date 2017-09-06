@@ -4,6 +4,9 @@ $color-brand: #e95420;
 $color-accent: $color-brand;
 $color-link: $color-brand;
 
+// Global components
+@import '../components/canonical-global-nav/build/css/main';
+
 // Import Vanilla Framework
 @import "../../node_modules/vanilla-framework/scss/build";
 
