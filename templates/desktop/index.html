@@ -1,98 +1,100 @@
 {% extends "desktop/base_desktop.html" %}
-{% load markdown_deux_tags %}
 
 {% if title %}{% block title %}{{ title }}{% endblock %}{% endif %}
 
 {% if meta_description %}{% block meta_description %}{{ meta_description }}{% endblock %}{% endif %}
-
-{% if meta_keywords %}{% block meta_keywords %}{{ meta_keywords }}{% endblock %}{% endif %}
 
 {% block second_level_nav_items %}
     {% include "templates/_nav_breadcrumb.html" with section_title="Desktop" page_title="Desktop"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
-{# ================ Ubuntu Desktop ================ #}
-{% if hero %}
-<div id="ubuntu-kyin" class="row row-hero">
-    <div class="six-col">
-        {% include "templates/_cms-block.html" with block_content=hero %}
-        {% include "templates/_cms-block.html" with block_content=hero_cta extra_classes="cta-links" %}
-        {% include "templates/_cms-block.html" with block_content=hero_links %}
-    </div>
-</div>
-{% endif %}
 
-{# ================ Who is Ubuntu made for? ================ #}
-{% if for_you and for_business and for_developers %}
-<div id="ubuntu-kylin-user" class="row row-grey">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=who_is_kylin_for %}
+<section class="p-strip--image is-deep is-bordered" style="background-image:url('/static/img/desktop/desktop-hero.jpg'); background-position:center;">
+  <div class="row">
+    <div class="col-12 suffix-5">
+      <div class="p-card--overlay">
+        <h1>Ubuntu桌面操作系统</h1>
+        <p>Ubuntu是世界最受欢迎操作系统之一，是一款完全开源，由国际软件商家Canonical作为坚实后盾的操作系统。因为它对不同硬件的支持和易用，以及它至核心的安全机制，目前在全世界有众多商业，政府及教育机构已经采用Ubuntu操作系统。</p>
+        <a class="p-button--positive" href="http://cn.ubuntu.com/download">下载Ubuntu</a>
+      </div>
     </div>
-    <div class="twelve-col equal-height vertical-divider">
-        <div class="four-col for-you">
-            {% include "templates/_cms-block.html" with block_content=for_you %}
-        </div>
-        <div class="four-col for-business">
-            {% include "templates/_cms-block.html" with block_content=for_business %}
-        </div>
-        <div class="four-col last-col for-developers">
-            <div class="twelve-col">
-                {% include "templates/_cms-block.html" with block_content=for_developers extra_classes="cta-links" %}
-            </div>
-            {% include "templates/_cms-block.html" with block_content=for_developers_additional %}
-        </div>
-    </div>
-</div>
-{% endif %}
+  </div>
+</section>
 
-{# ================ ubuntu kylin ============== #}
-{% if ubuntu_kylin %}
-<div class="row">
-    <div class="six-col">
-        <div class="twelve-col">
-            {% include "templates/_cms-block.html" with block_content=ubuntu_kylin extra_classes="ubuntu-kylin cta-links" %}
-        </div>
-        {% include "templates/_cms-block.html" with block_content=ubuntu_kylin_additional extra_classes="ubuntu-kylin-additional" %}
+<section class="p-strip--light is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h3>适合任何人的操作系统</h3>
     </div>
-    <div class="six-col last-col">
-        <img src="{{ STATIC_URL }}img/homepage/dell-xps-laptop-front.png" alt="Kylin on an XPS laptop">
+  </div>
+  <div class="row p-divider">
+    <div class="col-4 p-divider__block">
+      <h4>作为个人电脑</h4>
+      <p>既快速又安全、开源、免费，有数以千计的应用程序可供选择。从工作学习、到娱乐游戏，无所不能。</p>
+      <p>
+        <a class="p-link--external" href="http://tour.ubuntu.com/zh-CN/">试试在线模拟</a>
+      </p>
     </div>
-</div>
-{% endif %}
+    <div class="col-4 p-divider__block">
+      <h4>对于企业用户</h4>
+      <p>安全、直观且易于管理，可节约企业成本费用，但丝毫不影响其性能；可以大大降低企业IT硬件和运营维护的总成本。</p>
+      <p>
+        <a href="maito:chinamarketing@canonical.com">联络我们获得更多信息</a>
+      </p>
+    </div>
+    <div class="col-4 p-divider__block">
+      <h4>对于开发者</h4>
+      <p>直观、易用、安全可靠。 触手可得广泛的开发工具、强大的开发者社区、以及部署应用程序的最快方法。是工程师的必备系统。目前可以直接运行于Windows桌面系统。</p>
+      <p>
+        <a href="http://cn.ubuntu.com/download" class="p-button">下载</a>
+      </p>
+      <p>
+        <a class="p-link--external" href="http://cn.developer.ubuntu.com/">去Ubuntu开发者网站看看</a>
+      </p>
+    </div>
+  </div>
+</section>
 
-{# ================ Who is behind Ubuntu? ================ #}
-{% if who_is_behind_kylin %}
-<div id="ubuntu-kylin-backers" class="row">
-    <div class="six-col">
-        {% include "templates/_cms-block.html" with block_content=who_is_behind_kylin %}
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-6">
+      <h3>Ubuntu Kylin</h3>
+      <p>优麒麟(英文名为Ubuntu Kylin)是基于Ubuntu的一款官方衍生版。 它是一款专门为中国市场打造的免费操作系统，而且它已经被录入中国政府采购条例名单中。它包括Ubuntu用户期待的各种功能，并配有必备的中文软件及程序。</p>
+      <p>
+        <a href="http://cn.ubuntu.com/download" class="p-button">下载Ubuntu</a>
+      </p>
+      <p>
+        <a href="http://www.ubuntukylin.com/" class="p-link--external">了解更多有关优麒麟的信息</a>
+      </p>
     </div>
-    <div class="six-col text-center last-col">
-            <ul class="no-bullets clearfix align-center">
-                <li><img src="{{ STATIC_URL }}img/desktop/logo-canonical-288.png" alt="Canonical" width="288" height="40"></li>
-                <li><img src="{{ STATIC_URL }}img/desktop/logo-csip-180.png" alt="CSIP" width="180" height="71"></li>
-                <li><img src="{{ STATIC_URL }}img/desktop/logo-nudt-288.png" alt="NUDT" width="288" height="72"></li>
-            </ul>
-        </div>
-</div>
-{% endif %}
-
-{# ================ Whats new? ================ #}
-{% if features %}
-<div id="row-whats-new" class="row row-grey">
-    <div class="seven-col">
-        {% include "templates/_cms-block.html" with block_content=features %}
+    <div class="col-6">
+      <img src="{{ STATIC_URL }}img/homepage/dell-xps-laptop-front.png" alt="Kylin on an XPS laptop">
     </div>
-</div>
-{% endif %}
+  </div>
+</section>
 
-{# ================ Find out more ================ #}
-{% if find_out_more %}
-<div id="row-more" class="row no-border">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=find_out_more %}
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-6">
+      <h3>优麒麟是由</h3>
+      <p><a class="p-link--external" href="http://www.canonical.com">Canonical</a>，<a class="p-link--external" href="http://www.csip.org.cn">工业和信息化部软件与集成电路促进中心（CSIP）</a>以及<a class="p-link--external" href="http://www.nudt.edu.cn">国防科学技术大学（NUDT）</a>携手打造。 目前，开发团队正在与开源社区合作打造Ubuntu的核心功能，以更好地适应中国用户。
+        除了Ubuntu软件中心推出的本土化版本以外，优麒麟还带最常用的中文程序。
+      </p>
     </div>
-</div>
-{% endif %}
-
+    <div class="col-6">
+      <ul class="p-inline-images">
+        <li class="p-inline-images__item">
+          <img src="{{ STATIC_URL }}img/desktop/logo-canonical-288.png" alt="Canonical" width="288" height="40">
+        </li>
+        <li class="p-inline-images__item">
+          <img src="{{ STATIC_URL }}img/desktop/logo-csip-180.png" alt="CSIP" width="180" height="71">
+        </li>
+        <li class="p-inline-images__item">
+          <img src="{{ STATIC_URL }}img/desktop/logo-nudt-288.png" alt="NUDT" width="288" height="72">
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 {% endblock %}
