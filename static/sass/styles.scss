@@ -17,3 +17,10 @@ $color-link: $color-brand;
     margin-top: 0;
   }
 }
+
+// XXX Ant: 06.09.17
+// Hotfix until the next version of Vanilla is updated > v1.5.2
+.p-strip .p-link--external,
+.p-strip--light .p-link--external {
+  color: $color-brand;
+}
