@@ -9,3 +9,14 @@ $color-link: $color-brand;
 
 // Import custom styles
 @import "custom/ubuntu_intro";
+
+.p-card__header {
+  border-bottom: 1px solid $color-mid-light;
+  font-size: $sp-small;
+  margin-bottom: $sp-small;
+  padding-bottom: $sp-small;
+
+  + * {
+    margin-top: 0;
+  }
+}
