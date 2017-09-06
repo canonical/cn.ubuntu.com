@@ -5,7 +5,7 @@
 {% if meta_description %}{% block meta_description %}{{ meta_description }}{% endblock %}{% endif %}
 
 {% block second_level_nav_items %}
-{% include "templates/_nav_breadcrumb.html" with section_title="云" page_title="云"  %}
+  {% include "templates/_nav_breadcrumb.html" with section_title="云" page_title="云"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
@@ -21,11 +21,11 @@
     </div>
   </div>
 </section>
+
 <section class="p-strip--image is-dark" style="background-image:url('/static/img/backgrounds/background-grid.png');background-repeat: repeat;background-size: auto;">
   <div id="ubuntu-offers" class="row">
     <div class="col-12">
       <h2>Ubuntu 为您提供哪些服务</h2>
-
       <ul class="p-list">
         <li class="p-list is-ticked">方便您有效构建 OpenStack 云所需的一切服务</li>
         <li class="p-list is-ticked">在领先的公共云上使用经认证的Ubuntu 服务器映像</li>
@@ -123,8 +123,8 @@
 <section class="p-strip is-bordered">
   <div id="network-operators" class="row">
     <div class="col-8">
-        <h2>网络运营商首选</h2>
-        <p>如果您是电信运营商或服务提供商，且您想为您的客户提供云服务，那么 Ubuntu OpenStack 就是您最可靠也是最受欢迎的基础设施。我们已经帮助世界上大多数电信运营商和服务提供商巨头实现了 OpenStack 云。</p>
+      <h2>网络运营商首选</h2>
+      <p>如果您是电信运营商或服务提供商，且您想为您的客户提供云服务，那么 Ubuntu OpenStack 就是您最可靠也是最受欢迎的基础设施。我们已经帮助世界上大多数电信运营商和服务提供商巨头实现了 OpenStack 云。</p>
     </div>
   </div>
 </section>
@@ -132,13 +132,15 @@
 <section class="p-strip">
   <div id="services-or-support" class="row">
     <div class="col-6">
-        <h2>需要服务或支持？</h2>
-        <p>Canonical 是 Ubuntu 的技术支持公司，其直接参与开发 Ubuntu 和 OpenStack 的工程师会为用户提供现场咨询服务和培训服务。如果要在您的云启动和运行后获得后继支持服务，您可以订阅 Ubuntu Advantage 服务包（包括 Canonical 企业云管理软件 Landscape）。</p><p></p>
-        <p><a href="http://www.ubuntu.com/management/ubuntu-advantage">请访问 www.ubuntu.com 进一步了解 Ubuntu Advantage</a></p>
+      <h2>需要服务或支持？</h2>
+      <p>Canonical 是 Ubuntu 的技术支持公司，其直接参与开发 Ubuntu 和 OpenStack 的工程师会为用户提供现场咨询服务和培训服务。如果要在您的云启动和运行后获得后继支持服务，您可以订阅 Ubuntu Advantage 服务包（包括 Canonical 企业云管理软件 Landscape）。</p>
+      <p></p>
+      <p><a href="http://www.ubuntu.com/management/ubuntu-advantage">请访问 www.ubuntu.com 进一步了解 Ubuntu Advantage</a></p>
     </div>
     <div class="col-6">
       <img src="{{ STATIC_URL }}img/cloud/image-landscape.jpg" alt="Landscape" />
     </div>
   </div>
 </section>
-  {% endblock %}
+
+{% endblock %}
