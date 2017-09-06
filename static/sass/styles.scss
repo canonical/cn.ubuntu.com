@@ -10,12 +10,9 @@ $color-link: $color-brand;
 // Import custom styles
 @import "custom/ubuntu_intro";
 
+// Temp fix for card header
+// https://github.com/vanilla-framework/vanilla-framework/issues/1280
 .p-card__header {
-  border-bottom: 1px solid $color-mid-light;
-  font-size: $sp-small;
-  margin-bottom: $sp-small;
-  padding-bottom: $sp-small;
-
   + * {
     margin-top: 0;
   }
