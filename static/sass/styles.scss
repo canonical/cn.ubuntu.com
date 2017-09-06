@@ -10,6 +10,25 @@ $color-link: $color-brand;
 // Import custom styles
 @import "custom/ubuntu_intro";
 
+// Temp inline image fix
+// https://github.com/vanilla-framework/vanilla-framework/issues/1168
+.p-inline-images {
+
+  &__item {
+
+    * {
+      max-height: $sp-xxx-large;
+      max-width: 7rem;
+      width: 100%;
+
+      @media only screen and (min-width: $breakpoint-medium) {
+        max-height: 5.5rem;
+        max-width: 9rem;
+      }
+    }
+  }
+}
+
 // Temp fix for card header
 // https://github.com/vanilla-framework/vanilla-framework/issues/1280
 .p-card__header {
