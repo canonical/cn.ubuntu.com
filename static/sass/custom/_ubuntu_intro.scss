@@ -1,26 +1,15 @@
-// homepage strap
-
-.row--intro {
-  background: $color-brand;
-}
-@media only screen and (min-width : 769px) {
-  .row--intro {
-    padding-top: inherit;
-  }
-
+@media only screen and (min-width: 769px) {
   .ubuntu-intro {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
     display: flex;
     margin-bottom: 10px;
   }
 }
-@media only screen and (min-width : 984px) {
+
+@media only screen and (min-width: 984px) {
   .ubuntu-intro__list {
     position: relative;
 
-    &:before {
+    &::before {
       background-image: url('../img/homepage/intro/image-intro-dots.svg');
       background-position: right center;
       background-repeat: repeat-x;
@@ -34,12 +23,14 @@
     }
   }
 }
-@media only screen and (max-width : 768px) {
-  .ubuntu-intro__list:before {
+
+@media only screen and (max-width: 768px) {
+  .ubuntu-intro__list::before {
     display: none;
   }
 }
-@media only screen and (min-width : 769px) {
+
+@media only screen and (min-width: 769px) {
   .intro-left,
   .intro-right {
     -webkit-flex-grow: 1;
@@ -51,7 +42,7 @@
 
 .intro-left,
 .intro-right {
-  @media only screen and (min-width : 984px) {
+  @media only screen and (min-width: 984px) {
     background: url('../img/homepage/intro/image-intro-dots.svg') repeat-x right center;
     background-size: 10px;
   }
@@ -68,31 +59,38 @@
 }
 
 .intro-middle ul {
-  text-align: center;
-  padding-bottom: 40px;
   float: left;
+  margin-left: 0;
+  padding-bottom: 40px;
+  padding-left: 0;
+  text-align: center;
   width: 100%;
-  @media only screen and (min-width : 769px) {
+
+  @media only screen and (min-width: 769px) {
     margin: 0;
     padding-bottom: 0;
   }
 }
 
 .intro-middle li {
-  display: inline-block;
   float: left;
+  list-style: none;
   margin-right: 0;
-  text-align: center;
+  margin-top: 0;
   position: relative;
+  text-align: center;
   width: 50%;
-  @media only screen and (max-width : 667px) and (orientation : landscape) {
+
+  @media only screen and (max-width: 667px) and (orientation: landscape) {
     width: 20%;
   }
-  @media only screen and (min-width : 768px) {
+
+  @media only screen and (min-width: 768px) {
     text-indent: -999em;
     width: 121px;
   }
-  @media only screen and (min-width : 984px) {
+
+  @media only screen and (min-width: 984px) {
     width: 164px;
   }
 }
@@ -110,9 +108,10 @@
   text-decoration: none;
   position: relative;
   width: 100%;
-  @media only screen and (min-width : 984px) {
-    &:after,
-    &:before {
+
+  @media only screen and (min-width: 984px) {
+    &::after,
+    &::before {
       display: block;
       background: url('../img/homepage/intro/image-intro-dots.svg') repeat-x right center;
       background-size: 10px;
@@ -121,104 +120,74 @@
       top: 60px;
     }
 
-    &:before {
+    &::before {
+      background-repeat: no-repeat;
+      background-size: 18px;
       height: 30px;
       left: 0;
       width: 60px;
-      background-size: 18px;
-      background-repeat: no-repeat;
     }
 
-    &:after {
+    &::after {
       height: 30px;
       right: 0;
       width: 65px;
     }
   }
-  @media only screen and (min-width : 769px) {
+
+  @media only screen and (min-width: 769px) {
     padding-top: 130px;
   }
 }
 
-.intro-middle li a.intro-cloud {
+.intro-middle li .intro-cloud {
   background-image: url('../img/homepage/intro/icon-intro-cloud.svg');
 
-  &:before {
+  &::before {
     width: 36px;
   }
 
-  &:after {
+  &::after {
     right: -19px;
     width: 45px;
   }
 }
 
-.intro-middle li a.intro-server {
+.intro-middle li .intro-server {
   background-image: url('../img/homepage/intro/icon-intro-server.svg');
 
-  &:before {
+  &::before {
     width: 38px;
   }
 
-  &:after {
+  &::after {
     right: -20px;
     width: 50px;
   }
 }
 
-.intro-middle li a.intro-desktop {
+.intro-middle li .intro-desktop {
   background-image: url('../img/homepage/intro/icon-intro-desktop.svg');
 
-  &:before {
+  &::before {
     width: 38px;
   }
 
-  &:after {
+  &::after {
     right: -22px;
     width: 50px;
   }
 }
 
-.intro-middle li a.intro-phone {
-  background-image: url('../img/homepage/intro/icon-intro-phone.svg');
-
-  &:before {
-    width: 54px;
-  }
-
-  &:after {
-    right: -16px;
-  }
-}
-
-.intro-middle li a.intro-tablet {
-  background-image: url('../img/homepage/intro/icon-intro-tablet.svg');
-
-  &:before {
-    width: 34px;
-  }
-
-  &:after {
-    right: -20px;
-    width: 44px;
-  }
-}
-
-.intro-middle li a.intro-iot {
+.intro-middle li .intro-iot {
   background-image: url('../img/homepage/intro/icon-intro-iot.svg');
 
-  &:before {
+  &::before {
     width: 39px;
   }
 
-  &:after {
+  &::after {
     right: 20px;
     width: 16px;
   }
-}
-
-body.homepage .row--intro .intro-middle li a:hover {
-  color: #fff;
-  display: block;
-  text-indent: 0;
 }
