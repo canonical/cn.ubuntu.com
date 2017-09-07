@@ -1,0 +1,26 @@
+{
+  "name": "china-ubuntu-website",
+  "description": "Django website for cn.ubuntu.com",
+  "main": "index.js",
+  "authors": [
+    "Canonical webteam"
+  ],
+  "license": "LGPL v3",
+  "keywords": [
+    "website",
+    "canonical"
+  ],
+  "homepage": "https://cn.ubuntu.com/",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/components/"
+  ],
+  "dependencies": {
+    "canonical-global-nav": "^0.2.0"
+  }
+}
