@@ -5,12 +5,16 @@
     "test": "sass-lint static/**/*.scss --verbose --no-exit",
     "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite _site/ build/ .jekyll-metadata",
     "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
-    "build": "node-sass --include-path node_modules static/sass --output static/css"
+        "build": "node-sass --include-path node_modules --include-path static/sass static/sass --output static/css && postcss --use autoprefixer -b 'last 2 versions' < static/css/styles.css | postcss --use cssnano > static/css/styles.min.css"
   },
   "author": "Canonical webteam",
   "devDependencies": {
-    "sass-lint": "^1.10.2",
+    "autoprefixer": "^6.3.1",
+    "cssnano": "3.10.0",
     "node-sass": "^4.5.3",
+    "postcss": "^6.0.8",
+    "postcss-cli": "^4.1.0",
+    "sass-lint": "^1.10.2",
     "vanilla-framework": "1.5.1"
   }
 }
