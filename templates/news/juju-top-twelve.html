@@ -3,83 +3,93 @@
 {% block title %}关于 Juju 的十二个热点问题 | Ubuntu新闻{% endblock %}
 
 {% block content %}
-<div class="row">
+
+<section class="p-strip">
+  <div class="row">
     <div class="col-8">
-        <h1>关于 Juju 的十二个热点问题</h1>
-        <ol class="p-list`">
-            <li>
-                <h2>1. 什么是 Juju?</h2>
-                <p>Juju 是 Canonical 公司提供的服务编排工具。它是Ubuntu云套件的一部分，与Ubuntu 服务器、OpenStack、用于裸机配置的MAAS 、以及 用于系统管理和监控的Landscape 一起组成 Ubuntu 云套件。</p>
-            </li>
-            <li>
-                <h2>2. 什么是服务编排？</h2>
-                <p>这个名词有几种不同的定义，但我们认为服务编排是要具备这些能力，快速、轻松地部署和管理服务（无论它是一个类似 OpenStack的云计算基础设施，或如Hadoop的一个工作负载） ，建立它们之间的关系，并快速适应需求变化，一切都无需中断你的云环境。关于服务的详细内容，包括配置、依赖关系等被封装在名为“Charm”的服务定义文件。所有你必须做的是调用一个可用的Charm（或者编写一个自己的） ，然后相应的服务将在几秒中之内被部署。</p>
-            </li>
-            <li>
-                <h2>3. Juju 是和Puppet或者 Chef 类似的工具吗？</h2>
-                <p>在某些方面是。Puppet和Chef是伟大的工具，用于配置服务器和让它们在某个网络内保持一致。Juju 工作在它们之上一层，专注于应用程序提供的服务，无需关注服务运行在哪台机器上。Juju的主要优点之一是其动态配置能力，它允许你在服务运行时重新配置服务，添加、删除或更改服务之间的关系，轻松地缩小或扩大规模等。</p>
-            </li>
-            <li>
-                <h2>4. 我怎样才能和 Puppet 或 Chef 一起使用Juju？</h2>
-                <p>如果你正在使用某种配置管理工具来让你的机器启动和运行，Juju 可以作为其补充用于服务编排层来执行上述所有任务。整合是相当简单的。因为Juju Charm可以用任何语言编写，所以你可以将现有的Puppet或 Chef 代码包含到一个 Juju Charm中。无需编写新的代码。</p>
-            </li>
-            <li>
-                <h2>5. 我可以在非Ubuntu环境中使用Juju 吗？</h2>
-                <p>目前还不支持，但我们正在努力扩大 Juju 能够使用的操作系统。然而，Juju 客户端已经可以在Linux 或者OSX上运行，Windows客户端的支持也即将到来。</p>
-            </li>
-            <li>
-                <h2>6. 我可以使用 Juju在云之间迁移服务吗？</h2>
-                <p>你可以使用 Juju 复制应用程序架构并在为数众多的云和部署平台上重新创建它们。目前你还不能在不同云之间扩展服务，但是这是我们希望在即将发布的版本中添加的新特性。</p>
-            </li>
-            <li>
-                <h2>7. Charm 是使用什么语言编写的？</h2>
-                <p>通常使用bash脚本、 Perl 、PHP或Python等语言编写Charm，但实际上可以使用运行在 Ubuntu 上的任何语言 。</p>
-            </li>
-            <li>
-                <h2>8. 目前都有哪些 Charm 可用？</h2>
-                <p>数百个常用的开源应用程序都有可用的 Charm，例如MySQL、MongoDB等。每天还有新的 Charm 加入我们的 Charm 商店。查看最新的Charm列表： <a href="http://jujucharms.com">jujucharms.com</a> 。</p>
-            </li>
-            <li>
-                <h2>9. 我可以写我自己的Charm吗？如何来写？</h2>
-                <p>当然可以。使用你选择的语言，以及你所需要的应用程序，无论是现成的还是定制的。如果你愿意，你也可以与世界分享你的Charm，并获得更多加分！一如既往，有一大堆的工具来帮助你开始&#65306; <a href="http://juju.ubuntu.com">juju.ubuntu.com/resources</a> 。</p>
-
-                <p>如果你遇到问题，我们庞大的开发者社区仅仅是一个点击即可。</p>
-            </li>
-            <li>
-                <h2>10. 好，那么总结一下，为什么我要使用Juju?</h2>
-                <ul>
-                    <li>Juju 快速部署一个 OpenStack 云的最快方式 - 部署时间从以天计缩短至以分钟计</li>
-                    <li>可以和你现有的配置管理工具配合使用</li>
-                    <li>扩展或者收缩大数据集群非常容易</li>
-                    <li>（和其他工具相反）无需应用堆栈有关的先验知识</li>
-                    <li>GUI和命令行工具 - 能够让你体验和可视化你在做什么</li>
-                    <li>支持所有主要的公有云</li>
-                    <li>为你在本地机器上提供一个快速和简单的环境来测试部署</li>
-                    <li>Charm商店：下载经优化的 Charm，每个Charm 都是由该应用服务方面专家书写并不断加强</li>
-                    <li>环境的可移植性： 部署相同的 Charm 到 EC2、OpenStack、你的数据中心或笔记本</li>
-                </ul>
-            </li>
-            <li>
-                <h2>11. 我需要企业级支持，可以吗？</h2>
-                <p>完全可以。Canonical, 作为背后支持 Ubuntu 的公司，对整个 Ubuntu 云套件提供专业的商业支持。更妙的是，Landscape，我们的企业系统管理工具，已经包含在我们的所有支持方案中。查看Ubuntu Advantage，Canonical的支持方案，并选择你需要的服务水平&#65306; <a href="http://ubuntu.com/cloud/management">ubuntu.com/cloud/management</a>。</p>
-            </li>
-            <li>
-                <h2>12. 我在哪里可以了解更多吗？</h2>
-                <p>Ubuntu网站云网页给你介绍我们的云套件，以及Juju如何适用于其中&#65306; <a href="http://www.ubuntu.com/cloud">ubuntu.com/cloud</a></p>
-                <p>Juju社区页面涵盖 charms信息、入门等等&#65306; <a href="juju.ubuntu.com">juju.ubuntu.com</a></p>
-                <p>准备好和我们联系了吗？现在与Canonical取得联系&#65306; <a href="http://www.ubuntu.com/management/contact-us">ubuntu.com/management/contact-us</a>。</p>
-
-
-                <p>询问我们的其他出版物</p>
-                <ul>
-                    <li>OpenStack 入门书</li>
-                    <li>MAAS 热门问题</li>
-                    <li>Ubuntu云</li>
-                    <li>Landscape for Cloud</li>
-                </ul>
-            </li>
-        </ol>
-
+      <h1>关于 Juju 的十二个热点问题</h1>
     </div>
-</div>
+  </div>
+  <div class="row">
+    <div class="col-10">
+      <ol class="p-list-step">
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title">
+            <span class="p-list-step__bullet">1</span>
+            什么是 Juju?</h2>
+          <p>Juju 是 Canonical 公司提供的服务编排工具。它是Ubuntu云套件的一部分，与Ubuntu 服务器、OpenStack、用于裸机配置的MAAS 、以及 用于系统管理和监控的Landscape 一起组成 Ubuntu 云套件。</p>
+        </li>
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title"><span class="p-list-step__bullet">2</span>什么是服务编排？</h2>
+          <p>这个名词有几种不同的定义，但我们认为服务编排是要具备这些能力，快速、轻松地部署和管理服务（无论它是一个类似 OpenStack的云计算基础设施，或如Hadoop的一个工作负载） ，建立它们之间的关系，并快速适应需求变化，一切都无需中断你的云环境。关于服务的详细内容，包括配置、依赖关系等被封装在名为“Charm”的服务定义文件。所有你必须做的是调用一个可用的Charm（或者编写一个自己的） ，然后相应的服务将在几秒中之内被部署。</p>
+        </li>
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title"><span class="p-list-step__bullet">3</span>Juju 是和Puppet或者 Chef 类似的工具吗？</h2>
+          <p>在某些方面是。Puppet和Chef是伟大的工具，用于配置服务器和让它们在某个网络内保持一致。Juju 工作在它们之上一层，专注于应用程序提供的服务，无需关注服务运行在哪台机器上。Juju的主要优点之一是其动态配置能力，它允许你在服务运行时重新配置服务，添加、删除或更改服务之间的关系，轻松地缩小或扩大规模等。</p>
+        </li>
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title"><span class="p-list-step__bullet">4</span>我怎样才能和 Puppet 或 Chef 一起使用Juju？</h2>
+          <p>如果你正在使用某种配置管理工具来让你的机器启动和运行，Juju 可以作为其补充用于服务编排层来执行上述所有任务。整合是相当简单的。因为Juju Charm可以用任何语言编写，所以你可以将现有的Puppet或 Chef 代码包含到一个 Juju Charm中。无需编写新的代码。</p>
+        </li>
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title"><span class="p-list-step__bullet">5</span>我可以在非Ubuntu环境中使用Juju 吗？</h2>
+          <p>目前还不支持，但我们正在努力扩大 Juju 能够使用的操作系统。然而，Juju 客户端已经可以在Linux 或者OSX上运行，Windows客户端的支持也即将到来。</p>
+        </li>
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title"><span class="p-list-step__bullet">6</span>我可以使用 Juju在云之间迁移服务吗？</h2>
+          <p>你可以使用 Juju 复制应用程序架构并在为数众多的云和部署平台上重新创建它们。目前你还不能在不同云之间扩展服务，但是这是我们希望在即将发布的版本中添加的新特性。</p>
+        </li>
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title"><span class="p-list-step__bullet">7</span>Charm 是使用什么语言编写的？</h2>
+          <p>通常使用bash脚本、 Perl 、PHP或Python等语言编写Charm，但实际上可以使用运行在 Ubuntu 上的任何语言 。</p>
+        </li>
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title"><span class="p-list-step__bullet">8</span>目前都有哪些 Charm 可用？</h2>
+          <p>数百个常用的开源应用程序都有可用的 Charm，例如MySQL、MongoDB等。每天还有新的 Charm 加入我们的 Charm 商店。查看最新的Charm列表： <a href="http://jujucharms.com">jujucharms.com</a> 。</p>
+        </li>
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title"><span class="p-list-step__bullet">9</span>我可以写我自己的Charm吗？如何来写？</h2>
+          <p>当然可以。使用你选择的语言，以及你所需要的应用程序，无论是现成的还是定制的。如果你愿意，你也可以与世界分享你的Charm，并获得更多加分！一如既往，有一大堆的工具来帮助你开始&#65306; <a href="http://juju.ubuntu.com">juju.ubuntu.com/resources</a> 。</p>
+
+          <p>如果你遇到问题，我们庞大的开发者社区仅仅是一个点击即可。</p>
+
+        </li>
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title"><span class="p-list-step__bullet">10</span>好，那么总结一下，为什么我要使用Juju?</h2>
+          <ul>
+            <li>Juju 快速部署一个 OpenStack 云的最快方式 - 部署时间从以天计缩短至以分钟计</li>
+            <li>可以和你现有的配置管理工具配合使用</li>
+            <li>扩展或者收缩大数据集群非常容易</li>
+            <li>（和其他工具相反）无需应用堆栈有关的先验知识</li>
+            <li>GUI和命令行工具 - 能够让你体验和可视化你在做什么</li>
+            <li>支持所有主要的公有云</li>
+            <li>为你在本地机器上提供一个快速和简单的环境来测试部署</li>
+            <li>Charm商店：下载经优化的 Charm，每个Charm 都是由该应用服务方面专家书写并不断加强</li>
+            <li>环境的可移植性： 部署相同的 Charm 到 EC2、OpenStack、你的数据中心或笔记本</li>
+          </ul>
+        </li>
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title"><span class="p-list-step__bullet">11</span>我需要企业级支持，可以吗？</h2>
+          <p>完全可以。Canonical, 作为背后支持 Ubuntu 的公司，对整个 Ubuntu 云套件提供专业的商业支持。更妙的是，Landscape，我们的企业系统管理工具，已经包含在我们的所有支持方案中。查看Ubuntu Advantage，Canonical的支持方案，并选择你需要的服务水平&#65306; <a href="http://ubuntu.com/cloud/management">ubuntu.com/cloud/management</a>。</p>
+        </li>
+        <li class="p-list-step__item">
+          <h2 class="p-list-step__title"><span class="p-list-step__bullet">12</span>我在哪里可以了解更多吗？</h2>
+          <p>Ubuntu网站云网页给你介绍我们的云套件，以及Juju如何适用于其中&#65306; <a href="http://www.ubuntu.com/cloud">ubuntu.com/cloud</a></p>
+          <p>Juju社区页面涵盖 charms信息、入门等等&#65306; <a href="juju.ubuntu.com">juju.ubuntu.com</a></p>
+          <p>准备好和我们联系了吗？现在与Canonical取得联系&#65306; <a href="http://www.ubuntu.com/management/contact-us">ubuntu.com/management/contact-us</a>。</p>
+
+          <p>询问我们的其他出版物</p>
+
+          <ul>
+            <li>OpenStack 入门书</li>
+            <li>MAAS 热门问题</li>
+            <li>Ubuntu云</li>
+            <li>Landscape for Cloud</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 {% endblock %}
