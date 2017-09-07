@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}img/apple-touch-icon-precomposed.png">
   <link type="text/plain" rel="author" href="{% versioned_static 'files/humans.txt' %}" />
   <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/styles.css' %}" />
-  
+
   <!-- global nav -->
   <script async src="{{ STATIC_URL }}components/canonical-global-nav/build/js/global.js"></script>
 
@@ -40,6 +40,7 @@
       {% endblock %}
       {% block content_container %}
           {% block outer_content %}
+            {% block content %}{% endblock %}
           {% endblock outer_content %}
       {% endblock content_container %}
     </main>
