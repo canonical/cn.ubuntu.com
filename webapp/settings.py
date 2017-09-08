@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_markdown',
     'markdown_deux',
-    'website',
     'reversion',
     'reversion_compare',
     'canonicalwebteam',
@@ -45,7 +44,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
 ]
 
-ROOT_URLCONF = 'website.urls'
+ROOT_URLCONF = 'webapp.urls'
 
 STATICFILES_FINDERS = [
     'django_static_root_finder.finders.StaticRootFinder',
@@ -81,7 +80,7 @@ MARKDOWN_DEUX_STYLES = {
         "safe_mode": False,
     },
 }
-WSGI_APPLICATION = 'website.wsgi.application'
+WSGI_APPLICATION = 'webapp.wsgi.application'
 
 # Django openID auth
 # ===
