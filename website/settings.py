@@ -20,10 +20,7 @@ APPEND_SLASH = True
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django_openid_auth',
-    'bootstrap_admin',  # always before django.contrib.admin
     'whitenoise.runserver_nostatic',
-    'django.contrib.admin',
-    'django.contrib.admindocs',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -85,24 +82,6 @@ MARKDOWN_DEUX_STYLES = {
     },
 }
 WSGI_APPLICATION = 'website.wsgi.application'
-
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'dev',
-        'HOST': 'db',
-        'PORT': '5432',
-    }
-}
-
-# Update database settings from DATABASE_URL environment variable
-import dj_database_url
-DATABASES['default'].update(dj_database_url.config())
 
 # Django openID auth
 # ===
