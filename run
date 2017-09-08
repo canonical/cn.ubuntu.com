@@ -10,7 +10,7 @@
 # Update it to the latest version with:
 #
 # $ sudo npm install -g yo generator-canonical-webteam
-# $ yo canonical-webteam:run-django-db
+# $ yo canonical-webteam:run-django
 
 set -euo pipefail
 
@@ -83,8 +83,6 @@ yarn_cache_volume="${CANONICAL_WEBTEAM_YARN_CACHE_VOLUME:-canonical-webteam-node
 [ -f .env ] && env_file="--env-file .env" || env_file=""  # Do we have an env file?
 django_lib_volume="${project}-django-lib"
 pip_cache_volume="${CANONICAL_WEBTEAM_PIP_CACHE_VOLUME:-canonical-webteam-pip-cache}"
-db_container="${project}-db"
-db_volume="${project}-db"
 network_name="${project}-net"
 run_serve_docker_opts="${CANONICAL_WEBTEAM_RUN_SERVE_DOCKER_OPTS:-}"
 
@@ -186,28 +184,7 @@ node_install () {
 django_run () {
     container_name="${1}"; shift
     extra_options="${1:-}"; shift
-
     
-    # Create isolated network
-    if ! docker network inspect ${network_name} &> /dev/null; then
-        docker network create ${network_name}
-    fi
-    extra_options="${extra_options} --network ${network_name}"
-
-    # Start the database
-    if [[ "${extra_options}" != *"--detach"* ]]; then trap "kill_container ${project}-db" EXIT; fi
-    if ! docker inspect -f {{.State.Running}} ${db_container} &>/dev/null; then
-        docker run \
-            --name ${db_container}       `# Name the container`  \
-            --rm                         `# Remove the container once it's finished`  \
-            --volume "${db_volume}":/var/lib/postgresql/data  `# Store dependencies in a docker volume`  \
-            --network "${network_name}"  `# Use an isolated network`  \
-            --network-alias db           `# Call this container "db" on the network so it can be found`  \
-            --detach                     `# Run in the background` \
-            postgres                     `# Use the image for node version 7`
-    fi
-    
-
     # Run Django using the docker image
     run_as_user ${container_name} \
         --volume ${django_lib_volume}:/usr/local/lib/          `# Store dependencies in a docker volume`  \
