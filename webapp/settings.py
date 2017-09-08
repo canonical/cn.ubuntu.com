@@ -116,15 +116,3 @@ OPENID_LAUNCHPAD_TEAMS_REQUIRED = [
 OPENID_USE_AS_ADMIN_LOGIN = True
 OPENID_LAUNCHPAD_TEAMS_MAPPING_AUTO = True
 
-# Internationalization
-# https://docs.djangoproject.com/en/1.8/topics/i18n/
-
-from django.utils.translation import ugettext_lazy
-LANGUAGES = (('zh-hans', ugettext_lazy('Chinese')),)
-LANGUAGE_CODE = 'zh-hans'
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale/')]
-
-TIME_ZONE = 'Asia/Shanghai'
-USE_I18N = True
-USE_L10N = True
-USE_TZ = True
