@@ -1,45 +1,51 @@
-{% extends "contact/base_contact.html" %}
-{% load markdown_deux_tags %}
+{% extends "templates/base.html" %}
 
 {% if title %}{% block title %}{{ title }}{% endblock %}{% endif %}
 
 {% if meta_description %}{% block meta_description %}{{ meta_description }}{% endblock %}{% endif %}
 
-{% if meta_keywords %}{% block meta_keywords %}{{ meta_keywords }}{% endblock %}{% endif %}
-
 {% block second_level_nav_items %}
-    {% include "templates/_nav_breadcrumb.html" with section_title="Contact" page_title="Contact"  %}
+  {% include "templates/_nav_breadcrumb.html" with section_title="Contact" page_title="Contact"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
-{# ================ Ubuntu Desktop ================ #}
 
-<div class="row row-hero no-border no-padding-bottom">
-    <div class="six-col no-margin-bottom">
-        {% if hero %}
-            {% include "templates/_cms-block.html" with block_content=hero %}
-        {% endif %}
-        {% if marketing %}
-            {% include "templates/_cms-block.html" with block_content=marketing extra_classes="six-col" %}
-        {% endif %}
-        {% if developers %}
-            {% include "templates/_cms-block.html" with block_content=developers extra_classes="four-col no-margin-bottom" %}
-        {% endif %}
+<section class="p-strip">
+  <div class="row">
+    <div class="col-6">
+      <h1>Ubuntu联络方式</h1>
+      <p>媒体新闻， 市场合作相关事宜， 请通过以下邮件联系我们： <br />
+        <a href="mailto:chinamarketing@canonical.com">chinamarketing@canonical.com</a></p>
+      <p>开发者人群可以通过以下渠道互动学习：</p>
+      <ul class="p-list--divided">
+        <li class="p-list__item"><a href="http://forum.ubuntu.org.cn/" class="p-link--external">本地社区论坛</a></li>
+        <li class="p-list__item"><a href="http://askubuntu.com/" class="p-link--external">AskUbuntu.com</a></li>
+        <li class="p-list__item">QQ群(391093791)</li>
+      </ul>
     </div>
-    <div class="prepend-two four-col last-col no-margin-bottom">
-        <img src="{{ STATIC_URL }}img/contact/qr.png" alt="" width="223" />
+    <div class="prefix-1 col-6 suffix-1">
+      <img src="http://cn.ubuntu.com/static/img/contact/qr.png" alt="">
     </div>
-</div>
-<div class="row equal-height no-border">
-    {% if beijing %}
-    <div class="six-col box">
-        {% include "templates/_cms-block.html" with block_content=beijing %}
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-6 p-card">
+      <h3>北京办公室</h3>
+      <p>电话：+86 (10) 5737 9099</p>
+      <p>地址：北京市朝阳区建国门外大街1号国贸写字楼1座11层1118-19室</p>
+      <p>邮编: 100004</p>
     </div>
-    {% endif %}
-    {% if shanghai %}
-    <div class="six-col last-col box">
-        {% include "templates/_cms-block.html" with block_content=shanghai %}
+      <div class="col-6 p-card">
+      <h3>上海办公室</h3>
+      <p>电话： +86 (21) 2426 1881</p>
+      <p>地址：上海市漕溪北路331号12楼1246室</p>
+      <p>邮编: 200030</p>
     </div>
-    {% endif %}
-</div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}

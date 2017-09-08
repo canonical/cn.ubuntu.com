@@ -2,90 +2,95 @@
 {% block title %}和Ubuntu Core的一场黑马 - 将物联网的进化革命进行到底{% endblock %}
 {% block content %}
 
-<div class="row row-hero no-border">
-    <div class="eight-col">
-        <h1>和Ubuntu Core的一场黑马 - 将物联网的进化革命进行到底</h1>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-banner.jpg" alt="Ubuntu Jam banner" />
-        </div>
-        <p>为了庆祝Ubuntu Core 16正式发布，我们在IoT领域高手云集的深圳，专为欲大展拳脚的各路开发高手，创客团队举办了主题为“Jamming with Ubuntu Core”的黑客松活动。本次活动也是第一次以Ubuntu Core为开发主题的开发活动。活动吸引了来自不同行业的软硬件开发者踊跃参与，他们也通过Ubuntu Core展示了他们独特且创意的作品。</p>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-1-skyline.jpg" alt="Shenzhen skyline" />
-        </div>
-        <p>目前，Ubuntu Core 在柜顶交换机、<a href="https://www.ubuntu.com/internet-of-things/gateways?utm_campaign=Device_FY17_IOT_China_ShenzhenUC16launchHackathon&utm_medium=eventpost&utm_source=huodongxing" class="external">工业网关</a>、家庭网关、无线接入网络、<a href="https://www.ubuntu.com/internet-of-things/digital-signage?utm_campaign=Device_FY17_IOT_China_ShenzhenUC16launchHackathon&utm_medium=eventpost&utm_source=huodongxing" class="external">数字标牌</a>、<a href="https://www.ubuntu.com/internet-of-things/robotics?utm_campaign=Device_FY17_IOT_China_ShenzhenUC16launchHackathon&utm_medium=eventpost&utm_source=huodongxing" class="external">机器人和无人机</a>等领域得到了广泛应用。部分活动开发者也来自于上述行业，在36小时的hack时间内，创意和作品将是他们对物联网的完美诠释。</p>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-2-illustration.png" alt="Ubuntu Core illustration" />
-        </div>
-        <p>与以往Hackathon活动相比，这次Ubuntu Hackathon多了一些不同，因为不同从而产生不同创意之作。本次活动迎来了远从台北而来的QNAP开发者，致力于在Ubuntu Core上打造IoT与NAS存储器的应用解决方案，同时也有上一届Hackathon的参赛者，更重要的是赢了很多新的开发者参与。他们的精彩项目也为本次黑客松活动添加了特别的气氛。</p>
+<div class="p-strip">
+  <div class="row">
+    <div class="col-8">
+      <h1>和Ubuntu Core的一场黑马 - 将物联网的进化革命进行到底</h1>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-banner.jpg" alt="Ubuntu Jam banner" />
+      </p>
+      <p>为了庆祝Ubuntu Core 16正式发布，我们在IoT领域高手云集的深圳，专为欲大展拳脚的各路开发高手，创客团队举办了主题为“Jamming with Ubuntu Core”的黑客松活动。本次活动也是第一次以Ubuntu Core为开发主题的开发活动。活动吸引了来自不同行业的软硬件开发者踊跃参与，他们也通过Ubuntu Core展示了他们独特且创意的作品。</p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-1-skyline.jpg" alt="Shenzhen skyline" />
+      </p>
+      <p>目前，Ubuntu Core 在柜顶交换机、<a href="https://www.ubuntu.com/internet-of-things/gateways?utm_campaign=Device_FY17_IOT_China_ShenzhenUC16launchHackathon&utm_medium=eventpost&utm_source=huodongxing" class="p-link--external">工业网关</a>、家庭网关、无线接入网络、<a href="https://www.ubuntu.com/internet-of-things/digital-signage?utm_campaign=Device_FY17_IOT_China_ShenzhenUC16launchHackathon&utm_medium=eventpost&utm_source=huodongxing"
+          class="p-link--external">数字标牌</a>、<a href="https://www.ubuntu.com/internet-of-things/robotics?utm_campaign=Device_FY17_IOT_China_ShenzhenUC16launchHackathon&utm_medium=eventpost&utm_source=huodongxing" class="p-link--external">机器人和无人机</a>等领域得到了广泛应用。部分活动开发者也来自于上述行业，在36小时的hack时间内，创意和作品将是他们对物联网的完美诠释。</p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-2-illustration.png" alt="Ubuntu Core illustration" />
+      </p>
+      <p>与以往Hackathon活动相比，这次Ubuntu Hackathon多了一些不同，因为不同从而产生不同创意之作。本次活动迎来了远从台北而来的QNAP开发者，致力于在Ubuntu Core上打造IoT与NAS存储器的应用解决方案，同时也有上一届Hackathon的参赛者，更重要的是赢了很多新的开发者参与。他们的精彩项目也为本次黑客松活动添加了特别的气氛。</p>
 
-        <h2>作品及项目：短短36小时，开发者们为Ubuntu Core带来了8个佳作。他们分别是：</h2>
-        <h3>1、天台聚落 （Jarvis Chung，Lucas Lu  ）</h3>
-        <h4>项目介绍：（snap：water-iot-service）</h4>
-        <p>天台聚落是指在IoT 物联⽹环境下监控⽔质，在不同环境下实现远程监控对水质的监控，解决了因为环境问题而不能时刻掌握水质的困境。该项目利用Ubuntu Core稳定且时刻保持最新的优势将传感器收集的信息传输到NAS再通过web服务显示在前端，实现了数据的采集和分析。</p>
-        <p>此项目的愿景：为水资源的监测和管理提供更加便捷、直观、科学的思路，可用水库、蓄水池、水塔等无人照看且检修、监测困难水资源管理领域。</p>
-        <h4>团队介绍：</h4>
-        <p><a href="https://www.qnap.com/zh-cn" class="external">威联通科技股份有限公司</a> (QNAP Systems, Inc.) ，公司专注于提供专业级的网络附加存储（NAS）和网络视频录像机（NVR）解决方案, 威联通的集成技术和设计带来优质的产品，其文件共享，虚拟化应用程序，存储管理和商业环境检测有效地提高企业运行效率。</p>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-4.jpg" alt="Hackathon photo" />
-        </div>
-        <h3>2、Cooltools（郝建林）</h3>
-        <h4>项目介绍：（snap：sensor-gw）</h4>
-        <p>用蓝牙连接TI Sensor Tag传感器套件，收集光照传感器数据，并通过本地WebServer实时显示在网页上。结合照明控制系统可以实现用Sensor Tag的物理按键开关灯，以及在环境亮度过小时自动开灯，整个系统都是通过Ubuntu Core连接。在现实中，本项目可用于自动化环境光照控制，无需派人控制，也可避免因固定设置产生的能源浪费。</p>
-        <h4>团队介绍：</h4>
-        <p>参赛团队来自<a href="mailto:cooltools@qq.com" class="external">深圳市酷图软件开发有限公司</a>，公司专注于物联网应用开发，目前主要业务是为硬件产品开发APP。正在实践将物联网技术应用于实际生产生活，欢迎各界朋友与我们交流合作。</p>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-5.jpg" alt="Hackathon photo" />
-        </div>
-        <h3>3、Crazyou （张研）</h3>
-        <h4>项目介绍：（snap：crazy-app）</h4>
-        <p>Crazyou来着深圳，是一家致力于打造智能机器人及开发板的初创团队，本次活动展示的项目则是可远程获取机器人运行状态，可远程开发调试，远程控制机器人或获取机器人摄像头捕捉的图像内容。</p>
-        <h4>团队介绍：</h4>
-        <p><a href="http://www.crazyou.com" class="external">趣之科技</a>通过互联网构建实时远控能力，为Robotic类物联产品提供实时远控云应用服务与开放式核心硬件模块，致力用远程技术消除感知的空间距离。</p>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-6.jpg" alt="Hackathon photo" />
-        </div>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-7.jpg" alt="Hackathon photo" />
-        </div>
-        <h3>4、Simcaffe  （老梁）</h3>
-        <h4>项目介绍：（snap：simcaffe）</h4>
-        <p>simcaffe采用了高通DragonBoard 410c硬件计算能力，整合Ubuntu Cor以及Caffe深度识别平台，用斯坦福的开源深度学习算法， 用Python调用Caffe得到的识别结果实现图片分析和识别。未来可用在视频监控领域。Github:github.com/curiousguy98</p>
-        <h4>关于开发者：</h4>
-        <p>ABI Hackerspace管理员，目前为多家创业公司合伙人。从事研发工作近20年，在各类型公司实现过量产产品，辅助创业公司十多家。多次获得各类创意比赛大奖。小米硬件黑客马拉松第一名， Global Urban Datafest全球第三名， Moser穿戴式设备大赛一等奖。</p>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-8.jpg" alt="Hackathon photo" />
-        </div>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-9.jpg" alt="Hackathon photo" />
-        </div>
-        <h3>5、PCBA（臧鹏、Batur）</h3>
-        <h4>项目介绍：（snap：vtop）</h4>
-        <p>vtop是一款系统使用snap应用，基于node.js编写，可进行系统任务、资源、性能监控，并且以图形化的方式展示，界面简洁直观。PCBA团队另外一个项目则是movie word，可对字幕文件进行处理，去除数字、标点、去重，从而从电影字幕学习英语单词。</p>
-        <h4>关于开发者：</h4>
-        <p>臧鹏，热爱科技、电子产品，热爱开源，热爱ubuntu等一些有趣的事；目前致力于嵌入式软件；期望自由，做一些可以改变自己生活、改变自己世界的事，然后影响更多人。</p>
-        <p>Batur， 一个梦想成为大神的菜鸟。喜欢新奇的技术，最近正在学函数式编程。</p>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-10.jpg" alt="Hackathon photo" />
-        </div>
-        <h3>6、我的衣柜（黎健成）</h3>
-        <h4>项目介绍：</h4>
-        <p>使用树莓派上的Ubuntu Core进行衣服图片的自动分类，并存储起来，方便以后进行浏览和搭配。图片暂时使用上传的方式，之后有摄像头可通过摄像头获取。</p>
-        <h4>关于开发者：</h4>
-        <p>黎健成，在读研究生，目前从事计算机视觉与深度学习的研究。除了对算法与数据结构等感兴趣外，对嵌入式、IoT等方面的开发也有所关注。喜欢参加各种各样的比赛，与各路大牛交流。<a href="http://lijiancheng0614.github.io/" class="external">个人博客</a></p>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-11.jpg" alt="Hackathon photo" />
-        </div>
-        <h3>7、Cellboot（沈建丰）</h3>
-        <h4>项目介绍：</h4>
-        <p>在Ubuntu Core进行搭建网站管理创库实时信息，可现实库存信息与前端人员实时保持信息同步。将多台Ubuntu Core设备建立连接，可计算共享，每台设备都是计算集群的一部分。</p>
-        <h4>关于开发者：</h4>
-        <p>沈建丰是一名Ubuntu的用户，同时也是传媒公司的负责人，运营“华强北那些事儿”微信平台，主要擅长web应用开发。<a href="http://www.editrobot.com" class="external">官网</a></p>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-12.jpg" alt="Hackathon photo" />
-        </div>
-        <p>在开发者们的精彩demo中，本次Ubuntu Core 16深圳黑客松活动圆满落下了帷幕，在2天的时间里面开发者们用自己的code表达、诠释了心中的IoT是什么以及自己会如何去做。没有再见，只有再一次相见，期待与你相遇在下一站活动中。</p>
-        <div class="twelve-col">
-            <img src="{{ STATIC_URL }}img/news/jam-13.jpg" alt="Hackathon photo" />
-        </div>
+      <h2>作品及项目：短短36小时，开发者们为Ubuntu Core带来了8个佳作。他们分别是：</h2>
+      <h3>1、天台聚落 （Jarvis Chung，Lucas Lu  ）</h3>
+      <h4>项目介绍：（snap：water-iot-service）</h4>
+      <p>天台聚落是指在IoT 物联⽹环境下监控⽔质，在不同环境下实现远程监控对水质的监控，解决了因为环境问题而不能时刻掌握水质的困境。该项目利用Ubuntu Core稳定且时刻保持最新的优势将传感器收集的信息传输到NAS再通过web服务显示在前端，实现了数据的采集和分析。</p>
+      <p>此项目的愿景：为水资源的监测和管理提供更加便捷、直观、科学的思路，可用水库、蓄水池、水塔等无人照看且检修、监测困难水资源管理领域。</p>
+      <h4>团队介绍：</h4>
+      <p><a href="https://www.qnap.com/zh-cn" class="p-link--external">威联通科技股份有限公司</a> (QNAP Systems, Inc.) ，公司专注于提供专业级的网络附加存储（NAS）和网络视频录像机（NVR）解决方案, 威联通的集成技术和设计带来优质的产品，其文件共享，虚拟化应用程序，存储管理和商业环境检测有效地提高企业运行效率。</p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-4.jpg" alt="Hackathon photo" />
+      </p>
+      <h3>2、Cooltools（郝建林）</h3>
+      <h4>项目介绍：（snap：sensor-gw）</h4>
+      <p>用蓝牙连接TI Sensor Tag传感器套件，收集光照传感器数据，并通过本地WebServer实时显示在网页上。结合照明控制系统可以实现用Sensor Tag的物理按键开关灯，以及在环境亮度过小时自动开灯，整个系统都是通过Ubuntu Core连接。在现实中，本项目可用于自动化环境光照控制，无需派人控制，也可避免因固定设置产生的能源浪费。</p>
+      <h4>团队介绍：</h4>
+      <p>参赛团队来自<a href="mailto:cooltools@qq.com" class="p-link--external">深圳市酷图软件开发有限公司</a>，公司专注于物联网应用开发，目前主要业务是为硬件产品开发APP。正在实践将物联网技术应用于实际生产生活，欢迎各界朋友与我们交流合作。</p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-5.jpg" alt="Hackathon photo" />
+      </p>
+      <h3>3、Crazyou （张研）</h3>
+      <h4>项目介绍：（snap：crazy-app）</h4>
+      <p>Crazyou来着深圳，是一家致力于打造智能机器人及开发板的初创团队，本次活动展示的项目则是可远程获取机器人运行状态，可远程开发调试，远程控制机器人或获取机器人摄像头捕捉的图像内容。</p>
+      <h4>团队介绍：</h4>
+      <p><a href="http://www.crazyou.com" class="p-link--external">趣之科技</a>通过互联网构建实时远控能力，为Robotic类物联产品提供实时远控云应用服务与开放式核心硬件模块，致力用远程技术消除感知的空间距离。</p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-6.jpg" alt="Hackathon photo" />
+      </p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-7.jpg" alt="Hackathon photo" />
+      </p>
+      <h3>4、Simcaffe  （老梁）</h3>
+      <h4>项目介绍：（snap：simcaffe）</h4>
+      <p>simcaffe采用了高通DragonBoard 410c硬件计算能力，整合Ubuntu Cor以及Caffe深度识别平台，用斯坦福的开源深度学习算法， 用Python调用Caffe得到的识别结果实现图片分析和识别。未来可用在视频监控领域。Github:github.com/curiousguy98</p>
+      <h4>关于开发者：</h4>
+      <p>ABI Hackerspace管理员，目前为多家创业公司合伙人。从事研发工作近20年，在各类型公司实现过量产产品，辅助创业公司十多家。多次获得各类创意比赛大奖。小米硬件黑客马拉松第一名， Global Urban Datafest全球第三名， Moser穿戴式设备大赛一等奖。</p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-8.jpg" alt="Hackathon photo" />
+      </p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-9.jpg" alt="Hackathon photo" />
+      </p>
+      <h3>5、PCBA（臧鹏、Batur）</h3>
+      <h4>项目介绍：（snap：vtop）</h4>
+      <p>vtop是一款系统使用snap应用，基于node.js编写，可进行系统任务、资源、性能监控，并且以图形化的方式展示，界面简洁直观。PCBA团队另外一个项目则是movie word，可对字幕文件进行处理，去除数字、标点、去重，从而从电影字幕学习英语单词。</p>
+      <h4>关于开发者：</h4>
+      <p>臧鹏，热爱科技、电子产品，热爱开源，热爱ubuntu等一些有趣的事；目前致力于嵌入式软件；期望自由，做一些可以改变自己生活、改变自己世界的事，然后影响更多人。</p>
+      <p>Batur， 一个梦想成为大神的菜鸟。喜欢新奇的技术，最近正在学函数式编程。</p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-10.jpg" alt="Hackathon photo" />
+      </p>
+      <h3>6、我的衣柜（黎健成）</h3>
+      <h4>项目介绍：</h4>
+      <p>使用树莓派上的Ubuntu Core进行衣服图片的自动分类，并存储起来，方便以后进行浏览和搭配。图片暂时使用上传的方式，之后有摄像头可通过摄像头获取。</p>
+      <h4>关于开发者：</h4>
+      <p>黎健成，在读研究生，目前从事计算机视觉与深度学习的研究。除了对算法与数据结构等感兴趣外，对嵌入式、IoT等方面的开发也有所关注。喜欢参加各种各样的比赛，与各路大牛交流。<a href="http://lijiancheng0614.github.io/" class="p-link--external">个人博客</a></p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-11.jpg" alt="Hackathon photo" />
+      </p>
+      <h3>7、Cellboot（沈建丰）</h3>
+      <h4>项目介绍：</h4>
+      <p>在Ubuntu Core进行搭建网站管理创库实时信息，可现实库存信息与前端人员实时保持信息同步。将多台Ubuntu Core设备建立连接，可计算共享，每台设备都是计算集群的一部分。</p>
+      <h4>关于开发者：</h4>
+      <p>沈建丰是一名Ubuntu的用户，同时也是传媒公司的负责人，运营“华强北那些事儿”微信平台，主要擅长web应用开发。<a href="http://www.editrobot.com" class="p-link--external">官网</a></p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-12.jpg" alt="Hackathon photo" />
+      </p>
+      <p>在开发者们的精彩demo中，本次Ubuntu Core 16深圳黑客松活动圆满落下了帷幕，在2天的时间里面开发者们用自己的code表达、诠释了心中的IoT是什么以及自己会如何去做。没有再见，只有再一次相见，期待与你相遇在下一站活动中。</p>
+      <p>
+        <img src="{{ STATIC_URL }}img/news/jam-13.jpg" alt="Hackathon photo" />
+      </p>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

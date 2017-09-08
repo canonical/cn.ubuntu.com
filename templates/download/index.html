@@ -1,108 +1,154 @@
-{% extends "download/base_download.html" %}
-{% load markdown_deux_tags %}
+{% extends "templates/base.html" %}
 
 {% block title %}{{ title }}{% endblock %}
 {% block meta_description %}{{ meta_description }}{% endblock %}
-{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
 
 {% block second_level_nav_items %}
-{% include "templates/_nav_breadcrumb.html" with section_title="Download" page_title="Download"  %}
+  {% include "templates/_nav_breadcrumb.html" with section_title="Download" page_title="Download"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
-<div class="row row-grey">
-  <div class="eight-col append-four">
-    {% include "templates/_cms-block.html" with block_content=hero %}
-  </div>
-  <div class="twelve-col box box-highlight clearfix vertical-divider">
-    <div class="eight-col no-margin-bottom">
-      {% include "templates/_cms-block.html" with block_content=lts_ubuntu_release extra_classes="lts-ubuntu-content" %}
-    </div>
-    <div class="four-col last-col no-margin-bottom">
-      <p>选择版本</p>
-      <p>
-        <a href="http://releases.ubuntu.com/16.04/ubuntu-16.04.3-desktop-amd64.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04.3 64 bit', 'From English-language Chinese download']);">64位下载键</a>
-        <a href="http://releases.ubuntu.com/16.04/ubuntu-16.04.3-desktop-i386.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04.3 32 bit', 'From English-language Chinese download']);">32位下载键</a>
-      </p>
-      <p><span class="clearfix smaller">(如果你电脑的内存少于2GB,选择32位下载)</span></p>
-    </div>
-  </div>
-  <div class="twelve-col box box-highlight clearfix vertical-divider">
-    <div class="eight-col no-margin-bottom">
-      {% include "templates/_cms-block.html" with block_content=lts_kylin_release extra_classes="lts-kylin-content" %}
-    </div>
-    <div class="four-col last-col no-margin-bottom download-button">
-      <p>选择版本</p>
-      <p>
-        <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/16.04/release/ubuntukylin-16.04-desktop-amd64.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 64 bit', 'From English-language Chinese download']);">下载64位镜像</a>
-        <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/16.04/release/ubuntukylin-16.04-desktop-i386.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 32 bit', 'From English-language Chinese download']);">下载32位镜像</a>
-      </p>
-      <p><span class="clearfix smaller">(如果你电脑的内存少于2GB,选择32位下载)</span></p>
-    </div>
-  </div>
-</div>
 
-<div class="row row-grey">
-  <div class="twelve-col box box-highlight clearfix vertical-divider">
-    <div class="eight-col no-margin-bottom">
-      {% include "templates/_cms-block.html" with block_content=latest_ubuntu_release extra_classes="latest-ubuntu-content" %}
-    </div>
-    <div class="four-col last-col no-margin-bottom">
-      <p>选择版本</p>
-      <p>
-        <a href="http://releases.ubuntu.com/17.04/ubuntu-17.04-desktop-amd64.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 64 bit', 'From English-language Chinese download']);">64位下载键</a>
-        <a href="http://releases.ubuntu.com/17.04/ubuntu-17.04-desktop-i386.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 32 bit', 'From English-language Chinese download']);">32位下载键</a>
-      </p>
-      <p><span class="clearfix smaller">(如果你电脑的内存少于2GB,选择32位下载)</span></p>
+<section class="p-strip--light u-no-margin--bottom u-no-padding--bottom">
+  <div class="row">
+    <div class="col-8">
+      <h1>下载Ubuntu</h1>
+      <p>Ubuntu是一个开源操作系统， 它可以免费下载、使用并分享。</p>
     </div>
   </div>
-  <div class="twelve-col box box-highlight clearfix vertical-divider">
-    <div class="eight-col no-margin-bottom">
-      {% include "templates/_cms-block.html" with block_content=latest_kylin_release extra_classes="latest-kylin-content" %}
-    </div>
-    <div class="four-col last-col no-margin-bottom download-button">
-      <p>选择版本</p>
-      <p>
-        <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/17.04/release/ubuntukylin-17.04-desktop-amd64.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 64 bit', 'From English-language Chinese download']);">下载64位镜像</a>
-        <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/17.04/release/ubuntukylin-17.04-desktop-i386.iso" class="link-cta-ubuntu cta-large" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 32 bit', 'From English-language Chinese download']);">下载32位镜像</a>
-      </p>
-      <p><span class="clearfix smaller">(如果你电脑的内存少于2GB,选择32位下载)</span></p>
-    </div>
-  </div>
-</div>
+</section>
 
-<div class="row">
-  <div class="eight-col">
-    {% include "templates/_cms-block.html" with block_content=other_downloads extra_classes="other-downloads" %}
+<section class="p-strip--light is-bordered">
+  <div class="row">
+    <div class="p-card p-divider">
+      <div class="col-8 p-divider__block">
+        <h2>Ubuntu 16.04 LTS(长期支持)版本</h2>
+        <p>长期支持版本的Ubuntu桌面操作系统提供长达5年的系统维护更新， 确保系统的稳定和安全性能。</p>
+      </div>
+      <div class="col-4 p-divider__block">
+        <p>选择版本</p>
+        <p>
+          <a href="http://releases.ubuntu.com/16.04/ubuntu-16.04.3-desktop-amd64.iso" class="p-button--brand" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04.3 64 bit', 'From English-language Chinese download']);">64位下载键</a>
+        </p>
+        <p>
+          <a href="http://releases.ubuntu.com/16.04/ubuntu-16.04.3-desktop-i386.iso" class="p-button--brand" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04.3 32 bit', 'From English-language Chinese download']);">32位下载键</a>
+        </p>
+        <p>(如果你电脑的内存少于2GB,选择32位下载)</p>
+      </div>
+    </div>
+    <div class="p-card p-divider">
+      <div class="col-8 p-divider__block">
+        <h2>优麒麟 16.04 LTS(长期支持)版本</h2>
+        <p>Ubuntu Kylin （中文又被称为优麒麟）是基于Ubuntu的一款官方衍生版。 它是一款专门为中国市场打造的免费操作系统。它包括Ubuntu用户期待的各种功能，并配有必备的中文软件及程序。</p>
+      </div>
+      <div class="col-4 p-divider__block">
+        <p>选择版本</p>
+        <p>
+          <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/16.04/release/ubuntukylin-16.04-desktop-amd64.iso" class="p-button--brand" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 64 bit', 'From English-language Chinese download']);">64位下载键</a>
+        </p>
+        <p>
+          <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/16.04/release/ubuntukylin-16.04-desktop-i386.iso" class="p-button--brand" onclick="_gaq.push(['_trackEvent', 'Download Link', '16.04 32 bit', 'From English-language Chinese download']);">32位下载键</a>
+        </p>
+        <p>(如果你电脑的内存少于2GB,选择32位下载)</p>
+      </div>
+    </div>
   </div>
-  <div class="equal-height">
-    <div class="box six-col">
-      {% include "templates/_cms-block.html" with block_content=alternative_1 extra_classes="alternative-1" %}
-    </div>
-    <div class="box six-col last-col">
-      {% include "templates/_cms-block.html" with block_content=alternative_2 extra_classes="alternative-2" %}
-    </div>
-    <div class="box six-col">
-      {% include "templates/_cms-block.html" with block_content=cloud extra_classes="cloud" %}
-    </div>
-    <div class="box six-col last-col">
-      {% include "templates/_cms-block.html" with block_content=server extra_classes="server" %}
-    </div>
-  </div>
-</div>
+</section>
 
-<div class="row row-community row-grey no-border">
-  <div class="three-col text-center">
-    <img class="picto" src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-community-orange.svg" alt="" width="150" height="150" />
-  </div>
-  <div class="nine-col last-col">
-    <div class="six-col">
-      {% include "templates/_cms-block.html" with block_content=community  extra_classes="community" %}
+<section class="p-strip--light is-bordered">
+  <div class="row">
+    <div class="p-card p-divider">
+      <div class="col-8 p-divider__block">
+        <h2>Ubuntu 17.04版本</h2>
+        <p>最新Ubuntu桌面版本</p>
+        <p>选择版本</p>
+      </div>
+      <div class="col-4 p-divider__block">
+        <p>选择版本</p>
+        <p>
+          <a href="http://releases.ubuntu.com/17.04/ubuntu-17.04-desktop-amd64.iso" class="p-button--brand" onclick="_gaq.push(['_trackEvent', 'Download Link', '17.04 64 bit', 'From English-language Chinese download']);">64位下载键</a>
+        </p>
+        <p>
+          <a href="http://releases.ubuntu.com/17.04/ubuntu-17.04-desktop-i386.iso" class="p-button--brand" onclick="_gaq.push(['_trackEvent', 'Download Link', '17.04 32 bit', 'From English-language Chinese download']);">32位下载键</a>
+        </p>
+        <p>(如果你电脑的内存少于2GB,选择32位下载)</p>
+      </div>
     </div>
-    <div class="three-col last-col box where-to-find-us smaller">
-      {% include "templates/_cms-block.html" with block_content=community_links extra_classes="community-links" %}
+    <div class="p-card p-divider">
+      <div class="col-8 p-divider__block">
+        <h2>Ubuntu Kylin 优麒麟 17.04版本</h2>
+        <p>最新优麒麟桌面版本</p>
+        <p>选择版本</p>
+      </div>
+      <div class="col-4 p-divider__block">
+        <p>选择版本</p>
+        <p>
+          <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/17.04/release/ubuntukylin-17.04-desktop-amd64.iso" class="p-button--brand" onclick="_gaq.push(['_trackEvent', 'Download Link', 'Kylin 17.04 64 bit', 'From English-language Chinese download']);">64位下载键</a>
+        </p>
+        <p>
+          <a href="http://cdimage.ubuntu.com/ubuntukylin/releases/17.04/release/ubuntukylin-17.04-desktop-i386.iso" class="p-button--brand" onclick="_gaq.push(['_trackEvent', 'Download Link', 'Kylin 17.04 32 bit', 'From English-language Chinese download']);">32位下载键</a>
+        </p>
+        <p>(如果你电脑的内存少于2GB,选择32位下载)</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-6 p-card">
+          <h4>Ubuntu Core</h4>
+          <p>你是个创客开发者吗， 物联网设备，无人机，自主机是你开发的热情所在。 来试一下我们的Ubuntu Core吧， 它基于Ubuntu为智能物联网定制的操作系统。</p>
+          <a href="https://developer.ubuntu.com/zh-cn/snappy/start/" class="p-link--external">Ubuntu Core</a>
+        </div>
+      <div class="col-6 p-card">
+      <h4>Ubuntu 云</h4>
+      <p>Ubuntu OpenStack 使您能够配置服务器并在 Ubuntu 上创建一个 OpenStack 云（来自同一个 Ubuntu Server 下载）。</p>
+      <a href="http://www.ubuntu.com/download/cloud" class="p-link--external">下载 Ubuntu 云</a>
+    </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 1.25rem">
+    <div class="u-equal-height">
+      <div class="col-6 p-card">
+        <h4>Ubuntu 服务器 (Ubuntu Server)</h4>
+        <p>不管您是要配置一个简单的文件服务器或构建一个五万个节点的云，您都可以信赖 Ubuntu 服务器，并且它将为您提供五年免费升级保证。</p>
+        <a href="http://www.ubuntu.com/download/server" class="p-link--external">下载 Ubuntu 服务器</a>
+      </div>
+      <div class="col-6 p-card">
+        <h4>Ubuntu移动设备</h4>
+        <p>你是一位移动设备的应用开发者吗， 或者自有某种服务或内容。你可以下载Ubuntu移动设备的SDK将你的应用， 服务或内容接入下一个上市的Ubuntu智能设备上。</p>
+        <a href="https://developer.ubuntu.com/zh-cn/phone/" class="p-link--external">Ubuntu移动设备</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-2 u-vertically-center">
+      <img src="http://cn.ubuntu.com/static/img/pictograms/picto-pack/picto-community-orange.svg" alt="">
+    </div>
+      <div class="col-7 prefix-1 suffix-1 u-vertically-center">
+        <div>
+          <h2>优麒麟社区帮助</h2>
+          <p>要了解更多关于优麒麟的信息，或获取有关安装和使用它的帮助，请访问</p>
+          <p><a href="http://www.ubuntukylin.com/ukylin/portal.php">www.ubuntukylin.com</a></p>
+        </div>
+    </div>
+      <div class="col-3 p-card">
+      <h3>Ubuntu社区交流平台</h3>
+      <p>如果您遇到问题, 帮助总是在身边。</p>
+      <ul class="p-list--divided">
+        <li class="p-list__item"><a class="p-link--external" href="http://askubuntu.com">Ubuntu 问答</a></li>
+        <li class="p-list__item"><a class="p-link--external" href="http://ubuntuforums.org">Ubuntu 论坛</a></li>
+        <li class="p-list__item"><a class="p-link--external" href="https://discourse.ubuntu.com/">Ubuntu 闲谈</a></li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}

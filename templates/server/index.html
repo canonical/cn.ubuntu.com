@@ -1,170 +1,193 @@
-{% extends "server/base_server.html" %}
+{% extends "templates/base.html" %}
 
 {% block title %}{{ page_title }}{% endblock %}
 {% block meta_description %}{{ meta_description }}{% endblock %}
-{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
-
-{% block extra_body_class %}server-home{% endblock %}
 
 {% block second_level_nav_items %}
     {% include "templates/_nav_breadcrumb.html" with section_title="Server" page_title="Server"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
-{# ================ 1. Ubuntu Server ================ #}
-<div class="row row-hero">
-    <div class="six-col">
-        {% include "templates/_cms-block.html" with block_content=ubuntu_server %}
-    </div>
-        <div class="six-col last-col align-center">
-            <img src="{{ STATIC_URL }}img/server/image-server.svg" width="400" height="121" alt="" />
-        </div>
-</div>
 
-{# ================ 2. Ubuntu Server on Power ================ #}
-<div class="row row-image-centered">
-    <div class="four-col align-center">
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-6">
+        <h1>Ubuntu 服务器 (Ubuntu Server)</h1>
+        <p>Ubuntu 服务器是自如扩展计算的领先平台。无论您是想部署一个 OpenStack 云、一个 Hadoop 集群还是一个 50,000 个节点的渲染农场，没有任何服务器能比 Ubuntu 服务器提供更有价值的自如扩展性能。</p>
+      </div>
+      <div class="col-6 u-vertically-center">
+        <img src="{{ STATIC_URL }}img/server/image-server.svg" width="400" height="121" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-4 u-vertically-center u-align--center">
         <img src="{{ STATIC_URL }}img/logos/logo-pack/logo-ibm.svg" alt="IBM logo" width="200" />
+      </div>
+      <div class="col-8">
+        <h2>Ubuntu 服务器适用于Power</h2>
+        <p>除 x86 和 ARM 服务器外，Ubuntu 还适用于 Power 架构。因此，企业数据中心得以在选定的任何硬件上构建 Ubuntu 基础设施。</p>
+      </div>
     </div>
-    <div class="eight-col last-col">
-        {% include "templates/_cms-block.html" with block_content=power %}
-    </div>
-</div>
+  </div>
+</section>
 
-{# ================ 3. Performance and versatility ================ #}
-<div class="row">
-    <div class="twelve-col">
-        {% include "templates/_cms-block.html" with block_content=performance %}
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h2>性能和多功能性</h2>
+      <p>灵活的技术，适合发展迅速的公司</p>
+      <p>无论您是想部署一个 NoSQL 数据库、一个Web 农场还是一个云，Ubuntu 的性能和多功能性都能满足您的需求。经领先原始设备制造商认证，其部署和管理工具可帮助您节约时间和降低成本。</p>
+      <p>我们定期升级，这意味着我们支持大多数最新应用程序。精简化初始安装和集成服务编排技术使 Ubuntu 服务器成为大规模部署的优秀解决方案。</p>
     </div>
-
-    <h3 class="caps-centered">适用于所有硬件和软件</h3>
-    <ul class="inline-logos no-bullets">
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-lenovo.svg" width="108" height="45" alt="Lenovo" /></li>
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-dell.svg" width="45" height="45" alt="Dell" /></li>
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-ibm.svg" width="46" height="45" alt="IBM" /></li>
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-hp.svg" width="45" height="45" alt="HP" /></li>
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-intel.svg" width="50" height="45" alt="Intel" /></li>
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-cisco.svg" height="45" width="85" alt="Cisco" /></li>
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-amd.svg" height="45" width="188" alt="AMD" /></li>
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-arm.svg" height="45" width="150" alt="Intel" /></li>
+    <h3 class="u-muted-heading u-align--center">适用于所有硬件和软件</h3>
+    <ul class="p-inline-images">
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-lenovo.svg" width="108" height="45" alt="Lenovo" /></li>
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-dell.svg" width="45" height="45" alt="Dell" /></li>
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-ibm.svg" width="46" height="45" alt="IBM" /></li>
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-hp.svg" width="45" height="45" alt="HP" /></li>
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-intel.svg" width="50" height="45" alt="Intel" /></li>
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-cisco.svg" height="45" width="85" alt="Cisco" /></li>
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-amd.svg" height="45" width="188" alt="AMD" /></li>
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-arm.svg" height="45" width="150" alt="Intel" /></li>
     </ul>
-    <p class="external text-center"><a href="http://ubuntu.com/certification">查看所有经认证的硬件</a></p>
+    <p class="u-align--center"><a href="http://ubuntu.com/certification">查看所有经认证的硬件</a></p>
 
-    <ul class="inline-logos no-bullets">
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-centrify.png" width="94" height="45" alt="Centrify" /></li>
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-openstack.svg" width="60" height="45" alt="OpenStack" /></li>
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-likewise.png" width="82" height="45" alt="Likewise" /></li>
-        <li class="inline-logos__item"><img class="inline-logos__image" src="{{ STATIC_URL }}img/logos/logo-pack/logo-openbravo.png" width="184" height="45" alt="Openbravo" /></li>
+    <ul class="p-inline-images">
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-centrify.png" width="94" height="45" alt="Centrify" /></li>
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-openstack.svg" width="60" height="45" alt="OpenStack" /></li>
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-likewise.png" width="82" height="45" alt="Likewise" /></li>
+      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-openbravo.png" width="184" height="45" alt="Openbravo" /></li>
     </ul>
-    <p class="external text-center"><a href="http://ubuntu.com/partners/certified-software">查看所有经认证的软件</a></p>
+    <p class="u-align--center"><a href="http://ubuntu.com/partners/certified-software">查看所有经认证的软件</a></p>
 
-</div>
+  </div>
+</section>
 
-{# ================ 5. Scale without limits ================ #}
-<div class="row">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=scale %}
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <h2>无限扩展</h2>
+      <p>由于不收取许可费和订阅费，Ubuntu 服务器能帮助您有效地扩展您的数据中心。Ubuntu Advantage（Canonical 管理计划）订购服务包括无限制虚拟化支持，且价格不会因为CPU 增加 而上涨（这一点与其他企业版 Linux 操作系统不同）。</p>
     </div>
-</div>
+  </div>
+</section>
 
-{# ================ 6. A release schedule you can rely on ================ #}
-<div class="row row-grey row-release-schedule">
-    <div class="eight-col">
-        <div class="releasecycle-image-load" data-width="580" data-src="{{ STATIC_URL }}img/graphs/image-release-cycle{width}.png" data-alt="Ubuntu Desktop release cycle, 5 year long term support"></div>
-        <script>
-            new Imager('.releasecycle-image-load', {
-                availableWidths: {
-                    305: '-small',
-                    431: '-medium',
-                    580: '-large'
-                }
-            });
-        </script>
-        <noscript>
-            <img src="{{ STATIC_URL }}u/img/graphs/image-release-cycle-large.png" width="580" height="427" alt="Ubuntu Desktop release cycle, 5 year long term support" />
-        </noscript>
+<section class="p-strip--light is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <img src="/static/img/graphs/image-release-cycle-large.png" width="580" height="427" alt="Ubuntu Desktop release cycle, 5 year long term support" />
     </div>
-    <div class="four-col last-col">
-        {% include "templates/_cms-block.html" with block_content=release_schedule %}
+    <div class="col-4">
+      <h2>可靠的发布周期</h2>
+      <h3>及时更新和定期升级</h3>
+      <p>长期支持版 (LTS)（如 Ubuntu Server 14.04 LTS）由 Canonical 提供五年支持。每隔半年，临时版本会增加新功能，且硬件启用更新服务会为最新计算机添加支持，以运行所有受支持的 LTS 版本。</p>
     </div>
-</div>
+  </div>
+</section>
 
-{# ================ 7. Ubuntu Server for hyperscale ================ #}
-<div class="row row-hyperscale">
-    <div class="seven-col append-five">
-        {% include "templates/_cms-block.html" with block_content=hyperscale %}
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-12 suffix-4">
+      <h2>Ubuntu 服务器适用于超大规模计算</h2>
+      <p>Ubuntu 服务器基于自如扩展理念，其提供的集成化工具方便人们部署复杂的服务网络，就像画一个图然后按“出发”键一样简单。</p>
+      <p>Ubuntu 服务器能在 x86 和 ARM 上无缝运行，内置所有领先的开放源码和商业工作负载，包括Apache Hadoop、Inktank Ceph、10gen MongoDB 等。</p>
     </div>
-</div>
+  </div>
+</section>
 
-{# ================ 8. Juju - service orchestration & MAAS - bare metal provisioning ================ #}
-<div class="row row-juju-maas vertical-divider">
-    <div class="six-col box-juju">
-        <div class="six-col text-center">
-            <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-juju.svg" alt="Juju logo" width="100" height="100" />
-        </div>
-        {% include "templates/_cms-block.html" with block_content=juju %}
+<section class="p-strip is-bordered">
+  <div class="row p-divider">
+    <div class="col-6 p-divider__block">
+      <p class="u-align--center">
+        <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-juju.svg" alt="Juju logo" width="100" height="100" />
+      </p>
+      <h3>Juju—服务编排</h3>
+      <p>Juju 使用命令行或基于浏览器的界面，您只需点击几下即可部署全部工作负载。它适用于公共云（如 AWS 和惠普云）和建立在 OpenStack 上的私有云，甚至还适用于裸机 （通过 MAAS）。</p>
+      <p><a class="p-link--external" href="http://www.ubuntu.com/cloud/orchestration/juju">进一步了解 Juju</a></p>
     </div>
-    <div class="six-col box-maas last-col">
-        <div class="six-col text-center">
-            <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-maas.svg" alt="Maas logo" width="100" height="100" />
-        </div>
-        {% include "templates/_cms-block.html" with block_content=maas %}
+    <div class="col-6 p-divider__block">
+      <p class="u-align--center">
+        <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-maas.svg" alt="Maas logo" width="100" height="100" />
+      </p>
+      <h3>MAAS—裸机配置</h3>
+      <p>MAAS 是一个节省时间的配置系统，用户可使用该系统轻松快速地设置物理硬件，以便在这些硬件上部署复杂的服务。您只要插上服务器并将其连接到网络即可，MAAS 会完成剩下的工作。</p>
+      <p><a class="p-link--external" href="http://www.ubuntu.com/cloud/orchestration/maas">进一步了解 MAAS</a></p>
     </div>
-</div>
+  </div>
+</section>
 
-{# ================ 9. Deploys anywhere ================ #}
-<div class="row">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=deploys_anywhere %}
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <h2>在任何地方部署</h2>
+      <h3>选择最流行的公共云</h3>
+      <p>Ubuntu 是世界公共云上最流行的云客户机操</p>
+      <p>作系统。Ubuntu Cloud Guest 专门针对公共云基础设施设计，没有任何许可限制。</p>
+      <a href="http://cn.ubuntu.com/cloud">进一步了解 Ubuntu 云 ›</a>
     </div>
-    <div class="four-col last-col">
-        <p>Ubuntu 服务器：</p>
-        <ul class="list-canonical">
-            <li>Amazon Web Services</li>
-            <li>HP Cloud</li>
-            <li>Internap</li>
-            <li>Microsoft Azure</li>
-            <li>Joyent</li>
-        </ul>
+    <div class="col-4">
+      <p>Ubuntu 服务器：</p>
+      <ul class="p-list--divided">
+        <li class="p-list__item is-ticked">Amazon Web Services</li>
+        <li class="p-list__item is-ticked">HP Cloud</li>
+        <li class="p-list__item is-ticked">Internap</li>
+        <li class="p-list__item is-ticked">Microsoft Azure</li>
+        <li class="p-list__item is-ticked">Joyent</li>
+      </ul>
     </div>
-</div>
+  </div>
+</section>
 
-{# ================ 10. Built for big data ================ #}
-<div class="row">
-    <div class="four-col">
-        <div class="box-padded">
-            <h3 id="works-with-your-hardware-and-software">Our big data partners</h3>
-            <div>
-                <ul class="inline-icons text-center">
-                    <li><img src="{{ STATIC_URL }}img/logos/logo-couchbase-100x35.png" width="100" height="35" alt="Couchbase" /></li>
-                    <li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-cloudera-100x35.png" width="100" height="35" alt="Cloudera" /></li>
-                    <li><img src="{{ STATIC_URL }}img/logos/logo-10gen-75x35.png" width="75" height="35" alt="10gen" /></li>
-                    <li><img src="{{ STATIC_URL }}img/logos/logo-hortonworks-93x35.png" width="93" height="35" alt="Hortonworks" /></li>
-                    <li><img src="{{ STATIC_URL }}img/logos/logo-lexisnexis-135x35.png" width="135" height="35" alt="LexisNexis" /></li>
-                    <li><img src="{{ STATIC_URL }}img/logos/logo-mapr-60x35.png" width="60" height="35" alt="MapR" /></li>
-                    <li><img src="{{ STATIC_URL }}img/logos/logo-datastax-129x35.png" width="129" height="35" alt="DataStax" /></li>
-                </ul>
-            </div>
-        </div>
+<section class="p-strip is-bordered">
+  <div class="row">
+    <aside class="col-4 p-card">
+      <header class="p-card__header">
+        <h4 id="works-with-your-hardware-and-software">Our big data partners</h4>
+      </header>
+      <ul class="p-list">
+        <li><img src="{{ STATIC_URL }}img/logos/logo-couchbase-100x35.png" width="100" height="35" alt="Couchbase" /></li>
+        <li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-cloudera-100x35.png" width="100" height="35" alt="Cloudera" /></li>
+        <li><img src="{{ STATIC_URL }}img/logos/logo-10gen-75x35.png" width="75" height="35" alt="10gen" /></li>
+        <li><img src="{{ STATIC_URL }}img/logos/logo-hortonworks-93x35.png" width="93" height="35" alt="Hortonworks" /></li>
+        <li><img src="{{ STATIC_URL }}img/logos/logo-lexisnexis-135x35.png" width="135" height="35" alt="LexisNexis" /></li>
+        <li><img src="{{ STATIC_URL }}img/logos/logo-mapr-60x35.png" width="60" height="35" alt="MapR" /></li>
+        <li><img src="{{ STATIC_URL }}img/logos/logo-datastax-129x35.png" width="129" height="35" alt="DataStax" /></li>
+      </ul>
+    </aside>
+    <div class="col-8 prefix-1">
+      <h2>适用于大数据</h2>
+      <h3>高速和简单（裸机或云)</h3>
+      <p>凭借其新开发的快速部署工具，Ubuntu 能加</p>
+      <p>快在裸机上安装服务器实例的速度。我们的服务编排工具 Juju 使大数据服务部署工作变得简单（在裸机上或在云上）。这也是为什么 10gen、Cloudera、Couchbase、DataStax、Hortonworks、LexisNexis 和 Map-R 等供应 商与我们建立合作伙伴关系的原因。</p>
+      <p><a href="/cloud">进一步了解 Ubuntu 云</a></p>
     </div>
-    <div class="eight-col last-col">
-        {% include "templates/_cms-block.html" with block_content=big_data %}
-    </div>
-</div>
+  </div>
+</section>
 
-{# ================ 11. The fast track to virtualisation ================ #}
-<div class="row">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=virtualisation %}
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <h2>虚拟化快车道</h2>
+      <p>准备提高效率和降低成本吗？使用 Ubuntu 服务器和 KVM 虚拟化您 的服务器。如果您将 Ubuntu 用作应用程序客户机操作系统，您只需 几分钟就可创建虚拟机映像。支持 KVM、Xen、VMware 和 LXC；KVM 现在也适用于基于 Ubuntu 的 ARM 服务器。</p>
     </div>
-    <div class="four-col last-col align-center">
-        <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-startfirst-darkaubergine.svg" width="153" height="153" alt="" />
+    <div class="col-4 u-align--center">
+      <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-startfirst-darkaubergine.svg" width="153" height="153" alt="" />
     </div>
-</div>
+  </div>
+</section>
 
-<div class="row no-border">
-    <div class="eight-col">
-        {% include "templates/_cms-block.html" with block_content=read_more %}
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <a class="p-link--external" href="http://www.ubuntu.com/server">Learn more on www.ubuntu.com</a>
     </div>
-</div>
+  </div>
+</section>
+
 {% endblock %}
