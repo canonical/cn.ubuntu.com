@@ -1,6 +1,6 @@
 # [cn.ubuntu.com](http://cn.ubuntu.com)
 
-A paired-down, Chinese-language version of the ubuntu.com website utilising Django's CMS.
+A paired-down, Chinese-language version of the ubuntu.com website.
 
 ## Local development
 
@@ -29,3 +29,4 @@ The content of this project is licensed under the [Creative Commons Attribution-
 
 
 With ♥ from Canonical
+

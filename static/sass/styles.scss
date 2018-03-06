@@ -3,46 +3,87 @@
 $color-brand: #e95420;
 $color-accent: $color-brand;
 $color-link: $color-brand;
+$color-navigation-background: $color-brand;
 
 // Global components
 @import '../components/canonical-global-nav/build/css/main';
 
 // Import Vanilla Framework
-@import "../../node_modules/vanilla-framework/scss/build";
+@import "vanilla-framework/scss/build";
 
 // Import custom styles
 @import "custom/ubuntu_intro";
 
-// Temp inline image fix
-// https://github.com/vanilla-framework/vanilla-framework/issues/1168
-.p-inline-images {
+// Hack to get the header link color white as dark is more accessible.
+.p-navigation {
+  @include vf-navigation-pattern(
+    $background-color: $color-navigation-background,
+    $border-color: transparent,
+    $text-color: $color-light
+  );
+
+  .p-navigation__links .p-navigation__link {
+    border-left: 1px solid lighten($color-navigation-background, 15%);
+  }
+
+  .p-navigation__links:last-of-type {
+    border-right: 1px solid lighten($color-navigation-background, 15%);
+  }
+}
+
+// XXX Ant: 04.12.17 This can be removed when this is fixed
+// https://github.com/vanilla-framework/vanilla-framework/issues/1478
+.u-align--center {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    max-width: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  &.u-align--center {
+    max-width: none;
+  }
+}
+
+.list-social {
+  margin-top: 0;
+  list-style: none;
 
   &__item {
+    float: left;
+    height: 37px;
+    margin-right: 20px;
+    margin-top: 0;
+    padding: 0;
+    text-indent: -999em;
+    width: 37px;
 
-    * {
-      max-height: $sp-xxx-large;
-      max-width: 7rem;
-      width: 100%;
-
-      @media only screen and (min-width: $breakpoint-medium) {
-        max-height: 5.5rem;
-        max-width: 9rem;
-      }
+    a {
+      display: block;
+      height: 37px;
+      width: 37px;
+      margin: 0;
+      overflow: hidden;
     }
   }
-}
 
-// Temp fix for card header
-// https://github.com/vanilla-framework/vanilla-framework/issues/1280
-.p-card__header {
-  + * {
-    margin-top: 0;
+  &__item--weibo a {
+    background: url("../img/icons/icon-weibo.svg") no-repeat;
   }
-}
 
-// XXX Ant: 06.09.17
-// Hotfix until the next version of Vanilla is updated > v1.5.2
-.p-strip .p-link--external,
-.p-strip--light .p-link--external {
-  color: $color-brand;
+  &__item--wechat a {
+    background: url("../img/icons/icon-wechat.svg") no-repeat;
+  }
 }
