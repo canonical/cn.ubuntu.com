@@ -5,9 +5,6 @@ $color-accent: $color-brand;
 $color-link: $color-brand;
 $color-navigation-background: $color-brand;
 
-// Global components
-@import '../components/canonical-global-nav/build/css/main';
-
 // Import Vanilla Framework
 @import "vanilla-framework/scss/build";
 
