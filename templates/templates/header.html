@@ -4,7 +4,7 @@
       <div class="p-navigation__banner">
         <div class="p-navigation__logo">
           <a class="p-navigation__link" href="/">
-            <img class="p-navigation__image" width="106" height="25" src="{{ STATIC_URL }}img/logos/logo-ubuntu-white.svg" alt="" />
+	    <img class="p-navigation__image" width="106" height="25" src="{{ STATIC_URL }}img/logos/logo-ubuntu-orange.svg" alt="" />
           </a>
         </div>
         <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
@@ -15,12 +15,12 @@
           <a href="#main-content">Jump to main content</a>
         </span>
         <ul class="p-navigation__links" role="menu">
-          <li class="p-navigation__link" role="menuitem"><a{% if level_1 == 'internet-of-things' %} class="is-active"{% endif %} href="/internet-of-things">IoT</a></li>
-          <li class="p-navigation__link" role="menuitem"><a class="first{% if level_1 == 'desktop' %} is-active{% endif %}" href="/desktop">桌面OS</a></li>
-          <li class="p-navigation__link" role="menuitem"><a{% if level_1 == 'server' %} class="is-active"{% endif %} href="/server">服务器</a></li>
+          <li class="p-navigation__link" role="menuitem"><a{% if level_1 == 'internet-of-things' %} class="is-active"{% endif %} href="/internet-of-things">物联网</a></li>
+          <li class="p-navigation__link" role="menuitem"><a class="first{% if level_1 == 'desktop' %} is-active{% endif %}" href="/desktop">桌面系统</a></li>
           <li class="p-navigation__link" role="menuitem"><a{% if level_1 == 'cloud' %} class="is-active"{% endif %} href="/cloud">云</a></li>
-          <li class="p-navigation__link" role="menuitem"><a{% if level_1 == 'download' %} class="is-active"{% endif %} href="/download">下载</a></li>
-          <li class="p-navigation__link" role="menuitem"><a{% if level_1 == 'news' %} class="is-active"{% endif %} href="/news">最新资讯</a></li>
+          <li class="p-navigation__link" role="menuitem"><a{% if level_1 == 'server' %} class="is-active"{% endif %} href="/server">服务器</a></li>          
+          <li class="p-navigation__link" role="menuitem"><a{% if level_1 == 'server' %} class="is-active"{% endif %} href="/containers">容器</a></li>
+          <li class="p-navigation__link" role="menuitem"><a{% if level_1 == 'news' %} class="is-active"{% endif %} href="https://insights.ubuntu.com">最新资讯</a></li>
         </ul>
         {# include "templates/search.html" #}
       </nav>

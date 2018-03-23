@@ -1,13 +1,122 @@
 {% extends "base_index.html" %}
 
 {% block takeover_content %}
-  {% include "takeovers/_kylin.html" %}
+  {% include "takeovers/_hackathon.html" %}
 {% endblock takeover_content %}
 
 {% block page_content %}
 
+<style type="text/css">
+.cloud-tools {
+  display: none;
+  height: 550px;
+  overflow: hidden;
+  position: absolute;
+  right: -1rem;
+  top: -3.5rem;
+  width: 620px; }
+  @media screen and (min-width: 1030px) {
+    .cloud-tools {
+      display: block; } }
+  .cloud-tools__list {
+    position: relative;
+    top: 0; }
+  .cloud-tools__item {
+    animation: scaleInPop .2s forwards, fadeIn .2s linear forwards;
+    background-repeat: no-repeat;
+    background-size: 66px 66px;
+    height: 66px;
+    margin-top: 0;
+    opacity: 0;
+    position: absolute;
+    text-indent: -999em;
+    width: 66px; }
+    .cloud-tools__item.item-line {
+      animation: fadeIn .3s linear forwards;
+      content: ' ';
+      display: block;
+      position: absolute; }
+    .cloud-tools__item.item-one {
+      animation-delay: 1.6s;
+      background-image: url("https://assets.ubuntu.com/v1/a7916513-picto-openstack.svg");
+      left: 357px;
+      top: 55px; }
+    .cloud-tools__item.item-one-line, .cloud-tools__item.item-four-line {
+      animation-delay: 1.85s;
+      background: url("https://assets.ubuntu.com/v1/ec446611-partners-hero-line-vertical.png");
+      height: 52px;
+      left: 387px;
+      top: 137px;
+      width: 2px; }
+    .cloud-tools__item.item-two {
+      animation-delay: 1.85s;
+      background-image: url("https://assets.ubuntu.com/v1/999949f8-picto-startfirst-midaubergine.svg");
+      left: 484px;
+      top: 108px; }
+    .cloud-tools__item.item-two-line, .cloud-tools__item.item-five-line {
+      animation-delay: 2s;
+      background: url("https://assets.ubuntu.com/v1/4fc1680b-partners-hero-line-diagonal.png");
+      height: 38px;
+      left: 445px;
+      top: 175px;
+      width: 38px; }
+    .cloud-tools__item.item-three {
+      animation-delay: 2s;
+      background-image: url("https://assets.ubuntu.com/v1/60bd6cf1-picto-juju.svg");
+      left: 547px;
+      top: 245px; }
+    .cloud-tools__item.item-three-line, .cloud-tools__item.item-six-line {
+      animation-delay: 2.15s;
+      background: url("https://assets.ubuntu.com/v1/d505cff1-partners-hero-line-horizontal.png");
+      height: 2px;
+      left: 469px;
+      top: 277px;
+      width: 52px; }
+    .cloud-tools__item.item-four {
+      animation-delay: 2.15s;
+      background-image: url("https://assets.ubuntu.com/v1/261ad7cb-picto-maas.svg");
+      left: 367px;
+      top: 425px; }
+    .cloud-tools__item.item-four-line {
+      animation-delay: 2.3s;
+      left: 396px;
+      top: 347px; }
+    .cloud-tools__item.item-five {
+      animation-delay: 2.3s;
+      background-image: url("https://assets.ubuntu.com/v1/50c0306d-image-picto-landscape.svg");
+      left: 226px;
+      top: 372px; }
+    .cloud-tools__item.item-five-line {
+      animation-delay: 2.45s;
+      left: 301px;
+      top: 328px; }
+    .cloud-tools__item.item-six {
+      animation-delay: 2.45s;
+      background-image: url("https://assets.ubuntu.com/v1/c986edab-picto-cloud-midaubergine-solid.svg");
+      left: 170px;
+      top: 245px; }
+    .cloud-tools__item.item-six-line {
+      animation-delay: 2.6s;
+      left: 259px;
+      top: 273px; }
+    .cloud-tools__item.item-seven {
+      -moz-animation: scaleIn .3s forwards, fadeIn .6s linear forwards, rotateIn 3s ease-out forwards;
+      -moz-animation-delay: 1s;
+      -webkit-animation: scaleIn .3s forwards, fadeIn .6s linear forwards, rotateIn 3s ease-out forwards;
+      -webkit-animation-delay: 1s;
+      animation: scaleIn .3s forwards, fadeIn .6s linear forwards, rotateIn 3s ease-out forwards;
+      animation-delay: 1s;
+      background: url("https://assets.ubuntu.com/v1/c4f35e06-partners-hero-ubuntu.svg") no-repeat;
+      height: 140px;
+      left: 320px;
+      top: 198px;
+      width: 140px; }
+
+</style>
+
 <!-- Ubuntu Intro -->
 <section class="p-strip--accent is-dark">
+  
   <div class="ubuntu-intro">
     <div class="intro-left"></div>
     <div class="intro-middle">
@@ -25,19 +134,118 @@
       <h2 class="u-align--center" style="color: #fff;">Ubuntu是一个广泛应用于个人电脑，云计算，以及所有智能物联网设备的开源操作系统。</h2>
     </div>
   </div>
+  
 </section>
 
-<!-- Desktop -->
+<div class="p-strip is-deep is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h2>研讨会及案例分享</h2>
+    </div>
+  </div>
+  <div class="row p-divider">
+    <div class="col-4 p-divider__block" id="ubuntu-com_iot-digital-signage_left">
+      <!-- rtp section start -->
+      <div class="p-heading-icon u-no-margin--bottom">
+        <div class="p-heading-icon__header u-no-margin--bottom">
+          <img class="p-heading-icon__img" src="https://assets.ubuntu.com/v1/26797d10-newsfeed-stripvideo-icon.svg" alt="" style="max-width: 30px;">
+          <h4 class="p-heading-icon__title p-heading-icon__title--muted p-muted-heading">研讨会</h4>
+        </div>
+      </div>
+      <h3 class="p-heading--four u-no-margin--top"><a class="p-link--external" href="https://www.brighttalk.com/webcast/6793/206421?utm_campaign=channel-feed&amp;utm_content=&amp;utm_source=brighttalk-portal&amp;utm_medium=web&amp;utm_term=" onclick="dataLayer.push({" event'="" :="" 'gaevent',="" 'eventcategory'="" 'product="" page',="" 'eventaction'="" 'digital="" signage="" -="" left',="" 'eventlabel'="" 'webinar="" building="" success="" with="" a="" raspberry="" pi!',="" 'eventvalue'="" '1'="" });'=""><span hidden="">Watch the webinar </span>Building success with a Raspberry Pi!</a></h3>
+      <!-- rtp section end -->
+    </div>
+
+    <div class="col-4 p-divider__block" id="ubuntu-com_iot-digital-signage_center">
+      <!-- rtp section start -->
+      <div class="p-heading-icon u-no-margin--bottom">
+        <div class="p-heading-icon__header u-no-margin--bottom">
+          <img class="p-heading-icon__img" src="https://assets.ubuntu.com/v1/26797d10-newsfeed-stripvideo-icon.svg" alt="" style="max-width: 30px;">
+          <h4 class="p-heading-icon__title p-heading-icon__title--muted p-muted-heading">研讨会</h4>
+        </div>
+      </div>
+      <h3 class="p-heading--four u-no-margin--top"><a class="p-link--external" href="https://www.brighttalk.com/webcast/6793/211999?utm_source=ubuntuweb&amp;utm_medium=dspageboldmindbox&amp;utm_campaign=DSwebinar" onclick="dataLayer.push({" event'="" :="" 'gaevent',="" 'eventcategory'="" 'product="" page',="" 'eventaction'="" 'digital="" signage="" -="" center',="" 'eventlabel'="" 'webinar="" data-triggered="" content="" and="" 4g="" base="" stations',="" 'eventvalue'="" '1'="" });'=""><span hidden="">Watch the webinar </span>Data-triggered content and 4G base stations</a></h3>
+      <!-- rtp section end -->
+    </div>
+
+    <div class="col-4 p-divider__block" id="ubuntu-com_iot-digital-signage_right">
+      <!-- rtp section start -->
+      <div class="p-heading-icon u-no-margin--bottom">
+        <div class="p-heading-icon__header u-no-margin--bottom">
+          <img class="p-heading-icon__img" src="https://assets.ubuntu.com/v1/5cf7bd32-news-feed-strip-case-study.svg" alt="" style="max-width: 30px;">
+          <h4 class="p-heading-icon__title p-heading-icon__title--muted p-muted-heading">案例分享</h4>
+        </div>
+      </div>
+      <h3 class="p-heading--four u-no-margin--top"><a class="p-link--external" href="https://pages.ubuntu.com/ims-case-study-chinese.html" onclick="dataLayer.push({" event'="" :="" 'gaevent',="" 'eventcategory'="" 'product="" page',="" 'eventaction'="" 'digital="" signage="" -="" right',="" 'eventlabel'="" 'case="" study="" open="" source="" digital="" with="" ubuntu',="" 'eventvalue'="" '1'="" });'=""><span hidden="">Read the case study </span>IMS Evolve在供链中采用Ubuntu Core实现物联网商业智能</a></h3>
+      <!-- rtp section end -->
+    </div>
+  </div>
+</div>  
+
+<!-- Case Study -->
+<section class="p-strip--light is-deep is-bordered"> <!-- p-strip is-bordered -->
+  <div class="row">
+    <div class="col-6">
+    <h2>Ubuntu 18.04 LTS最新动态</h2>
+    <p>距离Ubuntu 18.04发布还有3个月左右，在正式版发布之前，让我们来看看新版系统带来哪些新特性。
+</p>
+    <a href="https://weibo.com/ttarticle/p/show?id=2309404137911405705053&mod=zwenzhang">了解更多&nbsp;›</a>
+  </div>
+    <div class="col-6">
+    <img src="{{ STATIC_URL }}img/homepage/new-xps.png" alt="" />
+  </div>
+  </div>
+</section>
+
+<!--
+
+<section class="p-strip--light is-deep is-bordered">
+  <div class="row">
+    <div class="u-equal-height u-vertically-center">
+      <div class="col-6 suffix-1">
+        <h2><a href="/download">Ubuntu 18.04 LTS新功能抢先看</a></h2>
+        <p href="/desktop">距离Ubuntu 18.04发布还有3个月左右，在正式版发布之前，让我们来看看新版系统带来哪些新特性。</p>
+      </div>
+      <div class="col-6 u-align--right">
+        <img class="u-hide--small" src="https://assets.ubuntu.com/v1/7d267d01-desktop.png?h=350">
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- Cloud -->
 <section class="p-strip is-bordered">
   <div class="row">
     <div class="col-6">
-      <h2><a href="/download">Ubuntu 桌面系统&nbsp;›</a></h2>
-      <p>体验一下简洁直观的Ubuntu桌面操作系统。安全、快速、易用。Ubuntu还有专为中文用户定制的Ubuntu Kylin(优麒麟)版本，是Ubuntu官方认证的版本之一。</p>
-      <a href="/download">立刻下载&nbsp;›</a>
-    </div>
+    <h2>构建云服务最好的选择</h2>
+    <p>无论您是构建私有云还是公共云，Ubuntu都会提供所有必要的基础架构软件，工具和服务。</p>
+    <ul class="p-list--divided">
+          <li class="p-list__item is-ticked">完成构建OpenStack云所需的一切</li>
+          <li class="p-list__item is-ticked">在领先的公共云中使用已认证的Ubuntu镜像服务器</li>
+          <li class="p-list__item is-ticked">一整套配置，构建，管理且支持大型云的工具</li>
+          <li class="p-list__item is-ticked">支持付费工具、服务和持续Ubuntu Advantage订阅</li>
+        </ul>
+    <a href="https://www.ubuntu.com/cloud/contact-us">请联系我们告知您的需求&nbsp;›</a>
+  </div>
     <div class="col-6">
-      <img src="{{ STATIC_URL }}img/homepage/dell-xps-laptop-front.png" alt="" />
-    </div>
+    <img src="{{ STATIC_URL }}img/homepage/cloud.png" alt="" />
+  </div>
+  </div>
+</section>
+
+
+<!-- Desktop -->
+<section class="p-strip--light is-deep is-bordered">
+  <div class="row">
+    <div class="col-6">
+    <h2><a href="/desktop">Ubuntu 桌面系统&nbsp;›</a></h2>
+    <p>Ubuntu提供了学校，组织，家庭或企业所需的一切。 所有基本应用程序，如办公套件，浏览器，电子邮件和多媒体应用程序。Ubuntu软件中心还提供了数千个游戏和应用程序。</p>
+    <a href="/desktop">了解更多&nbsp;›</a>
+  </div>
+    <div class="col-6">
+    <img src="{{ STATIC_URL }}img/homepage/new-xps.png" alt="" />
+  </div>
   </div>
 </section>
 
@@ -46,45 +254,47 @@
   <div class="row">
     <div class="col-6">
       <h2><a href="/internet-of-things">用于智能物联网的操作系统&nbsp;›</a></h2>
-      <p>Ubuntu Core 是一套基于Ubuntu操作系统的更加安全，轻量级，专为智能物联网订制的开源操作系统。它已被广泛应用于物联网，智能设备和自主设备行业中，它自身的系统更新更加轻便可控；同时它让搭建自有应用商店和生态环境触手可及。</p>
+      <p>从智能家居设备到无人机，机器人和工业系统，Ubuntu Core拥有超高的安全性，应用程序商店和可靠的事务性更新。 Ubuntu使开发变得简单，并且snap安装包使得Ubuntu Core对于分布广泛的设备来说既安全又可靠。</p>
+      <a href="/iot">了解更多&nbsp;›</a>
     </div>
     <div class="col-6 u-align--center">
-      <img class="strip__img" src="{{ STATIC_URL }}img/homepage/image-iot.jpg" alt="" />
+      <img class="strip__img" src="{{ STATIC_URL }}img/homepage/Logo-block.svg" alt="" />
     </div>
   </div>
 </section>
 
-<!-- Contextual footer -->
-<section class="p-strip">
+
+<!-- Contextual footer
+<section class="p-strip--light">
     <div class="row p-divider">
         <div class="col-4 p-divider__block">
           <a href="/download">
             <h3>下载优麒麟&nbsp;&rsaquo;</h3>
+            <p>马上可升级优麒麟最新的15.04版本</p>
+            <div class="u-align--center">
+              <img alt="" src="{{ STATIC_URL }}img/homepage/image-dell-xps-laptop.png" />
+            </div>
           </a>
-          <p>马上可升级优麒麟最新的15.04版本</p>
-          <div class="u-align--center">
-            <img alt="" src="{{ STATIC_URL }}img/homepage/image-dell-xps-laptop.png" />
-          </div>
         </div>
         <div class="col-4 p-divider__block">
           <a href="/cloud">
             <h3>头号云服务平台&nbsp;&rsaquo;</h3>
+            <p>OpenStack Juno，还提供最好的工具和五年支持服务&#12290;</p>
+            <div class="u-align--center">
+              <img alt="" src="{{ STATIC_URL }}img/homepage/cn-home-juju.svg" width="300px" />
+            </div>
           </a>
-          <p>OpenStack Juno，还提供最好的工具和五年支持服务&#12290;</p>
-          <div class="u-align--center">
-            <img alt="" src="{{ STATIC_URL }}img/homepage/cn-home-juju.svg" width="300px" />
-          </div>
         </div>
         <div class="col-4 p-divider__block">
           <a href="https://landscape.canonical.com/">
             <h3>Landscape free for 30 days&nbsp;&rsaquo;</h3>
+            <p>用于Ubuntu系统管理的最佳工具</p>
+            <div class="u-align--center">
+              <img alt="" src="{{ STATIC_URL }}img/homepage/screenshot-landscape.png" />
+            </div>
           </a>
-          <p>用于Ubuntu系统管理的最佳工具</p>
-          <div class="u-align--center">
-            <img alt="" src="{{ STATIC_URL }}img/homepage/screenshot-landscape.png" />
-          </div>
         </div>
     </div>
 </section>
-
+ -->
 {% endblock page_content %}
