@@ -191,3 +191,32 @@
     width: 16px;
   }
 }
+
+.p-takeover {
+  background-image: url(https://assets.ubuntu.com/v1/f5b47308-china-banner-takeover-background.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-color: #2C001E;
+  color: #fff;
+}
+
+.p-takeover__teaser {
+  max-width: 320px;
+}
+
+.p-takeover__logos {
+  display: flex;
+  align-items: center;
+}
+
+.p-takeover__logo {
+  height: 59px;
+  width: auto;
+  margin-top: 0 !important;
+}
+
+.p-takeover__logo--small {
+  height: 40px;
+  margin-right: 1em;
+  margin-top: -.7em;
+}
