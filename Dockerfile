@@ -10,13 +10,13 @@ RUN pip3 install gunicorn
 
 # Set git commit ID
 ARG COMMIT_ID
-ENV COMMIT_ID=$COMMIT_ID
 RUN test -n "${COMMIT_ID}"
+RUN echo "${COMMIT_ID}" > version-info.txt
 
 # Import code, install code dependencies
 WORKDIR /srv
-ADD . .
-RUN pip3 install -r requirements.txt
+COPY . .
+RUN pip3 install -r requirements.txt && rm requirements.txt
 
 # Setup commands to run server
 ENTRYPOINT ["gunicorn", "webapp.wsgi", "-b"]
