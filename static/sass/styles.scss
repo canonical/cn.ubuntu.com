@@ -3,7 +3,6 @@
 $color-brand: #e95420;
 $color-accent: $color-brand;
 $color-link: $color-brand;
-$color-navigation-background: $color-brand;
 
 // Import Vanilla Framework
 @import "vanilla-framework/scss/build";
@@ -14,21 +13,9 @@ $color-navigation-background: $color-brand;
 // Import custom styles
 @import "custom/ubuntu_intro";
 
-// Hack to get the header link color white as dark is more accessible.
-.p-navigation {
-  @include vf-navigation-pattern(
-    $background-color: $color-navigation-background,
-    $border-color: transparent,
-    $text-color: $color-light
-  );
-
-  .p-navigation__links .p-navigation__link {
-    border-left: 1px solid lighten($color-navigation-background, 15%);
-  }
-
-  .p-navigation__links:last-of-type {
-    border-right: 1px solid lighten($color-navigation-background, 15%);
-  }
+body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 // XXX Ant: 04.12.17 This can be removed when this is fixed

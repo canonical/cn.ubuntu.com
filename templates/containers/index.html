@@ -1,0 +1,246 @@
+{% extends "templates/base.html" %}
+
+{% block title %}{{ page_title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+
+{% block second_level_nav_items %}
+    {% include "templates/_nav_breadcrumb.html" with section_title="Server" page_title="Server"  %}
+{% endblock second_level_nav_items %}
+
+{% block content %}
+<style>
+.divcss5{color:#00F}
+</style>
+
+<div id="main-content" class="inner-wrapper">
+ 
+<div class="p-strip is-deep">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-7">
+        <h1>容器</h1>
+        <h2>Ubuntu是容器的首选平台</h2>
+        <p>从LXD到Kubernetes再到Docker，Canonical与行业领先的公司合作，提供全方位的技术和服务，帮助用户在公有云、私有云和混合云或裸机云上大规模运行容器。</p><p>
+          </p><p><a href="/containers/contact-us?product=containers-overview">与我们讨论您的容器策略&nbsp;›</a></p>
+        </div>
+        <div class="col-5 u-align--center u-hide--small">
+          <img class="u-float--right" src="https://assets.ubuntu.com/v1/a9aff224-Containers-illustration.svg" width="350" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>     
+
+<div class="p-strip--accent" style="background: #000;color: #FFF">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-4 u-vertically-center u-hide--small u-align--center">
+        <img src="https://assets.ubuntu.com/v1/3aa7e9a6-picto-articles-white.svg" width="175" alt="">
+      </div>
+      <div class="col-8">
+        <h2>容器，直接有效的业务加速器</h2>
+        <p>这份白皮书说明了容器为何如此受欢迎，以及如何在您的组织中利用它们。了解进程容器和计算机容器的优点。深入介绍用来操纵容器的两个主要软件工具：Docker和LXD。</p>
+        <p><a class="p-button--neutral" href="https://pages.ubuntu.com/container-whitepaper.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External Link', 'eventAction' : 'Container whitepaper: containers ', 'eventLabel' : 'Download the white paper', 'eventValue' : undefined });"><span class="p-link--external">下载白皮书</span></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="p-strip--light is-bordered is-deep">
+  <div class="row">
+    <div class="col-12">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img src="https://assets.ubuntu.com/v1/425efe3a-lxd.svg?w=80" alt="LXD logo" width="80" class="p-heading-icon__img">
+          <h2 class="p-heading-icon__title">LXD：纯容器管理程序</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row p-divider">
+      <div class="col-4 p-divider__block">
+        <h3 class="p-heading--four">直接迁移现有虚拟机的工作负载</h3>
+        <p>轻松将您现有的Linux虚拟机移至容器，而无需修改应用或操作。LXD的计算机容器能像虚拟机一样运行。</p>
+      </div>
+      <div class="col-4 p-divider__block">
+        <h3 class="p-heading--four">比传统虚拟机快25%</h3>
+        <p>以虚拟机的操作方式运行未经修改的Linux操作系统和应用程序，速度惊人且毫无延迟。</p>
+      </div>
+      <div class="col-4 p-divider__block">
+        <h3 class="p-heading--four">密度高达ESX的10倍</h3>
+        <p>LXD采用纯容器实现Linux虚拟化。对于私有云和公有云基础架构，这种做法比使用VMware ESX和Linux KVM具有显著的密度优势。</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-8 u-vertically-spaced">
+        <p><a href="/containers/lxd">进一步了解LXD&nbsp;›</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="p-strip is-bordered is-deep">
+  <div class="row">
+    <div class="col-12">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img src="https://assets.ubuntu.com/v1/24e41fc3-kubernetes_logo.svg" alt="Kubernetes logo" class="p-heading-icon__img">
+          <h2 class="p-heading-icon__title">Canonical的Kubernetes<sup>®<a href="#fn1" id="r1"></a></sup>发行版*</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row p-divider">
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">内置弹性扩展能力</h3>
+      <p>需要一套容器编排系统来帮助您构建基于微服务的应用？Canonical的Kubernetes简单易用，而且本身具有弹性。</p>
+    </div>
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">规模化成本效益</h3>
+      <p>Canonical的Kubernetes使用Juju进行建模，并拥有管理持久性集群所需的所有操作脚本和工具，包括升级和弹性扩展。</p>
+    </div>
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">随时可用的分析功能</h3>
+      <p>可轻松与Prometheus集成以进行监控，与Ceph集成以进行存储，以及与Elastic Stack(包括Kibana)集成以进行分析和可视化。</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8 u-vertically-spaced">
+      <p><a href="/containers/kubernetes">进一步了解Canonical的Kubernetes发行版&nbsp;›</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="p-strip--light is-deep is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img src="https://assets.ubuntu.com/v1/1eb617a5-docker_logo.svg" alt="Docker logo" class="p-heading-icon__img">
+          <h2 class="p-heading-icon__title">Ubuntu上的Docker引擎</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row p-divider">
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">企业级Docker</h3>
+      <p>我们与Docker Inc.密切合作，在Ubuntu上提供商业支持的集成式Docker引擎。</p>
+    </div>
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">可靠的更新</h3>
+      <p>Docker引擎的映像以snap包的形式发布，并会自动进行事务性更新。</p>
+    </div>
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">Single vendor solution</h3>
+      <p>Canonical为CS Docker引擎提供1级和2级技术支持，Docker Inc.则负责3级支持。</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8 u-vertically-spaced">
+      <p><a href="/containers/docker-ubuntu">进一步了解Ubuntu的Docker引擎&nbsp;›</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-12">
+      
+
+
+
+
+  <h2 class="p-muted-heading u-align--center">与行业领先公司合作</h2>
+  <ul id="cloud-partners" class="p-inline-images">
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/sites/ubuntu/1121/u/img/logos/partners/AWS.png" alt="Amazon Web Services">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/4bd8fe25-logo_lockup_cloud_platform_icon_vertical%281%29.png" alt="Google Cloud Platform">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/208cd3a7-azure-logo-blue-on-white.svg" alt="Microsoft Azure">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/cd8ca34e-docker-trans.png" alt="Docker">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/dba11aee-kubernetes.svg" alt="Kubernetes">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/73c71db8-Fairbanks-logo-WEB-2016-1440px.png" alt="Fairbanks">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/529822fd-joyent_logo.svg" alt="Joyent">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/sites/ubuntu/latest/u/img/partners/partners-logo-ibm.png" alt="IBM">
+      </li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="p-strip--light is-deep">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-7 equal-height__align-vertically">
+        <h2>Canonical的专家支持</h2>
+        <p>如果您需要让桌面计算机、服务器、云或容器部署获得专业支持服务的保障，Ubuntu Advantage可以让您高枕无忧：</p>
+        <ul class="p-list--divided">
+          <li class="p-list__item is-ticked">全球领先的Ubuntu专家提供的全天候服务</li>
+          <li class="p-list__item is-ticked">Landscape系统管理工具</li>
+          <li class="p-list__item is-ticked">为您的Ubuntu环境提供IP保障</li>
+          <li class="p-list__item is-ticked">通过内核实时修补确保您拥有最新的内核安全更新&nbsp;updates</li>
+        </ul>
+        <p><a href="https://buy.ubuntu.com/" class="p-button--positive"><span class="">访问Ubuntu Advantage商店</span></a></p>
+        <p>或者 <a href="/containers/contact-us?product=containers-overview">联系我们&nbsp;›</a></p>
+      </div>
+      <div class="col-5 u-align--right u-vertically-center u-hide--small">
+        <img src="https://assets.ubuntu.com/v1/11da76f5-image-management.svg" style="width: 80%;" width="288" height="155">
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="p-strip">
+  <div class="row">
+    <p id="fn1" class="note"><a href="#r1">*</a> Kubernetes®是The Linux Foundation在美国和其他国家/地区的注册商标，并依据The Linux Foundation的许可进行使用。</p>
+  </div>
+</section>      
+          
+    
+
+
+
+ 
+      
+    </div>
+  </div>
+</div>
+
+
+  
+
+        
+      </div>
+
+
+{% endblock %}
