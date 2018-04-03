@@ -1,0 +1,8 @@
+Dockerfile
+README.md
+manage.py
+node_modules/
+package.json
+run
+yarn-error.log
+yarn.lock
