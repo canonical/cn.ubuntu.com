@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" height="329px" width="470px" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 470 329"><!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+ <title>Laptop</title>
+ <desc>Created with Sketch.</desc>
+ <g id="proposals" fill-rule="evenodd" fill="none">
+  <g id="Background-animation" stroke="#fff" stroke-width="3" transform="translate(-760 -277)">
+   <g id="Laptop" transform="translate(761 278)">
+    <g id="Page-1">
+     <g id="Home-13">
+      <g id="artwork">
+       <g id="devices">
+        <g id="Laptop" transform="translate(.52098 .068214)">
+         <g id="svg8" transform="translate(0)">
+          <g id="layer1" transform="translate(0 .48753)">
+           <path id="rect4188" fill-rule="nonzero" d="m0 287.95c-0.000048556 37.65 9.7113 37.65 58.268 37.65h349.6c48.56 0 58.27 0 58.27-37.65h-177.58v5.38h-110.98v-5.38h-177.58z"/>
+           <path id="path4256" d="m455.04 287.78v-260.67c0-21.515-5.54-26.893-27.72-26.893l-385.7-0.00002c-22.197 0-27.746 5.3782-27.746 26.891v259.78"/>
+           <polygon id="rect4263" points="34 22 433.55 22 433.55 258.64 34 258.64"/>
+          </g>
+         </g>
+        </g>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

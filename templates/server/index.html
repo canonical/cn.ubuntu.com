@@ -9,185 +9,543 @@
 
 {% block content %}
 
-<section class="p-strip is-bordered">
+
+
+<div id="main-content" class="inner-wrapper">     
+     
+          
+    
+<div class="p-strip is-deep is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h1>使用Ubuntu Server自由扩展</h1>
+    </div>
+  </div>
   <div class="row">
     <div class="u-equal-height">
       <div class="col-6">
-        <h1>Ubuntu 服务器 (Ubuntu Server)</h1>
-        <p>Ubuntu 服务器是自如扩展计算的领先平台。无论您是想部署一个 OpenStack 云、一个 Hadoop 集群还是一个 50,000 个节点的渲染农场，没有任何服务器能比 Ubuntu 服务器提供更有价值的自如扩展性能。</p>
+        <p>Ubuntu Server可为您的公共或私有数据中心带来经济和技术上的可扩展性。无论您是想部署OpenStack云、Hadoop集群还是50,000 个节点的渲染场，Ubuntu Server都能提供性价比最佳的扩展能力。</p>
+        <p><a class="p-button--positive" href="https://www.ubuntu.com/download/server">下载Ubuntu Server</a></p>
       </div>
-      <div class="col-6 u-vertically-center">
-        <img src="{{ STATIC_URL }}img/server/image-server.svg" width="400" height="121" alt="" />
+      <div class="col-6 u-vertically-center u-align--center u-hide--small">
+        <img src="https://assets.ubuntu.com/v1/4b47cae5-image-server.svg" width="400" height="121" alt="">
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="p-strip is-bordered">
+<div class="p-strip--light is-deep is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h2>Ubuntu 16.04 LTS的新功能</h2>
+      <ul class="p-list is-split">
+        <li class="p-list__item is-ticked">由Canonical提供支持直到2021年</li>
+        <li class="p-list__item is-ticked">运行于所有主要架构——x86、x86-64、ARM v7、ARM64、POWER8和IBM s390x（LinuxONE）</li>
+        <li class="p-list__item is-ticked">支持ZFS（适用于服务器和容器的新一代卷管理/文件系统）</li>
+        <li class="p-list__item is-ticked">LXD Linux容器管理程序增强功能，包括QoS和资源控制（CPU、内存、块I/O、存储配额）</li>
+        <li class="p-list__item is-ticked">安装snap以实现简单的应用程序安装和发布管理</li>
+        <li class="p-list__item is-ticked">首次正式发布DPDK——全速内核网络功能</li>
+        <li class="p-list__item is-ticked">Linux 4.4内核和systemd服务管理器</li>
+        <li class="p-list__item is-ticked">在AWS、Microsoft Azure、Joyent、IBM、Google Cloud Platform和Rackspace上获得客户机认证</li>
+        <li class="p-list__item is-ticked">更新Tomcat (v8)、Postgresql（v9.5）、Docker（v1.10）、Puppet（v3.8.5）、Qemu（v2.5）、Libvirt (v1.3.1)、LXC（v2.0）和MySQL（v5.6）等</li>
+      </ul>
+      <p><a class="p-link--external" href="https://wiki.ubuntu.com/XenialXerus/ReleaseNotes">查看发布说明</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="p-strip is-deep is-bordered">
   <div class="row">
     <div class="u-equal-height">
       <div class="col-4 u-vertically-center u-align--center">
-        <img src="{{ STATIC_URL }}img/logos/logo-pack/logo-ibm.svg" alt="IBM logo" width="200" />
+        <img class="u-hide--small" src="https://assets.ubuntu.com/v1/70b5df6e-landscape-logo.svg" alt="Landscape pictogram" width="200" height="200">
       </div>
       <div class="col-8">
-        <h2>Ubuntu 服务器适用于Power</h2>
-        <p>除 x86 和 ARM 服务器外，Ubuntu 还适用于 Power 架构。因此，企业数据中心得以在选定的任何硬件上构建 Ubuntu 基础设施。</p>
+        <h2>Landscape：服务器管理</h2>
+        <p>Landscape让您可以像管理一台计算机那样轻松管理数千台Ubuntu计算机，让Ubuntu桌面计算机、服务器和云实例的管理更具成本效益。Landscape设置简单，易于使用，而且不需要特殊硬件。</p>
+        <div class="p-list">
+          <ul class="p-list is-split">
+            <li class="p-list__item is-ticked">规模化管理</li>
+            <li class="p-list__item is-ticked">部署或回滚安全更新</li>
+            <li class="p-list__item is-ticked">内核实时修补</li>
+            <li class="p-list__item is-ticked">合规报告</li>
+            <li class="p-list__item is-ticked">基于角色的访问权限</li>
+            <li class="p-list__item is-ticked">信息丰富的监控功能</li>
+          </ul>
+        </div>
+        <p><a href="https://landscape.canonical.com/" class="p-button--neutral"><span class="p-link--external">进一步了解Landscape</span></a></p>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="p-strip is-bordered">
+<div class="p-strip--light is-deep is-bordered">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-8">
+        <h2>Ubuntu Server适用于Power架构</h2>
+        <p>除了x86和ARM服务器，Power架构也支持Ubuntu。对于企业数据中心，这意味着您现在可以在自己选择的任何硬件上构建基础架构。</p>
+      </div>
+      <div class="col-4 u-vertically-center u-align--center">
+        <img src="https://assets.ubuntu.com/v1/683950fd-logo-ibm.svg" alt="IBM logo" width="200">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="p-strip is-deep" style="padding-bottom: 2rem;">
   <div class="row">
     <div class="col-12">
-      <h2>性能和多功能性</h2>
-      <p>灵活的技术，适合发展迅速的公司</p>
-      <p>无论您是想部署一个 NoSQL 数据库、一个Web 农场还是一个云，Ubuntu 的性能和多功能性都能满足您的需求。经领先原始设备制造商认证，其部署和管理工具可帮助您节约时间和降低成本。</p>
-      <p>我们定期升级，这意味着我们支持大多数最新应用程序。精简化初始安装和集成服务编排技术使 Ubuntu 服务器成为大规模部署的优秀解决方案。</p>
+      <h2 id="performance-and-versatility">性能和多功能性</h2>
+      <p class="p-heading--three">为快速发展的公司带来灵活、安全、可随处部署的技术</p>
     </div>
-    <h3 class="u-muted-heading u-align--center">适用于所有硬件和软件</h3>
-    <ul class="p-inline-images">
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-lenovo.svg" width="108" height="45" alt="Lenovo" /></li>
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-dell.svg" width="45" height="45" alt="Dell" /></li>
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-ibm.svg" width="46" height="45" alt="IBM" /></li>
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-hp.svg" width="45" height="45" alt="HP" /></li>
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-intel.svg" width="50" height="45" alt="Intel" /></li>
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-cisco.svg" height="45" width="85" alt="Cisco" /></li>
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-amd.svg" height="45" width="188" alt="AMD" /></li>
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-arm.svg" height="45" width="150" alt="Intel" /></li>
-    </ul>
-    <p class="u-align--center"><a href="http://ubuntu.com/certification">查看所有经认证的硬件</a></p>
-
-    <ul class="p-inline-images">
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-centrify.png" width="94" height="45" alt="Centrify" /></li>
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-openstack.svg" width="60" height="45" alt="OpenStack" /></li>
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-likewise.png" width="82" height="45" alt="Likewise" /></li>
-      <li class="p-inline-images__item"><img src="{{ STATIC_URL }}img/logos/logo-pack/logo-openbravo.png" width="184" height="45" alt="Openbravo" /></li>
-    </ul>
-    <p class="u-align--center"><a href="http://ubuntu.com/partners/certified-software">查看所有经认证的软件</a></p>
-
   </div>
-</section>
-
-<section class="p-strip is-bordered">
   <div class="row">
-    <div class="col-8">
-      <h2>无限扩展</h2>
-      <p>由于不收取许可费和订阅费，Ubuntu 服务器能帮助您有效地扩展您的数据中心。Ubuntu Advantage（Canonical 管理计划）订购服务包括无限制虚拟化支持，且价格不会因为CPU 增加 而上涨（这一点与其他企业版 Linux 操作系统不同）。</p>
+    <div class="col-6">
+      <p>无论您是想部署NoSQL数据库、Web场还是云，Ubuntu的性能和多功能性都能满足您的需求。Ubuntu经过领先的硬件原始设备制造商认证，拥有全面的部署工具，可让您的基础架构物尽其用。</p>
+    </div>
+    <div class="col-6">
+      <p>我们定期发布新的版本，这意味着我们支持大多数最新应用程序。精简的初始安装以及集成的部署和应用程序建模技术，使Ubuntu Server成为简单部署与规模化管理的优秀解决方案。</p>
     </div>
   </div>
-</section>
+</div>
 
-<section class="p-strip--light is-bordered">
+<div class="p-strip is-deep is-bordered" style="padding-top: 2rem;">
   <div class="row">
-    <div class="col-8">
-      <img src="/static/img/graphs/image-release-cycle-large.png" width="580" height="427" alt="Ubuntu Desktop release cycle, 5 year long term support" />
-    </div>
-    <div class="col-4">
-      <h2>可靠的发布周期</h2>
-      <h3>及时更新和定期升级</h3>
-      <p>长期支持版 (LTS)（如 Ubuntu Server 14.04 LTS）由 Canonical 提供五年支持。每隔半年，临时版本会增加新功能，且硬件启用更新服务会为最新计算机添加支持，以运行所有受支持的 LTS 版本。</p>
+    <div class="col-12">
+      <h3 class="p-muted-heading u-align--center">支持您的所有硬件和软件</h3>
+      <ul class="p-inline-images">
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/68713fd5-logo-lenovo.svg" alt="Lenovo">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/5ddba83a-logo-dell.svg" alt="Dell">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/683950fd-logo-ibm.svg" alt="IBM">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/a298e7ec-logo-hp.svg" alt="HP">
+        </li>
+        <li class="last-item p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/c24cb4b9-logo-intel.svg" alt="Intel">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/4d6054f9-logo-cisco.svg" alt="Cisco">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/731aab6c-logo-amd.svg" alt="AMD">
+        </li>
+        <li class="last-item p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/4efbd291-Arm_logo_blue_cropped.svg" alt="Arm">
+        </li>
+        <li class="last-item p-inline-images__item">
+          <img class="p-inline-images__logo" src="{{ STATIC_URL }}img/server/huawei.png" alt="华为">
+        </li>
+        <li class="last-item p-inline-images__item">
+          <img class="p-inline-images__logo" src="{{ STATIC_URL }}img/server/Inspur-logo.png" alt="Inspur,浪潮">
+        </li>
+      </ul>
+      <p class="u-align--center u-vertically-spaced"><a href="https://certification.ubuntu.com">查看所有认证的硬件&nbsp;›</a></p>
+
+      <ul class="p-inline-images">
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/76999dfc-logo-centrify.png" alt="Centrify">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/eed716e9-logo-openstack.svg" alt="OpenStack" width="100%">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/c228b4e9-logo-likewise.png" alt="Likewise">
+        </li>
+        <li class="last-item p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/64493bba-logo-openbravo.png" alt="Openbravo">
+        </li>
+      </ul>
+      <p class="u-align--center u-vertically-spaced"><a href="https://www.ubuntu.com/partners/certified-software">查看所有认证过软件&nbsp;›</a></p>
     </div>
   </div>
-</section>
+</div>
 
-<section class="p-strip is-bordered">
+<div class="p-strip--light is-deep is-bordered">
   <div class="row">
-    <div class="col-12 suffix-4">
-      <h2>Ubuntu 服务器适用于超大规模计算</h2>
-      <p>Ubuntu 服务器基于自如扩展理念，其提供的集成化工具方便人们部署复杂的服务网络，就像画一个图然后按“出发”键一样简单。</p>
-      <p>Ubuntu 服务器能在 x86 和 ARM 上无缝运行，内置所有领先的开放源码和商业工作负载，包括Apache Hadoop、Inktank Ceph、10gen MongoDB 等。</p>
+    <div class="u-equal-height">
+      <div class="col-7">
+        <h3>Ubuntu发布周期</h3>
+        <img src="https://assets.ubuntu.com/v1/cf53cf6c-release-ubuntu-end-of-life.png" alt="Ubuntu Desktop release cycle, 5 year long-term support">
+      </div>
+      <div class="col-5">
+        <h2 id="a-release-schedule-you-can-depend-on">值得信赖的发布计划</h2>
+        <p class="p-heading--four">定期更新和升级确保最新状态</p>
+        
+        
+        <p>Canonical为Ubuntu Server长期支持版(LTS)提供长达五年的支持。每隔半年，临时版本会增加新的功能，同时硬件支持更新会为所有支持的LTS版本添加对最新设备的支持。</p>
+        
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="p-strip is-bordered">
+
+<div class="p-strip is-deep is-bordered">
   <div class="row p-divider">
-    <div class="col-6 p-divider__block">
-      <p class="u-align--center">
-        <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-juju.svg" alt="Juju logo" width="100" height="100" />
-      </p>
-      <h3>Juju—服务编排</h3>
-      <p>Juju 使用命令行或基于浏览器的界面，您只需点击几下即可部署全部工作负载。它适用于公共云（如 AWS 和惠普云）和建立在 OpenStack 上的私有云，甚至还适用于裸机 （通过 MAAS）。</p>
-      <p><a class="p-link--external" href="http://www.ubuntu.com/cloud/orchestration/juju">进一步了解 Juju</a></p>
+    <div class="col-4 p-divider__block">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://assets.ubuntu.com/v1/60bd6cf1-picto-juju.svg" alt="Juju logo" width="100" height="100">
+          <h3 class="p-heading-icon__title">Juju——应用程序建模</h3>
+        </div>
+        <p>Juju提供命令行和基于浏览器的界面选项，让您只需点击几下即可设计和部署整个工作负载。它适用于AWS和Microsoft Azure这样的公有云、基于OpenStack构建的私有云，甚至可以通过MAAS直接在裸机上运行。</p>
+        <p><a href="https://www.ubuntu.com/cloud/juju">进一步了解Juju&nbsp;›</a></p>
+      </div>
     </div>
-    <div class="col-6 p-divider__block">
-      <p class="u-align--center">
-        <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-maas.svg" alt="Maas logo" width="100" height="100" />
-      </p>
-      <h3>MAAS—裸机配置</h3>
-      <p>MAAS 是一个节省时间的配置系统，用户可使用该系统轻松快速地设置物理硬件，以便在这些硬件上部署复杂的服务。您只要插上服务器并将其连接到网络即可，MAAS 会完成剩下的工作。</p>
-      <p><a class="p-link--external" href="http://www.ubuntu.com/cloud/orchestration/maas">进一步了解 MAAS</a></p>
+    <div class="col-4 p-divider__block">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://assets.ubuntu.com/v1/0de4fcd5-logo-maas-icon.svg" alt="Maas logo" width="100" height="100">
+          <h3 class="p-heading-icon__title">MAAS——裸机配置</h3>
+        </div>
+        <p>MAAS是一套省时的配置系统，用户可使用该系统快速轻松地设置物理硬件，以部署各种复杂的服务，例如Ubuntu的OpenStack云基础架构。只需为服务器接上电源，将它们连接到网络即可，MAAS会帮您完成剩下的工作。</p>
+        <p><a href="https://www.ubuntu.com/server/maas">进一步了解MAAS&nbsp;›</a></p>
+      </div>
+    </div>
+    <div class="col-4 p-divider__block">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://assets.ubuntu.com/v1/425efe3a-lxd.svg" width="100" alt="LXD">
+          <h3 class="p-heading-icon__title">LXD——系统容器</h3>
+        </div>
+        <p>LXD，是Linux容器管理程序，它将容器的速度和密度优势与传统虚拟机的易管理性和安全性融为一体。经济效益与密度直接相关，没有其他虚拟化技术能达到LXD这样的速度或密度。</p>
+        <p><a href="https://www.ubuntu.com/cloud/lxd">进一步了解LXD&nbsp;›</a></p>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="p-strip is-bordered">
+<div class="p-strip--light is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h2>Ubuntu Advantage：世界一流的支持服务</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <p>The Ubuntu Advantage服务计划可帮您快速解决问题、直接向Ubuntu专家寻求帮助，以及使用Ubuntu系统管理软件包Landscape进行高效管理。</p>
+
+      <p>Landscape让您可以像管理一台计算机那样轻松管理数千台Ubuntu计算机，让Ubuntu桌面计算机、服务器和云实例的管理更具成本效益。</p>
+      <p><a href="https://www.ubuntu.com/support">进一步了解Ubuntu Advantage&nbsp;›</a></p>
+    </div>
+    <div class="col-5 prefix-1 u-float--right">
+      <div class="p-card">
+        <h3 class="p-card__title">联系我们</h3>
+        <p class="p-card__content">请联系我们的技术支持团队说明您的服务器要求。</p>
+        <p class="p-card__content"><a class="p-button--positive" href="/server/contact-us?product=server-overview">联系我们</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="p-strip is-deep" style="padding-bottom: 2rem;">
   <div class="row">
     <div class="col-8">
-      <h2>在任何地方部署</h2>
-      <h3>选择最流行的公共云</h3>
-      <p>Ubuntu 是世界公共云上最流行的云客户机操</p>
-      <p>作系统。Ubuntu Cloud Guest 专门针对公共云基础设施设计，没有任何许可限制。</p>
-      <a href="http://cn.ubuntu.com/cloud">进一步了解 Ubuntu 云 ›</a>
+      <h2 id="deploy-anywhere">可在任何地方部署</h2>
+      <h3>最受欢迎的公有云任您选择</h3>
+      <p>在公有云中使用Ubuntu Server，尽享Ubuntu Server带来的全部优势。专为公有云基础架构量身定制，没有任何许可限制。</p>
+      <p>Ubuntu 是构建开源云使用最广泛的开发者平台，也是OpenStack的参考操作系统，更是全球私有云和公有云上最受欢迎的云客户机操作系统。</p>
+      <p><a href="https://www.ubuntu.com/cloud/public-cloud/guest">进一步了解Ubuntu Cloud&nbsp;›</a></p>
     </div>
-    <div class="col-4">
-      <p>Ubuntu 服务器：</p>
-      <ul class="p-list--divided">
-        <li class="p-list__item is-ticked">Amazon Web Services</li>
-        <li class="p-list__item is-ticked">HP Cloud</li>
-        <li class="p-list__item is-ticked">Internap</li>
-        <li class="p-list__item is-ticked">Microsoft Azure</li>
-        <li class="p-list__item is-ticked">Joyent</li>
+  </div>
+</div>
+
+<div class="p-strip is-deep is-bordered" style="padding-top: 2rem;">
+  <div class="row">
+    <div class="col-12">
+      
+
+
+
+
+  <h2 class="p-muted-heading u-align--center">我们的部分公有云合作伙伴</h2>
+  <ul id="cloud-partners" class="p-inline-images">    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/2bd237c2-Quanta_logo.png" alt="QCT (Quanta Cloud Technology)">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/d74eebcd-o-redbadge-digital-master.png" alt="Oracle">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/3f403c1f-logo.svg?fmt=png" alt="Packet">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/4bd8fe25-logo_lockup_cloud_platform_icon_vertical%281%29.png" alt="Google Cloud Platform">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/208cd3a7-azure-logo-blue-on-white.svg" alt="Microsoft Azure">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/sites/ubuntu/1121/u/img/logos/partners/AWS.png" alt="Amazon Web Services">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/89f42bfd-Coho-Data.png" alt="Coho Data">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/sites/ubuntu/1201/u/img/cloud/partners/logo-ceph-160.png" alt="Ceph">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/c5695114-New+Nuage+Logo.jpg" alt="Nuage Networks">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/27a8e988-Skymind.png" alt="Skymind">
+      </li>    
+  </ul>
+
+      <p class="u-align--center"><a href="http://partners.ubuntu.com/find-a-partner?programme=certified-public-cloud" class="p-link--external">查看我们所有的公有云合作伙伴</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="p-strip is-deep" style="padding-bottom: 2rem;">
+  <div class="row">
+    <div class="col-8">
+      <h2 id="built-for-big-data">为大数据和云而生</h2>
+      <h3>裸机或云端都能实现出色速度与简洁性</h3>
+      <p>Ubuntu带来新的快速部署工具，可显著加快裸机安装服务器实例的速度。我们的服务编排工具 Juju，能让裸机或云端的大数据服务部署变得出人意料的简单。正因如此，10gen、Cloudera、Couchbase、DataStax、Hortonworks、LexisNexis和Map-R等厂商都选择与我们合作。</p>
+      <p><a href="/cloud">进一步了解Ubuntu Cloud&nbsp;›</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="p-strip is-deep is-bordered" style="padding-top: 2rem;">
+  <div class="row">
+    <div class="col-12">
+      
+
+
+
+
+  <h2 class="p-muted-heading u-align--center">我们的部分大数据合作伙伴</h2>
+  <ul id="cloud-partners" class="p-inline-images">
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/aadbed62-DataStax.png" alt="DataStax">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/sites/ubuntu/1121/u/img/logos/partners/Cloudera.png" alt="Cloudera">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/sites/ubuntu/1121/u/img/logos/partners/couchbase_logo_final_SCALED___.png" alt="Couchbase">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/sites/ubuntu/1149/u/img/logos/partners/mapr_logo.jpg" alt="MapR">
+      </li>
+    
+      <li class="p-inline-images__item">
+        <img class="p-inline-images__logo" src="https://assets.ubuntu.com/sites/ubuntu/1121/u/img/logos/partners/10genLogo_1.png" alt="MongoDB">
+      </li>
+    
+  </ul>
+
+
+      <p class="u-align--center"><a href="http://partners.ubuntu.com/find-a-partner?service-offered=big-data" class="p-link--external">查看我们所有的大数据合作伙伴</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-6">
+      <h2 id="the-fast-track-to-virtualisation">虚拟化和容器化的快车道</h2>
+      <p>准备好提高效率和降低成本了吗？欢迎使用Ubuntu Server、KVM和LXD来虚拟化您的服务器。使用安全、精简的Ubuntu版本作为应用程序的客户机操作系统，可在几秒钟内创建虚拟机和计算机容器。KVM、LXD、Xen、VMware、Vagrant、VirtualBox和Docker都能搭配Ubuntu Server，带给您一流的使用体验。Ubuntu Server现在还支持ARM上的KVM和IBM POWER8架构。</p>
+      <p>选择权是Canonical的信仰 - 这就是为什么我们支持操作系统相互兼容的开放生态系统。通过提供多种选择，在服务器和云上使用Ubuntu的用户有能力自如应对任何工作负载。我们鼓励其他厂商也这样做，并为其他虚拟化平台上运行的所有（当前支持的）Ubuntu Server版本提供支持，包括其他商用Linux发行版上的KVM、VMware vSphere和Microsoft Hyper-V。</p>
+    </div>
+    <div class="col-6">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col" colspan="2" class="u-align--center">Power and z&nbsp;Systems</th>
+            <th scope="col" colspan="2" class="u-align--center">x86</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th scope="col" class="u-align--center">LXD</th>
+            <th scope="col" class="u-align--center">KVM</th>
+            <th scope="col" class="u-align--center">LXD</th>
+            <th scope="col" class="u-align--center">KVM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">Ubuntu</td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+          </tr>
+          <tr>
+            <td scope="row">Red Hat</td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+          </tr>
+          <tr>
+            <td scope="row">SLES</td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+          </tr>
+          <tr>
+            <td scope="row">CentOS</td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+          </tr>
+          <tr>
+            <td scope="row">OpenSUSE</td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+          </tr>
+          <tr>
+            <td scope="row">Debian</td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+          </tr>
+          <tr>
+            <td scope="row">Fedora</td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+          </tr>
+          <tr>
+            <td scope="row">Windows</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="u-align--center"><img width="16" height="16" alt="Yes" src="https://assets.ubuntu.com/v1/c4b02d61-tick-orange.svg"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12" style="padding-top: 5rem;">
+      <h3 class="p-muted-heading u-align--center">UBUNTU适用于各种客户机</h3>
+      <ul class="p-inline-images">
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/c037fd75-ubuntu-logo.png" width="150" alt="Ubuntu logo">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/2eafb62e-openlogo.svg" width="150" alt="Debian logo">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/30574235-windows-logo.svg" width="120" alt="Windows logo">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/c69a8b3c-centos-logo.png" width="150" alt="CentOS logo">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/eda6b94a-redhat-logo.svg" width="140" alt="Redhat logo">
+        </li>
+        <li class="p-inline-images__item">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/6697a21a-suse-logo.png" width="100" alt="Suse logo">
+        </li>
       </ul>
     </div>
   </div>
-</section>
+</div>
 
-<section class="p-strip is-bordered">
+<div class="p-strip--light">
   <div class="row">
-    <aside class="col-4 p-card">
-      <header class="p-card__header">
-        <h4 id="works-with-your-hardware-and-software">Our big data partners</h4>
-      </header>
-      <ul class="p-list">
-        <li><img src="{{ STATIC_URL }}img/logos/logo-couchbase-100x35.png" width="100" height="35" alt="Couchbase" /></li>
-        <li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-cloudera-100x35.png" width="100" height="35" alt="Cloudera" /></li>
-        <li><img src="{{ STATIC_URL }}img/logos/logo-10gen-75x35.png" width="75" height="35" alt="10gen" /></li>
-        <li><img src="{{ STATIC_URL }}img/logos/logo-hortonworks-93x35.png" width="93" height="35" alt="Hortonworks" /></li>
-        <li><img src="{{ STATIC_URL }}img/logos/logo-lexisnexis-135x35.png" width="135" height="35" alt="LexisNexis" /></li>
-        <li><img src="{{ STATIC_URL }}img/logos/logo-mapr-60x35.png" width="60" height="35" alt="MapR" /></li>
-        <li><img src="{{ STATIC_URL }}img/logos/logo-datastax-129x35.png" width="129" height="35" alt="DataStax" /></li>
-      </ul>
-    </aside>
-    <div class="col-8 prefix-1">
-      <h2>适用于大数据</h2>
-      <h3>高速和简单（裸机或云)</h3>
-      <p>凭借其新开发的快速部署工具，Ubuntu 能加</p>
-      <p>快在裸机上安装服务器实例的速度。我们的服务编排工具 Juju 使大数据服务部署工作变得简单（在裸机上或在云上）。这也是为什么 10gen、Cloudera、Couchbase、DataStax、Hortonworks、LexisNexis 和 Map-R 等供应 商与我们建立合作伙伴关系的原因。</p>
-      <p><a href="/cloud">进一步了解 Ubuntu 云</a></p>
+    <div class="u-equal-height">
+      <div class="col-8">
+        <h2 id="a-thriving-community">蓬勃发展的社区</h2>
+        <p>与成千上万的其他 IT 专业人士交流专业知识和想法</p>
+        <p>想直接与其他Ubuntu用户交流？分享奇思妙想，并从我们庞大而活跃的IT专业人士社区中汲取建议和帮助。作为一个群体，我们有着非常友好和宽容的氛围，欢迎您提出问题和作出贡献！</p>
+        <p><a class="p-link--external" href="http://community.ubuntu.com">加入社区</a></p>
+      </div>
+      <div class="col-3 u-vertically-center u-align--center">
+        <img src="https://assets.ubuntu.com/v1/039628d5-picto-community-orange.svg" class="u-hide--small" alt="" width="136" height="136">
+      </div>
     </div>
   </div>
-</section>
+  </div>
 
-<section class="p-strip is-bordered">
+  <div class="p-strip p-contextual-footer">
   <div class="row">
-    <div class="col-8">
-      <h2>虚拟化快车道</h2>
-      <p>准备提高效率和降低成本吗？使用 Ubuntu 服务器和 KVM 虚拟化您 的服务器。如果您将 Ubuntu 用作应用程序客户机操作系统，您只需 几分钟就可创建虚拟机映像。支持 KVM、Xen、VMware 和 LXC；KVM 现在也适用于基于 Ubuntu 的 ARM 服务器。</p>
-    </div>
-    <div class="col-4 u-align--center">
-      <img src="{{ STATIC_URL }}img/pictograms/picto-pack/picto-startfirst-darkaubergine.svg" width="153" height="153" alt="" />
+    <div class="p-divider">
+      
+         <div class="col-4 p-divider__block">
+  <h3 class="p-heading--four">下载</h3>
+  <p>无论您是想配置简单的文件服务器，还是构建50,000个节点的云，都可以信赖Ubuntu Server及其长达五年的免费升级保证。</p>
+  <p><a href="https://www.ubuntu.com/download/server" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contextual footer link', 'eventAction' : 'server download', 'eventLabel' : 'Download', 'eventValue' : undefined });">Get Ubuntu Server&nbsp;›</a></p>
+</div>
+ 
+      
+      
+         <div class="col-4 p-divider__block">
+  <h3 class="p-heading--four">适用于企业的Ubuntu Advantage</h3>
+  <p>从Canonical获得Ubuntu Server的专业支持。</p>
+  <p><a href="https://buy.ubuntu.com" class="p-button--neutral" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contextual footer link', 'eventAction' : 'server contact-us', 'eventLabel' : 'Ubuntu Advantage store', 'eventValue' : undefined });"><span class="p-link--external">访问商店</span></a></p>
+  <p><a href="https://www.ubuntu.com/server/contact-us?product=contextual-footer-ua" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contextual footer link', 'eventAction' : 'server contact-us', 'eventLabel' : 'For business', 'eventValue' : undefined });">联系我们&nbsp;›</a></p>
+</div>
+ 
+      
+      
+         <div class="col-4 p-divider__block">
+  <h3 class="p-heading--four">进一步阅读</h3>
+  
+    
+
+
+
+  <ul class="p-list">
+    
+      <li class="p-list__item"><a href="https://insights.ubuntu.com/2018/02/06/building-slack-for-the-linux-community-and-adopting-snaps/">Building Slack for the Linux community and adopting snaps&nbsp;›</a></li>
+    
+      <li class="p-list__item"><a href="https://insights.ubuntu.com/2018/02/03/snapcraft-summit-summary-day-5/">Snapcraft Summit summary – day 5&nbsp;›</a></li>
+    
+      <li class="p-list__item"><a href="https://insights.ubuntu.com/2018/02/02/ubuntu-desktop-update-2-february-2018/">Ubuntu Desktop weekly update – February 2, 2018&nbsp;›</a></li>
+    
+      <li class="p-list__item"><a href="https://insights.ubuntu.com/2018/02/02/snapcraft-summit-summary-day-3/">Snapcraft Summit summary – day 3&nbsp;›</a></li>
+    
+      <li class="p-list__item"><a href="https://insights.ubuntu.com/2018/02/02/tutorial-install-single-server-openstack-with-conjure-up/">Tutorial: Install single-server OpenStack with conjure-up&nbsp;›</a></li>
+    
+  </ul>
+
+
+</div>
+ 
+      
     </div>
   </div>
-</section>
+</div>
 
-<section class="p-strip is-bordered">
-  <div class="row">
-    <div class="col-8">
-      <a class="p-link--external" href="http://www.ubuntu.com/server">Learn more on www.ubuntu.com</a>
-    </div>
-  </div>
-</section>
+
+  
+
+        
+      </div>
+
+
 
 {% endblock %}

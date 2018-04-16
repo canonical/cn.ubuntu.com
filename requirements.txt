@@ -4,7 +4,6 @@ dj-database-url==0.3.0
 Django==1.8.18
 django-markdown==0.8.4
 Markdown==2.6.8
-psycopg2==2.6.1
 django-markdown-deux==1.0.5
 django-reversion==2.0.8
 django-reversion-compare==0.7.5
@@ -12,4 +11,5 @@ whitenoise==3.3.0
 django-static-root-finder==0.2.1
 django-template-finder-view==0.2
 django-openid-auth==0.14
+talisker==0.9.6
 Jinja2==2.8

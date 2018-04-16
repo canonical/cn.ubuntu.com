@@ -9,33 +9,165 @@
 
 {% block content %}
 
-<section class="p-strip is-bordered">
+<!-- snap store -->
+<div class="p-strip--light is-deep">
   <div class="row">
-    <div class="u-equal-height">
-      <div class="col-6 u-vertically-center">
-        <div>
-          <h1>物联网时代的 Ubuntu</h1>
-          <p>Ubuntu Core 是 Ubuntu 的一个精简版本，可在具有自主性的机器、设备和其他通过互联网相连的数字化产品上安全地运行。从智能家居到无人机，这些设备将给我们生活的诸多方面带来彻底变革，但是它们需要一套与传统 PC 系统不同的操作系统, 确保它更加安全可控。</p>
-        </div>
-    </div>
-      <div class="col-6">
-      <img src="{{ STATIC_URL }}img/internet-of-things/darwin.png" alt="Darwin robot" />
-    </div>
+    <div class="col-8">
+      <h2>用于软件定义万物的应用程序商店</h2>
+      <p>今天的设备是由软件定义的。 Ubuntu专为开发者打造，是世界上最受信赖的Linux。并且还提供专业人才和工具来扩大您的应用商店和生态系统。
+</p>
     </div>
   </div>
-</section>
+  <div class="row">
+    <div class="col-12 u-hide--small">
+      <img src="https://assets.ubuntu.com/v1/472914ed-Core-Snap-Store.jpg" alt="Snap store screenshot">
+    </div>
+  </div>
+</div>
+
+<!-- support platform -->
+<div class="p-strip--light is-deep is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h2>支持主流平台更快地构建原型和产品</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-6 p-card">
+        <header class="p-card__header no-border u-align--center u-vertically-center u-hide--small" style="min-height: 8rem;">
+          <img src="https://assets.ubuntu.com/v1/a8d80d5a-Qualcomm-Logo.svg" style="height: 65px;" alt="Qualcomm logo">
+        </header>
+        <h3 class="p-card__title">Qualcomm Dragonboard</h3>
+        <p class="p-card__content">64位ARM板为低功耗部分带来高端性能，实现了新一代无人机和移动智能。</p>
+        <p class="p-card__content"><a href="https://developer.qualcomm.com/hardware/dragonboard-410c" class="p-link--external">前往qualcomm.com</a></p>
+      </div>
+      <div class="col-6 p-card">
+        <header class="p-card__header no-border u-align--center u-vertically-center u-hide--small" style="min-height: 8rem;">
+          <img src="https://assets.ubuntu.com/v1/c5dfb2cb-samsung-artik.png" style="height: 65px;" alt="Samsung Artik logo">
+        </header>
+        <h3 class="p-card__title">三星 Artik</h3>
+        <p class="p-card__content">三星Artik系列物联网模块易于集成，易于操作，可在一系列功率和性能上实现快速原型设计和快速生产。</p>
+        <p class="p-card__content"><a href="https://www.artik.io/" class="p-link--external">前往artik.io</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-6 p-card">
+        <header class="p-card__header no-border u-align--center u-vertically-center u-hide--small" style="min-height: 8rem;">
+          <img src="https://assets.ubuntu.com/v1/8cb47950-g46.png" style="height: 65px;" alt="Intel Up-squared">
+        </header>
+        <h3 class="p-card__title">UP Squared Grove IoT开发套件</h3>
+        <p class="p-card__content">UP Squared Grove IoT 套件是一款集高性能开发板和传感器的组合，让产品开发更容易。预装的Ubuntu 16.04 LTS和物联网开发库可以便捷地进行设置和配置。</p>
+        <p class="p-card__content"><a href="https://software.intel.com/en-us/iot/hardware/up-squared-grove-dev-kit" class="p-link--external">前往intel.com</a></p>
+      </div>
+      <div class="col-6 p-card">
+        <header class="p-card__header no-border u-align--center u-vertically-center u-hide--small" style="min-height: 8rem;">
+          <img src="https://assets.ubuntu.com/v1/dca2e4c4-raspberry-logo.png" style="height: 65px;" alt="Raspberry Pi logo">
+        </header>
+        <h3 class="p-card__title">树莓派：Pi2和Pi3</h3>
+        <p class="p-card__content">为了娱乐，为了教育乃至盈利，树莓派使设备开发变得个性化和娱乐化。 通过支持Pi2和新的Pi3，Ubuntu Core支持全球最受欢迎的主板。
+        </p>
+        <p class="p-card__content"><a href="https://www.raspberrypi.org/" class="p-link--external">前往rasberrypi.org</a></p>
+      </div>
+    </div>
+  </div>
+   <div class="row">
+    <div class="u-equal-height">
+      <div class="col-6 p-card">
+        <header class="p-card__header no-border u-align--center u-vertically-center u-hide--small" style="min-height: 8rem;">
+          <img src="{{ STATIC_URL }}img/internet-of-things/orangepi.png" style="height: 65px;" alt="Intel Up-squared">
+        </header>
+        <h3 class="p-card__title">Orange Pi</h3>
+        <p class="p-card__content">Orange Pi(香橙派)是一款开源的单板电脑，新一代的arm开发板,它可以运行Ubuntu Core操作系统。</p>
+        <p class="p-card__content"><a href="http://www.orangepi.cn/downloadresourcescn/" class="p-link--external">前往Orange Pi官网</a></p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="p-strip is-deep is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h2>下载受支持的Ubuntu Core</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-4 p-card">
+        <div class="p-heading-icon">
+          <div class="p-heading-icon__header">
+            <img class="p-heading-icon__img" src="{{ STATIC_URL }}img/internet-of-things/arm.png">
+            <h3 class="p-heading-icon__title">ARM</h3>
+          </div>
+        </div>
+        <p class="p-card__content">树梅派第二代和第三代</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a class="p-link--external" href="http://releases.ubuntu.com/ubuntu-core/16/">下载树梅派镜像</a></li>
+        </ul>
+      </div>
+
+      <div class="col-4 p-card">
+        <div class="p-heading-icon">
+          <div class="p-heading-icon__header">
+            <img class="p-heading-icon__img" src="{{ STATIC_URL }}img/internet-of-things/arm.png">
+            <h3 class="p-heading-icon__title">ARM</h3>
+          </div>
+        </div>
+        <p class="p-card__content">Qualcomm Dragonboard 410c</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a class="p-link--external" href="http://releases.ubuntu.com/ubuntu-core/16/ubuntu-core-16-dragonboard-410c.img.xz">下载410c镜像</a></li>
+          
+        </ul>
+      </div>
+
+       <div class="col-4 p-card">
+        <div class="p-heading-icon">
+          <div class="p-heading-icon__header">
+            <img class="p-heading-icon__img" src="{{ STATIC_URL }}img/internet-of-things/arm.png">
+            <h3 class="p-heading-icon__title">ARM</h3>
+          </div>
+        </div>
+        <p class="p-card__content">Orange Pi Zero</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a class="p-link--external" href="http://www.orangepi.org/downloadresources/orangepizero/2017-08-18/orangepizero_97899291e57c7a56ec9073f.html">下载Orange Pi Zero</a></li>
+          
+        </ul>
+      </div>  
+
+      <div class="col-4 p-card">
+        <div class="p-heading-icon">
+          <div class="p-heading-icon__header">
+            <img class="p-heading-icon__img" src="{{ STATIC_URL }}img/internet-of-things/X86-512.png">
+            <h3 class="p-heading-icon__title">X86</h3>
+          </div>
+        </div>
+        <p class="p-card__content">可在X86平台上运行，开发工作更简单。</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a class="p-link--external" href="http://releases.ubuntu.com/ubuntu-core/16/">下载X86平台镜像(i386和amd64)</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <section class="p-strip is-bordered">
   <div class="row">
-    <div class="col-4">
-      <img src="{{ STATIC_URL }}img/internet-of-things/snappy-ubuntu-core-logo.svg" alt="">
+    <div class="col-4 u-align--center">
+      <img src="/static/img/internet-of-things/core1.png" alt="">
     </div>
     <div class="col-8 prefix-1">
-      <h2>为何选择 Ubuntu Core</h2>
+      <h2>为何选择Ubuntu Core</h2>
       <p>Ubuntu Core提供了一个易于更新和升级的软件平台，让厂商们可以轻易打造差异化的设备，通过软件升级让产品使用寿命期不断延伸，持续创造收入。它几乎可以支持任何类型和规模的设备，并提供全面型操作系统所具有的出色安全性和可扩展性。</p>
       <ul class="p-list--divided">
         <li class="p-list__item is-ticked">为应用和用户提供更快、更可靠、更强大的安全保障。</li>
-        <li class="p-list__item is-ticked">可对应用和 Ubuntu Core 软件本身进行原子级事务性更新；为了实现简单的维护和升级，这些更新可根据需要恢复原状。</li>
+        <li class="p-list__item is-ticked">可对应用和Ubuntu Core软件本身进行原子级事务性更新；为了实现简单的维护和升级，这些更新可根据需要恢复原状。</li>
         <li class="p-list__item is-ticked">将操作系统和应用程序文件分离开来并作为一组独特的只读映像存在，从而确保能够轻松安全地为单个设备添加多个应用和功能。</li>
         <li class="p-list__item is-ticked">提供全新的、更简单的应用程序打包系统，更便于开发者构建和维护应用。</li>
       </ul>
@@ -48,7 +180,7 @@
   <div class="row">
     <div class="col-12 suffix-6">
       <h2>对于合作伙伴</h2>
-      <p>Ubuntu Core 是一套安全、稳定、易于更新的操作系统，适用于从无人机、工业网关到智能供暖、照明和安全系统在内的任何支持互联网的设备。</p>
+      <p>Ubuntu Core是一套安全、稳定、易于更新的操作系统，适用于从无人机、工业网关到智能供暖、照明和安全系统在内的任何支持互联网的设备。</p>
       <ul class="p-list--divided">
         <li class="p-list__item is-ticked">企业级的安全模型</li>
         <li class="p-list__item is-ticked">可靠且能满足未来需求</li>
@@ -67,7 +199,7 @@
     <div class="u-equal-height u-vertically-center">
       <div class="col-5">
       <h2>行业领先企业纷纷选择 <br /> Ubuntu Core</h2>
-      <p>从戴尔和微软等老牌厂商到众多开拓创新的科技初创公司，整个物联网都在拥抱 Ubuntu Core。</p>
+      <p>从戴尔和微软等老牌厂商到众多开拓创新的科技初创公司，整个物联网都在拥抱Ubuntu Core。</p>
     </div>
       <div class="col-7">
       <ul class="p-inline-images">
@@ -100,7 +232,7 @@
     <div class="col-6">
       <div class="p-card--overlay">
         <h2>对于开发者</h2>
-        <p>开发者们可以在Ubuntu Core这一个平台上完成对互联网相连的设备和服务器的开发、测试和应用发布。通过 Ubuntu Core，你可以在自己的电脑上开发一个 snappy 应用（或简称为“snap”），然后直接发布到 snappy 商店，让它立即开始创造收入。</p>
+        <p>开发者们可以在Ubuntu Core这一个平台上完成对互联网相连的设备和服务器的开发、测试和应用发布。通过Ubuntu Core，你可以在自己的电脑上开发一个snap应用（或简称为“snap”），然后直接发布到snap商店，让它立即开始创造收入。</p>
         <ul class="p-list--divided">
         <li class="p-list__item is-ticked">完全开源，设计安全</li>
         <li class="p-list__item is-ticked">利用事务性更新实现快速、可靠的更新</li>
