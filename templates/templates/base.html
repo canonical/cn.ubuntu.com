@@ -17,7 +17,8 @@
   
 
   <!-- global nav -->
-  <script async src="{{ STATIC_URL }}components/canonical-global-nav/build/js/global.js"></script>
+  <script async src="{{ STATIC_URL }}components/canonical-global-nav/build/js/global.js"></script> 
+
 
   {% block head_extra %}{% endblock %}
   <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
@@ -56,9 +57,14 @@
     var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
     document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4ee06d994b22c33cd3732c3e69c97b8f' type='text/javascript'%3E%3C/script%3E"));
   </script>
--->
+
   <script>
     ubuntu.globalNav.setup();
-  </script>
+  </script> -->
+
+
+  <script src="{% versioned_static 'global-nav/build/js/global.js' %}"></script>
+<script>ubuntu.globalNav.setup();</script>
+
 </body>
 </html>
