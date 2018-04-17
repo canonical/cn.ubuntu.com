@@ -10,26 +10,112 @@
 
 {% block content %}
 
-<section class="p-strip">
+
+<style type="text/css">
+.img1{
+  margin-left: 0px;
+}
+.img2{
+  width:300px;
+  height:300px;
+}
+.but1{
+  margin-left: 0px;
+}
+
+
+</style>
+
+<div id="main-content" class="inner-wrapper">
+       
+<section class="p-strip is-bordered is-deep">
   <div class="row">
-    <div class="col-6">
-      <h1>Ubuntu联络方式</h1>
-      <p>媒体新闻， 市场合作相关事宜， 请通过以下邮件联系我们： <br />
-        <a href="mailto:chinamarketing@canonical.com">chinamarketing@canonical.com</a></p>
-      <p>开发者人群可以通过以下渠道互动学习：</p>
-      <ul class="p-list--divided">
-        <li class="p-list__item"><a href="http://forum.ubuntu.org.cn/" class="p-link--external">本地社区论坛</a></li>
-        <li class="p-list__item"><a href="http://askubuntu.com/" class="p-link--external">AskUbuntu.com</a></li>
-        <li class="p-list__item">QQ群(391093791)</li>
-      </ul>
+    <div class="col-8">
+      <h1>联系Ubuntu</h1>
     </div>
-    <div class="prefix-1 col-6 suffix-1">
-      <img src="http://cn.ubuntu.com/static/img/contact/qr.png" alt="">
+  </div>
+  <div class="row">
+    <div class="col-6 suffix-1">
+      <h2>商业合作咨询</h2>
+      <ul class="p-list--divided">
+  <li class="p-list__item">IoT及设备 <a href="https://pages.ubuntu.com/contact-us-in-chinese.html" class="u-float--right">点击咨询</a></li>
+  <li class="p-list__item">云及服务器 <a href="https://pages.ubuntu.com/contact-us-in-chinese.html" class="u-float--right">点击咨询</a></li>
+ 
+</ul>
+
+
+      <h2>获取支持</h2>
+      <p>
+        向我们<a href="https://pages.ubuntu.com/contact-us-in-chinese.html">咨询</a>我们的产品，支持，培训或咨询，我们将尽快与您联系。
+      </p>
+      <p>
+        如您对Ubuntu中文官网有任何意见或需修正的地方，可到Github<a href="https://github.com/canonical-websites/cn.ubuntu.com/issues/new">提交</a>bug。.
+      </p>
+    </div>
+    <div class="col-6">
+      <h2>技术协助</h2>
+      <p>
+        如您正在寻找Ubuntu的支持，<a href="https://www.ubuntu.com/support">我们的支持团队</a>可以帮助您。
+      </p>
+
+      <h2>新闻媒体</h2>
+      <p>
+        记者或分析机构如想获取相关新闻信息请邮件至<a href="mailto:chinamarketing@canonical.com">chinamarketing</a>。很遗憾，我们无法回复非传媒或分析师的查询。
+      </p>
+
+      <h2>法律查询</h2>
+      <p>
+        请注意，我们无法向您提供法律建议．对于其他任何关于Ubuntu的法律疑问，请联系我们<a href="mailto:legal@canonical.com">legal@canonical.com</a>。
+      </p>
+
+      <h2>商标咨询</h2>
+      <p>
+        如您要申请Ubuntu商标许可或进行其他商标查询，请<a href="https://www.ubuntu.com/legal/terms-and-policies/contact-us">提交查询</a>。我们的商标团队成员很快会与您联系。
+      </p>
     </div>
   </div>
 </section>
 
-<section class="p-strip">
+<section class="p-strip--light">
+  <div class="row">
+    <div class="col-12">
+      <h3 align="center">您可以通过以下方式关注我们</h3>
+    </div>
+  </div>
+  <div class="row p-divider">
+    <div class="col-4 p-divider__block">
+      <h4 align="center">官方微博</h4>
+      <p></p>
+      <a href="http://weibo.com/officialubuntu"> <img class="img1" src="{{ STATIC_URL }}img/social/weibo.png"> </a>
+    
+    <p align="center">
+        <a class="p-button--positive" href="http://weibo.com/officialubuntu" >点击关注</a>
+      </p>
+
+    </div>
+    
+    <div class="col-4 p-divider__block">
+      <h4 align="center">官方微信</h4>
+
+      <img class="img1" src="{{ STATIC_URL }}img/social/wechat.png">
+      <p align="center">
+      <a href="#" class="p-button--base is--disabled" aria-disabled="true">手机微信扫一扫</a>  
+      </p>
+
+    </div>
+
+    <div class="col-4 p-divider__block">
+      <h4 align="center">开发者QQ群</h4>
+      <img class="img2" src="{{ STATIC_URL }}img/social/qq.png">
+      <p align="center">
+      <a class="p-button--positive" href="//shang.qq.com/wpa/qunwpa?idkey=1a527d1f12599bfbf0fadc97f416fa8d5dd9b69ca91fd807cc3c01b4cc8ea830">点击加入</a>           
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<section class="p-strip is-bordered is-deep">
   <div class="row">
     <div class="u-equal-height">
       <div class="col-6 p-card">
@@ -41,11 +127,14 @@
       <div class="col-6 p-card">
       <h3>上海办公室</h3>
       <p>电话： +86 (21) 2426 1881</p>
-      <p>地址：上海市漕溪北路331号12楼1246室</p>
+      <p>地址：上海市漕溪北路331号12楼1246室</p>      
       <p>邮编: 200030</p>
     </div>
     </div>
   </div>
 </section>
+
+        
+      </div>
 
 {% endblock %}
