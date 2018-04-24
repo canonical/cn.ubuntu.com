@@ -44,33 +44,7 @@ p {
   }
 }
 
-.list-social {
-  margin-top: 0;
-  list-style: none;
-
-  &__item {
-    float: left;
-    height: 37px;
-    margin-right: 20px;
-    margin-top: 0;
-    padding: 0;
-    text-indent: -999em;
-    width: 37px;
-
-    a {
-      display: block;
-      height: 37px;
-      width: 37px;
-      margin: 0;
-      overflow: hidden;
-    }
-  }
-
-  &__item--weibo a {
-    background: url("../img/icons/icon-weibo.svg") no-repeat;
-  }
-
-  &__item--wechat a {
-    background: url("../img/icons/icon-wechat.svg") no-repeat;
-  }
+.p-heading-icon__img--small {
+  max-height: 2rem;
+  max-width: 2rem;
 }
