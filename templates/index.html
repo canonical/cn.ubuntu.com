@@ -7,9 +7,47 @@
 {% block page_content %}
 
 <style type="text/css">
-
+.p-takeover--1804-release {
+  background-color: #e95420;
+  background-image: url("https://assets.ubuntu.com/v1/c4995f19-18.04_beaver_wp_8192x4608_no-BB_AW.jpg?w=768");
+  background-size: cover;
+  color: #f7f7f7; }
+  @media (min-width: 768px) {
+    .p-takeover--1804-release {
+      background-image: url("https://assets.ubuntu.com/v1/c4995f19-18.04_beaver_wp_8192x4608_no-BB_AW.jpg?w=984"); } }
+  @media (min-width: 1200px) {
+    .p-takeover--1804-release {
+      background-image: url("https://assets.ubuntu.com/v1/c4995f19-18.04_beaver_wp_8192x4608_no-BB_AW.jpg?w=2000"); } }
+  @media (min-width: 768px) {
+    .p-takeover--1804-release .p-takeover__body {
+      background-image: url("https://assets.ubuntu.com/v1/99cee55b-beaver.svg");
+      background-size: contain;
+      background-position: right bottom;
+      background-repeat: no-repeat;
+      padding-top: 3rem;
+      padding-bottom: 8rem; } }
+  .p-takeover--1804-release .p-takeover__title {
+    font-weight: 100; }
+  .p-takeover--1804-release .p-takeover__image {
+    margin-top: 2rem;
+    margin-bottom: 2rem; }
 
 </style>
+
+
+<section class="p-strip p-takeover--1804-release">
+  <div class="row">
+    <div class="p-takeover__body u-clearfix">
+      <div class="col-8">
+        <h1 class="p-takeover__title">Ubuntu 18.04 LTS正式发布</h1>
+        <p class="p-heading--four">针对Multi-Cloud基础设施，机器学习，人工智能，软件开发而优化。</p>
+        <p class="p-takeover__image u-hide--medium u-hide--large"><img src="https://assets.ubuntu.com/v1/99cee55b-beaver.svg" alt=""></p>
+        <p><a href="https://www.ubuntu.com/download/desktop" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Homepage Link', 'eventAction' : '18.04 takeover', 'eventLabel' : 'Download 18.04 now', 'eventValue' : undefined });" class="p-button--neutral"><span>立即下载 18.04</span></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Ubuntu Intro -->
 <section class="p-strip--accent is-dark">
@@ -84,33 +122,17 @@
 <section class="p-strip--light is-deep is-bordered"> <!-- p-strip is-bordered -->
   <div class="row">
     <div class="col-6">
-    <h2>Ubuntu 18.04 LTS最新动态</h2>
-    <p>距离Ubuntu 18.04发布还有3个月左右，在正式版发布之前，让我们来看看新版系统带来哪些新特性。
+    <h2>全新的Ubuntu 18.04 LTS</h2>
+    <p><a href="https://www.canonical.com/" >Canonical</a>在４月发布了全新Ubuntu 18.04 LTS，新LTS（长期支持）将是一个专为个人、开发者及企业用户所优化的版本。
 </p>
     <a href="https://weibo.com/ttarticle/p/show?id=2309404218244469782875">了解更多&nbsp;›</a>
   </div>
     <div class="col-6">
-    <img src="{{ STATIC_URL }}img/homepage/new-xps.png" alt="" />
+    <img src="https://admin.insights.ubuntu.com/wp-content/uploads/0108/Screenshot-Desktop.png" alt="18.04 LTS" />
   </div>
   </div>
 </section>
 
-<!--
-
-<section class="p-strip--light is-deep is-bordered">
-  <div class="row">
-    <div class="u-equal-height u-vertically-center">
-      <div class="col-6 suffix-1">
-        <h2><a href="/download">Ubuntu 18.04 LTS新功能抢先看</a></h2>
-        <p href="/desktop">距离Ubuntu 18.04发布还有3个月左右，在正式版发布之前，让我们来看看新版系统带来哪些新特性。</p>
-      </div>
-      <div class="col-6 u-align--right">
-        <img class="u-hide--small" src="https://assets.ubuntu.com/v1/7d267d01-desktop.png?h=350">
-      </div>
-    </div>
-  </div>
-</section>
--->
 
 <!-- Cloud -->
 <section class="p-strip is-bordered">
@@ -124,7 +146,7 @@
           <li class="p-list__item is-ticked">一整套配置，构建，管理且支持大型云的工具</li>
           <li class="p-list__item is-ticked">支持付费工具、服务和持续Ubuntu Advantage订阅</li>
         </ul>
-    <a href="https://pages.ubuntu.com/contact-us-in-chinese.html">请联系我们告知您的需求&nbsp;›</a>
+    <a href="https://pages.ubuntu.com/contact-us-in-chinese.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - cloud', 'eventValue' : undefined });">联系我们告知您的需求&nbsp;›</a>
   </div>
     <div class="col-6">
     <img src="{{ STATIC_URL }}img/homepage/cloud.png" alt="" />
@@ -142,7 +164,7 @@
     <a href="/desktop">了解更多&nbsp;›</a>
   </div>
     <div class="col-6">
-    <img src="{{ STATIC_URL }}img/homepage/new-xps.png" alt="" />
+    <img src="https://assets.ubuntu.com/v1/c6504e94-Dell_XPS_Laptop_Front-Desktop.png" alt="desktop" />
   </div>
   </div>
 </section>
