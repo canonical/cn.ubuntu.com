@@ -1,0 +1,8 @@
+.p-heading-icon__img--small {
+  max-height: 2rem;
+  max-width: 2rem;
+
+  + .p-heading-icon__title {
+    align-self: center;
+  }
+}
