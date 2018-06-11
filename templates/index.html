@@ -6,43 +6,89 @@
 
 {% block page_content %}
 
+
+
 <style type="text/css">
-.p-takeover--1804-release {
-  background-color: #e95420;
-  background-image: url("https://assets.ubuntu.com/v1/c4995f19-18.04_beaver_wp_8192x4608_no-BB_AW.jpg?w=768");
-  background-size: cover;
-  color: #f7f7f7; }
+  
+.p-takeover--openstack-queens {
+  position: relative;
+  background-color: #f7f7f7; }
   @media (min-width: 768px) {
-    .p-takeover--1804-release {
-      background-image: url("https://assets.ubuntu.com/v1/c4995f19-18.04_beaver_wp_8192x4608_no-BB_AW.jpg?w=984"); } }
-  @media (min-width: 1200px) {
-    .p-takeover--1804-release {
-      background-image: url("https://assets.ubuntu.com/v1/c4995f19-18.04_beaver_wp_8192x4608_no-BB_AW.jpg?w=2000"); } }
-  @media (min-width: 768px) {
-    .p-takeover--1804-release .p-takeover__body {
-      background-image: url("https://assets.ubuntu.com/v1/99cee55b-beaver.svg");
+    .p-takeover--openstack-queens::before, .p-takeover--openstack-queens::after {
+      position: absolute;
+      top: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
       background-size: contain;
-      background-position: right bottom;
-      background-repeat: no-repeat;
-      padding-top: 3rem;
-      padding-bottom: 8rem; } }
-  .p-takeover--1804-release .p-takeover__title {
-    font-weight: 100; }
-  .p-takeover--1804-release .p-takeover__image {
-    margin-top: 2rem;
-    margin-bottom: 2rem; }
+      background-repeat: no-repeat; }
+    .p-takeover--openstack-queens::before {
+      left: 0;
+      background-image: url("https://assets.ubuntu.com/v1/d3edfcd5-left.png");
+      background-position: top left; }
+    .p-takeover--openstack-queens::after {
+      right: 0;
+      background-image: url("https://assets.ubuntu.com/v1/17508275-right.png");
+      background-position: top right; } }
+
+.p-takeover__body {
+  position: relative;
+  z-index: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  @media (min-width: 768px) {
+    .p-takeover__body {
+      padding-top: 4rem;
+      padding-bottom: 4rem; } }
+
+.p-takeover__title {
+  font-weight: 100; }
+
+.p-takeover__image {
+  display: block;
+  width: 210px;
+  height: 101px;
+  margin: 2rem auto 0; }
+  @media (min-width: 768px) {
+    .p-takeover__image {
+      width: 222px;
+      height: 107px;
+      margin-top: 0; } }
+
+.p-takeover__cta {
+  margin-top: 2rem; }
+
+.p-takeover__text {
+  font-size: 1rem;
+  max-width: 100% !important; }
+  @media (min-width: 768px) {
+    .p-takeover__text {
+      font-size: 1.25rem; } }
+
+@media (min-width: 768px) {
+  .p-navigation:target .p-navigation__toggle--close {
+    display: none !important; } }
+
+.p-button--neutral.is-compact {
+  padding: 0.5rem 0.75rem; }
+
 
 </style>
 
 
-<section class="p-strip p-takeover--1804-release">
+<section class="p-takeover--openstack-queens">
   <div class="row">
-    <div class="p-takeover__body u-clearfix">
+    <div class="p-takeover__body u-clearfix u-vertically-center">
       <div class="col-8">
-        <h1 class="p-takeover__title">Ubuntu 18.04 LTS正式发布</h1>
-        <p class="p-heading--four">针对Multi-Cloud基础设施，机器学习，人工智能，软件开发而优化。</p>
-        <p class="p-takeover__image u-hide--medium u-hide--large"><img src="https://assets.ubuntu.com/v1/99cee55b-beaver.svg" alt=""></p>
-        <p><a href="https://www.ubuntu.com/download/desktop" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Homepage Link', 'eventAction' : '18.04 takeover', 'eventLabel' : 'Download 18.04 now', 'eventValue' : undefined });" class="p-button--neutral"><span>立即下载 18.04</span></a></p>
+        <h1 class="p-takeover__title">Container Day 2018 - Rancher Kubernetes企业用户大会</h1>
+        <p class="p-takeover__text">Rancher Kubernetes企业用户分享大会，是中国区金融行业、政企行业、科技行业的Docker与Kubernetes应用案例的集中分享与展示。</p>
+        <p class="p-takeover__text">6月28日 | 北京 昆泰酒店</p>
+        <p class="u-hide--medium u-hide--large"><img class="p-takeover__image" src="https://assets.ubuntu.com/v1/3409bb95-OpenStack-Logo-Vertical.svg" alt=""></p>
+        <p class="p-takeover__cta"><a href="http://www.huodongxing.com/event/2443336392200?td=9132541579875" class="p-button--positive">报名参加</a></p>
+      </div>
+      <div class="col-4 prefix-1">
+        <p><img class="" src="{{ STATIC_URL }}img/homepage/kuber.png" alt="" width="300" height="300"></p>
+
       </div>
     </div>
   </div>
@@ -123,13 +169,12 @@
 <section class="p-strip--light is-deep is-bordered"> <!-- p-strip is-bordered -->
   <div class="row">
     <div class="col-6">
-    <h2>全新的Ubuntu 18.04 LTS</h2>
-    <p><a href="https://www.canonical.com/" >Canonical</a>在４月发布了全新Ubuntu 18.04 LTS，新LTS（长期支持）将是一个专为个人、开发者及企业用户所优化的版本。
-</p>
-    <a href="https://www.weibo.com/officialubuntu?is_all=1">了解更多&nbsp;›</a>
+    <h2>Celebrate Ubuntu 18.04 LTS</h2>
+    <p>为庆祝Ubuntu 18.04 LTS发布，借此举办线上发布派对活动。体验新版系统，新特性就有机会获取精美官方纪念品，本次活动旨在通过体验的形式，让大家更好地了解使用，开发snap应用。从而提升Ubuntu的用户使用体验。</p>
+    <a href="https://weibo.com/1278359237/Gk4Zsb9TO?from=page_1006061278359237">立即参加 &nbsp;›</a>
   </div>
     <div class="col-6">
-    <img src="https://admin.insights.ubuntu.com/wp-content/uploads/0108/Screenshot-Desktop.png" alt="18.04 LTS" />
+    <img src="{{ STATIC_URL }}img/homepage/beaver.png" alt="18.04 LTS" />
   </div>
   </div>
 </section>
@@ -139,7 +184,7 @@
 <section class="p-strip is-bordered">
   <div class="row">
     <div class="col-6">
-    <h2>构建云服务最好的选择</h2>
+    <h2><a href="/cloud">构建云服务最好的选择&nbsp;›</a></h2>
     <p>无论您是构建私有云还是公共云，Ubuntu都会提供所有必要的基础架构软件，工具和服务。</p>
     <ul class="p-list--divided">
           <li class="p-list__item is-ticked">完成构建OpenStack云所需的一切</li>
@@ -150,7 +195,7 @@
     <a href="https://pages.ubuntu.com/contact-us-in-chinese.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - cloud', 'eventValue' : undefined });">联系我们告知您的需求&nbsp;›</a>
   </div>
     <div class="col-6">
-    <img src="{{ STATIC_URL }}img/homepage/cloud.png" alt="" />
+    <img src="{{ STATIC_URL }}img/homepage/cloud.png" alt="cloud" />
   </div>
   </div>
 </section>
