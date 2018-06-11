@@ -8,14 +8,89 @@
 
 
 
-<section class="p-strip--image is-light" style="background-image:url('{{ STATIC_URL }}img/homepage/bg.png"')">
-   <div class="row">
-    <div class="col-12">
-      <img src="{{ STATIC_URL }}img/homepage/words.png" alt="rancher kubernetes day">          
+<style type="text/css">
+  
+.p-takeover--openstack-queens {
+  position: relative;
+  background-color: #f7f7f7; }
+  @media (min-width: 768px) {
+    .p-takeover--openstack-queens::before, .p-takeover--openstack-queens::after {
+      position: absolute;
+      top: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .p-takeover--openstack-queens::before {
+      left: 0;
+      background-image: url("https://assets.ubuntu.com/v1/d3edfcd5-left.png");
+      background-position: top left; }
+    .p-takeover--openstack-queens::after {
+      right: 0;
+      background-image: url("https://assets.ubuntu.com/v1/17508275-right.png");
+      background-position: top right; } }
+
+.p-takeover__body {
+  position: relative;
+  z-index: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  @media (min-width: 768px) {
+    .p-takeover__body {
+      padding-top: 4rem;
+      padding-bottom: 4rem; } }
+
+.p-takeover__title {
+  font-weight: 100; }
+
+.p-takeover__image {
+  display: block;
+  width: 210px;
+  height: 101px;
+  margin: 2rem auto 0; }
+  @media (min-width: 768px) {
+    .p-takeover__image {
+      width: 222px;
+      height: 107px;
+      margin-top: 0; } }
+
+.p-takeover__cta {
+  margin-top: 2rem; }
+
+.p-takeover__text {
+  font-size: 1rem;
+  max-width: 100% !important; }
+  @media (min-width: 768px) {
+    .p-takeover__text {
+      font-size: 1.25rem; } }
+
+@media (min-width: 768px) {
+  .p-navigation:target .p-navigation__toggle--close {
+    display: none !important; } }
+
+.p-button--neutral.is-compact {
+  padding: 0.5rem 0.75rem; }
+
+
+</style>
+
+
+<section class="p-takeover--openstack-queens">
+  <div class="row">
+    <div class="p-takeover__body u-clearfix u-vertically-center">
+      <div class="col-8">
+        <h1 class="p-takeover__title">Container Day 2018 - Rancher Kubernetes企业用户大会</h1>
+        <p class="p-takeover__text">Rancher Kubernetes企业用户分享大会，是中国区金融行业、政企行业、科技行业的Docker与Kubernetes应用案例的集中分享与展示。</p>
+        <p class="p-takeover__text">6月28日 | 北京 昆泰酒店</p>
+        <p class="u-hide--medium u-hide--large"><img class="p-takeover__image" src="https://assets.ubuntu.com/v1/3409bb95-OpenStack-Logo-Vertical.svg" alt=""></p>
+        <p class="p-takeover__cta"><a href="http://www.huodongxing.com/event/2443336392200?td=9132541579875" class="p-button--positive">报名参加</a></p>
+      </div>
+      <div class="col-4 prefix-1">
+        <p><img class="" src="{{ STATIC_URL }}img/homepage/kuber.png" alt="" width="300" height="300"></p>
+
+      </div>
     </div>
-    <div class=".col-4.suffix-1">
-      <p class="u-align-text--center"><a href="http://www.huodongxing.com/event/2443336392200?td=9132541579875" class="p-button--neutral is-inline">立即报名</a></p> 
-  </div>
   </div>
 </section>
 
@@ -98,8 +173,8 @@
     <p>为庆祝Ubuntu 18.04 LTS发布，借此举办线上发布派对活动。体验新版系统，新特性就有机会获取精美官方纪念品，本次活动旨在通过体验的形式，让大家更好地了解使用，开发snap应用。从而提升Ubuntu的用户使用体验。</p>
     <a href="https://weibo.com/1278359237/Gk4Zsb9TO?from=page_1006061278359237">立即参加 &nbsp;›</a>
   </div>
-    <div class="col-6">
-    <img src="{{ STATIC_URL }}img/homepage/prize.png" alt="18.04 LTS" />
+    <div class="col-5 prefix-1">
+    <img src="{{ STATIC_URL }}img/homepage/prize.png" alt="18.04 LTS" height="300" width="300"/>
   </div>
   </div>
 </section>
