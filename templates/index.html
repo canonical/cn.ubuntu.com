@@ -42,7 +42,8 @@
       padding-bottom: 4rem; } }
 
 .p-takeover__title {
-  font-weight: 100; }
+  font-weight: 100; 
+  color: #fff;}
 
 .p-takeover__image {
   display: block;
@@ -51,8 +52,8 @@
   margin: 2rem auto 0; }
   @media (min-width: 768px) {
     .p-takeover__image {
-      width: 222px;
-      height: 107px;
+      width: 238px;
+      height: 89px;
       margin-top: 0; } }
 
 .p-takeover__cta {
@@ -60,7 +61,8 @@
 
 .p-takeover__text {
   font-size: 1rem;
-  max-width: 100% !important; }
+  max-width: 100% !important; 
+color: #fff;}
   @media (min-width: 768px) {
     .p-takeover__text {
       font-size: 1.25rem; } }
@@ -72,51 +74,39 @@
 .p-button--neutral.is-compact {
   padding: 0.5rem 0.75rem; }
 
+.p-takeover--private-cloud-economics {
+  background-image: linear-gradient(30deg, #0d5777 0%, #47929d 90%, #47929d 100%);
+  background-color: #0d5777; }
+  @media (min-width: 768px) {
+    .p-takeover--private-cloud-economics {
+      background-image: url("https://assets.ubuntu.com/v1/13fdbc5b-graph.png"), linear-gradient(30deg, #0d5777 0%, #47929d 90%, #47929d 100%);
+      background-repeat: no-repeat;
+      background-position: right bottom; } }
 
 </style>
 
 
-<section class="p-takeover--openstack-queens">
-  <div class="row">
-    <div class="p-takeover__body u-clearfix u-vertically-center">
-      <div class="col-8">
-        <h1 class="p-takeover__title">Container Day 2018 - Rancher Kubernetes企业用户大会</h1>
-        <p class="p-takeover__text">Rancher Kubernetes企业用户分享大会，是中国区金融行业、政企行业、科技行业的Docker与Kubernetes应用案例的集中分享与展示。</p>
-        <p class="p-takeover__text">6月28日 | 北京 昆泰酒店</p>
-        <p class="u-hide--medium u-hide--large"><img class="p-takeover__image" src="https://assets.ubuntu.com/v1/3409bb95-OpenStack-Logo-Vertical.svg" alt=""></p>
-        <p class="p-takeover__cta"><a href="http://www.huodongxing.com/event/2443336392200?td=9132541579875" class="p-button--positive">报名参加</a></p>
-      </div>
-      <div class="col-4 prefix-1">
-        <p><img class="" src="{{ STATIC_URL }}img/homepage/kuber.png" alt="" width="300" height="300"></p>
-
-      </div>
+<section class="p-strip is-deep p-takeover--private-cloud-economics">
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h1 class="p-takeover__title">
+        <span class="u-hide--large u-hide--medium">Multi-cloud经济学的新洞察</span>
+        <span class="u-hide--small">Multi-cloud经济学<br>新洞察</span>
+      </h1>
+      <p class="p-takeover__text">分析公司451 Research强调：企业使用Canonical托管的私有云作为多元化multi-cloud战略将会为其带来可观的经济效应。</p>
+      <p class="u-hide--medium u-hide--large u-align--center">
+        <img class="p-takeover__image" src="https://assets.ubuntu.com/v1/c54da84b-451-Research-NEG.png" alt="">
+      </p>
+      <p>
+        <a href="https://pages.ubuntu.com/Multi-cloudEbook_chinese.html" class="p-button--neutral">阅读此报告</a>
+      </p>
+    </div>
+    <div class="col-4 u-hide--small u-align--center u-vertically-center">
+      <img class="p-takeover__image" src="https://assets.ubuntu.com/v1/c54da84b-451-Research-NEG.png" alt="">
     </div>
   </div>
 </section>
 
-
-<!-- Ubuntu Intro -->
-<section class="p-strip--accent is-dark">
-  
-  <div class="ubuntu-intro">
-    <div class="intro-left"></div>
-    <div class="intro-middle">
-      <ul class="ubuntu-intro__list no-bullets inline">
-        <li><a class="intro-cloud" href="/cloud">云</a></li>
-        <li><a class="intro-server" href="/server">服务器</a></li>
-        <li><a class="intro-desktop" href="/desktop">桌面</a></li>
-        <li><a class="intro-iot" href="/internet-of-things">IoT</a></li>
-      </ul>
-    </div>
-    <div class="intro-right"></div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="u-align-text--center" style="color: #fff; max-width:25em;">Ubuntu是一个广泛应用于个人电脑，云计算，以及所有智能物联网设备的开源操作系统。</h2>
-    </div>
-  </div>
-  
-</section>
 
 <div class="p-strip is-deep is-bordered">
   <div class="row">
@@ -165,18 +155,27 @@
   </div>
 </div>  
 
-<!-- Case Study -->
-<section class="p-strip--light is-deep is-bordered"> <!-- p-strip is-bordered -->
+<!-- Ubuntu Intro -->
+<section class="p-strip--accent is-dark">
+  
+  <div class="ubuntu-intro">
+    <div class="intro-left"></div>
+    <div class="intro-middle">
+      <ul class="ubuntu-intro__list no-bullets inline">
+        <li><a class="intro-cloud" href="/cloud">云</a></li>
+        <li><a class="intro-server" href="/server">服务器</a></li>
+        <li><a class="intro-desktop" href="/desktop">桌面</a></li>
+        <li><a class="intro-iot" href="/internet-of-things">IoT</a></li>
+      </ul>
+    </div>
+    <div class="intro-right"></div>
+  </div>
   <div class="row">
-    <div class="col-6">
-    <h2>Celebrate Ubuntu 18.04 LTS</h2>
-    <p>为庆祝Ubuntu 18.04 LTS发布，借此举办线上发布派对活动。体验新版系统，新特性就有机会获取精美官方纪念品，本次活动旨在通过体验的形式，让大家更好地了解使用，开发snap应用。从而提升Ubuntu的用户使用体验。</p>
-    <a href="https://weibo.com/1278359237/Gk4Zsb9TO?from=page_1006061278359237">立即参加 &nbsp;›</a>
+    <div class="col-12">
+      <h2 class="u-align-text--center" style="color: #fff; max-width:25em;">Ubuntu是一个广泛应用于个人电脑，云计算，以及所有智能物联网设备的开源操作系统。</h2>
+    </div>
   </div>
-    <div class="col-6">
-    <img src="{{ STATIC_URL }}img/homepage/beaver.png" alt="18.04 LTS" />
-  </div>
-  </div>
+  
 </section>
 
 
