@@ -10,26 +10,6 @@
 
 <style type="text/css">
   
-.p-takeover--openstack-queens {
-  position: relative;
-  background-color: #f7f7f7; }
-  @media (min-width: 768px) {
-    .p-takeover--openstack-queens::before, .p-takeover--openstack-queens::after {
-      position: absolute;
-      top: 0;
-      content: "";
-      width: 100%;
-      height: 100%;
-      background-size: contain;
-      background-repeat: no-repeat; }
-    .p-takeover--openstack-queens::before {
-      left: 0;
-      background-image: url("https://assets.ubuntu.com/v1/d3edfcd5-left.png");
-      background-position: top left; }
-    .p-takeover--openstack-queens::after {
-      right: 0;
-      background-image: url("https://assets.ubuntu.com/v1/17508275-right.png");
-      background-position: top right; } }
 
 .p-takeover__body {
   position: relative;
@@ -47,12 +27,12 @@
 
 .p-takeover__image {
   display: block;
-  width: 210px;
+  width: 250px;
   height: 101px;
   margin: 2rem auto 0; }
   @media (min-width: 768px) {
     .p-takeover__image {
-      width: 238px;
+      width: 220px;
       height: 89px;
       margin-top: 0; } }
 
@@ -74,35 +54,48 @@ color: #fff;}
 .p-button--neutral.is-compact {
   padding: 0.5rem 0.75rem; }
 
-.p-takeover--private-cloud-economics {
-  background-image: linear-gradient(30deg, #0d5777 0%, #47929d 90%, #47929d 100%);
-  background-color: #0d5777; }
+
+
+.p-takeover--rigado-webinar {
+  background-image: linear-gradient(-32deg, #2A5A77 0%, #2A5A77 9%, #407389 33%, #4A7E8F 69%, #568B98 90%, #47919E 100%);
+  background-color: #2A5A77; }
   @media (min-width: 768px) {
-    .p-takeover--private-cloud-economics {
-      background-image: url("https://assets.ubuntu.com/v1/13fdbc5b-graph.png"), linear-gradient(30deg, #0d5777 0%, #47929d 90%, #47929d 100%);
+    .p-takeover--rigado-webinar {
+      background-image: url("https://assets.ubuntu.com/v1/ca263eff-left-side-suru-rigado-takeover.png"), url("https://assets.ubuntu.com/v1/58d3e923-right-side-suru-rigado-takeover.png"), linear-gradient(-32deg, #2A5A77 0%, #2A5A77 9%, #407389 33%, #4A7E8F 69%, #568B98 90%, #47919E 100%);
+      background-color: #2A5A77;
       background-repeat: no-repeat;
-      background-position: right bottom; } }
+      background-size: contain;
+      background-position: bottom left, bottom right; } }
+  .p-takeover--rigado-webinar .p-takeover__title {
+    font-weight: 100;
+    color: #fff; }
+  .p-takeover--rigado-webinar .p-takeover__text {
+    font-size: 1rem;
+    color: #fff; }
+    @media (min-width: 768px) {
+      .p-takeover--rigado-webinar .p-takeover__text {
+        font-size: 1.25rem; } }
+  .p-takeover--rigado-webinar .p-takeover__image {
+    width: 235px;
+    height: 179px; }
+    @media (min-width: 768px) {
+      .p-takeover--rigado-webinar .p-takeover__image {
+        width: 350px;
+        height: 250px; } }
 
 </style>
 
-
-<section class="p-strip is-deep p-takeover--private-cloud-economics">
+<section class="p-strip is-deep p-takeover--rigado-webinar js-secondary-takeover">
   <div class="row u-equal-height">
-    <div class="col-8">
-      <h1 class="p-takeover__title">
-        <span class="u-hide--large u-hide--medium">Multi-cloud经济学的新洞察</span>
-        <span class="u-hide--small">Multi-cloud经济学<br>新洞察</span>
-      </h1>
-      <p class="p-takeover__text">分析公司451 Research强调：企业使用Canonical托管的私有云作为多元化multi-cloud战略将会为其带来可观的经济效应。</p>
-      <p class="u-hide--medium u-hide--large u-align--center">
-        <img class="p-takeover__image" src="https://assets.ubuntu.com/v1/c54da84b-451-Research-NEG.png" alt="">
-      </p>
+    <div class="col-8 u-fade-left--medium">
+      <h1 class="p-takeover__title">The Canonical Distribution of Kubernetes网络研讨会</h1>
+      <p class="p-takeover__text">基于上游项目的Canonical Kubernetes发行版，在每个基础架构上都能正常运行，只需一个命令便可集成需要的监控系统。</p>      
       <p>
-        <a href="https://pages.ubuntu.com/Multi-cloudEbook_chinese.html" class="p-button--neutral">阅读此报告</a>
+        <a href="https://www.brighttalk.com/webcast/17087/331795" class="p-button--neutral">注册观看</a>
       </p>
     </div>
     <div class="col-4 u-hide--small u-align--center u-vertically-center">
-      <img class="p-takeover__image" src="https://assets.ubuntu.com/v1/c54da84b-451-Research-NEG.png" alt="">
+      <img class="p-takeover__image" src="https://assets.ubuntu.com/v1/628c60f8-k8sc.png" alt="k8s">
     </div>
   </div>
 </section>
@@ -134,10 +127,10 @@ color: #fff;}
       <div class="p-heading-icon">
         <div class="p-heading-icon__header">
           <img class="p-heading-icon__img p-heading-icon__img--small" src="https://assets.ubuntu.com/v1/26797d10-newsfeed-stripvideo-icon.svg" alt="" />
-          <h4 class="p-heading-icon__title p-muted-heading">研讨会</h4>
+          <h4 class="p-heading-icon__title p-muted-heading">研究报告</h4>
         </div>
       </div>
-      <h3 class="p-heading--four"><a class="p-link--external" href="https://www.brighttalk.com/webcast/6793/211999?utm_source=ubuntuweb&amp;utm_medium=dspageboldmindbox&amp;utm_campaign=DSwebinar" onclick="dataLayer.push({" event'="" :="" 'gaevent',="" 'eventcategory'="" 'product="" page',="" 'eventaction'="" 'digital="" signage="" -="" center',="" 'eventlabel'="" 'webinar="" data-triggered="" content="" and="" 4g="" base="" stations',="" 'eventvalue'="" '1'="" });'=""><span hidden="">Watch the webinar </span>Data-triggered content and 4G base stations</a></h3>
+      <h3 class="p-heading--four"><a class="p-link--external" href="https://pages.ubuntu.com/Multi-cloudEbook_chinese.html">分析公司451 Research最新报告：Multi-cloud经济学新洞察</a></h3>
       <!-- rtp section end -->
     </div>
 
