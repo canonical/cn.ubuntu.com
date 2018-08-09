@@ -11,5 +11,6 @@ whitenoise==3.3.0
 django-static-root-finder==0.2.1
 django-template-finder-view==0.2
 django-openid-auth==0.14
-talisker==0.9.6
+talisker==0.9.13
+gunicorn[gevent]
 Jinja2==2.8
