@@ -1,7 +1,16 @@
 {% load versioned_static %}
 <!doctype html>
 <html class="no-js" lang="zh" dir="ltr">
-  <head>
+<head>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K92JCQ');</script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8" />
   <meta name="description" content="{% block meta_description %}Ubuntu是世界领先的开源操作系统。目前广泛应用于个人电脑，IoT/智能物联网，容器，服务器和云端上。{% endblock %}" />
   <meta name="author" content="Canonical" />
@@ -18,16 +27,13 @@
 
   {% block head_extra %}{% endblock %}
 </head>
-  <body>
-  <!-- Google Tag Manager -->
-  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MCKGLV"
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K92JCQ"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MCKGLV');</script>
-  <!-- End Google Tag Manager -->
+  <!-- End Google Tag Manager (noscript) -->
+
 
   <!-- footer content goes here -->
   {% include "templates/header.html" %}
