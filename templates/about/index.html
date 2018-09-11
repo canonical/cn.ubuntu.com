@@ -8,13 +8,35 @@
 {% endblock second_level_nav_items %}
 
 {% block content %}
+<style type="text/css">
+
+  .products-hero-container {
+    background: url("https://assets.ubuntu.com/v1/79729d72-products-hero-background.png") no-repeat center center;
+    height: 600px;
+    left: 50%;
+    margin: -61px 0 0 -427px;
+    position: absolute;
+    top: -80px;
+    width: 600px;
+    z-index: -999; } }
+  @media only screen and (min-width: 768px) and (max-width: 768px) {
+    .products-hero-container {
+      display: none; } }
+
+</style>
 
 <div class="p-strip is-bordered">
   <div class="row">
-    <div class="col-8">
+    <div class="col-7">
       <h1>关于Ubuntu</h1>
       <p>ubuntu |oǒ'boǒntoō|</p>
-      <p>Ubuntu 是一个古老的非洲语单词，意思是“Humanity to Others”（以人道善待他人），同时还有着“群在故我在”的意味。Ubuntu 操作系统将 Ubuntu 精神带到了计算机世界。 Ubuntu 也是Canonical公司的产品和所有的品牌商标，而科能（上海）软件科技有限公司则是Canonical公司在中国注册的子公司，公司总部位于英国伦敦。</p>
+      <p>Ubuntu 是一个古老的非洲语单词，意思是“Humanity to Others”（以人道善待他人），同时还有着“群在故我在”的意味。Ubuntu 操作系统将 Ubuntu 精神带到了计算机世界。 </p>
+      <blockquote class="p-pull-quote"><p>Ubuntu 也是<a href="https://wwww.canonical.com" class="p-link--external">Canonical</a>公司的产品和所有的品牌商标，而科能（上海）软件科技有限公司则是Canonical公司在中国注册的子公司，公司总部位于英国伦敦。
+      </p></blockquote>
+    </div>
+    <div class="col-5">
+      <a href="https://www.canonical.com"><img src="{{ STATIC_URL }}img/about/products-hero-container.jpg" alt="Canonical"></a>
+      
     </div>
   </div>
 </div>
@@ -71,7 +93,7 @@
       <p>出于空间方面的考虑，标准 Ubuntu 映像仅随附了少数几种语言。用户可以通过系统设置或使用网络安装器来添加其他语言的支持。标准映像直接提供对一下相关语言的完整支持。</p>
       <p>德语 英语（美国、英国、澳大利亚） 西班牙语 葡萄牙语 巴西葡萄牙语 简体中文</p>
       <h3>其他版本</h3>
-      <p>有关已知分支版本的完整列表，请参阅 Ubuntu Wiki 的衍生版本团队页面。</p>
+      <p>有关已知分支版本的完整列表，请参阅 <a href="https://wiki.ubuntu.com/"> Ubuntu Wiki</a> 的衍生版本团队页面。</p>
     </div>
   </div>
 </div>
