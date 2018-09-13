@@ -9,97 +9,52 @@
 
 
 <style type="text/css">
-  
 
-.p-takeover__body {
-  position: relative;
-  z-index: 1;
-  padding-top: 2rem;
-  padding-bottom: 2rem; }
+.p-takeover--openstack-ebook {
+  background-image: linear-gradient(45deg, #171717 0%, #181818 9%, #262626 34%, #2D2D2D 67%, #383838 88%, #2E2E2E 100%, #393939 100%);
+  background-color: #181818; }
   @media (min-width: 768px) {
-    .p-takeover__body {
-      padding-top: 4rem;
-      padding-bottom: 4rem; } }
-
-.p-takeover__title {
-  font-weight: 100; 
-  color: #fff;}
-
-.p-takeover__image {
-  display: block;
-  width: 250px;
-  height: 101px;
-  margin: 2rem auto 0; }
-  @media (min-width: 768px) {
-    .p-takeover__image {
-      width: 220px;
-      height: 89px;
-      margin-top: 0; } }
-
-.p-takeover__cta {
-  margin-top: 2rem; }
-
-.p-takeover__text {
-  font-size: 1rem;
-  max-width: 100% !important; 
-color: #fff;}
-  @media (min-width: 768px) {
-    .p-takeover__text {
-      font-size: 1.25rem; } }
-
-@media (min-width: 768px) {
-  .p-navigation:target .p-navigation__toggle--close {
-    display: none !important; } }
-
-.p-button--neutral.is-compact {
-  padding: 0.5rem 0.75rem; }
-
-
-
-.p-takeover--rigado-webinar {
-  background-image: linear-gradient(-32deg, #2A5A77 0%, #2A5A77 9%, #407389 33%, #4A7E8F 69%, #568B98 90%, #47919E 100%);
-  background-color: #2A5A77; }
-  @media (min-width: 768px) {
-    .p-takeover--rigado-webinar {
-      background-image: url("https://assets.ubuntu.com/v1/ca263eff-left-side-suru-rigado-takeover.png"), url("https://assets.ubuntu.com/v1/58d3e923-right-side-suru-rigado-takeover.png"), linear-gradient(-32deg, #2A5A77 0%, #2A5A77 9%, #407389 33%, #4A7E8F 69%, #568B98 90%, #47919E 100%);
-      background-color: #2A5A77;
+    .p-takeover--openstack-ebook {
+      background-image: linear-gradient(45deg, #171717 0%, #181818 9%, #262626 34%, #2D2D2D 67%, #383838 88%, #2E2E2E 100%, #393939 100%);
       background-repeat: no-repeat;
-      background-size: contain;
-      background-position: bottom left, bottom right; } }
-  .p-takeover--rigado-webinar .p-takeover__title {
+      background-size: auto;
+      background-position: bottom right; } }
+
+  .p-takeover--openstack-ebook .p-takeover__title {
     font-weight: 100;
     color: #fff; }
-  .p-takeover--rigado-webinar .p-takeover__text {
+  .p-takeover--openstack-ebook .p-takeover__text {
     font-size: 1rem;
     color: #fff; }
     @media (min-width: 768px) {
-      .p-takeover--rigado-webinar .p-takeover__text {
+      .p-takeover--openstack-ebook .p-takeover__text {
         font-size: 1.25rem; } }
-  .p-takeover--rigado-webinar .p-takeover__image {
+  .p-takeover--openstack-ebook .p-takeover__image {
     width: 235px;
     height: 179px; }
     @media (min-width: 768px) {
-      .p-takeover--rigado-webinar .p-takeover__image {
+      .p-takeover--openstack-ebook .p-takeover__image {
         width: 350px;
         height: 250px; } }
 
 </style>
 
-<section class="p-strip is-deep p-takeover--rigado-webinar js-secondary-takeover">
+<section class="p-strip is-deep p-takeover--openstack-ebook ">
   <div class="row u-equal-height">
     <div class="col-8 u-fade-left--medium">
-      <h1 class="p-takeover__title">The Canonical Distribution of Kubernetes网络研讨会</h1>
-      <p class="p-takeover__text">基于上游项目的Canonical Kubernetes发行版，在每个基础架构上都能正常运行，只需一个命令便可集成需要的监控系统。</p>      
+      <h1 class="p-takeover__title">OpenStack简化操作</h1>
+      <p class="p-takeover__text">在“大软件”时代，如何自如地应对企业基架构部署、集成和运营的挑战？
+       <br> Canonical OpenStack可满足对现代化、可扩展、可重复利用的OpenStack云基础架构的需求。
+      </p>
       <p>
-        <a href="https://www.brighttalk.com/webcast/17087/331795" class="p-button--neutral">注册观看</a>
+        <a href="https://pages.ubuntu.com/OpenStack_made_easy_CN.html" class="p-button--neutral" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'ebook', 'eventLabel' : 'ebook-landing', 'eventValue' : undefined });"><span class=" p-link--external">前往下载</span></a>
       </p>
     </div>
     <div class="col-4 u-hide--small u-align--center u-vertically-center">
-      <img class="p-takeover__image" src="https://assets.ubuntu.com/v1/628c60f8-k8sc.png" alt="k8s">
+      <img class="p-takeover__image" src="https://assets.ubuntu.com/v1/a7916513-picto-openstack.svg" alt="OpenStack">
     </div>
   </div>
 </section>
-
 
 <div class="p-strip is-deep is-bordered">
   <div class="row">
@@ -117,7 +72,7 @@ color: #fff;}
         </div>
       </div>
       <h3 class="p-heading--four">
-        <a class="p-link--external" href="https://www.brighttalk.com/webcast/6793/311297">如何在Orange Pi上构建snap商店与Ubuntu Core技术介绍</a>
+        <a class="p-link--external" href="https://pages.ubuntu.com/Cloud_K8s_WBN_CN_landing-page.html"  onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'webinar', 'eventLabel' : 'k8s-webinar', 'eventValue' : undefined });">K8s：Canonical Kubernetes网络研讨会（录制视频）</a>
       </h3>
       <!-- rtp section end -->
     </div>
@@ -127,10 +82,11 @@ color: #fff;}
       <div class="p-heading-icon">
         <div class="p-heading-icon__header">
           <img class="p-heading-icon__img p-heading-icon__img--small" src="https://assets.ubuntu.com/v1/26797d10-newsfeed-stripvideo-icon.svg" alt="" />
-          <h4 class="p-heading-icon__title p-muted-heading">研究报告</h4>
+          <h4 class="p-heading-icon__title p-muted-heading">研讨会</h4>
         </div>
       </div>
-      <h3 class="p-heading--four"><a class="p-link--external" href="https://pages.ubuntu.com/Multi-cloudEbook_chinese.html">分析公司451 Research最新报告：Multi-cloud经济学新洞察</a></h3>
+
+      <h3 class="p-heading--four"><a class="p-link--external" href="https://www.brighttalk.com/webcast/6793/311297"  onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'webinar', 'eventLabel' : 'uc-webinar', 'eventValue' : undefined });">如何在Orange Pi上构建snap商店与Ubuntu Core技术介绍</a></h3>
       <!-- rtp section end -->
     </div>
 
@@ -142,15 +98,14 @@ color: #fff;}
           <h4 class="p-heading-icon__title p-muted-heading">案例分享</h4>
         </div>
       </div>
-      <h3 class="p-heading--four"><a class="p-link--external" href="https://pages.ubuntu.com/ims-case-study-chinese.html" onclick="dataLayer.push({" event'="" :="" 'gaevent',="" 'eventcategory'="" 'product="" page',="" 'eventaction'="" 'digital="" signage="" -="" right',="" 'eventlabel'="" 'case="" study="" open="" source="" digital="" with="" ubuntu',="" 'eventvalue'="" '1'="" });'=""><span hidden="">Read the case study </span>IMS Evolve在供链中采用Ubuntu Core实现物联网商业智能</a></h3>
+      <h3 class="p-heading--four"><a class="p-link--external" href="https://pages.ubuntu.com/ims-case-study-chinese.html"  onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'case-study', 'eventLabel' : 'uc-ims-evolve', 'eventValue' : undefined });">IMS Evolve在供链中采用Ubuntu Core实现物联网商业智能</a></h3>
       <!-- rtp section end -->
     </div>
   </div>
-</div>  
+</div>
 
 <!-- Ubuntu Intro -->
 <section class="p-strip--accent is-dark">
-  
   <div class="ubuntu-intro">
     <div class="intro-left"></div>
     <div class="intro-middle">
@@ -168,27 +123,25 @@ color: #fff;}
       <h2 class="u-align-text--center" style="color: #fff; max-width:25em;">Ubuntu是一个广泛应用于个人电脑，云计算，以及所有智能物联网设备的开源操作系统。</h2>
     </div>
   </div>
-  
 </section>
-
 
 <!-- Cloud -->
 <section class="p-strip is-bordered">
   <div class="row">
     <div class="col-6">
-    <h2><a href="/cloud">构建云服务最好的选择&nbsp;›</a></h2>
-    <p>无论您是构建私有云还是公共云，Ubuntu都会提供所有必要的基础架构软件，工具和服务。</p>
-    <ul class="p-list--divided">
-          <li class="p-list__item is-ticked">完成构建OpenStack云所需的一切</li>
-          <li class="p-list__item is-ticked">在领先的公共云中使用已认证的Ubuntu镜像服务器</li>
-          <li class="p-list__item is-ticked">一整套配置，构建，管理且支持大型云的工具</li>
-          <li class="p-list__item is-ticked">支持付费工具、服务和持续Ubuntu Advantage订阅</li>
-        </ul>
-    <a href="https://pages.ubuntu.com/contact-us-in-chinese.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - cloud', 'eventValue' : undefined });">联系我们告知您的需求&nbsp;›</a>
-  </div>
-    <div class="col-6">
-    <img src="{{ STATIC_URL }}img/homepage/cloud.png" alt="cloud" />
-  </div>
+      <h2><a href="/cloud">构建云服务最好的选择&nbsp;›</a></h2>
+      <p>无论您是构建私有云还是公共云，Ubuntu都会提供所有必要的基础架构软件，工具和服务。</p>
+      <ul class="p-list--divided">
+        <li class="p-list__item is-ticked">完成构建OpenStack云所需的一切</li>
+        <li class="p-list__item is-ticked">在领先的公共云中使用已认证的Ubuntu镜像服务器</li>
+        <li class="p-list__item is-ticked">一整套配置，构建，管理且支持大型云的工具</li>
+        <li class="p-list__item is-ticked">支持付费工具、服务和持续Ubuntu Advantage订阅</li>
+      </ul>
+      <a href="https://pages.ubuntu.com/contact-us-in-chinese.html" class="p-link--external" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - cloud', 'eventValue' : undefined });">联系我们告知您的需求</a>
+    </div>
+    <div class="col-6 u-hide--small">
+      <img src="{{ STATIC_URL }}img/homepage/cloud.png" alt="cloud" />
+    </div>
   </div>
 </section>
 
@@ -197,13 +150,13 @@ color: #fff;}
 <section class="p-strip--light is-deep is-bordered">
   <div class="row">
     <div class="col-6">
-    <h2><a href="/desktop">Ubuntu 桌面系统&nbsp;›</a></h2>
-    <p>Ubuntu提供了学校，组织，家庭或企业所需的一切。 所有基本应用程序，如办公套件，浏览器，电子邮件和多媒体应用程序。Ubuntu软件中心还提供了数千个游戏和应用程序。</p>
-    <a href="/desktop">了解更多&nbsp;›</a>
-  </div>
+      <h2><a href="/desktop">Ubuntu 桌面系统&nbsp;›</a></h2>
+      <p>Ubuntu提供了学校，组织，家庭或企业所需的一切。 所有基本应用程序，如办公套件，浏览器，电子邮件和多媒体应用程序。Ubuntu软件中心还提供了数千个游戏和应用程序。</p>
+      <a href="/desktop">了解更多&nbsp;›</a>
+    </div>
     <div class="col-6">
-    <img src="https://assets.ubuntu.com/v1/c6504e94-Dell_XPS_Laptop_Front-Desktop.png" alt="desktop" />
-  </div>
+      <img src="https://assets.ubuntu.com/v1/c6504e94-Dell_XPS_Laptop_Front-Desktop.png" alt="" />
+    </div>
   </div>
 </section>
 
@@ -220,6 +173,5 @@ color: #fff;}
     </div>
   </div>
 </section>
-
 
 {% endblock page_content %}
