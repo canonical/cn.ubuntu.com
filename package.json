@@ -4,7 +4,7 @@
   "scripts": {
     "test": "yarn run lint-scss && yarn run lint-py && yarn run test-py",
     "lint-py": "flake8 --exclude '*env*,node_modules'",
-    "lint-scss": "sass-lint static/**/*.scss --verbose --no-exit",
+    "lint-scss": "sass-lint 'static/**/*.scss' --verbose --no-exit",
     "test-py": "python3 manage.py test",
     "clean": "rm -rf node_modules yarn-error.log css static/css *.log *.sqlite _site/ build/ .jekyll-metadata .bundle",
     "watch": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'",
