@@ -1,11 +1,15 @@
 @charset "UTF-8";
 
-$color-brand: #e95420;
-$color-accent: $color-brand;
-$color-link: $color-brand;
+@import 'settings_colors';
 
 // Import Vanilla Framework
 @import "vanilla-framework/scss/build";
+
+@import 'patterns_navigation';
+@include cn-p-navigation;
+
+// Vendor
+@import '../global-nav/src/sass/main';
 
 // Import custom styles
 @import "custom/ubuntu_intro";
@@ -23,3 +27,5 @@ body {
   max-width: 9rem;
   width: 100%;
 }
+
+
