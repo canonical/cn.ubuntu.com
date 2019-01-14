@@ -15,19 +15,13 @@
   "devDependencies": {
     "autoprefixer": "6.7.7",
     "cssnano": "3.10.0",
-    "node-sass": "4.9.0",
+    "node-sass": "4.11.0",
     "postcss": "6.0.23",
     "postcss-cli": "4.1.1",
-    "sass-lint": "1.12.1",
-    "vanilla-framework": "1.8.0"
+    "sass-lint": "1.12.1"
   },
   "dependencies": {
-    "autoprefixer": "6.7.7",
-    "cssnano": "3.10.0",
     "global-nav": "0.2.3",
-    "node-sass": "4.9.0",
-    "postcss-cli": "4.1.1",
-    "sass-lint": "1.12.1",
-    "watch-cli": "0.2.3"
+    "vanilla-framework": "1.8.0"
   }
 }
