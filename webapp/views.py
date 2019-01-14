@@ -13,8 +13,8 @@ class CmsTemplateFinder(TemplateFinder):
         context = super(CmsTemplateFinder, self).get_context_data(**kwargs)
 
         # Add level_* context variables
-        clean_path = self.request.path.strip('/')
-        for index, path, in enumerate(clean_path.split('/')):
+        clean_path = self.request.path.strip("/")
+        for index, path in enumerate(clean_path.split("/")):
             context["level_" + str(index + 1)] = path
 
         return context
