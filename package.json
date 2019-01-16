@@ -21,7 +21,7 @@
     "sass-lint": "1.12.1"
   },
   "dependencies": {
-    "global-nav": "0.2.3",
+    "global-nav": "1.2.1",
     "vanilla-framework": "1.8.1"
   }
 }
