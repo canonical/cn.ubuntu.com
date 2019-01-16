@@ -53,9 +53,8 @@
   <!-- footer content goes here -->
   {% include "templates/footer.html" %}
 
-
-  <script src="{% versioned_static 'global-nav/build/js/global.js' %}"></script>
-<script>ubuntu.globalNav.setup();</script>
+<script src="/static/js/global-nav.js"></script>
+<script>canonicalGlobalNav.createNav({maxWidth: '64.875rem'});</script>
 
 </body>
 </html>
