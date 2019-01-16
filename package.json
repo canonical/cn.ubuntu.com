@@ -14,7 +14,7 @@
   "author": "Canonical webteam",
   "devDependencies": {
     "autoprefixer": "9.4.5",
-    "cssnano": "3.10.0",
+    "cssnano": "4.1.8",
     "node-sass": "4.11.0",
     "postcss": "7.0.11",
     "postcss-cli": "4.1.1",
@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "global-nav": "0.2.3",
-    "vanilla-framework": "1.8.0"
+    "vanilla-framework": "1.8.1"
   }
 }
