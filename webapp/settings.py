@@ -14,7 +14,6 @@ WHITENOISE_ALLOW_ALL_ORIGINS = False
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "false").lower() == "true"
 ALLOWED_HOSTS = ["*"]
-APPEND_SLASH = True
 
 # Application definition
 INSTALLED_APPS = ["whitenoise.runserver_nostatic", "canonicalwebteam"]
