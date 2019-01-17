@@ -8,9 +8,6 @@
 @import 'patterns_navigation';
 @include cn-p-navigation;
 
-// Vendor
-@import '../global-nav/src/sass/main';
-
 // Import custom styles
 @import "custom/ubuntu_intro";
 @import "custom/heading-icon-small";
