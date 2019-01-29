@@ -22,7 +22,6 @@ MIDDLEWARE_CLASSES = []
 
 ROOT_URLCONF = "webapp.urls"
 
-STATICFILES_FINDERS = ["django_static_root_finder.finders.StaticRootFinder"]
 STATIC_ROOT = "static"
 STATIC_URL = "/static/"
 
