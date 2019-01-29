@@ -17,6 +17,12 @@ body {
   overflow-x: hidden;
 }
 
+// Custom fix for global nav padding, so it aligns with the indented logo
+// Copied from www.ubuntu.com: https://github.com/canonical-websites/www.ubuntu.com/blob/b68edf2e3b1f605f4a4fdbb4dd84155f699f27a3/static/sass/styles.scss#L210
+.global-nav .global-nav__header-logo-anchor {
+  padding: .6875rem 1rem !important;
+}
+
 // XXX Fix for inline image SVGs that have no dimensions set
 // https://github.com/vanilla-framework/vanilla-framework/issues/1605
 .p-inline-images__item > img {
