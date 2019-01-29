@@ -18,11 +18,11 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 INSTALLED_APPS = ["whitenoise.runserver_nostatic", "canonicalwebteam"]
 
-MIDDLEWARE_CLASSES = []
+MIDDLEWARE = ["whitenoise.middleware.WhiteNoiseMiddleware"]
 
 ROOT_URLCONF = "webapp.urls"
 
-STATIC_ROOT = "static"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "/static/"
 
 TEMPLATES = [
