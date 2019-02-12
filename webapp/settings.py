@@ -25,6 +25,12 @@ ROOT_URLCONF = "webapp.urls"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "/static/"
 
+ASSET_SERVER_URL = (
+    "https://res.cloudinary.com/"
+    "canonical/image/fetch/q_auto,f_auto/"
+    "https://assets.ubuntu.com/v1/"
+)
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -32,7 +38,8 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
-                "django.template.context_processors.request"
+                "django_asset_server_url.asset_server_url",
+                "django.template.context_processors.request",
             ]
         },
     }
