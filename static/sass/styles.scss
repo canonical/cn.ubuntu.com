@@ -31,4 +31,12 @@ body {
   width: 100%;
 }
 
+// XXX Fix for missing borders, remove with Vanilla 2.X
+[class^='p-strip'].is-bordered {
+  margin-bottom: initial;
+}
 
+/// XXX Missing, should be in Vanilla
+h1.u-align--center, h2.u-align--center, h3.u-align--center, h4.u-align--center, h5.u-align--center, h6.u-align--center, p.u-align--center {
+  max-width: none;
+}
