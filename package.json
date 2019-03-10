@@ -9,14 +9,13 @@
     "clean": "rm -rf node_modules yarn-error.log css static/css *.log *.sqlite _site/ build/ .jekyll-metadata .bundle",
     "watch": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
-    "build-css": "node-sass --include-path node_modules static/sass --output static/css && postcss --use autoprefixer --replace 'static/css/**/*.css' && postcss --use cssnano --dir static/minified 'static/css/**/*.css'",
+    "build-css": "node-sass --include-path node_modules static/sass --output-style compressed --output static/css && postcss --map false --use autoprefixer --replace 'static/css/**/*.css'",
     "build-js": "mkdir -p static/js && cp node_modules/global-nav/dist/index.js static/js/global-nav.js",
     "build": "yarn run build-css && yarn run build-js"
   },
   "author": "Canonical webteam",
   "devDependencies": {
     "autoprefixer": "9.4.7",
-    "cssnano": "4.1.10",
     "node-sass": "4.11.0",
     "postcss": "7.0.14",
     "postcss-cli": "6.1.1",
