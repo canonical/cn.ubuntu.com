@@ -1,14 +1,12 @@
 @charset "UTF-8";
 
-$color-brand: #e95420;
-$color-accent: $color-brand;
-$color-link: $color-brand;
+@import 'settings_colors';
 
 // Import Vanilla Framework
 @import "vanilla-framework/scss/build";
 
-// Vendor
-@import '../global-nav/src/sass/main';
+@import 'patterns_navigation';
+@include cn-p-navigation;
 
 // Import custom styles
 @import "custom/ubuntu_intro";
@@ -19,10 +17,26 @@ body {
   overflow-x: hidden;
 }
 
+// Custom fix for global nav padding, so it aligns with the indented logo
+// Copied from www.ubuntu.com: https://github.com/canonical-websites/www.ubuntu.com/blob/b68edf2e3b1f605f4a4fdbb4dd84155f699f27a3/static/sass/styles.scss#L210
+.global-nav .global-nav__header-logo-anchor {
+  padding: .6875rem 1rem !important;
+}
+
 // XXX Fix for inline image SVGs that have no dimensions set
 // https://github.com/vanilla-framework/vanilla-framework/issues/1605
 .p-inline-images__item > img {
   max-height: 5rem;
   max-width: 9rem;
   width: 100%;
+}
+
+// XXX Fix for missing borders, remove with Vanilla 2.X
+[class^='p-strip'].is-bordered {
+  margin-bottom: initial;
+}
+
+/// XXX Missing, should be in Vanilla
+.u-align--center {
+  max-width: none;
 }
