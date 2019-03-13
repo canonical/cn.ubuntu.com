@@ -1,0 +1,51 @@
+{% extends "templates/base.html" %}
+
+{% if title %}{% block title %}感谢！ {{ title }}{% endblock %}{% endif %}
+
+{% if meta_description %}{% block meta_description %}{{ meta_description }}{% endblock %}{% endif %}
+
+{% block second_level_nav_items %}
+    {% include "templates/_nav_breadcrumb.html" with section_title="Thank you" page_title="Thank you"  %}
+{% endblock second_level_nav_items %}
+
+{% block content %}
+
+<div class="wrapper u-no-margin--top">
+<div id="main-content" class="inner-wrapper">
+
+<!-- main content -->
+
+  <meta http-equiv="refresh" content="3;url=http://releases.ubuntu.com/18.04.2/ubuntu-18.04.2-desktop-amd64.iso">
+
+
+<div class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-8">
+      
+      <h1 style="font-weight: 100;">感谢下载Ubuntu！</h1>
+      <p>如自动下载未开始。您也可以手动
+        
+        <a href="http://releases.ubuntu.com/18.04.2/ubuntu-18.04.2-desktop-amd64.iso">点击下载</a>。
+        
+      </p>
+      
+    </div>
+    <div class="col-4 u-align--center">
+      <img src="https://assets.ubuntu.com/v1/cbae9a60-thank_you_orange_cmyk.svg" width="162" alt="">
+    </div>
+  </div>
+</div>
+		
+
+
+
+
+
+
+
+
+<!-- main content -->
+</div>
+</div>
+
+{% endblock %}

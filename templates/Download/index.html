@@ -1,0 +1,124 @@
+{% extends "templates/base.html" %}
+
+{% if title %}{% block title %}系统下载 {{ title }}{% endblock %}{% endif %}
+
+{% if meta_description %}{% block meta_description %}{{ meta_description }}{% endblock %}{% endif %}
+
+{% block second_level_nav_items %}
+    {% include "templates/_nav_breadcrumb.html" with section_title="Download" page_title="Download"  %}
+{% endblock second_level_nav_items %}
+
+{% block content %}
+
+<div class="wrapper u-no-margin--top">
+<div id="main-content" class="inner-wrapper">
+
+<!-- main content -->
+<div class="p-strip is-deep is-bordered">
+	<div class="row">    
+      <h1>Ubuntu桌面下载</h1>  
+      <div class="col-12 p-card--highlighted">
+      <h3>Ubuntu 18.04.2 LTS</h3>
+      <div class="u-equal-height p-divider">
+        <div class="col-8 p-divider__block">
+          <p class="p-card__content">下载专为PC和笔记本精心打造的Ubuntu长期支持（<abbr title="Long-term support">LTS）</abbr> 版本，LTS意味着该版本将提供长期免费的安全更新维护支持至2023年4月。</p>
+          <p class="p-card__content"><a href="https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes" class="p-link--external">Ubuntu 18.04 LTS 发布公告</a></p>
+          <p>推荐系统配置：</p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">双核2 GHz处理器或更高</li>
+            <li class="p-list__item is-ticked">2 GB 系统内存</li>
+            <li class="p-list__item is-ticked">25 GB磁盘存储空间</li>
+            <li class="p-list__item is-ticked">支持DVD光驱刻录或USB口安装</li>
+            <li class="p-list__item is-ticked">互联网接入</li>
+          </ul>
+        </div>
+        <div class="col-4">
+          <p class="p-card__content">
+            <a class="p-button--positive is-wide" href="/download/desktop/thank-you?version=18.04.2&amp;architecture=amd64" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '18.04-CN', 'eventValue' : undefined });">下载</a>
+          </p>
+          <p><small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">其他下载</a>。</small></p>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+
+
+<div class="p-strip is-deep is-bordered">
+	<div class="row">
+   <h1>下载Ubuntu服务器版</h1>  
+	<div class="col-12 p-card--highlighted">
+      <h3>Ubuntu Server 18.04.2 LTS</h3>
+      <div class="u-equal-height p-divider">
+        <div class="col-8 p-divider__block">
+          <p class="p-card__content">Ubuntu服务器的长期支持版本将包含OpenStack，同样地安全更新也将支持至2023年4月，仅限64位平台。</p>
+          <p class="p-card__content">此版本使用了全新的安装器———Subiquity。如你需要Subiquity安装器未包含的安装项，系统文件加密，可通过该<a href="/download/alternative-downloads#alternate-ubuntu-server-installer">链接</a> 下载旧版安装器</p>
+          <p class="p-card__content"><a href="https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes" class="p-link--external">Ubuntu 18.04 LTS服务器版发布日志</a></p>
+        </div>
+
+        <div class="col-4">
+          <p class="p-card__content"><a href="/download/server/thank-you?version=18.04.2&amp;architecture=amd64" class="p-button--positive is-wide" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '18.04 LTS-CN', 'eventValue' : undefined });">下载</a></p>
+          </p>
+          <p><small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">发布公告</a>。</small></p>
+        </div>
+
+      </div>
+    </div>
+</div>
+</div>
+
+
+
+<section class="p-strip is-bordered">
+  <div class="row">
+    <h1>获取物联网版Ubuntu</h1>
+    <p>Ubuntu Core是一个精简的、严格受限的、完全事务性的操作系统。我们从头开始设计它，专注于安全性和维护简单化，适用于边缘计算和大型设备网络。Ubuntu Core采用了通用的Linux文件格式包snap应用。</p>
+    <p><a href="/internet-of-things">了解更多关于Ubuntu Core的内容 ›</a></p><p><a href="/core"> </a><a href="http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/" class="p-link--external">查看所支持的系统镜像</a></p>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row">
+    <h3>支持的开发板</h3>
+  </div>
+  <div class="row u-equal-height">
+    <div class="p-card--highlighted col-4">
+      <img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/e3a042a7-raspberrypi-card.png?w=115" width="115" alt="Raspberry Pi">
+      <hr class="u-sv1">
+      <p class="p-card__content">在树莓派2、3上，通过Ubuntu Core 18只需简单的操作即可在开发板上安装你喜欢的应用。</p>
+      <p class="u-no-margin--bottom"><a href="https://www.ubuntu.com/download/iot/raspberry-pi-2-3" class="p-button--neutral is-wide">安装Ubuntu Core 18</a></p>
+    </div>
+    <div class="p-card--highlighted col-4">
+      <img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/d9ccf84b-qualcoom.png?w=132" width="132" alt="Qualcomm Snapdragon">
+      <hr class="u-sv1">
+      <p class="p-card__content">Ubuntu Core 18可使你充分发挥专为物联网设计的开发板的潜力，如Dragonboard 410c。 </p>
+      <p class="u-no-margin--bottom"><a href="https://www.ubuntu.com/download/iot/qualcomm-dragonboard-410c" class="p-button--neutral is-wide">安装Ubuntu Core 18</a></p>
+    </div>
+    <div class="p-card--highlighted col-4">
+      <img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg" width="85" alt="Intel NUC">
+      <hr class="u-sv1">
+      <p class="p-card__content">Ubuntu桌面和Ubuntu Core 18可简单地安装在其他64位架构的平台上，如Intel® 64位平台。</p>
+      <p class="u-no-margin--bottom"><a href="https://www.ubuntu.com/download/iot/intel-nuc" class="p-button--neutral is-wide">安装Ubuntu Core 18</a></p>
+    </div>
+  </div>
+  <div class="row">
+    <p>如要在你的工作站上运行, 你可以<a href="https://www.ubuntu.com/download/iot/kvm">KVM上安装Ubuntu Core</a></p>
+  </div>
+</section>
+
+		
+
+
+
+
+
+
+
+
+
+<!-- main content -->
+</div>
+</div>
+
+{% endblock %}
