@@ -2,7 +2,7 @@
   "name": "cn.ubuntu.com",
   "description": "Django website for cn.ubuntu.com",
   "scripts": {
-    "test": "yarn run lint-scss && yarn run lint-py && yarn run test-py",
+    "test": "sass-lint static/**/*.scss --verbose --no-exit",
     "lint-py": "flake8 --exclude '*env*,node_modules'",
     "lint-scss": "sass-lint 'static/**/*.scss' --verbose --no-exit",
     "test-py": "python3 manage.py test",
@@ -11,7 +11,7 @@
     "serve": "./entrypoint 0.0.0.0:${PORT}",
     "build-css": "node-sass --include-path node_modules static/sass --output-style compressed --output static/css && postcss --map false --use autoprefixer --replace 'static/css/**/*.css'",
     "build-js": "mkdir -p static/js && cp node_modules/global-nav/dist/index.js static/js/global-nav.js",
-    "build": "yarn run build-css && yarn run build-js"
+    "build": "node-sass --include-path node_modules static/sass --output-style compressed --output static/css && postcss --use autoprefixer --replace 'static/css/**/*.css' && postcss --dir static/minified 'static/css/**/*.css'"
   },
   "author": "Canonical webteam",
   "devDependencies": {
@@ -23,6 +23,11 @@
   },
   "dependencies": {
     "global-nav": "2.0.1",
-    "vanilla-framework": "1.8.1"
+    "vanilla-framework": "1.8.1",
+    "watch-cli": "0.2.3",
+    "sass-lint": "1.12.1",
+    "postcss-cli": "6.1.2",
+    "node-sass": "4.11.0",
+    "autoprefixer": "9.4.8"
   }
 }
