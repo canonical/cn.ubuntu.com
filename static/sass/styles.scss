@@ -11,6 +11,16 @@
 // Import custom styles
 @import "custom/ubuntu_intro";
 @import "custom/heading-icon-small";
+@import 'pattern_blog-post';
+@import 'pattern_blog-card';
+@import 'pattern_blog-list';
+@import 'utility_crop';
+@include blog-p-list;
+@include blog-p-post;
+@include blog-p-card;
+@include blog-u-crop;
+
+
 
 body {
   width: 100%;

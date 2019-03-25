@@ -5,6 +5,14 @@ Django settings for china project.
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+BLOG_CONFIG = {
+    "TAGS_ID": [],
+    "EXCLUDED_TAGS": [],
+    # the title of the blog
+    "BLOG_TITLE": "TITLE OF THE BLOG",
+    # the tag name for generating a feed
+    "TAG_NAME": "FEED",
+}
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "no_secret")
@@ -40,7 +48,8 @@ TEMPLATES = [
             "context_processors": [
                 "django_asset_server_url.asset_server_url",
                 "django.template.context_processors.request",
-            ]
+            ],
+            "libraries": {"resolve": "webapp.templatetags.resolve"},
         },
     }
 ]
