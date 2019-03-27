@@ -42,7 +42,9 @@
     {% endif %}
   </div>
   <p class="blog-p-card__footer">
+  {% if article.categories %}
     {% resolve article.categories.0 used_categories as category %}
      {{ category.name }}
+  {% endif %}
   </p>
 </div>
