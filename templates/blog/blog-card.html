@@ -1,11 +1,17 @@
 {% load resolve %}
 <div class="col-4 blog-p-card--post">
-   {% resolve article.group groups as group %}
-  <header class="blog-p-card__header blog-p-card__header--{{ group.slug }}">
+  {% if article.group %}
+  <header class="blog-p-card__header blog-p-card__header--{{ article.group.slug }}">
     <h5 class="p-muted-heading u-no-margin--bottom">
-      {{group.slug}}
+      {{article.group.slug}}
     </h5>
   </header>
+  {% else %}
+  <header class="blog-p-card__header">
+    <h5 class="p-muted-heading u-no-margin--bottom">
+    </h5>
+  </header>
+  {% endif %}
   <div class="blog-p-card__content">
     {% if article.image and article.image.source_url %}
     <div class="u-crop--16-9">
@@ -42,9 +48,8 @@
     {% endif %}
   </div>
   <p class="blog-p-card__footer">
-  {% if article.categories %}
-    {% resolve article.categories.0 used_categories as category %}
-     {{ category.name }}
+  {% if article.display_category %}
+     {{ display_category.name }}
   {% endif %}
   </p>
 </div>
