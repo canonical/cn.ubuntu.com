@@ -5,6 +5,14 @@ Django settings for china project.
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+BLOG_CONFIG = {
+    "TAGS_ID": [3265],
+    "EXCLUDED_TAGS": [],
+    # the title of the blog
+    "BLOG_TITLE": "新闻中心",
+    # the tag name for generating a feed
+    "TAG_NAME": "lang:cn",
+}
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "no_secret")
