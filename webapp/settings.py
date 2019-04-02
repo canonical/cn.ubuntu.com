@@ -6,12 +6,12 @@ Django settings for china project.
 import os
 
 BLOG_CONFIG = {
-    "TAGS_ID": [],
+    "TAGS_ID": [3265],
     "EXCLUDED_TAGS": [],
     # the title of the blog
-    "BLOG_TITLE": "TITLE OF THE BLOG",
+    "BLOG_TITLE": "新闻中心",
     # the tag name for generating a feed
-    "TAG_NAME": "FEED",
+    "TAG_NAME": "lang:cn",
 }
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
