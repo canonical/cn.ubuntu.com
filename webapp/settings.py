@@ -48,8 +48,7 @@ TEMPLATES = [
             "context_processors": [
                 "django_asset_server_url.asset_server_url",
                 "django.template.context_processors.request",
-            ],
-            "libraries": {"resolve": "webapp.templatetags.resolve"},
+            ]
         },
     }
 ]
