@@ -17,11 +17,24 @@
           <a href="#main-content">Jump to main content</a>
         </span>
         <ul class="p-navigation__links" role="menu">
-          <li class="p-navigation__link{% if level_1 == 'internet-of-things' %} is-selected{% endif %}" role="menuitem"><a href="/internet-of-things">物联网</a></li>
-          <li class="p-navigation__link{% if level_1 == 'desktop' %} is-selected{% endif %}" role="menuitem"><a href="/desktop">桌面系统</a></li>
-          <li class="p-navigation__link{% if level_1 == 'cloud' %} is-selected{% endif %}" role="menuitem"><a href="/cloud">云</a></li>
-          <li class="p-navigation__link{% if level_1 == 'server' %} is-selected{% endif %}" role="menuitem"><a href="/server">服务器</a></li>
-          <li class="p-navigation__link{% if level_1 == 'containers' %} is-selected{% endif %}" role="menuitem"><a href="/containers">容器</a></li>
+          {% with '/internet-of-things' as url %}
+          <li class="p-navigation__link{% if request.path == url %} is-selected{% endif %}" role="menuitem"><a href="{{ url }}">物联网</a></li>
+          {% endwith %}
+          {% with '/desktop' as url %}
+          <li class="p-navigation__link{% if request.path == url %} is-selected{% endif %}" role="menuitem"><a href="{{ url }}">桌面系统</a></li>
+          {% endwith %}
+          {% with '/cloud' as url %}
+          <li class="p-navigation__link{% if request.path == url %} is-selected{% endif %}" role="menuitem"><a href="{{ url }}">云</a></li>
+          {% endwith %}
+          {% with '/server' as url %}
+          <li class="p-navigation__link{% if request.path == url %} is-selected{% endif %}" role="menuitem"><a href="{{ url }}">服务器</a></li>
+          {% endwith %}
+          {% with '/containers' as url %}
+          <li class="p-navigation__link{% if request.path == url %} is-selected{% endif %}" role="menuitem"><a href="{{ url }}">容器</a></li>
+          {% endwith %}
+          {% with '/blog' as url %}
+          <li class="p-navigation__link{% if request.path == url %} is-selected{% endif %}" role="menuitem"><a href="{{ url }}">新闻中心</a></li>
+          {% endwith %}
         </ul>
       </nav>
     </div>
