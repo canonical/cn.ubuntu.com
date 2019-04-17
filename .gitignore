@@ -60,3 +60,4 @@ env[23]/
 # Ignore created directory
 /static/js
 
+.webcache/
