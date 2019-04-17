@@ -5,29 +5,34 @@
     "test": "sass-lint static/**/*.scss --verbose --no-exit",
     "lint-py": "flake8 --exclude '*env*,node_modules'",
     "lint-scss": "sass-lint 'static/**/*.scss' --verbose --no-exit",
+    "lint-js": "eslint static/js",
     "test-py": "python3 manage.py test",
     "clean": "rm -rf node_modules yarn-error.log css static/css *.log *.sqlite _site/ build/ .jekyll-metadata .bundle",
-    "watch": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'",
+    "watch": "watch -p static/js/**/*.js -c 'webpack --env.development' & watch -p 'static/sass/**/*.scss' -c 'yarn run build'",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
     "build-css": "node-sass --include-path node_modules static/sass --output-style compressed --output static/css && postcss --map false --use autoprefixer --replace 'static/css/**/*.css'",
-    "build-js": "mkdir -p static/js && cp node_modules/global-nav/dist/index.js static/js/global-nav.js",
-    "build": "node-sass --include-path node_modules static/sass --output-style compressed --output static/css && postcss --use autoprefixer --replace 'static/css/**/*.css' && postcss --dir static/minified 'static/css/**/*.css'"
+    "build": "mkdir -p static/js && webpack && yarn run build-css"
   },
   "author": "Canonical webteam",
   "devDependencies": {
+    "@babel/core": "7.4.3",
+    "@babel/preset-env": "7.4.3",
     "autoprefixer": "9.5.1",
+    "babel-loader": "8.0.5",
+    "eslint": "5.16.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-plugin-prettier": "3.0.1",
     "node-sass": "4.11.0",
     "postcss": "7.0.14",
     "postcss-cli": "6.1.2",
-    "sass-lint": "1.12.1"
+    "prettier": "1.16.4",
+    "sass-lint": "1.12.1",
+    "watch-cli": "0.2.3",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0"
   },
   "dependencies": {
-    "global-nav": "2.0.2",
-    "vanilla-framework": "1.8.1",
-    "watch-cli": "0.2.3",
-    "sass-lint": "1.12.1",
-    "postcss-cli": "6.1.2",
-    "node-sass": "4.11.0",
-    "autoprefixer": "9.5.1"
+    "@canonical/global-nav": "2.0.6",
+    "vanilla-framework": "1.8.1"
   }
 }
