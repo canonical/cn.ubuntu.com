@@ -2,7 +2,8 @@ const path = require("path");
 
 const config = {
   entry: {
-    ["global-nav"]: "./static/js/global-nav.js"
+    ["global-nav"]: "./static/js/global-nav.js",
+    ["latest-news"]: "./static/js/latest-news.js"
   },
   output: {
     path: path.resolve(__dirname, "static/dist"),
