@@ -1,0 +1,16 @@
+{% load versioned_static %}
+<div class="row">
+  <div class="col-9 p-divider__block" id="latest-news-container">
+    <div class="row" id="latest-articles"></div>
+  </div>
+  <div id="spotlight"></div>
+</div>
+<div class="u-sv3"></div>
+<div class="row">
+  <div class="col-12">
+    <a href="/blog" class="p-button--neutral">
+      View more from our blog
+    </a>
+  </div>
+</div>
+<script src="{% versioned_static 'dist/latest-news.js' %}"></script>
