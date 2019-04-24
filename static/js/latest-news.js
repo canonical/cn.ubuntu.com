@@ -100,9 +100,9 @@ const createReqListenerForDomContainer = (
   }
 
   try {
-    const latestPinned = data.latest_pinned_articles[0];
+    const latestPinned = data.latest_pinned_articles[0][0];
     if (latestPinned) {
-      containerForLatestNews.classList.add("p-divider");
+      containerForLatestNews.classList.add("p-divider", "col-9");
 
       const containerForSpotlight = document.getElementById(spotlightContainer);
       containerForSpotlight.classList.add("col-3", "p-divider__block");
