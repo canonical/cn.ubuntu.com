@@ -88,7 +88,7 @@ const createReqListenerForDomContainer = (
 
       const heading = document.createElement("h3");
       // "Latest news"
-      heading.innerHTML = "Latest news from our blog";
+      heading.innerHTML = "最新博客文章";
       containerForLatestNews.insertBefore(heading, containerForLatestArticles);
     }
   } catch (error) {
