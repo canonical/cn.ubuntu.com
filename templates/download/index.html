@@ -2,10 +2,11 @@
 
 {% if title %}{% block title %} 系统下载 {{ title }}{% endblock %}{% endif %}
 
-{% if meta_description %}{% block meta_description %}Ubuntu 16.04下载, Ubuntu 18.04下载, Ubuntu 服务器下载， Ubuntu系统下载， Ubuntu官网系统下载， Ubuntu OpenStack{{ meta_description }}{% endblock %}{% endif %}
 
+{% if meta_description %}{% block meta_description %}Ubuntu 16.04下载, Ubuntu 18.04下载, Ubuntu 服务器下载， Ubuntu系统下载， Ubuntu官网系统下载， Ubuntu OpenStack{{ meta_description }}{% endblock %}{% endif %}
 {% block second_level_nav_items %}
-    {% include "templates/_nav_breadcrumb.html" with section_title="download" page_title="download"  %}
+
+{% include "templates/_nav_breadcrumb.html" with section_title="download" page_title="download"  %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
@@ -73,7 +74,10 @@
           <p class="p-card__content">Ubuntu服务器的长期支持版本将包含OpenStack，同样地安全更新也将支持至2023年4月，仅限64位平台。</p>
           <p class="p-card__content">此版本使用了全新的安装器———Subiquity。如你需要Subiquity安装器未包含的安装项，系统文件加密，可通过该<a href="https://www.ubuntu.com/download/alternative-downloads#alternate-ubuntu-server-installer">链接</a> 下载旧版安装器</p>
           <p class="p-card__content"><a href="https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes" class="p-link--external">Ubuntu 18.04 LTS服务器版发布日志</a></p>
+
           <p>如需咨询服务器认证或服务器支持服务，请<a href="/contact">联系我们</a> 。</p>
+
+          
         </div>
 
         <div class="col-4">
@@ -116,7 +120,9 @@
 <div class="col-8">
     <h1>获取物联网版Ubuntu</h1>    
     <p>Ubuntu Core是一个精简、严格受限、完全事务性的操作系统。我们从头开始设计它，专注于安全性和维护简单化，适用于边缘计算和大型设备网络。Ubuntu Core采用了通用的Linux文件格式包snap应用。</p>
+
     <p><a href="/internet-of-things">了解更多关于Ubuntu Core的内容 ›</a>或<a href="/contact">联系我们</a></p>
+
     <p>通过KVM到<a href="https://www.ubuntu.com/download/iot/kvm" class="p-link--external">安装Ubuntu Core</a>您的工作站上</p>
 </div>
 <div class="col-4 u-vertically-center u-align--center u-hide--small">
