@@ -9,7 +9,7 @@ BLOG_CONFIG = {
     "TAGS_ID": [3265],
     "EXCLUDED_TAGS": [],
     # the title of the blog
-    "BLOG_TITLE": "新闻中心",
+    "BLOG_TITLE": "博客",
     # the tag name for generating a feed
     "TAG_NAME": "lang:cn",
 }
