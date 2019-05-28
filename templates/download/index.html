@@ -1,0 +1,185 @@
+{% extends "templates/base.html" %}
+
+{% if title %}{% block title %} 系统下载 {{ title }}{% endblock %}{% endif %}
+
+{% if meta_description %}{% block meta_description %}Ubuntu 16.04下载, Ubuntu 18.04下载, Ubuntu 服务器下载， Ubuntu系统下载， Ubuntu官网系统下载， Ubuntu OpenStack{{ meta_description }}{% endblock %}{% endif %}
+
+{% block second_level_nav_items %}
+    {% include "templates/_nav_breadcrumb.html" with section_title="download" page_title="download"  %}
+{% endblock second_level_nav_items %}
+
+{% block content %}
+
+<div id="main-content">
+  <div class="p-strip is-deep is-bordered">
+    <div class="row">
+      <div class="col-12">
+        <h1>Ubuntu桌面下载</h1>
+      </div>
+      <div class="col-12 p-card--highlighted">
+        <h2>Ubuntu 18.04.2 LTS</h2>
+        <div class="p-card__content">
+          <div class="col-8">
+            <p>下载专为桌面PC和笔记本精心打造的Ubuntu长期支持 (<abbr title="Long-term support">LTS</abbr>) 版本，LTS意味着该版本将提供长期免费的安全更新维护支持至2023年4月。</p>
+            <p><a href="https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes" class="p-link--external">Ubuntu 18.04 LTS 发布公告</a></p>
+            <p>推荐系统配置：</p>
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">双核2 GHz处理器或更高</li>
+              <li class="p-list__item is-ticked">2 GB 系统内存</li>
+              <li class="p-list__item is-ticked">25 GB磁盘存储空间</li>
+              <li class="p-list__item is-ticked">支持DVD光驱刻录或USB口安装</li>
+              <li class="p-list__item is-ticked">互联网接入</li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <p>
+              <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/18.04.2/ubuntu-18.04.2-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '18.04-cn', 'eventValue' : undefined });">直接下载</a>
+            </p>
+            <p><small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">其他下载</a>。</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 p-card--highlighted">
+        <h2>Ubuntu 19.04</h2>
+        <div class="p-card__content">
+          <div class="col-8">
+            <p>为桌面PC和笔记本打造的最新版本Ubuntu系统，19.04将拥有9个月的安全维护更新支持期（至2020年1月）。</p>
+            <p><a href="https://wiki.ubuntu.com/DiscoDingo/ReleaseNotes" class="p-link--external">Ubuntu 19.04 发布日志</a></p>
+            <p>推荐系统配置与Ubuntu 18.04.2<abbr title="Long-term support">LTS</abbr>一致。</p>
+          </div>
+          <div class="col-4">
+            <p>
+              <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/19.04/ubuntu-19.04-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '19.04-cn', 'eventValue' : undefined });">直接下载</a>
+            </p>
+            <p>
+              <small>其他下载方式见此<a href="https://www.ubuntu.com/download/alternative-downloads">链接</a>。</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-strip--light is-bordered">
+    <div class="row">
+      <div class="col-12">
+        <h1>下载Ubuntu服务器版</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 p-card--highlighted">
+        <h2>Ubuntu Server 18.04.2 LTS</h2>
+        <div class="p-card__content">
+          <div class="col-8">
+            <p>Ubuntu服务器的长期支持版本将包含OpenStack，同样地安全更新也将支持至2023年4月，仅限64位平台。</p>
+            <p>此版本使用了全新的安装器———Subiquity。如你需要Subiquity安装器未包含的安装项，系统文件加密，可通过该<a href="https://www.ubuntu.com/download/alternative-downloads#alternate-ubuntu-server-installer">链接</a> 下载旧版安装器</p>
+            <p><a href="https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes" class="p-link--external">Ubuntu 18.04 LTS服务器版发布日志</a></p>
+            <p>如需咨询服务器认证或服务器支持服务，请<a href="/contact">联系我们</a> 。</p>
+          </div>
+
+          <div class="col-4">
+            <p>
+              <a href="http://releases.ubuntu.com/bionic/ubuntu-18.04.2-live-server-amd64.iso" class="p-button--positive is-wide" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '18.04 Server-cn', 'eventValue' : undefined });">直接下载</a>
+            </p>
+            <p><small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">此链接</a>。</small></p>
+            <p>其他架构如ARM、Power、s390x可前往此链接<a href="http://cdimage.ubuntu.com/releases/18.04/release/">下载</a>。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 p-card--highlighted">
+        <h2>Ubuntu Server 19.04</h2>
+        <div class="p-card__content">
+          <div class="col-8">
+            <p>最新版本Ubuntu Server，拥有9个月安全维护更新，支持到2020年1月。</p>
+            <p>
+              <a href="https://wiki.ubuntu.com/DiscoDingo/ReleaseNotes" class="p-link--external">Ubuntu Server 19.04发布日志</a>
+            </p>
+          </div>
+          <div class="col-4">
+            <p>
+              <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/disco/ubuntu-19.04-live-server-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '19.04 Server-cn', 'eventValue' : undefined });">直接下载</a>
+            </p>
+            <p>
+              <small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">此链接</a>。</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="p-strip is-bordered">
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h1>获取物联网版Ubuntu</h1>
+        <p>Ubuntu Core是一个精简、严格受限、完全事务性的操作系统。我们从头开始设计它，专注于安全性和维护简单化，适用于边缘计算和大型设备网络。Ubuntu Core采用了通用的Linux文件格式包snap应用。</p>
+        <p><a href="/internet-of-things">了解更多关于Ubuntu Core的内容 ›</a>或<a href="/contact">联系我们</a></p>
+        <p>通过KVM到<a href="https://www.ubuntu.com/download/iot/kvm" class="p-link--external">安装Ubuntu Core</a>您的工作站上</p>
+      </div>
+      <div class="col-4 u-vertically-center u-align--center u-hide--small">
+        <img src="https://assets.ubuntu.com/v1/805f2b3a-core_black-orange_st_hex.svg" width="125" alt="Ubuntu Core">
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip--light">
+    <div class="row">
+      <h2>支持的平台</h2>
+    </div>
+    <div class="row">
+      <ul class="p-matrix u-clearfix">
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/977f2b7a-raspberry+pi+horizontal.svg?w=115" width="115" alt="Raspberry Pi"></p>
+            <p>安装Ubuntu Core 18到:</p>
+            <p><a href="https://www.ubuntu.com/download/iot/raspberry-pi-2-3-core">树莓派2或3&nbsp;›</a><br>
+            <a href="https://www.ubuntu.com/download/iot/raspberry-pi-compute-module-3">树莓派 CM3&nbsp;›</a></p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg?h=35" height="35" alt="Intel NUC"></p>
+            <p><a href="https://www.ubuntu.com/download/iot/intel-nuc">安装 Ubuntu Core 18&nbsp;›</a></p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/db577ec7-tank-logo.svg?w=115" width="115" alt="Intel IEI TANK 870"></p>
+            <p><a href="https://www.ubuntu.com/download/iot/intel-iei-tank-870">安装 Ubuntu Core 18&nbsp;›</a></p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/2a6d29c9-snapdragon.svg?w=99" width="99" alt="Qualcomm Snapdragon"></p>
+            <p><a href="https://www.ubuntu.com/download/iot/qualcomm-dragonboard-410c">安装 Ubuntu Core 18&nbsp;›</a></p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/472aceb3-samsung-artik-logo.svg?w=93" width="93" alt="Samsung Artik"></p>
+            <p><a href="https://www.ubuntu.com/download/iot/samsung-artik-5-10">安装 Ubuntu Core 16&nbsp;›</a></p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/db101789-intel-joule.svg?h=35" height="35" alt="Intel Joule"></p>
+            <p><a href="https://www.ubuntu.com/download/iot/intel-joule">安装 Ubuntu Core 16&nbsp;›</a></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="row" style="margin-top: 2rem;">
+      <p>
+        <a class="p-button--neutral" href="http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/">
+          <span class="p-link--external">浏览所有支持的镜像</span>
+        </a>
+      </p>
+    </div>
+  </section>
+</div>
+
+{% endblock %}
