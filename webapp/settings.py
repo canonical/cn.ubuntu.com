@@ -45,10 +45,11 @@ TEMPLATES = [
         "DIRS": ["templates"],
         "APP_DIRS": True,
         "OPTIONS": {
+            "builtins": ["webapp.templatetags.utils"],
             "context_processors": [
                 "django_asset_server_url.asset_server_url",
                 "django.template.context_processors.request",
-            ]
+            ],
         },
     }
 ]
