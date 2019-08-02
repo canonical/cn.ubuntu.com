@@ -6,7 +6,7 @@ Django settings for china project.
 import os
 
 BLOG_CONFIG = {
-    "TAGS_ID": [3265],
+    "TAG_IDS": [3265],
     "EXCLUDED_TAGS": [],
     # the title of the blog
     "BLOG_TITLE": "博客",
