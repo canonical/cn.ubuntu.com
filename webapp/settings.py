@@ -6,7 +6,7 @@ Django settings for china project.
 import os
 
 BLOG_CONFIG = {
-    "TAGS_ID": [3265],
+    "TAG_IDS": [3265],
     "EXCLUDED_TAGS": [],
     # the title of the blog
     "BLOG_TITLE": "博客",
@@ -45,10 +45,11 @@ TEMPLATES = [
         "DIRS": ["templates"],
         "APP_DIRS": True,
         "OPTIONS": {
+            "builtins": ["webapp.templatetags.utils"],
             "context_processors": [
                 "django_asset_server_url.asset_server_url",
                 "django.template.context_processors.request",
-            ]
+            ],
         },
     }
 ]

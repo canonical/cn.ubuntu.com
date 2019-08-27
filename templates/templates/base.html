@@ -12,10 +12,10 @@
   <!-- End Google Tag Manager -->
 
   <meta charset="UTF-8" />
-  <meta name="description" content="{% block meta_description %}Ubuntu是世界领先的开源操作系统。目前广泛应用于个人电脑，IoT/智能物联网，容器，服务器和云端上。{% endblock %}" />
+  <meta name="description" content="{% block meta_description %}{{ meta_description | default:"Ubuntu是世界领先的开源操作系统。目前广泛应用于个人电脑，IoT/智能物联网，容器，服务器和云端上。"}}{% endblock %}" />
   <meta name="author" content="Canonical" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{% block title %}{% endblock %} | Ubuntu</title>
+  <title>{% block title %}{{ title }}{% endblock %} | Ubuntu</title>
   <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/img/apple-touch-icon-144x144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/img/apple-touch-icon-114x114-precomposed.png">
@@ -23,7 +23,7 @@
   <link rel="apple-touch-icon-precomposed" href="/static/img/apple-touch-icon-precomposed.png">
   <link type="text/plain" rel="author" href="{% versioned_static 'files/humans.txt' %}" />
   <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/styles.css' %}" />
-
+  {% include "templates/_extra_metadata.html" %}
 
   {% block head_extra %}{% endblock %}
 </head>
@@ -54,6 +54,7 @@
   {% include "templates/footer.html" %}
 
 <script src="/static/dist/global-nav.js"></script>
+
 
 </body>
 </html>

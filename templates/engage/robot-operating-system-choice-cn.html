@@ -1,9 +1,4 @@
-
-{% extends "engage/base_engage.html" %}
-
-{% block meta_description %}Extended Security Maintenance (ESM) will be available for Ubuntu 14.04 LTS Trusty Tahr after End of Life for continued security and compliance of the most popular linux operating system.{% endblock %}
-
-{% block title %}选择最合适的机器人操作系统{% endblock %}
+{% extends_with_args "engage/base_engage.html" with title="选择最合适的机器人操作系统" meta_image="https://assets.ubuntu.com/v1/5f75154f-bot.png" meta_description="Extended Security Maintenance (ESM) will be available for Ubuntu 14.04 LTS Trusty Tahr after End of Life for continued security and compliance of the most popular linux operating system." %}
 
 {% block meta_copydoc %}https://docs.google.com/document/d/1zAv3ouUrzQcQDw2DSefaePXcMu35BAumIMpzqmIkycs/edit{% endblock meta_copydoc %}
 
@@ -13,7 +8,7 @@
   .p-takeover--robotics {
     background-color: #262626;
   }
-  
+
   .p-takeover--robotics .p-takeover__title {
     font-weight: 100;
     color: #ffffff;
@@ -116,7 +111,7 @@
 
     </div>
     <div class="col-5">
-   
+
     <!-- MARKETO FORM -->
 <script src="//assets.ubuntu.com/v1/37b1db88-jquery.min.js"></script>
 <script src="//assets.ubuntu.com/v1/d55f58bb-jquery.validate.js"></script>
@@ -162,7 +157,7 @@
       </li>
       <li class="mktField">
         <br />
-      </li>  
+      </li>
       <li class="mktField">
         <button type="submit" class="mktoButton u-no-margin--bottom">下载白皮书</button>
         <input name="formid" aria-label="formid" class="mktoField" value="3346" type="hidden">
@@ -207,7 +202,7 @@
 
     </div>
 
-    
+
   </div>
 </section>
 

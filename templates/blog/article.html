@@ -1,5 +1,11 @@
-{% extends "templates/base.html" %}
+{% extends_with_args "templates/base.html" with title=article.title.rendered meta_description=article.excerpt.raw  meta_image=article.image.source_url %}
+
 {% block title %}{{article.title.rendered|safe}}{% endblock %}
+
+{% block meta_description %}{{ article.excerpt.raw | striptags }}{% endblock %}
+
+{% block meta_image %}{{ article.image.source_url }}{% endblock %}
+
 {% block content %}
 <section id="main-content" class="p-strip">
   <div class="row">

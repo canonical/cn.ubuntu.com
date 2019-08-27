@@ -81,7 +81,7 @@ const createReqListenerForDomContainer = (
   const data = JSON.parse(event.target.responseText);
   let latest;
   try {
-    latest = data.latest_articles[0];
+    latest = data.latest_articles;
     if (latest) {
       const html = htmlForLatestArticles(latest);
       containerForLatestArticles.appendChild(html);
