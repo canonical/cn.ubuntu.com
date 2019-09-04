@@ -57,9 +57,10 @@
         </li>
       </ul>
     </div>
+
     <div class="col-5">
 
-    <!-- MARKETO FORM -->
+       <!-- MARKETO FORM -->
 <script src="https://assets.ubuntu.com/v1/37b1db88-jquery.min.js"></script>
 <script src="https://assets.ubuntu.com/v1/d55f58bb-jquery.validate.js"></script>
 <script src="https://assets.ubuntu.com/v1/6ce35d3e-jquery-ui.min.js"></script>&zwnj;&#8203;
@@ -122,18 +123,16 @@
   <input type="hidden" name="retURL" aria-label="retURL" value="https://cn.ubuntu.com/engage/thank_you_ad.html">
 </form>
 <script>
-  $("#mktoForm_3346").validate({
+  $("#mktoForm_3446").validate({
     errorElement: "span",
     errorClass: "mktFormMsg mktError",
     onkeyup: false,
     onclick: false,
     onblur: false
   });
-
   $(function () {
     $("#comments").hide()
   });
-
   $('#Ubuntu_User__c').on('change', function () {
     var selection = $(this).val();
     if (selection == 'Commercially only') {
@@ -142,7 +141,6 @@
       $('#comments').hide();
     }
   });
-
 </script>
 <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
 <!-- /MARKETO FORM -->
@@ -152,8 +150,5 @@
 
   </div>
 </section>
-
-
-
 
 {% endblock content %}
