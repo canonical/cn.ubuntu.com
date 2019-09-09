@@ -1,8 +1,8 @@
 {% extends "templates/base.html" %}
 
-{% if title %}{% block title %}联系 {{ title }}{% endblock %}{% endif %}
+{% if title %}{% block title %}联系我们 {{ title }}{% endblock %}{% endif %}
 
-{% if meta_description %}{% block meta_description %}{{ meta_description }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}Ubuntu技术支持，授权，咨询，物联网，服务器，ARM服务器{{ meta_description }}{% endblock %}{% endif %}
 
 {% block second_level_nav_items %}
   {% include "templates/_nav_breadcrumb.html" with section_title="Contact" page_title="Contact"  %}
@@ -11,58 +11,124 @@
 {% block content %}
 <div id="main-content" class="inner-wrapper">
 
-<section class="p-strip is-bordered is-deep">
-  <div class="row">
-    <div class="col-8">
-      <h1>联系Ubuntu</h1>
-    </div>
-  </div>
+<section class="p-strip is-shallow">
+   <div class="row">
+     <h1>获取支持</h1>
+        <div class="col-5">
+          <h4>技术协助</h4>
 
-  <div class="row">
-    <div class="col-5">
-      <h2>商业合作咨询</h2>
-
-      <ul class="p-list--divided">
-
-  <li class="p-list__item">物联网及设备 <a class="u-float--right p-link--external" href="https://pages.ubuntu.com/contact-us-in-chinese.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn-contact-iot', 'eventValue' : undefined });">我要咨询</a></li>
-
-
-
-  <li class="p-list__item">云及服务器 <a class="u-float--right  p-link--external" href="https://pages.ubuntu.com/contact-us-in-chinese.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn-contact-cloud', 'eventValue' : undefined });">我要咨询</a></li>
-
-
-</ul>
+          <p>如您正在寻找Ubuntu的支持，<a href="https://www.ubuntu.com/support">我们的支持团队</a>可以帮助您。</p>
+    
+          <h4>法律查询</h4>
+          <p>请注意，我们无法向您提供法律建议．对于其他任何关于Ubuntu的法律疑问，请联系我们<a href="mailto:legal@canonical.com">legal@canonical.com</a>。</p>
+    
+          <h4>商标咨询</h4>
+          <p>如您要申请Ubuntu商标许可或进行其他商标查询，请<a href="https://www.ubuntu.com/legal/terms-and-policies/contact-us">提交查询</a>。我们的商标团队成员很快会与您联系。</p>
+          
+          <h4>网站支持</h4>
+          <p>如您对Ubuntu中文官网有任何意见或需修正的地方，可到Github<a href="https://github.com/canonical-websites/cn.ubuntu.com/issues/new">提交bug</a>。</p>
+    
+         </div>
 
 
-      <h2>获取支持</h2>
-      <p>
-        向我们<a href="https://pages.ubuntu.com/contact-us-in-chinese.html">咨询</a>我们的产品，支持，培训或咨询，我们将尽快与您联系。
-      </p>
-      <p>
-        如您对Ubuntu中文官网有任何意见或需修正的地方，可到Github<a href="https://github.com/canonical-websites/cn.ubuntu.com/issues/new">提交</a>bug。.
-      </p>
-    </div>
+    <div class="col-7">
+    <div class="row">
+      <div class="col-6 col-start-large-3"> 
+        <h4>Ubuntu服务产品支持</h4>
+        <p>在向您提供支持前，请填写以下表格。我们收到咨询内容后将尽快与您取得联系。<br />注：我们仅回复使用工作邮箱咨询的内容。</p>
 
-    <div class="col-7 col-start-1">
-      <h2>技术协助</h2>
-      <p>
-        如您正在寻找Ubuntu的支持，<a href="https://www.ubuntu.com/support">我们的支持团队</a>可以帮助您。
-      </p>
+    
+  <!-- MARKETO FORM -->
+  <script src="https://assets.ubuntu.com/v1/37b1db88-jquery.min.js"></script>
+  <script src="https://assets.ubuntu.com/v1/d55f58bb-jquery.validate.js"></script>
+  <script src="https://assets.ubuntu.com/v1/6ce35d3e-jquery-ui.min.js"></script>&zwnj;&#8203;
+  <form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_2816" style="margin-top: -1rem;" novalidate="novalidate">
+    <fieldset class="u-no-padding--top" style="border-bottom-width: 1px;">
+      <ul class="p-list">
+        <li class="mktFormReq mktField p-list__item">
+          <label for="FirstName" class="mktoLabel">名字：</label>
+          <input required="" id="FirstName" name="FirstName" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="First Name" aria-required="true">
+        </li>
+        <li class="mktFormReq mktField">
+          <label for="LastName" class="mktoLabel ">姓氏：</label>
+          <input required="" id="LastName" name="LastName" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Last Name" aria-required="true">
+        </li>
+        <li class="mktFormReq mktField">
+          <label for="Email" class="mktoLabel ">工作邮箱：</label>
+          <input required="" id="Email" name="Email" maxlength="255" class="mktoField mktoEmailField  mktoRequired" type="email" aria-label="Email" aria-required="true">
+        </li>
+        <li class="mktFormReq mktField">
+          <label for="Company" class="mktoLabel ">公司名称：</label>
+          <input required="" id="Company" name="Company" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Company Name" aria-required="true">
+        </li>
+        <li class="mktFormReq mktField">
+          <label for="Title" class="mktoLabel ">职位：</label>
+          <input required="" id="Title" name="Title" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Job Title" aria-required="true">
+        </li>
+        <li class="mktFormReq mktField">
+          <label for="Phone" class="mktoLabel ">电话号码：</label>
+          <input required="" id="Phone" name="Phone" maxlength="255" class="mktoField mktoTelField  mktoRequired" type="tel" aria-label="Phone Number" aria-required="true">
+        </li>
+        <li class="mktFormReq mktField p-list__item">
+            <label for="Comments_from_lead__c" class="mktoLabel">您的留言:</label>
+            <textarea required id="Comments_from_lead__c" name="Comments_from_lead__c" rows="4" class="mktoField mktoRequired" maxlength="2000"></textarea>
+          </li>
+        <li class="mktField">
+          <input name="utm_campaign" aria-label="utm_campaign" class="mktoField  mktoFormCol" value="None" type="hidden">
+        </li>
+        <li class="mktField">
+          <input name="utm_medium" aria-label="utm_medium" class="mktoField  mktoFormCol" value="None" type="hidden">
+        </li>
+        <li class="mktField">
+          <input name="utm_source" aria-label="utm_source" class="mktoField  mktoFormCol" value="None" type="hidden">
+        </li>
+        <li class="mktField">
+          <input name="Consent_to_Processing__c" aria-label="Consent" class="mktoField  mktoFormCol" value="Yes" type="hidden">
+        </li>
+        <li class="mktField">
+          <br />
+        </li>
+        <li class="mktField">
+          <button type="submit" class="mktoButton u-no-margin--bottom p-card--content" style="width:50%"> 提交 </button>
+          <input name="formid" aria-label="formid" class="mktoField" value="2816" type="hidden">
+          <input name="lpId" aria-label="lpId" class="mktoField " value="" type="hidden">
+          <input name="subId" aria-label="subId" class="mktoField " value="" type="hidden">
+          <input name="munchkinId" aria-label="munchkinId" class="mktoField " value="" type="hidden">
+          <input name="lpurl" aria-label="lpurl" class="mktoField " value="" type="hidden">
+          <input name="cr" aria-label="cr" class="mktoField " value="" type="hidden">
+          <input name="kw" aria-label="kw" class="mktoField " value="" type="hidden">
+          <input name="q" aria-label="q" class="mktoField " value="" type="hidden">
+        </li>
+      </ul>
+    </fieldset>
+    <input type="hidden" name="returnURL" aria-label="returnURL" value="https://cn.ubuntu.com/contact/thank_you.html">
+    <input type="hidden" name="retURL" aria-label="retURL" value="https://cn.ubuntu.com/contact/thank_you.html">
+  </form>
+  <script>
+    $("#mktoForm_2816").validate({
+      errorElement: "span",
+      errorClass: "mktFormMsg mktError",
+      onkeyup: false,
+      onclick: false,
+      onblur: false
+    });
+    $(function () {
+      $("#comments").hide()
+    });
+    $('#Ubuntu_User__c').on('change', function () {
+      var selection = $(this).val();
+      if (selection == 'Commercially only') {
+        $('#comments').show();
+      } else {
+        $('#comments').hide();
+      }
+    });
+  </script>
+  <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
+  <!-- /MARKETO FORM -->
 
-      <h2>新闻媒体</h2>
-      <p>
-        记者或分析机构如想获取相关新闻信息请邮件至<a href="mailto:chinamarketing@canonical.com">chinamarketing</a>。很遗憾，我们无法回复非传媒或分析师的查询。
-      </p>
-
-      <h2>法律查询</h2>
-      <p>
-        请注意，我们无法向您提供法律建议．对于其他任何关于Ubuntu的法律疑问，请联系我们<a href="mailto:legal@canonical.com">legal@canonical.com</a>。
-      </p>
-
-      <h2>商标咨询</h2>
-      <p>
-        如您要申请Ubuntu商标许可或进行其他商标查询，请<a href="https://www.ubuntu.com/legal/terms-and-policies/contact-us">提交查询</a>。我们的商标团队成员很快会与您联系。
-      </p>
+      </div>
+     </div>
     </div>
   </div>
 </section>
