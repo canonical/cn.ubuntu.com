@@ -1,11 +1,6 @@
 @mixin cn-p-navigation {
   .p-navigation {
-    @include vf-navigation-pattern (
-      $background-color: $color-navigation-background,
-      $border-color: transparent,
-      $text-color: $color-x-light
-    );
-
+    
     &__logo {
       background: $color-brand;
       margin: 0;
@@ -16,11 +11,6 @@
     &__image {
       max-height: 1.5rem;
       max-width: 5.0625rem;
-    }
-
-    .row {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
     }
   }
 }

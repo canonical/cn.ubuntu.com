@@ -5613,10 +5613,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-framework@1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-1.8.1.tgz#0d7f5885cdbd1355a9f9d42d7596f9a1258b27ea"
-  integrity sha512-sYTpiiF+A2PvJ1xYVMywYFuX9sCfFkqBLQrfxfYgWZBQHVVMTtKJKVQMMDYFgFOxAPSsrVKl1VU9eAmGKkAMPw==
+vanilla-framework@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.4.0.tgz#95fd15738ce72cbb30bb667ba255cc7e9ae3f13d"
+  integrity sha512-NacSE5eKsugHnKlWlwsfKm24cDpsmcer2RC0+PCmFz4US4BLrEanQ0mZUkXg3toEwue867FFvDB+I7jiKP+zow==
 
 verbalize@^0.1.2:
   version "0.1.2"
