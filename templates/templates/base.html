@@ -2,6 +2,18 @@
 <!doctype html>
 <html class="no-js" lang="zh" dir="ltr">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{% block title %}{{ title }}{% endblock %} | Ubuntu</title>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/styles.css' %}" />
+
+
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://www.gstatic.com">
+  <link rel="preconnect" href="https://assets.ubuntu.com">
+  <link rel="preconnect" href="https://res.cloudinary.com">
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -11,31 +23,33 @@
   })(window,document,'script','dataLayer','GTM-K92JCQ');</script>
   <!-- End Google Tag Manager -->
 
-  <meta charset="UTF-8" />
+  {% block head_extra %}{% endblock %}
+
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/e8c07df6-Ubuntu-L_W.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/7f100985-Ubuntu-Th_W.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/f8097dea-Ubuntu-LI_W.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/fff37993-Ubuntu-R_W.woff2" crossorigin>
+
   <meta name="description" content="{% block meta_description %}{{ meta_description | default:"Ubuntu是世界领先的开源操作系统。目前广泛应用于个人电脑，IoT/智能物联网，容器，服务器和云端上。"}}{% endblock %}" />
   <meta name="author" content="Canonical" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{% block title %}{{ title }}{% endblock %} | Ubuntu</title>
+
+  {% include "templates/_extra_metadata.html" %}
+
   <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/img/apple-touch-icon-144x144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/img/apple-touch-icon-114x114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/img/apple-touch-icon-72x72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="/static/img/apple-touch-icon-precomposed.png">
   <link type="text/plain" rel="author" href="{% versioned_static 'files/humans.txt' %}" />
-  <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/styles.css' %}" />
-  {% include "templates/_extra_metadata.html" %}
 
-  {% block head_extra %}{% endblock %}
 </head>
-
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K92JCQ"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-
-  <!-- footer content goes here -->
+  <!-- header content goes here -->
   {% include "templates/header.html" %}
 
   <div class="wrapper u-no-margin--top">
@@ -53,7 +67,7 @@
   <!-- footer content goes here -->
   {% include "templates/footer.html" %}
 
-<script src="/static/dist/global-nav.js"></script>
+<script src="/static/dist/global-nav.js" async defer></script>
 
 
 </body>
