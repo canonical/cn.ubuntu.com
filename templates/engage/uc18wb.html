@@ -1,41 +1,61 @@
-{% extends "templates/base.html" %}
-
-{% if title %}{% block title %}联系我们 {{ title }}{% endblock %}{% endif %}
-
-{% if meta_description %}{% block meta_description %}Ubuntu技术支持，授权，咨询，物联网，服务器，ARM服务器{{ meta_description }}{% endblock %}{% endif %}
-
-{% block second_level_nav_items %}
-  {% include "templates/_nav_breadcrumb.html" with section_title="Contact" page_title="Contact"  %}
-{% endblock second_level_nav_items %}
-
+{% extends_with_args "engage/base_engage.html" with title="Ubuntu Core 18介绍"  %}
+{% block meta_copydoc %}https://docs.google.com/document/d/1zAv3ouUrzQcQDw2DSefaePXcMu35BAumIMpzqmIkycs/edit{% endblock meta_copydoc %}
+{% if meta_description %}{% block meta_description %}Ubuntu 16.04下载, Ubuntu 18.04下载, Ubuntu服务器下载， Ubuntu系统下载， Ubuntu中文官网， Ubuntu OpenStack, MicroK8s, Ubuntu容器{{ meta_description }}{% endblock %}{% endif %}
 {% block content %}
-<div id="main-content" class="inner-wrapper">
+
+<section class="p-strip--dark p-takeover--directory">
+  <div class="row u-equal-height">
+    <div class="col-8 u-vertically-center">
+      <h1 class="u-no-margin--bottom">
+        Ubuntu Core 18——用于安全可靠的物联网设备
+      </h1>
+      <br class="u-hide--medium u-hide--large">
+      <p class="u-hide--medium u-hide--large">
+        <a href="#the-form" class="p-button--neutral">
+          提交并观看
+        </a>
+      </p>
+    </div>
+    <div class="col-4 u-hide--small">
+      <p class="u-align--center u-vertically-center">
+        <img src="/static/img/internet-of-things/iot.png" alt="ubuntu iot"/>
+      </p>
+    </div>
+  </div>
+</section>
 
 <section class="p-strip is-shallow">
   <div class="row">
-    <h1>获取支持</h1>
-      <div class="col-5">
-        <h4>技术协助</h4>
-          <p>如您正在寻找Ubuntu的支持，<a href="https://www.ubuntu.com/support">我们的支持团队</a>可以帮助您。</p>
-            <h4>法律查询</h4>
-              <p>请注意，我们无法向您提供法律建议．对于其他任何关于Ubuntu的法律疑问，请联系我们<a href="mailto:legal@canonical.com">legal@canonical.com</a>。</p>
-            <h4>商标咨询</h4>
-              <p>如您要申请Ubuntu商标许可或进行其他商标查询，请<a href="https://www.ubuntu.com/legal/terms-and-policies/contact-us">提交查询</a>。我们的商标团队成员很快会与您联系。</p>
-            <h4>网站支持</h4>
-              <p>如您对Ubuntu中文官网有任何意见或需修正的地方，可到Github<a href="https://github.com/canonical-websites/cn.ubuntu.com/issues/new">提交bug</a>。</p>
-      </div>
+    <div class="col-7">
+      <p>
+        Ubuntu Core 18将获得10年的低成本安全维护，使得在工业级或关键性部署成为可能。 更新通过特定于设备的SLA提供，确保更改由制造商或企业管理，并对在设备生命周期内检测到的任何漏洞提供快速响应。</p>
+      <p>
+        Ubuntu和Ubuntu Core现已在Dell，Rigado，Intel，Qualcomm，三星NXP，Orange Pi等领先制造商的设备上稳定运行。</p>
+      <blockquote class="p-pull-quote">
+        <p>今天有1700个独立出版商发布了4600个snap应用。</p>
+      </blockquote>
+      <h4>
+        本视频版介绍将包含以下内容：</h4>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">
+          IoT物联网商业模式分析
+        </li>
+        <li class="p-list__item is-ticked">
+          Ubuntu Core 18新特性及功能
+        </li>
+        <li class="p-list__item is-ticked">
+          Ubuntu Core路线规划图
+        </li>
+      </ul>
+    </div>
 
-      <div class="col-7">
-        <div class="row">
-          <div class="col-6 col-start-large-3"> 
-            <h4>Ubuntu服务产品支持</h4>
-            <p>在向您提供支持前，请填写以下表格。我们收到咨询内容后将尽快与您取得联系。<br />注：我们仅回复使用工作邮箱咨询的内容。</p>
-    
-  <!-- MARKETO FORM -->
+    <div class="col-5">
+
+       <!-- MARKETO FORM -->
   <script src="https://assets.ubuntu.com/v1/37b1db88-jquery.min.js"></script>
   <script src="https://assets.ubuntu.com/v1/d55f58bb-jquery.validate.js"></script>
   <script src="https://assets.ubuntu.com/v1/6ce35d3e-jquery-ui.min.js"></script>&zwnj;&#8203;
-  <form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_2816" style="margin-top: -1rem;" novalidate="novalidate">
+  <form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_3452" style="margin-top: -1rem;" novalidate="novalidate">
     <fieldset class="u-no-padding--top" style="border-bottom-width: 1px;">
       <ul class="p-list">
         <li class="mktFormReq mktField p-list__item">
@@ -82,8 +102,8 @@
           <br />
         </li>
         <li class="mktField">
-          <button type="submit" class="mktoButton u-no-margin--bottom p-card--content" style="width:50%"> 提交 </button>
-          <input name="formid" aria-label="formid" class="mktoField" value="2816" type="hidden">
+          <button type="submit" class="mktoButton u-no-margin--bottom p-card--content" style="width:50%"> 提交并观看 </button>
+          <input name="formid" aria-label="formid" class="mktoField" value="3452" type="hidden">
           <input name="lpId" aria-label="lpId" class="mktoField " value="" type="hidden">
           <input name="subId" aria-label="subId" class="mktoField " value="" type="hidden">
           <input name="munchkinId" aria-label="munchkinId" class="mktoField " value="" type="hidden">
@@ -94,11 +114,11 @@
         </li>
       </ul>
     </fieldset>
-    <input type="hidden" name="returnURL" aria-label="returnURL" value="https://cn.ubuntu.com/contact/thank_you.html">
-    <input type="hidden" name="retURL" aria-label="retURL" value="https://cn.ubuntu.com/contact/thank_you.html">
+    <input type="hidden" name="returnURL" aria-label="returnURL" value="https://www.bilibili.com/video/av68076400/">
+    <input type="hidden" name="retURL" aria-label="retURL" value="https://www.bilibili.com/video/av68076400/">
   </form>
   <script>
-    $("#mktoForm_2816").validate({
+    $("#mktoForm_3452").validate({
       errorElement: "span",
       errorClass: "mktFormMsg mktError",
       onkeyup: false,
@@ -119,60 +139,9 @@
   </script>
   <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
   <!-- /MARKETO FORM -->
-      </div>
-     </div>
+
     </div>
   </div>
 </section>
 
-<section class="p-strip--light">
-  <div class="row">
-    <div class="col-12">
-      <h3 class="u-align-text--center">您可以通过以下方式关注我们</h3>
-    </div>
-  </div>
-  
-  <div class="row p-divider">
-    <div class="col-4 p-divider__block">
-      <h4 align="center">官方微博</h4>
-    <div>
-        <a href="http://weibo.com/officialubuntu"> <img class="img1"  src="/static/img/social/weibo.png" alt="微博"></a>
-    </div>
-      <p align="center">
-        <a class="p-button--positive" href="http://weibo.com/officialubuntu" >点击关注</a></p>
-    </div>
-
-    <div class="col-4 p-divider__block">
-      <h4 align="center">官方微信</h4>
-      <img class="img1" src="/static/img/social/wechat.png"　alt="微信">
-      <p align="center">
-        <a href="#" class="p-button--base is--disabled" aria-disabled="true">手机微信扫一扫</a></p>
-    </div>
-
-    <div class="col-4 p-divider__block">
-      <h4 align="center">开发者QQ群</h4>
-      <img class="img2" src="/static/img/social/qq.png">
-      <p align="center">
-        <a class="p-button--positive" href="//shang.qq.com/wpa/qunwpa?idkey=1a527d1f12599bfbf0fadc97f416fa8d5dd9b69ca91fd807cc3c01b4cc8ea830"　alt="ＱＱ群">点击加入</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip is-bordered is-deep">
-  <div class="row u-equal-height">
-    <div class="col-6 p-card">
-      <h3>北京办公室</h3>
-      <p>电话：+86 (10) 5737 9099</p>
-      <p>地址：北京市朝阳区建国门外大街1号国贸写字楼1座11层1118-19室</p>
-      <p>邮编: 100004</p>
-    </div>
-    <div class="col-6 p-card">
-      <h3>上海办公室</h3>
-      <p>电话： +86 (21) 2426 1881</p>
-      <p>地址：上海市漕溪北路331号12楼1246室</p>
-      <p>邮编: 200030</p>
-    </div>
-  </div>
-</section>
-</div>
-{% endblock %}
+{% endblock content %}
