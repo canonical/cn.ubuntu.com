@@ -1,5 +1,7 @@
 # [cn.ubuntu.com](http://cn.ubuntu.com)
 
+[![CircleCI build status](https://circleci.com/gh/canonical-web-and-design/cn.ubuntu.com.svg?style=shield)](https://circleci.com/gh/canonical-web-and-design/cn.ubuntu.com) [![Code coverage](https://codecov.io/gh/canonical-web-and-design/cn.ubuntu.com/branch/master/graph/badge.svg)](https://codecov.io/gh/canonical-web-and-design/cn.ubuntu.com)
+
 A paired-down, Chinese-language version of the ubuntu.com website.
 
 ## Local development
