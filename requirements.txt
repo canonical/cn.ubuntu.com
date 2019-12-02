@@ -1,5 +1,5 @@
-Django==2.2.6
-canonicalwebteam.blog==4.0.0
+Django==2.2.8
+canonicalwebteam.blog==4.0.2
 canonicalwebteam.http==1.0.1
 canonicalwebteam.versioned-static==1.0.2
 canonicalwebteam.yaml-responses[django]==1.1.1
