@@ -5,8 +5,9 @@
 
 {% if meta_description %}{% block meta_description %}Ubuntu 16.04下载, Ubuntu 18.04下载, Ubuntu 服务器下载， Ubuntu系统下载， Ubuntu官网系统下载， Ubuntu OpenStack{{ meta_description }}{% endblock %}{% endif %}
 {% block second_level_nav_items %}
-
-{% include "templates/_nav_breadcrumb.html" with section_title="download" page_title="download"  %}
+  {% set section_title="download" %}
+  {% set page_title="download" %}
+  {% include "templates/_nav_breadcrumb.html" %}
 {% endblock second_level_nav_items %}
 
 {% block content %}

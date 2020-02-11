@@ -4,7 +4,9 @@
 {% block meta_description %}{{ meta_description }}{% endblock %}
 
 {% block second_level_nav_items %}
-{% include "templates/_nav_breadcrumb.html" with section_title="Server" page_title="Server"  %}
+  {% set section_title="Server" %}
+  {% set page_title="Server" %}
+  {% include "templates/_nav_breadcrumb.html" %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
@@ -150,16 +152,16 @@
 
         <ul class="p-inline-images">
           <li class="p-inline-images__item">
-            <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}76999dfc-logo-centrify.png?w=132" width="132" alt="Centrify" />
+            <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/76999dfc-logo-centrify.png?w=132" width="132" alt="Centrify" />
           </li>
           <li class="p-inline-images__item">
             <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/eed716e9-logo-openstack.svg" width="88" alt="OpenStack" />
           </li>
           <li class="p-inline-images__item">
-            <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}c228b4e9-logo-likewise.png?w=144" width="144" alt="Likewise" />
+            <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/c228b4e9-logo-likewise.png?w=144" width="144" alt="Likewise" />
           </li>
           <li class="last-item p-inline-images__item">
-            <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}64493bba-logo-openbravo.png?w=144" width="144" alt="Openbravo" />
+            <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/64493bba-logo-openbravo.png?w=144" width="144" alt="Openbravo" />
           </li>
         </ul>
         <p class="u-align--center u-vertically-spaced"><a class="p-link--external" href="https://partners.ubuntu.com/programmes/software">查看所有认证软件</a></p>
@@ -172,7 +174,7 @@
       <div class="col-7">
         <h3>Ubuntu 发布周期</h3>
         <div class="u-sv3">
-          <img src="{{ ASSET_SERVER_URL }}cf53cf6c-release-ubuntu-end-of-life.png?w=592" width="592" alt="Ubuntu Desktop 发布周期，5 年长期支持" />
+          <img src="https://assets.ubuntu.com/v1/cf53cf6c-release-ubuntu-end-of-life.png?w=592" width="592" alt="Ubuntu Desktop 发布周期，5 年长期支持" />
         </div>
       </div>
       <div class="col-5">
@@ -261,15 +263,15 @@
           </li>
 
           <li class="p-inline-images__item">
-            <a href="https://www.rigado.com/products/iot-gateways/"><img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}6d588a1f-RigadoFullColorVert-800px.png?w=144" style="max-width: 144px;" width="144" alt="Rigado" /></a>
+            <a href="https://www.rigado.com/products/iot-gateways/"><img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/6d588a1f-RigadoFullColorVert-800px.png?w=144" style="max-width: 144px;" width="144" alt="Rigado" /></a>
           </li>
 
           <li class="p-inline-images__item">
-            <a href="http://aws.amazon.com/"><img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}115c18a8-AWS.png?w=144" style="max-width: 144px;" width="144" alt="Amazon Web Services" /></a>
+            <a href="http://aws.amazon.com/"><img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/115c18a8-AWS.png?w=144" style="max-width: 144px;" width="144" alt="Amazon Web Services" /></a>
           </li>
 
           <li class="p-inline-images__item">
-            <a href="http://www.qct.io/"><img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}2bd237c2-Quanta_logo.png?w=144" style="max-width: 144px;" width="144" alt="QCT (Quanta Cloud Technology)" /></a>
+            <a href="http://www.qct.io/"><img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/2bd237c2-Quanta_logo.png?w=144" style="max-width: 144px;" width="144" alt="QCT (Quanta Cloud Technology)" /></a>
           </li>
 
           <li class="p-inline-images__item">
@@ -277,15 +279,15 @@
           </li>
 
           <li class="p-inline-images__item">
-            <a href="http://www.oracle.com/index.html"><img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}d74eebcd-o-redbadge-digital-master.png?w=144" style="max-width: 144px;" width="144" alt="Oracle" /></a>
+            <a href="http://www.oracle.com/index.html"><img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/d74eebcd-o-redbadge-digital-master.png?w=144" style="max-width: 144px;" width="144" alt="Oracle" /></a>
           </li>
 
           <li class="p-inline-images__item">
-            <a href="https://cloud.google.com/"><img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}4bd8fe25-logo_lockup_cloud_platform_icon_vertical%281%29.png?w=144" style="max-width: 144px;" width="144" alt="Google Cloud Platform" /></a>
+            <a href="https://cloud.google.com/"><img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/4bd8fe25-logo_lockup_cloud_platform_icon_vertical%281%29.png?w=144" style="max-width: 144px;" width="144" alt="Google Cloud Platform" /></a>
           </li>
 
           <li class="p-inline-images__item">
-            <a href="http://www.sktelecom.com/index_real.html"><img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}b3d870b6-logo-south-korea-telecom.png?w=144" style="max-width: 144px;" width="144" alt="SK Telecom" /></a>
+            <a href="http://www.sktelecom.com/index_real.html"><img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/b3d870b6-logo-south-korea-telecom.png?w=144" style="max-width: 144px;" width="144" alt="SK Telecom" /></a>
           </li>
 
           <li class="p-inline-images__item">
@@ -319,23 +321,23 @@
         <ul id="cloud-partners" class="p-inline-images">
 
           <li class="p-inline-images__item">
-            <a href="https://www.mapr.com/"><img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}abb07b41-mapr_logo.jpg?w=144" style="max-width: 144px;" width="144" alt="MapR" /></a>
+            <a href="https://www.mapr.com/"><img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/abb07b41-mapr_logo.jpg?w=144" style="max-width: 144px;" width="144" alt="MapR" /></a>
           </li>
 
           <li class="p-inline-images__item">
-            <a href="https://www.cloudera.com/"><img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}b98c2412-Cloudera.png?w=144" style="max-width: 144px;" width="144" alt="Cloudera" /></a>
+            <a href="https://www.cloudera.com/"><img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/b98c2412-Cloudera.png?w=144" style="max-width: 144px;" width="144" alt="Cloudera" /></a>
           </li>
 
           <li class="p-inline-images__item">
-            <a href="https://www.mongodb.com/"><img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}847191e3-10genLogo_1.png?w=144" style="max-width: 144px;" width="144" alt="MongoDB" /></a>
+            <a href="https://www.mongodb.com/"><img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/847191e3-10genLogo_1.png?w=144" style="max-width: 144px;" width="144" alt="MongoDB" /></a>
           </li>
 
           <li class="p-inline-images__item">
-            <a href="http://www.datastax.com/"><img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}aadbed62-DataStax.png?w=144" style="max-width: 144px;" width="144" alt="DataStax" /></a>
+            <a href="http://www.datastax.com/"><img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/aadbed62-DataStax.png?w=144" style="max-width: 144px;" width="144" alt="DataStax" /></a>
           </li>
 
           <li class="p-inline-images__item">
-            <a href="http://www.couchbase.com/"><img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}e8add924-couchbase_logo_final_SCALED___.png?w=144" style="max-width: 144px;" width="144" alt="Couchbase" /></a>
+            <a href="http://www.couchbase.com/"><img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/e8add924-couchbase_logo_final_SCALED___.png?w=144" style="max-width: 144px;" width="144" alt="Couchbase" /></a>
           </li>
 
         </ul>
@@ -428,7 +430,7 @@
         <h3 class="p-muted-heading u-align--center">Ubuntu 适用于各种客户机</h3>
         <ul class="p-inline-images">
           <li class="p-inline-images__item">
-            <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}c037fd75-ubuntu-logo.png?w=150" width="150" alt="Ubuntu 标识" />
+            <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/c037fd75-ubuntu-logo.png?w=150" width="150" alt="Ubuntu 标识" />
           </li>
           <li class="p-inline-images__item">
             <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/2eafb62e-openlogo.svg" width="150" alt="Debian 标识" />
@@ -437,7 +439,7 @@
             <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/30574235-windows-logo.svg" width="120" alt="Windows 标识" />
           </li>
           <li class="p-inline-images__item">
-            <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}c69a8b3c-centos-logo.png?w=150" width="150" alt="CentOS 标识" />
+            <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/c69a8b3c-centos-logo.png?w=150" width="150" alt="CentOS 标识" />
           </li>
           <li class="p-inline-images__item">
             <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/eda6b94a-redhat-logo.svg" width="140" alt="Redhat 标识" />

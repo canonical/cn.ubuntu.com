@@ -5,7 +5,9 @@
 {% block meta_description %}Canonical 发布关于魅族ubuntu手机，BQ手机 Ubuntu版，最新桌面系统优麒麟ubuntu15.04，Ubuntu云等其他即时新闻和信息。{% endblock %}
 
 {% block second_level_nav_items %}
-    {% include "templates/_nav_breadcrumb.html" with section_title="News" page_title="News"  %}
+  {% set section_title="News" %}
+  {% set page_title="News" %}
+  {% include "templates/_nav_breadcrumb.html" %}
 {% endblock second_level_nav_items %}
 
 {% block content %}

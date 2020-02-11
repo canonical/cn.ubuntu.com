@@ -4,7 +4,9 @@
 {% block meta_description %}{{ meta_description }}{% endblock %}
 
 {% block second_level_nav_items %}
-    {% include "templates/_nav_breadcrumb.html" with section_title="Server" page_title="Server"  %}
+  {% set section_title="Server" %}
+  {% set page_title="Server" %}
+  {% include "templates/_nav_breadcrumb.html" %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
@@ -154,7 +156,7 @@
         </li>
 
         <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}4bd8fe25-logo_lockup_cloud_platform_icon_vertical%281%29.png" alt="Google Cloud Platform">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/4bd8fe25-logo_lockup_cloud_platform_icon_vertical%281%29.png" alt="Google Cloud Platform">
         </li>
 
         <li class="p-inline-images__item">
@@ -162,7 +164,7 @@
         </li>
 
         <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}cd8ca34e-docker-trans.png" alt="Docker">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/cd8ca34e-docker-trans.png" alt="Docker">
         </li>
 
         <li class="p-inline-images__item">
@@ -170,7 +172,7 @@
         </li>
 
         <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}73c71db8-Fairbanks-logo-WEB-2016-1440px.png" alt="Fairbanks">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/73c71db8-Fairbanks-logo-WEB-2016-1440px.png" alt="Fairbanks">
         </li>
 
         <li class="p-inline-images__item">
