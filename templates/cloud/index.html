@@ -5,9 +5,9 @@
 {% if meta_description %}{% block meta_description %}{{ meta_description }}{% endblock %}{% endif %}
 
 {% block second_level_nav_items %}
-  {% set section_title="云" %}
-  {% set page_title="云" %}
+{% with section_title="云", page_title="云" %}
   {% include "templates/_nav_breadcrumb.html" %}
+{% endwith %}
 {% endblock second_level_nav_items %}
 
 {% block content %}

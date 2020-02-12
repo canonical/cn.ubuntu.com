@@ -4,9 +4,9 @@
 {% block meta_description %}{{ meta_description }}{% endblock %}
 
 {% block second_level_nav_items %}
-{% set section_title="Internet of Things" %}
-{% set page_title="Internet of Things" %}
-{% include "templates/_nav_breadcrumb.html" %}
+{% with section_title="Internet of Things", page_title="Internet of Things" %}
+  {% include "templates/_nav_breadcrumb.html" %}
+{% endwith %}
 {% endblock second_level_nav_items %}
 
 {% block content %}

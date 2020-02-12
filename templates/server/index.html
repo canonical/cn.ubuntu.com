@@ -4,9 +4,9 @@
 {% block meta_description %}{{ meta_description }}{% endblock %}
 
 {% block second_level_nav_items %}
-  {% set section_title="Server" %}
-  {% set page_title="Server" %}
+{% with section_title="Server", page_title="Server" %}
   {% include "templates/_nav_breadcrumb.html" %}
+{% endwith %}
 {% endblock second_level_nav_items %}
 
 {% block content %}

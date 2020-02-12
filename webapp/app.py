@@ -8,8 +8,8 @@ app = FlaskBase(
     "cn.ubuntu.com",
     template_folder="../templates",
     static_folder="../static",
-    template_404="templates/404.html",
-    template_500="templates/500.html",
+    template_404="404.html",
+    template_500="500.html",
 )
 
 template_finder_view = TemplateFinder.as_view("template_finder")

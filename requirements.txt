@@ -3,3 +3,4 @@ canonicalwebteam.http==1.0.1
 canonicalwebteam.blog==4.0.2
 canonicalwebteam.search==0.2.0
 canonicalwebteam.templatefinder==0.2.4
+gunicorn[gevent]
