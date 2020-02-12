@@ -5,7 +5,9 @@
 {% if meta_description %}{% block meta_description %}Ubuntu技术支持，授权，咨询，物联网，服务器，ARM服务器{{ meta_description }}{% endblock %}{% endif %}
 
 {% block second_level_nav_items %}
-  {% include "templates/_nav_breadcrumb.html" with section_title="Contact" page_title="Contact"  %}
+{% with section_title="Contact", page_title="Contact" %}
+  {% include "templates/_nav_breadcrumb.html" %}
+{% endwith %}
 {% endblock second_level_nav_items %}
 
 {% block content %}

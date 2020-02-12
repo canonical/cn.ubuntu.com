@@ -4,7 +4,9 @@
 {% block meta_description %}{{ meta_description }}{% endblock %}
 
 {% block second_level_nav_items %}
-  {% include "templates/_nav_breadcrumb.html" with section_title="关于" page_title="关于"  %}
+{% with section_title="关于", page_title="关于" %}
+  {% include "templates/_nav_breadcrumb.html" %}
+{% endwith %}
 {% endblock second_level_nav_items %}
 
 {% block content %}

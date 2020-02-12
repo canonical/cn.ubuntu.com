@@ -5,7 +5,9 @@
 {% if meta_description %}{% block meta_description %}{{ meta_description }}{% endblock %}{% endif %}
 
 {% block second_level_nav_items %}
-  {% include "templates/_nav_breadcrumb.html" with section_title="云" page_title="云"  %}
+{% with section_title="云", page_title="云" %}
+  {% include "templates/_nav_breadcrumb.html" %}
+{% endwith %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
@@ -28,11 +30,11 @@
     fill: #fff; }
 
   .p-takeover--private-cloud-economics {
-    background-image: url({{ ASSET_SERVER_URL }}13fdbc5b-graph.png), linear-gradient(45deg, #171717 0%, #181818 9%, #262626 34%, #2D2D2D 67%, #383838 88%, #2E2E2E 100%, #363636 100%);
+    background-image: url(https://assets.ubuntu.com/v1/13fdbc5b-graph.png), linear-gradient(45deg, #171717 0%, #181818 9%, #262626 34%, #2D2D2D 67%, #383838 88%, #2E2E2E 100%, #363636 100%);
     background-color: #191919; }
      @media (min-width: 768px) {
       .p-takeover--private-cloud-economics{
-      background-image: url({{ ASSET_SERVER_URL }}13fdbc5b-graph.png), linear-gradient(45deg, #171717 0%, #181818 9%, #262626 34%, #2D2D2D 67%, #383838 88%, #2E2E2E 100%, #363636 100%);
+      background-image: url(https://assets.ubuntu.com/v1/13fdbc5b-graph.png), linear-gradient(45deg, #171717 0%, #181818 9%, #262626 34%, #2D2D2D 67%, #383838 88%, #2E2E2E 100%, #363636 100%);
       background-repeat: no-repeat;
       background-size: auto;
       background-position: right bottom; }}
@@ -68,7 +70,7 @@
       <p><a href="https://pages.ubuntu.com/Multi-cloudEbook_chinese.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'ebook', 'eventLabel' : 'cloud-ebook', 'eventValue' : undefined });" class="p-link--external p-button--neutral is-inline">查看该报告</a> </p>
     </div>
     <div class="col-4 u-align--center u-vertically-center">
-      <img src="{{ ASSET_SERVER_URL }}c54da84b-451-Research-NEG.png" alt="" />
+      <img src="https://assets.ubuntu.com/v1/c54da84b-451-Research-NEG.png" alt="" />
     </div>
   </div>
 </section>
@@ -163,31 +165,31 @@
           <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/1ccb6d93-logo-deutschetelekom.svg" alt="Deutshe Telekom">
         </li>
         <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}be345c7f-bSkyb_logo.png" alt="Sky">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/be345c7f-bSkyb_logo.png" alt="Sky">
         </li>
         <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}595a3e03-lexisnexis.png" alt="LexisNexis">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/595a3e03-lexisnexis.png" alt="LexisNexis">
         </li>
         <li class="p-inline-images__item">
           <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/10e3a1bc-time-warner-cable.svg" alt="Time Warner Cable">
         </li>
         <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}379ae6d1-Yahoo_Japan_logo.png" alt="Yahoo japan">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/379ae6d1-Yahoo_Japan_logo.png" alt="Yahoo japan">
         </li>
         <li class="p-inline-images__item">
           <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/b7693339-logo-bloomberg.svg" alt="Bloomberg">
         </li>
         <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}4ef05fb7-bestbuy.jpg" alt="Best Buy">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/4ef05fb7-bestbuy.jpg" alt="Best Buy">
         </li>
         <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}192f9755-partners-logo-nec-tagline.png" alt="NEC">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/192f9755-partners-logo-nec-tagline.png" alt="NEC">
         </li>
         <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}377e12ed-logo-ntt-communications.png" alt="NTT">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/377e12ed-logo-ntt-communications.png" alt="NTT">
         </li>
         <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}5482b658-liveperson-logo.jpg" alt="LivePerson">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/5482b658-liveperson-logo.jpg" alt="LivePerson">
         </li>
         <li class="p-inline-images__item">
           <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/4d6054f9-logo-cisco.svg" alt="Cisco">
@@ -199,7 +201,7 @@
           <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/7ffe020f-logo-ebay.svg" alt="eBay">
         </li>
         <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}b1fecbf0-logo-att-horizontal.png" alt="AT&amp;T">
+          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/b1fecbf0-logo-att-horizontal.png" alt="AT&amp;T">
         </li>
         <li class="p-inline-images__item">
           <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/b3315d88-walmart.svg" alt="Walmart">
@@ -247,13 +249,13 @@
           <img src="https://assets.ubuntu.com/v1/01ed776c-veritas.svg" alt="Veritas">
         </li>
         <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="{{ ASSET_SERVER_URL }}66bc9135-logo-lexisnexis.png" alt="Lexis Nexis">
+          <img src="https://assets.ubuntu.com/v1/66bc9135-logo-lexisnexis.png" alt="Lexis Nexis">
         </li>
         <li class="p-inline-images__item p-inline-images__item--smaller">
           <img src="https://assets.ubuntu.com/v1/25de1877-Tele2.svg" alt="Tele2">
         </li>
         <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="{{ ASSET_SERVER_URL }}d0b7aa28-logo-deutsche-telekom.png" alt="Deutsche Telekom">
+          <img src="https://assets.ubuntu.com/v1/d0b7aa28-logo-deutsche-telekom.png" alt="Deutsche Telekom">
         </li>
         <li class="p-inline-images__item p-inline-images__item--smaller">
           <img src="https://assets.ubuntu.com/v1/481063cd-pccw.svg" alt="PCCW logo">
@@ -265,13 +267,13 @@
           <img src="https://assets.ubuntu.com/v1/2353fc84-fibernet.svg" alt="Fibernet">
         </li>
         <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="{{ ASSET_SERVER_URL }}d56d0b96-Biznet-Gio.png" alt="Biznet Gio">
+          <img src="https://assets.ubuntu.com/v1/d56d0b96-Biznet-Gio.png" alt="Biznet Gio">
         </li>
         <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="{{ ASSET_SERVER_URL }}ff4e18ac-mimedia_logo_lrg.png" alt="Mimedia">
+          <img src="https://assets.ubuntu.com/v1/ff4e18ac-mimedia_logo_lrg.png" alt="Mimedia">
         </li>
         <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="{{ ASSET_SERVER_URL }}507a0979-Voidbridge.jpg" alt="Voidbridge">
+          <img src="https://assets.ubuntu.com/v1/507a0979-Voidbridge.jpg" alt="Voidbridge">
         </li>
         <li class="p-inline-images__item p-inline-images__item--smaller">
           <img src="https://assets.ubuntu.com/v1/2e38f398-uct.svg" alt="UCT">
@@ -281,7 +283,7 @@
   </div>
 </section>
 
-<section class="p-strip--image u-no-background--small is-deep is-bordered" style="background-image: url('{{ ASSET_SERVER_URL }}1d2ab6ba-suru-background.png'); background-size: 100% 100%;">
+<section class="p-strip--image u-no-background--small is-deep is-bordered" style="background-image: url('https://assets.ubuntu.com/v1/1d2ab6ba-suru-background.png'); background-size: 100% 100%;">
   <div class="row">
     <div class="col-8">
       <h2>利用Foundation Cloud Build打造Ubuntu OpenStack</h2>
@@ -508,7 +510,7 @@
         <img src="https://assets.ubuntu.com/v1/683950fd-logo-ibm.svg" alt="IBM">
       </li>
       <li class="p-inline-images__item">
-        <img src="{{ ASSET_SERVER_URL }}a2a68c52-logo-juniper-160.png?w=160" alt="Juniper">
+        <img src="https://assets.ubuntu.com/v1/a2a68c52-logo-juniper-160.png?w=160" alt="Juniper">
       </li>
       <li class="p-inline-images__item">
         <img src="https://assets.ubuntu.com/v1/02b13c70-2000px-EMC_Corporation_logo.svg.png?w=160" alt="EMC">
@@ -539,7 +541,7 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <img src="{{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png" alt="MAAS UI web page showing node listing">
+      <img src="https://assets.ubuntu.com/v1/8ca2eab9-hero-ui-image.png" alt="MAAS UI web page showing node listing">
       <p><a href="https://www.ubuntu.com/server/maas" class="p-link--external">进一步了解MAAS</a></p>
     </div>
   </div>
@@ -562,7 +564,7 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <img src="{{ ASSET_SERVER_URL }}80429220-landing.png" alt="Landscape landing page screenshow">
+      <img src="https://assets.ubuntu.com/v1/80429220-landing.png" alt="Landscape landing page screenshow">
       <p class="p-link--external"><a href="https://landscape.canonical.com">进一步了解Landscape</a></p>
     </div>
   </div>

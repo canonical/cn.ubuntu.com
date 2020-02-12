@@ -1,12 +1,12 @@
 {% extends "templates/base.html" %}
 
 {% if title %}{% block title %} 系统下载 {{ title }}{% endblock %}{% endif %}
-
-
 {% if meta_description %}{% block meta_description %}Ubuntu 16.04下载, Ubuntu 18.04下载, Ubuntu 服务器下载， Ubuntu系统下载， Ubuntu官网系统下载， Ubuntu OpenStack{{ meta_description }}{% endblock %}{% endif %}
-{% block second_level_nav_items %}
 
-{% include "templates/_nav_breadcrumb.html" with section_title="download" page_title="download"  %}
+{% block second_level_nav_items %}
+{% with section_title="download", page_title="download" %}
+  {% include "templates/_nav_breadcrumb.html" %}
+{% endwith %}
 {% endblock second_level_nav_items %}
 
 {% block content %}

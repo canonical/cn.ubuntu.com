@@ -1,4 +1,6 @@
-{% extends_with_args "engage/base_engage.html" with title="Ubuntu Core 18介绍"  %}
+{% extends "engage/base_engage.html" %}
+
+{% block title %}Ubuntu Core 18介绍{% endblock %}
 {% block meta_copydoc %}https://docs.google.com/document/d/1zAv3ouUrzQcQDw2DSefaePXcMu35BAumIMpzqmIkycs/edit{% endblock meta_copydoc %}
 {% if meta_description %}{% block meta_description %}Ubuntu 16.04下载, Ubuntu 18.04下载, Ubuntu服务器下载， Ubuntu系统下载， Ubuntu中文官网， Ubuntu OpenStack, MicroK8s, Ubuntu容器{{ meta_description }}{% endblock %}{% endif %}
 {% block content %}
