@@ -1,12 +1,12 @@
 {% extends "templates/base.html" %}
 
 {% if title %}{% block title %} 系统下载 {{ title }}{% endblock %}{% endif %}
-
-
 {% if meta_description %}{% block meta_description %}Ubuntu 16.04下载, Ubuntu 18.04下载, Ubuntu 服务器下载， Ubuntu系统下载， Ubuntu官网系统下载， Ubuntu OpenStack{{ meta_description }}{% endblock %}{% endif %}
-{% block second_level_nav_items %}
 
-{% include "templates/_nav_breadcrumb.html" with section_title="download" page_title="download"  %}
+{% block second_level_nav_items %}
+{% with section_title="download", page_title="download" %}
+  {% include "templates/_nav_breadcrumb.html" %}
+{% endwith %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
@@ -36,7 +36,7 @@
           </div>
           <div class="col-4">
             <p>
-              <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/18.04.3/ubuntu-18.04.3-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '18.04-cn', 'eventValue' : undefined });">直接下载</a>
+                <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/18.04.4/ubuntu-18.04.4-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '18.04-cn', 'eventValue' : undefined });">直接下载</a>
             </p>
             <p><small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">其他下载</a>。</small></p>
           </div>
@@ -74,7 +74,7 @@
     </div>
     <div class="row">
       <div class="col-12 p-card--highlighted">
-        <h2>Ubuntu Server 18.04.3 LTS</h2>
+        <h2>Ubuntu Server 18.04.4 LTS</h2>
         <div class="p-card__content row">
           <div class="col-8">
             <p>Ubuntu服务器的长期支持版本将包含OpenStack，同样地安全更新也将支持至2023年4月，仅限64位平台。</p>
@@ -85,7 +85,7 @@
 
           <div class="col-4">
             <p>
-              <a href="http://releases.ubuntu.com/bionic/ubuntu-18.04.3-live-server-amd64.iso" class="p-button--positive is-wide" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '18.04 Server-cn', 'eventValue' : undefined });">直接下载</a>
+              <a href="http://releases.ubuntu.com/bionic/ubuntu-18.04.4-live-server-amd64.iso" class="p-button--positive is-wide" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '18.04 Server-cn', 'eventValue' : undefined });">直接下载</a>
             </p>
             <p><small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">此链接</a>。</small></p>
             <p>其他架构如ARM、Power、s390x可前往此链接<a href="http://cdimage.ubuntu.com/releases/18.04/release/">下载</a>。</p>
@@ -106,7 +106,7 @@
           </div>
           <div class="col-4">
             <p>
-              <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/disco/ubuntu-19.10-live-server-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '19.10 Server-cn', 'eventValue' : undefined });">直接下载</a>
+                <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/19.10/ubuntu-19.10-live-server-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '19.10 Server-cn', 'eventValue' : undefined });">直接下载</a>
             </p>
             <p>
               <small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">此链接</a>。</small>

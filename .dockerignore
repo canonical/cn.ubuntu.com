@@ -81,9 +81,7 @@ run
 .*.hash
 
 # Node is only needed for building, not running
-package.json
 node_modules
-yarn.lock
 
 # Environemnt
 .env
@@ -99,6 +97,7 @@ yarn.lock
 docker-compose.yml
 .docker
 Dockerfile
+LICENSE
 
 # Sphinx documentation
 docs/_build/
@@ -109,5 +108,4 @@ node_modules/
 vendor/
 bower_components/
 package-lock.json
-yarn.lock
 bin/

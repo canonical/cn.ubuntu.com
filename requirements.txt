@@ -1,11 +1,6 @@
-Django==3.0.3
-canonicalwebteam.blog==4.0.2
+canonicalwebteam.flask_base==0.3.3
 canonicalwebteam.http==1.0.1
-canonicalwebteam.versioned-static==1.0.2
-canonicalwebteam.yaml-responses[django]==1.1.1
-canonicalwebteam.django_views==1.4.0
-django-asset-server-url==0.1
-django-template-finder-view==0.3
-whitenoise==5.0.1
-talisker==0.15.0
+canonicalwebteam.blog==4.0.2
+canonicalwebteam.search==0.2.0
+canonicalwebteam.templatefinder==0.2.4
 gunicorn[gevent]
