@@ -1,0 +1,17 @@
+name: Run linkchecker on live site
+
+on:
+  schedule:
+    - cron:  '* 7 * * *'
+
+jobs:
+  run-linkchecker:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install dependencies
+      run: sudo apt update && sudo apt install -y --no-install-recommends linkchecker
+
+    - name: Run linkchecker on live site
+      run: linkchecker --threads 2 --no-warnings --check-extern https://cn.ubuntu.com
+
