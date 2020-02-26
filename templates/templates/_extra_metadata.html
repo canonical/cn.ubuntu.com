@@ -15,6 +15,6 @@
   {% endif %}
   {% if meta_image %}
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="{% if "http" not in meta_image %}{{ ASSET_SERVER_URL }}{% endif %}{{ meta_image }}">
-  <meta property="og:image" content="{% if "http" not in meta_image %}{{ ASSET_SERVER_URL }}{% endif %}{{ meta_image }}" />
+  <meta name="twitter:image" content="{% if "http" not in meta_image %}https://assets.ubuntu.com/v1/{% endif %}{{ meta_image }}">
+  <meta property="og:image" content="{% if "http" not in meta_image %}https://assets.ubuntu.com/v1/{% endif %}{{ meta_image }}" />
   {% endif %}

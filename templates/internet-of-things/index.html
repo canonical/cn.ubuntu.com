@@ -4,27 +4,12 @@
 {% block meta_description %}{{ meta_description }}{% endblock %}
 
 {% block second_level_nav_items %}
-{% include "templates/_nav_breadcrumb.html" with section_title="Internet of Things" page_title="Internet of Things"  %}
+{% with section_title="Internet of Things", page_title="Internet of Things" %}
+  {% include "templates/_nav_breadcrumb.html" %}
+{% endwith %}
 {% endblock second_level_nav_items %}
 
 {% block content %}
-
-<!-- Start of LiveChat (www.livechatinc.com) code -->
-<script type="text/javascript">
-  window.__lc = window.__lc || {};
-  window.__lc.license = 3412142;
-  (function() {
-    var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
-    lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
-  })();
-</script>
-<noscript>
-<a href="https://www.livechatinc.com/chat-with/3412142/" rel="nofollow">Chat with us</a>,
-powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
-</noscript>
-<!-- End of LiveChat code -->
-
 
 <div class="p-strip">
   <div class="row">
@@ -53,7 +38,7 @@ powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow
   <div class="row">
     <div class="col-12 u-hide--small">
 
-      <img src="{{ ASSET_SERVER_URL }}30a4ee8e-branded+store+snaps.jpg" alt="Snap store screenshot">
+      <img src="https://assets.ubuntu.com/v1/30a4ee8e-branded+store+snaps.jpg" alt="Snap store screenshot">
 
       <p><a href="http://snapcraft.io/store" class="p-link--external">访问Snap应用商店</a>或者<a href="https://pages.ubuntu.com/contact-us-in-chinese.html" class="p-link--external" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - cloud', 'eventValue' : undefined });">寻求商业支持</a></p>
     </div>
@@ -79,7 +64,7 @@ powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow
       <p class="p-card__content"><a href="https://developer.qualcomm.com/hardware/dragonboard-410c" class="p-link--external">前往qualcomm.com</a></p>
     </div>
     <div class="col-6 p-card">
-      <img class="p-card__thumbnail" src="{{ ASSET_SERVER_URL }}c5dfb2cb-samsung-artik.png" style="height: 65px;" alt="Samsung Artik logo">
+      <img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/c5dfb2cb-samsung-artik.png" style="height: 65px;" alt="Samsung Artik logo">
       <hr class="u-sv1">
       <h3 class="p-card__title">三星 Artik</h3>
       <p class="p-card__content">三星Artik系列物联网模块易于集成，易于操作，可在一系列功率和性能上实现快速原型设计和快速生产。</p>
@@ -88,14 +73,14 @@ powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow
   </div>
   <div class="row u-equal-height">
     <div class="col-6 p-card">
-      <img class="p-card__thumbnail" src="{{ ASSET_SERVER_URL }}8cb47950-g46.png" style="height: 65px;" alt="Intel Up-squared">
+      <img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/8cb47950-g46.png" style="height: 65px;" alt="Intel Up-squared">
       <hr class="u-sv1">
       <h3 class="p-card__title">UP Squared Grove IoT开发套件</h3>
       <p class="p-card__content">UP Squared Grove IoT 套件是一款集高性能开发板和传感器的组合，让产品开发更容易。预装的Ubuntu 16.04 LTS和物联网开发库可以便捷地进行设置和配置。</p>
       <p class="p-card__content"><a href="https://software.intel.com/en-us/iot/hardware/up-squared-grove-dev-kit" class="p-link--external">前往intel.com</a></p>
     </div>
     <div class="col-6 p-card">
-      <img class="p-card__thumbnail" src="{{ ASSET_SERVER_URL }}dca2e4c4-raspberry-logo.png" style="height: 65px;" alt="Raspberry Pi logo">
+      <img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/dca2e4c4-raspberry-logo.png" style="height: 65px;" alt="Raspberry Pi logo">
       <hr class="u-sv1">
       <h3 class="p-card__title">树莓派：Pi2和Pi3</h3>
       <p class="p-card__content">为了娱乐，为了教育乃至盈利，树莓派使设备开发变得个性化和娱乐化。 通过支持Pi2和新的Pi3，Ubuntu Core支持全球最受欢迎的主板。
@@ -132,7 +117,7 @@ powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow
       </div>
       <p class="p-card__content">树梅派第二代和第三代</p>
       <ul class="p-list">
-        <li class="p-list__item"><a class="p-link--external" href="http://releases.ubuntu.com/ubuntu-core/16/">下载树梅派镜像</a></li>
+          <li class="p-list__item"><a class="p-link--external" href="http://cdimage.ubuntu.com/ubuntu-core/18/">下载树梅派镜像</a></li>
       </ul>
     </div>
 
@@ -145,7 +130,7 @@ powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow
       </div>
       <p class="p-card__content">Qualcomm Dragonboard 410c</p>
       <ul class="p-list">
-        <li class="p-list__item"><a class="p-link--external" href="http://releases.ubuntu.com/ubuntu-core/16/ubuntu-core-16-dragonboard-410c.img.xz">下载410c镜像</a></li>
+          <li class="p-list__item"><a class="p-link--external" href="http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-arm64+snapdragon.img.xz">下载410c镜像</a></li>
       </ul>
     </div>
 
@@ -170,7 +155,7 @@ powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow
       </div>
       <p class="p-card__content">可在X86平台上运行，开发工作更简单。</p>
       <ul class="p-list">
-        <li class="p-list__item"><a class="p-link--external" href="http://releases.ubuntu.com/ubuntu-core/16/">下载X86平台镜像(i386和amd64)</a></li>
+          <li class="p-list__item"><a class="p-link--external" href="http://cdimage.ubuntu.com/ubuntu-core/18/">下载X86平台镜像(i386和amd64)</a></li>
       </ul>
     </div>
   </div>

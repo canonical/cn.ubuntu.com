@@ -1,2 +1,1 @@
-(?P<page>.*)/: "/{page}"
 (?P<page>.*).html: "/{page}"

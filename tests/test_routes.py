@@ -1,6 +1,5 @@
 import unittest
-from webapp.wsgi import application
-from django.test import Client
+from webapp.app import app
 
 
 class TestRoutes(unittest.TestCase):
@@ -8,8 +7,8 @@ class TestRoutes(unittest.TestCase):
         """
         Set up Flask app for testing
         """
-        self.app = application
-        self.client = Client()
+        app.config["TESTING"] = True
+        self.client = app.test_client()
 
     def test_homepage(self):
         """
