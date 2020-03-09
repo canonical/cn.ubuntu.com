@@ -11,246 +11,411 @@
 
 {% block content %}
 
-<div class="p-strip">
-  <div class="row">
-    <div class="col-8">
-      <h1 class="p-heading--two">IMS Evolve采用Ubuntu Core在供链中实现支持工业物联网的商业智能</h1>
-      <p>IMS Evolve自成立之初就怀有一个清晰的使命，即研发最新的科技帮助企业提升工作效率，合理利用有限的资源。 IMS Evolve通过物联网技术的实际应用来变革基础运营，与企业共同商讨解决方案，直接为他们的核心目标带去价值，同时更高效地利用资源</p>
+<style type="text/css">
+  .p-strip--suru {
+	background-blend-mode: multiply, multiply, normal, normal, normal;
+	background-image: linear-gradient(to bottom right, rgba(228,228,228,0.54) 0%, rgba(228,228,228,0.54) 49.9%, rgba(228,228,228,0) 50%, rgba(228,228,228,0) 100%),linear-gradient(to bottom left, rgba(216,216,216,0.54) 0%, rgba(216,216,216,0.54) 49.9%, rgba(216,216,216,0) 50%, rgba(216,216,216,0) 100%),linear-gradient(to top right, #fff 0%, #fff 49%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%),linear-gradient(to top right, #fff 0%, #fff 100%),linear-gradient(-89deg, #e95420 0%, #772953 38%, #2C001e 85%);
+	background-position: 0% 0%, top right, right 0 bottom 4rem, right bottom, 0% 0%;
+	background-repeat: no-repeat;
+	background-size: 100% calc(100% - 4rem),50% 100%,100% 4rem,100% 4rem,auto;
+	margin-bottom: -4rem;
+	overflow: hidden;
+	padding-bottom: 12rem !important;
+	position: relative
+}
+  .p-strip--suru.is-dark {
+	color: #fff
+}
+  .fiximg {
+  padding-top: 4rem
 
-      <p><a href="https://pages.ubuntu.com/ims-case-study-chinese.html" class="p-button--positive p-link--external" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'case-study', 'eventLabel' : 'uc-ims-evolve', 'eventValue' : undefined });">下载该案例</a></p>
+}
+</style>
 
-    </div>
-    <div class="col-4 u-align-center u-vertically-center">
-      <img src="https://pages.ubuntu.com/rs/066-EOV-335/images/ims_ivolve_logo.png" alt="IMS Evolve" width="200" height="200" />
-    </div>
-  </div>
-</div>
-
-<!-- snap store -->
-<div class="p-strip--light is-deep">
-  <div class="row">
-    <div class="col-8">
-      <h2>用于软件定义万物的应用程序商店</h2>
-      <p>今天的设备是由软件定义的。 Ubuntu专为开发者打造，是世界上最受信赖的Linux。并且还提供专业人才和工具来扩大您的应用商店和生态系统。
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 u-hide--small">
-
-      <img src="https://assets.ubuntu.com/v1/30a4ee8e-branded+store+snaps.jpg" alt="Snap store screenshot">
-
-      <p><a href="http://snapcraft.io/store" class="p-link--external">访问Snap应用商店</a>或者<a href="https://pages.ubuntu.com/contact-us-in-chinese.html" class="p-link--external" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - cloud', 'eventValue' : undefined });">寻求商业支持</a></p>
-    </div>
-  </div>
-</div>
-
-
-
-
-<!-- support platform -->
-<div class="p-strip--light is-deep is-bordered">
-  <div class="row">
-    <div class="col-12">
-      <h2>支持主流平台更快地构建原型和产品</h2>
-    </div>
-  </div>
-  <div class="row u-equal-height">
-    <div class="col-6 p-card">
-      <img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/a8d80d5a-Qualcomm-Logo.svg" style="height: 65px;" alt="Qualcomm logo">
-      <hr class="u-sv1">
-      <h3 class="p-card__title">Qualcomm Dragonboard</h3>
-      <p class="p-card__content">64位ARM板为低功耗部分带来高端性能，实现了新一代无人机和移动智能。</p>
-      <p class="p-card__content"><a href="https://developer.qualcomm.com/hardware/dragonboard-410c" class="p-link--external">前往qualcomm.com</a></p>
-    </div>
-    <div class="col-6 p-card">
-      <img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/c5dfb2cb-samsung-artik.png" style="height: 65px;" alt="Samsung Artik logo">
-      <hr class="u-sv1">
-      <h3 class="p-card__title">三星 Artik</h3>
-      <p class="p-card__content">三星Artik系列物联网模块易于集成，易于操作，可在一系列功率和性能上实现快速原型设计和快速生产。</p>
-      <p class="p-card__content"><a href="https://www.artik.io/" class="p-link--external">前往artik.io</a></p>
-    </div>
-  </div>
-  <div class="row u-equal-height">
-    <div class="col-6 p-card">
-      <img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/8cb47950-g46.png" style="height: 65px;" alt="Intel Up-squared">
-      <hr class="u-sv1">
-      <h3 class="p-card__title">UP Squared Grove IoT开发套件</h3>
-      <p class="p-card__content">UP Squared Grove IoT 套件是一款集高性能开发板和传感器的组合，让产品开发更容易。预装的Ubuntu 16.04 LTS和物联网开发库可以便捷地进行设置和配置。</p>
-      <p class="p-card__content"><a href="https://software.intel.com/en-us/iot/hardware/up-squared-grove-dev-kit" class="p-link--external">前往intel.com</a></p>
-    </div>
-    <div class="col-6 p-card">
-      <img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/dca2e4c4-raspberry-logo.png" style="height: 65px;" alt="Raspberry Pi logo">
-      <hr class="u-sv1">
-      <h3 class="p-card__title">树莓派：Pi2和Pi3</h3>
-      <p class="p-card__content">为了娱乐，为了教育乃至盈利，树莓派使设备开发变得个性化和娱乐化。 通过支持Pi2和新的Pi3，Ubuntu Core支持全球最受欢迎的主板。
-      </p>
-      <p class="p-card__content"><a href="https://www.raspberrypi.org/" class="p-link--external">前往rasberrypi.org</a></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6 p-card">
-      <img src="/static/img/internet-of-things/orangepi.png" style="height: 65px;" alt="Intel Up-squared">
-      <hr class="u-sv1">
-      <h3 class="p-card__title">Orange Pi</h3>
-      <p class="p-card__content">Orange Pi(香橙派)是一款开源的单板电脑，新一代的arm开发板,它可以运行Ubuntu Core操作系统。</p>
-      <p class="p-card__content"><a href="http://www.orangepi.cn/downloadresourcescn/" class="p-link--external">前往Orange Pi官网</a></p>
-    </div>
-  </div>
-</div>
-
-
-<div class="p-strip is-deep is-bordered">
-  <div class="row">
-    <div class="col-12">
-      <h2>下载受支持的Ubuntu Core</h2>
-    </div>
-  </div>
-
-  <div class="row u-equal-height">
-    <div class="col-3 p-card">
-      <div class="p-heading-icon">
-        <div class="p-heading-icon__header">
-          <img class="p-heading-icon__img" src="/static/img/internet-of-things/arm.png">
-          <h3 class="p-heading-icon__title">ARM</h3>
-        </div>
+<section class="p-strip--suru is-dark">
+    <div class="row u-vertically-center">
+      <div class="col-6">
+        <h1>专为物联网<br>倾力打造的Ubuntu</br></h1>
+          <p>从智能家居到智能无人机，机器人，工业系统，Ubuntu是<a class="p-link--inverted" href="https://ubuntu.com/embedded" style="font-style: italic;">嵌入式Linux的新标准</a>。全球最好的安全性，定制品牌应用商店，庞大的开发者社区和可靠的安全更新。</a>
+        </p>
       </div>
-      <p class="p-card__content">树梅派第二代和第三代</p>
-      <ul class="p-list">
-          <li class="p-list__item"><a class="p-link--external" href="http://cdimage.ubuntu.com/ubuntu-core/18/">下载树梅派镜像</a></li>
-      </ul>
-    </div>
 
-    <div class="col-3 p-card">
-      <div class="p-heading-icon">
-        <div class="p-heading-icon__header">
-          <img class="p-heading-icon__img" src="/static/img/internet-of-things/arm.png">
-          <h3 class="p-heading-icon__title">ARM</h3>
-        </div>
+      <div class="col-5 col-start-large-8 u-align--center u-hide--small">        
+        <div class=" lazyloaded fiximg" data-noscript="">
+          <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_350,h_350/https://assets.ubuntu.com/v1/049b4cc6-ubuntu+core+18+circular+white.svg " srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_700,h_700/https://assets.ubuntu.com/v1/049b4cc6-ubuntu+core+18+circular+white.svg  2x" alt="" width="350" height="350" loading="lazy">
+        </div>  
       </div>
-      <p class="p-card__content">Qualcomm Dragonboard 410c</p>
-      <ul class="p-list">
-          <li class="p-list__item"><a class="p-link--external" href="http://cdimage.ubuntu.com/ubuntu-core/18/stable/current/ubuntu-core-18-arm64+snapdragon.img.xz">下载410c镜像</a></li>
-      </ul>
-    </div>
 
-    <div class="col-3 p-card">
-      <div class="p-heading-icon">
-        <div class="p-heading-icon__header">
-          <img class="p-heading-icon__img" src="/static/img/internet-of-things/arm.png">
-          <h3 class="p-heading-icon__title">ARM</h3>
-        </div>
-      </div>
-      <p class="p-card__content">Orange Pi Zero</p>
-      <ul class="p-list">
-        <li class="p-list__item"><a class="p-link--external" href="http://www.orangepi.org/downloadresources/orangepizero/2017-08-18/orangepizero_97899291e57c7a56ec9073f.html">下载Orange Pi Zero</a></li>
-      </ul>
     </div>
-    <div class="col-3 p-card">
-      <div class="p-heading-icon">
-        <div class="p-heading-icon__header">
-          <img class="p-heading-icon__img" src="/static/img/internet-of-things/X86-512.png">
-          <h3 class="p-heading-icon__title">X86</h3>
-        </div>
-      </div>
-      <p class="p-card__content">可在X86平台上运行，开发工作更简单。</p>
-      <ul class="p-list">
-          <li class="p-list__item"><a class="p-link--external" href="http://cdimage.ubuntu.com/ubuntu-core/18/">下载X86平台镜像(i386和amd64)</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
-<section class="p-strip is-bordered">
-  <div class="row">
-    <div class="col-4 u-align--center u-vertically-center">
-      <img src="/static/img/internet-of-things/core1.png?w=220" width="220" alt="">
-    </div>
-    <div class="col-8 col-start-1">
-      <h2>为何选择Ubuntu Core</h2>
-      <p>Ubuntu Core提供了一个易于更新和升级的软件平台，让厂商们可以轻易打造差异化的设备，通过软件升级让产品使用寿命期不断延伸，持续创造收入。它几乎可以支持任何类型和规模的设备，并提供全面型操作系统所具有的出色安全性和可扩展性。</p>
-      <ul class="p-list--divided">
-        <li class="p-list__item is-ticked">为应用和用户提供更快、更可靠、更强大的安全保障。</li>
-        <li class="p-list__item is-ticked">可对应用和Ubuntu Core软件本身进行原子级事务性更新；为了实现简单的维护和升级，这些更新可根据需要恢复原状。</li>
-        <li class="p-list__item is-ticked">将操作系统和应用程序文件分离开来并作为一组独特的只读映像存在，从而确保能够轻松安全地为单个设备添加多个应用和功能。</li>
-        <li class="p-list__item is-ticked">提供全新的、更简单的应用程序打包系统，更便于开发者构建和维护应用。</li>
-      </ul>
-    </div>
-  </div>
 </section>
+  
+<section class="p-strip is-bordered u-no-padding--bottom">
+    <div class="u-fixed-width">
+      <h4 class="p-muted-heading u-align--center">行业领先品牌选择集安全、应用程序、系统更新为一体的Ubuntu Core系统</h4>
+        <ul class="p-inline-images u-no-margin--bottom">
+          <li class="p-inline-images__item">
+            <div class=" lazyloaded" data-noscript="">
+              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_88,h_88/https://assets.ubuntu.com/v1/5ddba83a-logo-dell.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_176,h_176/https://assets.ubuntu.com/v1/5ddba83a-logo-dell.svg 2x" alt="Dell" width="88" height="88" loading="lazy" class="p-inline-images__logo">
+            </div>
+          </li>
+          
+          <li class="p-inline-images__item">
+            <div class=" lazyloaded" data-noscript="">
+              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_110,h_50/https://assets.ubuntu.com/v1/ee23142d-logo-ibm-large.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_220,h_100/https://assets.ubuntu.com/v1/ee23142d-logo-ibm-large.png 2x" alt="IBM" width="110" height="50" loading="lazy" class="p-inline-images__logo">
+            </div>  
+          </li>
 
-<section class="p-strip--image is-dark" style="background-image:url('/static/img/internet-of-things/iot-partners-hero-house.jpg'); background-position:center">
-  <div class="row">
-    <div class="col-6">
-      <h2>对于合作伙伴</h2>
-      <p>Ubuntu Core是一套安全、稳定、易于更新的操作系统，适用于从无人机、工业网关到智能供暖、照明和安全系统在内的任何支持互联网的设备。</p>
-      <ul class="p-list--divided">
-        <li class="p-list__item is-ticked">企业级的安全模型</li>
-        <li class="p-list__item is-ticked">可靠且能满足未来需求</li>
-        <li class="p-list__item is-ticked">事务性更新特征可以有效降低支持成本</li>
-        <li class="p-list__item is-ticked">提供各种工具便于管理您的物联网部署</li>
-      </ul>
-      <p><a class="p-button--brand p-link--external" href="https://pages.ubuntu.com/contact-us-in-chinese.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - iot', 'eventValue' : undefined });">联系我们</a>
-      </p>
+          <li class="p-inline-images__item">
+            <div class=" lazyloaded" data-noscript="">
+              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_110,h_25/https://assets.ubuntu.com/v1/3cf238fd-Qualcomm-Logo.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_220,h_50/https://assets.ubuntu.com/v1/3cf238fd-Qualcomm-Logo.svg 2x" alt="Qualcomm" width="110" height="25" loading="lazy" class="p-inline-images__logo">
+            </div>  
+          </li>
+
+          <li class="p-inline-images__item">          
+            <div class=" lazyloaded" data-noscript="">
+              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_110,h_37/https://assets.ubuntu.com/v1/e71bd588-logo-samsung.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_220,h_74/https://assets.ubuntu.com/v1/e71bd588-logo-samsung.svg 2x" alt="Samsung" width="110" height="37" loading="lazy" class="p-inline-images__logo">
+            </div>  
+          </li>
+
+          <li class="p-inline-images__item">
+            <div class=" lazyloaded" data-noscript="">
+              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_110,h_73/https://assets.ubuntu.com/v1/c24cb4b9-logo-intel.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_220,h_146/https://assets.ubuntu.com/v1/c24cb4b9-logo-intel.svg 2x" alt="Intel" width="110" height="73" loading="lazy" class="p-inline-images__logo">
+            </div>
+          </li>
+  
+          <li class="p-inline-images__item">          
+            <div class=" lazyloaded" data-noscript="">
+              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_110,h_34/https://assets.ubuntu.com/v1/4efbd291-Arm_logo_blue_cropped.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_220,h_68/https://assets.ubuntu.com/v1/4efbd291-Arm_logo_blue_cropped.svg 2x" alt="Arm" width="110" height="34" loading="lazy" class="p-inline-images__logo">
+            </div>  
+          </li>
+
+          <li class="p-inline-images__item">          
+            <div class=" lazyloaded" data-noscript="">
+              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_140,h_140/https://assets.ubuntu.com/v1/45fd87b5-2018-logo-rigado.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_280,h_280/https://assets.ubuntu.com/v1/45fd87b5-2018-logo-rigado.svg 2x" alt="Rigado" width="140" height="140" loading="lazy" class="p-inline-images__logo" style="max-width: 140px; max-height: 140px;">
+            </div>  
+           </li>
+        </ul>
     </div>
-  </div>
 </section>
+  
+<section class="p-strip--light is-bordered">
+    <div class="row">
+      <div class="col-6 p-tile">
+        <div class="row p-tile__row">
+          <div class="col-3 col-medium-3">
+            <div class="u-align--center">
+              <div class=" lazyloaded" data-noscript="">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_236,h_180/https://assets.ubuntu.com/v1/33007e71-Internet+of+Things_digital-screens.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_472,h_360/https://assets.ubuntu.com/v1/33007e71-Internet+of+Things_digital-screens.svg 2x" alt="" width="236" height="180" loading="lazy">
+              </div>
+            </div>
+          </div>
 
-<section class="p-strip is-bordered">
-  <div class="row">
-    <div class="u-equal-height u-vertically-center">
-      <div class="col-5">
-        <h2>行业领先企业纷纷选择 <br /> Ubuntu Core</h2>
-        <p>从戴尔和微软等老牌厂商到众多开拓创新的科技初创公司，整个物联网都在拥抱Ubuntu Core。</p>
+          <div class="col-3 col-medium-3">
+            <h3>数字标牌</h3>
+              <p>小巧的体积且完整的OpenGL支持使Ubuntu Core成为安全数字标牌的理想平台。</p>
+              <p><a href="https://ubuntu.com/internet-of-things/digital-signage">了解更多&nbsp;›</a></p>
+          </div>
+        </div>
       </div>
+
+      <div class="col-6 p-tile" style="margin-bottom: 64px;">
+        <div class="row p-tile__row">
+          <div class="col-3 col-medium-3">
+            <div class="u-align--center">              
+              <div class=" lazyloaded" data-noscript="">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_216,h_180/https://assets.ubuntu.com/v1/9a250d1b-Internet+of+Things_digital-drone.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_432,h_360/https://assets.ubuntu.com/v1/9a250d1b-Internet+of+Things_digital-drone.svg 2x" alt="" width="216" height="180" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="col-3 col-medium-3">
+            <h3>机器人</h3>
+              <p>在Ubuntu上使用ROS做机器人开发。自动化运载工具和智能制造亦如此。</p>
+              <p><a href="https://ubuntu.com/robotics">了解更多&nbsp;›</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 p-tile">
+        <div class="row p-tile__row">
+          <div class="col-3 col-medium-3">
+            <div class="u-align--center">              
+              <div class=" lazyloaded" data-noscript="">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_207,h_180/https://assets.ubuntu.com/v1/d40fc8b9-Internet+of+Things_digital-gateways.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_414,h_360/https://assets.ubuntu.com/v1/d40fc8b9-Internet+of+Things_digital-gateways.svg 2x" alt="" width="207" height="180" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="col-3 col-medium-3">
+            <h3>网关</h3>
+            <p>丰富的网络和通讯协议支持使Ubuntu成为工业网关平台的理想选择。</p>
+            <p><a href="https://ubuntu.com/internet-of-things/gateways">了解更多&nbsp;›</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 p-tile">
+        <div class="row p-tile__row">
+          <div class="col-3 col-medium-3">
+            <div class="u-align--center">              
+              <div class=" lazyloaded" data-noscript="">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_236,h_180/https://assets.ubuntu.com/v1/580f3ae7-automotive.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_472,h_360/https://assets.ubuntu.com/v1/580f3ae7-automotive.svg 2x" alt="" width="236" height="180" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="col-3 col-medium-3">
+            <h3>汽车</h3>
+            <p>专为关键嵌入式系统设计，Ubuntu重塑汽车。</p>
+            <p><a href="https://ubuntu.com/automotive">了解更多&nbsp;›</a></p>
+          </div>
+         </div>
+      </div>
+    
+    </div>
+</section>
+  
+<section class="p-strip is-bordered">
+    <div class="row">
+      <div class="col-8">
+        <h2>支持私有应用商店</h2>
+        <p>启用专属的应用商店，在Ubuntu上构建巨大的应用产品组合。Ubuntu是一个拥有众多天才开发者和对开发最友好的工具链的平台。</p>
+      </div>
+    </div>
+     
+      <div class="u-fixed-width u-hide--small">
+        <div class=" lazyloaded" data-noscript="">
+          <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1040,h_641/https://assets.ubuntu.com/v1/6a4925fa-limenet-appstore.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_2080,h_1282/https://assets.ubuntu.com/v1/6a4925fa-limenet-appstore.png 2x" alt="Snap store screenshot" width="1040" height="641" loading="lazy" style="border-color: #cdcdcd; border-style: solid; border-width: 1px;">
+        </div>
+          <p><a href="http://snapcraft.io/store" class="p-link--external">访问Snap应用商店</a></p>  
+      </div>    
+</section>
+  
+<section class="p-strip--light is-bordered">
+    <div class="u-fixed-width" style="padding-bottom: 2rem;" >
+      <h2>SMART START助力快速进入市场</h2>
+      <p>Canonical和合作伙伴一起提供全面的硬件适配、系统定制及开发支持，使得您的首款设备快速推向市场。软件应用商店和安全维护更新也一并提供。</p>  
+    <div class="row u-vertically-center" style="padding-bottom: 2rem;padding-left: 0px;">
+      <div class="col-5 p-card">
+        <h3 class="p-heading--four">SMART START</h3>
+        <p class="p-heading--three">$30,000 — 2周内交付</p>
+        <hr class="u-sv3">
+        <ul class="p-list u-no-margin--bottom">
+          <li class="p-list__item is-ticked">X86或ARM平台</li>
+          <li class="p-list__item is-ticked">Ubuntu Server或Core</li>
+          <li class="p-list__item is-ticked">专属应用商店</li>
+          <li class="p-list__item is-ticked">支持1000台设备</li>
+          <li class="p-list__item is-ticked">3个snap应用开发</li>
+          <li class="p-list__item is-ticked">3天咨询</li>
+          <li class="p-list__item is-ticked">每月安全更新支持</li>
+        </ul>
+      </div>
+  
       <div class="col-7">
-        <ul class="p-inline-images">
-          <li class="p-inline-images__item">
-            <img src="/static/img/internet-of-things/logo-microsoft-azure.svg" alt="Microsoft Azure logo">
-          </li>
-          <li class="p-inline-images__item">
-            <img src="/static/img/internet-of-things/logo-raspberry-pi-001.svg" alt="Raspberry Pie logo">
-          </li>
-          <li class="p-inline-images__item">
-            <img src="/static/img/internet-of-things/logo-dell.svg" alt="Dell logo">
-          </li>
-          <li class="p-inline-images__item">
-            <img src="/static/img/internet-of-things/logo-intel.svg" alt="Intel logo">
-          </li>
-          <li class="p-inline-images__item">
-            <img src="/static/img/internet-of-things/logo-ros.svg" alt="ROS logo">
-          </li>
-          <li class="p-inline-images__item">
-            <img src="/static/img/internet-of-things/logo-dji.svg" alt="DJI logo">
-          </li>
-          <li class="p-inline-images__item">
-            <img class="u-align--left" src="http://www.orangepi.cn/photo/footer/footer.png" alt="Orange Pi logo">
-          </li>
-        </ul>
+        <p>当确定了IoT的策略后，时间就成了进入市场的关键性因素。Canonical将为您提供硬件、软件包验证服务，并为设备准备对应的系统镜像。为您的团队节约更多时间，以便他们专注于产品工业设计和商业运营。</p>
+  
+        <p>可从我们<a href="https://certification.ubuntu.com/iot" class="p-link--external">已认证的开发板和盒子</a>中选择，已认证的硬件都提供长期安全更新支持。</p>
+  
+        <p>附加服务涵盖了非官方支持的芯片和开发板的硬件适配和认证。第一年已包含应用商店和设备安全更新服务。</p>
       </div>
     </div>
-  </div>
-</section>
+  
+    <div class="row" style="padding-left:0rem;">
+      <div class="col-12">
+        <h3>SMART START扩展服务</h3>
+      </div>
+    </div>
+  
+    <div class="row u-equal-height" style="padding-left:0rem;">
+      <div class="p-card col-4">
+        <h4>全盘加密</h4>
+        <p class="p-heading--three">$30,000</p>
+        <hr class="u-sv1">
+        <p class="p-card__content">通过硬件密钥管理和第三方密钥托管来启用全磁盘加密。密码强度和硬件加速的选择使得其对硬件性能的影响降到最低。这对于受管制行业中具有个人信息的设备必不可少的。</p>
+      </div>
+      <div class="p-card col-4">
+        <h4 class="p-card__title">安全启动</h4>
+        <p class="p-heading--three">$30,000</p>
+        <hr class="u-sv1">
+        <p class="p-card__content">启用安全启动以确保设备仅运行其认证的工作负载。诸如TPM之类的硬件密钥管理设备将用于验证引导过程的每个阶段，以增强和保障对正在运行的系统完整性。</p>
+      </div>
+      <div class="p-card col-4">
+        <h4 class="p-card__title">硬件设备适配</h4>
+        <p class="p-heading--three">$25,000 - $200,000</p>
+        <hr class="u-sv1">
+        <p class="p-card__content">如果您所需要的硬件不在Canonical的认证硬件列表中，我们提供硬件适配服务。价格取决于评估后的工作量。</p>
+      </div>
+      <div class="p-card col-4">
+        <h4 class="p-card__title">FIPS认证</h4>
+        <p class="p-heading--three">$45,000</p>
+        <hr class="u-sv1">
+        <p class="p-card__content">通过FIPS（Federal information processing）认证的内核和密码库满足FIPS的要求。FIPS认证每六个月进行一次且完全兼容的设备的更新必须被限制为认证版本。 请注意，这项服务仅适用x86平台。</p>
+      </div>
+      <div class="p-card col-4">
+        <h4 class="p-card__title">内核Livepatch</h4>
+        <p class="p-heading--three">$60,000</p>
+        <hr class="u-sv1">
+        <p class="p-card__content">通过实时给运行中的内核打补丁，可以大大减少系统重启次数。在Ubuntu LTS版本上需使用经过特定认证的内核。仅支持x86架构。</p>
+      </div>
+      <div class="p-card col-4">
+        <h4 class="p-card__title">高易用的Kubernetes</h4>
+        <p class="p-heading--three">$15,000</p>
+        <hr class="u-sv1">
+        <p class="p-card__content">借助Canonical MicroK8s，您可以获得完全符合CNCF的云原生Kubernetes，用于设备应用运营，包括高可用性的集群，服务网格支持和自动安全更新。</p>
+      </div>
+    </div>
+  
+    <div class="u-fixed-width">
+      <a href="/contact" class="p-button--positive js-invoke-modal">开始您的嵌入式项目</a>
+    </div>
+  </section>
+  
+  
+<section class="p-strip is-bordered">
+    <div class="row">
+      <div class="col-6">
+        <h2>可控制的安全更新</h2>
+        <p>Ubuntu和您的应用程序的定期更新可保护设备免受持续的攻击。 强大而可靠的更新机制意味着在默认情况下我们会自动安全地解决安全问题。 如您要审查补丁程序，更新控制服务可确保仅在经设备制造商认证后才会生效。</p>
+      </div>
 
-<section class="p-strip--image" style="background-image: url('/static/img/internet-of-things/iot-overview-developer.jpg');background-position:center">
-  <div class="row">
-    <div class="col-6">
-      <div class="p-card--overlay">
-        <h2>对于开发者</h2>
-        <p>开发者们可以在Ubuntu Core这一个平台上完成对互联网相连的设备和服务器的开发、测试和应用发布。通过Ubuntu Core，你可以在自己的电脑上开发一个snap应用（或简称为“snap”），然后直接发布到snap商店，让它立即开始创造收入。</p>
-        <ul class="p-list--divided">
-          <li class="p-list__item is-ticked">完全开源，设计安全</li>
-          <li class="p-list__item is-ticked">利用事务性更新实现快速、可靠的更新</li>
-          <li class="p-list__item is-ticked">小型化设计意味着硬件要求极低</li>
-          <li class="p-list__item is-ticked">可选择仅使用应用所需的库</li>
-        </ul>
-        <p><a class="p-link--external" href="https://developer.ubuntu.com">Ubuntu Core入门</a></p>
-        <p>如果你是设备制造商：</p>
-        <p> <a class="p-button--brand p-link--external" href="https://pages.ubuntu.com/contact-us-in-chinese.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - iot', 'eventValue' : undefined });">欢迎加入我们</a></p>
+      <div class="col-6 u-align--center u-vertically-center u-hide--small">
+        <div class=" lazyloaded" data-noscript="">
+          <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_140,h_140/https://assets.ubuntu.com/v1/a43d61ae-update+control.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_280,h_280/https://assets.ubuntu.com/v1/a43d61ae-update+control.svg 2x" alt="" width="140" height="140" loading="lazy">
+        </div>
       </div>
     </div>
-  </div>
+</section>
+  
+<section class="p-strip--light is-bordered">
+    <div class="row u-equal-height">
+      <div class="col-5 u-align--center u-vertically-center u-hide--small">
+        <div class=" lazyloaded" data-noscript="">
+          <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_150,h_200/https://assets.ubuntu.com/v1/805f2b3a-core_black-orange_st_hex.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_300,h_400/https://assets.ubuntu.com/v1/805f2b3a-core_black-orange_st_hex.svg 2x" alt="" width="150" height="200" loading="lazy">
+        </div>
+      </div>
+  
+      <div class="col-6 col-start-large-7">
+        <h2>Snap应用安全性</h2>
+        <p>Ubuntu Core是一个全snap应用的Ubuntu版本。Snap本身和所有的依赖库应用是安全，易升级的通用linux应用软件格式包。 Snaps的特点有：</p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">严格安全的限制</li>
+          <li class="p-list__item is-ticked">可靠的事务化更新</li>
+          <li class="p-list__item is-ticked">支持压缩节约磁盘空间</li>
+          <li class="p-list__item is-ticked">易开发和分发</li>
+          <li class="p-list__item is-ticked">被业界领导者广泛使用</li>
+        </ul>
+        <p><a href="https://snapcraft.io/first-snap?from=iotpage" class="p-link--external">了解如何开发snap应用</a></p>
+       </div>
+    </div>
+</section>
+  
+<section class="p-strip is-bordered">
+    <div class="row">
+      <div class="col-8">
+        <h2>行业领导者及案例</h2>
+      </div>
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-6 p-card">
+        <h3 class="p-card__title">私有云Nextcloud盒子的诞生</h3>
+        <p class="p-card__content">在本次网络研讨会上，Nextcloud的创始人Frank Karlitschek将介绍Nextcloud盒子项目的创立。其旨在提供一个安全的自托管的私有云，让用户能控制私有的数据。</p>
+        <p class="p-card__content"><a href="https://www.brighttalk.com/webcast/6793/224403?utm_campaign=Device_FY17_IOT&amp;utm_medium=iotpage&amp;utm_source=ubuntuwebsite&amp;utm_content=themakingofnextcloudp-cardcasestudy" class="p-link--external">观看Nextcloud网络研讨会</a></p>
+      </div>
+      <div class="col-6 p-card">
+        <h3 class="p-card__title">能前往任何地方的Tunnel无人机</h3>
+        <p class="p-card__content">AeroLion科技的无人机正在自动执行任务，并帮助考察由于极端或危险条件或该地区在地理上无法到达而无法到达的区域。</p>
+        <p class="p-card__content"><a href="https://pages.ubuntu.com/AerolionCS.html?from=iotpage" class="p-link--external">阅读AeroLion案例分享</a></p>
+      </div>
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-6 p-card">
+        <h3 class="p-card__title">Azeti提高了实时运营的基准</h3>
+        <p class="p-card__content">Azeti网络科技是从电信到制造，金融和医疗健康等公司的全球物联网技术提供商。Azeti选择Ubuntu Core来改善运营和安全。</p>
+        <p class="p-card__content"><a href="https://pages.ubuntu.com/AzetiCS.html?from=iotpage" class="p-link--external">阅读Azeti案例分享</a></p>
+      </div>
+      <div class="col-6 p-card">
+        <h3 class="p-card__title">戴尔——定义了智能工业</h3>
+        <p class="p-card__content">戴尔边缘网关（Edge Gateway）系列产品为工业市场带来了熟悉的X86平台强大的连接性，从而可以轻松创建和管理用于静态和基于移动应用程序的各种工业控制系统。</p>
+        <p class="p-card__content"><a href="http://www.dell.com/us/business/p/edge-gateway" class="p-link--external">了解更多关于戴尔边缘网关的内容</a></p>
+      </div>
+    </div>
+</section>
+  
+<section class="p-strip--light is-bordered">
+    <div class="row">
+      <div class="col-8">
+        <h2>在所有主流平台上实现原型机到量产</h2>
+      </div>
+    </div>
+      <div class="row u-equal-height">
+        <div class="col-6 p-card">
+          <header class="no-border u-align--center u-vertically-center u-hide--small" style="min-height: 7rem;">          
+            <div class=" lazyloaded" data-noscript="">
+              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_90,h_65/https://assets.ubuntu.com/v1/8cb47950-g46.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_180,h_130/https://assets.ubuntu.com/v1/8cb47950-g46.png 2x" alt="" width="90" height="65" loading="lazy">
+            </div>  
+           </header>        
+           <hr class="u-sv1 u-hide--small">
+           <h3 class="p-card__title">英特尔NUC，Up2和TANK</h3>
+           <p class="p-card__content">英特尔专用的物联网开发套件将64位多核处理技术带入了互联设备市场，以使得开发者能快速上手和加速工业标准规范。</p>
+           <p class="p-card__content"><a href="https://software.intel.com/en-us/iot/hardware/all" class="p-link--external">前往因特尔官网</a></p>
+        </div>
+
+        <div class="col-6 p-card">
+          <header class="no-border u-align--center u-vertically-center u-hide--small" style="min-height: 7rem;">          
+            <div class=" lazyloaded" data-noscript="">
+              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_195,h_65/https://assets.ubuntu.com/v1/dca2e4c4-raspberry-logo.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_390,h_130/https://assets.ubuntu.com/v1/dca2e4c4-raspberry-logo.png 2x" alt="" width="195" height="65" loading="lazy">
+            </div>  
+          </header>
+          <hr class="u-sv1 u-hide--small">
+          <h3 class="p-card__title">树莓派2、3和4</h3>
+          <p class="p-card__content">树莓派提供个人娱乐、教育、商业的开发环境。Ubuntu Core世界上最为流行的树莓派开发板2、3和最新的第4代。</p>
+          <p class="p-card__content"><a href="https://www.raspberrypi.org/" class="p-link--external">前往树莓派官网</a></p>
+         </div>
+      </div>
+
+      <div class="row u-equal-height">
+        <div class="col-6 p-card">
+          <header class="no-border u-align--center u-vertically-center u-hide--small" style="min-height: 7rem;">          
+            <div class=" lazyloaded" data-noscript="">
+              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_200,h_65/https://assets.ubuntu.com/v1/a8d80d5a-Qualcomm-Logo.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_400,h_130/https://assets.ubuntu.com/v1/a8d80d5a-Qualcomm-Logo.svg 2x" alt="" width="200" height="65" loading="lazy">
+            </div>  
+          </header>
+          <hr class="u-sv1 u-hide--small">
+          <h3 class="p-card__title">Qualcomm Dragonboard</h3>
+          <p class="p-card__content">64位架构低功耗和高性能的ARM平台开启了新无人机和移动智能时代。</p>
+          <p class="p-card__content"><a href="https://developer.qualcomm.com/hardware/dragonboard-410c" class="p-link--external">前往qualcomm官网</a></p>
+        </div>
+       </div>
+</section>
+  
+<section class="p-strip is-bordered">
+    <div class="row">
+      <div class="col-7">
+        <h2>最适合开发者</h2>
+        <p>只需一台运行Ubuntu的PC，您可以在上面开发snap应用，然后通过上传到snap应用商店来实现营收。</p>
+        <p><a class="p-link--external" href="https://docs.ubuntu.com/core/en/">了解更多在Ubuntu上开发物联网项目的内容</a></p>
+      </div>
+      <div class="col-5 u-align--center u-vertically-center u-hide--small">        
+        <div class=" lazyloaded" data-noscript="">
+          <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_140,h_140/https://assets.ubuntu.com/v1/061edebb-developer.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_280,h_280/https://assets.ubuntu.com/v1/061edebb-developer.svg 2x" alt="" width="140" height="140" loading="lazy">
+        </div>
+      </div>
+    </div>
+</section>
+  
+<section class="p-strip--light">
+    <div class="row u-equal-height">
+      <div class="col-4 u-align--left u-hide--small">
+        <div class=" lazyloaded" data-noscript="">
+          <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_280,h_280/https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_560,h_560/https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg 2x" alt="" width="280" height="280" loading="lazy">
+        </div>
+      </div>
+  
+      <div class="col-8 u-vertically-center">
+        <div>
+          <h2>期待与您的合作</h2>
+          <p>如您想将Ubuntu Core用于下一代物联网项目，欢迎与我们联系。</p>
+          <p><a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a></p>
+        </div>
+      </div>
+    </div>
 </section>
 
 {% endblock %}
