@@ -1,0 +1,151 @@
+{% extends "engage/base_engage.html" %}
+
+{% block title %}从VMware迁移到Canonical Openstack{% endblock %}
+{% block meta_description %}从VMware迁移到Canonical Openstack{% endblock %}
+
+{% block meta_copydoc %}https://docs.google.com/document/d/1bqD9QKDj6ZfRkn-vbDrHHE_Zrk81cA5hFLRHZYFzzSA{% endblock meta_copydoc %}
+
+{% block content %}
+
+<style>
+    .p-engage-banner--dark {
+     background-blend-mode: normal;
+     background-color: #111;
+     background-image: linear-gradient(201deg, #4e4e4e 0%, #333 46%, #111 90%);
+     color: #fff;
+     background-position: left top;
+     background-repeat: no-repeat;
+     background-size: 100% 99.8%;
+    }
+</style>
+
+<section class="p-strip p-engage-banner--dark">  
+    <div class="u-fixed-width navigation-logo-engage">
+      <a href="/">        
+        <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_143,h_32/https://assets.ubuntu.com/v1/f263d9c4-logo-ubuntu-white.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_286,h_64/https://assets.ubuntu.com/v1/f263d9c4-logo-ubuntu-white.svg 2x" alt="Ubuntu" width="143" height="32" loading="auto">
+      </a>
+    </div>
+    
+    <div class="row u-equal-height">
+      <div class="col-7  u-vertically-center">
+        <div>
+          <h1>从VMware迁移到Charmed&nbsp;OpenStack</h1>
+          <h4>采用开源技术来减少成本并提升您的基础设施效率</h4>        
+        </div>
+      </div>
+        <div class="col-5 u-hide--small u-align--center u-vertically-center">      
+          <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_250,h_160/https://assets.ubuntu.com/v1/2d935f28-openstack-cloud.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_500,h_320/https://assets.ubuntu.com/v1/2d935f28-openstack-cloud.svg 2x" alt="" width="250" height="160" loading="auto" style="max-height: 410px; max-width: 250px;">
+        </div>
+    </div>
+</section>
+
+<section class="p-strip is-shallow is-bordered">
+    <div class="row">
+      <div class="col-7">
+        <p>由于与VMware许可证，支持和专业服务相关的成本，许多公司无法实现大幅降低总拥成本的目标。为了寻找替代解决方案，一些企业和组织最近开始探索其他开源平台，例如OpenStack。</p>
+        <p>白皮书将介绍:</p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">将VMware的专有虚拟化产品与开源方案，如Canonical的Charmed OpenStack进行比较。</li>
+          <li class="p-list__item is-ticked">介绍采用开源方案的经济和效率优势。</li>
+          <li class="p-list__item is-ticked">提供详细的成本分析，突出显示企业或组织从VMware迁移到Charmed OpenStack可以节省的成本。</li>
+        </ul>
+      </div>
+      
+      <div class="col-5">
+ <!-- MARKETO FORM -->
+ <script src="https://assets.ubuntu.com/v1/37b1db88-jquery.min.js"></script>
+ <script src="https://assets.ubuntu.com/v1/d55f58bb-jquery.validate.js"></script>
+ <script src="https://assets.ubuntu.com/v1/6ce35d3e-jquery-ui.min.js"></script>&zwnj;&#8203;
+ <form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_3548" style="margin-top: -1rem;" novalidate="novalidate">
+  <fieldset class="u-no-padding--top" style="border-bottom-width: 1px;">
+    <ul class="p-list">
+      <li class="mktFormReq mktField p-list__item">
+        <label for="FirstName" class="mktoLabel">名字：</label>
+        <input required="" id="FirstName" name="FirstName" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="First Name" aria-required="true">
+      </li>
+      <li class="mktFormReq mktField">
+        <label for="LastName" class="mktoLabel ">姓氏：</label>
+        <input required="" id="LastName" name="LastName" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Last Name" aria-required="true">
+      </li>
+      <li class="mktFormReq mktField">
+        <label for="Email" class="mktoLabel ">工作邮箱：</label>
+        <input required="" id="Email" name="Email" maxlength="255" class="mktoField mktoEmailField  mktoRequired" type="email" aria-label="Email" aria-required="true">
+      </li>
+      <li class="mktFormReq mktField">
+        <label for="Company" class="mktoLabel ">公司名称：</label>
+        <input required="" id="Company" name="Company" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Company Name" aria-required="true">
+      </li>
+      <li class="mktFormReq mktField">
+        <label for="Title" class="mktoLabel ">职位：</label>
+        <input required="" id="Title" name="Title" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Job Title" aria-required="true">
+      </li>
+      <li class="mktFormReq mktField">
+        <label for="Phone" class="mktoLabel ">电话号码：</label>
+        <input required="" id="Phone" name="Phone" maxlength="255" class="mktoField mktoTelField  mktoRequired" type="tel" aria-label="Phone Number" aria-required="true">
+      </li>
+      <li class="mktField">
+       <p>在提交此表格的同时，我确认已阅读和同意<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy/contact">Canonical的隐私声明</a>和<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy">隐私政策</a>。
+         <input name="RichText" aria-label="RichText" type="hidden">
+       </p>
+     </li>
+      <li class="mktField">
+        <input name="utm_campaign" aria-label="utm_campaign" class="mktoField  mktoFormCol" value="None" type="hidden">
+      </li>
+      <li class="mktField">
+        <input name="utm_medium" aria-label="utm_medium" class="mktoField  mktoFormCol" value="None" type="hidden">
+      </li>
+      <li class="mktField">
+        <input name="utm_source" aria-label="utm_source" class="mktoField  mktoFormCol" value="None" type="hidden">
+      </li>
+      <li class="mktField">
+        <input name="Consent_to_Processing__c" aria-label="Consent" class="mktoField  mktoFormCol" value="Yes" type="hidden">
+      </li>
+      <li class="mktField">
+        <br />
+      </li>
+      <li class="mktField">
+        <button type="submit" class="mktoButton u-no-margin--bottom">下载白皮书</button>
+        <input name="formid" aria-label="formid" class="mktoField" value="3548" type="hidden">
+        <input name="lpId" aria-label="lpId" class="mktoField " value="" type="hidden">
+        <input name="subId" aria-label="subId" class="mktoField " value="" type="hidden">
+        <input name="munchkinId" aria-label="munchkinId" class="mktoField " value="" type="hidden">
+        <input name="lpurl" aria-label="lpurl" class="mktoField " value="" type="hidden">
+        <input name="cr" aria-label="cr" class="mktoField " value="" type="hidden">
+        <input name="kw" aria-label="kw" class="mktoField " value="" type="hidden">
+        <input name="q" aria-label="q" class="mktoField " value="" type="hidden">
+      </li>
+    </ul>
+  </fieldset>
+  <input type="hidden" name="returnURL" aria-label="returnURL" value="https://pages.ubuntu.com/rs/066-EOV-335/images/Migrating_from_VMware_to_OpenStack%20_WP%20-%20CN_v1.pdf">
+  <input type="hidden" name="retURL" aria-label="retURL" value="https://pages.ubuntu.com/rs/066-EOV-335/images/Migrating_from_VMware_to_OpenStack%20_WP%20-%20CN_v1.pdf">
+ </form>
+ <script>
+  $("#mktoForm_3548").validate({
+    errorElement: "span",
+    errorClass: "mktFormMsg mktError",
+    onkeyup: false,
+    onclick: false,
+    onblur: false
+  });
+  $(function () {
+    $("#comments").hide()
+  });
+  $('#Ubuntu_User__c').on('change', function () {
+    var selection = $(this).val();
+    if (selection == 'Commercially only') {
+      $('#comments').show();
+    } else {
+      $('#comments').hide();
+    }
+  });
+ </script>
+ <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
+ 
+ <!-- /MARKETO FORM -->
+       
+      </div>
+      
+    </div>
+</section>
+
+{% endblock content %}
