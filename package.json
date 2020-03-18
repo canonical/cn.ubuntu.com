@@ -4,7 +4,7 @@
   "scripts": {
     "test": "yarn run lint-scss && yarn run lint-python && yarn run test-python",
     "lint-python": "flake8 webapp tests && black --check --line-length 79 webapp tests",
-    "lint-scss": "sass-lint 'static/**/*.scss' --verbose --no-exit",
+    "lint-scss": "stylelint static/**/*.scss",
     "lint-js": "eslint static/js",
     "test-python": "python3 -m unittest discover tests",
     "clean": "rm -rf node_modules yarn-error.log css static/css *.log *.sqlite _site/ build/ .jekyll-metadata .bundle",
@@ -26,7 +26,9 @@
     "postcss": "7.0.27",
     "postcss-cli": "7.1.0",
     "prettier": "1.19.1",
-    "sass-lint": "1.13.1",
+    "stylelint": "^13.2.1",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.0.0",
     "watch-cli": "0.2.3",
     "webpack": "4.42.0",
     "webpack-cli": "3.3.11"

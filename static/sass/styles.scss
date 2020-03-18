@@ -4,9 +4,8 @@
 
 // Import Vanilla Framework
 @import "vanilla-framework/scss/build";
-
-
 @import 'patterns_navigation';
+
 @include cn-p-navigation;
 
 // Import custom styles
@@ -16,22 +15,21 @@
 @import 'pattern_blog-card';
 @import 'pattern_blog-list';
 @import 'utility_crop';
+
 @include blog-p-list;
 @include blog-p-post;
 @include blog-p-card;
 @include blog-u-crop;
 
-
-
 body {
-  width: 100%;
   overflow-x: hidden;
+  width: 100%;
 }
 
 // Custom fix for global nav padding, so it aligns with the indented logo
 // Copied from www.ubuntu.com: https://github.com/canonical-websites/www.ubuntu.com/blob/b68edf2e3b1f605f4a4fdbb4dd84155f699f27a3/static/sass/styles.scss#L210
 .global-nav .global-nav__header-logo-anchor {
-  padding: .6875rem 1rem !important;
+  padding: 0.6875rem 1rem !important;
 }
 
 // XXX Fix for inline image SVGs that have no dimensions set
