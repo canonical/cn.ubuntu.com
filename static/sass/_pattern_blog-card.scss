@@ -1,5 +1,4 @@
 @mixin blog-p-card {
-
   .blog-p-card__category {
     background: url('#{$assets-path}ed42aefa-icon-resource-hub-icon-document.png') left center no-repeat;
     color: $color-mid-dark;
@@ -28,12 +27,13 @@
 
   .blog-p-card--post {
     @extend .p-card--highlighted;
+
     display: flex !important;
     flex-direction: column;
     padding: 0;
 
     .p-strip--featured & {
-      background-color: rgba(255, 255, 255, .9);
+      background-color: rgba(255, 255, 255, 0.9);
       position: relative;
       z-index: 1;
     }
@@ -56,29 +56,10 @@
 
     .blog-p-card__footer {
       border-top: 1px dotted $color-mid-light;
-      font-size: .875rem;
+      font-size: 0.875rem;
       margin: auto $sp-small 0;
       max-width: inherit;
       padding: $sp-medium $sp-small;
-    }
-  }
-
-  .blog-p-card--muted {
-    @extend .p-card;
-    background-color: $color-light;
-    padding: 0;
-    box-shadow: 0 1px 2px 0 transparentize($color-dark, .8);
-
-    > .blog-p-card__header  {
-      margin-bottom: 0;
-      border-top: 3px solid $color-light;
-      border-bottom: 0;
-    }
-
-    > .blog-p-card__content {
-      margin: 0 $sp-small $sp-small;
-      padding: $sp-medium $sp-small $sp-small;
-      border-top: 1px dotted $color-mid-light;
     }
   }
 
@@ -87,42 +68,70 @@
 
     &--cloud-and-server {
       @extend %post-card-header;
+
       border-top: 3px solid #a87ca0;
     }
 
     &--desktop {
       @extend %post-card-header;
+
       border-top: 3px solid #faba54;
     }
 
     &--internet-of-things {
       @extend %post-card-header;
+
       border-top: 3px solid #8db255;
     }
 
     &--canonical-announcements {
       @extend %post-card-header;
+
       border-top: 3px solid #ff8936;
     }
 
     &--phone-and-tablet {
       @extend %post-card-header;
+
       border-top: 3px solid $color-mid-light;
     }
 
     &--webinar {
       @extend %post-card-header;
+
       border-top: 3px solid #48929b;
     }
 
     &--tutorials {
       @extend %post-card-header;
+
       border-top: 3px solid #47919e;
+    }
+  }
+
+  .blog-p-card--muted {
+    @extend .p-card;
+
+    background-color: $color-light;
+    box-shadow: 0 1px 2px 0 transparentize($color-dark, 0.8);
+    padding: 0;
+
+    > .blog-p-card__header {
+      border-bottom: 0;
+      border-top: 3px solid $color-light;
+      margin-bottom: 0;
+    }
+
+    > .blog-p-card__content {
+      border-top: 1px dotted $color-mid-light;
+      margin: 0 $sp-small $sp-small;
+      padding: $sp-medium $sp-small $sp-small;
     }
   }
 
   .blog-p-card__date {
     @extend .p-media-object__meta-list;
+
     display: flex;
     margin-top: auto;
     padding-top: $sp-medium;
