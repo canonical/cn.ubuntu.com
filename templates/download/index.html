@@ -23,12 +23,12 @@
         <h2>Ubuntu {{ releases.lts.full_version }} LTS</h2>
         <div class="p-card__content row">
           <div class="col-8">
-            <p>下载专为桌面PC和笔记本精心打造的Ubuntu长期支持 (<abbr title="Long-term support">LTS</abbr>) 版本，LTS意味着该版本将提供长期免费的安全更新维护支持至2023年4月。</p>
+            <p>下载专为桌面PC和笔记本精心打造的Ubuntu长期支持 (<abbr title="Long-term support">LTS</abbr>) 版本，LTS意味着该版本将提供长期免费的安全更新维护支持至{{ releases.lts.eol }}年4月。</p>
             <p><a href="https://wiki.ubuntu.com/{{ releases.lts.slug }}/ReleaseNotes" class="p-link--external">Ubuntu {{ releases.lts.short_version }} LTS 发布公告</a></p>
             <p>推荐系统配置：</p>
             <ul class="p-list">
               <li class="p-list__item is-ticked">双核2 GHz处理器或更高</li>
-              <li class="p-list__item is-ticked">2 GB 系统内存</li>
+              <li class="p-list__item is-ticked">4 GB 系统内存</li>
               <li class="p-list__item is-ticked">25 GB磁盘存储空间</li>
               <li class="p-list__item is-ticked">支持DVD光驱刻录或USB口安装</li>
               <li class="p-list__item is-ticked">互联网接入</li>
@@ -43,13 +43,13 @@
         </div>
       </div>
     </div>
-
+    {% if releases.latest.short_version > releases.lts.short_version %}
     <div class="row">
       <div class="col-12 p-card--highlighted">
         <h2>Ubuntu {{ releases.latest.full_version }}</h2>
         <div class="p-card__content row">
           <div class="col-8">
-            <p>对于适用于台式机和笔记本电脑的Ubuntu系统的最新版本，{{ releases.latest.short_version }}将具有9个月的安全维护更新支持期（至2020年7月）。</p>
+            <p>对于适用于台式机和笔记本电脑的Ubuntu系统的最新版本，{{ releases.latest.short_version }}将具有9个月的安全维护更新支持期（至{{ releases.latest.eol }}年7月）。</p>
             <p><a href="https://wiki.ubuntu.com/{{ releases.latest.slug }}/ReleaseNotes" class="p-link--external">Ubuntu {{ releases.latest.full_version }} 发布日志</a></p>
             <p>推荐系统配置与Ubuntu {{ releases.lts.short_version }} <abbr title="Long-term support">LTS</abbr>一致。</p>
           </div>
@@ -64,6 +64,7 @@
         </div>
       </div>
     </div>
+    {% endif %}
   </div>
 
   <div class="p-strip--light is-bordered">
@@ -79,7 +80,9 @@
           <div class="col-8">
             <p>Ubuntu服务器的长期支持版本将包含OpenStack，同样地安全更新也将支持至2023年4月，仅限64位平台。</p>
             <p>此版本使用了全新的安装器———Subiquity。如你需要Subiquity安装器未包含的安装项，系统文件加密，可通过该<a href="https://www.ubuntu.com/download/alternative-downloads#alternate-ubuntu-server-installer">链接</a> 下载旧版安装器</p>
-            <p><a href="https://wiki.ubuntu.com/{{ releases.lts.slug }}/ReleaseNotes" class="p-link--external">Ubuntu {{ releases.lts.short_version }} LTS服务器版发布日志</a></p>
+            <p>
+              <a href="https://wiki.ubuntu.com/{{ releases.lts.slug }}/ReleaseNotes" class="p-link--external">Ubuntu {{ releases.lts.short_version }} LTS 发布公告</a>
+            </p>
             <p>如需咨询服务器认证或服务器支持服务，请<a href="/contact">联系我们</a> 。</p>
           </div>
 
@@ -93,7 +96,7 @@
         </div>
       </div>
     </div>
-
+    {% if releases.latest.short_version > releases.lts.short_version %}
     <div class="row">
       <div class="col-12 p-card--highlighted">
         <h2>Ubuntu Server {{ releases.latest.full_version }}</h2>
@@ -101,7 +104,7 @@
           <div class="col-8">
             <p>最新版本Ubuntu Server，拥有9个月安全维护更新，支持到2020年7月。</p>
             <p>
-              <a href="https://wiki.ubuntu.com/{{ releases.latest.slug }}/ReleaseNotes" class="p-link--external">Ubuntu Server {{ releases.latest.short_version }}发布日志</a>
+              <a href="https://wiki.ubuntu.com/{{ releases.lts.slug }}/ReleaseNotes" class="p-link--external">Ubuntu {{ releases.latest.short_version }} LTS 发布公告</a>
             </p>
           </div>
           <div class="col-4">
@@ -115,6 +118,7 @@
         </div>
       </div>
     </div>
+    {% endif %}
   </div>
 
   <section class="p-strip is-bordered">
@@ -135,47 +139,23 @@
     <div class="row">
       <h2>支持的平台</h2>
     </div>
-    <div class="row">
-      <ul class="p-matrix u-clearfix">
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/977f2b7a-raspberry+pi+horizontal.svg?w=115" width="115" alt="Raspberry Pi"></p>
-            <p>安装Ubuntu Core 18到:</p>
-            <p><a href="https://www.ubuntu.com/download/iot/raspberry-pi-2-3-core">树莓派2或3&nbsp;›</a><br>
-            <a href="https://www.ubuntu.com/download/iot/raspberry-pi-compute-module-3">树莓派 CM3&nbsp;›</a></p>
+    <div class="row row p-divider">
+          <div class="col-3">
+            <img src="https://assets.ubuntu.com/v1/977f2b7a-raspberry+pi+horizontal.svg" width="168" height="45" alt="Raspberry Pi">
+            <p><a href="https://ubuntu.com/download/raspberry-pi-core">安装 Ubuntu Core 18&nbsp;›</a></p>
           </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg?h=35" height="35" alt="Intel NUC"></p>
+          <div class="col-3">
+            <img src="https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg" width="120" height="45" alt="Intel NUC">
             <p><a href="https://www.ubuntu.com/download/iot/intel-nuc">安装 Ubuntu Core 18&nbsp;›</a></p>
           </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/db577ec7-tank-logo.svg?w=115" width="115" alt="Intel IEI TANK 870"></p>
+          <div class="col-3">
+            <img src="https://assets.ubuntu.com/v1/db577ec7-tank-logo.svg" width="163" height="45" alt="Intel IEI TANK 870">
             <p><a href="https://www.ubuntu.com/download/iot/intel-iei-tank-870">安装 Ubuntu Core 18&nbsp;›</a></p>
           </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/2a6d29c9-snapdragon.svg?w=99" width="99" alt="Qualcomm Snapdragon"></p>
+          <div class="col-3">
+            <img src="https://assets.ubuntu.com/v1/2a6d29c9-snapdragon.svg" width="139" height="45" alt="Qualcomm Snapdragon">
             <p><a href="https://www.ubuntu.com/download/iot/qualcomm-dragonboard-410c">安装 Ubuntu Core 18&nbsp;›</a></p>
           </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/472aceb3-samsung-artik-logo.svg?w=93" width="93" alt="Samsung Artik"></p>
-            <p><a href="https://www.ubuntu.com/download/iot/samsung-artik-5-10">安装 Ubuntu Core 16&nbsp;›</a></p>
-          </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <p><img class="p-card__thumbnail" src="https://assets.ubuntu.com/v1/db101789-intel-joule.svg?h=35" height="35" alt="Intel Joule"></p>
-            <p><a href="https://www.ubuntu.com/download/iot/intel-joule">安装 Ubuntu Core 16&nbsp;›</a></p>
-          </div>
-        </li>
-      </ul>
     </div>
     <div class="row" style="margin-top: 2rem;">
       <p>
