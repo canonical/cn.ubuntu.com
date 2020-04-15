@@ -3,6 +3,8 @@
 {% if title %}{% block title %} 系统下载 {{ title }}{% endblock %}{% endif %}
 {% if meta_description %}{% block meta_description %}Ubuntu {{ releases.lts.short_version }}下载, Ubuntu {{ releases.lts.short_version }}下载, Ubuntu 服务器下载， Ubuntu系统下载， Ubuntu官网系统下载， Ubuntu OpenStack{{ meta_description }}{% endblock %}{% endif %}
 
+{% block meta_copydoc %}https://docs.google.com/document/d/1-rYu9BV4mN04yXn01QhBillOyHQOeuCbuGKiJQpJjYs/edit{% endblock meta_copydoc %}
+
 {% block second_level_nav_items %}
 {% with section_title="download", page_title="download" %}
   {% include "templates/_nav_breadcrumb.html" %}
