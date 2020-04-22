@@ -3,3 +3,4 @@ canonicalwebteam.http==1.0.3
 canonicalwebteam.blog==5.0.0
 canonicalwebteam.search==0.2.1
 canonicalwebteam.templatefinder==0.2.4
+canonicalwebteam.image-template==1.0.0
