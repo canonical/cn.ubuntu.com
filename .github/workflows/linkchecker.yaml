@@ -19,7 +19,7 @@ jobs:
         run: DOCKER_BUILDKIT=1 docker build --build-arg BUILD_ID=test --tag cn.ubuntu.com .
 
       - name: Run server with Docker
-        run: docker run -p ${PORT}:80 cn.ubuntu.com &
+        run: docker run -p ${PORT}:80 --env SECRET_KEY=insecure_secret_key cn.ubuntu.com &
 
       - name: Check server status
         run: curl localhost:${PORT}/_status/check -I
