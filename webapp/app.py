@@ -2,6 +2,7 @@ from canonicalwebteam.blog import BlogViews
 from canonicalwebteam.blog.flask import build_blueprint
 from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
+from canonicalwebteam import image_template
 import yaml
 
 app = FlaskBase(
@@ -28,6 +29,10 @@ with open("releases.yaml") as releases:
 # Template context
 @app.context_processor
 def context():
-    return {
-        "releases": releases,
-    }
+    return {"releases": releases}
+
+
+# Image template
+@app.context_processor
+def utility_processor():
+    return {"image": image_template}
