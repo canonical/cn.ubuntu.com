@@ -14,12 +14,15 @@
 @import 'pattern_blog-post';
 @import 'pattern_blog-card';
 @import 'pattern_blog-list';
+@import "pattern_takeovers";
 @import 'utility_crop';
 
 @include blog-p-list;
 @include blog-p-post;
 @include blog-p-card;
 @include blog-u-crop;
+@include ubuntu-p-takeovers;
+@include ubuntu-p-engage-banner;
 
 body {
   overflow-x: hidden;
@@ -57,4 +60,18 @@ body {
 
 .is-wide {
   width: 100%;
+}
+
+// Styling for ubuntu navigation logo for engage pages
+.navigation-logo-engage {
+  margin-top: -2.2rem;
+  padding-bottom: 1.75rem;
+
+  @media screen and (max-width: $breakpoint-large - 1px) {
+    padding-top: 2rem;
+  }
+
+  a img {
+    width: 143px;
+  }
 }
