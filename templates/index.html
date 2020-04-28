@@ -1,18 +1,17 @@
 {% extends "base_index.html" %}
 
 {% block takeover_content %}
-  {% include "takeovers/_hackathon.html" %}
+  <section id="takeover" class="js-takeover">
+    {% include "takeovers/_2004-takeover.html" %}
+  </section>
 {% endblock takeover_content %}
 
 {% block page_content %}
 
- <!-- Section 1: Hero -->
- <template id="takeovers" class="u-hide">
-  {% include "takeovers/_2004-takeover.html" %}
+<!-- Section 1: Hero -->
+<template id="takeovers" class="u-hide">
 
 </template>
-
-<section id="takeover" class="p-strip is-deep js-takeover"></section>
 
 <section class="p-strip is-deep is-bordered">
   {% include "shared/_latest-news.html"%}
@@ -169,37 +168,40 @@
       */
     var baseTakeover = document.getElementById('takeover');  // The base takeover element
     var takeovers = document.getElementById('takeovers');  // The list of current takeovers to choose from
-    // For browsers that support <template> (all but IE), grab the template's ".content"
-    takeovers = 'content' in takeovers ? takeovers.content: takeovers;
-    // First, select takeovers that don't specify a language and don't exclude the users language
-    var takeoverSelectors = [".js-takeover:not([lang]).js-takeover:not([lang-skip*=" + language + "])"]
-    // Add selectors to find takeovers for any of the user's languages
-    takeoverSelectors.push(".js-takeover[lang=" + language + "]");
-    takeoverSelectors.push(".js-takeover[data-lang-extra*=" + language + "]");
-    // Get the selected takeovers
-    var selectedTakeovers = (takeovers.querySelectorAll(takeoverSelectors.join(',')));
-    if (selectedTakeovers) {
-      var selectedIndex = null;
-      if (localStorage.getItem('selected_takeover_index') !== null) {
-        // If we previously chose a takeover, increment the number to show the next takeover
-        var nextIndex = parseInt(localStorage.getItem('selected_takeover_index')) + 1
-        selectedIndex = nextIndex < selectedTakeovers.length ? nextIndex : 0;
-      } else {
-        // Otherwise, randomly choose one of the takeovers and store it for next time
-        selectedIndex = Math.floor(Math.random() * selectedTakeovers.length);
+    // Handle an empty template (ignoring whitespace characters)
+    if (takeovers.innerHTML.trim() !== ''){
+      // For browsers that support <template> (all but IE), grab the template's ".content"
+      takeovers = 'content' in takeovers ? takeovers.content: takeovers;
+      // First, select takeovers that don't specify a language and don't exclude the users language
+      var takeoverSelectors = [".js-takeover:not([lang]).js-takeover:not([lang-skip*=" + language + "])"];
+      // Add selectors to find takeovers for any of the user's languages
+      takeoverSelectors.push(".js-takeover[lang=" + language + "]");
+      takeoverSelectors.push(".js-takeover[data-lang-extra*=" + language + "]");
+      // Get the selected takeovers
+      var selectedTakeovers = (takeovers.querySelectorAll(takeoverSelectors.join(',')));
+      if (selectedTakeovers) {
+        var selectedIndex = null;
+        if (localStorage.getItem('selected_takeover_index') !== null) {
+          // If we previously chose a takeover, increment the number to show the next takeover
+          var nextIndex = parseInt(localStorage.getItem('selected_takeover_index')) + 1
+          selectedIndex = nextIndex < selectedTakeovers.length ? nextIndex : 0;
+        } else {
+          // Otherwise, randomly choose one of the takeovers and store it for next time
+          selectedIndex = Math.floor(Math.random() * selectedTakeovers.length);
+        }
+        // Store the current takeover
+        localStorage.setItem('selected_takeover_index', selectedIndex)
+        // Get the takeover element
+        var selectedTakeover = selectedTakeovers[selectedIndex];
+        if (! document.body.contains(selectedTakeover)) {
+          // If it's not in the current document (as in, it's in a template) import it
+          // Note: This is for all browser *except* IE, which doesn't support <template>s
+          selectedTakeover = document.importNode(selectedTakeover, true);
+        }
+        // Replace the base takeover with the new one
+        // Note: We can't use Node.replaceWith (which would be nice), as it's not supported in IE
+        baseTakeover.parentNode.replaceChild(selectedTakeover, baseTakeover);
       }
-      // Store the current takeover
-      localStorage.setItem('selected_takeover_index', selectedIndex)
-      // Get the takeover element
-      var selectedTakeover = selectedTakeovers[selectedIndex]
-      if (! document.body.contains(selectedTakeover)) {
-        // If it's not in the current document (as in, it's in a template) import it
-        // Note: This is for all browser *except* IE, which doesn't support <template>s
-        selectedTakeover = document.importNode(selectedTakeover, true);
-      }
-      // Replace the base takeover with the new one
-      // Note: We can't use Node.replaceWith (which would be nice), as it's not supported in IE
-      baseTakeover.parentNode.replaceChild(selectedTakeover, baseTakeover)
     }
   }
 </script>
