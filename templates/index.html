@@ -1,8 +1,7 @@
 {% extends "base_index.html" %}
 
 {% block takeover_content %}
-  <section id="takeover" class="js-takeover">
-    {% include "takeovers/_2004-takeover.html" %}
+  <section id="takeover" class="js-takeover">   
   </section>
 {% endblock takeover_content %}
 
@@ -10,7 +9,9 @@
 
 <!-- Section 1: Hero -->
 <template id="takeovers" class="u-hide">
-
+  {% include "takeovers/_2004-takeover.html" %}
+  {% include "takeovers/_vmware-to-charmed-openstack.html" %}
+  {% include "takeovers/_desktop-developer-takeover.html" %}
 </template>
 
 <section class="p-strip is-deep is-bordered">
