@@ -7,8 +7,33 @@
 
 {% block content %}
 
+<style>
+.p-strip-suru-half-top {
+    background-blend-mode: multiply, multiply, normal, normal;
+    background-color: #f7f7f7;
+    background-image: linear-gradient(to bottom right, rgba(119,41,83,0.16) 0%, rgba(119,41,83,0.16) 49.9%, rgba(119,41,83,0) 50%, rgba(119,41,83,0) 100%),linear-gradient(to bottom left, rgba(228,228,228,0.5) 0, rgba(228,228,228,0.5) 49.8%, transparent 50%),linear-gradient(to top left, #f7f7f7 0%, #f7f7f7 49.5%, transparent 50%),linear-gradient(251deg, #E95422 0%, #772953 49.5%, #2C001E 100%);
+    background-position: top left, top right, center 67%, left top;
+    background-repeat: no-repeat;
+    background-size: 63% 97%, 100% 66%, 100% 30%, 100% 76.5%;
+    color: #f7f7f7;
+    padding-bottom: 10rem;
+    padding-top: 6rem;
+}
+</style>
+
+
 <div id="main-content">
-  <div class="p-strip is-deep is-bordered">
+  <section class="p-strip-suru-half-top">
+    <div class="row">
+      <div class="col-12">
+        <h1>
+          Ubuntu 系统镜像下载
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="p-strip--light is-deep is-bordered">
     <div class="row">
       <div class="col-12">
         <h1>Ubuntu桌面下载</h1>
@@ -32,7 +57,7 @@
           </div>
           <div class="col-4">
             <p>
-                <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.lts.short_version }}-cn', 'eventValue' : undefined });">直接下载</a>
+                <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.lts.short_version }}-cn', 'eventValue' : undefined });">下载</a>
             </p>
             <p><small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">其他下载</a>。</small></p>
           </div>
@@ -63,7 +88,7 @@
     {% endif %}
   </div>
 
-  <div class="p-strip--light is-bordered">
+  <div class="p-strip is-bordered">
     <div class="row">
       <div class="col-12">
         <h1>下载Ubuntu服务器版</h1>
@@ -84,7 +109,7 @@
 
           <div class="col-4">
             <p>
-              <a href="http://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-live-server-amd64.iso" class="p-button--positive is-wide" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '{{ releases.lts.short_version }} Server-cn', 'eventValue' : undefined });">直接下载</a>
+              <a href="/download/thank-you?version={{ releases.lts.full_version }}&amp;architecture=amd64" class="p-button--positive is-wide" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '{{ releases.lts.short_version }} Server-cn', 'eventValue' : undefined });">下载</a>
             </p>
             <p><small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">此链接</a>。</small></p>
             <p>其他架构如ARM、Power、s390x可前往此链接<a href="http://cdimage.ubuntu.com/releases/{{ releases.lts.short_version }}/release/">下载</a>。</p>
@@ -117,7 +142,52 @@
     {% endif %}
   </div>
 
+  <section class="p-strip--light is-bordered">
+    <div class="row u-equal-height">
+      <div class="col-7">
+        <h2>在Linux、Mac或者Windows上玩转Ubuntu虚拟机</h2>
+        <p>使用Multipass，您可以下载，配置和控制预安装了最新更新的Ubuntu Server虚拟机。在Linux，Windows，macOS系统上搭建一个迷你云。</p>
+        <p>
+          <a id="multipass-os-cta" href="https://multipass.run/docs/installing-on-windows" class="p-button--neutral"><span class="p-link--external">在Windows安装</span></a>
+        </p>
+        <p>
+          <a href="https://multipass.run" class="p-link--external">了解更多Multipass的内容</a>
+        </p>
+      </div>
+      <div class="col-5 u-vertically-center u-align--center u-hide--small">
+        
+  <div class=" lazyloaded" data-noscript="">
+      <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_320,h_61/https://assets.ubuntu.com/v1/4e0ff71e-Multipass+logo_thin_rgb.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_640,h_122/https://assets.ubuntu.com/v1/4e0ff71e-Multipass+logo_thin_rgb.svg 2x" alt="" width="320" height="61" loading="lazy">
+    </div>
+  
+      </div>
+    </div>
+  </section>
+
   <section class="p-strip is-bordered">
+    <div class="row u-equal-height">
+      <div class="col-7">
+        <h2>在WSL上运行Ubuntu</h2>
+        <p>仅需几分钟即可在Windows 10上通过WSL（Windows Subsystem for Linux）来安装一个完整的Ubuntu终端环境。</p>
+        <p>在不离开Windows的情况下访问Windows上的Linux终端，开发跨平台应用程序和管理IT基础架构。</p>
+        <p>
+          <a href="https://www.microsoft.com/store/productId/9NBLGGH4MSV6" class="p-button--neutral"><span class="p-link--external">从微软商店下载</span></a>
+        </p>
+        <p>
+          <a href="https://ubuntu.com/wsl" class="p-link--external">了解更多WSL的内容</a>
+        </p>
+      </div>
+      <div class="col-5 u-vertically-center u-align--center u-hide--small">
+        
+  <div class=" lazyloaded" data-noscript="">
+      <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_512,h_268/https://assets.ubuntu.com/v1/01d46dfe-setupubuntu.png" alt="" width="400" height="61" loading="lazy">
+    </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip--light is-bordered">
     <div class="row u-equal-height">
       <div class="col-8">
         <h1>获取物联网版Ubuntu</h1>
@@ -131,7 +201,7 @@
     </div>
   </section>
 
-  <section class="p-strip--light">
+  <section class="p-strip">
     <div class="row">
       <h2>支持的平台</h2>
     </div>
@@ -161,6 +231,24 @@
       </p>
     </div>
   </section>
+
+  <script src="https://ubuntu.com/static/js/build/image-download.min.js?v=b575086"></script>
+  <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
+  
+  <script defer>
+    var architecture = '{{ architecture }}';
+    var mirrors = {{ mirror_list | safe }};
+    var version = '{{ version }}';
+
+    if (version && architecture) {
+      var GAlabel = version + '-server-' + architecture; 
+      var imagePath = version + '/ubuntu-' + version + '-live-server-' + architecture + '.iso';
+
+      window.initImageDownload(mirrors, imagePath, GAlabel);
+    }
+  </script>
+
+
 </div>
 
 {% endblock %}

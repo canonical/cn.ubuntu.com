@@ -84,10 +84,13 @@
         <input required="" id="Phone" name="Phone" maxlength="255" class="mktoField mktoTelField  mktoRequired" type="tel" aria-label="Phone Number" aria-required="true">
       </li>
       <li class="mktField">
-       <p>在提交此表格的同时，我确认已阅读和同意<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy/contact">Canonical的隐私声明</a>和<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy">隐私政策</a>。
-         <input name="RichText" aria-label="RichText" type="hidden">
-       </p>
-     </li>
+        <input name="canonicalUpdatesOptIn" aria-label="canonicalUpdatesOptIn" id="canonicalUpdatesOptIn" value="yes" class="mktoField" type="checkbox"><label for="canonicalUpdatesOptIn" class="mktoLabel "><small>我同意接收有关Canonical的产品和服务信息。</small></label>
+       </li>
+       <li class="mktField">           
+        <p><small>在提交此表格的同时，我确认已阅读和同意<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy/contact">的隐私声明</a>和<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy">隐私政策</small></a>。
+          <input name="RichText" aria-label="RichText" type="hidden">
+        </p>
+       </li>
       <li class="mktField">
         <input name="utm_campaign" aria-label="utm_campaign" class="mktoField  mktoFormCol" value="None" type="hidden">
       </li>
