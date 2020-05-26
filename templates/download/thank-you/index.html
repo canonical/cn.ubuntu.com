@@ -29,14 +29,14 @@
       <div class="p-strip--suru-topped">
         <div class="row">
           <div class="col-8">
-            <h1>感谢下载Ubuntu Server 20.04</h1>            
+            <h1>感谢下载Ubuntu Server 20.04</h1>
             <p>您的下载将自动开始。如没有，请点击<a href="https://releases.ubuntu.com/20.04/ubuntu-20.04-live-server-amd64.iso">手动下载</a>。</p>
             <p>您可以通过对比<a href="http://www.cdimage.ubuntu.com/releases/20.04/release/MD5SUMS" class="p-link--external">MD5</a>或<a href="http://www.cdimage.ubuntu.com/releases/20.04/release/SHA1SUMS" class="p-link--external">SHA1</a>值来校验iso文件完整性，或者阅读<a href="https://ubuntu.com/tutorials/tutorial-install-ubuntu-server?backURL=https://cn.ubuntu.com/download/thank-you">安装教程</a>。</p>
              </div>
         </div>
       </div>
     </section>
-    
+
     <section class="p-strip--light">
       <div class="row">
         <div class="col-12">
@@ -55,10 +55,19 @@
           </ul>
           <h4>需要最新的命令行手册？</h4>
           <p>通过订阅，您还能获得“Ubuntu Server 2020 CLI 专业提示”参考手册来了解如何更有效地使用命令行，以及开始从基础文件管理到Kubernetes和OpenStack的开发运维。</p>
-          
-          <div class="p-card--highlighted" style="display: inline-block;">            
+
+          <div class="p-card--highlighted" style="display: inline-block;">
             <div class=" lazyloaded" data-noscript="">
-              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_440,h_331/https://assets.ubuntu.com/v1/39a8dac8-Ubuntu_Server_CLI_pro_tips_2020-04.jpg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_880,h_662/https://assets.ubuntu.com/v1/39a8dac8-Ubuntu_Server_CLI_pro_tips_2020-04.jpg 2x" alt="" width="440" height="331" loading="lazy">
+              {{
+                image(
+                    url="https://assets.ubuntu.com/v1/39a8dac8-Ubuntu_Server_CLI_pro_tips_2020-04.jpg",
+                    alt="",
+                    width="440",
+                    height="331",
+                    hi_def=True,
+                    loading="lazy",
+                ) | safe
+              }}
             </div>
           </div>
         </div>
@@ -99,7 +108,7 @@
            <li class="mktField">
             <input name="canonicalUpdatesOptIn" aria-label="canonicalUpdatesOptIn" id="canonicalUpdatesOptIn" value="yes" class="mktoField" type="checkbox"><label for="canonicalUpdatesOptIn" class="mktoLabel "><small>我同意接收有关Canonical的产品和服务信息。</small></label>
           </li>
-           <li class="mktField">           
+           <li class="mktField">
             <p><small>在提交此表格的同时，我确认已阅读和同意<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy/contact">的隐私声明</a>和<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy">隐私政策</small></a>。
               <input name="RichText" aria-label="RichText" type="hidden">
             </p>
@@ -116,7 +125,7 @@
            <li class="mktField">
              <input name="Consent_to_Processing__c" aria-label="Consent" class="mktoField  mktoFormCol" value="Yes" type="hidden">
            </li>
-           
+
            <li class="mktField">
              <button type="submit" class="mktoButton u-no-margin--bottom">订阅和下载</button>
              <input name="formid" aria-label="formid" class="mktoField" value="3593" type="hidden">
@@ -154,12 +163,12 @@
         });
         </script>
         <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
-        
+
         <!-- /MARKETO FORM -->
         </div>
      </div>
     </section>
-    
+
   <div class="p-strip">
       <div class="row">
         <h3>文档和资源</h3>
@@ -178,11 +187,11 @@
             <p>与Ubuntu开发者讨论并表达您的声音。</p>
           </div>
         </div>
-    
+
         <div class="u-fixed-width">
           <hr class="p-separator">
         </div>
-    
+
         <div class="row">
           <div class="col-8">
             <h3>在生产环境中使用Ubuntu？</h3>
@@ -196,11 +205,11 @@
             <p><a href="https://ubuntu.com/advantage" class="p-button">了解更多</a></p>
           </div>
         </div>
-    
+
         <div class="u-fixed-width">
           <hr class="p-separator">
         </div>
-    
+
         <div class="row">
           <div class="col-8">
             <h3>其他内容</h3>
@@ -215,21 +224,21 @@
           </div>
         </div>
   </div>
-    
+
   <script src="https://ubuntu.com/static/js/build/image-download.min.js?v=b575086"></script>
-                 
+
   <script defer>
       var architecture = '{{ architecture }}';
       var mirrors = {{ mirror_list | safe }};
       var version = '{{ version }}';
-        
+
       if (version && architecture) {
-        var GAlabel = version + '-server-' + architecture; 
-        var imagePath = version + '/ubuntu-' + version + '-live-server-' + architecture + '.iso';       
+        var GAlabel = version + '-server-' + architecture;
+        var imagePath = version + '/ubuntu-' + version + '-live-server-' + architecture + '.iso';
         window.initImageDownload(mirrors, imagePath, GAlabel);
          }
-  </script>    
-          
+  </script>
+
 </div>
 
 {% endblock%}

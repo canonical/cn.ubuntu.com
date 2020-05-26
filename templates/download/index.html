@@ -6,22 +6,6 @@
 {% block meta_copydoc %}https://docs.google.com/document/d/1-rYu9BV4mN04yXn01QhBillOyHQOeuCbuGKiJQpJjYs/edit{% endblock meta_copydoc %}
 
 {% block content %}
-
-<style>
-.p-strip-suru-half-top {
-    background-blend-mode: multiply, multiply, normal, normal;
-    background-color: #f7f7f7;
-    background-image: linear-gradient(to bottom right, rgba(119,41,83,0.16) 0%, rgba(119,41,83,0.16) 49.9%, rgba(119,41,83,0) 50%, rgba(119,41,83,0) 100%),linear-gradient(to bottom left, rgba(228,228,228,0.5) 0, rgba(228,228,228,0.5) 49.8%, transparent 50%),linear-gradient(to top left, #f7f7f7 0%, #f7f7f7 49.5%, transparent 50%),linear-gradient(251deg, #E95422 0%, #772953 49.5%, #2C001E 100%);
-    background-position: top left, top right, center 67%, left top;
-    background-repeat: no-repeat;
-    background-size: 63% 97%, 100% 66%, 100% 30%, 100% 76.5%;
-    color: #f7f7f7;
-    padding-bottom: 10rem;
-    padding-top: 6rem;
-}
-</style>
-
-
 <div id="main-content">
   <section class="p-strip-suru-half-top">
     <div class="row">
@@ -155,12 +139,20 @@
         </p>
       </div>
       <div class="col-5 u-vertically-center u-align--center u-hide--small">
-        
+
   <div class=" lazyloaded" data-noscript="">
-      <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_320,h_61/https://assets.ubuntu.com/v1/4e0ff71e-Multipass+logo_thin_rgb.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_640,h_122/https://assets.ubuntu.com/v1/4e0ff71e-Multipass+logo_thin_rgb.svg 2x" alt="" width="320" height="61" loading="lazy">
+    {{
+      image(
+          url="https://assets.ubuntu.com/v1/4e0ff71e-Multipass+logo_thin_rgb.svg",
+          alt="",
+          width="320",
+          height="61",
+          hi_def=True,
+          loading="lazy",
+      ) | safe
+    }}
     </div>
-  
-      </div>
+        </div>
     </div>
   </section>
 
@@ -178,11 +170,20 @@
         </p>
       </div>
       <div class="col-5 u-vertically-center u-align--center u-hide--small">
-        
+
   <div class=" lazyloaded" data-noscript="">
-      <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_512,h_268/https://assets.ubuntu.com/v1/01d46dfe-setupubuntu.png" alt="" width="400" height="61" loading="lazy">
+    {{
+      image(
+          url="https://assets.ubuntu.com/v1/01d46dfe-setupubuntu.png",
+          alt="",
+          width="400",
+          height="61",
+          hi_def=True,
+          loading="lazy",
+      ) | safe
+    }}
     </div>
-  
+
       </div>
     </div>
   </section>
@@ -234,14 +235,14 @@
 
   <script src="https://ubuntu.com/static/js/build/image-download.min.js?v=b575086"></script>
   <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
-  
+
   <script defer>
     var architecture = '{{ architecture }}';
     var mirrors = {{ mirror_list | safe }};
     var version = '{{ version }}';
 
     if (version && architecture) {
-      var GAlabel = version + '-server-' + architecture; 
+      var GAlabel = version + '-server-' + architecture;
       var imagePath = version + '/ubuntu-' + version + '-live-server-' + architecture + '.iso';
 
       window.initImageDownload(mirrors, imagePath, GAlabel);

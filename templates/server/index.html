@@ -4,124 +4,24 @@
 {% block meta_description %}Ubuntu 服务器下载 Ubuntu 20.04 server Ubuntu服务器安装 服务器部署{{ meta_description }}{% endblock %}
 
 {% block content %}
-
-<style>
-.p-strip--suru {
-    background-blend-mode: multiply, multiply, normal, normal, normal;
-    background-image: linear-gradient(to bottom right, rgba(228,228,228,0.54) 0%, rgba(228,228,228,0.54) 49.9%, rgba(228,228,228,0) 50%, rgba(228,228,228,0) 100%),linear-gradient(to bottom left, rgba(216,216,216,0.54) 0%, rgba(216,216,216,0.54) 49.9%, rgba(216,216,216,0) 50%, rgba(216,216,216,0) 100%),linear-gradient(to top right, #fff 0%, #fff 49%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%),linear-gradient(to top right, #fff 0%, #fff 100%),linear-gradient(-89deg, #e95420 0%, #772953 38%, #2C001e 85%);
-    background-position: 0% 0%, top right, right 0 bottom 4rem, right bottom, 0% 0%;
-    background-repeat: no-repeat;
-    background-size: 100% calc(100% - 4rem),50% 100%,100% 4rem,100% 4rem,auto;
-    margin-bottom: -4rem;
-    overflow: hidden;
-    padding-bottom: 12rem !important;
-    position: relative;
-}
-.p-strip--suru.is-dark {
-    color: #fff;
-}
-.fiximg {
-  padding-top: 4rem
-}
-.chart {
-	margin-top: 1.5rem
-}
-.chart__bar--orange {
-    fill: #e95420;
-    stroke: #e95420;
-    stroke-width: 1px;
-}
-.chart__bar--orange-light {
-    fill: #fbddd2;
-    stroke: #e95420;
-    stroke-width: 1px;
-}
-.chart__bar--aubergine {
-    fill: #772953;
-    stroke: #772953;
-    stroke-width: 1px;
-}.chart__bar--grey {
-    fill: #aea79f;
-    stroke: #aea79f;
-    stroke-width: 1px;
-}
-.chart__label--bold {
-	font-weight: bold
-}
-.chart-key {
-	display: block
-}
-.chart-key__row {
-	display: block
-}
-.chart-key text {
-	font-size: 14px
-}
-.p-bar-chart {
-	width: 100%
-}
-.p-bar-chart .p-bar-chart__bar {
-	opacity: 1
-}
-.p-bar-chart .label {
-	font-weight: 400
-}
-.p-bar-chart .tick text {
-	font-size: .625rem
-}
-.p-bar-chart .left-axis {
-	font-size: 1rem;
-	text-align: right
-}
-.p-progress-chart {
-	background: #fff;
-	border: 1px solid #cdcdcd;
-	box-shadow: 0 1px 5px 1px rgba(17,17,17,0.2)
-}
-.p-progress-chart .p-progress-chart__bar {
-	opacity: 1
-}
-.p-progress-chart .p-progress-chart__text {
-	font-size: 2.91029rem
-}
-.p-pie-chart .p-pie-chart__wedge path {
-	opacity: 1
-}
-.p-pie-chart .p-pie-chart__text {
-	font-size: 1.2rem
-}
-@media only screen and (max-width: 875px) {
-	.p-pie-chart .p-pie-chart__text {
-		font-size: 1rem
-	}
-}
-.x.axis line {
-	shape-rendering: crispEdges;
-	stroke: #d6d3cf;
-	stroke-dasharray: 3 2
-}
-.tick text {
-	font-size: 14px
-}
-.x.axis text {
-	font-size: 12px;
-	text-anchor: start !important
-}
-.p-bar-chart .left-axis {
-	font-size: 1rem;
-	text-align: right
-}
-</style>
-    
-<section class="p-strip--suru is-dark">
-    <div class="row u-equal-height fiximg">
+<section class="p-strip--suru is-dark is-deep">
+  <div class="row u-vertically-center fiximg">
       <div class="col-7">
         <h1>使用Ubuntu Server横向扩展</h1>
         <p>Ubuntu Server可让您的公共或私有数据中心在经济和技术上都具有出色的可扩展性。无论是部署OpenStack云、Kubernetes集群还是50000个节点的大型渲染场，Ubuntu Server都能提供性价比最佳的横向扩展能力。</p>
         <p><a class="p-button--positive" href="/download/">下载Ubuntu服务器版</a></p>
       </div>
       <div class="col-5 u-vertically-center u-align--center u-hide--small ">
-        <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_350,h_121/https://assets.ubuntu.com/v1/55eda3ae-Servers+-white.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_700,h_242/https://assets.ubuntu.com/v1/55eda3ae-Servers+-white.svg 2x" alt="" width="350" height="121" loading="auto">
+        {{
+          image(
+              url="https://assets.ubuntu.com/v1/55eda3ae-Servers+-white.svg",
+              alt="",
+              width="350",
+              height="121",
+              hi_def=True,
+              loading="auto",
+          ) | safe
+        }}
       </div>
     </div>
 </section>
@@ -168,80 +68,166 @@
       <h3 class="p-muted-heading u-align--center">可与您的硬件和软件一起使用</h3>
       <ul class="p-inline-images">
         <li class="p-inline-images__item">
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_144,h_24/https://assets.ubuntu.com/v1/68713fd5-logo-lenovo.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_288,h_48/https://assets.ubuntu.com/v1/68713fd5-logo-lenovo.svg 2x" alt="Lenovo" width="144" height="24" loading="lazy" class="p-inline-images__logo">
-          </div>
-        </li>
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/68713fd5-logo-lenovo.svg",
+                alt="Lenovo",
+                width="144",
+                height="24",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
 
-        <li class="p-inline-images__item">      
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_88,h_88/https://assets.ubuntu.com/v1/5ddba83a-logo-dell.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_176,h_176/https://assets.ubuntu.com/v1/5ddba83a-logo-dell.svg 2x" alt="Dell" width="88" height="88" loading="lazy" class="p-inline-images__logo">
-          </div>
         </li>
-        
         <li class="p-inline-images__item">
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_144,h_58/https://assets.ubuntu.com/v1/683950fd-logo-ibm.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_288,h_116/https://assets.ubuntu.com/v1/683950fd-logo-ibm.svg 2x" alt="IBM" width="144" height="58" loading="lazy" class="p-inline-images__logo">
-          </div>
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/5ddba83a-logo-dell.svg",
+                alt="Dell",
+                width="88",
+                height="88",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
         </li>
-   
         <li class="p-inline-images__item">
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_88,h_88/https://assets.ubuntu.com/v1/a298e7ec-logo-hp.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_176,h_176/https://assets.ubuntu.com/v1/a298e7ec-logo-hp.svg 2x" alt="HP" width="88" height="88" loading="lazy" class="p-inline-images__logo">
-          </div>
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/683950fd-logo-ibm.svg",
+                alt="IBM",
+                width="144",
+                height="58",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
         </li>
-    
+        <li class="p-inline-images__item">
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/a298e7ec-logo-hp.svg",
+                alt="HP",
+                width="88",
+                height="88",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
+        </li>
         <li class="last-item p-inline-images__item">
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_133,h_88/https://assets.ubuntu.com/v1/c24cb4b9-logo-intel.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_266,h_176/https://assets.ubuntu.com/v1/c24cb4b9-logo-intel.svg 2x" alt="Intel" width="133" height="88" loading="lazy" class="p-inline-images__logo">
-          </div>
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/c24cb4b9-logo-intel.svg",
+                alt="Intel",
+                width="133",
+                height="88",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
         </li>
-    
         <li class="p-inline-images__item">
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_144,h_76/https://assets.ubuntu.com/v1/4d6054f9-logo-cisco.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_288,h_152/https://assets.ubuntu.com/v1/4d6054f9-logo-cisco.svg 2x" alt="Cisco" width="144" height="76" loading="lazy" class="p-inline-images__logo">
-          </div>
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/4d6054f9-logo-cisco.svg",
+                alt="Cisco",
+                width="144",
+                height="76",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
         </li>
-    
         <li class="p-inline-images__item">
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_144,h_44/https://assets.ubuntu.com/v1/731aab6c-logo-amd.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_288,h_88/https://assets.ubuntu.com/v1/731aab6c-logo-amd.svg 2x" alt="AMD" width="144" height="44" loading="lazy" class="p-inline-images__logo">
-          </div>
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/731aab6c-logo-amd.svg",
+                alt="AMD",
+                width="144",
+                height="44",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
         </li>
-    
         <li class="last-item p-inline-images__item">
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_144,h_44/https://assets.ubuntu.com/v1/4efbd291-Arm_logo_blue_cropped.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_288,h_88/https://assets.ubuntu.com/v1/4efbd291-Arm_logo_blue_cropped.svg 2x" alt="Arm" width="144" height="44" loading="lazy" class="p-inline-images__logo">
-          </div>
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/4efbd291-Arm_logo_blue_cropped.svg",
+                alt="Arm",
+                width="144",
+                height="44",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
         </li>
       </ul>
-
       <p class="u-align--center u-vertically-spaced"><a href="https://certification.ubuntu.com">查看全部已认证的硬件合作伙伴&nbsp;›</a></p>
       <ul class="p-inline-images">
         <li class="p-inline-images__item">
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_132,h_87/https://assets.ubuntu.com/v1/76999dfc-logo-centrify.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_264,h_174/https://assets.ubuntu.com/v1/76999dfc-logo-centrify.png 2x" alt="Centrify" width="132" height="87" loading="lazy" class="p-inline-images__logo">
-          </div>
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/76999dfc-logo-centrify.png",
+                alt="Centrify",
+                width="132",
+                height="87",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
         </li>
-   
         <li class="p-inline-images__item">
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_88,h_88/https://assets.ubuntu.com/v1/eed716e9-logo-openstack.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_176,h_176/https://assets.ubuntu.com/v1/eed716e9-logo-openstack.svg 2x" alt="OpenStack" width="88" height="88" loading="lazy" class="p-inline-images__logo">
-          </div>
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/eed716e9-logo-openstack.svg",
+                alt="OpenStack",
+                width="88",
+                height="88",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
         </li>
-
         <li class="p-inline-images__item">
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_144,h_79/https://assets.ubuntu.com/v1/c228b4e9-logo-likewise.png?w=144" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_288,h_158/https://assets.ubuntu.com/v1/c228b4e9-logo-likewise.png?w=144 2x" alt="Likewise" width="144" height="79" loading="lazy" class="p-inline-images__logo">
-          </div>
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/c228b4e9-logo-likewise.png?w=144",
+                alt="Likewise",
+                width="144",
+                height="79",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
         </li>
-        
         <li class="last-item p-inline-images__item">
-          <div class=" lazyloaded" data-noscript="">
-            <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_144,h_34/https://assets.ubuntu.com/v1/64493bba-logo-openbravo.png?w=144" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_288,h_68/https://assets.ubuntu.com/v1/64493bba-logo-openbravo.png?w=144 2x" alt="Openbravo" width="144" height="34" loading="lazy" class="p-inline-images__logo">
-          </div>
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/64493bba-logo-openbravo.png?w=144",
+                alt="Openbravo",
+                width="144",
+                height="34",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo"},
+            ) | safe
+          }}
         </li>
-      </ul>  
+      </ul>
       <p class="u-align--center u-vertically-spaced"><a href="https://partners.ubuntu.com/programmes/software">查看所有已认证的软件合作伙伴&nbsp;›</a></p>
     </div>
 </div>
@@ -259,7 +245,9 @@
 
 <div class="row">
   <div class="col-10" style="overflow: auto;">
-    <div class="u-hide--small" id="server-desktop-eol"><svg class="chart" width="862" height="308"><g class="gantt-chart" width="862" height="308" transform="translate(150, 0)"><rect class="chart__bar--orange" y="0" transform="translate(33.5402707507179,237)" height="26" width="83.8966224531656"></rect><rect class="chart__bar--orange" y="0" transform="translate(100.7127034048954,208)" height="26" width="83.8966224531656"></rect><rect class="chart__bar--orange-light" y="0" transform="translate(117.4368932038835,237)" height="26" width="83.98851360590729"></rect><rect class="chart__bar--orange" y="0" transform="translate(167.7932449063312,179)" height="26" width="83.89662245316558"></rect><rect class="chart__bar--orange-light" y="0" transform="translate(184.609325858061,208)" height="26" width="83.98851360590729"></rect><rect class="chart__bar--aubergine" y="0" transform="translate(201.4254068097908,237)" height="26" width="100.71270340489542"></rect><rect class="chart__bar--grey" y="0" transform="translate(218.14959660877886,150)" height="26" width="25.63763161493233"></rect><rect class="chart__bar--orange" y="0" transform="translate(234.96567756050868,121)" height="26" width="83.89662245316558"></rect><rect class="chart__bar--orange-light" y="0" transform="translate(251.6898673594968,179)" height="26" width="83.98851360590729"></rect><rect class="chart__bar--grey" y="0" transform="translate(251.78175851223847,92)" height="26" width="25.63763161493233"></rect><rect class="chart__bar--grey" y="0" transform="translate(268.5059483112266,63)" height="26" width="25.63763161493233"></rect><rect class="chart__bar--aubergine" y="0" transform="translate(268.5978394639683,208)" height="26" width="100.71270340489536"></rect><rect class="chart__bar--grey" y="0" transform="translate(285.3220292629564,34)" height="26" width="25.63763161493233"></rect><rect class="chart__bar--orange" y="0" transform="translate(302.0462190619445,5)" height="26" width="83.89662245316555"></rect><rect class="chart__bar--orange-light" y="0" transform="translate(318.86230001367426,121)" height="26" width="83.98851360590731"></rect><rect class="chart__bar--aubergine" y="0" transform="translate(335.6783809654041,179)" height="26" width="167.7932449063312"></rect><rect class="chart__bar--orange-light" y="0" transform="translate(385.94284151511005,5)" height="26" width="83.8966224531656"></rect><rect class="chart__bar--aubergine" y="0" transform="translate(402.8508136195816,121)" height="26" width="167.7932449063312"></rect><rect class="chart__bar--aubergine" y="0" transform="translate(469.83946396827565,5)" height="26" width="168.62026528100643"></rect><g class="x axis" transform="translate(0, 268)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><g class="tick" opacity="1" transform="translate(25.77006700396554,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2014</text></g><g class="tick" opacity="1" transform="translate(92.85060850540134,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2016</text></g><g class="tick" opacity="1" transform="translate(160.02304115957884,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2018</text></g><g class="tick" opacity="1" transform="translate(227.10358266101463,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2020</text></g><g class="tick" opacity="1" transform="translate(294.2760153151921,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2022</text></g><g class="tick" opacity="1" transform="translate(361.356556816628,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2024</text></g><g class="tick" opacity="1" transform="translate(428.52898947080536,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2026</text></g><g class="tick" opacity="1" transform="translate(495.6095309722412,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2028</text></g><g class="tick" opacity="1" transform="translate(562.7819636264187,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2030</text></g><g class="tick" opacity="1" transform="translate(629.8625051278545,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2032</text></g></g><g class="y axis" fill="none" font-size="10" font-family="sans-serif" text-anchor="start"><g class="tick" opacity="1" transform="translate(0,18.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em" class="chart__label--bold">Ubuntu 22.04 LTS</text></g><g class="tick" opacity="1" transform="translate(0,47.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em">Ubuntu 21.10</text></g><g class="tick" opacity="1" transform="translate(0,76.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em">Ubuntu 21.04</text></g><g class="tick" opacity="1" transform="translate(0,105.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em">Ubuntu 20.10</text></g><g class="tick" opacity="1" transform="translate(0,134.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em" class="chart__label--bold">Ubuntu 20.04 LTS</text></g><g class="tick" opacity="1" transform="translate(0,163.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em">Ubuntu 19.10</text></g><g class="tick" opacity="1" transform="translate(0,192.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em" class="chart__label--bold">Ubuntu 18.04 LTS</text></g><g class="tick" opacity="1" transform="translate(0,221.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em" class="chart__label--bold">Ubuntu 16.04 LTS</text></g><g class="tick" opacity="1" transform="translate(0,250.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em" class="chart__label--bold">Ubuntu 14.04 LTS</text></g></g></g></svg><svg class="chart-key" width="400" height="96"><g class="chart-key__row" transform="translate(0, 0)" height="24"><rect class="chart__bar--orange" width="18" height="14" y="0"></rect><text class="chart-key__label" x="24" y="13">硬件和安全维护更新</text></g><g class="chart-key__row" transform="translate(0, 21)" height="24"><rect class="chart__bar--orange-light" width="18" height="14" y="0"></rect><text class="chart-key__label" x="24" y="13">安全维护更新</text></g><g class="chart-key__row" transform="translate(0, 42)" height="24"><rect class="chart__bar--grey" width="18" height="14" y="0"></rect><text class="chart-key__label" x="24" y="13">过渡版本标准支持周期</text></g><g class="chart-key__row" transform="translate(0, 63)" height="24"><rect class="chart__bar--aubergine" width="18" height="14" y="0"></rect><text class="chart-key__label" x="24" y="13">扩展的安全维护（ESM）</text></g></svg></div>
+    <div class="u-hide--small" id="server-desktop-eol">
+<svg class="chart" width="861" height="308"><g class="gantt-chart" width="861" height="308" transform="translate(150, 0)"><rect class="chart__bar--orange" y="0" transform="translate(33.49035963352933,237)" height="26" width="83.77177628880077"></rect><rect class="chart__bar--orange" y="0" transform="translate(100.56283331054287,208)" height="26" width="83.77177628880078"></rect><rect class="chart__bar--orange-light" y="0" transform="translate(117.2621359223301,237)" height="26" width="83.86353069875564"></rect><rect class="chart__bar--orange" y="0" transform="translate(167.54355257760153,179)" height="26" width="83.77177628880077"></rect><rect class="chart__bar--orange-light" y="0" transform="translate(184.33460959934365,208)" height="26" width="83.8635306987556"></rect><rect class="chart__bar--aubergine" y="0" transform="translate(201.12566662108574,237)" height="26" width="100.56283331054286"></rect><rect class="chart__bar--grey" y="0" transform="translate(217.82496923287295,150)" height="26" width="25.599480377410117"></rect><rect class="chart__bar--orange" y="0" transform="translate(234.61602625461506,121)" height="26" width="83.77177628880077"></rect><rect class="chart__bar--orange-light" y="0" transform="translate(251.3153288664023,179)" height="26" width="83.86353069875565"></rect><rect class="chart__bar--grey" y="0" transform="translate(251.40708327635716,92)" height="26" width="25.599480377410117"></rect><rect class="chart__bar--grey" y="0" transform="translate(268.1063858881444,63)" height="26" width="25.603303477824852"></rect><rect class="chart__bar--aubergine" y="0" transform="translate(268.19814029809925,208)" height="26" width="100.56283331054289"></rect><rect class="chart__bar--grey" y="0" transform="translate(284.89744290988654,34)" height="26" width="25.59948037741009"></rect><rect class="chart__bar--orange" y="0" transform="translate(301.5967455216737,5)" height="26" width="83.77177628880077"></rect><rect class="chart__bar--orange-light" y="0" transform="translate(318.38780254341583,121)" height="26" width="83.86353069875565"></rect><rect class="chart__bar--aubergine" y="0" transform="translate(335.17885956515795,179)" height="26" width="167.54355257760153"></rect><rect class="chart__bar--orange-light" y="0" transform="translate(385.3685218104745,5)" height="26" width="83.77177628880077"></rect><rect class="chart__bar--aubergine" y="0" transform="translate(402.2513332421715,121)" height="26" width="167.5435525776016"></rect><rect class="chart__bar--aubergine" y="0" transform="translate(469.14029809927524,5)" height="26" width="168.3693422671954"></rect><g class="x axis" transform="translate(0, 268)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><g class="tick" opacity="1" transform="translate(25.736285838005376,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2014</text></g><g class="tick" opacity="1" transform="translate(92.71700510506405,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2016</text></g><g class="tick" opacity="1" transform="translate(159.7894787820776,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2018</text></g><g class="tick" opacity="1" transform="translate(226.77019804913624,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2020</text></g><g class="tick" opacity="1" transform="translate(293.8426717261498,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2022</text></g><g class="tick" opacity="1" transform="translate(360.8233909932084,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2024</text></g><g class="tick" opacity="1" transform="translate(427.89586467022195,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2026</text></g><g class="tick" opacity="1" transform="translate(494.87658393728066,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2028</text></g><g class="tick" opacity="1" transform="translate(561.9490576142941,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2030</text></g><g class="tick" opacity="1" transform="translate(628.9297768813528,0)"><line stroke="currentColor" y2="6" y1="-288"></line><text fill="currentColor" y="9" dy="0.71em">2032</text></g></g><g class="y axis" fill="none" font-size="10" font-family="sans-serif" text-anchor="start"><g class="tick" opacity="1" transform="translate(0,18.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em" class="chart__label--bold">Ubuntu 22.04 LTS</text></g><g class="tick" opacity="1" transform="translate(0,47.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em">Ubuntu 21.10</text></g><g class="tick" opacity="1" transform="translate(0,76.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em">Ubuntu 21.04</text></g><g class="tick" opacity="1" transform="translate(0,105.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em">Ubuntu 20.10</text></g><g class="tick" opacity="1" transform="translate(0,134.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em" class="chart__label--bold">Ubuntu 20.04 LTS</text></g><g class="tick" opacity="1" transform="translate(0,163.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em">Ubuntu 19.10</text></g><g class="tick" opacity="1" transform="translate(0,192.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em" class="chart__label--bold">Ubuntu 18.04 LTS</text></g><g class="tick" opacity="1" transform="translate(0,221.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em" class="chart__label--bold">Ubuntu 16.04 LTS</text></g><g class="tick" opacity="1" transform="translate(0,250.5)"><line stroke="currentColor" x2="0"></line><text fill="currentColor" x="-150" dy="0.32em" class="chart__label--bold">Ubuntu 14.04 LTS</text></g></g></g></svg>
+      </div>
     <table class="u-hide--medium u-hide--large" style="width: auto;">
       <thead>
         <tr>
@@ -373,7 +361,17 @@
         <div class="p-heading-icon">
           <div class="p-heading-icon__header">
             <div class=" lazyloaded" data-noscript="">
-              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_100,h_100/https://assets.ubuntu.com/v1/60bd6cf1-picto-juju.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_200,h_200/https://assets.ubuntu.com/v1/60bd6cf1-picto-juju.svg 2x" alt="" width="100" height="100" loading="lazy" class="p-heading-icon__img">
+              {{
+                image(
+                    url="https://assets.ubuntu.com/v1/60bd6cf1-picto-juju.svg",
+                    alt="",
+                    width="100",
+                    height="100",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "p-heading-icon__img"},
+                ) | safe
+              }}
             </div>
               <h3 class="p-heading-icon__title">Juju——多云编排</h3>
           </div>
@@ -381,12 +379,22 @@
               <p><a class="p-link--external" href="https://jujucharms.com/">了解更多</a></p>
         </div>
       </div>
-  
+
       <div class="col-4 p-divider__block">
         <div class="p-heading-icon">
           <div class="p-heading-icon__header">
             <div class=" lazyloaded" data-noscript="">
-              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_100,h_100/https://assets.ubuntu.com/v1/0de4fcd5-logo-maas-icon.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_200,h_200/https://assets.ubuntu.com/v1/0de4fcd5-logo-maas-icon.svg 2x" alt="" width="100" height="100" loading="lazy" class="p-heading-icon__img">
+              {{
+                image(
+                    url="https://assets.ubuntu.com/v1/0de4fcd5-logo-maas-icon.svg",
+                    alt="",
+                    width="100",
+                    height="100",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "p-heading-icon__img"},
+                ) | safe
+              }}
             </div>
               <h3 class="p-heading-icon__title">MAAS——裸机配置</h3>
           </div>
@@ -397,9 +405,19 @@
 
       <div class="col-4 p-divider__block">
         <div class="p-heading-icon">
-          <div class="p-heading-icon__header">        
+          <div class="p-heading-icon__header">
             <div class=" lazyloaded" data-noscript="">
-              <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_100,h_100/https://assets.ubuntu.com/v1/425efe3a-lxd.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_200,h_200/https://assets.ubuntu.com/v1/425efe3a-lxd.svg 2x" alt="LXD" width="100" height="100" loading="lazy" class="p-heading-icon__img">
+              {{
+                image(
+                    url="https://assets.ubuntu.com/v1/425efe3a-lxd.svg",
+                    alt="LXD",
+                    width="100",
+                    height="100",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "p-heading-icon__img"},
+                ) | safe
+              }}
             </div>
               <h3 class="p-heading-icon__title">LXD——容器</h3>
           </div>
@@ -439,9 +457,19 @@
         <p><a href="https://www.ubuntu.com/community">加入我们的社区&nbsp;›</a></p>
       </div>
 
-      <div class="col-3 u-vertically-center u-align--center">    
-        <div class=" lazyloaded" data-noscript="">   
-          <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_150,h_150/https://assets.ubuntu.com/v1/5552afb7-community-support.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_300,h_300/https://assets.ubuntu.com/v1/5552afb7-community-support.svg 2x" alt="" width="150" height="150" loading="lazy" class="u-hide--small">
+      <div class="col-3 u-vertically-center u-align--center">
+        <div class=" lazyloaded" data-noscript="">
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/5552afb7-community-support.svg",
+                alt="",
+                width="150",
+                height="150",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "u-hide--small"},
+            ) | safe
+          }}
         </div>
       </div>
     </div>
@@ -453,29 +481,29 @@
         <h3 class="p-heading--four">下载</h3>
           <p>无论您是要配置简单的文件服务器还是构建五万个节点的云，都可以依靠Ubuntu Server及其五年的免费升级保证。</p>
           <p><a href="/download" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contextual footer link', 'eventAction' : 'server download', 'eventLabel' : 'Download', 'eventValue' : undefined });">下载Ubuntu server&nbsp;›</a></p>
-      </div> 
-  
+      </div>
+
       <div class="col-4 p-divider__block">
         <h3 class="p-heading--four">Ubuntu Advantage企业支持服务</h3>
           <p>从Canonical获得Ubuntu server的专业支持。</p>
           <p><a href="https://buy.ubuntu.com" class="p-button--neutral" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contextual footer link', 'eventAction' : 'server contact-us', 'eventLabel' : 'Ubuntu Advantage store', 'eventValue' : undefined });"><span class="p-link--external">访问商店</span></a></p>
           <p><a href="/contact" class="js-invoke-modal" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contextual footer link', 'eventAction' : 'server contact-us', 'eventLabel' : 'For business', 'eventValue' : undefined });">联系我们&nbsp;›</a></p>
-      </div> 
-  
+      </div>
+
       <div class="col-4 p-divider__block">
         <h3 class="p-heading--four">阅读更多</h3>
           <ul class="p-list" id="latest-articles">
             <li class="p-list__item">
             <a class="article-link article-title" href="/blog/how-to-buy-ubuntu-subscription">Ubuntu Advantage专业企业支持服务介绍</a>
             </li>
-        
+
             <li class="p-list__item">
             <a class="article-link article-title" href="https://cn.ubuntu.com/blog/canonical-aws-ubuntu-pro">Ubuntu Pro已在AWS和Azure上使用</a>
             </li>
 
             <li class="p-list__item">
             <a class="article-link article-title p-link--external" href="https://ubuntu.com/legal/ubuntu-advantage-service-description">Ubuntu Advantage服务支持文档</a>
-            </li>        
+            </li>
           </ul>
       </div>
     </div>
