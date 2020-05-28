@@ -19,21 +19,31 @@
     }
 </style>
 
-<section class="p-strip p-engage-banner--dark">  
+<section class="p-strip p-engage-banner--dark">
     <div class="u-fixed-width navigation-logo-engage">
-      <a href="/">        
-        <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_143,h_32/https://assets.ubuntu.com/v1/f263d9c4-logo-ubuntu-white.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_286,h_64/https://assets.ubuntu.com/v1/f263d9c4-logo-ubuntu-white.svg 2x" alt="Ubuntu" width="143" height="32" loading="auto">
+      <a href="/">
+        {{
+          image(
+              url="https://assets.ubuntu.com/v1/f263d9c4-logo-ubuntu-white.svg",
+              alt="Ubuntu",
+              width="143",
+              height="32",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "", "id": ""},
+          ) | safe
+        }}
       </a>
     </div>
-    
+
     <div class="row u-equal-height">
       <div class="col-7  u-vertically-center">
         <div>
           <h1>从VMware迁移到Charmed&nbsp;OpenStack</h1>
-          <h4>采用开源技术来减少成本并提升您的基础设施效率</h4>        
+          <h4>采用开源技术来减少成本并提升您的基础设施效率</h4>
         </div>
       </div>
-        <div class="col-5 u-hide--small u-align--center u-vertically-center">      
+        <div class="col-5 u-hide--small u-align--center u-vertically-center">
           <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_250,h_160/https://assets.ubuntu.com/v1/2d935f28-openstack-cloud.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_500,h_320/https://assets.ubuntu.com/v1/2d935f28-openstack-cloud.svg 2x" alt="" width="250" height="160" loading="auto" style="max-height: 410px; max-width: 250px;">
         </div>
     </div>
@@ -50,7 +60,7 @@
           <li class="p-list__item is-ticked">提供详细的成本分析，突出显示企业或组织从VMware迁移到Charmed OpenStack可以节省的成本。</li>
         </ul>
       </div>
-      
+
       <div class="col-5">
  <!-- MARKETO FORM -->
  <script src="https://assets.ubuntu.com/v1/37b1db88-jquery.min.js"></script>
@@ -84,10 +94,13 @@
         <input required="" id="Phone" name="Phone" maxlength="255" class="mktoField mktoTelField  mktoRequired" type="tel" aria-label="Phone Number" aria-required="true">
       </li>
       <li class="mktField">
-       <p>在提交此表格的同时，我确认已阅读和同意<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy/contact">Canonical的隐私声明</a>和<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy">隐私政策</a>。
-         <input name="RichText" aria-label="RichText" type="hidden">
-       </p>
-     </li>
+        <input name="canonicalUpdatesOptIn" aria-label="canonicalUpdatesOptIn" id="canonicalUpdatesOptIn" value="yes" class="mktoField" type="checkbox"><label for="canonicalUpdatesOptIn" class="mktoLabel "><small>我同意接收有关Canonical的产品和服务信息。</small></label>
+       </li>
+       <li class="mktField">
+        <p><small>在提交此表格的同时，我确认已阅读和同意<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy/contact">的隐私声明</a>和<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy">隐私政策</small></a>。
+          <input name="RichText" aria-label="RichText" type="hidden">
+        </p>
+       </li>
       <li class="mktField">
         <input name="utm_campaign" aria-label="utm_campaign" class="mktoField  mktoFormCol" value="None" type="hidden">
       </li>
@@ -140,11 +153,11 @@
   });
  </script>
  <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
- 
+
  <!-- /MARKETO FORM -->
-       
+
       </div>
-      
+
     </div>
 </section>
 

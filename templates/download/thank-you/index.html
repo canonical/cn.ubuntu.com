@@ -1,0 +1,228 @@
+{% extends "templates/base.html" %}
+
+{% if title %}{% block title %} 谢谢 {{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}Ubuntu {{ releases.lts.short_version }}下载, Ubuntu {{ releases.lts.short_version }}下载, Ubuntu 服务器下载， Ubuntu系统下载， Ubuntu官网系统下载， Ubuntu OpenStack{{ meta_description }}{% endblock %}{% endif %}
+
+{% block meta_copydoc %}https://docs.google.com/document/d/1-rYu9BV4mN04yXn01QhBillOyHQOeuCbuGKiJQpJjYs/edit{% endblock meta_copydoc %}
+
+{% block content %}
+<meta http-equiv="refresh" content="3;url=https://releases.ubuntu.com/20.04/ubuntu-20.04-live-server-amd64.iso">
+
+<div id="main-content" class="inner-wrapper">
+    <section class="p-strip u-no-padding--top u-no-padding--bottom" style="overflow: visible;">
+      <div class="p-strip--suru-topped">
+        <div class="row">
+          <div class="col-8">
+            <h1>感谢下载Ubuntu Server 20.04</h1>
+            <p>您的下载将自动开始。如没有，请点击<a href="https://releases.ubuntu.com/20.04/ubuntu-20.04-live-server-amd64.iso">手动下载</a>。</p>
+            <p>您可以通过对比<a href="http://www.cdimage.ubuntu.com/releases/20.04/release/MD5SUMS" class="p-link--external">MD5</a>或<a href="http://www.cdimage.ubuntu.com/releases/20.04/release/SHA1SUMS" class="p-link--external">SHA1</a>值来校验iso文件完整性，或者阅读<a href="https://ubuntu.com/tutorials/tutorial-install-ubuntu-server?backURL=https://cn.ubuntu.com/download/thank-you">安装教程</a>。</p>
+             </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light">
+      <div class="row">
+        <div class="col-12">
+          <h3>获取Ubuntu Server每周新闻</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-7">
+          <p>订阅Ubuntu Server每周简报以接收：</p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">安全简报</li>
+            <li class="p-list__item is-ticked">发布公告</li>
+            <li class="p-list__item is-ticked">技术更新</li>
+            <li class="p-list__item is-ticked">提示和教程</li>
+          </ul>
+          <h4>需要最新的命令行手册？</h4>
+          <p>通过订阅，您还能获得“Ubuntu Server 2020 CLI 专业提示”参考手册来了解如何更有效地使用命令行，以及开始从基础文件管理到Kubernetes和OpenStack的开发运维。</p>
+
+          <div class="p-card--highlighted" style="display: inline-block;">
+            <div class=" lazyloaded" data-noscript="">
+              {{
+                image(
+                    url="https://assets.ubuntu.com/v1/39a8dac8-Ubuntu_Server_CLI_pro_tips_2020-04.jpg",
+                    alt="",
+                    width="440",
+                    height="331",
+                    hi_def=True,
+                    loading="lazy",
+                ) | safe
+              }}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4 col-start-large-9">
+
+            <!-- MARKETO FORM -->
+        <script src="https://assets.ubuntu.com/v1/37b1db88-jquery.min.js"></script>
+        <script src="https://assets.ubuntu.com/v1/d55f58bb-jquery.validate.js"></script>
+        <script src="https://assets.ubuntu.com/v1/6ce35d3e-jquery-ui.min.js"></script>&zwnj;&#8203;
+        <form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_3593" style="margin-top: -1rem;" novalidate="novalidate">
+        <fieldset class="u-no-padding--top" style="border-bottom-width: 1px;">
+         <ul class="p-list">
+           <li class="mktFormReq mktField p-list__item">
+             <label for="FirstName" class="mktoLabel">名字：</label>
+             <input required="" id="FirstName" name="FirstName" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="First Name" aria-required="true">
+           </li>
+           <li class="mktFormReq mktField">
+             <label for="LastName" class="mktoLabel ">姓氏：</label>
+             <input required="" id="LastName" name="LastName" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Last Name" aria-required="true">
+           </li>
+           <li class="mktFormReq mktField">
+             <label for="Email" class="mktoLabel ">工作邮箱：</label>
+             <input required="" id="Email" name="Email" maxlength="255" class="mktoField mktoEmailField  mktoRequired" type="email" aria-label="Email" aria-required="true">
+           </li>
+           <li class="mktFormReq mktField">
+             <label for="Company" class="mktoLabel ">公司名称：</label>
+             <input required="" id="Company" name="Company" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Company Name" aria-required="true">
+           </li>
+           <li class="mktFormReq mktField">
+             <label for="Title" class="mktoLabel ">职位：</label>
+             <input required="" id="Title" name="Title" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Job Title" aria-required="true">
+           </li>
+           <li class="mktFormReq mktField">
+             <label for="Phone" class="mktoLabel ">电话号码：</label>
+             <input required="" id="Phone" name="Phone" maxlength="255" class="mktoField mktoTelField  mktoRequired" type="tel" aria-label="Phone Number" aria-required="true">
+           </li>
+           <li class="mktField">
+            <input name="canonicalUpdatesOptIn" aria-label="canonicalUpdatesOptIn" id="canonicalUpdatesOptIn" value="yes" class="mktoField" type="checkbox"><label for="canonicalUpdatesOptIn" class="mktoLabel "><small>我同意接收有关Canonical的产品和服务信息。</small></label>
+          </li>
+           <li class="mktField">
+            <p><small>在提交此表格的同时，我确认已阅读和同意<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy/contact">的隐私声明</a>和<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy">隐私政策</small></a>。
+              <input name="RichText" aria-label="RichText" type="hidden">
+            </p>
+          </li>
+           <li class="mktField">
+             <input name="utm_campaign" aria-label="utm_campaign" class="mktoField  mktoFormCol" value="None" type="hidden">
+           </li>
+           <li class="mktField">
+             <input name="utm_medium" aria-label="utm_medium" class="mktoField  mktoFormCol" value="None" type="hidden">
+           </li>
+           <li class="mktField">
+             <input name="utm_source" aria-label="utm_source" class="mktoField  mktoFormCol" value="None" type="hidden">
+           </li>
+           <li class="mktField">
+             <input name="Consent_to_Processing__c" aria-label="Consent" class="mktoField  mktoFormCol" value="Yes" type="hidden">
+           </li>
+
+           <li class="mktField">
+             <button type="submit" class="mktoButton u-no-margin--bottom">订阅和下载</button>
+             <input name="formid" aria-label="formid" class="mktoField" value="3593" type="hidden">
+             <input name="lpId" aria-label="lpId" class="mktoField " value="" type="hidden">
+             <input name="subId" aria-label="subId" class="mktoField " value="" type="hidden">
+             <input name="munchkinId" aria-label="munchkinId" class="mktoField " value="" type="hidden">
+             <input name="lpurl" aria-label="lpurl" class="mktoField " value="" type="hidden">
+             <input name="cr" aria-label="cr" class="mktoField " value="" type="hidden">
+             <input name="kw" aria-label="kw" class="mktoField " value="" type="hidden">
+             <input name="q" aria-label="q" class="mktoField " value="" type="hidden">
+           </li>
+         </ul>
+        </fieldset>
+        <input type="hidden" name="returnURL" aria-label="returnURL" value="https://assets.ubuntu.com/v1/f401c3f4-Ubuntu_Server_CLI_pro_tips_2020-04.pdf">
+        <input type="hidden" name="retURL" aria-label="retURL" value="https://assets.ubuntu.com/v1/f401c3f4-Ubuntu_Server_CLI_pro_tips_2020-04.pdf">
+        </form>
+        <script>
+        $("#mktoForm_3593").validate({
+         errorElement: "span",
+         errorClass: "mktFormMsg mktError",
+         onkeyup: false,
+         onclick: false,
+         onblur: false
+        });
+        $(function () {
+         $("#comments").hide()
+        });
+        $('#Ubuntu_User__c').on('change', function () {
+         var selection = $(this).val();
+         if (selection == 'Commercially only') {
+           $('#comments').show();
+         } else {
+           $('#comments').hide();
+         }
+        });
+        </script>
+        <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
+
+        <!-- /MARKETO FORM -->
+        </div>
+     </div>
+    </section>
+
+  <div class="p-strip">
+      <div class="row">
+        <h3>文档和资源</h3>
+      </div>
+        <div class="row u-equal-height">
+          <div class="col-4">
+            <h4><a href="http://www.ubuntu.com/server/docs" class="p-link--external">Ubuntu Server指南&nbsp;›</a></h4>
+            <p>Ubuntu Server的文档由社区和Ubuntu开发者编写。</p>
+          </div>
+          <div class="col-4">
+            <h4><a href="https://askubuntu.com/" class="p-link--external">Ask Ubuntu</a></h4>
+            <p>在某个地方卡住了？让技术大咖们来回答您的Ubuntu问题。</p>
+          </div>
+          <div class="col-4">
+            <h4><a href="https://discourse.ubuntu.com/" class="p-link--external">Community Hub</a></h4>
+            <p>与Ubuntu开发者讨论并表达您的声音。</p>
+          </div>
+        </div>
+
+        <div class="u-fixed-width">
+          <hr class="p-separator">
+        </div>
+
+        <div class="row">
+          <div class="col-8">
+            <h3>在生产环境中使用Ubuntu？</h3>
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">电话和工单支持</li>
+              <li class="p-list__item is-ticked">Livepatch kernel更新</li>
+              <li class="p-list__item is-ticked">Kubernetes和OpenStack更新</li>
+              <li class="p-list__item is-ticked">LTS版扩展更新维护（ESM）</li>
+            </ul>
+            <p>订阅Ubuntu Advantage基础设施版支持服务即可使用以上全部服务。</p>
+            <p><a href="https://ubuntu.com/advantage" class="p-button">了解更多</a></p>
+          </div>
+        </div>
+
+        <div class="u-fixed-width">
+          <hr class="p-separator">
+        </div>
+
+        <div class="row">
+          <div class="col-8">
+            <h3>其他内容</h3>
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">
+                <a href="https://maas.io" class="p-link--external">用MAAS在大规模物理服务器上部署Ubuntu server</a>
+              </li>
+              <li class="p-list__item is-ticked">
+                <a href="https://landscape.canonical.com" class="p-link--external">用Landscape来管理和监控您的全部Ubuntu实例。</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  </div>
+
+  <script src="https://ubuntu.com/static/js/build/image-download.min.js?v=b575086"></script>
+
+  <script defer>
+      var architecture = '{{ architecture }}';
+      var mirrors = {{ mirror_list | safe }};
+      var version = '{{ version }}';
+
+      if (version && architecture) {
+        var GAlabel = version + '-server-' + architecture;
+        var imagePath = version + '/ubuntu-' + version + '-live-server-' + architecture + '.iso';
+        window.initImageDownload(mirrors, imagePath, GAlabel);
+         }
+  </script>
+
+</div>
+
+{% endblock%}

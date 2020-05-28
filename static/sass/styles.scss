@@ -14,6 +14,8 @@
 @import 'pattern_blog-post';
 @import 'pattern_blog-card';
 @import 'pattern_blog-list';
+@import "pattern_chart";
+@import "pattern_strip";
 @import "pattern_takeovers";
 @import 'utility_crop';
 
@@ -21,6 +23,7 @@
 @include blog-p-post;
 @include blog-p-card;
 @include blog-u-crop;
+@include ubuntu-p-strip;
 @include ubuntu-p-takeovers;
 @include ubuntu-p-engage-banner;
 

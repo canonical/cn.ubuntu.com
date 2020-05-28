@@ -1,0 +1,58 @@
+.chart {
+  margin-top: $sp-unit * 3;
+}
+
+.chart__bar--orange {
+  fill: #e95420; // sass-lint:disable-line no-color-literals
+  stroke: #e95420; // sass-lint:disable-line no-color-literals
+  stroke-width: 1px;
+}
+
+.chart__bar--orange-light {
+  fill: #fbddd2; // sass-lint:disable-line no-color-literals
+  stroke: #e95420; // sass-lint:disable-line no-color-literals
+  stroke-width: 1px;
+}
+
+.chart__bar--grey {
+  fill: #aea79f; // sass-lint:disable-line no-color-literals
+  stroke: #aea79f; // sass-lint:disable-line no-color-literals
+  stroke-width: 1px;
+}
+
+.chart__bar--aubergine {
+  fill: #772953; // sass-lint:disable-line no-color-literals
+  stroke: #772953; // sass-lint:disable-line no-color-literals
+  stroke-width: 1px;
+}
+
+.chart__label--bold {
+  font-weight: bold;
+}
+
+.x.axis line {
+  shape-rendering: crispEdges;
+  stroke: #d6d3cf; // sass-lint:disable-line no-color-literals
+  stroke-dasharray: 3 2;
+}
+
+.tick text {
+  font-size: 14px;
+}
+
+.chart-key text {
+  font-size: 14px;
+}
+
+.x.axis text {
+  font-size: 12px;
+  text-anchor: start !important;
+}
+
+.chart-key {
+  display: block;
+}
+
+.chart-key__row {
+  display: block;
+}
