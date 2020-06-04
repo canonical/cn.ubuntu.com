@@ -76,7 +76,7 @@ jobs:
           sudo pip3 install -r requirements.txt
 
       - name: Install dependencies
-        run: sudo pip3 install coverage pyyaml==5.3.1
+        run: sudo pip3 install coverage
 
       - name: Install node dependencies
         run: yarn install --immutable
@@ -88,4 +88,3 @@ jobs:
         run: |
           SECRET_KEY=insecure_dev_key coverage run  --source=. -m unittest discover tests
           bash <(curl -s https://codecov.io/bash) -cF python
-
