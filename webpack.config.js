@@ -1,38 +1,34 @@
-const path = require("path");
+/* eslint-env node */
 
-const config = {
-  entry: {
-    ["global-nav"]: "./static/js/global-nav.js",
-    ["latest-news"]: "./static/js/latest-news.js"
-  },
-  output: {
-    path: path.resolve(__dirname, "static/dist"),
-    filename: "[name].js"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js?$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"]
-          }
-        }
-      }
+const entry = require('./.webpack/entry.js');
+const rules = require('./.webpack/rules.js');
+
+const TerserPlugin = require('terser-webpack-plugin');
+
+const production = process.env.ENVIRONMENT !== 'devel';
+
+// turn on terser plugin on production
+const minimizer = production
+  ? [
+      new TerserPlugin({
+        sourceMap: true,
+      }),
     ]
-  }
-};
+  : [];
 
-module.exports = env => {
-  // the env is set in package.json when calling webpack
-  if (env && env.development) {
-    config.devtool = "source-map";
-    config.mode = "development";
-  } else {
-    config.mode = "production";
-  }
-
-  return config;
+module.exports = {
+  entry: entry,
+  output: {
+    filename: '[name].min.js',
+    path: __dirname + '/static/js/dist',
+  },
+  mode: production ? 'production' : 'development',
+  devtool: production ? 'source-map' : 'eval-source-map',
+  module: {
+    rules: rules,
+  },
+  optimization: {
+    minimize: true,
+    minimizer,
+  },
 };

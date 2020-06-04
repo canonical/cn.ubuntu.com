@@ -58,7 +58,12 @@ env[23]/
 *.css
 
 static/dist
+static/js/dist
 
 .webcache/
 .webcache_blog/
 .webcache_blog
+
+# dotrun snap
+.venv/
+.dotrun.json
