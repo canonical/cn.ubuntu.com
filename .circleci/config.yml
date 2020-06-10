@@ -66,7 +66,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      -run:
+      - run:
         name: Yarn install
         command: yarn install
       - run: Lint js
@@ -75,7 +75,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      -run:
+      - run:
         name: Yarn install
         command: yarn install
       - run: Lint js
