@@ -14,7 +14,7 @@
     "build-css": "node-sass --include-path node_modules static/sass --output-style compressed --output static/css && postcss --map false --use autoprefixer --replace 'static/css/**/*.css'",
     "build": "mkdir -p static/js && webpack && yarn run build-css",
     "start": "yarn run build && concurrently --raw 'yarn run watch-css' 'yarn run watch-js' 'yarn run serve'",
-    "test-js": "jest"
+    "test-js": "jest --passWithNoTests"
   },
   "author": "Canonical webteam",
   "devDependencies": {
@@ -45,4 +45,3 @@
     "vanilla-framework": "2.10.1"
   }
 }
-
