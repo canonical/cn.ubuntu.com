@@ -62,26 +62,33 @@ jobs:
           command: |
             coverage run  --source=. -m unittest discover tests
             bash <(curl -s https://codecov.io/bash) -cF python
-  lint-js:
-    <<: *defaults
-    steps:
-      - checkout
-      - run:
-        name: Yarn install
-        command: yarn install
-      - run: Lint js
-        command: yarn lint-js
   test-js:
     <<: *defaults
     steps:
       - checkout
       - run:
-        name: Yarn install
-        command: yarn install
-      - run: Lint js
-        command: |
-          yarn test-js
-          bash <(curl -s https://codecov.io/bash) -cF javascript
+          name: Yarn install
+          command: yarn install
+      - run:
+          name: Yarn build
+          command: yarn build
+      - run:
+          name: Test JavaScript
+          command: yarn test-js
+  lint-js:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Yarn install
+          command: yarn install
+      - run:
+          name: Yarn build
+          command: yarn build
+      - run:
+          name: Lint JavaScript
+          command: yarn lint-js
+
 workflows:
   version: 2
   build:
@@ -90,5 +97,4 @@ workflows:
       - lint-python
       - test-site
       - test-python
-      - lint-js
       - test-js
