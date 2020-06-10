@@ -98,3 +98,4 @@ workflows:
       - test-site
       - test-python
       - test-js
+      - lint-js
