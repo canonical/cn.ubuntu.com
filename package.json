@@ -12,6 +12,7 @@
     "watch-js": "watch -p static/js/**/*.js -c 'webpack --env.development'",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
     "build-css": "node-sass --include-path node_modules static/sass --output-style compressed --output static/css && postcss --map false --use autoprefixer --replace 'static/css/**/*.css'",
+    "build-js": "mkdir -p static/js && webpack",
     "build": "mkdir -p static/js && webpack && yarn run build-css",
     "start": "yarn run build && concurrently --kill-others --raw 'yarn run watch-css' 'yarn run watch-js' 'yarn run serve'",
     "test-js": "jest --passWithNoTests"
