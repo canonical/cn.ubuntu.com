@@ -24,6 +24,9 @@ To setup the watcher, open a new terminal window and run:
 ./run watch
 ```
 
+# Deploy
+You can find the deployment config in the deploy folder.
+
 License
 ---
 
