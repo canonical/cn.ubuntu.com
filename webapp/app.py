@@ -26,6 +26,7 @@ app.register_blueprint(blog_blueprint, url_prefix="/blog")
 with open("releases.yaml") as releases:
     releases = yaml.load(releases, Loader=yaml.FullLoader)
 
+
 # Template context
 @app.context_processor
 def context():

@@ -20,14 +20,19 @@ RUN --mount=type=cache,target=/usr/local/share/.cache/yarn yarn install
 # ===
 FROM yarn-dependencies AS build-css
 ADD static/sass static/sass
-COPY static/dist static/dist
 RUN yarn run build-css
+
+# Build stage: Run "yarn run build-js"
+# ===
+FROM yarn-dependencies AS build-js
+ADD . .
+RUN yarn run build
+
 
 # Build the production image
 # ===
 FROM ubuntu:focal
 
-ADD . .
 # Install python and import python dependencies
 RUN apt-get update && apt-get install --no-install-recommends --yes python3-setuptools python3-lib2to3 python3-pkg-resources ca-certificates libsodium-dev
 COPY --from=python-dependencies /root/.local/lib/python3.8/site-packages /root/.local/lib/python3.8/site-packages
@@ -42,6 +47,7 @@ WORKDIR /srv
 ADD . .
 RUN rm -rf package.json yarn.lock .babelrc webpack.config.js requirements.txt
 COPY --from=build-css /srv/static/css static/css
+COPY --from=build-js /srv/static/js static/js
 
 # Set revision ID
 ARG BUILD_ID
