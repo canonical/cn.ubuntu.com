@@ -1,5 +1,8 @@
 module.exports = {
-  ['global-nav']: './static/js/global-nav.js',
-  ['latest-news']: './static/js/latest-news.js',
-  ['forms']: ['./static/js/serialize.js', './static/js/form-validation.js'],
+  ['global-nav']: './static/js/src/global-nav.js',
+  ['latest-news']: './static/js/src/latest-news.js',
+  ['forms']: [
+    './static/js/third-party/serialize.js',
+    './static/js/src/form-validation.js',
+  ],
 };
