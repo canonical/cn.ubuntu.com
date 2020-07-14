@@ -1,0 +1,96 @@
+<div class="blog-p-card--muted">
+  <header class="blog-p-card__header">
+    <h5 class="p-muted-heading u-no-margin--bottom">订阅博客文章</h5>
+  </header>
+
+  <div class="blog-p-card__content">
+    <form action="https://pages.canonical.com/index.php/leadCapture/save" method="post" id="mktoForm_3647" novalidate="novalidate" onsubmit="ga('send', 'Newsletter', 'Signup', 'New homepage newsletter signup');">
+      <h3 class="p-card--title p-heading--four">选择您感兴趣的主题</h3>
+
+      <ul class="p-list">
+        <li class="p-list__item u-clearfix">
+          <input class="mktoLogicalField mktoCheckboxList mktoHasWidth" type="checkbox" id="insightscloudserver" name="insightscloudserver" value="Cloud and server" />
+          <label for="insightscloudserver">云和服务器</label>
+        </li>
+
+        <li class="p-list__item u-clearfix">
+          <input class="mktoLogicalField mktoCheckboxList mktoHasWidth" type="checkbox" id="insightsdesktop" name="insightsdesktop" value="Desktop" />
+          <label for="insightsdesktop">桌面</label>
+        </li>
+
+        <li class="p-list__item u-clearfix">
+          <input class="mktoLogicalField mktoCheckboxList mktoHasWidth" type="checkbox" id="insightsiot" name="insightsiot" value="Internet of Things" />
+          <label for="insightsiot">物联网</label>
+        </li>
+
+        <li class="p-list__item u-clearfix">
+          <input class="mktoLogicalField mktoCheckboxList mktoHasWidth" id="insightsrobotics" name="insightsrobotics" value="Robotics" type="checkbox">
+          <label for="insightsrobotics">机器人</label>
+        </li>
+
+        <li class="p-list__item u-clearfix">
+          <input class="mktoLogicalField mktoCheckboxList mktoHasWidth" id="insightstutorials" name="insightstutorials" value="Tutorials" type="checkbox">
+          <label for="insightstutorials">教程</label>
+        </li>
+      </ul>
+
+      <div class="mktFormReq mktField">
+        <label>
+          <span class="u-no-margin--top">工作邮箱:<span>*</span></span>
+          <input required  id="Email" name="Email" maxlength="255" type="email" class="mktoField mktoEmailField mktoRequired" />
+        </label>
+      </div>
+
+      <div class="mktField mktLblRight">
+        <span class="mktInput mktLblRight">
+          <input class="u-no-margin--top mktFormCheckbox" name="canonicalUpdatesOptIn" id="CanonicalUpdatesOptIn" value="Receive updates" type="checkbox" />
+          <label for="CanonicalUpdatesOptIn" class="p-form__label u-no-margin--top">
+            <small>我同意接收有关Canonical的产品和服务信息。</small>
+          </label>
+          <span class="mktFormMsg"></span>
+        </span>
+      </div>
+
+      <p>
+        <small>在提交此表格的同时，我确认已阅读和同意的 <a href="https://ubuntu.com/legal/data-privacy/newsletter">隐私声明</a>和<a href="https://ubuntu.com/legal/data-privacy">隐私政策。</a></small>
+      </p>
+
+      <div>
+        <span class="mktoButtonWrap p-card--content">
+          <button type="submit" class="u-no-margin--bottom">立即订阅</button>
+        </span>
+
+        <input type="hidden" name="Consent_to_Processing__c" value="yes" />
+
+        <input value="1959" class="mktoField mktoFieldDescriptor" name="lpId" type="hidden">
+
+        <input value="30" class="mktoField mktoFieldDescriptor" name="subId" type="hidden">
+
+        <input name="lpurl" value="https://pages.canonical.com/Insights-Subscription_Insights-Subscription-test.html?cr={creative}&amp;kw={keyword}" type="hidden">
+        <input value="3647" class="mktoField mktoFieldDescriptor" name="formid" type="hidden">
+        <input type="hidden" name="ret" value="{{request.build_absolute_uri}}?newsletter=true" />
+        <input value="066-EOV-335" class="mktoField mktoFieldDescriptor" name="munchkinId" type="hidden">
+        <input name="kw" value="" type="hidden">
+        <input name="cr" value="" type="hidden">
+        <input name="searchstr" value="" type="hidden">
+        <input name="_mkt_disp" value="return" type="hidden">
+        <input name="_mkt_trk" value="id:066-EOV-335&amp;token:_mch-ubuntu.com-1473266321199-95160" type="hidden">
+        <input type="hidden" name="thankyoumessage" value="谢谢您的订阅！<br />当新的内容发布后您将开始接收邮件。您也可以点击邮件内的链接随时取消订阅。">
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://assets.ubuntu.com/v1/5d7e5bbf-jquery-2.2.0.min.js"></script>
+<script src="https://assets.ubuntu.com/v1/d55f58bb-jquery.validate.js"></script>
+<script>
+  $("#mktoForm_3647").validate({
+    errorPlacement: function(error, element) {
+      error.appendTo( element.parent().addClass( "p-form-validation is-error" ));
+      error.appendTo( element.addClass( "p-form-validation__input" ));
+    },
+    errorElement: "span",
+    errorClass: "p-form-validation__message"
+  });
+</script>
+<script src="{{ versioned_static('js/dist/forms.min.js') }}"></script>
