@@ -24,7 +24,7 @@ blog_views = BlogViews(
     api=Wordpress(session=session),
     tag_ids=[3265],
     blog_title="博客",
-    per_page=12,
+    per_page=11,
 )
 app.register_blueprint(build_blueprint(blog_views), url_prefix="/blog")
 
