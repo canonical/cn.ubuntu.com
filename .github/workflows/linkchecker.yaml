@@ -9,6 +9,7 @@ env:
 
 jobs:
   run-linkchecker:
+    if: github.repository == 'canonical-web-and-design/cn.ubuntu.com'
     runs-on: ubuntu-latest
 
     steps:
