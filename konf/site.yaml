@@ -2,6 +2,10 @@ domain: cn.ubuntu.com
 
 image: prod-comms.docker-registry.canonical.com/cn.ubuntu.com
 
+env:
+  - name: SENTRY_DSN
+    value: https://06096678a069442f9e6f72aa985f15ca@sentry.is.canonical.com//32
+
 useProxy: false
 
 readinessPath: "/_status/ping"
