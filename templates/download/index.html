@@ -17,60 +17,65 @@
     </div>
   </section>
 
-  <div class="p-strip--light is-deep is-bordered">
+  <section class="p-strip--light">
     <div class="row">
       <div class="col-12">
-        <h1>Ubuntu桌面下载</h1>
+        <h1>下载Ubuntu桌面版</h1>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 p-card--highlighted">
-        <h2>Ubuntu {{ releases.lts.full_version }} LTS</h2>
-        <div class="p-card__content row">
-          <div class="col-8">
-            <p>下载专为桌面PC和笔记本精心打造的Ubuntu长期支持 (<abbr title="Long-term support">LTS</abbr>) 版本，LTS意味着该版本将提供长期免费的安全更新维护支持至{{ releases.lts.eol }}年4月。</p>
-            <p><a href="https://wiki.ubuntu.com/{{ releases.lts.slug }}/ReleaseNotes" class="p-link--external">Ubuntu {{ releases.lts.short_version }} LTS 发布公告</a></p>
-            <p>推荐系统配置：</p>
-            <ul class="p-list">
-              <li class="p-list__item is-ticked">双核2 GHz处理器或更高</li>
-              <li class="p-list__item is-ticked">4 GB 系统内存</li>
-              <li class="p-list__item is-ticked">25 GB磁盘存储空间</li>
-              <li class="p-list__item is-ticked">支持DVD光驱刻录或USB口安装</li>
-              <li class="p-list__item is-ticked">互联网接入</li>
-            </ul>
-          </div>
-          <div class="col-4">
-            <p>
-                <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.lts.short_version }}-cn', 'eventValue' : undefined });">下载</a>
-            </p>
-            <p><small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">其他下载</a>。</small></p>
-          </div>
+    <div class="u-fixed-width">
+      <h2>Ubuntu {{ releases.lts.full_version }} LTS</h2>
+      <div class="row u-equal-height p-divider u-no-padding--left u-no-padding--right">
+        <div class="col-8 p-divider__block">
+          <p class="u-no-padding--top">下载专为桌面PC和笔记本精心打造的Ubuntu长期支持<abbr title="Long-term support">(LTS)</abbr>版本。LTS意为“长期支持”，一般为5年。LTS版本将提供免费安全和维护更新至{{ releases.lts.eol }}年4月。</p>
+          <p><a href="https://wiki.ubuntu.com/{{ releases.lts.slug }}/ReleaseNotes" class="p-link--external">Ubuntu {{ releases.lts.short_version }} LTS 发布日志</a></p>
+          <p>推荐的系统配置和要求：</p>
+          <ul class="p-list is-split">
+            <li class="p-list__item is-ticked">双核2 GHz处理器或更高</li>
+            <li class="p-list__item is-ticked">4 GB 系统内存</li>
+            <li class="p-list__item is-ticked">25 GB磁盘存储空间</li>
+            <li class="p-list__item is-ticked">可访问的互联网</li>
+            <li class="p-list__item is-ticked">光驱或USB安装介质</li>
+          </ul>
+        </div>
+        <div class="col-4">
+          <p>
+            <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.lts.short_version }}', 'eventValue' : undefined });">下载</a>
+            <script>performance.mark("Download (Desktop) button rendered")</script>
+          </p>
+          <p><small>如需其他版本的Ubuntu，包括BT下载，网络安装器，本地镜像站和历史版本，请访问<a href="https://ubuntu.com/download/alternative-downloads" class="p-link--external">其他下载页</a>。</small></p>
         </div>
       </div>
     </div>
+  
     {% if releases.latest.short_version > releases.lts.short_version %}
-    <div class="row">
-      <div class="col-12 p-card--highlighted">
-        <h2>Ubuntu {{ releases.latest.full_version }}</h2>
-        <div class="p-card__content row">
-          <div class="col-8">
-            <p>对于适用于台式机和笔记本电脑的Ubuntu系统的最新版本，{{ releases.latest.short_version }}将具有9个月的安全维护更新支持期（至{{ releases.latest.eol }}年7月）。</p>
-            <p><a href="https://wiki.ubuntu.com/{{ releases.latest.slug }}/ReleaseNotes" class="p-link--external">Ubuntu {{ releases.latest.full_version }} 发布日志</a></p>
-            <p>推荐系统配置与Ubuntu {{ releases.lts.short_version }} <abbr title="Long-term support">LTS</abbr>一致。</p>
-          </div>
-          <div class="col-4">
-            <p>
-              <a class="p-button--positive is-wide" href="http://releases.ubuntu.com/{{ releases.latest.short_version }}/ubuntu-{{ releases.latest.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.latest.short_version }}-cn', 'eventValue' : undefined });">直接下载</a>
-            </p>
-            <p>
-              <small>其他下载方式见此<a href="https://www.ubuntu.com/download/alternative-downloads">链接</a>。</small>
-            </p>
-          </div>
+    <div class="p-strip is-shallow">
+      <div class="u-fixed-width">
+        <hr>
+      </div>
+    </div>
+  
+    <div class="u-fixed-width">
+      <h2>Ubuntu {{ releases.latest.full_version }}</h2>
+      <div class="row u-equal-height p-divider u-no-padding--left u-no-padding--right">
+        <div class="col-8 p-divider__block">
+          <p class="u-no-padding--top">专为桌面PC和笔记本精心打造的最新版Ubuntu操作系统，Ubuntu {{ releases.latest.full_version }} 拥有9个月安全和维护更新支持至{{ releases.latest.eol }}年6月。</p>
+          <p>推荐的系统配置和要求与Ubuntu {{ releases.lts.full_version }} <abbr title="Long-term support">LTS</abbr>一致。</p>
+          <p><a href="https://wiki.ubuntu.com/{{ releases.latest.slug }}/ReleaseNotes" class="p-link--external">Ubuntu {{ releases.latest.short_version }}发布日志</a></p>
+        </div>
+        <div class="col-4">
+          <p>
+            <a class="p-button--positive is-wide js-latest-download" href="http://releases.ubuntu.com/{{ releases.latest.full_version }}/ubuntu-{{ releases.latest.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.latest.short_version }}', 'eventValue' : undefined });">下载</a>
+          </p>
+          <p>
+            <small><a href="https://ubuntu.com/download/alternative-downloads" class="p-link--external">其他下载和BT&nbsp;&rsaquo;</a></small>
+          </p>
         </div>
       </div>
     </div>
     {% endif %}
-  </div>
+  </section>
+ 
 
   <div class="p-strip is-bordered">
     <div class="row">
@@ -84,7 +89,7 @@
         <div class="p-card__content row">
           <div class="col-8">
             <p>Ubuntu服务器的长期支持版本将包含OpenStack，同样地安全更新也将支持至2025年4月，仅限64位平台。</p>
-            <p>此版本使用了全新的安装器———Subiquity。如你需要Subiquity安装器未包含的安装项，系统文件加密，可通过该<a href="https://www.ubuntu.com/download/alternative-downloads#alternate-ubuntu-server-installer">链接</a> 下载旧版安装器</p>
+            <p>此版本使用了全新的安装器———Subiquity。如你需要Subiquity安装器未包含的安装项，系统文件加密，可通过该<a href="https://www.ubuntu.com/download/alternative-downloads#alternate-ubuntu-server-installer">链接</a>下载旧版安装器。</p>
             <p>
               <a href="https://wiki.ubuntu.com/{{ releases.lts.slug }}/ReleaseNotes" class="p-link--external">Ubuntu {{ releases.lts.short_version }} LTS 发布公告</a>
             </p>
@@ -93,7 +98,7 @@
 
           <div class="col-4">
             <p>
-              <a href="/download/thank-you?version={{ releases.lts.full_version }}&amp;architecture=amd64" class="p-button--positive is-wide" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '{{ releases.lts.short_version }} Server-cn', 'eventValue' : undefined });">下载</a>
+              <a href="/download/thank-you?version={{ releases.lts.short_version }}&amp;architecture=amd64" class="p-button--positive is-wide" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '{{ releases.lts.short_version }} Server-cn', 'eventValue' : undefined });">下载</a>
             </p>
             <p><small>如需其他版本的Ubuntu，BT下载，网络安装器，本地镜像站，请参考<a href="https://www.ubuntu.com/download/alternative-downloads">此链接</a>。</small></p>
             <p>其他架构如ARM、Power、s390x可前往此链接<a href="http://cdimage.ubuntu.com/releases/{{ releases.lts.short_version }}/release/">下载</a>。</p>
@@ -176,8 +181,8 @@
       image(
           url="https://assets.ubuntu.com/v1/01d46dfe-setupubuntu.png",
           alt="",
-          width="400",
-          height="61",
+          width="512",
+          height="256",
           hi_def=True,
           loading="lazy",
       ) | safe
