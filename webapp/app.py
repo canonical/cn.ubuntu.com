@@ -1,7 +1,7 @@
 import yaml
 import talisker
 
-from canonicalwebteam.blog import build_blueprint, BlogViews, Wordpress
+from canonicalwebteam.blog import build_blueprint, BlogViews, BlogAPI
 from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
 from canonicalwebteam import image_template
@@ -21,10 +21,7 @@ app.add_url_rule("/", view_func=template_finder_view)
 app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
 blog_views = BlogViews(
-    api=Wordpress(session=session),
-    tag_ids=[3265],
-    blog_title="博客",
-    per_page=11,
+    api=BlogAPI(session=session), tag_ids=[3265], blog_title="博客", per_page=11,
 )
 app.register_blueprint(build_blueprint(blog_views), url_prefix="/blog")
 
