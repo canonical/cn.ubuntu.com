@@ -14,14 +14,14 @@ openstack_lts:
   slug: Ussuri
 previous_lts:
   short_version: "18.04"
-  full_version: "18.04.4"
+  full_version: "18.04.5"
 
 checksums:
   desktop:
     "20.04.1": "b45165ed3cd437b9ffad02a2aad22a4ddc69162470e2622982889ce5826f6e3d *ubuntu-20.04.1-desktop-amd64.iso"
-    "19.10": 96a8095001d447bbb9078925d72f7a77a3f62fbd78460093759af4394ce83d79 *ubuntu-19.10-desktop-amd64.iso
-    "18.04.4": c0d025e560d54434a925b3707f8686a7f588c42a5fbc609b8ea2447f88847041 *ubuntu-18.04.4-desktop-amd64.iso
+    "19.10": "96a8095001d447bbb9078925d72f7a77a3f62fbd78460093759af4394ce83d79 *ubuntu-19.10-desktop-amd64.iso"
+    "18.04.5": "f295570badb09a606d97ddfc3421d7bf210b4a81c07ba81e9c040eda6ddea6a0 *ubuntu-18.04.5-desktop-amd64.iso"
   live-server:
     "20.04.1": "443511f6bf12402c12503733059269a2e10dec602916c0a75263e5d990f6bb93 *ubuntu-20.04.1-live-server-amd64.iso"
-    "19.10": 3fe242f4b330ead8191b3c200bcf1d8d3be4243d62fe6b866a778499370c9dbb *ubuntu-19.10-live-server-amd64.iso
-    "18.04.4": 73b8d860e421000a6e35fdefbb0ec859b9385b0974cf8089f5d70a87de72f6b9 *ubuntu-18.04.4-live-server-amd64.iso
+    "19.10": "3fe242f4b330ead8191b3c200bcf1d8d3be4243d62fe6b866a778499370c9dbb *ubuntu-19.10-live-server-amd64.iso"
+    "18.04.5": "3756b3201007a88da35ee0957fbe6666c495fb3d8ef2e851ed2bd1115dc36446 *ubuntu-18.04.5-live-server-amd64.iso"
