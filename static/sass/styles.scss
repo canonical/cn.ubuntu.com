@@ -3,21 +3,24 @@
 @import 'settings';
 
 // Import Vanilla Framework
-@import "vanilla-framework/scss/build";
+@import 'vanilla-framework/scss/build';
 @import 'patterns_navigation';
 
 @include cn-p-navigation;
 
 // Import custom styles
-@import "custom/ubuntu_intro";
-@import "custom/heading-icon-small";
+@import 'custom/ubuntu_intro';
+@import 'custom/heading-icon-small';
 @import 'pattern_blog-post';
 @import 'pattern_blog-card';
 @import 'pattern_blog-list';
-@import "pattern_chart";
-@import "pattern_strip";
-@import "pattern_takeovers";
+@import 'pattern_chart';
+@import 'pattern_strip';
+@import 'pattern_takeovers';
 @import 'utility_crop';
+
+// import cookie policy
+@import '@canonical/cookie-policy/build/css/cookie-policy';
 
 @include blog-p-list;
 @include blog-p-post;
