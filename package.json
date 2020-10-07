@@ -43,6 +43,6 @@
   },
   "dependencies": {
     "@canonical/global-nav": "2.4.3",
-    "vanilla-framework": "2.16.0"
+    "vanilla-framework": "2.19.1"
   }
 }
