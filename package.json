@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@canonical/global-nav": "2.4.3",
-    "@canonical/cookie-policy": "3.0.3",
+    "@canonical/cookie-policy": "3.0.4",
     "vanilla-framework": "2.19.1"
   }
 }
