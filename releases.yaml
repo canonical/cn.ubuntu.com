@@ -1,27 +1,29 @@
 latest:
-  slug: EoanErmine
-  short_version: "19.10"
-  full_version: "19.10"
-  release_date: "October 2019"
-  eol: 2020
+  slug: GroovyGorilla
+  short_version: '20.10'
+  full_version: '20.10'
+  release_date: 'October 2020'
+  eol: 2021
 lts:
   slug: FocalFossa
-  short_version: "20.04"
-  full_version: "20.04.1"
-  release_date: "April 2020"
+  short_version: '20.04'
+  full_version: '20.04.1'
+  release_date: 'April 2020'
   eol: 2025
 openstack_lts:
   slug: Ussuri
 previous_lts:
-  short_version: "18.04"
-  full_version: "18.04.5"
+  short_version: '18.04'
+  full_version: '18.04.5'
 
 checksums:
   desktop:
-    "20.04.1": "b45165ed3cd437b9ffad02a2aad22a4ddc69162470e2622982889ce5826f6e3d *ubuntu-20.04.1-desktop-amd64.iso"
-    "19.10": "96a8095001d447bbb9078925d72f7a77a3f62fbd78460093759af4394ce83d79 *ubuntu-19.10-desktop-amd64.iso"
-    "18.04.5": "f295570badb09a606d97ddfc3421d7bf210b4a81c07ba81e9c040eda6ddea6a0 *ubuntu-18.04.5-desktop-amd64.iso"
+    '20.10': 'b45165ed3cd437b9ffad02a2aad22a4ddc69162470e2622982889ce5826f6e3d *ubuntu-20.10-desktop-amd64.iso'
+    '20.04.1': 'b45165ed3cd437b9ffad02a2aad22a4ddc69162470e2622982889ce5826f6e3d *ubuntu-20.04.1-desktop-amd64.iso'
+    '19.10': '96a8095001d447bbb9078925d72f7a77a3f62fbd78460093759af4394ce83d79 *ubuntu-19.10-desktop-amd64.iso'
+    '18.04.5': 'f295570badb09a606d97ddfc3421d7bf210b4a81c07ba81e9c040eda6ddea6a0 *ubuntu-18.04.5-desktop-amd64.iso'
   live-server:
-    "20.04.1": "443511f6bf12402c12503733059269a2e10dec602916c0a75263e5d990f6bb93 *ubuntu-20.04.1-live-server-amd64.iso"
-    "19.10": "3fe242f4b330ead8191b3c200bcf1d8d3be4243d62fe6b866a778499370c9dbb *ubuntu-19.10-live-server-amd64.iso"
-    "18.04.5": "3756b3201007a88da35ee0957fbe6666c495fb3d8ef2e851ed2bd1115dc36446 *ubuntu-18.04.5-live-server-amd64.iso"
+    '20.10': '443511f6bf12402c12503733059269a2e10dec602916c0a75263e5d990f6bb93 *ubuntu-20.10-live-server-amd64.iso'
+    '20.04.1': '443511f6bf12402c12503733059269a2e10dec602916c0a75263e5d990f6bb93 *ubuntu-20.04.1-live-server-amd64.iso'
+    '19.10': '3fe242f4b330ead8191b3c200bcf1d8d3be4243d62fe6b866a778499370c9dbb *ubuntu-19.10-live-server-amd64.iso'
+    '18.04.5': '3756b3201007a88da35ee0957fbe6666c495fb3d8ef2e851ed2bd1115dc36446 *ubuntu-18.04.5-live-server-amd64.iso'
