@@ -47,14 +47,14 @@
         </div>
       </div>
     </div>
-  
+
     {% if releases.latest.short_version > releases.lts.short_version %}
     <div class="p-strip is-shallow">
       <div class="u-fixed-width">
         <hr>
       </div>
     </div>
-  
+
     <div class="u-fixed-width">
       <h2>Ubuntu {{ releases.latest.full_version }}</h2>
       <div class="row u-equal-height p-divider u-no-padding--left u-no-padding--right">
@@ -68,14 +68,14 @@
             <a class="p-button--positive is-wide js-latest-download" href="http://releases.ubuntu.com/{{ releases.latest.full_version }}/ubuntu-{{ releases.latest.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.latest.short_version }}', 'eventValue' : undefined });">下载</a>
           </p>
           <p>
-            <small><a href="https://ubuntu.com/download/alternative-downloads" class="p-link--external">其他下载和BT&nbsp;&rsaquo;</a></small>
+            <small><a href="https://ubuntu.com/download/alternative-downloads" class="p-link--external">其他下载和BT</a></small>
           </p>
         </div>
       </div>
     </div>
     {% endif %}
   </section>
- 
+
 
   <div class="p-strip is-bordered">
     <div class="row">
@@ -112,7 +112,7 @@
         <h2>Ubuntu Server {{ releases.latest.full_version }}</h2>
         <div class="p-card__content row">
           <div class="col-8">
-            <p>最新版本Ubuntu Server，拥有9个月安全维护更新，支持到2020年7月。</p>
+            <p>最新版本Ubuntu Server，Ubuntu {{ releases.latest.full_version }} 拥有9个月安全维护更新，支持到{{ releases.latest.eol }}年6月。</p>
             <p>
               <a href="https://wiki.ubuntu.com/{{ releases.lts.slug }}/ReleaseNotes" class="p-link--external">Ubuntu {{ releases.latest.short_version }} LTS 发布公告</a>
             </p>
