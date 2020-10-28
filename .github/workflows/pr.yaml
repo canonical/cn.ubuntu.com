@@ -130,20 +130,11 @@ jobs:
 
       - uses: actions/checkout@v2
 
-      - name: Build Docker image
-        run: DOCKER_BUILDKIT=1 docker build --build-arg BUILD_ID=test --tag cn.ubuntu.com .
-
-      - name: Run server with Docker
-        run: docker run -p ${PORT}:80 --env SECRET_KEY=insecure_secret_key cn.ubuntu.com &
-
-      - name: Check server status
-        run: curl localhost:${PORT}/_status/check -I
-
       - name: Install linkchecker
         run: sudo apt update && sudo apt install linkchecker
 
       - name: Run linkchecker on live site
-        run: linkchecker --threads 2 --no-warnings --check-extern --ignore-url https://assets.ubuntu.com$ --ignore-url ".*(?:png|jpg|jpeg|gif|bmp|svg|js)$" --ignore-url /f_auto --ignore-url /q_auto --ignore-url /fl_sanitize --ignore-url /w_* --ignore-url /h_* --ignore-url https://www.gstatic.com$ --ignore-url https://res.cloudinary.com$ --ignore-url googleusercontent.com -o csv http://localhost:${PORT} > result.csv
+        run: linkchecker --threads 2 --no-warnings --check-extern --ignore-url https://assets.ubuntu.com$ --ignore-url ".*(?:png|jpg|jpeg|gif|bmp|svg|js)$" --ignore-url /f_auto --ignore-url /q_auto --ignore-url /fl_sanitize --ignore-url /w_* --ignore-url /h_* --ignore-url https://www.gstatic.com$ --ignore-url https://res.cloudinary.com$ --ignore-url googleusercontent.com -o csv https://cn.ubuntu.com > result.csv
 
       - name: Upload CSV to Spreadsheet
         uses: canonical-web-and-design/csv-to-google-spreadsheet@1.0.0
