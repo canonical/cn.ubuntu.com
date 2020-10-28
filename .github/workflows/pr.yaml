@@ -141,7 +141,7 @@ jobs:
         uses: canonical-web-and-design/csv-to-google-spreadsheet@1.0.0
         with:
           csv_path: result.csv
-          spreadsheet_id: ${{ secrets.google_spreadsheet_id }}
+          spreadsheet_id: ${{ secrets.GOOGLE_SPREADSHEET_ID }}
           worksheet: 0
-          google_service_account_email: ${{ secrets.google_service_account_email }}
-          google_service_account_private_key: ${{ secrets.google_service_account_private_key }}
+          google_service_account_email: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+          google_service_account_private_key: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY }}
