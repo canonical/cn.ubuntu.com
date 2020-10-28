@@ -1,0 +1,38 @@
+name: Run linkchecker on site PR
+
+on: pull_request
+
+env:
+  PORT: 8010
+
+jobs:
+  run-linkchecker:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: DOCKER_BUILDKIT=1 docker build --build-arg BUILD_ID=test --tag cn.ubuntu.com .
+
+      - name: Run server with Docker
+        run: docker run -p ${PORT}:80 --env SECRET_KEY=insecure_secret_key cn.ubuntu.com &
+
+      - name: Check server status
+        run: curl localhost:${PORT}/_status/check -I
+
+      - name: Install linkchecker
+        run: sudo apt update && sudo apt install linkchecker
+
+      - name: Run linkchecker on live site
+        run: linkchecker --threads 2 --no-warnings --check-extern --ignore-url https://assets.ubuntu.com$ --ignore-url ".*(?:png|jpg|jpeg|gif|bmp|svg|js)$" --ignore-url /f_auto --ignore-url /q_auto --ignore-url /fl_sanitize --ignore-url /w_* --ignore-url /h_* --ignore-url https://www.gstatic.com$ --ignore-url https://res.cloudinary.com$ --ignore-url googleusercontent.com -o csv http://localhost:${PORT} > result.csv
+
+     - name: Upload CSV to Spreadsheet
+       uses: canonical-web-and-design/csv-to-google-spreadsheet
+       with:
+         csv_path: result.csv
+         spreadsheet_id: ${{ secrets.google_spreadsheet_id }}
+         worksheet: 0
+         google_service_account_email: ${{ secrets.google_service_account_email }}
+         google_service_account_private_key: ${{ secrets.google_service_account_private_key }}
