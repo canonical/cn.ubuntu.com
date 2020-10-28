@@ -145,11 +145,11 @@ jobs:
       - name: Run linkchecker on live site
         run: linkchecker --threads 2 --no-warnings --check-extern --ignore-url https://assets.ubuntu.com$ --ignore-url ".*(?:png|jpg|jpeg|gif|bmp|svg|js)$" --ignore-url /f_auto --ignore-url /q_auto --ignore-url /fl_sanitize --ignore-url /w_* --ignore-url /h_* --ignore-url https://www.gstatic.com$ --ignore-url https://res.cloudinary.com$ --ignore-url googleusercontent.com -o csv http://localhost:${PORT} > result.csv
 
-     - name: Upload CSV to Spreadsheet
-       uses: canonical-web-and-design/csv-to-google-spreadsheet
-       with:
-         csv_path: result.csv
-         spreadsheet_id: ${{ secrets.google_spreadsheet_id }}
-         worksheet: 0
-         google_service_account_email: ${{ secrets.google_service_account_email }}
-         google_service_account_private_key: ${{ secrets.google_service_account_private_key }}
+      - name: Upload CSV to Spreadsheet
+        uses: canonical-web-and-design/csv-to-google-spreadsheet
+        with:
+          csv_path: result.csv
+          spreadsheet_id: ${{ secrets.google_spreadsheet_id }}
+          worksheet: 0
+          google_service_account_email: ${{ secrets.google_service_account_email }}
+          google_service_account_private_key: ${{ secrets.google_service_account_private_key }}
