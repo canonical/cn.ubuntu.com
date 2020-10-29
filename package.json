@@ -1,6 +1,6 @@
 {
   "name": "cn.ubuntu.com",
-  "description": "Django website for cn.ubuntu.com",
+  "description": "Website for cn.ubuntu.com",
   "scripts": {
     "test": "yarn run lint-scss && yarn run lint-python && yarn run test-python",
     "lint-python": "flake8 webapp tests && black --check --line-length 79 webapp tests",
