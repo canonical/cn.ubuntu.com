@@ -1,8 +1,7 @@
 {% extends "templates/base.html" %}
 
 {% if title %}{% block title %}桌面系统 {{ title }}{% endblock %}{% endif %}
-
-{% if meta_description %}{% block meta_description %}{{ meta_description }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}{{ meta_description }}Ubuntu桌面，Ubuntu {{ releases.lts.short_version }}下载，Ubuntu {{ releases.latest.full_version }}下载，Ubuntu笔记本，Ubuntu企业使用，人工智能开发，深度学习，Ubuntu认证{% endblock %}{% endif %}
 
 {% block content %}
 
