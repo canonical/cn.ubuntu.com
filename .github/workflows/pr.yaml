@@ -139,6 +139,10 @@ jobs:
       - name: Upload CSV to Spreadsheet
         if: always()
         uses: canonical-web-and-design/csv-to-google-spreadsheet@1.0.0
+        env:
+          INPUT_SPREADSHEET_ID: ${{ secrets.GOOGLE_SPREADSHEET_ID }}
+          INPUT_GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+          INPUT_GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY }}
         with:
           csv_path: result.csv
           spreadsheet_id: ${{ secrets.GOOGLE_SPREADSHEET_ID }}
