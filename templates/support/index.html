@@ -5,37 +5,6 @@
 
 {% block content %}
 
-<style>
-.p-inline-images__item {
-    margin: 1.875rem;
-    padding-right: 1.5rem;
-}
-
-.p-inline-images {
-    display: block;
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-    text-align: center;
-}
-
-.p-inline-images__item {
-    display: inline-block;
-    margin: 1rem;
-    overflow: hidden;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.u-fixed-width-1 {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 68rem;
-    width: 100%;
-}
-</style>
-
-
 <section class="p-strip--suru is-dark">
     <div class="row u-equal-height">
       <div class="col-8">
@@ -166,7 +135,7 @@
                 attrs={"class": "p-inline-images__logo", "id": ""},
             ) | safe
           }}
-        </li>
+        </li>       
         <li class="p-inline-images__item">
           {{
             image(
@@ -181,10 +150,23 @@
           }}
         </li>
         <li class="p-inline-images__item">
+          {{
+            image(
+                url="https://assets.ubuntu.com/v1/6c41357e-chinalife-logo.png",
+                alt="China life",
+                width="178",
+                height="65",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-inline-images__logo", "id": ""},
+            ) | safe
+          }}
+        </li>  
+        <li class="p-inline-images__item">
             {{
               image(
                   url="https://assets.ubuntu.com/v1/99381e78-hw-horizontal-.png",
-                  alt="Paypal",
+                  alt="Huawei",
                   width="166",
                   height="36",
                   hi_def=True,
@@ -206,46 +188,7 @@
               ) | safe
             }}
           </li>
-          <li class="p-inline-images__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/6c41357e-chinalife-logo.png",
-                  alt="China life",
-                  width="166",
-                  height="56",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-inline-images__logo", "id": ""},
-              ) | safe
-            }}
-          </li>          
-          <li class="p-inline-images__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/d49c6eb9-china_unicom-1.png",
-                  alt="China unicom",
-                  width="130",
-                  height="70",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-inline-images__logo", "id": ""},
-              ) | safe
-            }}
-          </li>
-          <li class="p-inline-images__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/8afbada5-cmbchina-logo.png",
-                  alt="cmbchina",
-                  width="150",
-                  height="65",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-inline-images__logo", "id": ""},
-              ) | safe
-            }}
-          </li>
-          
+                  
       </ul>
     </div>
   </section>
