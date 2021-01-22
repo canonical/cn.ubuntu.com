@@ -1,15 +1,26 @@
 {% extends "base_index.html" %}
 
-{% block takeover_content %}
-  <section id="takeover" class="js-takeover">
-    {% include "takeovers/_vmware-to-charmed-openstack.html" %}  
-  </section>
-{% endblock takeover_content %}
-
 {% block page_content %}
 
+<!-- Default Takeover: Download the latest Ubuntu -->
+<section data-lang="all" id="takeover" class="p-takeover--grad is-dark is-deep">
+  <div class="row p-takeover-animation" id="takeover-animation">
+    <div class="col-7 u-vertically-center">
+      <h1 id="takeover-title">Ubuntu {{ releases.latest.short_version }}有什么新功能 ? </h1>
+      <h4 id="takeover-subtitle">Raspberry Pi的Ubuntu桌面，最新的桌面功能和微云。</h4>
+      <div id="takeover-ctas">
+        <p><a id="takeover-primary-url" href="/download" class="p-button--positive">下载Ubuntu{{ releases.latest.short_version }}</a></p>
+      </div>
+    </div>
+    <div class="col-5 u-vertically-center u-align--center u-align--left-medium u-hide--small">
+      <img id="takeover-image" src="" width="200" alt="" />
+    </div>
+  </div>
+</section>
+
+
 <!-- Section 1: Hero -->
-<template id="takeovers" class="u-hide">
+<template class="u-hide">
   {% include "takeovers/_iot-webinar_session_5.html" %}
   {% include "takeovers/_redhat-openstack.html" %}
 </template>
@@ -136,70 +147,124 @@
 <script>
   function getPrimaryParentLanguage() {
     /**
-      * Get the primary parent language
-      *
-      * Get the user's default language, and if it's a sub-language,
-      * infer the parent language - e.g. for "en-GB", infer "en"
-      */
+    * Get the primary parent language
+    *
+    * Get the user's default language, and if it's a sub-language,
+    * infer the parent language - e.g. for "en-GB", infer "en"
+    */
     var language = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage;
+
     if (language.indexOf('-') !== -1 ) {
       language = language.split('-')[0];
     }
+
     return language
   };
+
   // get the users language and remove any extra detail suffix (e.g. -gb)
-  var language = getPrimaryParentLanguage();
+  var primaryParentLanguage = getPrimaryParentLanguage();
+
   // get notices matching the user language
-  var notices = document.querySelectorAll(".notice[lang=" + language + "]");
+  var notices = document.querySelectorAll(".notice[lang=" + primaryParentLanguage + "]");
+
   // display only one matching notice
   if (notices.length > 0) {
     notices[0].classList.remove("u-hide")
   }
-  if (window.localStorage && window.sessionStorage) {
+
+  var baseTakeover = document.getElementById('takeover');
+  var takeoverAnimation = document.getElementById("takeover-animation");
+
+  if (window.localStorage && baseTakeover) {
     /**
-      * Choose a takeover
-      * ===
-      *
-      * From the list of provided takeovers in the #takeovers template,
-      * choose one (that matches the client's language), and replace the
-      * base template with it.
-      */
-    var baseTakeover = document.getElementById('takeover');  // The base takeover element
-    var takeovers = document.getElementById('takeovers');  // The list of current takeovers to choose from
-    // Handle an empty template (ignoring whitespace characters)
-    if (takeovers.innerHTML.trim() !== ''){
-      // For browsers that support <template> (all but IE), grab the template's ".content"
-      takeovers = 'content' in takeovers ? takeovers.content: takeovers;
-      // First, select takeovers that don't specify a language and don't exclude the users language
-      var takeoverSelectors = [".js-takeover:not([lang]).js-takeover:not([lang-skip*=" + language + "])"];
-      // Add selectors to find takeovers for any of the user's languages
-      takeoverSelectors.push(".js-takeover[lang=" + language + "]");
-      takeoverSelectors.push(".js-takeover[data-lang-extra*=" + language + "]");
-      // Get the selected takeovers
-      var selectedTakeovers = (takeovers.querySelectorAll(takeoverSelectors.join(',')));
-      if (selectedTakeovers) {
-        var selectedIndex = null;
-        if (localStorage.getItem('selected_takeover_index') !== null) {
-          // If we previously chose a takeover, increment the number to show the next takeover
-          var nextIndex = parseInt(localStorage.getItem('selected_takeover_index')) + 1
-          selectedIndex = nextIndex < selectedTakeovers.length ? nextIndex : 0;
+    * Choose a takeover
+    * ===
+    *
+    * From the list of provided takeovers from /.takeovers.json,
+    * choose one (that matches the client's language), and replace the
+    * base template with it.
+    */
+
+    var xhr = new XMLHttpRequest();
+    if (window.ActiveXObject) {
+      xhr = new ActiveXObject('Microsoft.XMLHTTP');
+    }
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          var selectedTakeovers= JSON.parse(xhr.responseText);
+
+          if (selectedTakeovers && selectedTakeovers.length > 0) {
+            var selectedIndex = null;
+
+            if (window.localStorage.getItem('selected_takeover_index') !== null) {
+              // If we previously visited a takeover, increment the number to show the next takeover
+              var nextIndex = parseInt(window.localStorage.getItem('selected_takeover_index')) + 1
+              selectedIndex = nextIndex < selectedTakeovers.length ? nextIndex : 0;
+            } else {
+              // Otherwise, randomly choose one of the takeovers and store it for next time
+              selectedIndex = Math.floor(Math.random() * selectedTakeovers.length);
+            }
+            showTakeover(selectedTakeovers, selectedIndex);
+
+            // Store the current takeover index
+            localStorage.setItem('selected_takeover_index', selectedIndex)
+          }
         } else {
-          // Otherwise, randomly choose one of the takeovers and store it for next time
-          selectedIndex = Math.floor(Math.random() * selectedTakeovers.length);
+          takeoverAnimation.className = takeoverAnimation.className.replace(" is-loading", "");
+          takeoverAnimation.className +=  " is-loaded";
         }
-        // Store the current takeover
-        localStorage.setItem('selected_takeover_index', selectedIndex)
-        // Get the takeover element
-        var selectedTakeover = selectedTakeovers[selectedIndex];
-        if (! document.body.contains(selectedTakeover)) {
-          // If it's not in the current document (as in, it's in a template) import it
-          // Note: This is for all browser *except* IE, which doesn't support <template>s
-          selectedTakeover = document.importNode(selectedTakeover, true);
-        }
-        // Replace the base takeover with the new one
-        // Note: We can't use Node.replaceWith (which would be nice), as it's not supported in IE
-        baseTakeover.parentNode.replaceChild(selectedTakeover, baseTakeover);
       }
+    };
+
+    xhr.open("GET", "/takeovers.json", true);
+    xhr.send();
+    takeoverAnimation.className +=  " is-loading";
+  }
+
+  function showTakeover(takeovers, index) {
+    // Default parameter
+    index = typeof index !== 'undefined' ? index : 0;
+
+    // Get HTML elements
+    var takeover = document.getElementById("takeover");
+    var title = document.getElementById("takeover-title");
+    var subtitle = document.getElementById("takeover-subtitle");
+    var image = document.getElementById("takeover-image");
+    var primaryUrl = document.getElementById("takeover-primary-url");
+    var secondaryUrl = document.getElementById("takeover-secondary-url");
+
+    // Set values to homepage takeover
+    var selectedTakeover = takeovers[index];
+
+    takeover.className = "";
+    takeover.removeAttribute("style");
+
+    // Add takeover classes
+    var classNameString = "js-takeover p-takeover--" + selectedTakeover.class;
+    takeover.className += classNameString;
+
+    // Set takeover content
+    title.innerHTML = selectedTakeover.title;
+    subtitle.innerHTML = selectedTakeover.subtitle;
+    image.src = selectedTakeover.header_image;
+    image.onload = function () {
+      // Remove animation delay
+      if (takeoverAnimation) {
+        takeoverAnimation.className = takeoverAnimation.className.replace(" is-loading", "");
+        takeoverAnimation.className +=  " is-loaded";
+      }
+    }
+
+    image.removeAttribute("style");
+    image.width = selectedTakeover.image_width;
+    image.height = selectedTakeover.image_height;
+    primaryUrl.href = selectedTakeover.primary_url;
+    primaryUrl.textContent = selectedTakeover.primary_cta;
+    if (selectedTakeover.secondary_url && selectedTakeover.secondary_url !== "") {
+      secondaryUrl.href = selectedTakeover.secondary_url;
+      secondaryUrl.innerHTML = selectedTakeover.secondary_cta + "&nbsp;&rsaquo;";
     }
   }
 </script>

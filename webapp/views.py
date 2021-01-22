@@ -44,7 +44,11 @@ def engage_thank_you(engage_pages):
         engage_pages.parser.parse()
         page_url = f"/engage/{page}"
         index_topic_data = next(
-            (item for item in engage_pages.parser.metadata if item["path"] == page_url),
+            (
+                item
+                for item in engage_pages.parser.metadata
+                if item["path"] == page_url
+            ),
             None,
         )
 
@@ -54,10 +58,7 @@ def engage_thank_you(engage_pages):
             request_url = flask.request.referrer
             resource_name = index_topic_data["type"]
             resource_url = engage_page_data["metadata"]["resource_url"]
-            related = [
-                item
-                for item in engage_page_data["related"]
-            ]
+            related = [item for item in engage_page_data["related"]]
             template = "engage/thank-you.html"
 
             return flask.render_template(
