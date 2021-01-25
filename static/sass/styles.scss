@@ -31,8 +31,18 @@
 @include ubuntu-p-engage-banner;
 
 body {
-  overflow-x: hidden;
-  width: 100%;
+  border-top: 32px solid #262626; // Placeholder for global-nav
+
+  @media only screen and (min-width: $breakpoint-x-large) {
+    border-top-width: 36px;
+  }
+}
+
+.global-nav {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 // Custom fix for global nav padding, so it aligns with the indented logo
@@ -115,7 +125,7 @@ body {
 
 .p-takeover-animation {
   animation: FadeIn map-get($animation-duration, 'snap')
-   map-get($animation-easing, 'in');
+    map-get($animation-easing, 'in');
   animation-delay: 2.5s;
   animation-fill-mode: backwards;
 

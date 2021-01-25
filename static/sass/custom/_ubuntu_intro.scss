@@ -14,7 +14,7 @@
       background-position: right center;
       background-repeat: repeat-x;
       background-size: 10px;
-      content: "";
+      content: '';
       display: block;
       height: 20px;
       position: absolute;
@@ -43,7 +43,8 @@
 .intro-left,
 .intro-right {
   @media only screen and (min-width: 984px) {
-    background: url('../img/homepage/intro/image-intro-dots.svg') repeat-x right center;
+    background: url('../img/homepage/intro/image-intro-dots.svg') repeat-x right
+      center;
     background-size: 10px;
   }
 }
@@ -113,9 +114,10 @@
     &::after,
     &::before {
       display: block;
-      background: url('../img/homepage/intro/image-intro-dots.svg') repeat-x right center;
+      background: url('../img/homepage/intro/image-intro-dots.svg') repeat-x
+        right center;
       background-size: 10px;
-      content: "";
+      content: '';
       position: absolute;
       top: 60px;
     }
@@ -220,5 +222,5 @@
   align-self: center;
   height: 40px;
   margin-right: 1em;
-  margin-top: -.7em;
+  margin-top: -0.7em;
 }
