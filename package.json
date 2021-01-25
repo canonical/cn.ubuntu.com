@@ -1,5 +1,5 @@
 {
-  "name": "cn.ubuntu.com",
+  "name": "cn.ubuntu.com",      
   "description": "Website for cn.ubuntu.com",
   "scripts": {
     "test": "yarn run lint-scss && yarn run lint-python && yarn run test-python",
@@ -34,8 +34,11 @@
     "postcss-cli": "8.3.1",
     "prettier": "2.2.1",
     "stylelint": "13.8.0",
+    "stylelint-config-prettier": "8.0.2",
     "stylelint-config-standard": "20.0.0",
     "stylelint-order": "4.1.0",
+    "stylelint-prettier": "1.1.2",
+    "stylelint-scss": "3.18.0",
     "terser-webpack-plugin": "4.2.3",
     "watch-cli": "0.2.3",
     "webpack": "5.13.0",
