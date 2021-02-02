@@ -23,11 +23,11 @@ app = FlaskBase(
 
 # Engage pages and takeovers from Discourse
 # This section needs to provide takeover data for /
-authenticated_session = talisker.requests.get_session()
+session = talisker.requests.get_session()
 
-authenticated_discourse_api = DiscourseAPI(
+discourse_api = DiscourseAPI(
     base_url="https://discourse.ubuntu.com/",
-    session=authenticated_session,
+    session=session,
     api_key=os.getenv("DISCOURSE_API_KEY"),
     api_username=os.getenv("DISCOURSE_API_USERNAME"),
 )
@@ -35,7 +35,7 @@ authenticated_discourse_api = DiscourseAPI(
 engage_path = "/engage"
 engage_pages = EngagePages(
     parser=EngageParser(
-        api=authenticated_discourse_api,
+        api=discourse_api,
         index_topic_id=19117,
         url_prefix=engage_path,
     ),
