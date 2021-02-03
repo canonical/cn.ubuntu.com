@@ -1,0 +1,33 @@
+{% set hide_nav = False %}
+{% extends "engage/base_engage.html" %}
+
+{% block title %}Ubuntu case studies, whitepapers and webinars{% endblock %}
+
+{% block meta_description %}Resources from across Ubuntu and Canonical combined into a single portal{% endblock %}
+
+{% block meta_copydoc %}https://docs.google.com/spreadsheets/d/1UdExqv3PMnejaCISed340IehIhUmpKL-0AK5kumFk2M/edit#gid=0{% endblock meta_copydoc %}
+
+{% block content %}
+
+<section class="p-strip u-no-padding--bottom">
+  <div class="row">
+    <h1>Ubuntu case studies, whitepapers and webinars</h1>
+  </div>
+</section>
+
+<section class="p-strip is-shallow" id="posts-list">
+  <div class="row u-equal-height">
+    {% for item in metadata %}
+      {% with 
+      title=item.topic_name,
+      title_link=item.path,
+      description=item.subtitle,
+      type=item.type %}
+      {% include "/engage/shared/_article-card.html" %}
+      {% endwith %}
+    {% endfor %}
+
+  </div>
+
+</section>
+{% endblock content %}

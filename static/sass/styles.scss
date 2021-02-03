@@ -31,8 +31,18 @@
 @include ubuntu-p-engage-banner;
 
 body {
-  overflow-x: hidden;
-  width: 100%;
+  border-top: 32px solid #262626; // Placeholder for global-nav
+
+  @media only screen and (min-width: $breakpoint-x-large) {
+    border-top-width: 36px;
+  }
+}
+
+.global-nav {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 // Custom fix for global nav padding, so it aligns with the indented logo
@@ -79,5 +89,61 @@ body {
 
   a img {
     width: 143px;
+  }
+}
+
+// Homepage takeover animation
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes SlideInFromRight {
+  0% {
+    transform: translateX(0.5rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes SlideInFromLeft {
+  0% {
+    transform: translateX(-0.5rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.p-takeover-animation {
+  animation: FadeIn map-get($animation-duration, 'snap')
+    map-get($animation-easing, 'in');
+  animation-delay: 2.5s;
+  animation-fill-mode: backwards;
+
+  &.is-loaded {
+    animation-delay: 0s !important;
+
+    .col-7 {
+      animation: SlideInFromLeft map-get($animation-duration, 'fast')
+        map-get($animation-easing, 'out');
+    }
+
+    .col-5 {
+      animation: SlideInFromRight map-get($animation-duration, 'fast')
+        map-get($animation-easing, 'out');
+    }
+  }
+
+  &.is-loading {
+    animation-delay: 500s !important;
   }
 }
