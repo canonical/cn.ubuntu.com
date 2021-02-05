@@ -24,6 +24,6 @@ checksums:
     '18.04.5': 'f295570badb09a606d97ddfc3421d7bf210b4a81c07ba81e9c040eda6ddea6a0 *ubuntu-18.04.5-desktop-amd64.iso'
   live-server:
     '20.10': 'defdc1ad3af7b661fe2b4ee861fb6fdb5f52039389ef56da6efc05e6adfe3d45 *ubuntu-20.10-live-server-amd64.iso'
-    '20.04.2': 'd1f2bf834bbe9bb43faf16f9be992a6f3935e65be0edece1dee2aa6eb1767423 *ubuntu-20.04.1-live-server-amd64.iso'
+    '20.04.2': 'd1f2bf834bbe9bb43faf16f9be992a6f3935e65be0edece1dee2aa6eb1767423 *ubuntu-20.04.2-live-server-amd64.iso'
     '19.10': '3fe242f4b330ead8191b3c200bcf1d8d3be4243d62fe6b866a778499370c9dbb *ubuntu-19.10-live-server-amd64.iso'
     '18.04.5': '3756b3201007a88da35ee0957fbe6666c495fb3d8ef2e851ed2bd1115dc36446 *ubuntu-18.04.5-live-server-amd64.iso'
