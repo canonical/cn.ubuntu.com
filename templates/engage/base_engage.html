@@ -89,7 +89,7 @@
           {% include "engage/shared/_engage_form.html" %}
         {% endwith %}
       {% else %}
-      {% with id=document["metadata"]["form_id"], returnURL=document['metadata']['path']+"/thank-you" %}
+      {% with id=document["metadata"]["form_id"], returnURL=document['metadata']['path']+"/thank-you", cta="提交" %}
         {% include "engage/shared/_engage_form.html" %}
       {% endwith %}
       {% endif %}
