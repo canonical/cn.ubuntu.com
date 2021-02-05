@@ -19,7 +19,7 @@ previous_lts:
 checksums:
   desktop:
     '20.10': '3ef833828009fb69d5c584f3701d6946f89fa304757b7947e792f9491caa270e *ubuntu-20.10-desktop-amd64.iso'
-    '20.04.2': 'e2ce1771e352b04cfdef5bf6583f6a7d62b1f2967903fae512506d18d251a434 *ubuntu-20.04.1-desktop-amd64.iso'
+    '20.04.2': 'e2ce1771e352b04cfdef5bf6583f6a7d62b1f2967903fae512506d18d251a434 *ubuntu-20.04.2-desktop-amd64.iso'
     '19.10': '96a8095001d447bbb9078925d72f7a77a3f62fbd78460093759af4394ce83d79 *ubuntu-19.10-desktop-amd64.iso'
     '18.04.5': 'f295570badb09a606d97ddfc3421d7bf210b4a81c07ba81e9c040eda6ddea6a0 *ubuntu-18.04.5-desktop-amd64.iso'
   live-server:
