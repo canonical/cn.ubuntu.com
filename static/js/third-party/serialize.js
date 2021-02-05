@@ -17,7 +17,7 @@
  * @license MIT/GPL
  */
 function serialize(form) {
-  "use strict";
+  'use strict';
   var i,
     j,
     len,
@@ -29,52 +29,52 @@ function serialize(form) {
     // Tilde should be allowed unescaped in future versions of PHP (as reflected below), but if you want to reflect current
     // PHP behavior, you would need to add ".replace(/~/g, '%7E');" to the following.
     return encodeURIComponent(str)
-      .replace(/!/g, "%21")
-      .replace(/'/g, "%27")
-      .replace(/\(/g, "%28")
-      .replace(/\)/g, "%29")
-      .replace(/\*/g, "%2A")
-      .replace(/%20/g, "+");
+      .replace(/!/g, '%21')
+      .replace(/'/g, '%27')
+      .replace(/\(/g, '%28')
+      .replace(/\)/g, '%29')
+      .replace(/\*/g, '%2A')
+      .replace(/%20/g, '+');
   }
   function addNameValue(name, value) {
-    q.push(urlencode(name) + "=" + urlencode(value));
+    q.push(urlencode(name) + '=' + urlencode(value));
   }
-  if (!form || !form.nodeName || form.nodeName.toLowerCase() !== "form") {
-    throw "You must supply a form element";
+  if (!form || !form.nodeName || form.nodeName.toLowerCase() !== 'form') {
+    throw 'You must supply a form element';
   }
   for (i = 0, len = form.elements.length; i < len; i++) {
     formElement = form.elements[i];
-    if (formElement.name === "" || formElement.disabled) {
+    if (formElement.name === '' || formElement.disabled) {
       continue;
     }
     switch (formElement.nodeName.toLowerCase()) {
-      case "input":
+      case 'input':
         switch (formElement.type) {
-          case "checkbox":
-          case "radio":
+          case 'checkbox':
+          case 'radio':
             if (formElement.checked) {
               addNameValue(formElement.name, formElement.value);
             }
             break;
-          case "file":
+          case 'file':
             // addNameValue(formElement.name, formElement.value); // Will work and part of HTML4 "successful controls", but not used in jQuery
             break;
-          case "reset":
+          case 'reset':
             break;
           default:
             addNameValue(formElement.name, formElement.value);
             break;
         }
         break;
-      case "textarea":
+      case 'textarea':
         addNameValue(formElement.name, formElement.value);
         break;
-      case "select":
+      case 'select':
         switch (formElement.type) {
-          case "select-one":
+          case 'select-one':
             addNameValue(formElement.name, formElement.value);
             break;
-          case "select-multiple":
+          case 'select-multiple':
             for (j = 0, jLen = formElement.options.length; j < jLen; j++) {
               if (formElement.options[j].selected) {
                 addNameValue(formElement.name, formElement.options[j].value);
@@ -83,18 +83,18 @@ function serialize(form) {
             break;
         }
         break;
-      case "button": // jQuery does not submit these, though it is an HTML4 successful control
+      case 'button': // jQuery does not submit these, though it is an HTML4 successful control
         switch (formElement.type) {
-          case "reset":
-          case "submit":
-          case "button":
+          case 'reset':
+          case 'submit':
+          case 'button':
             addNameValue(formElement.name, formElement.value);
             break;
         }
         break;
     }
   }
-  return q.join("&");
+  return q.join('&');
 }
 
 export default serialize;
