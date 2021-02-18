@@ -8,6 +8,7 @@ lts:
   slug: FocalFossa
   short_version: '20.04'
   full_version: '20.04.2'
+  full_version_desktop: '20.04.2.0'
   release_date: 'April 2020'
   eol: 2025
 openstack_lts:
