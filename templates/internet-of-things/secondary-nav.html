@@ -1,0 +1,19 @@
+<nav class="p-navigation--secondary">
+  <div class="row">
+    <div class="col-12 u-equal-height">
+      <a class="p-navigation--secondary__banner u-hide--nav-threshold-down" href="/internet-of-things">
+        <h5 class="p-navigation--secondary__logo">
+          IoT
+        </h5>
+      </a>
+      <ul class="breadcrumbs--secondary">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link {% if request.path == '/internet-of-things' %}p-link--active{% else %}p-link--soft{% endif %}" href="/internet-of-things">概览</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link {% if request.path == '/internet-of-things/core' %}p-link--active{% else %}p-link--soft{% endif %}" href="/internet-of-things/core">Core</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
