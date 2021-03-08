@@ -1,0 +1,30 @@
+@mixin ubuntu-p-core {
+  @media only screen and (min-width: 461px) {
+    .p-banner-core {
+      background-blend-mode: multiply;
+      background-color: #f7f7f7;
+      background-image: url('https://assets.ubuntu.com/v1/071af59b-suru-left-lightgrey.svg'),
+        url('https://assets.ubuntu.com/v1/7d893432-suru-right-lightgrey.svg');
+      background-position: bottom left, top right;
+      background-size: contain;
+    }
+  }
+
+  @media only screen and (max-width: 460px) {
+    .p-banner-core {
+      background: #f7f7f7;
+    }
+  }
+
+  @media only screen and (min-width: 460px) {
+    .u-margin--core {
+      margin-top: 2rem;
+    }
+  }
+
+  .lazyloaded-fix {
+    margin-right: 1rem;
+    margin-top: 0.1rem;
+    width: 2.5rem;
+  }
+}

@@ -4,9 +4,10 @@
 
 // Import Vanilla Framework
 @import 'vanilla-framework/scss/build';
-@import 'patterns_navigation';
 
+@import 'patterns_navigation';
 @include cn-p-navigation;
+@include cn-p-secondary-navigation;
 
 // Import custom styles
 @import 'custom/ubuntu_intro';
@@ -15,6 +16,7 @@
 @import 'pattern_blog-card';
 @import 'pattern_blog-list';
 @import 'pattern_chart';
+@import 'pattern_core';
 @import 'pattern_strip';
 @import 'pattern_takeovers';
 @import 'utility_crop';
@@ -26,6 +28,7 @@
 @include blog-p-post;
 @include blog-p-card;
 @include blog-u-crop;
+@include ubuntu-p-core;
 @include ubuntu-p-strip;
 @include ubuntu-p-takeovers;
 @include ubuntu-p-engage-banner;
