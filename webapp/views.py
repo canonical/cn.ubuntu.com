@@ -66,6 +66,7 @@ def engage_thank_you(engage_pages):
                 request_url=request_url,
                 resource_name=resource_name,
                 resource_url=resource_url,
+                engage_page_data=engage_page_data["metadata"],
                 related=related,
             )
         else:
