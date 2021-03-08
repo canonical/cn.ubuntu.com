@@ -1,69 +1,7 @@
-{% extends "engage/base_engage.html" %}
-
-{% block title %}开发者选择Ubuntu桌面的六大理由{% endblock %}
-{% block meta_description %}最流行的linux os操作系统，开放者选择Ubuntu的六大理由{% endblock %}
-{% block meta_image %}https://assets.ubuntu.com/v1/a68a11b7-Dell+XPS+13-1804-1.png{% endblock %}
-
-{% block meta_copydoc %}https://docs.google.com/document/d/1bqD9QKDj6ZfRkn-vbDrHHE_Zrk81cA5hFLRHZYFzzSA{% endblock meta_copydoc %}
-
-{% block content %}
-<section class="p-strip p-takeover--developer-desktop">
-  <div class="u-fixed-width navigation-logo-engage">
-    <a href="/"><img src="https://assets.ubuntu.com/v1/f263d9c4-logo-ubuntu-white.svg" width="143" height="auto" alt="Ubuntu"></a>
-  </div>
-  <div class="row u-equal-height">
-    <div class="col-7 u-vertically-center">
-      <h1 class="p-takeover__title">开发者选择Ubuntu桌面的六大理由</h1>
-    </div>
-    <div class="col-5 u-vertically-center ">
-      <div class="u-align-text--center u-hide--small">
-        <img src="https://assets.ubuntu.com/v1/a68a11b7-Dell+XPS+13-1804-1.png?w=413" width="413" alt="Dell XPS laptop for developers running Ubuntu Desktop by default"/>
-      </div>
-      <p class="u-hide--medium u-hide--large ">
-        <a href="#the-form" class="p-button--positive"> 下载白皮书 </a>
-      </p>
-    </div>
-  </div>
-
-  <style>
-    .p-takeover--developer-desktop {
-      background-image: linear-gradient(74deg, #2C3037 0%, #1E1E1E 100%);
-      background-color: #2C3037;
-      background-size: cover;
-    }
-    .p-takeover--developer-desktop .p-takeover__title {
-      font-weight: 100;
-      color: #ffffff;
-      margin-bottom: 1rem;
-    }
-  </style>
-</section>
-
-<section class="p-strip is-shallow">
-  <div class="row">
-    <div class="col-7">
-        <p>全球排名第一的Linux操作系统（OS）Ubuntu桌面已被240多个国家/地区的政府，企业和消费者广泛使用。Ubuntu适用于各种应用程序（如机器人技术，人工智能，全栈Web开发和嵌入式设备）开发且具有强大的吸引力，很多技术领先的公司都在使用Ubuntu。</p>
-
-        <div class="u-align--center col-12 u-hide--small">
-              <img src="https://assets.ubuntu.com/v1/9406095a-Screenshot+from+2018-11-23+12-29-32.png?h=230" height="230" style="height:230px;" alt="Developers use Ubuntu all around the world">
-        </div>
-        <p>但是为什么如此受欢迎？ 本白皮书分析了开发人员转向Ubuntu的六个关键原因。 从AI，机器学习兴起到更安全的snap应用，开发者对Ubuntu的使用不断增加。</p>
-        <h3>白皮书亮点：</h3>
-        <ul class="p-list">
-            <li class="p-list__item is-ticked">无论是产品开始，还是平台端选择（云、服务器、IoT设备），Ubuntu桌面都是理想的平台。</li>
-            <li class="p-list__item is-ticked">Ubuntu社区提供了广泛的支持和知识库，更广泛的Linux生态系统和Canonical企业支持服务<a href="https://cn.ubuntu.com/blog/how-to-buy-ubuntu-subscription">Ubuntu Advantage</a> 。</li>
-            <li class="p-list__item is-ticked">广泛的软硬件兼容性认证使得开发过程更畅通无阻。</li>
-        </ul>
-
-
-    </div>
-    <div class="col-5">
-
-      <!-- MARKETO FORM -->
 <script src="https://assets.ubuntu.com/v1/37b1db88-jquery.min.js"></script>
 <script src="https://assets.ubuntu.com/v1/d55f58bb-jquery.validate.js"></script>
 <script src="https://assets.ubuntu.com/v1/6ce35d3e-jquery-ui.min.js"></script>&zwnj;&#8203;
-<form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_3488" style="margin-top: -1rem;" novalidate="novalidate">
+<form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_{{ id }}" style="margin-top: -1rem;" novalidate="novalidate">
  <fieldset class="u-no-padding--top" style="border-bottom-width: 1px; border-color:#cdcdcd;">
    <ul class="p-list">
      <li class="mktFormReq mktField p-list__item">
@@ -114,8 +52,8 @@
        <br />
      </li>
      <li class="mktField">
-       <button type="submit" class="mktoButton u-no-margin--bottom">下载白皮书</button>
-       <input name="formid" aria-label="formid" class="mktoField" value="3488" type="hidden">
+       <button type="submit" class="mktoButton u-no-margin--bottom">{{ cta }}</button>
+       <input name="formid" aria-label="formid" class="mktoField" value="{{ id }}" type="hidden">
        <input name="lpId" aria-label="lpId" class="mktoField " value="" type="hidden">
        <input name="subId" aria-label="subId" class="mktoField " value="" type="hidden">
        <input name="munchkinId" aria-label="munchkinId" class="mktoField " value="" type="hidden">
@@ -123,14 +61,17 @@
        <input name="cr" aria-label="cr" class="mktoField " value="" type="hidden">
        <input name="kw" aria-label="kw" class="mktoField " value="" type="hidden">
        <input name="q" aria-label="q" class="mktoField " value="" type="hidden">
+       <input type="hidden" aria-hidden="true" aria-label="hidden field" name="return_url" value="{{'https://cn.ubuntu.com' + returnURL}}" />
+       <input type="hidden" name="returnURL" aria-label="returnURL" value="{{'https://cn.ubuntu.com' + returnURL}}">
+       <input type="hidden" name="retURL" aria-label="retURL" value="{{'https://cn.ubuntu.com' + returnURL}}">
      </li>
    </ul>
  </fieldset>
- <input type="hidden" name="returnURL" aria-label="returnURL" value="https://cn.ubuntu.com/engage/thank_you_dd.html">
- <input type="hidden" name="retURL" aria-label="retURL" value="https://cn.ubuntu.com/engage/thank_you_dd.html">
+ <input type="hidden" name="returnURL" aria-label="returnURL" value="{{ 'https://cn.ubuntu.com' + returnURL }}">
+ <input type="hidden" name="retURL" aria-label="retURL" value="{{ 'https://cn.ubuntu.com' + returnURL }}">
 </form>
 <script>
- $("#mktoForm_3488").validate({
+ $("#mktoForm_{{ id }}").validate({
    errorElement: "span",
    errorClass: "mktFormMsg mktError",
    onkeyup: false,
@@ -150,8 +91,3 @@
  });
 </script>
 <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
-
-<!-- /MARKETO FORM -->
-  </div>
-</section>
-{% endblock content %}
