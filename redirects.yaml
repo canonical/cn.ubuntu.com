@@ -1,1 +1,2 @@
-(?P<page>.*).html: "/{page}"
+(?P<page>.*).html: '/{page}'
+iot(?P<path>.*)/?: '/internet-of-things{path}/'
