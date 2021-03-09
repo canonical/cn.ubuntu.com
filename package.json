@@ -47,6 +47,6 @@
   "dependencies": {
     "@canonical/global-nav": "2.4.5",
     "@canonical/cookie-policy": "3.2.0",
-    "vanilla-framework": "2.24.1"
+    "vanilla-framework": "2.25.1"
   }
 }
