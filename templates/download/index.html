@@ -237,24 +237,6 @@
       </p>
     </div>
   </section>
-
-  <script src="https://ubuntu.com/static/js/build/image-download.min.js?v=b575086"></script>
-  <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
-
-  <script defer>
-    var architecture = '{{ architecture }}';
-    var mirrors = {{ mirror_list | safe }};
-    var version = '{{ version }}';
-
-    if (version && architecture) {
-      var GAlabel = version + '-server-' + architecture;
-      var imagePath = version + '/ubuntu-' + version + '-live-server-' + architecture + '.iso';
-
-      window.initImageDownload(mirrors, imagePath, GAlabel);
-    }
-  </script>
-
-
 </div>
 
 {% endblock %}

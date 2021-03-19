@@ -14,10 +14,10 @@
       <div class="p-strip--suru-topped">
         <div class="row">
           <div class="col-8">
-            <h1>感谢下载Ubuntu Server {{ releases.lts.full_version }} LTS</h1>      
+            <h1>感谢下载Ubuntu Server {{ releases.lts.full_version }} LTS</h1>
             <p>您的下载将自动开始。如没有，请点击<a href="https://releases.ubuntu.com/{{ releases.lts.full_version }}/ubuntu-{{ releases.lts.full_version }}-live-server-amd64.iso">手动下载</a>。</p>
             <p>您可以通过对比<a href="https://releases.ubuntu.com/20.04/SHA256SUMS" class="p-link--external">SHA256SUMS</a>值来校验iso文件完整性，或者阅读<a href="https://ubuntu.com/tutorials/tutorial-install-ubuntu-server?backURL=https://cn.ubuntu.com/download/thank-you" class="p-link--external">安装教程</a>。</p>
-           
+
              </div>
         </div>
       </div>
@@ -156,75 +156,60 @@
     </section>
 
   <div class="p-strip">
-      <div class="row">
-        <h3>文档和资源</h3>
+    <div class="row">
+      <h3>文档和资源</h3>
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-4">
+        <h4><a href="http://www.ubuntu.com/server/docs" class="p-link--external">Ubuntu Server指南&nbsp;›</a></h4>
+        <p>Ubuntu Server的文档由社区和Ubuntu开发者编写。</p>
       </div>
-        <div class="row u-equal-height">
-          <div class="col-4">
-            <h4><a href="http://www.ubuntu.com/server/docs" class="p-link--external">Ubuntu Server指南&nbsp;›</a></h4>
-            <p>Ubuntu Server的文档由社区和Ubuntu开发者编写。</p>
-          </div>
-          <div class="col-4">
-            <h4><a href="https://askubuntu.com/" class="p-link--external">Ask Ubuntu</a></h4>
-            <p>在某个地方卡住了？让技术大咖们来回答您的Ubuntu问题。</p>
-          </div>
-          <div class="col-4">
-            <h4><a href="https://discourse.ubuntu.com/" class="p-link--external">Community Hub</a></h4>
-            <p>与Ubuntu开发者讨论并表达您的声音。</p>
-          </div>
-        </div>
+      <div class="col-4">
+        <h4><a href="https://askubuntu.com/" class="p-link--external">Ask Ubuntu</a></h4>
+        <p>在某个地方卡住了？让技术大咖们来回答您的Ubuntu问题。</p>
+      </div>
+      <div class="col-4">
+        <h4><a href="https://discourse.ubuntu.com/" class="p-link--external">Community Hub</a></h4>
+        <p>与Ubuntu开发者讨论并表达您的声音。</p>
+      </div>
+    </div>
 
-        <div class="u-fixed-width">
-          <hr class="p-separator">
-        </div>
+    <div class="u-fixed-width">
+      <hr class="p-separator">
+    </div>
 
-        <div class="row">
-          <div class="col-8">
-            <h3>在生产环境中使用Ubuntu？</h3>
-            <ul class="p-list">
-              <li class="p-list__item is-ticked">电话和工单支持</li>
-              <li class="p-list__item is-ticked">Livepatch kernel更新</li>
-              <li class="p-list__item is-ticked">Kubernetes和OpenStack更新</li>
-              <li class="p-list__item is-ticked">LTS版扩展更新维护（ESM）</li>
-            </ul>
-            <p>订阅Ubuntu Advantage基础设施版支持服务即可使用以上全部服务。</p>
-            <p><a href="https://ubuntu.com/advantage" class="p-button">了解更多</a></p>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-8">
+        <h3>在生产环境中使用Ubuntu？</h3>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">电话和工单支持</li>
+          <li class="p-list__item is-ticked">Livepatch kernel更新</li>
+          <li class="p-list__item is-ticked">Kubernetes和OpenStack更新</li>
+          <li class="p-list__item is-ticked">LTS版扩展更新维护（ESM）</li>
+        </ul>
+        <p>订阅Ubuntu Advantage基础设施版支持服务即可使用以上全部服务。</p>
+        <p><a href="https://ubuntu.com/advantage" class="p-button">了解更多</a></p>
+      </div>
+    </div>
 
-        <div class="u-fixed-width">
-          <hr class="p-separator">
-        </div>
+    <div class="u-fixed-width">
+      <hr class="p-separator">
+    </div>
 
-        <div class="row">
-          <div class="col-8">
-            <h3>其他内容</h3>
-            <ul class="p-list">
-              <li class="p-list__item is-ticked">
-                <a href="https://maas.io" class="p-link--external">用MAAS在大规模物理服务器上部署Ubuntu server</a>
-              </li>
-              <li class="p-list__item is-ticked">
-                <a href="https://landscape.canonical.com" class="p-link--external">用Landscape来管理和监控您的全部Ubuntu实例。</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-8">
+        <h3>其他内容</h3>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">
+            <a href="https://maas.io" class="p-link--external">用MAAS在大规模物理服务器上部署Ubuntu server</a>
+          </li>
+          <li class="p-list__item is-ticked">
+            <a href="https://landscape.canonical.com" class="p-link--external">用Landscape来管理和监控您的全部Ubuntu实例。</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-
-  <script src="https://ubuntu.com/static/js/build/image-download.min.js?v=b575086"></script>
-
-  <script defer>
-      var architecture = '{{ architecture }}';
-      var mirrors = {{ mirror_list | safe }};
-      var version = '{{ version }}';
-
-      if (version && architecture) {
-        var GAlabel = version + '-server-' + architecture;
-        var imagePath = version + '/ubuntu-' + version + '-live-server-' + architecture + '.iso';
-        window.initImageDownload(mirrors, imagePath, GAlabel);
-         }
-  </script>
-
 </div>
 
 {% endblock%}
