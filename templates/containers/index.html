@@ -4,6 +4,8 @@
 {% block meta_description %}{{ meta_description }}容器，container，LXD，Kubernetes，k8s，Docker{% endblock %}
 
 {% block content %}
+{% include "containers/secondary-nav.html" %}
+
 <style>
 .divcss5{color:#00F}
 </style>
@@ -16,24 +18,51 @@
       <h1>容器</h1>
       <h2>Ubuntu是容器的首选平台</h2>
       <p>从LXD到Kubernetes再到Docker，Canonical与行业领先的公司合作，提供全方位的技术和服务，帮助用户在公有云、私有云和混合云或裸机云上大规模运行容器。</p>
-      <p><a href="https://pages.ubuntu.com/contact-us-in-chinese.html" class="p-link--external" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - containers', 'eventValue' : undefined });">告知我们您的需求</a></p>
+      <p><a href="/contact" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - containers', 'eventValue' : undefined });">告知我们您的需求&nbsp;›</a></p>
       </div>
-      <div class="col-5 u-align--center u-hide--small">
-        <img class="u-float--right" src="https://assets.ubuntu.com/v1/a9aff224-Containers-illustration.svg" width="350" alt="">
+      <div class="col-5 u-vertically-center u-align--center u-hide--small">
+        <img class="u-float--right" src="https://assets.ubuntu.com/v1/72dcc529-containers-illustration_AW.svg" width="350" height="318" alt="container">
       </div>
     </div>
   </div>
 </div>
 
-<div class="p-strip--dark">
-  <div class="row u-equal-height">
-    <div class="col-4 u-vertically-center u-hide--small u-align--center">
-      <img src="https://assets.ubuntu.com/v1/3aa7e9a6-picto-articles-white.svg" width="175" alt="">
+<div class="p-strip--suru-accent is-dark">
+  <div class="row">
+    <div class="col-3 u-hide--small">
+      <div class="p-card">
+        {{
+          image(
+          url="https://assets.ubuntu.com/v1/9b153e96-lxd.svg",
+          alt="",
+          width="275",
+          height="275",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
     </div>
-    <div class="col-8">
-      <h2>容器，直接有效的业务加速器</h2>
-      <p>这份白皮书说明了容器为何如此受欢迎，以及如何在您的组织中利用它们。了解进程容器和计算机容器的优点。深入介绍用来操纵容器的两个主要软件工具：Docker和LXD。</p>
-      <p><a class="p-button--neutral u-no-margin--bottom" href="https://pages.ubuntu.com/container-whitepaper.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External Link', 'eventAction' : 'Container whitepaper: containers ', 'eventLabel' : 'Download the white paper', 'eventValue' : undefined });"><span class="p-link--external">下载白皮书</span></a></p>
+    <div class="col-8 col-start-large-5">
+      <div class="p-heading-icon--small">
+        <div class="p-heading-icon__header">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/4ab8ff35-Whitepaper+-+white.svg",
+              alt="",
+              height="32",
+              width="32",
+              hi_def=True,
+              loading="lazy",
+              attrs={"class": "p-heading-icon__img"},
+            ) | safe
+          }}
+          <p class="p-muted-heading u-sv3" style="color: #fff; line-height: 1.5rem;">白皮书</p>
+        </div>         
+        <h2>致CTO：容器是加速业务发展的最佳方式</h2>
+        <p>这份白皮书说明了容器在Linux平台上为何如此受欢迎，以及如何利用它们。了解Docker，Kubernetes和LXD的优势。</p>
+        <p><a class="p-button--neutral u-no-margin--bottom" href="https://pages.ubuntu.com/container-whitepaper.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External Link', 'eventAction' : 'Container whitepaper: containers ', 'eventLabel' : 'Download the white paper', 'eventValue' : undefined });"><span class="p-link--external">下载白皮书</span></a></p>
+      </div>
     </div>
   </div>
 </div>
@@ -101,7 +130,7 @@
 
   <div class="row">
     <div class="col-8 u-vertically-spaced">
-      <p><a class="p-link--external" href="https://www.ubuntu.com/containers/kubernetes">进一步了解Canonical的Kubernetes发行版</a></p>
+      <p><a class="" href="/containers/kubernetes">进一步了解Canonical的Kubernetes发行版&nbsp;›</a></p>
     </div>
   </div>
 </div>
@@ -192,8 +221,8 @@
         <li class="p-list__item is-ticked">为您的Ubuntu环境提供IP保障</li>
         <li class="p-list__item is-ticked">通过内核实时修补确保您拥有最新的内核安全更新&nbsp;updates</li>
       </ul>
-      <p><a href="https://buy.ubuntu.com/" class="p-button--positive p-link--external">访问Ubuntu Advantage商店</a></p>
-      <p>或者 <a href="https://pages.ubuntu.com/contact-us-in-chinese.html" class="p-link--external" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - containers', 'eventValue' : undefined });">联系我们</a></p>
+      <p><a href="/support" class="p-button--positive">获取支持服务</a></p>
+      <p>或者 <a href="/contact" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - containers', 'eventValue' : undefined });">联系我们</a></p>
 
 
     </div>

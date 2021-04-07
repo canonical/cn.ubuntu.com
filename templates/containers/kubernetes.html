@@ -4,6 +4,7 @@
 {% block meta_description %}容器，container，LXD，Kubernetes，k8s，Docker{{ meta_description }}{% endblock %}
 
 {% block content %}
+{% include "containers/secondary-nav.html" %}
 
 <section class="p-strip--suru-topped is-bordered">
     <div class="row u-equal-height u-vertically-center">
@@ -13,7 +14,7 @@
           Ubuntu是所有主要公有云上Kubernetes的参考平台，包括Google的GKE，微软的AKS和亚马逊的EKS CAAS等产品。我们提供经过广泛云测试的纯上游Kubernetes——从公有云到私有数据中心，从裸机到虚拟化基础架构。
         </p>
         <p>
-          <a class="p-button--positive" href="https://ubuntu.com/kubernetes/install">马上试试</a>
+          <a class="p-button--positive p-link--external" href="https://ubuntu.com/kubernetes/install">马上试试</a>
           <a class="js-invoke-modal" href="/contact">联系我们&nbsp;&rsaquo;</a>
         </p>
       </div>
@@ -40,7 +41,7 @@
     <div class="row u-equal-height">
       <div class="col-4 p-card">
         <h2 class="p-heading--four">MicroK8s</h2>
-        <p><em>工作站，运维，边缘计算 &amp; IoT物联网</em></p>
+        <p><em>工作站，开发运维，边缘计算 &amp; IoT</em></p>
         <hr class="u-sv1" />
         <ul class="p-list">
           <li class="p-list__item is-ticked">单一软件包安装</li>
@@ -69,8 +70,8 @@
         </ul>
         <p>使用Charmed Kubernetes在多个物理或虚拟机上部署，扩展和升级Kubernetes集群。Charmed Kubernetes包括长期支持，运营自动化能力以及集成Graylog，Prometheus和Grafana。</p>
   
-        <p><a href="/kubernetes/install">安装说明&nbsp;&rsaquo;</a></p>
-        <p><a href="/kubernetes/managed">全面托管的Kubernetes选项&nbsp;&rsaquo;</a></p>
+        <p><a href="https://ubuntu.com/kubernetes/install" class="p-link--external">安装说明&nbsp;&rsaquo;</a></p>
+        <p><a href="https://ubuntu.com/kubernetes/managed" class="p-link--external">全面托管的Kubernetes选项&nbsp;&rsaquo;</a></p>
         <p><a href="https://assets.ubuntu.com/v1/b5f9ae49-Enterprise_Kubernetes_Datasheet.pdf" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Download the Services datasheet', 'eventLabel' : 'Download the Services datasheet' : undefined });">Charmed Kubernetes产品手册&nbsp;&rsaquo;</a></p>
       </div>
   
@@ -86,7 +87,7 @@
           <a href="https://kubernetes.io/docs/setup/independent/install-kubeadm/" class="p-link--external">安装说明</a>
         </p>
         <p>
-          <a href="/kubernetes/contact-us?product=kubernetes-kubeadm" class="js-invoke-modal">获得kubeadm的支持&nbsp;&rsaquo;</a>
+          <a href="/contact">获得kubeadm的支持&nbsp;&rsaquo;</a>
         </p>
       </div>
     </div>
@@ -300,7 +301,7 @@
           <div class="p-matrix__content">
             <h3 class="p-matrix__title p-heading--four">全面托管</h3>
             <p class="p-matrix__desc">根据您的要求，Canonical的远程运营团队可以在内部或选择的公有云上为您构建和运行Kubernetes。只要需要，我们可以随时移交该集群的控制权给到您的运营团队。</p>
-            <p class="p-matrix__desc"><a href="/kubernetes/managed">Learn more about managed kubernetes&nbsp;&rsaquo;</a></p>
+            <p class="p-matrix__desc p-link--external"><a href="https://ubuntu.com/kubernetes/managed">了解更多托管的kubernetes内容&nbsp;&rsaquo;</a></p>
           </div>
         </li>
         <li class="p-matrix__item">
@@ -384,7 +385,7 @@
         </h2>
         <p>培训您的系统管理员和运维工程师，使其成为Ubuntu OpenStack，Ubuntu Server或Charmed Kubernetes专家。 Canonical运行培训计划以适合所有环境和所有级别的经验。充分利用您的投资。</p>
         <p>
-          <a href="https://ubuntu.com/training">了解更多关于培训相关的内容&nbsp;&rsaquo;</a>
+          <a href="https://ubuntu.com/training" class="p-link--external">了解更多关于培训相关的内容&nbsp;&rsaquo;</a>
         </p>
       </div>
       <div class="col-4 u-vertically-center u-align--center u-hide--small">
