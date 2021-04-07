@@ -34,10 +34,18 @@
     <div class="col-8">
       {% if 'pages.ubuntu.com' or 'assets.ubuntu.com' in resource_url %}
       <p>
-        你的{{ resource_name }}现已可下载... 
+        {% if ("thank_you_description" in engage_page_data) and (engage_page_data.thank_you_description != "") %}
+          {{ engage_page_data.thank_you_description }}
+        {% else %}
+          你的{{ resource_name }}现已可下载...
+        {% endif %}
       </p>
       <p>
-        <a class="p-button--positive" href="{{ resource_url }}">立即下载</a>
+        {% if ("thank_you_cta" in engage_page_data) and (engage_page_data.thank_you_cta != "") %}
+          <a class="p-button--positive" href="{{ resource_url }}">{{ engage_page_data.thank_you_cta }}</a>
+        {% else %}
+          <a class="p-button--positive" href="{{ resource_url }}">立即下载</a>
+        {% endif %}
       </p>
       {% else %}
         <p>

@@ -10,7 +10,7 @@ env:
 jobs:
   run-linkchecker:
     if: github.repository == 'canonical-web-and-design/cn.ubuntu.com'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
 
@@ -29,4 +29,4 @@ jobs:
         run: sudo apt update && sudo apt install linkchecker
 
       - name: Run linkchecker on live site
-        run: linkchecker --threads 2 --no-warnings --check-extern --ignore-url https://assets.ubuntu.com$ --ignore-url ".*(?:png|jpg|jpeg|gif|bmp|svg|js)$" --ignore-url /f_auto --ignore-url /q_auto --ignore-url /fl_sanitize --ignore-url /w_* --ignore-url /h_* --ignore-url https://www.gstatic.com$ --ignore-url https://res.cloudinary.com$ --ignore-url googleusercontent.com http://localhost:${PORT}
+        run: linkchecker --threads 2 --no-warnings --check-extern --ignore-url /blog --ignore-url https://assets.ubuntu.com$ --ignore-url ".*(?:png|jpg|jpeg|gif|bmp|svg|js)$" --ignore-url /f_auto --ignore-url /q_auto --ignore-url /fl_sanitize --ignore-url /w_* --ignore-url /h_* --ignore-url https://www.gstatic.com$ --ignore-url https://res.cloudinary.com$ --ignore-url googleusercontent.com http://localhost:${PORT}
