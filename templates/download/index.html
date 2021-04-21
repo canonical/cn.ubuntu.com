@@ -27,7 +27,7 @@
       <h2>Ubuntu {{ releases.lts.full_version_desktop }} LTS</h2>
       <div class="row u-equal-height p-divider u-no-padding--left u-no-padding--right">
         <div class="col-8 p-divider__block">
-          <p class="u-no-padding--top">下载专为桌面PC和笔记本精心打造的Ubuntu长期支持<abbr title="Long-term support">(LTS)</abbr>版本。LTS意为“长期支持”，一般为5年。LTS版本将提供免费安全和维护更新至{{ releases.lts.eol }}年4月。</p>
+          <p class="u-no-padding--top">下载专为桌面PC和笔记本精心打造的Ubuntu长期支持<abbr title="Long-term support">(LTS)</abbr>版本。LTS意为“长期支持”，一般为5年。LTS版本将提供免费安全和维护更新至{{ releases.lts.eol }}。</p>
           <p><a href="{{ releases.lts.release_notes_url }}" class="p-link--external">Ubuntu {{ releases.lts.short_version }} LTS 发布日志</a></p>
           <p>推荐的系统配置和要求：</p>
           <ul class="p-list is-split">
@@ -59,7 +59,7 @@
       <h2>Ubuntu {{ releases.latest.full_version }}</h2>
       <div class="row u-equal-height p-divider u-no-padding--left u-no-padding--right">
         <div class="col-8 p-divider__block">
-          <p class="u-no-padding--top">专为桌面PC和笔记本精心打造的最新版Ubuntu操作系统，Ubuntu {{ releases.latest.full_version }} 拥有9个月安全和维护更新支持至{{ releases.latest.eol }}年1月。</p>
+          <p class="u-no-padding--top">专为桌面PC和笔记本精心打造的最新版Ubuntu操作系统，Ubuntu {{ releases.latest.full_version }} 拥有9个月安全和维护更新支持至{{ releases.latest.eol }}。</p>
           <p>推荐的系统配置和要求与Ubuntu {{ releases.lts.full_version }} <abbr title="Long-term support">LTS</abbr>一致。</p>
           <p><a href="{{ releases.latest.release_notes_url }}">Ubuntu {{ releases.latest.short_version }}发布日志</a></p>
         </div>
@@ -88,7 +88,7 @@
         <h2>Ubuntu Server {{ releases.lts.full_version }} LTS</h2>
         <div class="p-card__content row">
           <div class="col-8">
-            <p>Ubuntu服务器的长期支持版本将包含OpenStack，同样地安全更新也将支持至2025年4月，仅限64位平台。</p>
+            <p>Ubuntu服务器的长期支持版本将包含OpenStack。同样地，安全更新也将支持至{{ releases.lts.eol }}，仅限64位平台。</p>
             <p>此版本使用了全新的安装器———Subiquity。如你需要Subiquity安装器未包含的安装项，系统文件加密，可通过该<a href="https://www.ubuntu.com/download/alternative-downloads#alternate-ubuntu-server-installer">链接</a>下载旧版安装器。</p>
             <p>
               <a href="{{ releases.lts.release_notes_url }}" class="p-link--external">Ubuntu {{ releases.lts.short_version }} LTS 发布公告</a>
@@ -112,7 +112,7 @@
         <h2>Ubuntu Server {{ releases.latest.full_version }}</h2>
         <div class="p-card__content row">
           <div class="col-8">
-            <p>最新版本Ubuntu Server，Ubuntu {{ releases.latest.full_version }} 拥有9个月安全维护更新，支持到{{ releases.latest.eol }}年1月。</p>
+            <p>最新版本Ubuntu Server，Ubuntu {{ releases.latest.full_version }} 拥有9个月安全维护更新，支持到{{ releases.latest.eol }}。</p>
             <p>
               <a href="{{ releases.latest.release_notes_url }}" class="p-link--external">Ubuntu {{ releases.latest.short_version }} 发布公告</a>
             </p>
