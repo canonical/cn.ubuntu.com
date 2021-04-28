@@ -1,18 +1,19 @@
 {% extends "templates/base.html" %}
 
 {% block title %}支持和服务 {{ page_title }}{% endblock %}
-{% block meta_description %}Ubuntu支持 Ubuntu企业版 Ubuntu许可证 Ubuntu官方支持 Linux企业服务 Linux企业支持 Ubuntu服务器支持{{ meta_description }}{% endblock %}
+{% block meta_description %}Ubuntu订阅 Ubuntu企业版 Ubuntu许可证 Ubuntu官方支持 Linux企业服务 Linux企业支持 Ubuntu服务器支持{{ meta_description }}{% endblock %}
 
 {% block content %}
+{% include "support/secondary-nav.html" %}
 
 <section class="p-strip--suru is-dark">
     <div class="row u-equal-height">
       <div class="col-8">
-        <h1>Ubuntu企业级支持服务</h1>
+        <h1>Ubuntu企业订阅服务</h1>
         <h4>适用于企业级安全，支持和托管的开源支持服务</h4>
         <p>通过Canonical，可对从数据中心到容器再到数据库，LMA，服务器和云原生应用程序整个堆栈进行永不过时的验证。</p>
-        <p>Ubuntu Advantage（企业支持服务）是单个、每节点的支持方案，为最全面的企业开源基础设施和应用程序提供安全和支持服务，且托管服务已可用。</p>
-        <p><a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a></p>
+        <p>Ubuntu Advantage（企业订阅服务，简称“UA”）是一站式、每节点的支持方案，为最全面的企业开源基础设施和应用程序提供安全和支持服务，且托管服务已可用。</p>
+        <p><a href="/support#ua-price" class="p-button--positive">价格列表</a><a href="/support#ua-srv" class="p-button--neutral">订阅服务内容</a></p>
       </div>
       <div class="col-4 u-hide--small u-vertically-center u-align--center">
         {{
@@ -868,7 +869,7 @@
     </div>
   </section>
 
-  <section class="p-strip--light is-deep">
+  <section class="p-strip--light is-deep" id="ua-srv">
     <div class="u-fixed-width">
       <table class="p-table">
         <thead>
@@ -878,7 +879,7 @@
             <th class="u-align--center"colspan="2"><h4>Ubuntu advantage</h4></th>
           </tr>
           <tr>
-            <th><em>方案</em></th>
+            <th><em>解决方案</em></th>
             <th><em>范围</em></th>
             <th class="u-align--center">基础设施</th>
             <th class="u-align--center">应用程序</th>
@@ -1190,7 +1191,7 @@
     </div>
   </section>
 
-  <section class="p-strip is-shallow is-bordered">
+<section class="p-strip is-shallow is-bordered" id="ua-price">
     <div class="row">
       <h2>企业使用计划</h2>
       
@@ -1199,10 +1200,13 @@
     <table class="p-table advantage-table">
       <thead>
         <tr>
-          <th><strong>包含内容</strong></th>
+          <th>&nbsp;</th>          
           <th class="u-align--center">基础版</th>
-          <th class="u-align--center">标准</th>
+          <th class="u-align--center">标准版</th>
           <th class="u-align--center">高级版</th>
+        </tr>
+        <tr>
+          <th colspan="4" style="background-color: #f7f7f7; padding: .75rem;"><strong>包含内容</strong></th>
         </tr>
       </thead>
       <tbody>
@@ -1267,6 +1271,9 @@
           <td class="u-align--center">更新和支持</td>
         </tr>
         <tr>
+          <th colspan="4" style="background-color: #f7f7f7;border-top: 1px solid rgba(0,0,0,0.1);padding: .50rem;"><strong>每年价格</strong></th>
+        </tr>
+        <tr>
           <td>物理服务器</td>
           <td class="u-align--center">$225</td>
           <td class="u-align--center">$750</td>
@@ -1279,7 +1286,7 @@
           <td class="u-align--center">$500</td>
         </tr>
         <tr>
-          <td>桌面</td>
+          <td>桌面系统</td>
           <td class="u-align--center">$25</td>
           <td class="u-align--center">$150</td>
           <td class="u-align--center">$300</td>
@@ -1290,7 +1297,7 @@
   <div class="row">
     <div class="col-12">
       <p><a class="p-button--neutral" href="/contact">联系和购买</a></p>
-      <small>注：上述服务内容仅适用于<a href="/support#hw-certified">Ubuntu认证硬件。</a></small>
+      <small>注：上述服务内容仅适用于<a href="/support#hw-certified">Ubuntu认证硬件</a>。</small>
     </div>
   </div>
 </div>
