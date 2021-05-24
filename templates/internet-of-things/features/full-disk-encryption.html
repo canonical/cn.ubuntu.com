@@ -1,0 +1,137 @@
+{% extends "templates/base.html" %}
+
+{% block title %}全盘加密{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}Ubuntu Core，物联网OS，Linux操作系统，嵌入式Linux，网关，机器人，智能驾驶，snap，snapcraft{%
+endblock %}
+
+{% block content %}
+{% include "internet-of-things/features/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped">
+  <div class="row u-equal-height">
+    <div class="col-7">
+      <h1>全盘加密</h1>
+      <p class="p-heading--4">IoT数据很敏感</p>
+      <p>工业物联网（IIoT）设备存储敏感数据，配置文件，日志文件，身份验证密钥和软件知识产权。任何对存储在设备上的数据完整性的妥协都可能造成破坏性后果。</p>
+      <p>如果不良行为者获得了对设备的物理访问权，他们可以提取用户数据。为了防止出现这种情况，需要使用加密技术来保护数据机密性。</p>
+    </div>
+    <div class="col-5 u-hide--small u-vertically-center u-align--center">
+      {{ image (
+      url="https://assets.ubuntu.com/v1/1fbe51df-UC20_Full-disc-encryption.svg",
+      alt="",
+      width="170",
+      height="170",
+      hi_def=True,
+      loading="lazy"
+      ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row u-align--center">
+    {{ image (
+    url="https://assets.ubuntu.com/v1/720e50fa-UC20_advanced_security_features.svg",
+    alt="Advanced security features",
+    width="900",
+    height="264",
+    hi_def=True,
+    loading="lazy"
+    ) | safe
+    }}
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row">
+    <h2>保护数据安全</h2>
+    <p>可以通过将机密存储在安全元素或可信平台模块（TPM）中，或通过支持专用存储的软件使用对称密钥加密来实现数据的安全性和完整性。</p>
+    <p>最可靠的技术是通过使用数字签名来以确保数据完整性。基于私钥的加密签名可以在签名时证明数据的真实性。签名数据的完整性可以验证，从而确保在应用软件和固件更新之前完整性。</p>
+    <p>这同样适用于验证配置和日志文件。签名操作通常在硬件信任根（例如TPM）中执行，在该信任根中也可以安全地存储签名密钥。</p>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row u-sv3">
+    <h2>Ubuntu Core上的全盘加密</h2>
+  </div>
+  <div class="row u-vertically-center">
+    <div class="p-card col-6 u-vertically-center">
+      <h3 class="p-card__title">ARM和x86</h3>
+      <p class="p-card__content">Ubuntu Core为全盘加密抽象了信任根的实现。因此，可为ARM和X86 SoC开启Ubuntu Core全盘加密。</p>
+    </div>
+    <div class="p-card col-6 u-vertically-center">
+      <h3 class="p-card__title">预认证的开发板免费</h3>
+      <p class="p-card__content">全盘加密已在<a class="p-link--external" href="https://certification.ubuntu.com/iot">认证的设备</a>，上通过TPM启用，无需额外成本。在未认证的开发板上，完整的认证Ubuntu Core需要适配费用。</p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row">
+    <h2>如何工作</h2>
+  </div>
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h3>数字签名</h3>
+      <p>Ubuntu Core使用数字签名来加密地确保数据完整性。基于私钥的加密签名可以在签名时证明数据的真实性。在工作流的任何时间点，都可以验证签名数据的完整性，从而在应用软件和固件更新之前确保完整性。</p>
+    </div>
+    <div class="col-4 u-vertically-center u-align--center u-hide--small">
+      {{ image (
+      url="https://assets.ubuntu.com/v1/2131b805-We+transfer+control.svg",
+      alt="Transfer control",
+      width="150",
+      height="150",
+      hi_def=True,
+      loading="lazy"
+      ) | safe
+      }}
+    </div>
+  </div>
+  <div class="u-fixed-width">
+    <hr class="p-separator" />
+  </div>
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h3>信任根</h3>
+      <p>通过将加密的私钥安全地存储在硬件/TPM中，或通过使用特别支持的软件使用对称密钥加密，来实现静止数据的完整性。磁盘上存储的敏感端点数据通过此密钥可以得到保护。</p>
+    </div>
+    <div class="col-4 u-vertically-center u-align--center u-hide--small">
+      {{ image (
+      url="https://assets.ubuntu.com/v1/aec863e2-Off+the+shelf.svg",
+      alt="",
+      width="200",
+      height="114",
+      hi_def=True,
+      loading="lazy"
+      ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light is-deep">
+  <div class="row u-equal-height">
+    <div class="col-5 u-align--center u-hide--small">
+      {{ image (
+      url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
+      alt="",
+      width="281",
+      height="200",
+      hi_def=True,
+      loading="lazy"
+      ) | safe
+      }}
+    </div>
+    <div class="col-7">
+      <h2>保护您的设备</h2>
+        <p>与Ubuntu安全专家联系，讨论您应用程序的高级安全要求。</p>
+        <p>
+          <a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a>
+        </p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

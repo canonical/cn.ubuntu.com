@@ -1,0 +1,231 @@
+{% extends "templates/base.html" %}
+
+{% block title %}Ubuntu Core特点{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}Ubuntu Core，物联网OS，Linux操作系统，嵌入式Linux，网关，机器人，智能驾驶，snap，snapcraft{% endblock %}
+
+{% block content %}
+{% include "internet-of-things/features/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped">
+    <div class="row">
+      <h1>Ubuntu Core特点概览</h1>
+      <p class="p-heading--4">Core上面都有哪些技术特点呢？</p>
+    </div>
+  </section>
+  
+  <section class="p-strip--light">
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h2>Snap应用</h2>
+        <p>Ubuntu Core是由一种安全，受限，自依赖，跨平台的Linux打包格式——snap应用构建的。Snap是完全自容器化，甚至可以封装自己的文件系统。这意味着snap包含在任何环境下运行所需一切。Ubuntu Core使用它们来组成在设备上运行的镜像，以提供一致且可靠的，甚至是低功率，无法访问和远程管理的嵌入式和IoT系统的软件更新。</p>
+        <p>
+          <a class="p-link--external" href="https://ubuntu.com/core/docs/snaps-in-ubuntu-core">了解更多snap相关的内容</a>
+        </p>
+      </div>
+      <div class="col-4 u-vertically-center u-align--center u-hide--small">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/a41bcb2f-UC20_Snapcraft_2.svg",
+          alt="Snap logo",
+          width="220",
+          height="191",
+          hi_def=True,
+          loading="auto|lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <hr class="p-separator" />
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h2>Snapd</h2>
+        <p>Snapd是管理和维护已安装snap应用的后台服务。就其各种服务和管理功能而言， snapd：</p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">提供一个用于安装和卸载snap应用以及与snap应用交互的API</li>
+          <li class="p-list__item is-ticked">实现从基础系统和其他snap应用中隔离snap应用的限制策略</li>
+          <li class="p-list__item is-ticked">控制允许snap应用访问其容器外部的特定系统资源的接口</li>
+        </ul>
+        <p>
+          <a class="p-link--external" href="https://github.com/snapcore/snapd">了解更多snapd相关的内容</a>
+        </p>
+      </div>
+      <div class="col-4 u-vertically-center u-align--center u-hide--small">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/c5cb0f8e-picto-ubuntu.svg",
+            alt="Ubuntu logo",
+            width="120",
+            height="120",
+            hi_def=True,
+            loading="lazy"
+            ) | safe
+          }}
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <hr class="p-separator" />
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h2>Snapcraft</h2>
+        <p>Snapcraft是一个用于构建和发布snap应用且功能强大和易用的工具。它帮助您: </p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">构建然后发布snap应用到您的IoT应用商店</li>
+          <li class="p-list__item is-ticked">精细化的更新和发布版本控制</li>
+          <li class="p-list__item is-ticked">通过一个受限的环境构建和调试snap应用</li>
+          <li class="p-list__item is-ticked">更新和迭代新的版本且无需重新搭建环境</li>
+          <li class="p-list__item is-ticked">本地测试和分享snap应用</li>
+        </ul>
+        <p><a class="p-link--external" href="https://snapcraft.io/docs/snapcraft-overview">了解更多Snapcraft相关的内容</a></p>
+      </div>
+      <div class="col-4 u-vertically-center u-align--center u-hide--small">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/146d23a2-snapcraft-logo-bird.svg",
+            alt="Snapcraft",
+            width="120",
+            height="114",
+            hi_def=True,
+            loading="lazy"
+            ) | safe
+          }}
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <hr class="p-separator" />
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h2>OTA更新</h2>
+        <p>Linux上正确的OTA更新</p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">事务化更新以提高可靠性</li>
+          <li class="p-list__item is-ticked">最大程度地减少网络流量</li>
+          <li class="p-list__item is-ticked">数字签名可确保完整性和出处</li>
+        </ul>
+        <p>
+          <a href="/internet-of-things/features/ota-updates">了解更多OTA更新相关的内容&nbsp;&rsaquo;</a>
+        </p>
+      </div>
+      <div class="col-4 u-vertically-center u-hide--small">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/a46ea917-3+-+Leverage+snaps+to+build+a+lean+custom+production+image.svg",
+            alt="Leverage snaps",
+            width="280",
+            height="180",
+            hi_def=True,
+            loading="lazy"
+            ) | safe
+          }}
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <hr class="p-separator" />
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h2>安全启动</h2>
+        <p>Ubuntu Core 20默认对启动过程进行认证，认证基于数字签名的验证。这意味着：</p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">引导序列中的每个组件都以加密方式验证引导序列中后续组件的真实性。</li>
+          <li class="p-list__item is-ticked">每个组件在加载到内存空间运行时前，都要对其进行检测。</li>
+          <li class="p-list__item is-ticked">如果检测到不正常或未签名的组件，引导过程将停止。</li>
+          <li class="p-list__item is-ticked">支持硬件和软件的信任根（Root of Trust）</li>
+        </ul>
+        <p>
+          <a href="/internet-of-things/features/secure-boot">了解更多安全启动相关的内容&nbsp;&rsaquo;</a>
+        </p>
+      </div>
+      <div class="col-4 u-align--center u-vertically-center u-hide--small">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/6ed19d21-UC20_Secure_boot.svg",
+            alt="Secure boot",
+            width="160",
+            height="160",
+            hi_def=True,
+            loading="lazy"
+            ) | safe
+          }}
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <hr class="p-separator" />
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h2>全盘加密</h2>
+        <p>Ubuntu Core使用数字签名来加密以确保数据完整性：</p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">磁盘使用基于私钥的加密技术锁定</li>
+          <li class="p-list__item is-ticked">安全地存储用于硬件，TPM和其他安全层的私钥</li>
+          <li class="p-list__item is-ticked">通过使用专门的软件存储来启用对称密钥加密</li>
+        </ul>
+        <p>
+          <a href="/internet-of-things/features/full-disk-encryption">了解更多全盘加密相关的内容&nbsp;&rsaquo;</a>
+        </p>
+      </div>
+      <div class="col-4 u-align--center u-vertically-center u-hide--small">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/1fbe51df-UC20_Full-disc-encryption.svg",
+            alt="Full disc encryption",
+            width="160",
+            height="160",
+            hi_def=True,
+            loading="lazy"
+            ) | safe
+          }}
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <hr class="p-separator" />
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h2>恢复模式</h2>
+        <p>Ubuntu Core提供了一种可以在启动时手动激活或通过API调用的远程激活的恢复模式。其还提供：</p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">一个管理恢复选项的图形用户界面</li>
+          <li class="p-list__item is-ticked">设置配置和软件物料清单的快照备份到恢复系统中</li>
+        </ul>
+        <p>
+          <a href="/internet-of-things/features/recovery">了解更多恢复模式相关的内容&nbsp;&rsaquo;</a>
+        </p>
+      </div>
+      <div class="col-4 u-align--center u-vertically-center u-hide--small">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/3bbf268f-UC20_Device_Recovery.svg",
+            alt="",
+            width="167",
+            height="200",
+            hi_def=True,
+            loading="lazy"
+            ) | safe
+          }}
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip">
+    <div class="row u-equal-height">
+      <div class="col-5 u-align--center u-hide--small">
+            {{ image (
+              url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
+              alt="",
+              width="281",
+              height="200",
+              hi_def=True,
+              loading="lazy"
+              ) | safe
+            }}
+      </div>
+      <div class="col-7">
+        <h2>保护您的设备</h2>
+        <p>与Ubuntu安全专家联系，讨论您应用程序的高级安全要求。</p>
+        <p>
+          <a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}

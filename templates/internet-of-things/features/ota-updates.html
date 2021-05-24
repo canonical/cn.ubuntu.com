@@ -1,0 +1,213 @@
+{% extends "templates/base.html" %}
+
+{% block title %}OTA更新{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}Ubuntu Core，物联网OS，Linux操作系统，嵌入式Linux，网关，机器人，智能驾驶，snap，snapcraft{% endblock %}
+
+{% block content %}
+{% include "internet-of-things/features/secondary-nav.html" %}
+
+<section class="p-strip--suru-bottomed">
+    <div class="row u-equal-height u-vertically-center">
+      <div class="col-7">
+      <h1>Linux上正确的OTA更新</h1>
+      <p>Ubuntu Core为Linux设备更新设定了涵盖内核，操作系统和应用程序的新标准。</p>
+      <p>事务化更新以提高可靠性。增量更新大幅降低带宽消耗。数字签名可确保完整性和出处。</p>
+      <p class="u-sv3">这就是智能设备的未来。</p>
+      <p>
+        <a class="p-button--positive p-link--external" href="https://ubuntu.com/internet-of-things/appstore">获取物联网应用商店</a>
+      </p>
+      <p>
+        <a class="p-link--external" href="https://ubuntu.com/engage/snapd-whitepaper">OTA更新白皮书（英文）</a>
+      </p>
+      </div>
+      <div class="col-5 u-hide--small u-align--center">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/fc3ca86d-bullet+proof.svg",
+          alt="",
+          width="230",
+          height="230",
+          hi_def=True,
+          loading="auto"
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-12 u-align--center u-vertically-center">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/46f1b890-IoT_field_updates_from_Cloud.svg",
+        alt="Iot field updates from cloud",
+        width="609",
+        height="364",
+        hi_def=True,
+        loading="auto"
+        ) | safe
+      }}
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip--light">
+    <div class="row">
+      <h2 class="u-sv2">可靠性</h2>
+    </div>
+    <div class="row u-equal-height u-vertically-center">
+      <div class="col-7">
+        <p class="p-heading--4">安全地向前和向后切换</p> 
+        <p>每次更新都会保留以前版本的代码和数据，因此您可以安全地在版本历史记录中前后切换应用程序。</p>
+      </div>
+      <div class="col-5 u-align--center u-hide--small">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/6c90dd33-OTA-GIF_5_Transparent.gif",
+          alt="Safely move forwards and backwards GIF",
+          width="300",
+          height="100",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+  
+    <div class="u-fixed-width">
+      <hr class="p-separator"/>
+    </div>
+  
+    <div class="row u-equal-height u-vertically-center">
+      <div class="col-5 u-align--center u-hide--small">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/bb60ec1a-OTA-GIF_1_Transparent.gif",
+          alt="Update streams GIF",
+          width="300",
+          height="100",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+      <div class="col-7">
+        <p class="p-heading--4">通道中的更新流</p>
+        <p>每个snap应用可提供多个更新流——通道，包含snap的版本和成熟度：edge，beta，stable（技术预览、测试版、稳定版）。您将知道切换至“3.2/stable”意味着您将在那台机器上获得些什么（变化）。</p>
+        <p>您可以尝试edge以了解即将到来的新功能，或在各个版本中实验以了解哪个版本最适合您。亦或固定在推荐的稳定分支。</p>
+      </div>
+    </div>
+  
+    <div class="u-fixed-width">
+      <hr class="p-separator"/>
+    </div>
+  
+    <div class="row u-equal-height u-vertically-center">
+      <div class="col-7">
+        <p class="p-heading--4">平稳的错误处理和自动恢复</p> 
+        <p>事情并非总是如我们所愿，但是snap应用具有自动恢复机制。如果错误发生在更新的任何时间点，Ubuntu Core将会停止更新，并且恢复到上一个正常工作的应用程序版本。</p>
+      </div>
+      <div class="col-5 u-align--center u-hide--small">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/a015f4cb-OTA-GIF_2_Transparent.gif",
+          alt="Error handling GIF",
+          width="300",
+          height="100",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip">
+  <div class="row">
+      <h2 class="u-sv2">效率</h2>
+    </div>
+    <div class="row u-equal-height u-vertically-center">
+      <div class="col-7">
+        <p class="p-heading--4">增量更新</p> 
+        <p>当您在大型组件中进行较小更改时，snap将自动计算一个二进制增量，以最大程度地减少分发该更新所需的流量和时间。</p>
+      </div>
+      <div class="col-5 u-align--center u-hide--small">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/8247250c-OTA-GIF_4_WHT.gif",
+          alt="Delta updates GIF",
+          width="300",
+          height="100",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+  
+    <div class="u-fixed-width">
+      <hr class="p-separator"/>
+    </div>
+  
+    <div class="row u-equal-height u-vertically-center">
+      <div class="col-5 u-align--center u-hide--small">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/454d7467-OTA-GIF_3_WHT.gif",
+          alt="Compressed and read only GIF",
+          width="300",
+          height="100",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+      <div class="col-7">
+        <p class="p-heading--4">压缩和只读</p>
+        <p>Snap应用中预载内容是被压缩的，并且在snap应用的整个生命周期内（即使在安装后的正常使用期间）仍保持压缩和只读状态。这意味着原始包摘要和签名永远不会被触及。</p>
+      </div>
+    </div>
+  
+    <div class="u-fixed-width">
+      <hr class="p-separator"/>
+    </div>
+  
+    <div class="row u-equal-height u-vertically-center">
+      <div class="col-7">
+        <p class="p-heading--4">安全的操作系统更新</p>
+        <p class="p-heading--5">一直持续的弹性和灵活性</p> 
+        <p>内核和基本操作系统都以snap的形式处理，因此适用于应用程序的所有优点也适用于系统基础。这意味着不仅可受益于Ubuntu Core快速且一致的更新，而且还可以通过自动回滚不正确更新的内核以实现平稳的错误处理。</p>
+      </div>
+      <div class="col-5 u-align--center u-hide--small">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/714e4c31-OTA_Stack_Case.svg",
+          alt="Safe operating system updates",
+          width="300",
+          height="130",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip--light">
+    <div class="row u-equal-height">
+      <div class="col-5 u-align--center u-hide--small">
+            {{ image (
+              url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
+              alt="Get in touch",
+              width="281",
+              height="200",
+              hi_def=True,
+              loading="lazy"
+              ) | safe
+            }}
+      </div>
+      <div class="col-7">
+        <h2>为OTA更新获取IoT应用商店</h2>
+        <p>获取您专属的基础架构，以对大规模设备进行安全管理和无缝软件更新。</p>
+        <p>
+          <a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+{% endblock %}

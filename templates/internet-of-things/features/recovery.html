@@ -1,0 +1,137 @@
+{% extends "templates/base.html" %}
+
+{% block title %}恢复模式{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}Ubuntu Core，物联网OS，Linux操作系统，嵌入式Linux，网关，机器人，智能驾驶，snap，snapcraft{% endblock %}
+
+{% block content %}
+{% include "internet-of-things/features/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped">
+    <div class="row u-equal-height">
+      <div class="col-7">
+      <h1>设备恢复</h1>
+      <p class="p-heading--4">现场设备维修成本高昂</p>
+        <p>现场手动修复IoT设备的成本通常会超出设备本身的成本。将操作员派遣到远程位置进行维护或干预，根据到现成的距离和设备的可访问性等不同因素可能会导致高昂的成本。而且，故障时间可能会导致额外的损失，如果是关键任务的设备，那么甚至更多。一个可靠的设备恢复系统对于避免这些成本和烦恼至关重要。</p>
+      </div>
+      <div class="col-5 u-hide--small u-vertically-center u-align--center">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/3bbf268f-UC20_Device_Recovery.svg",
+          alt="",
+          width="200",
+          height="246",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip--light">
+    <div class="row">
+      <h2>低接触的设备维护</h2>
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-7">
+        <p>现成设备的恢复应该是低接触式。物联网设备可能以成百上千或者成千上万地大规模部署。在这种规模下，维护运营成为了成本的重要驱动力。自动化和远程访问是低接触维护的关键。基本和重复的维护操作可以由操作系统自主执行。这使得设备操作员免于在大量设备上重复执行简单的维护任务，从而节省了大量时间。</p>
+        <p>为此，仅需要将复杂的维护操作上报给设备操作员。设备操作员可通过远程访问来执行与软件相关的复杂维护操作，避免了实际的成本，并且允许集中维护现场的所有设备——从而降低风险。</p>
+      </div>
+      <div class="col-5 u-align--center u-vertically-center u-hide--small">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/0adaa000-recovery+copy.jpg",
+          alt="",
+          width="400",
+          height="212",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip">
+    <div class="row u-sv3">
+      <h2>Ubuntu Core上设备恢复</h2>
+    </div>
+    <div class="row u-vertically-center">
+      <div class="p-card col-6 u-vertically-center">
+        <h3 class="p-card__title">ARM和x86</h3>
+        <p class="p-card__content">Ubuntu Core在ARM和x86 SoC上提供了一个稳健的设备恢复系统。设备可通过手动或者REST API远程恢复。</p>
+      </div>
+      <div class="p-card col-6 u-vertically-center">
+        <h3 class="p-card__title">预认证的开发板免费</h3>
+        <p class="p-card__content">恢复已在<a class="p-link--external" href="https://certification.ubuntu.com/iot">认证的设备</a>上可用，比如树莓派，无需额外成本。在未认证的开发板上，完整的认证Ubuntu Core需要适配费用。</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip--light">
+    <div class="row u-sv3">
+      <h2>如何工作</h2>
+      <p class="p-heading--4">Ubuntu Core 20引入了一个安全的恢复系统。</p>
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h3>恢复模式</h3>
+        <p>Ubuntu Core提供了一个在启动时可激活或远程API调用的恢复模式。在恢复模式中，Ubuntu Core提供了一个为用户进入恢复选项的用户界面。然后，操作系统将继续获取配置文件和预置了配置文件关联的snap应用。</p>
+      </div>
+      <div class="col-4 u-vertically-center u-align--center u-hide--small">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/f880a3bd-Enterprise+support.svg",
+          alt="",
+          width="150",
+          height="150",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <hr class="p-separator" />
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h3>快照</h3>
+        <p>在恢复系统中可以备份同一设备的多个快照（snapshot）。这些快照反映了设置配置和系统上已安装的snap应用的集合。设备操作员可以在恢复系统中创建，命名和保存此类快照，这样可以在需要时快速恢复所需的系统状态。可以通过专用UI手动进行恢复，也可以通过API调用远程地进行。</p>
+      </div>
+      <div class="col-4 u-vertically-center u-align--center u-hide--small">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/7de21966-snapshot.svg",
+          alt="",
+          width="150",
+          height="150",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip is-deep">
+    <div class="row u-equal-height">
+      <div class="col-5 u-align--center u-hide--small">
+            {{ image (
+              url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
+              alt="",
+              width="281",
+              height="200",
+              hi_def=True,
+              loading="lazy"
+              ) | safe
+            }}
+      </div>
+      <div class="col-7">
+        <h2>低接触设备恢复</h2>
+        <p>与Ubuntu安全专家联系，讨论您应用程序的高级安全要求。</p>
+        <p>
+          <a href="/contact" class="p-button--positive js-invoke-modal">Get in touch</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+{% endblock %}
