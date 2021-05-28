@@ -1,0 +1,286 @@
+@mixin ubuntu-p-cards {
+  @include ubuntu-card;
+  @include ubuntu-card-layout;
+  @include ubuntu-card-radio;
+}
+
+@mixin ubuntu-card {
+  .p-card--cloud-and-server {
+    @extend %p-card--highlighted;
+    @include vf-highlight-bar(#2b939c);
+  }
+
+  .p-card--internet-of-things {
+    @extend %p-card--highlighted;
+    @include vf-highlight-bar(#b0709d);
+  }
+
+  .p-card--desktop {
+    @extend %p-card--highlighted;
+    @include vf-highlight-bar(#66a2c1);
+  }
+
+  .p-card--canonical-announcements {
+    @extend %p-card--highlighted;
+    @include vf-highlight-bar(#ff8936);
+  }
+
+  .p-card.is-selected {
+    background-color: $color-mid-x-light;
+    border-color: $color-mid-dark;
+  }
+
+  .p-card.has-limited-height {
+    height: 20rem;
+  }
+
+  .p-card.has-limited-height--large {
+    height: 23.5rem;
+  }
+}
+
+@mixin ubuntu-card-layout {
+  .p-card--layout {
+    @extend %vf-card;
+    @extend %vf-is-bordered;
+    @extend %vf-has-round-corners;
+
+    display: flex;
+    flex-direction: column;
+
+    .p-card__header {
+      @extend %vf-pseudo-border--bottom;
+    }
+
+    .p-card__main {
+      padding-top: calc(#{$spv-inner--large} - 1px);
+    }
+
+    .p-card__footer {
+      margin-top: auto;
+    }
+  }
+}
+
+@mixin ubuntu-card-radio {
+  .radio-wrapper--staggering {
+    column-gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media only screen and (min-width: $breakpoint-medium) {
+      display: flex;
+      > div {
+        display: flex;
+        flex-basis: 0;
+        flex-direction: column;
+        flex-grow: 1;
+        > .image-wrapper {
+          height: 48px;
+          margin-bottom: 2.4rem;
+        }
+      }
+    }
+  }
+
+  .radio-wrapper--stacking {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      column-gap: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .p-card--radio--support {
+    @extend .p-card--radio;
+
+    > label {
+      font-weight: 400;
+
+      > small {
+        font-weight: normal;
+      }
+    }
+
+    > img {
+      height: 60px;
+      margin: 0 auto;
+      max-height: none;
+      width: 60px;
+    }
+
+    > p {
+      text-align: center;
+    }
+  }
+
+  .p-card--radio {
+    @extend %vf-card;
+    @extend %vf-is-bordered;
+    @extend %vf-has-round-corners;
+
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+
+    &:hover,
+    &.is-selected {
+      background-color: $color-light;
+    }
+
+    .p-card__title {
+      &--is-new {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        &::after {
+          background-color: #0e8420;
+          border-radius: 2px;
+          color: white;
+          content: 'New';
+          display: inline-block;
+          font-size: 1rem;
+          padding: 0 0.5rem;
+        }
+      }
+    }
+
+    img {
+      display: block;
+      margin: 1.2rem auto 0;
+      max-height: 48px;
+      max-width: 100%;
+      pointer-events: none;
+      width: auto;
+    }
+    [type='radio'] {
+      left: 0;
+
+      & + label {
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        max-width: none;
+        padding: 0;
+        position: initial;
+        text-align: center;
+        width: 100%;
+      }
+
+      & + label::after {
+        display: none;
+      }
+
+      & + label::before {
+        background: none;
+        border: none;
+        border-radius: 0;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+      }
+
+      &:focus + label::before {
+        border: 0.1875rem solid #2e96ff;
+        outline: none;
+      }
+    }
+  }
+
+  .p-card--radio--version {
+    @extend .p-card--radio;
+
+    padding: 3rem 1rem;
+
+    h4 {
+      margin: 0;
+    }
+
+    &.is-selected {
+      background-color: $color-light;
+      overflow: visible;
+      position: relative;
+
+      // Arrow
+      @media (min-width: $breakpoint-medium) {
+        &::after {
+          background: $color-light;
+          border-left: solid 1px $color-mid-light;
+          border-top: solid 1px $color-mid-light;
+          bottom: -41px;
+          content: '';
+          display: block;
+          height: 2rem;
+          left: calc(50% - 1rem);
+          pointer-events: none;
+          position: absolute;
+          transform: rotate(45deg) skew(-10deg, -10deg);
+          width: 2rem;
+          z-index: 5;
+        }
+      }
+      @media (min-width: $breakpoint-x-large) {
+        &::after {
+          bottom: -46px;
+        }
+      }
+    }
+  }
+
+  .p-card--radio--feature {
+    @extend .p-card--radio;
+    [type='radio'] {
+      & + label {
+        height: 100%;
+        text-align: left;
+      }
+    }
+
+    span {
+      margin-top: auto;
+      padding-left: 2rem;
+      position: relative;
+
+      &::before,
+      &::after {
+        background: white;
+        border-radius: 50%;
+        content: '';
+        position: absolute;
+        transition-duration: 0.333s;
+        transition-property: background-color, border-color;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+
+      &::before {
+        border: solid 1px #0000008f;
+        border-radius: 50%;
+        height: 1rem;
+        left: 0;
+        margin-right: 1rem;
+        outline-offset: 1px;
+        top: 0.2rem;
+        width: 1rem;
+      }
+      &::after {
+        height: 0.375rem;
+        left: 0.3125rem;
+        top: 0.5rem;
+        width: 0.375rem;
+      }
+    }
+
+    &.is-selected span::before {
+      background-color: #06c;
+      border-color: #06c;
+    }
+  }
+}

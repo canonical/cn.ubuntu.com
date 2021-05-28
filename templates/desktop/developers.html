@@ -1,0 +1,330 @@
+{% extends "templates/base.html" %}
+
+{% block title %}开发者{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}Ubuntu系统，Ubuntu 21.04，Ubuntu 20.04，Ubuntu 18.04，Ubuntu 16.04，snap，snapcraft{% endblock %}
+
+{% block content %}
+{% include "desktop/secondary-nav.html" %}
+
+<section class="u-image-position p-strip--suru-topped">
+    <div class="row u-equal-height">
+      <div class="col-6">
+        <h1>适用于开发人员的<br>Ubuntu桌面系统</h1>
+        <p>无论您是移动应用程序开发人员，工程经理，音乐或视频创作人员，还是要运行的大规模模型的财务分析师（即需要功能强大的机器来工作的任何人），Ubuntu都是理想的平台。</p>
+        <p><a href="/download" class="p-button--positive">下载Ubuntu</a></p>
+      </div>
+      <div class="col-6 u-vertically-center u-align--center u-hide--small">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/d998d55f-vscode.jpg?w=1000",
+            alt="",
+            height="300",
+            width="500",
+            hi_def=True,
+            attrs={"class": "col-6 u-vertically-center u-align--center u-hide--small"},
+            loading="auto",
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip--light">
+    <div class="u-fixed-width">
+      <h2>为什么要用Ubuntu来做开发？</h2>
+      <ul class="p-list is-split">
+        <li class="p-list__item is-ticked">在工作站，移动设备，服务器或云上从开发到部署的最快途径</li>
+        <li class="p-list__item is-ticked">最广泛，最好的开发工具和库</li>
+        <li class="p-list__item is-ticked">Snap应用商店中提供了例如Slack，Skype，Telegram和Discord等所有最受欢迎的生产力应用程序</li>
+        <li class="p-list__item is-ticked">Visual Studio Code和JetBrains IDE套件的官方snap版本已可用</li>
+        <li class="p-list__item is-ticked">开箱即用的nVIDIA GPU助您轻松地游戏和进行AI/ML开发</li>
+        <li class="p-list__item is-ticked">戴尔、联想和惠普提供已认证的AI和开发者笔记本电脑和工作站以获得无缝的，预装的Ubuntu体验</li>
+        <li class="p-list__item is-ticked">轻量的体验：实体安装或在虚拟机中运行</li>
+        <li class="p-list__item is-ticked">从数据挖掘到大规模财务建模——任何资源密集型环境的理想选择</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-6">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/a9948f53-desktop_graph.png",
+            alt="17% use Ubuntu over 3% for Debian",
+            height="380",
+            width="439",
+            hi_def=True,
+            loading="lazy"
+          ) | safe
+        }}
+        <p><small>来源：Eclipse社区调查，2014，Stackoverflow年度调查2016</small></p>
+        <p><small>*图表不包含非Linux操作系统</small></p>
+      </div>
+      <div class="col-6">
+        <h2>Ubuntu是您的好伙伴</h2>
+        <p>Ubuntu的多功能性，可靠性，不断更新的功能以及广泛的开发者软件库，使得Ubuntu现已被全球成千上万的开发团队所使用。</p>
+        <p>如果您正管理者开发者，Ubuntu是提高团队生产力并确保从开发到生产的平稳过渡的最佳方法。从数据中心到云再到物联网，Ubuntu是世界上最受欢迎的，用于开发和部署的开源操作系统。</p>
+        <p><a href="/cloud">了解更多关于Ubuntu云产品的内容&nbsp;&rsaquo;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip--light">
+    <div class="row">
+      <div class="col-8">
+        <h2>Ubuntu {{ releases.latest.short_version }}有哪些新特点？</h2>
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <ul class="p-list is-split">
+        <li class="p-list__item is-ticked">Linux 5.11内核</li>
+        <li class="p-list__item is-ticked">重新设计的默认的Yaru GNOME shell深色主题</li>
+        <li class="p-list__item is-ticked">Yaru主题中新的MIME类型图标</li>
+        <li class="p-list__item is-ticked">安全提升的和性能更好的Wayland现已为默认的显示服务器</li>
+        <li class="p-list__item is-ticked">Active directory集成已包含在安装器中</li>
+        <li class="p-list__item is-ticked">新的电源配置文件模式和改进的UI</li>
+        <li class="p-list__item is-ticked">为加密安装恢复密钥选项</li>
+        <li class="p-list__item is-ticked">私有的“家”目录</li>
+        <li class="p-list__item is-ticked">LibreOffice 7.1.2, Python 3.9, 火狐87, GNOME桌面3.38.5</li>
+      </ul>
+      <p><a class="p-link--external" href="https://discourse.ubuntu.com/t/hirsute-hippo-release-notes/19221">阅读完整的发布说明</a></p>
+    </div>
+  </section>
+
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-8">
+        <h2>Ubuntu {{ releases.lts.short_version }} LTS有哪些新特点？</h2>
+        <p>Ubuntu {{ releases.lts.short_version }}是最新的长期支持（LTS）版本。除了支持最新的硬件外，此版本包含很多新版本的核心软件和开发人员技术。</p>
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <ul class="p-list is-split">
+        <li class="p-list__item is-ticked">Linux 5.4内核</li>
+        <li class="p-list__item is-ticked">默认运行最快且响应速度最佳的GNOME桌面v3.36</li>
+        <li class="p-list__item is-ticked">新的默认主题Yaru，让Ubuntu焕然一新</li>
+        <li class="p-list__item is-ticked">改善WIFI设置，壁纸和活动视图的应用编组</li>
+        <li class="p-list__item is-ticked">从系统设置中直接切换浅色或深色环境</li>
+        <li class="p-list__item is-ticked">支持ZFS作为根文件系统以及zsys，以及系统快照，在快照和自动快照之间来回滚动</li>
+        <li class="p-list__item is-ticked">主流浏览器的最新版</li>
+        <li class="p-list__item is-ticked">LibreOffice 6.4</li>
+        <li class="p-list__item is-ticked">nVIDIA硬件的支持更友好</li>
+      </ul>
+      <p><a class="p-link--external" href="https://wiki.ubuntu.com/FocalFossa/ReleaseNotes">阅读完整的发布说明</a></p>
+    </div>
+  </section>
+
+  <section class="p-strip--light">
+    <div class="row u-vertically-center">
+      <div class="col-6">
+        <h2>开发人员需要的所有工具</h2>
+        <p>无论您的团队使用Python，Ruby，Node.js还是Java，没有任何一个操作系统比Ubuntu更容易设置。开发者所需的一切只需要使用<code>snap</code>或<code>apt</code>即可快速安装。 </p>
+        <p>想要为Ubuntu发布发布应用程序？Snapcraft可以帮助您吸引当前Ubuntu版本和其他流行的Linux发行版的所有用户。</p>
+        <p><a class="p-link--external" href="https://snapcraft.io">了解更多关于Snapcraft发布应用的内容</a></p>
+      </div>
+      <div class="col-6 u-hide--small u-align--center">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/24b49062-LOGOS.png",
+            alt="",
+            height="209",
+            width="290",
+            hi_def=True,
+            loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip--suru-accent is-dark">
+    <div class="u-fixed-width">
+      <blockquote class="p-pull-quote">
+        <p class="p-pull-quote__quote">我们希望能够在Linux上提供与其他平台相同的高质量体验。通过Snap，我们可以做到这一点，其让我们能够将最新功能直接推给用户，无论他们使用什么设备或发行版。</p>
+        <cite class="p-pull-quote__citation">Jonáš Tajrych, 微软Skype的高级软件工程师</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="p-strip">
+    <div class="row u-equal-height">
+      <div class="col-6">
+        <h2>使用Snapcraft来打包、分发和<br>更新应用程序</h2>
+        <p>Snap应用是将所有依赖项打包在一起的应用程序，开发一个版本即可在所有流行的Linux发行版上运行。Snap支持自动更新和平稳地回滚。无论您是为桌面系统，云计算还是物联网而开发，以snap应用发布使得用户保持最新，减少系统配置问题的发生，从而使您聚焦在开发上并减少调试工作。</p>
+        <p>Snapcraft是一种用于发布snap应用的开源工具，可对您现有的项目或所选语言进行打包，无论是Python，Go，C/C++，Node.js还是.NET。</p>   
+        <p><a class="p-link--external" href="https://snapcraft.io/">了解更多关于snap的内容</a></p>
+      </div>
+      <div class="col-5 col-start-large-7 u-align--center u-vertically-center">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/2210191e-snapcraft_green-red-white_hex.svg",
+            alt="",
+            height="248",
+            width="260",
+            hi_def=True,
+            attrs={"class": "u-hide--small"},
+            loading="lazy",
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip--light">
+    <div class="u-fixed-width">
+      <h2>开始开发Snap应用</h2>
+      <p>构建和发布snap应用的最简单方法是使用snapcraft，<br>支持从源码和现有应用程序包构建。</p>
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-4 p-card u-align--center">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/00e630da-Installation-instructions.svg",
+            alt="",
+            height="32",
+            width="32",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-card__icon"}
+          ) | safe
+        }}
+        <h3 class="p-card__title p-heading--four p-link--external"><a href="https://docs.snapcraft.io/installing-snapd">安装介绍</a></h3>
+      </div>
+      <div class="col-4 p-card u-align--center">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/c9dc2869-Use-snap-commands.svg",
+            alt="",
+            height="32",
+            width="32",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-card__icon"}
+          ) | safe
+        }}
+        <h3 class="p-card__title p-heading--four p-link--external"><a href="https://docs.snapcraft.io/getting-started">使用snap命令</a></h3>
+      </div>
+      <div class="col-4 p-card u-align--center ">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/d3aa493c-Build-your-first-snap.svg",
+            alt="",
+            height="32",
+            width="32",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-card__icon"}
+          ) | safe
+        }}
+        <h3 class="p-card__title p-heading--four p-link--external"><a href="https://snapcraft.io/first-snap">开发您的第一个snap</a></h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-7">
+        <h2>始于开发者，为了开发者</h2>
+        <p>Ubuntu是成千上万的开发者贡献的结果，出发点是希望创建属于自己的，完美的开发者环境。这就是为什么一些世界上领先的科技公司使用Ubuntu的原因，也是Valve决定将其广受欢迎的Steam虚拟游戏商店移植到Ubuntu的原因。
+           Ubuntu在从x86到ARM架构，从OpenStack到Azure和EC2的云平台上运行。这种多功能性使其成为拥有各种硬件基础架构公司的理想选择。</p>
+        <p><a class="p-link--external" href="https://certification.ubuntu.com/desktop">查看全部Ubuntu认证的PC</a></p>
+      </div>
+      <div class="col-5 u-vertically-center">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/b3061ad7-laptop-dev.png",
+            alt="",
+            height="249",
+            width="413",
+            hi_def=True,
+            loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip--suru-accent is-dark">
+    <div class="u-fixed-width">
+      <blockquote class="p-pull-quote">
+        <p class="p-pull-quote__quote">Ubuntu在开发人员中的受欢迎程度及其云功能使其已成为完美的OS。这就是为什么Ubuntu已预装在我们的第4代XPS 13笔记本电脑和新的Precision M3800移动工作站上的原因。</p>
+        <cite class="p-pull-quote__citation">Barton George，戴尔服务-开发者计划总监</cite>
+      </blockquote>
+      <p><a href="https://cn.ubuntu.com/blog/ubuntu-20-04-lts-dell-xps-13-intel-10-gen" class="p-link--external p-link--inverted">了解更多关于戴尔开发者版产品线的内容</a></p>
+    </div>
+  </section>
+
+  <section class="p-strip">
+    <div class="row u-equal-height u-vertically-center">
+      <div class="col-5">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/bda34a6e-wordpress-apache-mysql-bundle-trans.svg",
+            alt="",
+            height="394",
+            width="442",
+            hi_def=True,
+            loading="lazy"
+          ) | safe
+        }}
+      </div>
+      <div class="col-6 col-start-large-7">
+        <h2>部署更容易</h2>
+        <p>Ubuntu有着理想的简易和快速的部署体验。</p>
+        <p>在桌面上开发的服务可在服务器或云上无缝运行。Ubuntu还开发了服务编排工具Juju，其简化了开发团队和运营团队之间通常繁琐、复杂的移交工作，并且极大地加快了该过程。</p>
+        <p><a class="p-link--external" href="https://jujucharms.com/">了解更多Juju相关的内容</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-6">
+        <h2>为开发人员的需求量身定制的支持</h2>
+        <p>借助Ubuntu Advantage和Landscape，您可以标准化开发者工作站。它可以帮助您管理更新，安全补丁和创建报告，同时最大程度地减少停机时间。在保留所需控制权的同时，为您的开发者提供他们想要的自由。</p>
+        <p><a href="/support">了解更多关于Ubuntu Advantage的内容&nbsp;&rsaquo;</a></p>
+      </div>
+      <div class="col-5 col-start-large-8 u-hide--small u-vertically-center">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/71baccc3-ubuntu-advantage-circular.svg",
+            alt="",
+            height="350",
+            width="350",
+            hi_def=True,
+            loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+
+  <div class="p-strip p-contextual-footer">  
+    <div class="row p-divider">      
+      <div class="col-4 p-divider__block">
+        <h3 class="p-heading--four">下载和安装</h3>
+        <p>下载Ubuntu桌面，替换您当前的操作系统。在Windows或macOS上安装Ubuntu非常简单，或者与之共存运行。</p>
+        <p><a href="/download">立即下载&nbsp;›</a></p>
+      </div>       
+      
+      <div class="col-4 p-divider__block">
+        <h3 class="p-heading--four">购买预载的PC</h3>
+        <p>Ubuntu在世界上最大的硬件制造商（包括戴尔，惠普和联想）的各种设备上已可用。</p>
+        <p><a href="https://canonical.com/partners/desktop" class="p-link--external" ">查找认证的设备</a></p>
+      </div>       
+      
+      <div class="col-4 p-divider__block">
+        <h3 class="p-heading--four">加入我们的社区</h3>
+        <p>分享想法，编写代码，以及从我们活跃的，大型IT专家社区获得建议和帮助。</p>
+        <ul class="p-list is-split">
+          <li class="p-list__item"><a href="https://askubuntu.com/"  class="p-link--external">Ask Ubuntu</a></li>
+          <li class="p-list__item"><a href="https://lists.ubuntu.com" class="p-link--external">Mailing lists</a></li>
+          <li class="p-list__item"><a href="https://cn.ubuntu.com/blog">Ubuntu博客</a></li>
+          <li class="p-list__item"><a href="https://ubuntuforums.org/"  class="p-link--external">Ubuntu Forums</a></li>
+        </ul>
+      </div> 
+    </div>  
+  </div>
+
+{% endblock %}

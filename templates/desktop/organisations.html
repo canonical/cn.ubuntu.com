@@ -1,0 +1,312 @@
+{% extends "templates/base.html" %}
+
+{% block title %}企业与组织{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}Ubuntu系统，Ubuntu 21.04，Ubuntu 20.04，Ubuntu 18.04，Ubuntu 16.04，snap，snapcraft{% endblock %}
+
+{% block content %}
+{% include "desktop/secondary-nav.html" %}
+
+<section class="p-strip--image is-dark is-deep u-no-padding--top u-no-padding--bottom organisations-hero">
+    <div class="p-strip--suru-half-and-half-reversed">
+      <div class="row u-equal-height u-vertically-center">
+        <div class="col-6">
+          <h1>企业和组织中的Ubuntu</h1>
+          <p>大小团队都在用Ubuntu，因为它易于使用，高安全，拥有成本且种类繁多的应用程序。</p>
+          <p><a class="p-button--positive js-invoke-modal" href="/contact">联系我们</a></p>
+          <p><a href="/support" class="p-link--inverted">购买订阅服务&nbsp;&rsaquo;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip is-bordered">
+    <div class="u-fixed-width">
+      <h2>内置所有必需品</h2>
+      <ul class="p-list is-split">
+        <li class="p-list__item is-ticked">
+          长期支持（LTS）版本附带5年的安全补丁和更新
+        </li>
+        <li class="p-list__item is-ticked">
+          仅包含基础软件包以减少磁盘占用和安装时间
+        </li>
+        <li class="p-list__item is-ticked">
+          开源 &mdash; 不受许可限制
+        </li>
+        <li class="p-list__item is-ticked">
+          与微软office兼容的生产力套件
+        </li>
+        <li class="p-list__item is-ticked">
+          完整地翻译成100多种语言
+        </li>
+        <li class="p-list__item is-ticked">
+          提供现场咨询服务和培训
+        </li>
+        <li class="p-list__item is-ticked">
+          无病毒且高安全
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <section class="p-strip is-bordered">
+    <div class="u-fixed-width">
+      <h2>丰富的应用程序</h2>
+    </div>
+  
+    <div class="u-fixed-width">
+      <ul class="p-matrix is-trisected">
+        <li class="p-matrix__item">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/be731535-Logo-libreoffice.svg",
+              alt="",
+              height="48",
+              width="48",
+              hi_def=True,
+              attrs={"class": "p-matrix__img"},
+              loading="lazy",
+            ) | safe
+          }}
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title">LibreOffice</h3>
+            <p class="p-matrix__desc">兼容微软office的免费office生产力套件。</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/8a2851df-slack-icon-vanilla.svg",
+              alt="",
+              height="48",
+              width="48",
+              hi_def=True,
+              attrs={"class": "p-matrix__img"},
+              loading="lazy",
+            ) | safe
+          }}
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title">Slack</h3>
+            <p class="p-matrix__desc">面向21世纪的团队交流软件。</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/09b7a2e3-wavebox-logo.svg",
+              alt="",
+              height="48",
+              width="48",
+              hi_def=True,
+              attrs={"class": "p-matrix__img"},
+              loading="lazy",
+            ) | safe
+          }}
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title">Wavebox</h3>
+            <p class="p-matrix__desc">集成了Gmail，Inbox，Outlook，O365，Trello和Slack的Web通信客户端。</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/c9be8d47-Spotify_logo_without_text.svg",
+              alt="",
+              height="48",
+              width="48",
+              hi_def=True,
+              attrs={"class": "p-matrix__img"},
+              loading="lazy",
+            ) | safe
+          }}
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title">Spotify</h3>
+            <p class="p-matrix__desc">使用Spotify免费播放和串流您喜欢的歌曲，播放列表和专辑。</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/171fcf42-Chromium_11_Logo.svg",
+              alt="",
+              height="48",
+              width="48",
+              hi_def=True,
+              attrs={"class": "p-matrix__img"},
+              loading="lazy",
+            ) | safe
+          }}
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title">Chromium</h3>
+            <p class="p-matrix__desc">一个快速，简单，安全且专为现代网络而设计的网络浏览器。</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/3d6245f8-skype-icon.svg",
+              alt="",
+              height="48",
+              width="48",
+              hi_def=True,
+              attrs={"class": "p-matrix__img"},
+              loading="lazy",
+            ) | safe
+          }}
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title">Skype</h3>
+            <p class="p-matrix__desc">免费的即时通讯，语音或者视频通话服务。</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/11d81b4e-IntelliJ_IDEA_Logo.svg",
+              alt="",
+              height="48",
+              width="48",
+              hi_def=True,
+              attrs={"class": "p-matrix__img"},
+              loading="lazy",
+            ) | safe
+          }}
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title">Intellij</h3>
+            <p class="p-matrix__desc">功能强大且符合人体工程学的Java集成开发环境。</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/6e5fe7ef-logo-dropbox.svg",
+              alt="",
+              height="48",
+              width="48",
+              hi_def=True,
+              attrs={"class": "p-matrix__img"},
+              loading="lazy",
+            ) | safe
+          }}
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title">Dropbox</h3>
+            <p class="p-matrix__desc">球最受欢迎的云备份和文件共享服务。</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/27848067-Ora_logo.svg",
+              alt="",
+              height="48",
+              width="48",
+              hi_def=True,
+              attrs={"class": "p-matrix__img"},
+              loading="lazy",
+            ) | safe
+          }}
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title">Ora</h3>
+            <p class="p-matrix__desc">敏捷的任务管理和可视化的团队协作，Ora是您团队的指挥中心。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <section class="p-strip is-bordered">
+    <div class="row u-equal-height">
+      <div class="col-6">
+        <h2>Ubuntu处于安全性和可靠性的最前列</h2>
+        <p>您的Ubuntu软件在构建时就考虑到了高规格的安全性，从安装开始就一直保持安全，并且将一直保持下去，因为Canonical的安全专家团队将确保安全更新始终首先在Ubuntu上提供。</p>
+        <p><a class="p-link--external" href="https://ubuntu.com/security">了解更多关于Ubuntu安全相关的内容</a></p>
+      </div>
+      <div class="col-6 u-align--center u-vertically-center">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/d127abd7-safety+reliability.svg",
+            alt="",
+            height="200",
+            width="200",
+            hi_def=True,
+            loading="lazy",
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip--light is-bordered">
+    <div class="row">
+      <div class="col-6 u-hide--small">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/3e3f7d1f-hero-laptop.png",
+            alt="",
+            height="327",
+            width="567",
+            hi_def=True,
+            loading="lazy",
+          ) | safe
+        }}
+      </div>
+      <div class="col-6">
+        <h2>认证硬件上的预装</h2>
+        <p>Ubuntu在来自合作伙伴（如戴尔、惠普和联想）的全球最佳硬件上运行。主要的PC公司将近90％的PC已通过Ubuntu认证，所以很容易地找到适合您业务的硬件。</p>
+        <p><a class="p-link--external" href="https://certification.ubuntu.com">了解更多关于Ubuntu认证硬件的内容</a></p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip is-bordered">
+    <div class="row u-vertically-center">
+      <div class="col-6">
+        <h2>开发者的最爱</h2>
+        <p>Ubuntu的多功能性，可靠性，不断更新的功能以及广泛的开发者软件库，使得Ubuntu现已被全球成千上万的开发团队所使用。</p>
+        <p>如果您正管理者开发者，Ubuntu是提高团队生产力并确保从开发到生产的平稳过渡的最佳方法。</p>
+        <p><a href="/cloud">了解更多关于Ubuntu云产品的内容&nbsp;&rsaquo;</a></p>
+      </div>
+      <div class="col-6 u-hide--small">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/a64aed2d-most-popular-opensource-IOS.png",
+            alt="",
+            height="368",
+            width="428",
+            hi_def=True,
+            loading="lazy"
+          ) | safe
+        }}
+        <p>
+          <small>
+            来源：Eclipse社区调查，2014，Stackoverflow年度调查2016<br>
+            * 图表不包含非Linux操作系统
+          </small>
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip is-bordered">
+    <div class="row">
+      <div class="col-6">
+        <h2>支持和管理工具</h2>
+        <p>Ubuntu Advantage是来自Canonical专家的专业支持服务包。每天可以获得24小时的电话和工单支持，并可与有丰富经验的工程师联系。它还包括Ubuntu系统管理工具Landscape。Landscape为所有Ubuntu桌面提供集中的监控，管理，打补丁和合规性报告。</p>
+        <p><a href="/support">了解更多关于Ubuntu Advantage的内容&nbsp;&rsaquo;</a></p>
+      </div>
+      <div class="col-6 u-hide--small">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/4125e046-landscape_activity.png",
+            alt="",
+            height="350",
+            width="502",
+            hi_def=True,
+            loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+
+{% include "shared/_release_schedule.html" %}
+
+{% endblock %}
