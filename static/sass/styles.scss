@@ -20,6 +20,11 @@
 @import 'pattern_strip';
 @import 'pattern_takeovers';
 @import 'utility_crop';
+@import 'pattern_strip-photos';
+@import 'pattern_gaming';
+@import 'pattern_card';
+@import 'pattern_inline-images';
+@import 'pattern_contextual-footer';
 
 // import cookie policy
 @import '@canonical/cookie-policy/build/css/cookie-policy';
@@ -32,6 +37,11 @@
 @include ubuntu-p-strip;
 @include ubuntu-p-takeovers;
 @include ubuntu-p-engage-banner;
+@include ubuntu-p-strip-photos;
+@include ubuntu-p-gaming;
+@include ubuntu-p-cards;
+@include ubuntu-inline-images;
+@include ubuntu-p-contextual-footer;
 
 body {
   border-top: 32px solid #262626; // Placeholder for global-nav
@@ -59,7 +69,6 @@ body {
 .p-inline-images__item > img {
   max-height: 5rem;
   max-width: 9rem;
-  width: 100%;
 }
 
 // XXX Fix for missing borders, remove with Vanilla 2.X
@@ -150,3 +159,41 @@ body {
     animation-delay: 500s !important;
   }
 }
+
+//Fix for missing desktop-hero image and responsive layout
+.desktop-hero {
+  background-image: url("https://assets.ubuntu.com/v1/2a202263-hero-banner.jpg");
+  background-position: right bottom;
+  background-size: 1000px auto;
+
+  @media only screen and (min-width: 2000px) {
+    background-size: 75%;
+  }
+
+  &--subtext {
+    max-width: 28em;
+
+    @media only screen and (max-width: 874px) and (min-width: 620px) {
+      width: 50%;
+    }
+  }
+}
+
+//Fix for missing organisation-hero image and responsive layout
+.organisations-hero {
+  background-image: url("https://assets.ubuntu.com/v1/32d95e39-hero-laptop-org.jpg?w=1000");
+  background-position: right bottom;
+  background-size: 1100px auto;
+
+  @media only screen and (min-width: 2000px) {
+    background-size: 75%;
+  }
+}
+
+//Add p-card icon
+.p-card__icon {
+  display: inline-block;
+  height: 2rem;
+  margin-bottom: 1.25rem;
+}
+

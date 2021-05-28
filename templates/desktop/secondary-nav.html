@@ -1,0 +1,29 @@
+<nav class="p-navigation--secondary">
+    <div class="row">
+      <div class="col-12 u-equal-height">
+        <a class="p-navigation--secondary__banner u-hide--nav-threshold-down" href="/desktop">
+          <h5 class="p-navigation--secondary__logo">
+            桌面系统
+          </h5>
+        </a>
+        <ul class="breadcrumbs--secondary">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/desktop' %}p-link--active{% else %}p-link--soft{% endif %}" href="/desktop/index">概览</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/desktop/features' %}p-link--active{% else %}p-link--soft{% endif %}" href="/desktop/features">特点</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/desktop/organisations' %}p-link--active{% else %}p-link--soft{% endif %}" href="/desktop/organisations">企业和组织</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/desktop/developers' %}p-link--active{% else %}p-link--soft{% endif %}" href="/desktop/developers">开发者</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/desktop/partners' %}p-link--active{% else %}p-link--soft{% endif %}" href="/desktop/partners">合作伙伴</a>
+          </li>         
+        </ul>       
+      </div>
+    </div>
+  </nav>
+  

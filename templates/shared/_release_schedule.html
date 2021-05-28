@@ -1,0 +1,111 @@
+<div class="p-strip--light is-deep is-bordered">
+    <div class="u-fixed-width">
+      <h2 id="a-release-schedule-you-can-depend-on">一个您可信赖的发布时间表</h2>
+    </div>
+    <div class="u-fixed-width">
+      <p class="p-heading--four">通过定期的更新和升级保持最新</p>
+      {% if level_1 == 'desktop' %}
+      <p>每两年就会有一个新的Ubuntu桌面长期支持（LTS）版本，该版本将获得五年的支持。在此期间，将会提供免费的定期安全补丁和其他关键更新。</p>
+      {% endif %}
+      {% if level_1 == 'server' %}
+      <p>Canonical为Ubuntu Server长期支持版（LTS）提供默认五年的安全更新支持。每隔半年，中间版本会带来新的功能，硬件支持更新会在所有受支持的LTS版本中增加对最新硬件的支持。所有<a href="/support">Ubuntu Advantage for Infrastructure订阅服务</a>已包含<a href="/support/esm">扩展安全维护——Extended Security Maintenance (ESM)</a>使得支持周期最多延长至10年。</p>
+      {% endif %}
+    </div>
+    <div class="row">
+      <div class="col-10" style="overflow: auto;">
+        <div class="u-hide--small" id="server-desktop-eol"></div>
+        <table class="u-hide--medium u-hide--large" style="width: auto;">
+          <thead>
+            <tr>
+              <td>&nbsp;</td>
+              <th scope="col">Released</th>
+              <th scope="col">End of Life</th>
+              <th scope="col">Extended security maintenance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ubuntu 22.04 LTS</strong></td>
+              <td>April 2022</td>
+              <td>April 2027</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Ubuntu 21.10</td>
+              <td>October 2021</td>
+              <td>July 2022</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Ubuntu 21.04</td>
+              <td>April 2021</td>
+              <td>January 2022</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Ubuntu 20.10</td>
+              <td>October 2020</td>
+              <td>July 2021</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><strong>Ubuntu 20.04 LTS</strong></td>
+              <td>April 2020</td>
+              <td>April 2025</td>
+              <td>April 2030</td>
+            </tr>
+            <tr>
+              <td>Ubuntu 19.10</td>
+              <td>October 2019</td>
+              <td>July 2020</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Ubuntu 19.04</td>
+              <td>April 2019</td>
+              <td>January 2020</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Ubuntu 18.10</td>
+              <td>October 2018</td>
+              <td>July 2019</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><strong>Ubuntu 18.04 LTS</strong></td>
+              <td>April 2018</td>
+              <td>April 2023</td>
+              <td>April 2028</td>
+            </tr>
+            <tr>
+              <td><strong>Ubuntu 16.04 LTS</strong></td>
+              <td>April 2016</td>
+              <td>April 2021</td>
+              <td>April 2024</td>
+            </tr>
+            <tr>
+              <td><strong>Ubuntu 14.04 LTS</strong></td>
+              <td>April 2014</td>
+              <td>April 2019</td>
+              <td>April 2022</td>
+            </tr>
+            <tr>
+              <td><strong>Ubuntu 12.04 LTS</strong></td>
+              <td>April 2012</td>
+              <td>April 2017</td>
+              <td>April 2019</td>
+            </tr>
+            <tr>
+              <td><strong>Ubuntu 10.04 LTS</strong></td>
+              <td>April 2010</td>
+              <td>April 2015</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.5.0/d3.min.js"></script>
+  <script src="https://ubuntu.com/static/js/dist/release-chart.js?v=27f306a"></script>

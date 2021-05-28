@@ -1,0 +1,341 @@
+{% extends "templates/base.html" %}
+
+{% if title %}{% block title %}桌面系统 {{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}{{ meta_description }}Ubuntu桌面，Ubuntu {{ releases.lts.short_version }}下载，Ubuntu {{ releases.latest.full_version }}下载，Ubuntu笔记本，Ubuntu企业使用，人工智能开发，深度学习，Ubuntu认证{% endblock %}{% endif %}
+
+{% block content %}
+
+<section class="p-strip--image is-deep is-bordered" style="background-image:url('https://assets.ubuntu.com/v1/50c18622-insitu-laptop-overview.jpg?w=1800'); background-position: 0 75%; padding: 6.25rem 0; min-height: 573px">
+
+  <div class="row">
+    <div class="col-6">
+      <div class="p-card--overlay">
+        <h1>Ubuntu桌面操作系统</h1>
+        <p>了解Ubuntu桌面操作系统如何为世界各地的数百万台个人电脑和笔记本电脑提供支持。</p>
+        <a class="p-button--brand" href="/download" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'desktop', 'eventqiLabel' : 'desktop-download', 'eventValue' : undefined });">下载Ubuntu</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- snap store -->
+
+<div class="p-strip--light is-deep">
+  <div class="row">
+    <div class="col-6">
+      <h2>Snap应用商店</h2>
+      <p class="p-heading--five">Snap应用商店被数千万Linux系统所使用。它允许开发者为多种体系结构发布免费或付费应用程序，并且支持多发布通道。例如，从测试版到稳定版。</p>
+    </div>
+  </div>
+</div>
+
+<section class="p-strip is-deep">
+  <div class="row">
+    <div class="col-12">
+      <h2>精选snap推荐</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2016/07/vlc.png" alt="">
+          <a href="https://snapcraft.io/vlc">
+            <h5 class="p-heading-icon__title">VLC</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2017/11/Skype.png" alt="">
+          <a href="https://snapcraft.io/skype">
+            <h5 class="p-heading-icon__title">Skype</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2017/12/spotify-linux-256.png" alt="">
+          <a href="https://snapcraft.io/spotify">
+            <h5 class="p-heading-icon__title">Spotify</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2017/12/slack.png" alt="">
+          <a href="https://snapcraft.io/slack">
+            <h5 class="p-heading-icon__title">Slack</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2017/04/discord.png" alt="">
+          <a href="https://snapcraft.io/discord">
+            <h5 class="p-heading-icon__title">Discord</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2018/02/icon256.png" alt="">
+          <a href="https://snapcraft.io/telegram-desktop">
+            <h5 class="p-heading-icon__title">Telegram Desktop</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2017/11/256.png" alt="">
+          <a href="https://snapcraft.io/mailspring">
+            <h5 class="p-heading-icon__title">Mailspring</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2018/09/Powershell_black.ico.png" alt="">
+          <a href="https://snapcraft.io/powershell">
+            <h5 class="p-heading-icon__title">Powershell</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2018/07/opera_DrRnkh0.png" alt="">
+          <a href="https://snapcraft.io/opera">
+            <h5 class="p-heading-icon__title">Opera</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2018/03/rsz_android_studio_icon.png" alt="">
+          <a href="https://snapcraft.io/android-studio">
+            <h5 class="p-heading-icon__title">Android Studio</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2018/03/zenkit-small.png" alt="">
+          <a href="https://snapcraft.io/zenkit">
+            <h5 class="p-heading-icon__title">Zenkit</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2018/02/256x256.png" alt="">
+          <a href="https://snapcraft.io/bitwarden">
+            <h5 class="p-heading-icon__title">Bitwarden</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2018/04/Icon.ico.png" alt="">
+          <a href="https://snapcraft.io/tusk">
+            <h5 class="p-heading-icon__title">Tusk</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2017/04/brave-256px.png" alt="">
+          <a href="https://snapcraft.io/brave">
+            <h5 class="p-heading-icon__title">Brave</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2017/11/icon_CE_256_2Qe5uEl.png" alt="">
+          <a href="https://snapcraft.io/intellij-idea-community">
+            <h5 class="p-heading-icon__title">IDEA Community</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2018/07/xonotic_256x.png" alt="">
+          <a href="https://snapcraft.io/xonotic">
+            <h5 class="p-heading-icon__title">Xonotic</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2017/04/simplenote.png" alt="">
+          <a href="https://snapcraft.io/simplenote">
+            <h5 class="p-heading-icon__title">Simplenote</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2018/01/icon_IzCN8xA.png" alt="">
+          <a href="https://snapcraft.io/onlyoffice-desktopeditors">
+            <h5 class="p-heading-icon__title">ONLYOFFICE DesktopEditors</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2017/05/app_256.png" alt="">
+          <a href="https://snapcraft.io/wavebox">
+            <h5 class="p-heading-icon__title">wavebox</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 p-card">
+      <div class="p-heading-icon">
+        <div class="p-heading-icon__header">
+          <img class="p-heading-icon__img" src="https://dashboard.snapcraft.io/site_media/appmedia/2017/12/icon256_f9302jP.png" alt="">
+          <a href="https://snapcraft.io/0ad">
+            <h5 class="p-heading-icon__title">0 A.D.</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row">
+    <div class="col-12 u-align--center">
+      <h3 class="u-no-max-width">适合任何人的操作系统</h3>
+    </div>
+  </div>
+  <div class="row p-divider">
+    <div class="col-4 p-divider__block">
+      <h4>作为个人电脑</h4>
+      <p>既快速又安全、开源、免费，有数以千计的应用程序可供选择。从工作学习、到娱乐游戏，无所不能。</p>
+      <p>
+        <a class="p-link--external" href="http://tour.ubuntu.com/zh-CN/">试试在线模拟</a>
+      </p>
+    </div>
+    <div class="col-4 p-divider__block">
+      <h4>Snapcraft</h4>
+      <p>snap是全新的Linux应用格式包，拥有更安全、稳定、易维护更新等特点。snap由snapcraft打包而来，现在就开始制作自己的snap吧！</p>
+      <p>
+        <a href="http://snapcraft.io" class="p-link--external" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'snapcraft', 'eventLabel' : 'snapcraft-cnsite', 'eventValue' : undefined });">开始制作自己的snap</a>
+      </p>
+    </div>
+    <div class="col-4 p-divider__block">
+      <h4>Snapcraft论坛</h4>
+      <p>在打包snap的过程中，如你有遇到相关技术问题，都可以前往snapcraft论坛进行搜索和咨询。欢迎您的到来，让我们做得更好。</p>
+      <p>
+        <a href="http://forum.snapcraft.io" class="p-link--external" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'snapcraft', 'eventLabel' : 'snapcraft-cnsite', 'eventValue' : undefined });">立即前往</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row">
+    <div class="col-6">
+      <h3>Ubuntu Kylin</h3>
+      <p>优麒麟(英文名为Ubuntu Kylin)是基于Ubuntu的一款官方衍生版。 它是一款专门为中国市场打造的免费操作系统。它包括Ubuntu用户期待的各种功能，并配有必备的中文软件及程序。</p>
+      <p>
+        <a href="http://www.ubuntukylin.com/" class="p-link--external">了解更多有关优麒麟的信息</a>
+      </p>
+    </div>
+    <div class="col-6">
+      <img src="https://assets.ubuntu.com/v1/7d5e670b-dell-xps-laptop-front.png" alt="Kylin on an XPS laptop">
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row">
+    <div class="col-6">
+      <h3>优麒麟是由</h3>
+      <p>
+        <a class="p-link--external" href="http://www.canonical.com">Canonical</a>，<a class="p-link--external" href="http://www.csip.org.cn">工业和信息化部软件与集成电路促进中心（CSIP）</a>以及<a class="p-link--external" href="http://www.nudt.edu.cn">国防科学技术大学（NUDT）</a>携手打造。 目前，开发团队正在与开源社区合作打造Ubuntu的核心功能，以更好地适应中国用户。
+        除了Ubuntu软件中心推出的本土化版本以外，优麒麟还带最常用的中文程序。
+      </p>
+    </div>
+    <div class="col-6">
+      <ul class="p-inline-images">
+        <li class="p-inline-images__item">
+          <img src="https://assets.ubuntu.com/v1/e9ec49b2-logo-canonical-288.png" alt="Canonical" width="288" height="40">
+        </li>
+        <li class="p-inline-images__item">
+          <img src="https://assets.ubuntu.com/v1/b8b1a85b-logo-csip-180.png" alt="CSIP" width="180" height="71">
+        </li>
+        <li class="p-inline-images__item">
+          <img src="https://assets.ubuntu.com/v1/3c62e9e2-logo-nudt-288.png" alt="NUDT" width="288" height="72">
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
