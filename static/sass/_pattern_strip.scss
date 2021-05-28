@@ -56,6 +56,15 @@
         rgba(255, 255, 255, 1) 100%
       ),
       linear-gradient(-89deg, #e95420 0%, #772953 38%, #2c001e 85%);
+    background-position: 0% 0%, top right, right 0 bottom 4rem, right bottom,
+      0% 0%;
+    background-repeat: no-repeat;
+    background-size: 100% calc(100% - 4rem), 50% 100%, 100% 4rem, 100% 4rem,
+      auto;
+    margin-bottom: -4rem;
+    overflow: hidden;
+    padding-bottom: 12rem !important;
+    position: relative;
 
     @supports not (background-blend-mode: multiply) {
       background-image: linear-gradient(
@@ -86,16 +95,6 @@
         ),
         linear-gradient(-89deg, #e95420 0%, #772953 38%, #2c001e 85%);
     }
-
-    background-position: 0% 0%, top right, right 0 bottom 4rem, right bottom,
-      0% 0%;
-    background-repeat: no-repeat;
-    background-size: 100% calc(100% - 4rem), 50% 100%, 100% 4rem, 100% 4rem,
-      auto;
-    margin-bottom: -4rem;
-    overflow: hidden;
-    padding-bottom: 12rem !important;
-    position: relative;
 
     &.is-light {
       color: $color-x-dark;
@@ -154,6 +153,11 @@
         rgba(255, 255, 255, 0) 100%
       ),
       linear-gradient(-89deg, #e95420 0%, #772953 38%, #2c001e 85%);
+    background-position: 0% 0%, top right, right bottom, 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 50% 100%, 100% 4rem, auto;
+    color: $color-x-light;
+    padding-bottom: 6rem;
 
     @supports not (background-blend-mode: multiply) {
       background-image: linear-gradient(
@@ -179,12 +183,6 @@
         ),
         linear-gradient(-89deg, #e95420 0%, #772953 38%, #2c001e 85%);
     }
-
-    background-position: 0% 0%, top right, right bottom, 0% 0%;
-    background-repeat: no-repeat;
-    background-size: 100% 100%, 50% 100%, 100% 4rem, auto;
-    color: $color-x-light;
-    padding-bottom: 6rem;
   }
 }
 
@@ -301,6 +299,12 @@
         rgba(119, 41, 83, 1) 38%,
         rgba(44, 0, 30, 1) 85%
       );
+    background-position: right top, right top, right top, right top;
+    background-repeat: no-repeat;
+    background-size: 37.7% calc(100% - 6rem), 42.1% calc(100% - 151px),
+      49.2% calc(100% - 12rem), 49.2% calc(100% - 12rem);
+    padding-bottom: 4rem;
+    padding-top: 4rem;
 
     @supports not (background-blend-mode: multiply) {
       background-image: linear-gradient(
@@ -331,13 +335,6 @@
           rgba(44, 0, 30, 1) 85%
         );
     }
-
-    background-position: right top, right top, right top, right top;
-    background-repeat: no-repeat;
-    background-size: 37.7% calc(100% - 6rem), 42.1% calc(100% - 151px),
-      49.2% calc(100% - 12rem), 49.2% calc(100% - 12rem);
-    padding-bottom: 4rem;
-    padding-top: 4rem;
 
     @media only screen and (max-width: $breakpoint-small) {
       background-blend-mode: normal;
@@ -448,6 +445,9 @@
         rgba(114, 41, 83, 1) 63%,
         rgba(233, 84, 32, 1) 100%
       );
+    background-position: right top, right top, 71.5% top, right top;
+    background-repeat: no-repeat;
+    background-size: 46.2% 68.6%, 38.4% 100%, 16.8% 100%, 40.5% 100%;
 
     @supports not (background-blend-mode: multiply) {
       background-image: linear-gradient(
@@ -478,10 +478,6 @@
           rgba(233, 84, 32, 1) 100%
         );
     }
-
-    background-position: right top, right top, 71.5% top, right top;
-    background-repeat: no-repeat;
-    background-size: 46.2% 68.6%, 38.4% 100%, 16.8% 100%, 40.5% 100%;
 
     @media only screen and (max-width: $breakpoint-small) {
       background-blend-mode: normal;
@@ -570,6 +566,12 @@
       ),
       linear-gradient(to top left, #f7f7f7 0%, #f7f7f7 49.5%, transparent 50%),
       linear-gradient(251deg, #e95422 0%, #772953 49.5%, #2c001e 100%);
+    background-position: top left, top right, center 67%, left top;
+    background-repeat: no-repeat;
+    background-size: 63% 97%, 100% 66%, 100% 30%, 100% 76.5%;
+    color: $color-light;
+    padding-bottom: 10rem;
+    padding-top: 6rem;
 
     @supports not (background-blend-mode: multiply) {
       background-image: linear-gradient(
@@ -588,13 +590,6 @@
         linear-gradient(to top left, #f7f7f7 0%, #f7f7f7 49.5%, transparent 50%),
         linear-gradient(251deg, #e95422 0%, #772953 49.5%, #2c001e 100%);
     }
-
-    background-position: top left, top right, center 67%, left top;
-    background-repeat: no-repeat;
-    background-size: 63% 97%, 100% 66%, 100% 30%, 100% 76.5%;
-    color: $color-light;
-    padding-bottom: 10rem;
-    padding-top: 6rem;
 
     @media only screen and (max-width: $breakpoint-small) {
       background-blend-mode: normal;
@@ -641,6 +636,15 @@
       ),
       linear-gradient(to top right, #fff 0%, #fff 100%),
       linear-gradient(-89deg, #e95420 0%, #772953 38%, #2c001e 85%);
+    background-position: bottom 4rem left, bottom 0 right, left 0 bottom 10.5rem,
+      right bottom, 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 100% calc(100% - 4rem), 100% 100%, 101% 5.5rem,
+      102% 10.5rem, auto;
+    margin: 0;
+    overflow: hidden;
+    padding-bottom: 0;
+    position: relative;
 
     @supports not (background-blend-mode: multiply) {
       background-image: linear-gradient(
@@ -667,16 +671,6 @@
         linear-gradient(to top right, #fff 0%, #fff 100%),
         linear-gradient(-89deg, #e95420 0%, #772953 38%, #2c001e 85%);
     }
-
-    background-position: bottom 4rem left, bottom 0 right, left 0 bottom 10.5rem,
-      right bottom, 0% 0%;
-    background-repeat: no-repeat;
-    background-size: 100% calc(100% - 4rem), 100% 100%, 101% 5.5rem,
-      102% 10.5rem, auto;
-    margin: 0;
-    overflow: hidden;
-    padding-bottom: 0;
-    position: relative;
 
     @media (min-width: $breakpoint-medium) {
       background-image: linear-gradient(
@@ -738,6 +732,12 @@
         rgba(216, 216, 216, 0) 100%
       ),
       linear-gradient(-89deg, #e95420 0%, #772953 42%, #2c001e 94%);
+    background-position: bottom left, bottom 0 right, 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 60% 100%, auto;
+    color: $color-x-light;
+    overflow: hidden;
+    position: relative;
 
     @supports not (background-blend-mode: multiply) {
       background-image: linear-gradient(
@@ -756,13 +756,6 @@
         ),
         linear-gradient(-89deg, #e95420 0%, #772953 42%, #2c001e 94%);
     }
-
-    background-position: bottom left, bottom 0 right, 0% 0%;
-    background-repeat: no-repeat;
-    background-size: 100% 100%, 60% 100%, auto;
-    color: $color-x-light;
-    overflow: hidden;
-    position: relative;
   }
 }
 // sass-lint:enable no-color-literals hex-notation

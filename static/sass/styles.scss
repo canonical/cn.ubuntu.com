@@ -162,7 +162,7 @@ body {
 
 // Fix for missing desktop-hero image and responsive layout
 .desktop-hero {
-  background-image: url("#{$assets-path}2a202263-hero-banner.jpg");
+  background-image: url('#{$assets-path}2a202263-hero-banner.jpg');
   background-position: right bottom;
   background-size: 1000px auto;
 
@@ -181,7 +181,7 @@ body {
 
 // Fix for missing organisation-hero image and responsive layout
 .organisations-hero {
-  background-image: url("#{$assets-path}32d95e39-hero-laptop-org.jpg?w=1000");
+  background-image: url('#{$assets-path}32d95e39-hero-laptop-org.jpg?w=1000');
   background-position: right bottom;
   background-size: 1100px auto;
 
