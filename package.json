@@ -15,7 +15,8 @@
     "build-js": "mkdir -p static/js && webpack",
     "build": "mkdir -p static/js && webpack && yarn run build-css",
     "start": "yarn run build && concurrently --kill-others --raw 'yarn run watch-css' 'yarn run watch-js' 'yarn run serve'",
-    "test-js": "jest --passWithNoTests"
+    "test-js": "jest --passWithNoTests",
+    "format-scss": "prettier -w 'static/**/*.scss'"
   },
   "author": "Canonical webteam",
   "devDependencies": {

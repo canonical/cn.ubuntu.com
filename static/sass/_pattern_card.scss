@@ -156,7 +156,6 @@
       pointer-events: none;
       width: auto;
     }
-
     [type='radio'] {
       left: 0;
 
@@ -238,7 +237,6 @@
 
   .p-card--radio--feature {
     @extend .p-card--radio;
-
     [type='radio'] {
       & + label {
         height: 100%;
