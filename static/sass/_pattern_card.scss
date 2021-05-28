@@ -94,7 +94,7 @@
         justify-content: space-between;
         align-items: center;
         &::after {
-          content: "New";
+          content: 'New';
           font-size: 1rem;
           display: inline-block;
           padding: 0 0.5rem;
@@ -112,7 +112,7 @@
       pointer-events: none;
       width: auto;
     }
-    [type="radio"] {
+    [type='radio'] {
       left: 0;
       & + label {
         background-color: transparent;
@@ -159,7 +159,7 @@
       // Arrow
       @media (min-width: $breakpoint-medium) {
         &::after {
-          content: "";
+          content: '';
           display: block;
           position: absolute;
           height: 2rem;
@@ -183,7 +183,7 @@
   }
   .p-card--radio--feature {
     @extend .p-card--radio;
-    [type="radio"] {
+    [type='radio'] {
       & + label {
         text-align: left;
         height: 100%;
@@ -196,7 +196,7 @@
       &::before,
       &::after {
         position: absolute;
-        content: "";
+        content: '';
         transition-duration: 0.333s;
         transition-property: background-color, border-color;
         transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
