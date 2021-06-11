@@ -1,0 +1,33 @@
+<nav class="p-navigation--secondary">
+    <div class="row">
+      <div class="col-12 u-equal-height">
+        <a class="p-navigation--secondary__banner u-hide--nav-threshold-down" href="/download">
+          <h5 class="p-navigation--secondary__logo">
+            下载
+          </h5>
+        </a>
+        <ul class="breadcrumbs--secondary">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/download/server/step1' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/server/step1">服务器</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/download/server/arm' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/server/arm">ARM</a>
+          </li>
+
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/download/server/power' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/server/power">POWER</a>
+          </li>
+
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link p-link--soft" href="https://ubuntu.com/download/server/s390x">s390x</a>
+          </li>
+
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/download/server/provisioning' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/server/provisioning">自动化部署</a>
+          </li>
+              
+        </ul>       
+      </div>
+    </div>
+  </nav>
+  

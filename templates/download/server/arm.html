@@ -1,0 +1,112 @@
+{% extends "templates/base.html" %}
+
+{% if title %}{% block title %}Ubuntu ARM版下载{{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}Ubuntu {{ releases.lts.short_version }}下载, Ubuntu {{ releases.latest.full_version }}下载, 鲲鹏，泰山ARM服务器，树莓派{{ meta_description }}{% endblock %}{% endif %}
+{% block meta_copydoc %}https://docs.google.com/document/d/1-rYu9BV4mN04yXn01QhBillOyHQOeuCbuGKiJQpJjYs/edit{% endblock meta_copydoc %}
+{% block content %}
+
+{% include "download/server/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped is-deep is-bordered">
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <div>
+          <h1>适用于ARM的Ubuntu Server</h1>
+          <p>Ubuntu {{ releases.lts.full_version }} <abbr title="Long-term support">LTS</abbr>包括对最新的基于ARM的服务器系统的支持，这些系统由认证的ARM 64位处理器驱动。</p>
+          <p>使用超过50000个软件包和运行时（包括 Go、Java、Javascript、PHP、Python和Ruby）进行开发和测试，再使用我们完整的横向扩展管理套件（包括MAAS和Juju）可方便进行大规模部署。Ubuntu在ARM上提供服务器级性能，同时完全保留可靠和熟悉的Ubuntu体验。</p>
+        </div>
+      </div>
+      <div class="col-4 u-align--center u-vertically-center u-hide--small">
+        {{
+          image(
+          url="https://assets.ubuntu.com/v1/4efbd291-Arm_logo_blue_cropped.svg",
+          alt="",
+          width="200",
+          height="61",
+          hi_def=True,
+          loading="auto",
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip--light">
+    <div class="row u-equal-height">
+      <div class="col-6 p-card is-divided">
+        <h3 class="p-card__title">Ubuntu Server</h3>
+        <div class="p-card__content">
+          <p>
+            下面是Ubuntu服务器版安装器的iso镜像文件。
+          </p>
+          <p>
+            <a href="https://cdimage.ubuntu.com/releases/{{ releases.lts.short_version }}/release/ubuntu-{{ releases.lts.full_version }}-live-server-arm64.iso" class="p-button--positive is-wide" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'ARM server download', 'eventLabel' : '{{ releases.lts.short_version }}', 'eventValue' : undefined });">
+              下载Ubuntu {{ releases.lts.full_version }} <abbr title="Long-term support">LTS</abbr>
+            </a>
+          </p>
+          {% if releases.latest.short_version > releases.lts.short_version %}
+          <p>
+            <a href="https://cdimage.ubuntu.com/releases/{{ releases.latest.short_version }}/release/ubuntu-{{ releases.latest.full_version }}-live-server-arm64.iso" class="p-button--neutral is-wide" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'ARM server download', 'eventLabel' : '{{ releases.latest.short_version }}', 'eventValue' : undefined });">
+              下载Ubuntu {{ releases.latest.full_version }}
+            </a>
+          </p>
+          {% endif %}
+          <p><a href="/download/alternative-downloads">其他和历史版本下载&nbsp;&rsaquo;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip is-deep is-bordered">
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h3>容器，数据库，web和更多</h3>
+        <p>Ubuntu Server ARM版包含您在服务器操作系统中寻找的所有内容，包括：</p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">LXD容器管理器，让您可以即时访问有着裸机性能隔离、安全的环境</li>
+          <li class="p-list__item is-ticked">基于Docker和Kubernetes的应用容器技术，包括基于FAN的网络</li>
+          <li class="p-list__item is-ticked">SQL和NoSQL数据库，包括CouchDB、MySQL、PostgreSQL、Redis和sqlite</li>
+          <li class="p-list__item is-ticked">广泛的Web技术集合，从HTTP服务器到如包括Apache、Django、memcached、nginx、Wordpress和varnish的框架</li>
+        </ul>
+      </div>
+      <div class="col-4 u-align--center u-vertically-center u-hide--small">
+        {{
+          image(
+          url="https://assets.ubuntu.com/v1/5eebb138-Servers.svg",
+          alt="",
+          width="294",
+          height="132",
+          hi_def=True,
+          loading="lazy",
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip--light is-deep">
+    <div class="row u-equal-height">
+      <div class="col-4 u-align--center u-vertically-center u-hide--small">
+        {{
+          image(
+          url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
+          alt="",
+          width="281",
+          height="200",
+          hi_def=True,
+          loading="lazy",
+          ) | safe
+        }}
+      </div>
+      <div class="col-8">
+        <h3>商业支持和部署已就绪</h3>
+        <p>将您的ARM服务器部署与Ubuntu订阅服务的企业级24x7支持整合，以获得SLA支持的保证即无论出现什么情况，您的系统都会获得我们的系统和架构专家的完全支持。</p>
+        <p>从HP Moonshot系列到标准构成因素认证的系统，Ubuntu和ARM Server专为尖端硬件而构建，为云规模部署提供真正引人注目的经济性。</p>
+        <p><a href="/contact">联系我们以了解您的ARM服务器计划&nbsp;&rsaquo;</a></p>
+      </div>
+    </div>
+  </section>
+
+  {% with first_item="_download_server_arm_guide", second_item="_download_enterprise_support", third_item="_download_helping_hands" %}{% include "shared/contextual_footers/_contextual_footer.html" %}{% endwith %}
+
+{% endblock %}
