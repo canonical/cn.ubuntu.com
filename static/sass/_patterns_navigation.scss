@@ -39,6 +39,10 @@
       position: relative;
       width: 7.07rem;
     }
+    // Fix secondary navigation (moved to the right after Vanilla 2.30)
+    .row {
+      padding-left: 1rem;
+    }
   }
 
   .breadcrumbs {

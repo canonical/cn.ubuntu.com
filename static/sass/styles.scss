@@ -64,23 +64,6 @@ body {
   padding: 0.6875rem 1rem !important;
 }
 
-// XXX Fix for inline image SVGs that have no dimensions set
-// https://github.com/vanilla-framework/vanilla-framework/issues/1605
-.p-inline-images__item > img {
-  max-height: 5rem;
-  max-width: 9rem;
-}
-
-// XXX Fix for missing borders, remove with Vanilla 2.X
-[class^='p-strip'].is-bordered {
-  margin-bottom: initial;
-}
-
-/// XXX Missing, should be in Vanilla
-.u-align--center {
-  max-width: none;
-}
-
 // XXX Fix the max-width
 .u-no-max-width {
   max-width: none;
