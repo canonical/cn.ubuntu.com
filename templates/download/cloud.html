@@ -1,0 +1,206 @@
+{% extends "templates/base.html" %}
+
+{% if title %}{% block title %}在公有云上使用Ubuntu{{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}Ubuntu {{ releases.lts.short_version }}下载, Ubuntu {{ releases.latest.full_version }}下载, Ubuntu Pro，AWS，Azure，Google云{{ meta_description }}{% endblock %}{% endif %}
+{% block meta_copydoc %} {% endblock meta_copydoc %}
+{% block content %}
+
+{% include "download/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped is-bordered">
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h1>公有云上<br \>优化的Ubuntu</h1>
+        <p>Ubuntu为亚马逊AWS、微软Azure、Google Cloud Platform、IBM Cloud、Rackspace和甲骨文等合作伙伴优化和认证的服务器镜像。另外，Canonical为这些镜像提供Ubuntu订阅服务，企业级商业支持。</p>
+      </div>
+      <div class="col-4 u-align--center u-vertically-center u-hide--small">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/a9580e02-ubuntu-cloud-medium.svg",
+            alt="",
+            width="350",
+            height="200",
+            hi_def=True,
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+  
+  {% include "/shared/_ubuntu_pro_on_public_cloud.html" %}
+  
+  <section class="p-strip is-deep">
+    <div class="row">
+      <div class="col-10">
+        <h2>在公有云上使用Ubuntu</h2>
+        <p>这里有一些便捷方式可以让您在各种公有云上启动和运行Ubuntu。您可以使用<a href="https://cloud-images.ubuntu.com/locator/" class="p-link--external">Ubuntu cloud image finder</a>在多个公有云上通过位置，架构，版本和其他信息来搜索特定的Ubuntu镜像的ID。</p>
+      </div>
+    </div>
+    <div class="row u-equal-height">
+      <div class="p-card col-4">
+        <div class="p-card__content">
+          <h4>
+            <a class="u-align--center u-vertically-center" style="min-height:10rem;display: flex;" href="http://cloud-images.ubuntu.com/locator/ec2/">
+              {{
+                image(
+                    url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
+                    alt="Amazon Web Services logo",
+                    width="84",
+                    height="50",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"style": "align-self: center;max-height: 10rem; max-width:10rem;"},
+                  ) | safe
+              }}
+            </a>
+          </h4>
+          <p>亚马逊网络服务提供可靠的，可扩展和便宜的云计算服务。</p>
+        </div>
+        <ul class="p-list">
+          <li class="p-list__item u-no-margin--top"><a href="https://help.ubuntu.com/community/EC2StartersGuide" class="p-link--external">Ubuntu的EC2使用指南</a></li>
+          <li class="p-list__item"><a href="http://cloud-images.ubuntu.com/locator/ec2/" class="p-link--external">Amazon EC2 AMI Locator</a></li>
+          <li class="p-list__item"><a href="https://ubuntu.com/aws/pro" class="p-link--external">在AWS上启动Ubuntu Pro</a></li>
+        </ul>
+      </div>
+      <div class="p-card col-4">
+        <div class="p-card__content">
+          <h4>
+            <a class="u-align--center u-vertically-center" style="min-height:10rem;display: flex;" href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Canonical.UbuntuServer">
+              {{
+                image(
+                    url="https://assets.ubuntu.com/v1/22fd6473-MicrosoftAzure_logo.svg",
+                    alt="Microsoft Azure logo",
+                    width="130",
+                    height="38",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"style": "align-self: center;max-height: 10rem; max-width:12rem;"},
+                  ) | safe
+              }}
+            </a>
+          </h4>
+          <p>微软Azure是一个开放的、灵活的，企业级云计算平台。</p>
+        </div>
+        <ul class="p-list">
+          <li class="p-list__item u-no-margin--top"><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/" class="p-link--external">微软Azure使用指南</a></li>
+          <li class="p-list__item"><a href="https://ubuntu.com/azure" class="p-link--external">在Azure上启动Ubuntu</a></li>
+          <li class="p-list__item"><a href="https://ubuntu.com/azure/pro"class="p-link--external">在Azure上启动Ubuntu Pro</a></li>
+        </ul>
+      </div>
+      <div class="p-card col-4">
+        <div class="p-card__content">
+          <h4>
+            <a class="u-align--center u-vertically-center" style="min-height:10rem;display: flex;" href="https://console.cloud.google.com/launcher/browse?q=ubuntu&filter=category:os&filter=price:free">
+              {{
+                image(
+                    url="https://assets.ubuntu.com/v1/e795fc84-Google_Cloud_Logo.svg",
+                    alt="Google Cloud Platform logo",
+                    width="259",
+                    height="40",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"style": "align-self: center; max-height: 10rem;"},
+                  ) | safe
+              }}
+            </a>
+          </h4>
+          <p>Google Cloud Platform可让您在Google的可扩展基础架构上构建和托管应用程序和网站、存储数据和分析数据。</p>
+        </div>
+        <ul class="p-list">
+          <li class="p-list__item u-no-margin--top"><a href="https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu" class="p-link--external">GCP使用指南</a></li>
+          <li class="p-list__item"><a href="https://console.cloud.google.com/launcher/browse?q=ubuntu&filter=category:os&filter=price:free" class="p-link--external">访问GCP</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row u-equal-height">
+      <div class="p-card col-4">
+        <div class="p-card__content">
+          <h4>
+            <a class="u-align--center u-vertically-center" style="min-height:10rem;display: flex;" href="https://www.ibm.com/cloud/">
+              {{
+               image(
+                   url="https://assets.ubuntu.com/v1/5e91ff73-ibm-cloud-logo.svg",
+                   alt="IBM Cloud",
+                   width="192",
+                   height="45",
+                   hi_def=True,
+                   loading="lazy",
+                   attrs={"style": "align-self: center;max-height: 10rem; max-width:12rem;"},
+                 ) | safe
+              }}
+            </a>
+          </h4>
+        </div>
+        <ul class="p-list">
+          <li class="p-list__item u-no-margin--top"><a href="https://www.ibm.com/cloud/" class="p-link--external">前往IBM Cloud</a></li>
+        </ul>
+      </div>
+      <div class="p-card col-4">
+        <div class="p-card__content">
+          <h4>
+            <a class="u-align--center u-vertically-center" style="min-height:10rem;display: flex;" href="https://www.rackspace.com/managed-hosting">
+              {{
+                image(
+                    url="https://assets.ubuntu.com/v1/ff936628-rackspace.svg",
+                    alt="Rackspace",
+                    width="192",
+                    height="56",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"style": "align-self: center;max-height: 10rem; max-width:12rem;"},
+                  ) | safe
+              }}
+            </a>
+          </h4>
+        </div>
+        <ul class="p-list">
+          <li class="p-list__item u-no-margin--top"><a href="https://www.rackspace.com/managed-hosting" class="p-link--external">前往Rackspace</a></li>
+        </ul>
+      </div>
+      <div class="p-card col-4">
+        <div class="p-card__content">
+          <h4>
+            <a class="u-align--center u-vertically-center" style="min-height:10rem;display: flex;" href="https://docs.oracle.com/en/cloud/get-started/index.html">
+              {{
+                image(
+                    url="https://assets.ubuntu.com/v1/08646a72-logo-oracle.svg",
+                    alt="Oracle",
+                    width="192",
+                    height="27",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"style": "align-self: center;max-height: 10rem; max-width:12rem;"},
+                  ) | safe
+              }}
+            </a>
+          </h4>
+        </div>
+        <ul class="p-list">
+          <li class="p-list__item u-no-margin--top"><a href="https://docs.oracle.com/en/cloud/get-started/index.html" class="p-link--external">甲骨文Cloud使用指南</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip--light is-deep is-bordered">
+    <div class="row u-equal-height">
+      <div class="col-6 u-vertically-center u-hide--small">
+        {{
+          image(
+              url="https://assets.ubuntu.com/v1/2e62cdb4-desktop-developer-hero.png?w=600",
+              alt="Ubuntu cloud",
+              width="600",
+              height="307",
+              hi_def=True,
+              loading="lazy",
+            ) | safe
+        }}
+      </div>
+      <div class="col-6">
+        <h2>使用Ubuntu云镜像来开发</h2>
+        <p>如果您想修改标准镜像，使用特定的公有云镜像在本地开发，或者在本地私有云上使用镜像，您可以从<a class="p-link--external" href="http://cloud-images.ubuntu.com/">cloud-images.ubuntu.com</a>下载。</p>
+      </div>
+    </div>
+  </section>
+  
+{% endblock %}

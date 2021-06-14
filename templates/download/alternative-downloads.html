@@ -1,0 +1,91 @@
+{% extends "templates/base.html" %}
+
+{% if title %}{% block title %} 其他Ubuntu系统下载 {{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}Ubuntu {{ releases.lts.short_version }}下载, Ubuntu {{ releases.latest.full_version }}下载, ubuntu 14.04, ubuntu 16.04{{ meta_description }}{% endblock %}{% endif %}
+{% block meta_copydoc %}https://docs.google.com/document/d/1-rYu9BV4mN04yXn01QhBillOyHQOeuCbuGKiJQpJjYs/edit{% endblock meta_copydoc %}
+{% block content %}
+
+{% include "download/secondary-nav.html" %}
+
+<div class="p-strip--suru-topped is-bordered">
+    <div class="row">
+      <div class="col-8">
+        <h1>其他下载</h1>
+        <p>还有其他几种获取Ubuntu的方法，包括BT种子的下载可能获得更快的下载，以及我们用于旧系统的网络安装程序和特殊配置以及指向我们旧（和新）版本的区域镜像的链接。如果您不需要上述方式，我们建议使用<a href="/download">常规下载</a>。</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="p-strip--light is-bordered">
+    <div class="row" id="network-installer">
+      <div class="col-8">
+        <h2 id="network-installer">网络安装器</h2>
+        <p>网络安装器允许您通过网络安装Ubuntu。它包括启动所需的最小软件包集，其余的软件包通过网络下载。由于只下载当前包，安装后无需立即软件包升级。</p>
+        <p>如果您的计算机无法运行图形安装程序，那么网络安装器是理想的选择，例如，因为计算机不符合live CD/DVD的最低要求，或者需要额外配置才能使用图形桌面。如果您想一次在大量计算机上安装Ubuntu，网络安装程序是很好的选择。</p>
+        <p>对于20.04 LTS来说，用户可以使用新的Ubuntu Live安装器来设置和配置一个网络安装。</p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked"><a class="p-link--external" href="https://discourse.ubuntu.com/t/netbooting-the-live-server-installer">Ubuntu Live安装器{{ releases.lts.short_version }}指南</a></li>
+          <li class="p-list__item is-ticked"><a class="p-link--external" href="https://cdimage.ubuntu.com/netboot/{{ releases.previous_lts.short_version }}/">下载{{ releases.previous_lts.short_version }} LTS的网络安装器</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="p-strip is-bordered">
+    <div class="row" id="bittorrents">
+      <div class="col-8">
+        <h2 id="bittorrent">BitTorrent</h2>
+        <p>BitTorrent是一种点对点下载网络，有时可以实现更高的下载速度和更可靠的大文件下载。您需要在计算机上安装BitTorrent客户端才能使用此下载方法。</p>
+      </div>
+    </div>
+  
+    <div class="row">
+      {% if releases.latest.short_version > releases.lts.short_version %}
+      <div class="col-4">
+        <h3 class="p-heading--four"><span>Ubuntu {{ releases.latest.full_version }}</span></h3>
+        <ul class="p-list--divided">
+          <li class="p-list__item"><a class="download-torrent" href="https://releases.ubuntu.com/{{ releases.latest.short_version }}/ubuntu-{{ releases.latest.full_version }}-desktop-amd64.iso.torrent">Ubuntu {{ releases.latest.full_version }} 桌面版（64位）</a></li>
+          <li class="p-list__item"><a class="download-torrent" href="https://releases.ubuntu.com/{{ releases.latest.short_version }}/ubuntu-{{ releases.latest.full_version }}-live-server-amd64.iso.torrent">Ubuntu {{ releases.latest.full_version }} 服务器版</a></li>
+        </ul>
+      </div>
+      {% endif %}
+      <div class="col-4">
+        <h3 class="p-heading--four"><span>Ubuntu {{ releases.lts.full_version }} <abbr title="Long-term support">LTS</abbr></span></h3>
+        <ul class="p-list--divided">
+          <li class="p-list__item"><a class="download-torrent" href="https://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version_desktop }}-desktop-amd64.iso.torrent">Ubuntu {{ releases.lts.full_version_desktop }} 桌面版（64位）</a></li>
+          <li class="p-list__item"><a class="download-torrent" href="https://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-live-server-amd64.iso.torrent">Ubuntu {{ releases.lts.full_version }} LTS 服务器版 </a></li>
+        </ul>
+      </div>
+      <div class="col-4">
+        <h3 class="p-heading--four"><span>Ubuntu {{ releases.previous_lts.full_version }} <abbr title="Long-term support">LTS</abbr></span></h3>
+        <ul class="p-list--divided">
+          <li class="p-list__item"><a class="download-lts" href="https://releases.ubuntu.com/{{ releases.previous_lts.short_version }}/ubuntu-{{ releases.previous_lts.full_version }}-desktop-amd64.iso.torrent">Ubuntu {{ releases.previous_lts.full_version }} 桌面版（64位）</a></li>
+          <li class="p-list__item"><a class="download-lts" href="https://releases.ubuntu.com/{{ releases.previous_lts.short_version }}/ubuntu-{{ releases.previous_lts.full_version }}-live-server-amd64.iso.torrent">Ubuntu {{ releases.previous_lts.full_version }} LTS 服务器版</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="p-strip--light">
+    <div class="row p-divider">
+      <div class="col-6 p-divider__block">
+        <h2 id="other-images-and-mirrors">其他镜像和源</h2>
+        <p>对于可用Ubuntu镜像的完整列表，我们建议您选择本地镜像站。</p>
+        <p><a href="https://launchpad.net/ubuntu/+cdmirrors" class="p-link--external">查看全部Ubuntu镜像站</a></p>
+      </div>
+      <div class="col-6 p-divider__block">
+        <h2 id="past-releases-and-other-flavours">历史版本和其他风味版</h2>
+        <p>正在寻找旧版本的Ubuntu？无论您需要POWER、IBMz(s390x)、ARM、过时的版本还是具有原始堆栈的先前LTS子版本，您都可以在历史版本中找到。</p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked"><a href="https://releases.ubuntu.com/{{ releases.previous_lts.full_version }}/">Ubuntu {{ releases.previous_lts.short_version }} LTS ({{ releases.previous_lts.name }})</a></li>
+          {% if releases.latest.past_eol_date != true and releases.latest.short_version < releases.lts.short_version %}
+          <li class="p-list__item is-ticked"><a href="https://releases.ubuntu.com/{{ releases.latest.full_version }}/">Ubuntu {{ releases.latest.short_version }} ({{ releases.latest.name }})</a></li>
+          {% endif %}
+          <li class="p-list__item is-ticked"><a href="https://releases.ubuntu.com/{{ releases.previous_previous_lts.full_version }}/">Ubuntu {{ releases.previous_previous_lts.short_version }} LTS ({{ releases.previous_previous_lts.name }})</a></li>
+        </ul>
+        <p><a class="p-link--external" href="https://releases.ubuntu.com/">查看历史版本</a></p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

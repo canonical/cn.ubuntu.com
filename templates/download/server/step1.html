@@ -1,0 +1,183 @@
+{% extends "templates/base.html" %}
+
+{% if title %}{% block title %}在公有云上使用Ubuntu{{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}Ubuntu {{ releases.lts.short_version }}下载, Ubuntu {{ releases.latest.full_version }}下载, Ubuntu Pro，AWS，Azure，Google云{{ meta_description }}{% endblock %}{% endif %}
+{% block meta_copydoc %}https://docs.google.com/document/d/1-rYu9BV4mN04yXn01QhBillOyHQOeuCbuGKiJQpJjYs/edit{% endblock meta_copydoc %}
+{% block content %}
+{% include "download/server/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped">
+    <div class="row u-equal-height">
+      <div class="col-7">
+        <h1>获取Ubuntu服务器版</h1>
+        <h2 class="js-download-option">
+          选项 1：手动安装到服务器
+        </h2>
+        <p>
+          使用USB或者DVD的物理镜像安装
+        </p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">承诺的系统安全更新至2025年4月</li>
+          <li class="p-list__item is-ticked">扩展更新维护至2030年4月</li>
+          <li class="p-list__item is-ticked">为企业客户提供商业支持</li>
+        </ul>
+      </div>
+      <div class="col-4 col-start-large-8 u-hide--small u-align--center u-vertically-center" style="min-height: 228px">
+        <div class="u-hide--small u-align--center">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/28e0ebb7-Focal-Fossa-gradient-outline.svg",
+              alt="",
+              height="1500",
+              width="1922",
+              hi_def=True,
+              loading="lazy"
+            ) | safe
+          }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <ul class="p-inline-list">
+          <li class="p-inline-list__item">
+            <a href="/download/server/thank-you?version={{ releases.lts.full_version }}&amp;architecture=amd64" class="p-button--positive" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '{{ releases.lts.short_version }} Server-cn', 'eventValue' : undefined });">下载Ubuntu Server {{ releases.lts.full_version }} LTS</a>
+          </li>
+          <li class="p-inline-list__item"><a href="#releases">可选择的版本&nbsp;&rsaquo;</a></li>
+          <li class="p-inline-list__item"><a href="#downloads">其他下载&nbsp;&rsaquo;</a></li>
+          <li class="p-inline-list__item"><a href="#architectures">其他架构&nbsp;&rsaquo;</a></li>
+        </ul>
+      </div>
+  
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <button disabled class="p-button--neutral u-no-margin--left">
+          选项 1 - 手动安装到服务器
+        </button>
+        <form action="/download/server/step2" style="display: inline">          
+          <button type="submit" class="p-button--neutral is-inline" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Next option', 'eventLabel' : 'Option 2', 'eventValue' : undefined });">
+            选项 2 - 即时Ubuntu VM
+          </button>
+        </form>        
+        <form action="/download/server/choose" style="display: inline">         
+          <button type="submit" class="p-button--neutral is-inline" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Previous option', 'eventLabel' : 'Option 1', 'eventValue' : undefined });">
+            选项 3 - 自动化的服务器配置
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    {% if releases.latest.short_version > releases.lts.short_version %}
+    <div class="p-strip is-shallow">
+      <div class="u-fixed-width">
+        <hr>
+      </div>
+    </div>
+    <div class="row u-equal-height" id="releases">      
+      <div class="col-7">
+        <h2>可选择的版本</h2>
+        <h3>
+          Ubuntu Server {{ releases.latest.full_version }}
+        </h3>
+        <p>最新版本的Ubuntu Server，包括9个月的安全和维护更新，至{{ releases.latest.eol }}。</p>
+        <p><a class="p-button--positive" href="http://releases.ubuntu.com/{{ releases.latest.short_version }}/ubuntu-{{ releases.latest.short_version }}-live-server-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '{{ releases.latest.short_version }} Server-cn', 'eventValue' : undefined });">下载Ubuntu Server {{ releases.latest.short_version }}</a>
+        </p>    
+        <p><a href="https://ubuntu.com/engage/ubuntu-21.04-release-webinar?utm_source=brighttalk-portal&utm_medium=web&utm_content=ubuntu%2021.04&utm_campaign=webcasts-server-download" class="p-link--external">观看研讨会——"Ubuntu 21.04新功能介绍"</a>
+        </p>
+        <p><a href="https://wiki.ubuntu.com/{{ releases.latest.slug }}/ReleaseNotes" class="p-link--external">阅读Ubuntu Server {{ releases.latest.short_version }}发布说明</a>
+        </p>       
+      </div>
+
+      <div class="col-5 u-vertically-center u-align--center u-hide--small">
+        <div class="">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/2e66eda7-Hirsuit_Hippo_Colour.svg",
+              alt="",
+              height="128",
+              width="300",
+              hi_def=True,
+              loading="lazy"
+              ) | safe
+          }}
+        </div>
+      </div>    
+    </div>    
+    {% endif %}
+  </section>
+  
+  <section class="p-strip--light u-no-padding--bottom" id="downloads">
+    <div class="row">
+      <div class="col-10">
+        <h2>其他下载</h2>
+      </div>
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-4 p-card">
+        <h3 class="p-card__title">BitTorrents</h3>
+        <p>BitTorrent有时可以实现更高的下载速度和更可靠的大文件下载。</p>
+        <ul class="p-list u-no-margin--bottom">
+          <li class="p-list__item">
+            <a class="download-torrent p-button u-no-margin--bottom" href="https://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-live-server-amd64.iso.torrent">
+              Ubuntu Server {{ releases.lts.full_version }} LTS
+            </a>
+          </li>
+          <li class="p-list__item">
+            <a class="download-torrent p-button u-no-margin--bottom" href="https://releases.ubuntu.com/{{ releases.latest.short_version }}/ubuntu-{{ releases.latest.full_version }}-live-server-amd64.iso.torrent">
+              Ubuntu Server {{ releases.latest.full_version }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-4 p-card">
+        <h3 class="p-card__title">
+          Ubuntu Server {{ releases.previous_lts.short_version }} LTS
+        </h3>
+        <p>上一个Ubuntu Server长期支持版本，包括承诺的支持，至{{ releases.previous_lts.eol }}。</p>
+        <p><a class="p-button" href="http://releases.ubuntu.com/{{ releases.previous_lts.short_version }}/ubuntu-{{ releases.previous_lts.full_version }}-live-server-amd64.iso">下载Ubuntu Server {{ releases.previous_lts.short_version }} LTS</a>
+        </p>
+      </div>
+      <div class="col-4 p-card">
+        <h3 class="p-card__title">其他版本</h3>
+        <p>其他版本的Ubuntu，包括BT下载，网络安装器，本地镜像站和历史版本</p>
+        <p><a href="/download/alternative-downloads">查看其他下载&nbsp;&rsaquo;</a></p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="p-strip--light" id="architectures">
+    <div class="row">
+      <div class="col-10">
+        <h2>可选择的架构</h2>
+      </div>
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-4 p-card">
+        <h3 class="p-card__title">ARM版的Ubuntu Server</h3>
+        <p>针对超大规模部署并在ARM芯片组上的Ubuntu Server认证进行优化，包括64位ARMv7和ARMv8平台。</p>
+        <p>
+          <a href="/download/server/arm">下载ARM版Ubuntu&nbsp;&rsaquo;</a>
+        </p>
+      </div>
+      <div class="col-4 p-card">
+        <h3 class="p-card__title">适用于POWER架构的Ubuntu</h3>
+        <p>Ubuntu在IBM POWER平台上已可用，将整个Ubuntu生态引入IBM POWER。</p>
+        <p>
+          <a href="/download/server/power">获取适用于POWER架构的buntu Server&nbsp;&rsaquo;</a>
+        </p>
+      </div>
+      <div class="col-4 p-card">
+        <h3 class="p-card__title">适用于IBM Z的Ubuntu</h3>
+        <p>IBM Z和LinuxONE利用开放技术解决方案来满足新应用经济的需求。Ubuntu现在和Multipass、MicroK8s等一起可在这些平台上使用。</p>
+        <p>
+          <a href="https://ubuntu.com/download/server/s390x" class="p-link--external">获得适用于IBM Z的Ubuntu</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {% with first_item="_download_server_installation", second_item="_download_server_guide", third_item="_download_helping_hands" %}{% include "shared/contextual_footers/_contextual_footer.html" %}{% endwith %}
+
+{% endblock %}
