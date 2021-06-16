@@ -190,3 +190,10 @@ h6.u-align--center,
 p.u-align--center {
   max-width: none;
 }
+
+// Add is-crossed
+.is-crossed {
+  @extend .is-ticked;
+
+  background-image: url('#{$assets-path}9cdb5b1e-cross-darkaubergine.svg');
+}
