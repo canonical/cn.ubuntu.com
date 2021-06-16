@@ -1,525 +1,240 @@
 {% extends "templates/base.html" %}
-
-{% if title %}{% block title %}云 {{ title }}{% endblock %}{% endif %}
-
-{% if meta_description %}{% block meta_description %}{{ meta_description }}Ubuntu与公有云，私有云，混合云，OpenStack，Kubernetes，k8s，AWS，Azure，容器{% endblock %}{% endif %}
-
+{% if title %}{% block title %}云上的Ubuntu{{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}{{ meta_description }}Ubuntu与公有云，私有云，混合云，多云，multicloud, 边缘云，OpenStack，Kubernetes，K8s{% endblock %}{% endif %}
 {% block content %}
 
-<style type="text/css">
-.ubuntu1-pie {
-  margin: 0 auto;
-  max-width: 21.875rem; }
-  .ubuntu1-pie .other-label {
-    fill: #666; }
-  .ubuntu1-pie .ubuntu {
-    fill: #e95420; }
-  .ubuntu1-pie .other {
-    fill: #fff; }
-  .ubuntu1-pie svg tspan {
-    max-width: 0;
-    text-align: center;
-    text-transform: capitalize; }
-  .ubuntu1-pie .ubuntu-label {
-    fill: #fff; }
-  }
+{% include "cloud/secondary-nav.html" %}
 
-</style>
-
-
-<section class="p-strip--light p-strip--hero is-deep is-bordered">
-  <div class="row">
-    <div class="col-7">
-      <h1>云计算的标准操作系统</h1>
-      <p class="p-heading--four">70％的公有云工作负载和54％的OpenStack云<a href="#fn1" id="r1">*</a></p>
-      <p><a href="https://www.ubuntu.com/download/cloud" class="p-button--positive"><span class="p-link--external">安装OpenStack</span></a></p>
-      <p>如您已明确企业的需求，可直接<a href="https://pages.ubuntu.com/contact-us-in-chinese.html" class="p-link--external" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Contact Us', 'eventLabel' : 'cn.ubuntu.com - cloud', 'eventValue' : undefined });">联系我们</a>获得技术支持以及认证服务。</p>
-      <p>阅读白皮书：<a href="engage/vmware-to-openstack">从VMware迁移到Canonical Openstack</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip is-deep is-bordered">
+<section class="p-strip--suru-topped is-deep">
   <div class="row">
     <div class="col-8">
-      <h2>聊聊OpenStack</h2>
-      <p>Ubuntu是目前生产环境使用的大多数OpenStack云的首选平台，并且有Canonical为全球众多领先公司提供咨询、培训、支持和完全托管的云服务。</p>
-      <p><a class="p-link--external" href="https://www.ubuntu.com/cloud/openstack">进一步了解Canonical在Ubuntu上提供的OpenStack服务</a></p>
+      <h1>私有云vs混合云,<br \>多云以及更多...</h1>
+      <p class="p-heading--4">选择最适合您的云架构</p>
+      <p>没有一种适合所有云架构的通用架构。制定最佳云战略需要评估您的业务需求，并将它们与不同的现有解决方案保持一致。</p>
+      <p>Canonical完全地支持公有云，且为<a href="https://ubuntu.com/openstack/consulting" class="p-link--external">私有云</a>的实施和<a href="https://ubuntu.com/openstack/managed" class="p-link--external">管理</a>，混合云和多云环境中的工作负载编排提供自己的解决方案。</p>
+      <p><a class="p-button--positive" href="/contact">优化您的云成本</a></p>
+      <p>阅读白皮书：<a href="/engage/vmware-to-openstack">从VMware迁移到Canonical Openstack</a></p>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <ul class="p-matrix is-trisected">
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--four">完全托管的云服务</h3>
-            <div class="p-matrix__desc">
-              <p>利用我们的BootStack服务对您的云进行全面的远程操作控制，打造生产用OpenStack私有云的捷径。</p>
-              <p class="p-matrix__desc"><a class="p-link--external" href="https://www.ubuntu.com/cloud/managed-cloud">进一步了解BootStack</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--four">咨询服务方案</h3>
-            <div class="p-matrix__desc">
-              <p>我们的Foundation Cloud Build服务，可在3个星期内为您构建一个固定价格的内部云，并提供经过验证的参考架构。</p>
-              <p class="p-matrix__desc"><a class="p-link--external" href="https://www.ubuntu.com/cloud/foundation-cloud">进一步了解我们的咨询服务方案</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--four">立即安装</h3>
-            <div class="p-matrix__desc">
-              <p>利用conjure-up在单个笔记本电脑或多个机架服务器上运行OpenStack或Kubernetes。</p>
-              <p class="p-matrix__desc"><a class="p-link--external" href="https://www.ubuntu.com/download/cloud">下载</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--four">自动化物理服务器</h3>
-            <div class="p-matrix__desc">
-              <p>利用MAAS裸机部署功能将数据中心变成物理云。内部部署、开源且可支持。</p>
-              <p class="p-matrix__desc"><a class="p-link--external" href="https://www.ubuntu.com/server/maas">进一步了解MAAS</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--four">在认证的公有云上使用Ubuntu</h3>
-            <div class="p-matrix__desc">
-              <p>Ubuntu是领先的云客户机操作系统，当今公有云的大部分工作负载均由它运行。</p>
-              <p class="p-matrix__desc"><a class="p-link--external" href="https://www.ubuntu.com/download/server">开始使用Ubuntu服务器</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--four">使用Juju进行设计和部署</h3>
-            <div class="p-matrix__desc">
-              <p>数百种服务和预配置的应用程序，只需一个命令即可部署到任何云。</p>
-              <p class="p-matrix__desc"><a class="p-link--external" href="https://www.ubuntu.com/cloud/juju">开始使用Juju</a></p>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip is-bordered">
-  <div class="row">
-    <div class="col-12">
-      <h2 class="p-muted-heading u-align-text--center">我们的部分OPENSTACK客户</h2>
-      <ul class="p-inline-images">
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/1ccb6d93-logo-deutschetelekom.svg" alt="Deutshe Telekom">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/be345c7f-bSkyb_logo.png" alt="Sky">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/595a3e03-lexisnexis.png" alt="LexisNexis">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/10e3a1bc-time-warner-cable.svg" alt="Time Warner Cable">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/379ae6d1-Yahoo_Japan_logo.png" alt="Yahoo japan">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/b7693339-logo-bloomberg.svg" alt="Bloomberg">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/4ef05fb7-bestbuy.jpg" alt="Best Buy">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/192f9755-partners-logo-nec-tagline.png" alt="NEC">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/377e12ed-logo-ntt-communications.png" alt="NTT">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/5482b658-liveperson-logo.jpg" alt="LivePerson">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/4d6054f9-logo-cisco.svg" alt="Cisco">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/e71bd588-logo-samsung.svg" alt="Samsung">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/7ffe020f-logo-ebay.svg" alt="eBay">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/b1fecbf0-logo-att-horizontal.png" alt="AT&amp;T">
-        </li>
-        <li class="p-inline-images__item">
-          <img class="p-inline-images__logo" src="https://assets.ubuntu.com/v1/b3315d88-walmart.svg" alt="Walmart">
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip--light is-deep">
-  <div class="row">
-    <div class="col-8">
-      <h2>立即安装OpenStack</h2>
-      <p>利用<a href="https://conjure-up.io/" class="p-link--external">conjure-up</a>工具，可在单个笔记本电脑上使用LXD容器快速部署OpenStack，这种方式非常适合首次使用者或开发者。您也可以使用相同的工具搭配<a href="https://maas.io/" class="p-link--external">MAAS</a>，在裸机机架服务器、OpenStack 或 VMware上进行运行。</p>
-      <p><a class="p-link--external" href="https://www.ubuntu.com/download/cloud">安装OpenStack</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip--light is-bordered u-no-padding--top">
-  <div class="row">
-    <div class="col-8">
-      <h3>使用MicroK8s安装Kubernetes</h3>
-      <p>Canonical的Kubernetes®发行版是Ubuntu团队与Google合作推出的一套纯粹的 Kubernetes，并已在众多云上采用现代标准和监控技术进行了测试。</p>
-      <p><a class="p-link--external" href="https://ubuntu.com/tutorials/install-a-local-kubernetes-with-microk8s#1-overview">立即体验</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip is-deep is-bordered">
-  <div class="row">
-    <div class="col-6">
-      <h2>完全托管的OpenStack云</h2>
-      <p>Canonical代表客户运营着许多OpenStack私有云，这项服务让他们不仅能获得内部部署OpenStack的好处，同时还能保证员工专注于业务处理。BootStack是一项“构建—运营—移交”模式的服务，让您可以随时控制自己的云。配合云计算领域使用最广泛的操作系统，这是打造生产用OpenStack最快的捷径。</p>
-      <ul class="p-list">
-        <li class="p-list__item is-ticked">共同设计符合您要求的架构</li>
-        <li class="p-list__item is-ticked">我们在您选择的数据中心构建OpenStack，并按照服务级别协议(SLA)开展运营</li>
-        <li class="p-list__item is-ticked">当您的团队准备好接手OpenStack时，我们会将其移交给您</li>
-      </ul>
-      <p><a class="p-link--external" href="https://www.ubuntu.com/cloud/managed-cloud">让Canonical构建、运营并移交您的OpenStack</a></p>
-    </div>
-    <div class="col-6">
-      <ul class="p-inline-images">
-        <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="https://assets.ubuntu.com/v1/01ed776c-veritas.svg" alt="Veritas">
-        </li>
-        <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="https://assets.ubuntu.com/v1/66bc9135-logo-lexisnexis.png" alt="Lexis Nexis">
-        </li>
-        <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="https://assets.ubuntu.com/v1/25de1877-Tele2.svg" alt="Tele2">
-        </li>
-        <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="https://assets.ubuntu.com/v1/d0b7aa28-logo-deutsche-telekom.png" alt="Deutsche Telekom">
-        </li>
-        <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="https://assets.ubuntu.com/v1/481063cd-pccw.svg" alt="PCCW logo">
-        </li>
-        <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="https://assets.ubuntu.com/v1/97a050d0-Groupe_Cogeco_logo.svg" alt="Cogeco Datacenters">
-        </li>
-        <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="https://assets.ubuntu.com/v1/2353fc84-fibernet.svg" alt="Fibernet">
-        </li>
-        <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="https://assets.ubuntu.com/v1/d56d0b96-Biznet-Gio.png" alt="Biznet Gio">
-        </li>
-        <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="https://assets.ubuntu.com/v1/ff4e18ac-mimedia_logo_lrg.png" alt="Mimedia">
-        </li>
-        <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="https://assets.ubuntu.com/v1/507a0979-Voidbridge.jpg" alt="Voidbridge">
-        </li>
-        <li class="p-inline-images__item p-inline-images__item--smaller">
-          <img src="https://assets.ubuntu.com/v1/2e38f398-uct.svg" alt="UCT">
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip--image u-no-background--small is-deep is-bordered" style="background-image: url('https://assets.ubuntu.com/v1/1d2ab6ba-suru-background.png'); background-size: 100% 100%;">
-  <div class="row">
-    <div class="col-8">
-      <h2>利用Foundation Cloud Build打造Ubuntu OpenStack</h2>
-      <p>我们会为您构建高可用性的生产云，并安排Canonical专家交付团队在最短时间内完成现场实施。</p>
-      <p>Foundation Cloud Build让您可以简单轻松、经济实惠地重新部署或克隆您的云架构。我们还负责基础架构的重大更改，包括配置修改、操作系统和平台版本升级，以及更深入的设计变更。</p>
-      <p><a class="p-link--external" href="https://www.ubuntu.com/cloud/foundation-cloud">进一步了解Foundation Cloud Build</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip is-deep is-bordered">
-  <div class="row u-equal-height">
-    <div class="u-vertically-center col-3">
-      <div class="u-hide--small">
-        <img src="https://assets.ubuntu.com/v1/dba11aee-kubernetes.svg" width="220" alt="Kubernetes logo">
-      </div>
-    </div>
-    <div class="col-9 col-start-1">
-      <h2>Canonical的Kubernetes®发行版<sup class="p-heading--four">®&nbsp;<a title="Jump to The Canonical Distribution of Kubernetes footnote" href="#fn3" id="r3">*</a></sup></h2>
-      <p>这是在AWS、Google Cloud、Azure、Oracle 或您的私有 VMware、OpenStack和裸机设备上运行Kubernetes最简单的方法。</p>
-      <p>Canonical提供上游项目Kubernetes的一个发行版，它在每个基础架构上都能同样正常运行。您可以通过简单的自动升级来跟踪上游项目的更改，并且只需一个命令便可集成喜欢的监控系统。</p>
-      <p><a class="p-link--external" href="https://www.ubuntu.com/kubernetes">进一步了解在Ubuntu上使用 Kubernetes</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip--light is-deep is-bordered">
-  <div class="row">
-    <div class="col-8">
-      <h2>在公有云上使用Ubuntu</h2>
-      <p>Ubuntu是各种公有云上最受欢迎的操作系统，这是因为我们与各大云运营商密切合作，针对他们的基础架构优化内核和系统，​​加快安全更新速度，并最大限度降低用户默认需要的网络或存储成本。</p>
-      <ul class="p-list">
-        <li class="p-list__item is-ticked">Canonical保证Ubuntu在各种公有云上的一致性、安全性和性能</li>
-        <li class="p-list__item is-ticked">提供企业级商业支持</li>
-        <li class="p-list__item is-ticked">在Amazon云上的受欢迎程度是其他所有操作系统总和的两倍<a href="#fn2" id="r2">*</a></li>
-      </ul>
-      <p><a class="p-link--external" href="https://www.ubuntu.com/cloud/public-cloud">在公有云上使用Ubuntu</a></p>
-    </div>
-    <div class="col-4"> <!-- Need to fix this part, it doesn't show right. -->
-      <figure id="ubuntu1-pie" class="ubuntu1-pie"><svg width="308" height="308" viewBox="0 0 310 310"><g transform="translate(155,155)"><path d="M9.429780353434619e-15,-154A154,154 0 1,1 -90.5189288530409,124.58861713374188L-45.25946442652045,62.29430856687094A77,77 0 1,0 4.7148901767173095e-15,-77Z" class="ubuntu" style="stroke: rgb(174, 167, 159); stroke-width: 1; stroke-dasharray: 3, 3;"></path><path d="M-90.5189288530409,124.58861713374188A154,154 0 0,1 -2.8289341060303857e-14,-154L-1.4144670530151929e-14,-77A77,77 0 0,0 -45.25946442652045,62.29430856687094Z" class="other" style="stroke: rgb(174, 167, 159); stroke-width: 1; stroke-dasharray: 3, 3;"></path><text y="-5" class="ubuntu-label"><tspan x="85.32943725585938" dy="0">ubuntu</tspan><tspan x="88.422607421875" dy="20">(60%)</tspan></text><text y="-5" class="other-label"><tspan x="-133.09738159179688" dy="0">other</tspan><tspan x="-132.77914428710938" dy="20">(40%)</tspan></text></g></svg></figure>
-      <script src="https://assets.ubuntu.com/v1/3c99518b-d3-version3.5.6.min.js"></script>
-      <script>
-        // FF/Opera does not support offsetWidth for tspan's. If undefined
-        // use the getBoundingClientRect method.
-        function getObjWidth(obj) {
-          var objWidth = obj.offsetWidth;
-          if (objWidth !== undefined) {
-            return objWidth;
-          } else {
-            return obj.getBoundingClientRect().width;
-          }
-        }
-
-        function drawChart() {
-          'use strict';
-          document.querySelector('#ubuntu-pie').innerHTML = "";
-          var width = document.querySelector('#ubuntu-pie').offsetWidth;
-          var dataset = [
-            { label: 'ubuntu', count: 60, left: (width / 2.75), top: -5 },
-            { label: 'other', count: 40, left: -(width / 2.75), top: -5 }
-          ];
-          var height = width;
-          var radius = Math.min(width, height) / 2;
-          var donutWidth = width / 4;
-          var color = d3.scale.category20b();
-          var svg = d3.select('#ubuntu-pie')
-            .append('svg')
-            .attr('width', width)
-            .attr('height', height)
-            .attr('viewBox', '0 0 ' + (width + 2) + ' ' + (height + 2))
-            .append('g')
-            .attr('transform', 'translate(' + (width / 2 + 1) +
-              ',' + (height / 2 + 1) + ')');
-
-          var arc = d3.svg.arc()
-            .innerRadius(radius - donutWidth)
-            .outerRadius(radius);
-
-          var pie = d3.layout.pie()
-            .value(function(d) { return d.count; })
-            .sort(null);
-
-            svg.selectAll('path')
-              .data(pie(dataset))
-              .enter()
-              .append('path')
-              .style('stroke', '#aea79f')
-              .style('stroke-width', '1')
-              .style("stroke-dasharray", ("3, 3"))
-              .attr('d', arc)
-              .attr('class', function(d, i) {
-                return d.data.label;
-              });
-
-          // Add labels as <text> elements
-          var labels = svg.selectAll('foreignObject')
-            .data(dataset)
-            .enter()
-            .append('text')
-            .attr('y', function(d) { return d.top; })
-            .attr('class', function(d) { return d.label + '-label'; });
-
-          // Fill <text> labels with <tspan>s
-          labels.append('tspan')
-            .text(function (d) {return d.label;})
-            .attr('x', function(d) { return d.left - getObjWidth(this) / 2; })
-            .attr('dy', '0');
-          labels.append('tspan')
-            .text(function (d) {return '(' + d.count + '%)'})
-            .attr('x', function(d) { return d.left - getObjWidth(this) / 4; })
-            .attr('dy', '20');
-        }
-
-        window.addEventListener('resize', drawChart, false);
-
-        drawChart();
-      </script>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip--light is-deep u-no-padding--bottom">
-  <div class="row">
-    <div class="col-8">
-      <h2>Juju：通用的云应用商店</h2>
-      <p>为您带来无论在什么基础设施上都能同样运行的应用程序。通过Juju，您可以运行社区发布的标准解决方案，或者构建属于自己的解决方案。轻松在 AWS、Azure、Google、Oracle、VMware、OpenStack、裸机和LXD容器上重用这些解决方案。</p>
-      <ul class="p-list">
-        <li class="p-list__item is-ticked">提供数百种服务和预配置的应用程序，可在任何公有云或私有云上使用</li>
-        <li class="p-list__item is-ticked">拥有从数据库和大数据到容器和基准测试的丰富解决方案</li>
-        <li class="p-list__item is-ticked">在商店中发布您自己的解决方案</li>
-      </ul>
-      <p><a class="p-link--external" href="https://www.ubuntu.com/cloud/juju">进一步了解Juju</a></p>
+    <div class="col-4 u-hide--small u-vertically-center u-align--center">
+      {{
+        image(
+         url="https://assets.ubuntu.com/v1/ab87e245-Private-v-Public-Mulit-Cloud.svg",
+         alt="Private vs public cloud",
+         width="350",
+         height="300",
+         hi_def=True,
+         loading="auto",
+        ) | safe
+      }}
     </div>
   </div>
 </section>
 
 <section class="p-strip--light">
-  <div class="row">
-    <h3>超过300种为Juju设计的服务</h3>
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h2>什么是私有云？</h2>
+      <p>私有云，例如<a href="https://ubuntu.com/openstack" class="p-link--external">OpenStack</a>为企业/组织提供按需的计算、存储和其他可通过网络访问并专门为他们保留的资源——无论是在自己的数据中心还是通过第三方。</p>
+    </div>
+    <div class="col-4 u-hide--small u-vertically-center u-align--center">
+      {{
+        image(
+         url="https://assets.ubuntu.com/v1/f25ccac7-Private+Cloud.svg",
+         alt="Private cloud",
+         width="190",
+         height="130",
+         hi_def=True,
+         loading="auto",
+        ) | safe
+      }}  
+    </div>
   </div>
-  <div class="row">
-    <ul class="p-list row">
-      <li class="col-2 u-align--center p-card">
-          <a href="https://jaas.ai/hadoop-spark/bundle/63" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/0c2c6e40-hadoop-icon.svg" alt="" class="p-logo">
-          <p class="u-no-margin--top">Hadoop</p>
-        </a>
-      </li>
-      <li class="col-2 u-align--center p-card">
-          <a href="https://jaas.ai/mongodb" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/d529fc0b-mongodb-icon.svg" alt="" class="p-logo">
-          <p class="u-no-margin--top">MongoDB</p>
-        </a>
-      </li>
-      <li class="col-2 u-align--center p-card">
-          <a href="https://jaas.ai/u/asanjar/spark/trusty/7" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/da65dfb1-spark-icon.svg" alt="" class="p-logo">
-          <p class="u-no-margin--top">Spark</p>
-        </a>
-      </li>
-      <li class="col-2 u-align--center p-card">
-          <a href="https://jaas.ai/redis" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/74f5267e-redis-icon.svg " alt="" class="p-logo">
-          <p class="u-no-margin--top">Redis</p>
-        </a>
-      </li>
-      <li class="col-2 u-align--center p-card">
-          <a href="https://jaas.ai/ceph" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/f0331421-ceph-icon.svg" alt="" class="p-logo">
-          <p class="u-no-margin--top">Ceph</p>
-        </a>
-      </li>
-      <li class="col-2 u-align--center p-card">
-          <a href="https://jaas.ai/wordpress" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/60ca35aa-wordpress-icon.svg" alt="" class="p-logo">
-          <p class="u-no-margin--top">Wordpress</p>
-        </a>
-      </li>
-      <li class="col-2 u-align--center p-card u-no-margin--left" style="clear:both">
-          <a href="https://jaas.ai/u/ibmcharmers/db2" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/eb358275-db2-icon.svg" alt="" class="p-logo">
-          <p class="u-no-margin--top">IBM DB2</p>
-        </a>
-      </li>
-      <li class="col-2 u-align--center p-card">
-          <a href="https://jaas.ai/u/hp-discover/nginx" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/a3b1dc20-nginx-icon.svg" alt="" class="p-logo">
-          <p class="u-no-margin--top">nginx</p>
-        </a>
-      </li>
-      <li class="col-2 u-align--center p-card">
-          <a href="https://jaas.ai/nagios" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/07fbb544-nagios-icon.svg" alt="" class="p-logo">
-          <p class="u-no-margin--top">nagios</p>
-        </a>
-      </li>
-      <li class="col-2 u-align--center p-card">
-          <a href="https://jaas.ai/mariadb" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/0fe8aaaa-mariadb-icon.svg" alt="" class="p-logo">
-          <p class="u-no-margin--top">MariaDB</p>
-        </a>
-      </li>
-      <li class="col-2 u-align--center p-card">
-          <a href="https://jaas.ai/postgresql" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/de0e8fb8-postgresql-icon.svg" alt="" class="p-logo">
-          <p class="u-no-margin--top">PostgresQL</p>
-        </a>
-      </li>
-      <li class="col-2 u-align--center p-card">
-          <a href="https://jaas.ai/mysql" class="p-link--soft">
-          <img src="https://assets.ubuntu.com/v1/70ac97b0-mysql-icon.svg" alt="" class="p-logo">
-          <p class="u-no-margin--top">MySQL</p>
-        </a>
-      </li>
-    </ul>
+  <div class="row u-equal-height">
+    <div class="col-5">
+      <p><b>优点：</b></p>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">与公有云相比，私有云通常更具<a class="p-link--external" href="https://go.451research.com/Emerging-pricing-model-for-private-cloud">成本效益</a>——尤其是在大规模和长期使用时。</li>
+        <li class="p-list__item is-ticked">拥有私有云的企业/组织不会与其他企业/组织共享其托管资源，这意味着通常情况下，私有云能提供更好的性能。</li>
+      </ul>
+    </div>
+    <div class="col-5">
+      <p><b>缺点：</b></p>
+      <ul class="p-list">
+        <li class="p-list__item is-crossed">私有云的部署和持续管理需要专门的团队和技术资源。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="u-fixed-width">
+    <p><a href="https://ubuntu.com/openstack" class="p-link--external">Canonical的Charmed OpenStack</a>通过简化OpenStack的部署和提供自动化运维来解决这个问题，从而显着降低私有云的总拥有成本 (TCO)。</p>
+    <p>
+      <a href="https://ubuntu.com/openstack" class="p-link--external">获取一个受支持的，托管的，电信运营商级的私有云&nbsp;›</a>
+    </p>
   </div>
 </section>
-
-<section class="p-strip--light is-bordered u-no-padding--top">
-  <div class="row">
-    <h2 class="p-muted-heading u-align--center" style="max-width: none">Juju上的主要发布商</h2>
-    <ul class="p-inline-images">
-      <li class="p-inline-images__item">
-        <img src="https://assets.ubuntu.com/v1/683950fd-logo-ibm.svg" alt="IBM">
-      </li>
-      <li class="p-inline-images__item">
-        <img src="https://assets.ubuntu.com/v1/a2a68c52-logo-juniper-160.png?w=160" alt="Juniper">
-      </li>
-      <li class="p-inline-images__item">
-        <img src="https://assets.ubuntu.com/v1/02b13c70-2000px-EMC_Corporation_logo.svg.png?w=160" alt="EMC">
-      </li>
-      <li class="p-inline-images__item">
-        <img src="https://assets.ubuntu.com/v1/477b9b52-microsoft-logo.svg" alt="Microsoft">
-      </li>
-    </ul>
-  </div>
-</section>
-
 
 <section class="p-strip">
-  <div class="row">
-    <div class="col-12">
-      <h2>MAAS：裸机即服务</h2>
-      <p>世界上最快的大型基础架构裸机配置系统，让您的机架服务器摇身变成物理云。只需短短几分钟，就能按需提供装有纯净Windows、Ubuntu或CentOS系统的计算机。</p>
-      <ul class="p-list--divided is-split">
-        <li class="p-list__item is-ticked">物理服务器的云端自动化</li>
-        <li class="p-list__item is-ticked">支持各大厂商的认证服务器</li>
-        <li class="p-list__item is-ticked">配置RAID、LVM和分区</li>
-        <li class="p-list__item is-ticked">配置网络绑定、VLAN和子网</li>
-        <li class="p-list__item is-ticked">领先的开源IP地址管理器(IPAM)</li>
-        <li class="p-list__item is-ticked">部署Ubuntu、CentOS、Windows或自定义映像的最快方式</li>
-        <li class="p-list__item is-ticked">REST风格的API、Web用户界面和命令行客户端</li>
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h2>什么是公有云？</h2>
+      <p>在公共云环境中，计算、存储和其他基础设施资源由外部提供商作为服务的形式提供。</p>
+    </div>
+    <div class="col-4 u-hide--small u-vertically-center u-align--center">
+      {{
+        image(
+         url="https://assets.ubuntu.com/v1/a3694a61-Public+Cloud.svg",
+         alt="Public cloud",
+         width="190",
+         height="130",
+         hi_def=True,
+         loading="auto",
+        ) | safe
+      }}  
+    </div>
+  </div>
+  <div class="row u-equal-height">
+    <div class="col-5">
+      <p><b>优点：</b></p>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">即刻访问基础设施即服务 (IaaS) 可加快企业/组织的产品和服务的上市时间。</li>
+        <li class="p-list__item is-ticked">公有云提供了几乎无限制地扩展资源消耗的能力。</li>
+      </ul>
+    </div>
+    <div class="col-5">
+      <p><b>缺点：</b></p>
+      <ul class="p-list">
+        <li class="p-list__item is-crossed">虽然公有云的总体成本看起来很有吸引力，但隐藏的附属成本通常使其成为云架构的昂贵选择。</li>
       </ul>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <img src="https://assets.ubuntu.com/v1/8ca2eab9-hero-ui-image.png" alt="MAAS UI web page showing node listing">
-      <p><a href="https://www.ubuntu.com/server/maas" class="p-link--external">进一步了解MAAS</a></p>
-    </div>
+  <div class="u-fixed-width">
+    <p>主要的公有云提供商包括亚马逊（AWS）、微软Azure、Google Cloud Platform、甲骨文和IBM Cloud。</p>
+    <p>
+      <a href="/public-cloud">在公有云上自信地使用Ubuntu来运行您的工作负载&nbsp;&rsaquo;</a>
+    </p>
   </div>
 </section>
 
 <section class="p-strip--light">
-  <div class="row">
-    <div class="col-12">
-      <h2>Landscape</h2>
-      <p>管理数以千计的Ubuntu桌面计算机、服务器和云实例。通过Web控制板进行更新、合规报告和远程控制——被广大用户评为目前最出色的Linux管理系统。</p>
-      <ul class="p-list--divided is-split">
-        <li class="p-list__item is-ticked">规模化管理</li>
-        <li class="p-list__item is-ticked">部署或回滚安全更新</li>
-        <li class="p-list__item is-ticked">内核实时修补</li>
-        <li class="p-list__item is-ticked">合规报告</li>
-        <li class="p-list__item is-ticked">基于角色的访问权限</li>
-        <li class="p-list__item is-ticked">信息丰富的监控功能</li>
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h2>什么是混合云？</h2>
+      <p>混合云架构是一种结合私有云的使用和一个或多个具有平台之间工作负载编排引擎的公有云服务的架构。</p>
+    </div>
+    <div class="col-4 u-hide--small u-vertically-center u-align--center">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/45120edb-Hybrid+Cloud.svg",
+          alt="Hybrid cloud",
+          width="190",
+          height="130",
+          hi_def=True,
+          loading="auto",
+        ) | safe
+      }}  
+    </div>
+  </div>
+  <div class="row u-equal-height">
+    <div class="col-5">
+      <p><b>优点：</b></p>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">当以正确的方式执行时，混合（云）策略可提供最大的OpEx效率。</li>
+        <li class="p-list__item is-ticked">混合云非常适合具有不同要求的工作负载。</li>
+        <li class="p-list__item is-ticked">因为组织不依赖于单一云供应商，可防止供应商锁定。</li>
+      </ul>
+    </div>
+    <div class="col-5">
+      <p><b>缺点：</b></p>
+      <ul class="p-list">
+        <li class="p-list__item is-crossed">跨各种云平台的工作负载编排可能是一个挑战。</li>
       </ul>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <img src="https://assets.ubuntu.com/v1/80429220-landing.png" alt="Landscape landing page screenshow">
-      <p class="p-link--external"><a href="https://landscape.canonical.com">进一步了解Landscape</a></p>
+  <div class="u-fixed-width">
+    <p>
+      <a class="p-link--external" href="https://juju.is">用Canonical的Juju编排混合云工作负载</a>
+    </p>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h2>什么是多云？</h2>
+      <p>多云架构是与混合云相关的架构。它是多个私有云、公有云或混合云的组合。</p>
+      <p>多云架构正迅速被视为企业事实上的云战略，因为<a class="p-link--external" href="https://www.gartner.com/smarterwithgartner/why-organizations-choose-a-multicloud-strategy/">81%的企业</a>与多个云服务提供商合作。</p>
     </div>
+    <div class="col-4 u-hide--small u-vertically-center u-align--center">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/dd0465c8-Multi-Cloud.svg",
+          alt="Multicloud",
+          width="220",
+          height="130",
+          hi_def=True,
+          loading="auto",
+        ) | safe
+      }}  
+    </div>
+  </div>
+  <div class="row u-equal-height">
+    <div class="col-5">
+      <p><b>优点：</b></p>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">防止供应商锁定，因为不依赖于单一云服务供应商。</li>
+        <li class="p-list__item is-ticked">在最佳环境中运行应用程序时，比在其他（云）模型中运行具有更大的灵活性。</li>
+      </ul>
+    </div>
+    <div class="col-5">
+      <p><b>缺点：</b></p>
+      <ul class="p-list">
+        <li class="p-list__item is-crossed">如在此类环境中没有适当的工具来使工作负载运营变得容易，可能会给企业/组织的基础架构增加额外的复杂性。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="u-fixed-width">
+    <p>
+      <a class="p-link--external" href="https://www.brighttalk.com/webcast/6793/416900">从我们的“多云的精通”研讨会中了解更多</a>
+    </p>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h2>什么是边缘云？</h2>
+      <p>边缘云是在数据中心之外运行的微型云，其让计算和数据存储更接近所需的位置。</p>
+    </div>
+    <div class="col-4 u-hide--small u-vertically-center u-align--center">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/f24913d5-Edge+Cloud.svg",
+          alt="Edge cloud",
+          width="210",
+          height="140",
+          hi_def=True,
+          loading="auto",
+        ) | safe
+      }}  
+    </div>
+  </div>
+  <div class="row u-equal-height">
+    <div class="col-5">
+      <p><b>优点：</b></p>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">借助边缘云，企业可以从带宽的增加和延迟的降低所带来的网络性能提升中受益。</li>
+      </ul>
+    </div>
+    <div class="col-5">
+      <p><b>缺点：</b></p>
+      <ul class="p-list">
+        <li class="p-list__item is-crossed">边缘面临的最大挑战是增加投资和运营成本、最小化占地面积、运营自动化和安全性。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="u-fixed-width">
+    <p>
+      通过<a class="p-link--external" href="https://www.brighttalk.com/webcast/6793/398029">适用于计算机视觉和机器人技术的边缘计算</a>的介绍以了解更多信息。
+    </p>
   </div>
 </section>
 

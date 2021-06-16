@@ -1,0 +1,229 @@
+{% extends "templates/base.html" %}
+{% if title %}{% block title %}公有云上的Ubuntu{{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}{{ meta_description }}Ubuntu公有云, Ubuntu Pro, AWS, 微软Azure，Google Cloud Platform，IBM Cloud{% endblock %}{% endif %}
+{% block content %}
+
+{% include "cloud/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped is-deep is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <h1>公有云上的Ubuntu</h1>
+      <p>Ubuntu是世界上最流行的跨公有云的云操作系统。由于其安全性、多功能性和定期更新政策，Ubuntu是领先的云客户机操作系统，也是唯一具有可选的企业级商业支持的免费云操作系统。</p>
+      <p><a class="p-button--positive" href="/contact">联系我们</a></p>
+    </div>
+  </div>
+</section>
+
+{% include "/shared/_ubuntu_pro_on_public_cloud.html" %}
+
+<section class="p-strip is-deep is-bordered">
+  <div class="u-fixed-width">
+    <h2 class="p-muted-heading u-align--center">我们认证的公有云合作伙伴集</h2>
+    <ul class="p-inline-images">
+      <li class="p-inline-images__item">
+        {{
+          image(
+              url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
+              alt="AWS",
+              width="144",
+              height="85",
+              hi_def=True,
+              loading="lazy",
+              attrs={"class": "p-inline-images__logo", "id": ""},
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{
+          image(
+              url="https://assets.ubuntu.com/v1/d31f722d-Partner-Microsoft-Azure-logo.png",
+              alt="Microsoft Azure",
+              width="138",
+              height="88",
+              hi_def=True,
+              loading="lazy",
+              attrs={"class": "p-inline-images__logo", "id": ""},
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{
+          image(
+              url="https://assets.ubuntu.com/v1/e5f6bd10-Google_Cloud_Platform-Logo.png",
+              alt="Google Cloud Platform",
+              width="144",
+              height="24",
+              hi_def=True,
+              loading="lazy",
+              attrs={"class": "p-inline-images__logo", "id": ""},
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{
+          image(
+              url="https://assets.ubuntu.com/v1/5e91ff73-ibm-cloud-logo.svg",
+              alt="IBM Cloud",
+              width="144",
+              height="36",
+              hi_def=True,
+              loading="lazy",
+              attrs={"class": "p-inline-images__logo", "id": ""},
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{
+          image(
+              url="https://assets.ubuntu.com/v1/d74eebcd-o-redbadge-digital-master.png",
+              alt="Oracle",
+              width="144",
+              height="76",
+              hi_def=True,
+              loading="lazy",
+              attrs={"class": "p-inline-images__logo", "id": ""},
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{
+          image(
+              url="https://assets.ubuntu.com/v1/73135672-ntt-logo.svg",
+              alt="NTT Cloud Communications",
+              width="144",
+              height="54",
+              hi_def=True,
+              loading="lazy",
+              attrs={"class": "p-inline-images__logo", "id": ""},
+          ) | safe
+        }}
+      </li>   
+  </ul>
+    <p class="u-align--center"><a class="p-link--external" href="https://partners.ubuntu.com/find-a-partner?programme=certified-public-cloud ">查看全部认证的公有云合作伙伴</a></p>
+  </div>
+</section>
+
+<section class="p-strip is-bordered">
+  <div class="row p-divider">
+    <div class="col-6 p-divider__block">
+      <h2 class="p-heading--three">使用Juju快速部署服务</h2>
+      <div class="u-hide--small u-align--center u-sv1">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/162002c2-charms_juju.svg",
+            alt="Grid of juju charm icons including wordpress, hadoop, django, MySQL, MongoDB and OpenStack",
+            height="208",
+            width="504",
+            hi_def=True,
+            loading="lazy",
+          ) | safe
+        }}
+      </div>
+      <p>Juju是在领先的公有云上部署和扩展工作负载的最快方式。使用Juju Charmed bundle，您可以一键启动整个云环境，或在命令行模式下仅需一条命令。Juju可帮助您一站式部署整个应用程序基础架构。</p>
+      <p><a class="p-link--external" href="https://jujucharms.com/">了解更多关于Juju的内容</a></p>
+    </div>
+    <div class="col-6 p-divider__block">
+      <h2 class="p-heading--three">最好的管理和支持服务</h2>
+      <div class="u-hide--small u-align--center u-sv1">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/434e177d-cloud-landscape-chart.jpg",
+            alt="Landscape managing 913 machines screenshot",
+            height="208",
+            width="371",
+            hi_def=True,
+            loading="lazy",
+          ) | safe
+        }}
+      </div>
+      <p>Ubuntu Advantage支持服务具有灵活的Ubuntu Virtual Guest选项，专为Ubuntu认证的公有云上的虚拟化企业工作负载而设计。 在Landscape的加持下，只需点击几下鼠标，即可高效管理所有Ubuntu实例。借助Canonical的Livepatch服务，无需重新启动即可应用关键的内核补丁。</p>
+      <p><a href="/support">了解关于支持服务的全部内容&nbsp;&rsaquo;</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light is-bordered">
+  <div class="row u-equal-height u-vertically-center">
+    <div class="col-5">
+      <h2>开发者的最爱</h2>
+      <p>Ubuntu是用于开发和部署最流行的Linux发行版。如果您的开发人员已经在使用Ubuntu，那么上云将变得更容易。</p>
+      <p><a href="/desktop/developers">了解更多关于开发者的内容&nbsp;&rsaquo;</a></p>
+    </div>
+    <div class="col-7 u-hide--small u-align--center">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/b3061ad7-laptop-dev.png",
+          alt="",
+          height="298",
+          width="500",
+          hi_def=True,
+          loading="lazy",
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip is-deep is-bordered">
+  <div class="row">
+    <div class="col-6">
+      <h2>准备好开始了吗？</h2>
+      <p>AWS上的Ubuntu Pro是由Canonical设计的高级版镜像，旨在为公有云上运行的生产环境提供最全面的服务支持。</p>
+      <p>
+        <a class="p-link--external" href="https://aws.amazon.com/marketplace/pp/B087L1R4G4">在AWS上开启Ubuntu Pro 20.04 LTS</a>
+      </p>
+      <p>
+        <a class="p-link--external" href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/canonical.0001-com-ubuntu-pro-focal?tab=Overview">在Azure上开启Ubuntu Pro 20.04 LTS</a>
+      </p>
+      <p>
+        <a class="p-link--external" href="https://console.cloud.google.com/marketplace/browse?q=ubuntu%20pro%20canonical">在GCP上开启Ubuntu Pro 20.04 LTS</a>
+      </p>
+      <p>Ubuntu Pro包括优化的内核和适用于Ubuntu附带的整个软件包集的加固和安全覆盖。</p>
+      <p>
+        <a class="p-button--positive" href="/download/cloud">开始使用Ubuntu</a>
+      </p>
+    </div>
+    <div class="col-6 u-vertically-center">
+      <ul class="p-inline-images">
+        <li class="p-inline-images__item">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
+              alt="AWS",
+              height="67",
+              width="112",
+              hi_def=True,
+              loading="lazy",
+            ) | safe
+          }}
+        </li>
+        <li class="p-inline-images__item">
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/da9a1344-Microsoft-Azure-logo_stacked_transparent.png",
+              alt="Microsoft Azure",
+              width="350",
+              height="100",
+              hi_def=True,
+              loading="auto",
+            ) | safe
+          }}
+        </li>
+        <li class="p-inline-images__item">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/8c1c38b0-google-cloud-3.svg",
+            alt="Google Cloud",
+            width="350",
+            height="61",
+            hi_def=True,
+            loading="lazy"
+            ) | safe
+          }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
