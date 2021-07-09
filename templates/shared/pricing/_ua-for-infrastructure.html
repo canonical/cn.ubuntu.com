@@ -1,0 +1,170 @@
+<div class="u-fixed-width">
+  <div style="overflow-x: auto;">
+    <table class="p-table" style="width: auto;">
+      <thead>
+        <tr>
+          <th style="width: 40%;"><strong>适用于基础设施的Ubuntu订阅</strong></th>
+          <th width="200" class="u-align--center">基础版</th>
+          <th width="200" class="u-align--center">标准版</th>
+          <th width="200" class="u-align--center">高级版</th>
+        </tr>
+        <tr style="background: #E5E5E5;">
+          <th colspan="4" style="padding: .75rem 0 .75rem .5rem;"><strong>每年价格</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>物理服务器</td>
+          <td class="u-align--center">$225</td>
+          <td class="u-align--center">$750</td>
+          <td class="u-align--center">$1,500</td>
+        </tr>
+        <tr>
+          <td>虚拟服务器</td>
+          <td class="u-align--center">$75</td>
+          <td class="u-align--center">$250</td>
+          <td class="u-align--center">$500</td>
+        </tr>
+        {% if no_desktop != "true" %}
+        <tr>
+          <td>桌面系统</td>
+          <td class="u-align--center">$25</td>
+          <td class="u-align--center">$150</td>
+          <td class="u-align--center">$300</td>
+        </tr>
+        {% endif %}
+      </tbody>
+      <thead>
+        <tr style="background: #E5E5E5;">
+          <th colspan="4" style="border-top: 1px solid rgba(0,0,0,0.1); padding: .75rem 0 .75rem .5rem;"><strong>服务级别</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>电话和工单支持</td>
+          <td class="u-align--center">无</td>
+          <td class="u-align--center">24x5</td>
+          <td class="u-align--center">24x7</td>
+        </tr>
+        <tr>
+          <td>初始响应时间 SLA - Sev 1</td>
+          <td class="u-align--center">&ndash;</td>
+          <td class="u-align--center">4 小时</td>
+          <td class="u-align--center">1 小时</td>
+        </tr>
+        <tr>
+          <td>初始响应时间 SLA - Sev 2</td>
+          <td class="u-align--center">&ndash;</td>
+          <td class="u-align--center">8 个工作小时</td>
+          <td class="u-align--center">2 小时</td>
+        </tr>
+        <tr>
+          <td>初始响应时间 SLA - Sev 3</td>
+          <td class="u-align--center">&ndash;</td>
+          <td class="u-align--center">12 个工作小时</td>
+          <td class="u-align--center">6 小时</td>
+        </tr>
+        <tr>
+          <td>初始响应时间 SLA - Sev 4</td>
+          <td class="u-align--center">&ndash;</td>
+          <td class="u-align--center">24 个工作小时</td>
+          <td class="u-align--center">12 小时</td>
+        </tr>
+        </tbody>
+        <thead>
+          <tr style="background: #E5E5E5;">
+            <th colspan="4" style="border-top: 1px solid rgba(0,0,0,0.1); padding: .75rem 0 .75rem 0.5rem;"><strong>包含内容</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="/support/esm">扩展的安全维护</a> (ESM)</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+        </tr>
+        <tr>
+          <td>避免重启的 <a href="https://ubuntu.com/livepatch" class="p-link--external">Kernel实时补丁</a> 服务</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+        </tr>
+        <tr>
+          <td>Ubuntu 系统管理工具 <a href="https://landscape.canonical.com" class="p-link--external">Landscape</a></td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+        </tr>
+        <tr>
+          <td>知识库访问</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+        </tr>
+        <tr>
+          <td>用于 KVM 客户机的认证的 Windows 驱动</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+        </tr>
+        <tr id="fips">
+          <td>认证的加密模块 <a href="https://ubuntu.com/security/certifications#fips" class="p-link--external">FIPS 140-2 Level 1</a></td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+        </tr>
+        <tr>
+          <td><a href="https://ubuntu.com/security/certifications#common-criteria" class="p-link--external">Common Criteria EAL2</a></td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+        </tr>
+        <tr>
+          <td><a href="https://ubuntu.com/security/certifications#cis" class="p-link--external">CIS Benchmark</a></td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+        </tr>
+        <tr>
+          <td>OpenStack</td>
+          <td class="u-align--center">安全补丁</td>
+          <td class="u-align--center">安全补丁 + 支持</td>
+          <td class="u-align--center">安全补丁 + 支持</td>
+        </tr>
+        <tr>
+          <td>Kubernetes</td>
+          <td class="u-align--center">安全补丁</td>
+          <td class="u-align--center">安全补丁 + 支持</td>
+          <td class="u-align--center">安全补丁 + 支持</td>
+        </tr>
+        <tr>
+          <td>KVM/LXD</td>
+          <td class="u-align--center">安全补丁</td>
+          <td class="u-align--center">安全补丁 + 支持</td>
+          <td class="u-align--center">安全补丁 + 支持</td>
+        </tr>
+        <tr>
+          <td>MAAS</td>
+          <td class="u-align--center">安全补丁</td>
+          <td class="u-align--center">安全补丁 + 支持</td>
+          <td class="u-align--center">安全补丁 + 支持</td>
+        </tr>
+        <tr>
+          <td>法律保证计划</td>
+          <td class="u-align--center">&ndash;</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+          <td class="u-align--center">{{ image(url="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg", alt="Yes", width="16", height="16", hi_def=True, loading="lazy",) | safe }}</td>
+        </tr>
+        <tr>
+          <td>Ceph/Swift 原始存储支持已包含</td>
+          <td class="u-align--center">&ndash;</td>
+          <td class="u-align--center">72TB 每存储节点</td>
+          <td class="u-align--center">72TB 每存储节点</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  {% if extra %}
+  <p><small>{{ extra|safe }}</small></p>
+  {% endif %}
+</div>

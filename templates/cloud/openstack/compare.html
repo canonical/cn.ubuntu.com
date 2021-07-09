@@ -1,0 +1,431 @@
+{% extends "templates/base.html" %}
+{% if title %}{% block title %}OpenStack发行版对比{{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}{{ meta_description }}Ubuntu私有云,私有云,混合云,多云,multicloud,OpenStack,Kubernetes,K8s{% endblock %}{% endif %}
+{% block content %}
+
+{% include "cloud/openstack/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped is-deep is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <h1>OpenStack 发行版的: <br class="u-hide--small">对比</h1>
+      <p>寻找详细的 OpenStack 发行版对比？查看下表以了解 Canonical 的 Charmed OpenStack 与其他发行版有何不同。单击每个 Charmed OpenStack 单元可了解更多信息。</p>
+      <p><a href="/contact" class="p-button--positive js-invoke-modal">迁移到 Charmed OpenStack</a></p>
+      <p><a href="/engage/vmware-to-openstack">阅读白皮书 &mdash; "从VMware 迁移到 Charmed OpenStack" &nbsp;&rsaquo;</a></p>
+    </div>
+    <div class="col-4">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/f66803a0-openstack-comparison.svg",
+          alt="",
+          height="200",
+          width="320",
+          hi_def=True,
+          attrs={"class": ""},
+          loading="auto",
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip" style="overflow-x: scroll;">
+  <div class="row">
+    <table style="min-width: 800px;">
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/5d6da5c4-logo-canonical-aubergine.svg",
+                alt="",
+                height="30",
+                width="130",
+                hi_def=True,
+                attrs={"class": ""},
+                loading="lazy",
+              ) | safe
+            }}
+            <div>Canonical 的 Charmed OpenStack</div>
+          </th>
+          <th>
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/82c62241-red-hat-2019-primary.svg",
+                alt="",
+                height="30",
+                width="127",
+                hi_def=True,
+                attrs={"class": ""},
+                loading="auto",
+              ) | safe
+            }}
+            <div>Red Hat OpenStack 平台</div>
+          </th>
+          <th>
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/3ea3fad9-mirantis_logo.svg",
+                alt="",
+                height="30",
+                width="52",
+                hi_def=True,
+                attrs={"class": ""},
+                loading="lazy",
+              ) | safe
+            }}
+            <div>Mirantis 云平台</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>价格</th>
+          <td class="p-accordion is-compact">
+            <button class="p-accordion__tab" id="tab-pricing" role="tab" aria-controls="content-pricing" aria-expanded="false">$</button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-pricing">
+              <p><a class="p-link--external" href="https://ubuntu.com/openstack/consulting">设计和交付</a><br>$75,000美元起。</p>
+              <p><a href="/support">商业支持</a><br>$1,500 美元每主机每年。</p>
+              <p><a class="p-link--external" href="https://ubuntu.com/openstack/managed">完全托管的服务</a><br> $5,475 美元每主机每年。</p>
+            </div>
+          </td>
+          <td>$$$$$</td>
+          <td>$$$</td>
+        </tr>
+
+        <tr>
+          <th>固定价格交付</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-price-delivery" role="tab" aria-controls="content-price-delivery" aria-expanded="false"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes"></button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-price-delivery">
+              <p> Canonical 为 Charmed OpenStack 提供咨询服务，包括以固定价格进行设计和交付，这种方式使得部署成本完全透明。</p>
+            </div>
+          </td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <th>托管的 OpenStack</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-managed-openstack" role="tab" aria-controls="content-managed-openstack" aria-expanded="false"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes"></button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-managed-openstack">
+              <p>托管的 OpenStack 是一种更经济的选择，最多可包含 200 个节点。 Canonical 为 OpenStack 提供完全托管的服务，以完全卸下客户的运营团队的压力。</p>
+            </div>
+          </td>
+          <td>-</td>
+          <td><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes"></td>
+        </tr>
+
+        <tr>
+          <th>支持计价</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-support-pricing" role="tab" aria-controls="content-support-pricing" aria-expanded="false">每主机</button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-support-pricing">
+              <p>每个插槽对的定价无法扩展，并且会很快导致总体拥有成本 (TCO) 过高。Canonical 应用按主机定价来支持和管理服务，使得运营成本完全透明并实现可预测的成本预算。</p>
+            </div>
+          </td>
+          <td>
+            每插槽对
+          </td>
+          <td>
+            每主机+控制面板的基础价格
+          </td>
+        </tr>
+
+        <tr>
+          <th>发布节奏</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-cadence" role="tab" aria-controls="content-cadence" aria-expanded="false">6 个月和每 2 年一个 LTS</button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-cadence">
+              <p>Charmed OpenStack 每6个月发布一次，每2年发布一次长期支持 (LTS)。完全支持和自动化的每个连续版本之间的升级。</p>
+            </div>
+          </td>
+          <td>
+            6 个月和每 18 个月一个 LTS
+          </td>
+          <td>
+            无可预测的发布节奏
+          </td>
+        </tr>
+
+        <tr>
+          <th>最长支持时间</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-support-timeline" role="tab" aria-controls="content-support-timeline" aria-expanded="false">10 年</button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-support-timeline">
+              <p>Canonical 为 Charmed OpenStack 的每个 LTS 版本提供长达 10 年的安全更新。在此之后，用户可以轻松升级到更新的版本以扩展支持。</p>
+            </div>
+          </td>
+          <td>
+            5 年
+          </td>
+          <td>
+            3 年
+          </td>
+        </tr>
+
+        <tr>
+          <th>OpenStack 部署机制</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-deployment-mechanism" role="tab" aria-controls="content-deployment-mechanism" aria-expanded="false">OpenStack Charms</button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-deployment-mechanism">
+              <p><a class="p-link--external" href="https://charmhub.io/?q=openstack">OpenStack Charms</a> 将安装和运行 OpenStack 部署后所需的整个逻辑封装在可组合软件包中。</p>
+            </div>
+          </td>
+          <td>
+            Red Hat OpenStack Platform Director (基于 TripleO)
+          </td>
+          <td>
+            DriveTrain (基于 Git, Gerrit, Jenkins 和 SaltStack)
+          </td>
+        </tr>
+
+        <tr>
+          <th>裸机发现工具</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-bare-metal-tool" role="tab" aria-controls="content-bare-metal-tool" aria-expanded="false">MAAS</button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-bare-metal-tool">
+              <p><a class="p-link--external" href="https://maas.io">MAAS</a> 是一种裸机配置工具，可将数据中心转变为真正的裸机云。</p>
+            </div>
+          </td>
+          <td>
+            OpenStack Ironic
+          </td>
+          <td>
+            MAAS
+          </td>
+        </tr>
+
+        <tr>
+          <th>操作系统管理工具</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-os-management-tool" role="tab" aria-controls="content-os-management-tool" aria-expanded="false">Landscape</button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-os-management-tool">
+              <p><a class="p-link--external" href="https://landscape.canonical.com/">Landscape</a> 是领先的用于部署、监控和管理 Ubuntu 服务器的管理工具。</p>
+            </div>
+          </td>
+          <td>
+            Red Hat Satellite
+          </td>
+          <td>
+            未提供
+          </td>
+        </tr>
+
+        <tr>
+          <th>虚拟机管理器</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-hypervisors" role="tab" aria-controls="content-hypervisors" aria-expanded="false">KVM</button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-hypervisors">
+              <p>Charmed OpenStack 提供开箱即用的 KVM 虚拟机管理程序的支持。其他虚拟机管理程序可通过咨询服务获得。</p>
+            </div>
+          </td>
+          <td>
+            KVM
+          </td>
+          <td>
+            KVM
+          </td>
+        </tr>
+
+        <tr>
+          <th>网络</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-sdn" role="tab" aria-controls="content-sdn" aria-expanded="false">OVN, OVS, Juniper Contrail, Cisco ACI</button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-sdn">
+              <p>Charmed OpenStack 为各种 SDN 平台提供支持，包括 OVN、OVS、Juniper Contrail 和 Cisco ACI。其他 SDN 平台可通过咨询服务获得。</p>
+            </div>
+          </td>
+          <td>
+            OVN, OVS, Juniper Contrail, Cisco ACI
+          </td>
+          <td>
+            OVS, Tungsten Fabric, Calico
+          </td>
+        </tr>
+
+        <tr>
+          <th>存储</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-storage-platforms" role="tab" aria-controls="content-storage-platforms" aria-expanded="false">Ceph, iSCSI</button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-storage-platforms">
+              <p>Charmed OpenStack 提供对 Ceph 和 iSCSI 的支持。其他存储平台可通过咨询服务获得。</p>
+            </div>
+          </td>
+          <td>
+            Ceph, NFS
+          </td>
+          <td>
+            Ceph
+          </td>
+        </tr>
+
+        <tr>
+          <th>容器化控制面板</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-control-plane" role="tab" aria-controls="content-control-plane" aria-expanded="false"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes"></button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-control-plane">
+              <p>与传统虚拟机相比，容器带来了许多优势，例如更好的密度和管理能力。 Charmed OpenStack 的控制面板使用 <a class="p-link--external" href="https://linuxcontainers.org/lxd/introduction/"> LXD</a> 容器来实现完全地容器化。</a>。
+              </p>
+            </div>
+          </td>
+          <td>
+            <img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes">
+          </td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <th>全自动化升级</th>
+          <td class="p-accordion is-compact ">
+            <button class="p-accordion__tab " id="tab-automated-upgrades" role="tab" aria-controls="content-automated-upgrades" aria-expanded="false"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes"></button>
+            <div class="p-accordion__panel" aria-hidden="true" id="content-automated-upgrades">
+              <p>在 Charmed OpenStack 中，升级是完全自动化的，这允许用户从新功能和错误修复中受益，而无需额外的运营开销。</p>
+            </div>
+          </td>
+          <td>-</td>
+          <td>
+            <img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>需要了解更多？<a href="/contact" class="js-invoke-modal">联系我们</a></p>
+  </div>
+</section>
+<section class="p-strip--suru">
+  <div class="row">
+  <blockquote class="p-pull-quote--large">
+    <p class="p-pull-quote__quote">Canonical 的解决方案是我们收到的其他提案价格的三分之一。从 CAPEX 和 OPEX 的角度来看，该解决方案也被证明具有很高的成本效益。</p>
+    <cite class="p-pull-quote__citation">Georgi Georgiev, SBI BITS 首席信息官</cite>
+  </blockquote>
+  </div>
+</section>
+<section class="p-strip">
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h2>比红帽 OpenStack 平台更经济</h2>
+      <p>通过将每主机定价模型应用于订阅结构并以固定价格提供设计和交付，Canonical 的 Charmed OpenStack 比红帽 OpenStack 平台更便宜。此外，使用 Charmed OpenStack 不需要许可证。这意味着组织只需为需要企业支持的环境（例如生产环境）付费，而他们可以免费地运行其测试和开发环境。</p>
+      <p><a href="/engage/redhat-openstack-comparison-whitepaper">了解更多 &nbsp;&rsaquo;</a></p>
+    </div>
+    <div class="col-4 u-vertically-center">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/aab47d07-openstack-cheaper.svg",
+          alt="",
+          height="220",
+          width="320",
+          hi_def=True,
+          attrs={"class": ""},
+          loading="lazy",
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row u-equal-height">
+    <div class="col-4 u-vertically-center">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/ab100b97-openstack-simpler.svg",
+          alt="",
+          height="220",
+          width="320",
+          hi_def=True,
+          attrs={"class": ""},
+          loading="lazy",
+        ) | safe
+      }}
+    </div>
+    <div class="col-8">
+      <h2>比 Mirantis 云平台更直接</h2>
+      <p>Canonical 不依赖于杂乱互连的工具，而是利用运营者的概念进行 OpenStack 部署、操作和升级。<a class="p-link--external" href="https://docs.openstack.org/charm-guide/latest/">OpenStack Charms</a> 使用模型驱动的架构并抽象整个 OpenStack 复杂性。这使得 OpenStack 平台更简单化，维护所需的资源更少，运营成本更低。</p>
+      <p>
+        <a href="https://assets.ubuntu.com/v1/a08e868a-Charmed+OpenStack_15.03.21.pdf">
+          阅读我们的产品手册 &nbsp;&rsaquo;
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h2>与 VMware 不同的开源</h2>
+      <p>Canonical 的 Charmed OpenStack 是完全开源的，与 VMware 平台中可用的技术相比，其可以从更广泛的社区、更快的开发过程和更广泛的技术选择中受益。选择开源平台可避免供应商锁定并显着降低基础架构成本。</p>
+      <p><a href="/engage/vmware-to-openstack">了解更多 &nbsp;&rsaquo;</a></p>
+    </div>
+    <div class="col-4 u-vertically-center">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/d6271e62-openstack-opensource.svg",
+          alt="",
+          height="220",
+          width="320",
+          hi_def=True,
+          attrs={"class": ""},
+          loading="lazy",
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row u-equal-height">
+    <div class="col-4 u-align--center u-vertically-center u-hide--small">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/a3694a61-Public+Cloud.svg",
+        alt="",
+        width="221",
+        height="150",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+    <div class="col-8">
+      <h2>比公有云更具成本效益</h2>
+      <p>在长期和大规模地运行工作负载时，公有云的成本很高。尽管它们在云转型过程开始时是一种更经济的解决方案，但其的成本会随着时间的推移而不断增加。Canonical 的 Charmed OpenStack 是对公有云基础架构的经济高效的扩展，可确保降低每个 VM 的 TCO，并使得企业能够在从经济的角度，在最有意义的地方运行其工作负载。</p>
+      <p><a href="/cloud/openstack/tco-calculator">了解更多&nbsp;&rsaquo;</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row u-equal-height">
+    <div class="col-4 u-align--center u-vertically-center u-hide--small">
+      {{
+        image(
+        url="https://assets.ubuntu.com/v1/0e5f4269-questions.svg",
+        alt="Contact us",
+        width="180",
+        height="180",
+        hi_def=True,
+        loading="auto",
+        ) | safe
+      }}
+    </div>
+    <div class="col-8">
+      <h2>联系我们</h2>
+      <p>让我们的云专家团队来帮您：</p>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">项目评估</li>
+        <li class="p-list__item is-ticked">要求和功能对等</li>
+        <li class="p-list__item is-ticked">定价和 TCO 评估</li>
+      </ul>
+      <p>
+        <a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a>
+      <p>
+    </div>
+  </div>
+</section>
+
+<script src="/static/js/src/accordion.js"></script>
+
+{% endblock %}

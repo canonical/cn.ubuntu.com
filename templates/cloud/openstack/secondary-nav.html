@@ -1,0 +1,29 @@
+<nav class="p-navigation--secondary">
+  <div class="row">
+    <div class="col-12 u-equal-height">
+      <a class="p-navigation--secondary__banner u-hide--nav-threshold-down" href="/cloud">
+        <h5 class="p-navigation--secondary__logo">
+          OpenStack
+        </h5>
+      </a>
+      <ul class="breadcrumbs--secondary">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link {% if request.path == '/cloud/openstack' %}p-link--active{% else %}p-link--soft{% endif %}" href="/cloud/openstack">概览</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link {% if request.path == '/cloud/openstack/compare' %}p-link--active{% else %}p-link--soft{% endif %}" href="/cloud/openstack/compare">发行版对比</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link {% if request.path == '/cloud/openstack/tco-calculator' %}p-link--active{% else %}p-link--soft{% endif %}" href="/cloud/openstack/tco-calculator">TCO计算器</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link p-link--soft" href="https://ubuntu.com/openstack/install">安装教程</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link p-link--soft" href="https://ubuntu.com/openstack/docs">技术文档</a>
+        </li>              
+      </ul>
+    </div>
+  </div>
+ </nav>
+ 
