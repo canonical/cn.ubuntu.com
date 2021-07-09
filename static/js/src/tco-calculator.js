@@ -47,61 +47,61 @@ function initTCOCalculator() {
 
 function attachInputEvents() {
   const rangeContainers = document.querySelectorAll(
-    ".js-tco-calculator__range"
+    '.js-tco-calculator__range'
   );
   const checkboxInputs = document.querySelectorAll(
-    ".js-tco-calculator__checkbox"
+    '.js-tco-calculator__checkbox'
   );
-  const radioInputs = document.querySelectorAll(".js-tco-calculator__radio");
+  const radioInputs = document.querySelectorAll('.js-tco-calculator__radio');
 
-  rangeContainers.forEach((container) => {
+  rangeContainers.forEach(container => {
     let input = container.querySelector("input[type='number']");
     let range = container.querySelector("input[type='range']");
 
-    input.addEventListener("input", (e) => {
+    input.addEventListener('input', e => {
       range.value = e.target.value;
       updateTotals();
     });
 
-    range.addEventListener("input", (e) => {
+    range.addEventListener('input', e => {
       input.value = e.target.value;
       updateTotals();
     });
   });
 
-  checkboxInputs.forEach((checkbox) => {
-    checkbox.addEventListener("input", () => {
+  checkboxInputs.forEach(checkbox => {
+    checkbox.addEventListener('input', () => {
       updateTotals();
     });
   });
 
-  radioInputs.forEach((radio) => {
-    radio.addEventListener("input", () => {
+  radioInputs.forEach(radio => {
+    radio.addEventListener('input', () => {
       updateTotals();
     });
   });
 }
 
 function calculateStorageCost(serviceLevel, dataVolume) {
-  let tier = "tier_";
+  let tier = 'tier_';
   let adjustment = 0;
 
   if (dataVolume <= 150) {
-    tier += "one";
+    tier += 'one';
   } else if (dataVolume > 150 && dataVolume <= 1500) {
-    tier += "two";
+    tier += 'two';
     adjustment = 150;
   } else if (dataVolume > 1500 && dataVolume <= 3000) {
-    tier += "three";
+    tier += 'three';
     adjustment = 1500;
   } else if (dataVolume > 3000 && dataVolume <= 15000) {
-    tier += "four";
+    tier += 'four';
     adjustment = 3000;
   } else if (dataVolume > 15000 && dataVolume <= 30000) {
-    tier += "five";
+    tier += 'five';
     adjustment = 15000;
   } else if (dataVolume > 30000) {
-    tier += "six";
+    tier += 'six';
     adjustment = 30000;
   }
 
@@ -114,14 +114,14 @@ function calculateStorageCost(serviceLevel, dataVolume) {
 }
 
 function renderTotals(rollout, yearly, selfYearly) {
-  const rolloutEl = document.querySelector("#intial-rollout--managed");
-  const selfRolloutEl = document.querySelector("#intial-rollout--self");
-  const yearlyEl = document.querySelector("#yearly-cost--managed");
-  const selfYearlyEl = document.querySelector("#yearly-cost--self");
+  const rolloutEl = document.querySelector('#intial-rollout--managed');
+  const selfRolloutEl = document.querySelector('#intial-rollout--self');
+  const yearlyEl = document.querySelector('#yearly-cost--managed');
+  const selfYearlyEl = document.querySelector('#yearly-cost--self');
 
-  const formattedRollout = `$${new Intl.NumberFormat("en-US").format(rollout)}`;
-  const formattedYearly = `$${new Intl.NumberFormat("en-US").format(yearly)}`;
-  const formattedSelfYearly = `$${new Intl.NumberFormat("en-US").format(
+  const formattedRollout = `$${new Intl.NumberFormat('en-US').format(rollout)}`;
+  const formattedYearly = `$${new Intl.NumberFormat('en-US').format(yearly)}`;
+  const formattedSelfYearly = `$${new Intl.NumberFormat('en-US').format(
     selfYearly
   )}`;
 
@@ -133,16 +133,16 @@ function renderTotals(rollout, yearly, selfYearly) {
 
 function updateTotals() {
   const dataVolume = parseInt(
-    document.querySelector("#data-volume__input").value
+    document.querySelector('#data-volume__input').value
   );
   const deploymentType = document.querySelector(
     "[name='deployment-type']:checked"
   ).value;
-  const hosts = parseInt(document.querySelector("#hosts__input").value);
-  const kubernetes = document.querySelector("#ct-k8s");
+  const hosts = parseInt(document.querySelector('#hosts__input').value);
+  const kubernetes = document.querySelector('#ct-k8s');
   const kubernetesDeploymentCost =
     DEPLOYMENT_TYPE_COSTS[`kubernetes_${deploymentType}`];
-  const openstack = document.querySelector("#ct-openstack");
+  const openstack = document.querySelector('#ct-openstack');
   const openstackDeploymentCost =
     DEPLOYMENT_TYPE_COSTS[`openstack_${deploymentType}`];
   const serviceLevel = document.querySelector("[name='self-managed']:checked")
@@ -150,8 +150,10 @@ function updateTotals() {
 
   // an additional 3 hosts are required to host MAAS, Juju, etc
   const hostCost = SERVICE_LEVEL_COST_PER_HOST[serviceLevel] * hosts;
-  const maasHostCost = MANAGED_SERVICE_COSTS["maas"] * 3;
-  const managedSupportCost = SERVICE_LEVEL_COST_PER_HOST["advanced"] * hosts;
+  /* eslint-disable */
+  const maasHostCost = MANAGED_SERVICE_COSTS['maas'] * 3;
+  /* eslint-enable */
+  const managedSupportCost = SERVICE_LEVEL_COST_PER_HOST['advanced'] * hosts;
 
   let managedServicesCost = 0;
   let rollout = 0;
@@ -161,8 +163,8 @@ function updateTotals() {
 
   if (
     dataVolume / hosts > 48 &&
-    serviceLevel !== "none" &&
-    serviceLevel !== "essential"
+    serviceLevel !== 'none' &&
+    serviceLevel !== 'essential'
   ) {
     storageCost += calculateStorageCost(serviceLevel, dataVolume);
   }
@@ -170,13 +172,13 @@ function updateTotals() {
   if (openstack.checked && kubernetes.checked) {
     rollout += kubernetesDeploymentCost + openstackDeploymentCost;
     managedServicesCost +=
-      hosts * MANAGED_SERVICE_COSTS["openstack_and_kubernetes"];
+      hosts * MANAGED_SERVICE_COSTS['openstack_and_kubernetes'];
   } else if (openstack.checked) {
     rollout += openstackDeploymentCost;
-    managedServicesCost += hosts * MANAGED_SERVICE_COSTS["openstack"];
+    managedServicesCost += hosts * MANAGED_SERVICE_COSTS['openstack'];
   } else if (kubernetes.checked) {
     rollout += kubernetesDeploymentCost;
-    managedServicesCost += hosts * MANAGED_SERVICE_COSTS["kubernetes"];
+    managedServicesCost += hosts * MANAGED_SERVICE_COSTS['kubernetes'];
   }
 
   if (openstack.checked || kubernetes.checked) {
@@ -187,8 +189,8 @@ function updateTotals() {
   renderTotals(rollout, yearly, selfYearly);
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const calculator = document.querySelector(".js-tco-calculator");
+window.addEventListener('DOMContentLoaded', () => {
+  const calculator = document.querySelector('.js-tco-calculator');
 
   if (calculator) {
     initTCOCalculator();
