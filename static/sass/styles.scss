@@ -25,6 +25,7 @@
 @import 'pattern_card';
 @import 'pattern_inline-images';
 @import 'pattern_contextual-footer';
+@import 'pattern_calculator';
 
 // import cookie policy
 @import '@canonical/cookie-policy/build/css/cookie-policy';
@@ -42,6 +43,7 @@
 @include ubuntu-p-cards;
 @include ubuntu-inline-images;
 @include ubuntu-p-contextual-footer;
+@include ubuntu-p-calculator;
 
 body {
   border-top: 32px solid #262626; // Placeholder for global-nav
@@ -196,4 +198,12 @@ p.u-align--center {
   @extend .is-ticked;
 
   background-image: url('#{$assets-path}9cdb5b1e-cross-darkaubergine.svg');
+}
+
+.p-accordion__tab {
+  background-position: top $spv-inner--medium left $sph-inner;
+}
+
+td.p-accordion {
+  padding-top: 0;
 }

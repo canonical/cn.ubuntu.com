@@ -1,0 +1,860 @@
+{% extends "templates/base.html" %}
+{% if title %}{% block title %}OpenStack私有云-对公有云的经济高效的扩展{{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}{{ meta_description }}Ubuntu私有云,私有云,混合云,多云,multicloud,OpenStack,Kubernetes,K8s{% endblock %}{% endif %}
+{% block content %}
+
+{% include "cloud/openstack/secondary-nav.html" %}
+
+<style>
+  .bar-chart-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* to position separator */
+  }
+
+  .bar-chart-container > .bar-chart:first-child::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    border-right: 1px dotted #d2d2d2;
+    top: 0;
+    right: 50%;
+  }
+
+  .bar-chart {
+    width: 200px;
+  }
+
+  .bars {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 150px;
+    margin: 1rem;
+  }
+
+  .bar {
+    width: 50px;
+    height: 150px;
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+
+  .bar.ex-bar {
+    background-color: #bdcddd;
+    border: 1px solid #3d6c6c;
+  }
+
+  .bar.tco-bar {
+    background-color: #b6dabc;
+    border:1px solid #64b070;
+  }
+
+  #hours__range {
+    width: 400px;
+  }
+
+  .js-cloud-price-slider {
+    position: relative;
+    padding: 1rem;
+    margin-top: 0.1rem;
+    background-color: #f5f5f5;
+    border: 1px dotted #d2d2d2;
+  }
+
+  .js-cloud-price-slider::before {
+    content: "低";
+    position: absolute;
+    left: 10px;
+    top: 18px;
+    font-size: 12px;
+  }
+
+  .js-cloud-price-slider::after {
+    content: "高";
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    font-size: 12px;
+  }
+</style>
+
+<section class="p-strip--suru-bottomed">
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h1>OpenStack 私有云</h1>
+      <p>使用私有云进行多云运营将更具成本效益。使用 Canonical 的 Charmed OpenStack 则让私有云更具成本效益。</p>
+      <p>使用 Charmed OpenStack 节省多达65%。</p>
+      <p>
+        <a class="p-button--positive js-invoke-modal" href="/contact">
+          联系我们
+        </a>
+      </p>
+      <p>
+        <a class="p-link--external" href="https://ubuntu.com/engage/multi-cloud-business-guide">
+          阅读白皮书：“一份关于多云业务的指南”
+        </a>
+      </p>
+    </div>
+    <div class="col-4 u-vertically-center u-hide--small">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/346134cb-Openstack-cost-effective.svg",
+        alt="",
+        width="313",
+        height="180",
+        hi_def=True,
+        loading="auto"
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="u-fixed-width">
+    <p class="p-muted-heading u-align--center">成功的客户案例</p>
+    <ul class="p-inline-images">
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/0143bd92-AT%26T_logo_2016.svg",
+          alt="AT&T",
+          width="1000",
+          height="411",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/2616b34f-ACI-Universal-Payments.svg",
+          alt="ACI universal payments",
+          width="118",
+          height="54",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/06c5609f-logo-cisco.svg",
+          alt="Cisco",
+          width="125",
+          height="65",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/8442024b-Gendarmerie_nationale_logo.svg.png",
+          alt="Gendarmerie nationale",
+          width="894",
+          height="768",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/7538babd-Bloomberg_logo.svg",
+          alt="Bloomberg",
+          width="130",
+          height="26",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/7c97efb0-BT_logo.svg",
+          alt="BT",
+          width="90",
+          height="90",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="lazy"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/40b42dd2-bnp-paribas_logo.svg",
+          alt="BNP Paribas",
+          width="165",
+          height="40",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/d3959703-T-SYSTEMS-LOGO2013.svg",
+          alt="T-systems",
+          width="225",
+          height="43",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/2d2e1ab2-king-abdullah-university-of-science-kaust-logo.png",
+          alt="",
+          width="160",
+          height="81",
+          hi_def=True,
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/2ee0e692-1200px-DaimlerLogo.svg.png",
+          alt="Daimer",
+          width="240",
+          height="30",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/d2bfbb2b-MTS_logo_%282016%29.svg",
+          alt="MTS",
+          width="266",
+          height="98",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/ee5d503f-rabobank-4.svg",
+          alt="Rabobank",
+          width="250",
+          height="45",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/df4150e2-nec-logo.svg",
+          alt="NEC",
+          width="132",
+          height="36",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/1d34393a-best-buy_logo.svg",
+          alt="Best Buy",
+          width="100",
+          height="73",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+      <li class="p-inline-images__item">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/27819db8-spectrum-health-logo.png",
+          alt="Spectrum health",
+          width="300",
+          height="120",
+          hi_def=True,
+          attrs={"class": "p-inline-images__logo"},
+          loading="auto"
+          ) | safe
+        }}
+      </li>
+    </ul>
+    <div>
+      <p class="u-align--center">电信、金融机构、硬件制造商、政府机构、企业。</p>
+      <p class="u-align--center">OpenStack 和 Ubuntu 可帮助您优化位于全球所有市场部门的基础设施成本。</p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row">
+    <div class="col-6">
+      <h2>专为最佳性价比而设计</h2>
+      <h3 class="p-heading--4">旨在在各个方面都具备经济效益</h3>
+      <p>智能的运营、优化的架构、更经济的价格。</p>
+      <p>所有这些都是为了确保降低您的云 TCO（总拥有成本），同时扩展您的创新预算。</p>
+      <a href="/cloud/openstack/compare">OpenStack 发行版对比&nbsp;&rsaquo;</a>
+    </div>
+    <div class="col-6 u-hide--small u-align--center">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/8468f4b4-Openstack-price-performance.svg",
+        alt="",
+        width="446",
+        height="270",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row u-vertically-center">
+    <div class="col-6 u-hide--small u-align--center">
+      <div class="bar-chart-container">
+        <div class="bar-chart">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/a3694a61-Public+Cloud.svg",
+          alt="",
+          width="100",
+          height="70",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+        <h4>公有云</h4>
+        <div class="bars">
+          <div>
+            <div id="public-capex" class="bar ex-bar"></div>
+            <div>CapEx</div>
+          </div>
+          <div>
+            <div id="public-opex" class="bar ex-bar"></div>
+            <div>OpEx</div>
+          </div>
+          <div>
+            <div id="public-tco" class="bar tco-bar"></div>
+            <div>TCO</div>
+          </div>
+        </div>
+        </div>
+        <div class="bar-chart">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/f25ccac7-Private+Cloud.svg",
+          alt="",
+          width="100",
+          height="70",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+        <h4>私有云</h4>
+        <div class="bars">
+          <div>
+            <div id="private-capex" class="bar ex-bar"></div>
+            <div>CapEx</div>
+          </div>
+          <div>
+            <div id="private-opex" class="bar ex-bar"></div>
+            <div>OpEx</div>
+          </div>
+          <div>
+            <div id="private-tco" class="bar tco-bar"></div>
+            <div>TCO</div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="js-cloud-price-slider">
+        <input type="range" id="hours__range" min="1" max="150" value="96" step="1" aria-label="Cost of public cloud versus private cloud">
+        <div>VM 小时</div>
+      </div>
+      <div class="u-align--left">
+        <small>CapEx：资金成本；OpEx：运营成本；TCO：总拥有成本</small>
+      </div>
+    </div>
+    <div class="col-6">
+      <h2>最大化多云成本优化</h2>
+      <h3 class="p-heading--4">从经济性的视角来看——在最有意义的地方运行您的工作负载</h3>
+      <p>基础设施的未来是多云。</p>
+      <p>同时使用私有云和公有云基础架构可以优化您的资金成本和运营支出成本。</p>
+      <p>
+        <a href="https://assets.ubuntu.com/v1/a08e868a-Charmed+OpenStack_15.03.21.pdf">
+          下载产品手册&nbsp;&rsaquo;
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row">
+    <div class="col-6">
+      <h2>更便宜的虚拟机（VM）</h2>
+      <h3 class="p-heading--4">如果“机器”运行在私有云中，那么成本更低。</h3>
+      <p>对比三年内在基准 Charmed OpenStack 云上运行的示例 VM 的价格。此计算包括硬件成本、典型的托管费用和<a href="https://ubuntu.com/openstack/managed" class="p-link--external">完全托管的服务</a>*。</p>
+      <a class="u-sv2" href="/cloud/openstack/tco-calculator">查看其他虚拟机的价格&nbsp;&rsaquo;</a>
+      <p>* 确切的价格可能因使用的硬件、云配置、本地托管费用和工资成本而有所差异。</p>
+    </div>
+    <div class="col-6 u-hide--small u-align--center">
+      <table aria-label="Comparison table for pricing of VMs">
+        <thead>
+          <tr>
+            <th>VM 类别</th>
+            <th class="u-align--right">VM 数量</th>
+            <th class="u-align--right">每小时价格</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <aside class="p-accordion">
+                <ul class="p-accordion__list">
+                  <li class="p-accordion__group">
+                    <div role="heading" aria-level="3" class="p-accordion__heading">
+                      <button type="button" class="p-accordion__tab" id="tab1" aria-controls="tab1-section" aria-expanded="false">c.小型</button>
+                    </div>
+                    <section class="p-accordion__panel" style="padding-left: 1rem;" id="tab1-section" aria-hidden="true" aria-labelledby="tab1">
+                      <p>vCPU 数量: 1</p>
+                      <p>内存: 4 GB</p>
+                      <p>临时存储: 8 GB</p>
+                      <p>持久存储: 40 GB</p>
+                    </section>
+                  </li>
+                </ul>
+              </aside>
+            </td>
+            <td class="u-align--right">3078</td>
+            <td class="u-align--right">$0.0132</td>
+          </tr>
+          <tr>
+            <td>
+              <aside class="p-accordion">
+                <ul class="p-accordion__list">
+                  <li class="p-accordion__group">
+                    <div role="heading" aria-level="3" class="p-accordion__heading">
+                      <button type="button" class="p-accordion__tab" id="tab2" aria-controls="tab2-section" aria-expanded="false">c.中型</button>
+                    </div>
+                    <section class="p-accordion__panel" style="padding-left: 1rem;" id="tab2-section" aria-hidden="true" aria-labelledby="tab2">
+                      <p>vCPU 数量: 2</p>
+                      <p>内存: 8 GB</p>
+                      <p>临时存储: 8 GB</p>
+                      <p>持久存储: 80 GB</p>
+                    </section>
+                  </li>
+                </ul>
+              </aside>
+            </td>
+            <td class="u-align--right">1539</td>
+            <td class="u-align--right">$0.0264</td>
+          </tr>
+          <tr>
+            <td>
+              <aside class="p-accordion">
+                <ul class="p-accordion__list">
+                  <li class="p-accordion__group">
+                    <div role="heading" aria-level="3" class="p-accordion__heading">
+                      <button type="button" class="p-accordion__tab" id="tab3" aria-controls="tab3-section" aria-expanded="false">c.大型</button>
+                    </div>
+                    <section class="p-accordion__panel" style="padding-left: 1rem;" id="tab3-section" aria-hidden="true" aria-labelledby="tab3">
+                      <p>vCPU 数量: 4</p>
+                      <p>内存: 16 GB</p>
+                      <p>临时存储: 8 GB</p>
+                      <p>持久存储: 160 GB</p>
+                    </section>
+                  </li>
+                </ul>
+              </aside>
+            </td>
+            <td class="u-align--right">769</td>
+            <td class="u-align--right">$0.0529</td>
+          </tr>
+          <tr>
+            <td>
+              <aside class="p-accordion">
+                <ul class="p-accordion__list">
+                  <li class="p-accordion__group">
+                    <div role="heading" aria-level="4" class="p-accordion__heading">
+                      <button type="button" class="p-accordion__tab" id="tab4" aria-controls="tab4-section" aria-expanded="false">c.特大型</button>
+                    </div>
+                    <section class="p-accordion__panel" style="padding-left: 1rem;" id="tab4-section" aria-hidden="true" aria-labelledby="tab4">
+                      <p>vCPU 数量: 8</p>
+                      <p>内存: 32 GB</p>
+                      <p>临时存储: 8 GB</p>
+                      <p>持久存储: 320 GB</p>
+                    </section>
+                  </li>
+                </ul>
+              </aside>
+            </td>
+            <td class="u-align--right">384</td>
+            <td class="u-align--right">$0.1059</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--suru-accent is-dark">
+  <div class="row">
+    <div class="col-3 p-card u-hide--small u-vertically-center">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/91fb9ca2-SBI-BITS_logo.svg",
+        alt="SBI Bits",
+        width="292",
+        height="85",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+    <div class="col-8 col-start-large-5">
+      <div class="p-heading-icon--small">
+        <div class="p-heading-icon__header">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/fc781c43-Case+study+-+white.svg",
+            alt="",
+            width="32",
+            height="32",
+            hi_def=True,
+            attrs={"class":"p-heading-icon__img"},
+            loading="lazy"
+            ) | safe
+          }}
+          <p class="p-muted-heading u-sv3" style="color: #fff; line-height: 1.5rem;">案例分享</p>
+        </div>
+        <h2 class="p-heading--4">我们降低了础设施的成本</h2>
+        <p>阅读 Charmed OpenStack 如何帮助 SBI 集团优化其资金支出和运营成本</p>
+        <p><a href="https://ubuntu.com/engage/sbi-casestudy" class="p-button--neutral p-link--external">阅读本案例</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="u-fixed-width">
+    <blockquote class="p-pull-quote">
+      <p class="p-pull-quote__quote">Canonical 的解决方案是我们收到的其他提案价格的三分之一。从 CAPEX 和 OPEX 的角度来看，该解决方案也被证明具有很高的成本效益。</p>
+      <cite class="p-pull-quote__citation">Georgi Georgiev, SBI BITS 首席信息官</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="p-strip--light">
+
+  {% include "shared/pricing/_openstack-packages.html" %}
+
+  <div class="u-fixed-width">
+    <p>
+      <a href="https://assets.ubuntu.com/v1/d4766546-Private-Cloud-Build_Datasheet.pdf" class="p-button--neutral">
+        下载服务手册
+      </a>
+    </p>
+    <p>
+      <a href="https://ubuntu.com/openstack/consulting" class="p-link--external">了解更多关于我们咨询服务包的内容</a>
+    </p>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row u-vertically-center">
+    <div class="col-6">
+      <h2>完全的自下而上的自动化</h2>
+      <h3 class="p-heading--4">全自动的 OpenStack 部署和运营</h3>
+      <p>从裸机到云控制面板，Charmed OpenStack 无处不在地使用自动化。</p>
+      <p>通过迁移到市场上唯一使用模型驱动运营的 OpenStack 平台来节省时间和金钱。</p>
+      <a href="https://ubuntu.com/engage/openstack-deployment-guide" class="p-link--external">阅读如何有效地部署和运营 OpenStack</a>
+    </div>
+    <div class="col-6 u-hide--small u-align--center">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/c4596e41-openstack-charm-diagram.png",
+        alt="OpenStack charm diagram",
+        width="422",
+        height="333",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row u-vertically-center">
+    <div class="col-6 u-hide--small u-align--center">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/a21ceaf9-Openstack-extendable-containers-layers.svg",
+        alt="",
+        width="387",
+        height="330",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+    <div class="col-6">
+      <h2>可扩展的容器层</h2>
+      <h3 class="p-heading--4">在同一平台上运行容器和虚拟机</h3>
+      <p>通过在 OpenStack 上运行的 <a href="/containers/kubernetes">Kubernetes</a> 层来扩展您的云，并从统一的容器和传统工作负载管理方法中受益。 </p>
+      <p>整个堆栈在相同的<a href="/support">订阅服务</a>下获得支持。</p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row u-vertically-center">
+    <div class="col-6">
+      <h2>产品互通性</h2>
+      <h3 class="p-heading--4">服务器，SDN控制器，存储平台和更多</h3>
+      <p>我们与领先的半导体公司、硬件供应商、网络设备供应商和开源社区合作，以确保提供最佳的技术选择。</p>
+      <p>所有这些都是为了设计最佳架构并且始终确保最佳的性价比。</p>
+      <a href="https://ubuntu.com/openstack/features" class="p-link--external">阅读支持的选项</a>
+    </div>
+    <div class="col-6 u-hide--small u-align--center">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/0678b279-Openstack-puzzle.svg",
+        alt="",
+        width="262",
+        height="300",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row u-vertically-center">
+    <div class="col-6 u-hide--small u-align--center">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/58e11dd2-delta+updates.svg",
+        alt="",
+        width="341",
+        height="195",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+    <div class="col-6">
+      <h2>100 Gbps OpenStack</h2>
+      <h3 class="p-heading--4">适用于电信运营商、HPC、AI/ML</h3>
+      <p>运行 <a href="https://ubuntu.com/telco" class="p-link--external">NFVI/VIM</a> 和其他高级云架构所需的所有性能扩展如下：</p>
+      <ul class="p-list is-split">
+        <li class="p-list__item is-ticked">OVS 硬件分流</li>
+        <li class="p-list__item is-ticked">SR-IOV</li>
+        <li class="p-list__item is-ticked">DPDK</li>
+        <li class="p-list__item is-ticked">CPU 锁定</li>
+        <li class="p-list__item is-ticked">NUMA 拓扑</li>
+        <li class="p-list__item is-ticked">Hugepages</li>
+        <li class="p-list__item is-ticked">PCI 直通</li>
+        <li class="p-list__item is-ticked">GPU 直通</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="u-fixed-width">
+    <h2 class="u-sv2">全球客户的认可</h2>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <blockquote class="p-pull-quote has-image">
+        <img class="p-pull-quote__image" src="https://assets.ubuntu.com/v1/d2bfbb2b-MTS_logo_%282016%29.svg" alt="MTS">
+        <p class="p-pull-quote__quote">构建基于 OpenStack 的生态系统将加快我们的技术采用，为未来的 5G 推广奠定基础，并且使我们能够提高虚拟化的成本效益。</p>
+        <cite class="p-pull-quote__citation">Victor Belov, MTS 首席技术官</cite>
+      </blockquote>
+      <a href="https://ubuntu.com/blog/mts-selects-openstack-and-canonical-for-next-generation-cloud-infrastructure" class="p-link--external">阅读公告</a>
+    </div>
+    <div class="col-6">
+      <blockquote class="p-pull-quote has-image">
+        <img class="p-pull-quote__image" src="https://assets.ubuntu.com/v1/7c97efb0-BT_logo.svg" alt="BT">
+        <p class="p-pull-quote__quote">Canonical 为我们提供了“云原生”基础，使我们能够创建一个智能且完全融合的网络。</p>
+        <cite class="p-pull-quote__citation">Neil J. McRae, BT 集团首席架构师</cite>
+      </blockquote>
+      <a href="/blog/ubuntu-5g-bt">阅读公告</a>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="u-fixed-width">
+    <h2 class="u-sv3">全栈的企业级支持</h2>
+    <h3 class="p-heading--4">多种产品，单一的订阅</h3>
+    <p>借助 Canonical 的商业支持，自信地管理您的云。</p>
+    <p class="u-sv3">选择最适合您的计划：</p>
+    {% with no_desktop="true" %}{% include "shared/pricing/_ua-for-infrastructure.html" %}{% endwith %}
+    <p>
+      <a href="https://assets.ubuntu.com/v1/969e15c5-UA-I_datasheet_2019-Oct-zh-cn-v2.pdf" class="p-button--neutral">
+        下载服务手册
+      </a>
+    </p>
+    <p>
+      <a href="/support">了解更多我们的支持计划&nbsp;&rsaquo;</a>
+    </p>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row u-equal-height">
+    <div class="col-6">
+      <h2 class="p-heading--4">
+        每个 OpenStack 版本都支持
+      </h2>
+      <p>
+        每个上游的 OpenStack 版本都带有新功能，其可为您的业务带来可观的收益。我们在上游发布后的两周内为<a href="https://ubuntu.com/about/release-cycle" class="p-link--external">每个版本的 OpenStack 提供全面支持</a>。每两年将发布一个 LTS 版本的 Charmed OpenStack，我们为此 LTS 版提供五年的支持。 
+      </p>
+    </div>
+    <div class="col-6">
+      <h2 class="p-heading--4">
+        安全，合规，加固
+      </h2>
+      <p>
+        Canonical 在<a href="/support"> UA-I订阅 </a>服务下为 Charmed OpenStack 提供长达十年的安全更新，为重视稳定性的客户提供服务。此外，支持服务包包含了各种欧盟和美国的合规选项。其他加固工具和基准测试可确保最高级别的安全性。
+      </p>
+    </div>
+  </div>
+  <div class="row u-equal-height">
+    <div class="col-6">
+      <h2 class="p-heading--4">
+        包含全自动化的升级
+      </h2>
+      <p>
+        由于 OpenStack 安装配置的过程的复杂性，OpenStack 升级是痛苦的。通过利用模型驱动架构并使用 OpenStack Charms 实现自动化，Charmed OpenStack 可以在其连续的版本之间<a class="p-link--external" href="https://docs.openstack.org/project-deploy-guide/charm-deployment-guide/latest/upgrade-overview.html">轻松地升级</a>。这使得您可以及时了解上游功能，同时不会给您的运营团队带来额外压力。
+      </p>
+    </div>
+    <div class="col-6">
+      <h2 class="p-heading--4">
+        运营商级的私有云
+      </h2>
+      <p>
+        在所有市场部门中，电信公司通常对基础设施的稳定性、安全性和弹性方面的要求最高。
+      </p>
+      <p>
+        Charmed OpenStack 满足这些要求
+      </p>
+      <p>
+        <a href="https://ubuntu.com/blog/mts-selects-openstack-and-canonical-for-next-generation-cloud-infrastructure" class="p-link--external">了解为什么MTS选择Canonical Charmed OpenStack来实施他们的NFVI。</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="u-fixed-width">
+    <h2>完全托管的 OpenStack</h2>
+    <h3 class="p-heading--4">我们为您管理您的云</h3>
+    <p>就像公有云一样，但在您的本地或我们的合作伙伴的数据中心之一上运行。</p>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="p-card">
+        <h2 class="p-heading--four">托管的 OpenStack</h2>
+        <p><span class="p-heading--two">$15</span> 每台服务器每天计价</p>
+        <hr class="u-sv1">
+        <p>Charmed OpenStack 云的完全远程运营。</p>
+        <p>包含内容：<sup><a href="#os-footnote">*</a></sup></p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">日志，监控，警报</li>
+          <li class="p-list__item is-ticked">具有专员网络运营中心的24/7运营</li>
+          <li class="p-list__item is-ticked">主动的云管理</li>
+          <li class="p-list__item is-ticked">事件和问题解决方案</li>
+          <li class="p-list__item is-ticked">软件更新和 OpenStack 升级</li>
+          <li class="p-list__item is-ticked">SLA 和定期独立审计</li>
+          <li class="p-list__item is-ticked">300 个节点内最具成本效益的方法</li>
+          <li class="p-list__item is-ticked">可选的“托管的 Kubernetes” 服务</li>
+          <li class="p-list__item is-ticked">欧盟和美国合规选项</li>
+          <li class="p-list__item is-ticked">培训和移交选项</li>
+        </ul>
+        <p>加快上市时间的最直接的方式。</p>
+        <p>
+          <a href="https://assets.ubuntu.com/v1/a797f6f9-Datasheet_Openstack_05.10.20+%281%29.pdf" class="p-button--neutral">
+            下载产品手册
+          </a>
+          <p>
+            <a href="https://ubuntu.com/openstack/managed" class="p-link--external">获取托管的 OpenStack</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip">
+    <div class="row u-equal-height">
+      <div class="col-6">
+        <h2 class="p-heading--4">长期的社区会员</h2>
+        <p>
+          开源来自贡献和社区合作。 Canonical 是 OpenStack 社区的长期成员，是 OpenStack 代码的<a href="https://www.stackalytics.io/?release=all&metric=commits" class="p-link--external">顶级贡献者之一</a>，也是<a href="https://openinfra.dev/" class="p-link--external">开放基础设施基金会</a>的金牌会员。
+        </p>
+      </div>
+      <div class="col-6">
+        <h2 class="p-heading--4">最为流行的开源云平台</h2>
+        <p>
+          <a href="https://www.statista.com/statistics/511526/worldwide-survey-private-coud-services-running-application/" class="p-link--external">OpenStack 的采用率每年都在持续增长</a>。其全球市场规模接近80亿美元。OpenStack 得到领先行业参与者的支持，并被全球数千个组织成功地使用。 OpenStack 的流行源于其更好的经济性、稳定性和代码开放性。
+        </p>
+      </div>
+    </div>
+    <div class="row u-equal-height">
+      <div class="col-6">
+        <h2 class="p-heading--4">从 VMware 到 OpenStack</h2>
+        <p>
+          VMware 成本增加了？不用担心。 Charmed OpenStack 显着地降低了基础架构维护的 TCO。我们的云专家团队将帮助您从 VMware 迁移到 Charmed OpenStack 并控制您的预算。</p>         
+        <a href="/engage/vmware-to-openstack">探索如何进行迁移&nbsp;&rsaquo;</a>
+      </div>
+      <div class="col-6">
+        <h2 class="p-heading--4">自己安装 OpenStack </h2>
+        <p>正在寻找最直接的 OpenStacK 安装说明？<a href="https://microstack.run" class="p-link--external">MicroStack</a> 让您通过两条命令即可在工作站上安装功能齐全的 OpenStack。整个过程大约需要二十分钟。</p>
+        <a href="https://ubuntu.com/openstack/install" class="p-link--external">现在开始使用 OpenStack</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip--light is-deep">
+    <div class="row u-vertically-center">
+      <div class="col-5 u-hide--small u-align--center">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/24a03775-Contact+us.svg",
+          alt="",
+          width="240",
+          height="171",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+      <div class="col-7">
+        <h2>联系我们</h2>
+        <p>告诉我们您的故事，让我们一起努力扩大在您的组织中使用 Charmed OpenStack 的好处。</p>
+        <p>
+          <a class="p-button--positive js-invoke-modal" href="/contact">
+            联系我们
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="/static/js/src/cloud-price-slider.js"></script>
+  <script src="/static/js/src/accordion.js"></script>
+
+{% endblock %}
