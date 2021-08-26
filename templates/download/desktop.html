@@ -16,8 +16,8 @@
   </section>
   <section class="p-strip--light">
     <div class="u-fixed-width">
-      <h2>Ubuntu {{ releases.lts.full_version_desktop }} LTS</h2>
-      <div class="row u-equal-height p-divider u-no-padding--left u-no-padding--right"> 
+      <h2>Ubuntu {{ releases.lts.full_version }} LTS</h2>
+      <div class="row u-equal-height p-divider u-no-padding--left u-no-padding--right">
         <div class="col-8 p-divider__block">
           <p class="u-no-padding--top">下载专为桌面PC和笔记本精心打造的Ubuntu长期支持(<abbr title="Long-term support">LTS</abbr>)版本。LTS意为“长期支持”，一般为5年。LTS版本将提供免费安全和维护更新至 {{ releases.lts.eol }}。</p>
           <p><a href="{{ releases.lts.release_notes_url }}" class="p-link--external">Ubuntu {{ releases.lts.short_version }} LTS发布说明</a></p>
@@ -32,21 +32,21 @@
         </div>
         <div class="col-4">
           <p>
-            <a class="p-button--positive is-wide" href="https://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version_desktop }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.lts.short_version }}', 'eventValue' : undefined });">下载</a>
+            <a class="p-button--positive is-wide" href="https://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.lts.short_version }}', 'eventValue' : undefined });">下载</a>
             <script>performance.mark("Download (Desktop) button rendered")</script>
           </p>
           <p><small>如需其他版本的Ubuntu，包括BT下载，网络安装器，本地镜像站和历史版本，请访问 <a href="/download/alternative-downloads">其他下载</a>。</small></p>
         </div>
       </div>
     </div>
-  
+
     {% if releases.latest.short_version > releases.lts.short_version %}
     <div class="p-strip is-shallow">
       <div class="u-fixed-width">
         <hr>
       </div>
     </div>
-  
+
     <div class="u-fixed-width">
       <h2>Ubuntu {{ releases.latest.full_version }}</h2>
       <div class="row u-equal-height p-divider u-no-padding--left u-no-padding--right">
@@ -67,14 +67,14 @@
     </div>
     {% endif %}
   </section>
-  
+
   {% include '/shared/_everywhere.html' %}
-  
+
   <section class="p-strip--light">
     <div class="u-fixed-width">
       <h2>切换到Ubuntu的简单方法</h2>
     </div>
-  
+
     <div class="row u-equal-height">
       <div class="col-4 p-card">
         <div class="p-heading-icon--small">
@@ -99,7 +99,7 @@
           <li class="p-list__item"><a class="p-link--external" href="https://ubuntu.com/tutorials/tutorial-create-a-usb-stick-on-ubuntu">如何在Ubuntu上创建一个启动U盘</a></li>
         </ul>
       </div>
-  
+
       <div class="col-4 p-card">
         <div class="p-heading-icon--small">
           <div class="p-heading-icon__header">
@@ -123,7 +123,7 @@
           <li class="p-list__item"><a class="p-link--external" href="https://ubuntu.com/tutorials/tutorial-create-a-usb-stick-on-windows">如何在Windows上创建一个启动U盘</a></li>
         </ul>
       </div>
-  
+
       <div class="col-4 p-card">
         <div class="p-heading-icon--small">
           <div class="p-heading-icon__header">
