@@ -1,7 +1,7 @@
 {% extends "templates/base.html" %}
 
-{% block title %}支持和服务 {{ page_title }}{% endblock %}
-{% block meta_description %}Ubuntu订阅 Ubuntu企业版 Ubuntu许可证 Ubuntu官方支持 Linux企业服务 Linux企业支持 Ubuntu服务器支持{{ meta_description }}{% endblock %}
+{% block title %}Ubuntu支持和服务 {{ page_title }}{% endblock %}
+{% block meta_description %}Ubuntu订阅 Ubuntu企业版 Ubuntu许可证 Ubuntu官方支持 Linux企业服务 Linux企业支持 Linux订阅 Ubuntu服务器支持{{ meta_description }}{% endblock %}
 
 {% block content %}
 {% include "support/secondary-nav.html" %}
@@ -9,7 +9,7 @@
 <section class="p-strip--suru is-dark">
     <div class="row u-equal-height">
       <div class="col-8">
-        <h1>Ubuntu企业订阅服务</h1>
+        <h1>Ubuntu订阅服务</h1>
         <h4>适用于企业级安全，支持和托管的开源支持服务</h4>
         <p>通过Canonical，可对从数据中心到容器再到数据库，LMA，服务器和云原生应用程序整个堆栈进行永不过时的验证。</p>
         <p>Ubuntu Advantage（企业订阅服务，简称“UA”）是一站式、每节点的支持方案，为最全面的企业开源基础设施和应用程序提供安全和支持服务，且托管服务已可用。</p>
@@ -977,8 +977,8 @@
             <td class="u-align--center">&ndash;</td>
           </tr>
           <tr>
-            <td rowspan="3">7x24小时支持</td>
-            <td>Ubuntu</td>
+            <td rowspan="4">7x24小时支持</td>
+            <td>Ubuntu服务器</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
                 <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
@@ -1000,16 +1000,29 @@
             <td class="u-align--center">&ndash;</td>
           </tr>
           <tr>
-            <td>应用程序</td>
+            <td>Ubuntu Main中的应用程序</td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+              </div>
+            </td> 
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+              </div>
+            </td>               
+          </tr>
+          <tr>
+            <td>Ubuntu Universe中的应用程序</td>
             <td class="u-align--center">&ndash;</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
                 <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
               </div>
             </td>
-          </tr>
+          </tr>        
           <tr>
-            <td>系统管理</td>
+            <td>Ubuntu系统管理工具</td>
             <td><a class="p-link--external" href="https://landscape.canonical.com">Landscape</a></td>
             <td class="u-align--center">
               <div class="lazy-loaded">
@@ -1073,40 +1086,54 @@
       <p class="u-sv3">在Amazon AWS和Microsoft Azure上，您可以购买默认已包含支持服务的Ubuntu Pro来获得支持。</p>
     </div>
     <div class="row p-divider u-equal-height u-vertically-center u-sv3">
-      <div class="col-6">
-        <div class="u-sv2">
+      <div class="col-4">
+        <div class="u-sv2 u-align--center">
         {{
             image(
                 url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
                 alt="AWS",
-                width="130",
-                height="80",
+                width="126",
+                height="75",
                 hi_def=True,
-                loading="lazy",
-                attrs={"class": "u-align--center", "id": ""},
+                loading="lazy",                
             ) | safe
           }}
         </div>
         <p>
-          <a href="https://www.ubuntu.com/aws">了解更多AWS上的Ubuntu Pro&nbsp;&rsaquo;</a>
+          <a  class="p-link--external" href="https://www.ubuntu.com/aws">了解更多AWS上的Ubuntu Pro&nbsp;&rsaquo;</a>
         </p>
       </div>
-      <div class="col-6">
-        <div class="u-sv2">
+      <div class="col-4">
+        <div class="u-sv2 u-align--center">
         {{
             image(
                 url="https://assets.ubuntu.com/v1/22fd6473-MicrosoftAzure_logo.svg",
                 alt="Microsoft Azure",
-                width="250",
+                width="256",
                 height="75",
                 hi_def=True,
                 loading="lazy",
-                attrs={"class": "u-align--center", "id": ""},
             ) | safe
           }}
         </div>
         <p>
-          <a href="https://www.ubuntu.com/azure">了解更多Azure上的Ubuntu Pro&nbsp;&rsaquo;</a>
+          <a  class="p-link--external" href="https://www.ubuntu.com/azure">了解更多Azure上的Ubuntu Pro&nbsp;&rsaquo;</a>
+        </p>
+      </div>
+      <div class="col-4">
+        <div class="u-sv2 u-align--center">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/6e176d9a-Google+Cloud+stacked.svg",
+            alt="Google cloud",
+            width="91",
+            height="75",
+            hi_def=True,
+            loading="lazy"
+            ) | safe
+          }}
+        </div>
+        <p>
+          <a class="p-link--external" href="https://www.ubuntu.com/gcp">了解更多GCP上的Ubuntu Pro&nbsp;&rsaquo;</a>
         </p>
       </div>
     </div>
@@ -1212,7 +1239,7 @@
       </thead>
       <tbody>
         <tr id="esm">
-          <td>用于Ubuntu 14.04 LTS的<a href="https://www.ubuntu.com/esm">扩展安全维护</a>服务</td>
+          <td>用于Ubuntu 14.04 LTS和Ubuntu 16.04 LTS的<a href="/support/esm">扩展安全维护服务</a>。</td>
           <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
           <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
           <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
@@ -1235,8 +1262,14 @@
           <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
           <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
         </tr>
+        <tr id="landscape">
+          <td>Ubuntu系统管理工具：<a class="p-link--external" href="https://landscape.canonical.com">Landscape</a></td>
+          <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+          <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+          <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        </tr>
         <tr id="kvm-guests">
-          <td>对KVM客户机认证的Windows驱动</td>
+          <td>用于KVM客户机的认证的Windows驱动</td>
           <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
           <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
           <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
@@ -1244,7 +1277,7 @@
         <tr id="phone-ticket">
           <td>电话和工单支持</td>
           <td class="u-align--center"></td>
-          <td class="u-align--center">工作时间</td>
+          <td class="u-align--center">5x24小时</td>
           <td class="u-align--center">7x24小时</td>
         </tr>
         <tr id="openstack">
@@ -1311,7 +1344,7 @@
           <h2>Ubuntu认证硬件</h2>
           <p>Ubuntu认证的硬件已经通过了广泛的测试和审查过程，以确保Ubuntu可以很好地运行并且可以为您的业务做好准备。我们与OEM紧密合作，共同使Ubuntu在各种设备上可用。</p>
           <p>通过Ubuntu官方认证的硬件，如服务器、笔记本和工作站、IoT物联网设备等等可以获得更好的支持，开箱即用的体验，且无需为繁琐的系统组件驱动和兼容性而担忧。</p>
-          <p class="p-link--external"><a href="https://certification.ubuntu.com/">浏览所有认证的硬件&nbsp;›</a>
+          <p class="p-link--external"><a href="https://ubuntu.com/certified">浏览所有认证的硬件&nbsp;›</a>
           </p>
         </div>
 
