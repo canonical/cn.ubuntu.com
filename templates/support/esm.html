@@ -1,7 +1,7 @@
 {% extends "templates/base.html" %}
 
-{% block title %}扩展安全维护{{ page_title }}{% endblock %}
-{% block meta_description %}Ubuntu安全维护 Ubuntu订阅 ESM Ubuntu生命周期 Ubuntu 16.04 Ubuntu企业订阅{{ meta_description }}{% endblock %}
+{% block title %}Ubuntu扩展安全维护{{ page_title }}{% endblock %}
+{% block meta_description %}Ubuntu扩展安全维护 Ubuntu订阅 ESM Ubuntu生命周期 Ubuntu 16.04 Ubuntu企业订阅{{ meta_description }}{% endblock %}
 
 {% block content %}
 {% include "support/secondary-nav.html" %}
@@ -10,9 +10,9 @@
     <div class="row u-equal-height">
       <div class="col-8">
         <span class="u-sv3"><h1>扩展安全维护</h1></span>
-        <span class="u-sv3"><p class="p-heading--four">为Ubuntu LTS提供额外3到5年的安全更新</p></span>
-        <p>通过扩展安全维护（Extended Security Maintenance，简称“ESM”）从而继续接收Ubuntu基础系统，关键软件包和基础结构组件的安全更新。<a href="#how-long">根据LTS版本</a>，ESM提供3到5年的额外安全维护。</p>
-        <p>ESM已包含在Ubuntu Advantage订阅服务内，适用于物理服务器、虚拟机、容器和桌面，免费提供给个人使用。在公有云上，Ubuntu Pro高级镜像已为<a class="p-link--external" href="https://ubuntu.com/aws/pro">AWS</a>和<a class="p-link--external" href="https://ubuntu.com/azure/pro">Azure</a>优化，且为Ubuntu预载的整个软件包集的高优先级、关键CVE（通用漏洞披露）提供安全维护。</p>
+        <span class="u-sv3"><p class="p-heading--four">为Ubuntu LTS版本提供额外5年的安全更新</p></span>
+        <p>通过扩展安全维护（Extended Security Maintenance，简称“ESM”）从而继续接收Ubuntu基础系统，关键软件包和基础结构组件的安全更新。ESM提供5年的额外安全维护，使得组织能够持续地进行安全漏洞管理。</p>
+        <p>ESM已包含在Ubuntu Advantage订阅服务内，适用于物理服务器、虚拟机、容器和桌面，免费提供给个人使用。在公有云上，Ubuntu Pro高级镜像已为认证的<a href="/cloud/public-cloud">公有云</a>所优化，且为Ubuntu预载的整个软件包集的高优先级、关键CVE（通用漏洞披露）提供安全维护。</p>
         <p>
           <a href="/support" class="p-button--positive">获取Ubuntu订阅服务</a>
           <a href="/contact" class="p-button--neutral">联系我们</a  >
@@ -37,7 +37,7 @@
     <div class="u-fixed-width">
       <div class="p-heading-icon--small">
         <div class="p-heading-icon__header">
-          <h4 class="p-heading-icon__title u-no-max-width u-no-margin--bottom">Ubuntu 16.04 LTS的ESM服务将于2021年4月可用，支持至2024年。<a class="p-link--external" href="https://ubuntu.com/blog/ubuntu-16-04-lts-esm-migration-path">了解更多</a></h4>
+          <h4 class="p-heading-icon__title u-no-max-width u-no-margin--bottom">Ubuntu 16.04 LTS的ESM服务将于2021年4月可用，支持至2026年。<a href="/blog/ubuntu-16-04-lts-esm-support-extended-maintenance">了解更多&nbsp;›</a></h4>
         </div>
       </div>
     </div>
@@ -116,11 +116,42 @@
     <div class="row" id="benefits">
       <div class="col-10">
         <h2>涵盖范围</h2>
-        <p>ESM继续针对以下范围内的高危CVE进行安全更新，如：</p>
-        <ul class="u-no-margin--bottom">
-          <li>Ubuntu基础系统和横向扩展的基础设施</li>
-          <li>64位 X86架构/英特尔的安装环境</li>
-        </ul>
+        <p>ESM继续对高危CVE（Common Vulnerabilities and Exposures）提供安全更新和<a class="p-link--external" href="https://ubuntu.com/security/livepatch">内核补丁</a>。</p>
+        <div class="row">
+          <div class="col-10" style="overflow: auto;">
+            <table style="width: auto;">
+              <thead>
+                <tr>
+                  <th scope="col">已发布的版本</th>
+                  <th scope="col">覆盖范围</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ubuntu 14.04 LTS (Trusty Tahr)</td>
+                  <td>
+                    <ul>
+                      <li>Ubuntu基础系统和扩展的基础设施</li>
+                      <li>Kernel实时补丁</li>
+                      <li>64位 x86架构</li>
+                    </ul>
+                    <a href="https://wiki.ubuntu.com/SecurityTeam/ESM/14.04" class="p-button--neutral p-link--external">了解更多</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.ubuntu.com/16-04" class="p-link--external">Ubuntu 16.04 LTS (Xenial Xerus)</a></td>
+                  <td>
+                    <ul>
+                      <li>Ubuntu基础系统和扩展的基础设施</li>
+                      <li>Kernel实时补丁</li>
+                      <li>s390x，arm64，x86-64架构</li>
+                    </ul>
+                    <a href="https://wiki.ubuntu.com/SecurityTeam/ESM/16.04" class="p-button--neutral p-link--external">了解更多</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
       </div>
     </div>
   
@@ -142,6 +173,18 @@
     <div class="row" id="faq">
       <div class="col-8">
         <h2>常见问题</h2>  
+        <h4 class="u-no-max-width">如何启用ESM？</h4>
+          <div class="row">
+            <h5 class="col-4">使用 ua 命令附上您的订阅</h5>
+            <div class="col-4">
+              <pre><code>sudo ua attach [TOKEN]</code></pre>
+              <p>注：订阅的token可通过<a class="p-link--external" href="https://ubuntu.com/advantage">Ubuntu订阅服务入口</a>获得。Ubuntu Pro上已集成，无需此操作。</p>
+            </div>
+          </div>
+          <div class="row">
+            <h5 class="col-4">ESM服务现已启用！</h5>
+          </div>
+
         <h4 class="u-no-max-width">全部的Ubuntu Advantage订阅级别都可以访问Ubuntu ESM吗？</h4>
         <p>是的。Ubuntu ESM已包含在基础、标准、高级版订阅服务内。关于不同级别的内容请访问我们<a href="/support">价格页面</a>。现有的Ubuntu Advantage（简称“UA”）客户可通过<a class="p-link--external" href="https://ubuntu.com/advantage">UA入口页</a>取得他们的凭据。</p>
         <h4 class="u-no-max-width">标准安全维护结束后，我们如何确保Ubuntu系统的安全性？</h4>
@@ -149,34 +192,34 @@
         <p><a class="p-link--external" href="https://ubuntu.com/about/release-cycle">了解更多关于版本发布日期和维护周期的信息</a></p>
         <p><a class="p-link--external p-button" href="https://ubuntu.com/advantage">注册以获得Ubuntu Advantage订阅</a></p>
         <h4 id="how-long" class="u-no-max-width">Ubuntu ESM将维护多长时间？</h4>
-        <p>维护时间取决于版本. 在“标准安全维护”窗口结束后，Ubuntu 14.04（Trusty Tahr）和16.04（Xenial Xerus）将提供长达3年的更新。在进一步声明发布前，Ubuntu 18.04（Bionic Beaver）及其后续版本将提供长达5年的ESM更新。</p>
+        <p>在进一步声明发布前，所有 Ubuntu LTS 版本都提供5年的ESM更新，生命周期延长至10年。 </p>
         <table>
           <thead>
             <tr>
               <th>版本</th>
-              <th>ESM持续时间</th>
+              <th>发布时间</th>
               <th>支持终止</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Ubuntu 14.04 (Trusty Tahr)</td>
-              <td>3年</td>
-              <td>2022年4月</td>
-            </tr>
-            <tr>
-              <td>Ubuntu 16.04 (Xenial Xerus)</td>
-              <td>3年</td>
+              <td>2014年4月</td>
               <td>2024年4月</td>
             </tr>
             <tr>
+              <td>Ubuntu 16.04 (Xenial Xerus)</td>
+              <td>2016年4月</td>
+              <td>2026年4月</td>
+            </tr>
+            <tr>
               <td>Ubuntu 18.04 (Bionic Beaver)</td>
-              <td>5年</td>
+              <td>2018年4月</td>
               <td>2028年4月</td>
             </tr>
             <tr>
               <td>Ubuntu 20.04 (Focal Fossa)</td>
-              <td>5年</td>
+              <td>2020年4月</td>
               <td>2030年4月</td>
             </tr>
           </tbody>
