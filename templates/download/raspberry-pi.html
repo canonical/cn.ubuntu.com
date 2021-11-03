@@ -14,7 +14,7 @@
       <p>在树莓派上运行Ubuntu很容易。只需选择您想要的操作系统镜像，将镜像刷入microSD卡，再将microSD加载到Pi的卡槽内即可。</p>
       <p>第一次在树莓派上安装Ubuntu？</p>
       <p>
-        参考我们的<a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-desktop-on-raspberry-pi-4" class="p-link--external">桌面版</a>或者<a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi" class="p-link--external">服务器版</a>教程。
+        参考我们的<a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-desktop-on-raspberry-pi-4" class="p-link--external">桌面版</a>，<a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi" class="p-link--external">服务器版以及<a class="p-link--external" href="https://ubuntu.com/download/raspberry-pi-core"> Core </a>教程。
       </p>
     </div>
     <div class="col-5 u-align--center u-hide--small">
@@ -30,6 +30,138 @@
       }}
     </div>
   </div>
+</section>
+
+
+{# desktop latest #}
+<section class="p-strip--light {% if releases.latest.short_version < releases.lts.short_version %}is-bordered{% endif %}">
+  <div class="row">
+    <div class="col-6">
+      <h2 class="u-sv2">
+        下载Ubuntu桌面版
+      </h2>
+      <p class="p-muted-heading">
+        推荐的桌面版
+      </p>
+    </div>
+  </div> 
+  <div class="row">
+    <div class="col-6">
+      <h3>
+        Ubuntu桌面 {{ releases.latest.full_version }}
+      </h3>
+      <p>
+        最新的Ubuntu开发版本，拥有9个月支持，至{{ releases.latest.eol }}。
+      </p>
+      <p>
+        <a
+        class="p-button--positive"
+        href="https://cdimage.ubuntu.com/releases/{{ releases.latest.full_version }}/release/ubuntu-{{ releases.latest.full_version }}-preinstalled-desktop-arm64+raspi.img.xz" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Raspberry Pi 64-bit - desktop', 'eventLabel' : '{{ releases.latest.short_version }}', 'eventValue' : undefined });">
+        下载64位镜像
+        </a>
+      </p>
+    </div>
+  
+{# desktop 21.04 #}
+    <div class="col-6">
+      <h3>
+        Ubuntu 桌面 21.04
+      </h3>
+      <p>
+        Ubuntu 的先前开发版本，支持到 2022 年 2 月。
+      </p>
+      <p>
+        <a
+        class="p-button--positive" href="https://cdimage.ubuntu.com/releases/21.04/release/ubuntu-21.04-preinstalled-desktop-arm64+raspi.img.xz" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Raspberry Pi 64-bit - desktop', 'eventLabel' : '21.04', 'eventValue' : undefined });">
+          下载64位镜像
+        </a>
+      </p>
+    </div>
+  </div>  
+
+  <div class="u-hide--medium u-hide--large">
+    <div class="col-6">
+      <p>适用于：</p>
+        <ul class="p-list is-split">
+          <li class="p-list__item is-ticked">Raspberry Pi 4</li>
+          <li class="p-list__item is-ticked">Raspberry Pi 400</li>
+          <li class="p-list__item is-ticked">Raspberry Pi CM4</li>
+        </ul>
+    </div>
+  </div>
+
+<div class="u-fixed-width u-hide--small">
+  <h4>
+    适用于：
+  </h4>
+</div>
+<div class="row u-hide--small">
+  <div class="col-2">
+    <p class="u-no-padding--top" style="margin-bottom: .5rem;">
+      Raspberry Pi 4
+    </p>
+    <hr>
+    <div>
+      {{
+        image(
+        url="https://assets.ubuntu.com/v1/a999bb5f-Raspberry+Pi+4.png",
+        alt="",
+        height="48",
+        width="75",
+        hi_def=True,
+        attrs={"class": "u-align--left", "style": "margin-top: 1rem;"},
+        loading="auto"
+        ) | safe
+      }}
+    </div>
+    <h6 class="u-text-light">
+      <em>
+        * 要求至少 4GB 内存
+      </em>
+    </h6>
+  </div>
+  <div class="col-2">
+    <p class="u-no-padding--top" style="margin-bottom: .5rem;">
+      Raspberry Pi 400
+    </p>
+    <hr>
+    <div>
+      {{ image (
+        url="https://assets.ubuntu.com/v1/cfdcd6c7-Raspberry-Pi-400-back--1536x1097.png",
+        alt="",
+        height="48",
+        width="93",
+        hi_def=True,
+        attrs={"class": "u-align--left", "style": "margin-top: 1rem;"},
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+  </div>
+  <div class="col-2">
+    <p class="u-no-padding--top" style="margin-bottom: .5rem;">
+      Raspberry Pi CM4
+    </p>
+    <hr>
+    <div>
+      {{ image (
+        url="https://assets.ubuntu.com/v1/3be8f179-Raspberry-Pi-CM4.png",
+        alt="",
+        height="48",
+        width="68",
+        hi_def=True,
+        attrs={"class": "u-align--left", "style": "margin-top: 1rem;"},
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+    <h6 class="u-text-light">
+      <em>
+        * 要求至少 4GB 内存
+      </em>
+    </h6>
+  </div>
+</div>
 </section>
 
 {# server lts #}
@@ -92,6 +224,7 @@
         <li class="p-list__item is-ticked">Raspberry Pi 4</li>
         <li class="p-list__item is-ticked">Raspberry Pi 400</li>
         <li class="p-list__item is-ticked">Raspberry Pi CM4</li>
+        <li class="p-list__item is-ticked">Raspberry Pi Zero 2 - <em>仅提供32位</em></li>
       </ul>
     </div>
   </div>
@@ -200,114 +333,203 @@
         }}
       </div>
     </div>
+    <div class="col-2">
+      <p class="u-no-padding--top" style="margin-bottom: .5rem;">
+        Raspberry Pi Zero 2
+      </p>
+      <hr>
+      <div>
+        {{ image (
+          url="https://assets.ubuntu.com/v1/a79a3cee-raspberry-pi-z-2.png",
+          alt="",
+          width="70",
+          height="46",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+      <h6 class="u-text-light">
+        <em>
+          * 仅提供32位
+        </em>
+      </h6>
+    <div>
   </div>
 </section>
 
-{# desktop latest #}
-<section class="p-strip">
-  <div class="u-fixed-width">
-    <h2>
-      下载Ubuntu桌面版
-    </h2>
+{# core #}
+<section class="p-strip--light {% if releases.latest.short_version < releases.lts.short_version %}is-bordered{% endif %}">
+  <div class="row">
+    <div class="col-6">
+      <h2 class="u-sv2">
+        下载Ubuntu Core
+      </h2>
+      <p class="p-muted-heading">
+        推荐的 core 版本
+      </p>
+    </div>
   </div>
   <div class="row">
     <div class="col-6">
       <h3>
-        Ubuntu桌面 {{ releases.latest.full_version }}
+        Ubuntu Core 20
       </h3>
       <p>
-        最新的Ubuntu开发版本，拥有9个月支持，至{{ releases.latest.eol }}。
+        Ubuntu Core 20拥有10年的支持，直至2030年。
       </p>
       <p>
-        <a
-        class="p-button--positive"
-        href="https://cdimage.ubuntu.com/releases/{{ releases.latest.full_version }}/release/ubuntu-{{ releases.latest.full_version }}-preinstalled-desktop-arm64+raspi.img.xz" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Raspberry Pi 64-bit - desktop', 'eventLabel' : '{{ releases.latest.short_version }}', 'eventValue' : undefined });">
-        下载64位镜像
-      </a>
-    </p>
-    <div class="u-hide--medium u-hide--large">
+        <a class="p-button--positive" href="https://cdimage.ubuntu.com/ubuntu-core/20/stable/current/ubuntu-core-20-arm64+raspi.img.xz " onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Raspberry Pi 64-bit - Ubuntu Core 20', 'eventLabel' : 'arm64', 'eventValue' : undefined });">
+          下载64位镜像
+        </a>
+        <a class="p-button" href=" https://cdimage.ubuntu.com/ubuntu-core/20/stable/current/ubuntu-core-20-armhf+raspi.img.xz" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Raspberry Pi 32-bit - Ubuntu Core 20', 'eventLabel' : 'armhf', 'eventValue' : undefined });">
+          下载32位镜像
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <div class="row u-hide--medium u-hide--large">
+    <div class="col-6">
       <p>适用于：</p>
-      <ul class="p-list is-split">
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">Raspberry Pi 2 - <em>仅提供32位</em></li>
+        <li class="p-list__item is-ticked">Raspberry Pi 3</li>
         <li class="p-list__item is-ticked">Raspberry Pi 4</li>
         <li class="p-list__item is-ticked">Raspberry Pi 400</li>
         <li class="p-list__item is-ticked">Raspberry Pi CM4</li>
+        <li class="p-list__item is-ticked">Raspberry Pi Zero 2 - <em>仅提供32位</em></li>
       </ul>
     </div>
   </div>
-</div>
 
-<div class="u-fixed-width u-hide--small">
-  <h4>
-    适用于：
-  </h4>
-</div>
-<div class="row u-hide--small">
-  <div class="col-2">
-    <p class="u-no-padding--top" style="margin-bottom: .5rem;">
-      Raspberry Pi 4
-    </p>
-    <hr>
-    <div>
-      {{
-        image(
-        url="https://assets.ubuntu.com/v1/a999bb5f-Raspberry+Pi+4.png",
-        alt="",
-        height="48",
-        width="75",
-        hi_def=True,
-        attrs={"class": "u-align--left", "style": "margin-top: 1rem;"},
-        loading="auto"
-        ) | safe
-      }}
-    </div>
-    <h6 class="u-text-light">
-      <em>
-        * 要求至少 4GB 内存
-      </em>
-    </h6>
+  <div class="u-fixed-width u-hide--small">
+    <h4>
+      适用于：
+    </h4>
   </div>
-  <div class="col-2">
-    <p class="u-no-padding--top" style="margin-bottom: .5rem;">
-      Raspberry Pi 400
-    </p>
-    <hr>
-    <div>
-      {{ image (
-        url="https://assets.ubuntu.com/v1/cfdcd6c7-Raspberry-Pi-400-back--1536x1097.png",
-        alt="",
-        height="48",
-        width="93",
-        hi_def=True,
-        attrs={"class": "u-align--left", "style": "margin-top: 1rem;"},
-        loading="lazy"
-        ) | safe
-      }}
+  <div class="row u-hide--small">
+    <div class="col-2">
+      <p class="u-no-padding--top" style="margin-bottom: .5rem;">
+        Raspberry Pi 2
+      </p>
+      <hr>
+      <div>
+        {{
+          image(
+          url="https://assets.ubuntu.com/v1/8542c958-Raspberry+Pi+2.png",
+          alt="",
+          height="48",
+          width="72",
+          hi_def=True,
+          attrs={"class": "u-align--left", "style": "margin-top: 1rem;"},
+          loading="auto"
+          ) | safe
+        }}
+      </div>
+      <h6 class="u-text-light">
+        <em>
+          * 仅提供32位
+        </em>
+      </h6>
     </div>
-  </div>
-  <div class="col-2">
-    <p class="u-no-padding--top" style="margin-bottom: .5rem;">
-      Raspberry Pi CM4
-    </p>
-    <hr>
-    <div>
-      {{ image (
-        url="https://assets.ubuntu.com/v1/3be8f179-Raspberry-Pi-CM4.png",
-        alt="",
-        height="48",
-        width="68",
-        hi_def=True,
-        attrs={"class": "u-align--left", "style": "margin-top: 1rem;"},
-        loading="lazy"
-        ) | safe
-      }}
+    <div class="col-2">
+      <p class="u-no-padding--top" style="margin-bottom: .5rem;">
+        Raspberry Pi 3
+      </p>
+      <hr>
+      <div>
+        {{
+          image(
+          url="https://assets.ubuntu.com/v1/c4a007b6-Raspberry+Pi+3.png",
+          alt="",
+          height="48",
+          width="75",
+          hi_def=True,
+          attrs={"class": "u-align--left", "style": "margin-top: 1rem;"},
+          loading="auto"
+          ) | safe
+        }}
+      </div>
     </div>
-    <h6 class="u-text-light">
-      <em>
-        * 要求至少 4GB 内存
-      </em>
-    </h6>
+    <div class="col-2">
+      <p class="u-no-padding--top" style="margin-bottom: .5rem;">
+        Raspberry Pi 4
+      </p>
+      <hr>
+      <div>
+        {{
+          image(
+          url="https://assets.ubuntu.com/v1/a999bb5f-Raspberry+Pi+4.png",
+          alt="",
+          height="48",
+          width="75",
+          hi_def=True,
+          attrs={"class": "u-align--left", "style": "margin-top: 1rem;"},
+          loading="auto"
+          ) | safe
+        }}
+      </div>
+    </div>
+    <div class="col-2">
+      <p class="u-no-padding--top" style="margin-bottom: .5rem;">
+        Raspberry Pi 400
+      </p>
+      <hr>
+      <div>
+        {{ image (
+          url="https://assets.ubuntu.com/v1/cfdcd6c7-Raspberry-Pi-400-back--1536x1097.png",
+          alt="",
+          height="48",
+          width="93",
+          hi_def=True,
+          attrs={"class": "u-align--left", "style": "margin-top: 1rem;"},
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+    <div class="col-2">
+      <p class="u-no-padding--top" style="margin-bottom: .5rem;">
+        Raspberry Pi CM4
+      </p>
+      <hr>
+      <div>
+        {{ image (
+          url="https://assets.ubuntu.com/v1/3be8f179-Raspberry-Pi-CM4.png",
+          alt="",
+          height="48",
+          width="68",
+          hi_def=True,
+          attrs={"class": "u-align--left", "style": "margin-top: 1rem;"},
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+    </div>
+    <div class="col-2">
+      <p class="u-no-padding--top" style="margin-bottom: .5rem;">
+        Raspberry Pi Zero 2
+      </p>
+      <hr>
+      <div>
+        {{ image (
+          url="https://assets.ubuntu.com/v1/a79a3cee-raspberry-pi-z-2.png",
+          alt="",
+          width="70",
+          height="46",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+        }}
+      </div>
+      <h6 class="u-text-light">
+        <em>
+          * 仅提供32位
+        </em>
+      </h6>
+    <div>
   </div>
-</div>
 </section>
 
 <section class="p-strip--light">
@@ -319,14 +541,25 @@
   </div>
   <div class="row u-equal-height">
     <div class="col-6 p-card">
-      <h3>桌面版 vs 服务器版</h3>
+      <h3><a href="/desktop">桌面版</a></h3>
       <hr class="u-sv1">
-      <p>完整的Ubuntu桌面镜像体积比较大，但它包含将树莓派变成主PC所需的一切。可用来做你常在PC上喜欢做的事情，如上网、观看视频、写一些文档、网购等。但是，由于桌面的体积，仅适用于<strong>4GB</strong>或<strong>8GB</strong>板载内存的<strong>树莓派4</strong>型号。Ubuntu Server的镜像体积要小得多，您可以在上面安装各种版本的Ubuntu桌面环境，可以访问Ubuntu CLI以及所有最新的开源软件。Ubuntu Server适用于树莓派2、3和4。</p>
+      <p>完整的 Ubuntu 桌面镜像包含了将树莓派变成主PC所需的一切。从上网、写文档到开发软件应用。由于桌面的体积大小，仅适用于<strong>4GB</strong>或<strong>8GB</strong>板载内存的<strong>树莓派4</strong>型号。</p>
     </div>
     <div class="col-6 p-card">
       <h3>32位 vs 64位</h3>
       <hr class="u-sv1">
       <p>树莓派2仅支持32位，因此选择很简单。然而，树莓派3和4是64位的开发板。根据树莓派基金会（Raspberry Pi foundation）的说法，使用64位版本的Pi 3的好处有限，因为它只支持1GB的内存；但，对于Pi 4，64位版本应该更快。</p>
+      <p><strong>注意：</strong> Raspberry Pi Zero 2 同时支持32位和64位镜像，目前只提供32位镜像，然而你也可以通过<a href="https://ubuntu.com/blog/raspberry-pi-zero-2-w-with-ubuntu-server-support-is-here">此方案</a>来使用64位镜像。</p>
+    </div>
+    <div class="col-6 p-card">
+      <h3><a href="/server">Ubuntu服务器版</a></h3>
+      <hr class="u-sv1">
+      <p>Ubuntu Server 的镜像体积要小得多，您可以在上面安装各种版本的 Ubuntu 桌面环境，可以访问 Ubuntu CLI 以及所有最新的开源软件。Ubuntu Server 适用于树莓派2、3和4。 </p>
+    </div>
+    <div class="col-6 p-card">
+      <h3><a href="/internet-of-things/core">Ubuntu Core</a></h3>
+      <hr class="u-sv1">
+      <p>Ubuntu Core 是一个更精简的容器化操作系统，基于我们的通用的打包格式——snap。它支持安全启动和全盘加密以及 OTA 以提供更高的安全性。在 Ubuntu 桌面上开发你的 IoT 软件，并将其轻松部署到 Ubuntu Core 设备上，即使是大规模部署也是如此。</p>
     </div>
   </div>
 </section>

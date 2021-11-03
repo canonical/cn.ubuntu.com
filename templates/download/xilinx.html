@@ -1,0 +1,101 @@
+{% extends "templates/base.html" %}
+
+{% if title %}{% block title %}在Xilinx上安装Ubuntu{{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}Ubuntu {{ releases.lts.short_version }}下载, Ubuntu {{ releases.latest.full_version }}下载, Xilinx, 加速Xilin从开发到产品的过程{{ meta_description }}{% endblock %}{% endif %}
+{% block meta_copydoc %} {% endblock meta_copydoc %}
+{% block content %}
+
+{% include "download/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped">
+  <div class="row u-vertically-center">
+    <div class="col-6">
+      <h1>在 Xilinx 上安装 Ubuntu</h1>
+      <p>在基于 Xilinx Zynq UltraScale+ MPSoC 的评估板和 Kria SOM 上运行 Ubuntu。</p>
+      <p>选择匹配你的硬件的操作系统镜像，刷入 SD 或 microSD 卡，载入板上对应插槽即可开始使用。</p>
+    </div>
+    <div class="col-6 u-align--center u-hide--small">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/8a8c250f-xilinx-logo.svg",
+        alt="",
+        width="326",
+        height="90",
+        hi_def=True,
+        loading="auto"
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row u-vertically-center">
+    <div class="col-6">
+      <h2>下载 Ubuntu 桌面版</h2>
+      <h3 class="p-heading--4">Ubuntu 桌面版 {{ releases.lts.full_version }} LTS</h3>
+      <p class="u-sv1">此桌面版本属于长期支持版，将获得持续支持直至2030年4月。</p>
+      <p>
+        <a class="p-button--positive" href="https://people.canonical.com/~platform/images/xilinx/iot-zcu10x-classic-desktop-2004-x07-20210728-85.img.xz">下载64位版本</a>
+      </p>
+      <p>适用于：</p>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">Xilinx ZCU102</li>
+        <li class="p-list__item is-ticked">Xilinx ZCU104</li>
+        <li class="p-list__item is-ticked">Xilinx ZCU106</li>
+        <li class="p-list__item is-ticked">Xilinx Kria KV260 AI 视觉初级套件&nbsp;&nbsp;<div class="p-label">即将推出</div></li>
+      </ul>
+    </div>
+    <div class="col-6 u-align--center u-hide--small">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/24e23fbe-zcu106-evaluation-board.png",
+        alt="",
+        width="400",
+        height="273",
+        hi_def=True,
+        loading="auto"
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row u-vertically-center">
+    <div class="col-6">
+      <h3 class="p-heading--4">第一次在 Xilinx 上安装 Ubuntu?</h3>
+      <p>请访问 <a class="p-link--external" href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/2037317633/Getting+Started+with+Certified+Ubuntu+20.04+LTS+for+Xilinx+Devices?utm_source=canonical&utm_medium=referral&utm_campaign=ubuntu&utm_content=download&utm_term=desktop_image">Xilinx 入门指南</a> 以获得更多信息。</p>
+      <p><strong>Xilinx Ubuntu 软件开发套件</strong></p>
+      <p>面向 Xilinx Zynq UltraScale+ MPSoC 设备的 Ubuntu 开发人员可能还想要下载以下文件：</p>
+    </div>
+  </div>
+  <div class="u-fixed-width">
+    <table aria-label="Xilinx Ubuntu Software Development Kit table">
+      <thead>
+        <tr>
+          <th>镜像名称</th>
+          <th colspan="2">描述</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th><a href="https://people.canonical.com/~platform/images/xilinx/iot-zcu10x-classic-desktop-2004-x07-20210728-85-sysroot.tar.xz">iot-zcu10x-classic-desktop-2004-x07-20210728-85-sysroot.tar.xz</a></th>
+          <td colspan="2">用于交叉编译的 Sysroot</td>
+        </tr>
+        <tr>
+          <th><a href="https://people.canonical.com/~platform/images/xilinx/rootfs.ext4.xz">roofts.ext4.xz</a></th>
+          <td colspan="2">包含整个 raw rootfs 的 EXT4 分区格式</td>
+        </tr>
+        <tr>
+          <th><a href="https://people.canonical.com/~platform/images/xilinx/rootfs.tar.gz">rootfs.tar.gz</a></th>
+          <td colspan="2">Raw Root 文件系统</td>
+        </tr>
+        <tr>
+          <th><a href="https://people.canonical.com/~platform/images/xilinx/system-boot.tar.gz">system-boot.tar.gz</a></th>
+          <td colspan="2">FAT 分区内容</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% endblock %}

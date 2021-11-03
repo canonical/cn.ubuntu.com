@@ -88,6 +88,20 @@
             <a href="https://ubuntu.com/download/intel-nuc-desktop" class="p-link--external">安装Ubuntu服务器版</a>
           </p>
         </div>
+        <div class="col-3">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/8a8c250f-xilinx-logo.svg",
+            alt="",
+            width="163",
+            height="45",
+            hi_def=True,
+            loading="auto"
+            ) | safe
+          }}
+          <p>
+            <a href="/download/xilinx">安装Ubuntu桌面&nbsp;&rsaquo;</a>
+          </p>
+        </div>
       </div>
     </section>
   
@@ -124,19 +138,28 @@
       <div class="row p-divider">
         <div class="col-3">
           <img src="https://assets.ubuntu.com/v1/977f2b7a-raspberry+pi+horizontal.svg" width="168" height="45" alt="Raspberry Pi">
-          <p><a href="https://ubuntu.com/download/raspberry-pi-core" class="p-link--external">安装Ubuntu Core 20</a></p>
+        <p><a href="https://ubuntu.com/download/raspberry-pi-core" class="p-link--external">安装Ubuntu Core 20</a></p>
           </div>
-          <div class="col-3">
+        <div class="col-3">
             <img src="https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg" width="120" height="45" alt="Intel NUC">
             <p><a href="https://ubuntu.com/download/intel-nuc" class="p-link--external">安装Ubuntu Core 18</a></p>
-          </div>
-          <div class="col-3">
+        </div>
+        <div class="col-3">
             <img src="https://assets.ubuntu.com/v1/db577ec7-tank-logo.svg" width="163" height="45" alt="Intel IEI TANK 870">
             <p><a href="https://ubuntu.com/download/intel-iei-tank-870" class="p-link--external">安装Ubuntu Core 18</a></p>
-          </div>
+        </div>
+        <div class="row">
           <div class="col-3">
             <img src="https://assets.ubuntu.com/v1/2a6d29c9-snapdragon.svg" width="139" height="45" alt="Qualcomm Snapdragon">
             <p><a href="https://ubuntu.com/download/qualcomm-dragonboard-410c" class="p-link--external">安装Ubuntu Core 18</a></p>
+          </div>
+          <div class="col-3">
+            <img src="https://assets.ubuntu.com/v1/8a8c250f-xilinx-logo.svg" width="163" height="45" alt="Xilinx">
+            <p><a href="/download/xilinx">安装 Ubuntu Core 20&nbsp;&rsaquo;</a></p>
+          </div>
+          <div class="col-3">
+            <p>找不到你想要的开发板？</p>
+            <a class="p-button--positive js-invoke-modal" href="/contact">联系我们</a>
           </div>
         </div>
         <div class="u-fixed-width" style="margin-top: 2rem;">
@@ -146,7 +169,8 @@
             </a>
           </p>
         </div>
-      </section>
+      </div>
+   </section>
   
       <section class="p-strip--light is-deep">
         {% with head="现在开始做些有趣的事", subhead="为您的电脑、树莓派或者虚拟机下载appliance镜像" %}{% include "/shared/_appliance-advert-strip.html" %}{% endwith %}
