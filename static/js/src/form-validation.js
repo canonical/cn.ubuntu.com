@@ -16,8 +16,7 @@ const backgroundSubmitHandlerClosure = function () {
     var marketoForm = document.getElementById(submitEvent.target.id);
 
     // Change the form's action location
-    marketoForm.action =
-      'https://ubuntu.com/marketo/submit';
+    marketoForm.action = 'https://ubuntu.com/marketo/submit';
 
     // Submit the form in the background
     backgroundSubmit(marketoForm);
