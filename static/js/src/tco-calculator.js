@@ -145,8 +145,9 @@ function updateTotals() {
   const openstack = document.querySelector('#ct-openstack');
   const openstackDeploymentCost =
     DEPLOYMENT_TYPE_COSTS[`openstack_${deploymentType}`];
-  const serviceLevel = document.querySelector("[name='self-managed']:checked")
-    .value;
+  const serviceLevel = document.querySelector(
+    "[name='self-managed']:checked"
+  ).value;
 
   // an additional 3 hosts are required to host MAAS, Juju, etc
   const hostCost = SERVICE_LEVEL_COST_PER_HOST[serviceLevel] * hosts;
