@@ -1,101 +1,49 @@
-<script src="https://assets.ubuntu.com/v1/37b1db88-jquery.min.js"></script>
-<script src="https://assets.ubuntu.com/v1/d55f58bb-jquery.validate.js"></script>
-<script src="https://assets.ubuntu.com/v1/6ce35d3e-jquery-ui.min.js"></script>&zwnj;&#8203;
-<form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_{{ id }}" style="margin-top: -1rem;" novalidate="novalidate">
+<form action="https://ubuntu.com/marketo/submit" method="post" id="mktoForm_{{ id }}" style="margin-top: -1rem;" >
  <fieldset class="u-no-padding--top" style="border-bottom-width: 1px; border-color:#cdcdcd;">
    <ul class="p-list">
-     <li class="mktFormReq mktField p-list__item">
-       <label for="FirstName" class="mktoLabel">名字：</label>
-       <input required="" id="FirstName" name="FirstName" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="First Name" aria-required="true">
+     <li class="p-list__item">
+       <label for="firstName">名字：</label>
+       <input required="" id="firstName" name="firstName" maxlength="255" type="text" aria-label="First Name" aria-required="true">
      </li>
-     <li class="mktFormReq mktField">
-       <label for="LastName" class="mktoLabel ">姓氏：</label>
-       <input required="" id="LastName" name="LastName" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Last Name" aria-required="true">
+     <li>
+       <label for="lastName">姓氏：</label>
+       <input required="" id="lastName" name="lastName"maxlength="255" type="text" aria-label="Last Name" aria-required="true">
      </li>
-     <li class="mktFormReq mktField">
-       <label for="Email" class="mktoLabel ">工作邮箱：</label>
-       <input required="" id="Email" name="Email" maxlength="255" class="mktoField mktoEmailField  mktoRequired" type="email" aria-label="Email" aria-required="true">
+     <li>
+       <label for="email">工作邮箱：</label>
+       <input required="" id="email" name="email" maxlength="255" type="email" aria-label="Email" aria-required="true">
      </li>
-     <li class="mktFormReq mktField">
-       <label for="Company" class="mktoLabel ">公司名称：</label>
-       <input required="" id="Company" name="Company" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Company Name" aria-required="true">
+     <li>
+       <label for="company">公司名称：</label>
+       <input required="" id="company" name="company" maxlength="255" type="text" aria-label="Company Name" aria-required="true">
      </li>
-     <li class="mktFormReq mktField">
-       <label for="Title" class="mktoLabel ">职位：</label>
-       <input required="" id="Title" name="Title" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Job Title" aria-required="true">
+     <li>
+       <label for="title">职位：</label>
+       <input required="" id="title" name="title" maxlength="255" type="text" aria-label="Job Title" aria-required="true">
      </li>
-     <li class="mktFormReq mktField">
-       <label for="Phone" class="mktoLabel ">电话号码：</label>
-       <input required="" id="Phone" name="Phone" maxlength="255" class="mktoField mktoTelField  mktoRequired" type="tel" aria-label="Phone Number" aria-required="true">
+     <li>
+       <label for="phone">电话号码：</label>
+       <input required="" id="phone" name="phone"maxlength="255" type="tel" aria-label="Phone Number" aria-required="true">
      </li>
-     <li class="mktField">
-      <input name="canonicalUpdatesOptIn" aria-label="canonicalUpdatesOptIn" id="canonicalUpdatesOptIn" value="yes" class="mktoField" type="checkbox"><label for="canonicalUpdatesOptIn" class="mktoLabel "><small>我同意接收有关Canonical的产品和服务信息。</small></label>
+     <li>
+      <input name="canonicalUpdatesOptIn" aria-label="canonicalUpdatesOptIn" id="canonicalUpdatesOptIn" value="yes" type="checkbox"><label for="canonicalUpdatesOptIn"><small>我同意接收有关Canonical的产品和服务信息。</small></label>
      </li>
-     <li class="mktField">           
+     <li>           
       <p><small>在提交此表格的同时，我确认已阅读和同意<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy/contact">的隐私声明</a>和<a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy">隐私政策</small></a>。
         <input name="RichText" aria-label="RichText" type="hidden">
       </p>
      </li>
-     <li class="mktField">
-       <input name="utm_campaign" aria-label="utm_campaign" class="mktoField  mktoFormCol" value="None" type="hidden">
-     </li>
-     <li class="mktField">
-       <input name="utm_medium" aria-label="utm_medium" class="mktoField  mktoFormCol" value="None" type="hidden">
-     </li>
-     <li class="mktField">
-       <input name="utm_source" aria-label="utm_source" class="mktoField  mktoFormCol" value="None" type="hidden">
-     </li>
-     <li class="mktField">
-       <input name="Consent_to_Processing__c" aria-label="Consent" class="mktoField  mktoFormCol" value="Yes" type="hidden">
-     </li>
-     <li class="mktField">
-       <br />
-     </li>
-     <li class="mktField">
-       <button type="submit" class="mktoButton u-no-margin--bottom">{{ cta }}</button>
-       <input name="formid" aria-label="formid" class="mktoField" value="{{ id }}" type="hidden">
-       <input name="lpId" aria-label="lpId" class="mktoField " value="" type="hidden">
-       <input name="subId" aria-label="subId" class="mktoField " value="" type="hidden">
-       <input name="munchkinId" aria-label="munchkinId" class="mktoField " value="" type="hidden">
-       <input name="lpurl" aria-label="lpurl" class="mktoField " value="" type="hidden">
-       <input name="cr" aria-label="cr" class="mktoField " value="" type="hidden">
-       <input name="kw" aria-label="kw" class="mktoField " value="" type="hidden">
-       <input name="q" aria-label="q" class="mktoField " value="" type="hidden">
-       <input type="hidden" aria-hidden="true" aria-label="hidden field" name="return_url" value="{{'https://cn.ubuntu.com' + returnURL}}" />
-       <input type="hidden" name="returnURL" aria-label="returnURL" value="{{'https://cn.ubuntu.com' + returnURL}}">
-       <input type="hidden" name="retURL" aria-label="retURL" value="{{'https://cn.ubuntu.com' + returnURL}}">
+     <li>
+       <button type="submit" class="u-no-margin--bottom">{{ cta }}</button>
+       <input name="formid" aria-label="formid" value="{{ id }}" type="hidden">
+       <input type="hidden" aria-hidden="true" aria-label="hidden field" name="Consent_to_Processing__c" value="yes" />
+       <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_campaign" id="utm_campaign" value="" />
+       <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_medium" id="utm_medium" value="" />
+       <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_source" id="utm_source" value="" />
+       <input type="hidden" name="returnURL" aria-label="returnURL" value="{{ 'https://cn.ubuntu.com' + returnURL }}">
      </li>
    </ul>
  </fieldset>
- <input type="hidden" name="returnURL" aria-label="returnURL" value="{{ 'https://cn.ubuntu.com' + returnURL }}">
- <input type="hidden" name="retURL" aria-label="retURL" value="{{ 'https://cn.ubuntu.com' + returnURL }}">
 </form>
-<script>
- $("#mktoForm_{{ id }}").validate({
-   errorElement: "span",
-   errorClass: "mktFormMsg mktError",
-   onkeyup: false,
-   onclick: false,
-   onblur: false,
-   messages: {
-     FirstName: "请输入您的名字",
-     LastName: "请输入姓氏",
-     Email: "请输入工作邮箱",
-     Company: "请输入公司名称",
-     Title: "请输入职位",
-     Phone: "请输入电话号码",
-   }
- });
- $(function () {
-   $("#comments").hide()
- });
- $('#Ubuntu_User__c').on('change', function () {
-   var selection = $(this).val();
-   if (selection == 'Commercially only') {
-     $('#comments').show();
-   } else {
-     $('#comments').hide();
-   }
- });
-</script>
+
 <script src="https://assets.ubuntu.com/v1/f97fa297-stateCountry.js"></script>
