@@ -66,56 +66,57 @@ function htmlForLatestPinnedArticle(article) {
   return articlesTree;
 }
 
-const createReqListenerForDomContainer = (
-  latestNewsContainer,
-  spotlightContainer
-) => event => {
-  const containerForLatestNews = document.getElementById(latestNewsContainer);
+const createReqListenerForDomContainer =
+  (latestNewsContainer, spotlightContainer) => event => {
+    const containerForLatestNews = document.getElementById(latestNewsContainer);
 
-  const containerForLatestArticles = containerForLatestNews.querySelector(
-    'div.row'
-  );
+    const containerForLatestArticles =
+      containerForLatestNews.querySelector('div.row');
 
-  const data = JSON.parse(event.target.responseText);
-  let latest;
-  try {
-    latest = data.latest_articles;
-    if (latest) {
-      const html = htmlForLatestArticles(latest);
-      containerForLatestArticles.appendChild(html);
+    const data = JSON.parse(event.target.responseText);
+    let latest;
+    try {
+      latest = data.latest_articles;
+      if (latest) {
+        const html = htmlForLatestArticles(latest);
+        containerForLatestArticles.appendChild(html);
 
-      const heading = document.createElement('h3');
-      // "Latest news"
-      heading.innerHTML = '最新博客文章';
-      containerForLatestNews.insertBefore(heading, containerForLatestArticles);
+        const heading = document.createElement('h3');
+        // "Latest news"
+        heading.innerHTML = '最新博客文章';
+        containerForLatestNews.insertBefore(
+          heading,
+          containerForLatestArticles
+        );
+      }
+    } catch (error) {
+      /* eslint-disable no-console */
+      console.error(
+        `Error ${error} occured when fetching the latest article data from the API`
+      );
+      /* eslint-enable no-console */
     }
-  } catch (error) {
-    /* eslint-disable no-console */
-    console.error(
-      `Error ${error} occured when fetching the latest article data from the API`
-    );
-    /* eslint-enable no-console */
-  }
 
-  try {
-    const latestPinned = data.latest_pinned_articles[0][0];
-    if (latestPinned) {
-      containerForLatestNews.classList.add('p-divider', 'col-9');
+    try {
+      const latestPinned = data.latest_pinned_articles[0][0];
+      if (latestPinned) {
+        containerForLatestNews.classList.add('p-divider', 'col-9');
 
-      const containerForSpotlight = document.getElementById(spotlightContainer);
-      containerForSpotlight.classList.add('col-3', 'p-divider__block');
+        const containerForSpotlight =
+          document.getElementById(spotlightContainer);
+        containerForSpotlight.classList.add('col-3', 'p-divider__block');
 
-      const htmlSpotLight = htmlForLatestPinnedArticle(latestPinned);
-      containerForSpotlight.appendChild(htmlSpotLight);
+        const htmlSpotLight = htmlForLatestPinnedArticle(latestPinned);
+        containerForSpotlight.appendChild(htmlSpotLight);
+      }
+    } catch (error) {
+      /* eslint-disable no-console */
+      console.error(
+        `Error "${error}" occured when trying to fetch the latest spotlight article from the API`
+      );
+      /* eslint-enable no-console */
     }
-  } catch (error) {
-    /* eslint-disable no-console */
-    console.error(
-      `Error "${error}" occured when trying to fetch the latest spotlight article from the API`
-    );
-    /* eslint-enable no-console */
-  }
-};
+  };
 
 const oReq = new XMLHttpRequest();
 oReq.addEventListener(
