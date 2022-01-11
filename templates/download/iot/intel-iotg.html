@@ -1,0 +1,97 @@
+{% extends "templates/base.html" %}
+
+{% if title %}{% block title %}下载用于Intel IoT 平台的Ubuntu{{ title }}{% endblock %}{% endif %}
+{% if meta_description %}{% block meta_description %}Canonical和Intel合作以提供Intel IoT 平台上的Ubuntu桌面和Ubuntu Core，包括：凌动 X6000E系列, Intel奔腾和赛扬系列; N和J系列以及十一代的Intel Core处理器。{{ meta_description }}{% endblock %}{% endif %}
+{% block meta_copydoc %}https://docs.google.com/document/d/1hxKzPs6e6JQaa9tBqfZ55GAXrVnEryEWBja8HlXy-lc/edit{% endblock meta_copydoc %}
+{% block meta_image %}https://assets.ubuntu.com/v1/fc79371c-__++_++_+grad+_+en+_+800x418.jpeg{% endblock %}
+{% block content %}
+
+{% include "download/iot/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped">
+  <div class="row u-vertically-center">
+    <div class="col-7">
+      <h1>下载适用于英特尔 IoT 平台的 Ubuntu </h1>
+      <p class="p-heading--4">Ubuntu &mdash; 现已为英特尔 IoTG 平台优化</p>
+      <p>为英特尔 IoT 平台优化的 Ubuntu Core 20 和 Ubuntu 20.04 桌面版镜像现已可下载。</p>
+      <p>选择想要的操作系统镜像文件，按照安装说明将其加载到机器上，然后就可以开始使用。</p>
+      <p>如果您有任何关于英特尔 IoTG 平台支持的相关问题或者想要了解我们认证计划的内容，请联系我们。</p>
+      <p>
+        <a href="/contact" class="p-button--positive">联系我们</a>
+      </p>
+    </div>
+    <div class="col-5 u-hide--small u-align--center">
+      {{
+        image (
+        url="https://assets.ubuntu.com/v1/efca8490-intel-logo-0.png",
+        alt="",
+        width="300",
+        height="300",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+<section class="p-strip--light">
+  <div class="u-fixed-width u-sv3">
+    <h2>Intel IoT 平台上的 Ubuntu</h2>
+    <p>英特尔的边缘就绪计算和连接技术组合使边缘应用程序快速地部署变得容易。此平台针对 IoT 进行了优化，在边缘端的处理能力使您从最需要计算资源的地方产出的数据中获得关键的洞察和业务价值。</p>
+    <p><strong>支持的处理器:</strong></p>
+    <ul class="p-list">
+      <li class="p-list__item is-ticked">
+        英特尔凌动&reg; X6000E 系列和 英特尔&reg; 奔腾&reg; 和赛扬&reg; N 和 J 系列处理器
+      </li>
+      <li class="p-list__item is-ticked">
+        英特尔第11代英特尔&reg;酷睿&trade; 处理器
+      </li>
+    </ul>
+  </div>
+  <div class="row p-divider">
+    <div class="col-6 p-divider__block">
+      <h3>Ubuntu Core 20</h3>
+      <p>
+        <a class="p-button--positive" href="https://cdimage.ubuntu.com/releases/focal/release/inteliotg/ubuntu-core-20-amd64+intel-iot.img.xz">下载</a>
+      </p>
+      <p>请阅读 <a href="https://assets.ubuntu.com/v1/642fcdac-December_14-Release+Notes.pdf">发布说明</a> 和 <a href="https://assets.ubuntu.com/v1/87e46aa7-Installation+Instructions+Core+Image+Intel+IoTG+Platforms.pdf">安装教程</a> 以获得更多信息。</p>
+    </div>
+    <div class="col-6 p-divider__block">
+      <h3>Ubuntu 20.04 桌面版</h3>
+      <p>
+        <a class="p-button--positive" href="https://cdimage.ubuntu.com/releases/focal/release/inteliotg/ubuntu-20.04-desktop-amd64+intel-iot.iso">下载</a>
+      </p>
+      <p>请阅读 <a href="https://assets.ubuntu.com/v1/642fcdac-December_14-Release+Notes.pdf">发布说明</a> 和 <a href="https://assets.ubuntu.com/v1/840e465f-Installation+Instructions+Desktop+Image+Intel+IoTG+Platforms.pdf">安装教程</a> 以获得更多信息。</p>
+    </div>
+  </div>
+</section>
+<section class="p-strip">
+  <div class="row">
+    <div class="col-8">
+      <h3>了解更多关于英特尔凌动&reg; X6000E 系列和 英特尔&reg; 奔腾&reg; 和赛扬&reg; N 和 J 系列处理器</h3>
+      <p>为了支持下一代物联网边缘设备，英特尔开发了一系列针对物联网增强的新处理器——英特尔凌动 x6000E 系列、英特尔奔腾以及英特尔赛扬 N 和 J 系列处理器（以前称为 Elkhart Lake——EHL）。这些处理器构建在新级别的处理器和图形性能之上，集成了 IoT 功能、实时性能、可管理性、安全性和功能安全性。</p>
+      <a class="p-link--external" href="https://www.intel.com/content/www/us/en/products/docs/processors/embedded/enhanced-for-iot-platform-brief.html">阅读英特尔 IoTG 平台介绍</a>
+    </div>
+  </div>
+  <div class="u-fixed-width">
+    <hr class="p-separator">
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <h3>了解更多关于英特尔第11代酷睿&trade;处理器</h3>
+      <p>第11代智能英特尔&reg;酷睿&trade;处理器（以前称为 Tiger Lake——TGL）在基于英特尔第三代10纳米工艺技术的低功耗平台中实现了性能和响应能力的平衡。这些处理器专为物联网市场而设计，可以支持低延迟和时间敏感的应用程序，并且能够在单个平台上运行多种包括人工智能和深度学习应用程序的工作负载。</p>
+      <a class="p-link--external" href="https://www.intel.com/content/www/us/en/products/docs/processors/core/11th-gen-core-enhanced-for-iot-brief.html">阅读英特尔第11代平台介绍</a>
+    </div>
+  </div>
+</section>
+<section class="p-strip--light">
+  <div class="u-fixed-width">
+    <h3>硬件认证计划</h3>
+    <p>Canonical 与领先的设备制造商合作，在各种开发板上验证同一个的 Ubuntu 镜像，为您的定制需求提供出色的开箱即用体验。请继续关注即将推出的更多功能！</p>
+    <a class="p-link--external" href="https://ubuntu.com/certified/devices">浏览 Ubuntu 认证的物联网设备</a>
+  </div>
+</section>
+
+{% with first_item="_core_learn_more", second_item="_core_contribute", third_item="_iot_further_reading" %}{% include "shared/contextual_footers/_contextual_footer.html" %}{% endwith %}
+
+{% endblock %}
