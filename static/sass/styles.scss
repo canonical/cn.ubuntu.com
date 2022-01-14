@@ -23,7 +23,6 @@
 @import 'pattern_strip-photos';
 @import 'pattern_gaming';
 @import 'pattern_card';
-@import 'pattern_inline-images';
 @import 'pattern_contextual-footer';
 @import 'pattern_calculator';
 
@@ -41,7 +40,6 @@
 @include ubuntu-p-strip-photos;
 @include ubuntu-p-gaming;
 @include ubuntu-p-cards;
-@include ubuntu-inline-images;
 @include ubuntu-p-contextual-footer;
 @include ubuntu-p-calculator;
 
@@ -80,7 +78,7 @@ body {
   margin-top: -2.2rem;
   padding-bottom: 1.75rem;
 
-  @media screen and (max-width: $breakpoint-large - 1px) {
+  @media screen and (max-width: ($breakpoint-large - 1px)) {
     padding-top: 2rem;
   }
 
@@ -201,7 +199,7 @@ p.u-align--center {
 }
 
 .p-accordion__tab {
-  background-position: top $spv-inner--medium left $sph-inner;
+  background-position: top $spv--medium left $sph--large;
 }
 
 td.p-accordion {

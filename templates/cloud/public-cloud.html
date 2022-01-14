@@ -18,10 +18,10 @@
 {% include "/shared/_ubuntu_pro_on_public_cloud.html" %}
 
 <section class="p-strip is-deep is-bordered">
-  <div class="u-fixed-width">
-    <h2 class="p-muted-heading u-align--center">我们认证的公有云合作伙伴集</h2>
-    <ul class="p-inline-images">
-      <li class="p-inline-images__item">
+  <div class="u-fixed-width p-logo-section">
+    <h2 class="p-logo-section__title u-align--center">我们认证的公有云合作伙伴集</h2>
+    <div class="p-logo-section__items">
+      <div class="p-logo-section__item">
         {{
           image(
               url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
@@ -30,11 +30,11 @@
               height="85",
               hi_def=True,
               loading="lazy",
-              attrs={"class": "p-inline-images__logo", "id": ""},
+              attrs={"class": "p-logo-section__logo", "id": ""},
           ) | safe
         }}
-      </li>
-      <li class="p-inline-images__item">
+      </div>
+      <div class="p-logo-section__item">
         {{
           image(
               url="https://assets.ubuntu.com/v1/d31f722d-Partner-Microsoft-Azure-logo.png",
@@ -43,11 +43,11 @@
               height="88",
               hi_def=True,
               loading="lazy",
-              attrs={"class": "p-inline-images__logo", "id": ""},
+              attrs={"class": "p-logo-section__logo", "id": ""},
           ) | safe
         }}
-      </li>
-      <li class="p-inline-images__item">
+      </div>
+      <div class="p-logo-section__item">
         {{
           image(
               url="https://assets.ubuntu.com/v1/e5f6bd10-Google_Cloud_Platform-Logo.png",
@@ -56,11 +56,11 @@
               height="24",
               hi_def=True,
               loading="lazy",
-              attrs={"class": "p-inline-images__logo", "id": ""},
+              attrs={"class": "p-logo-section__logo", "id": ""},
           ) | safe
         }}
-      </li>
-      <li class="p-inline-images__item">
+      </div>
+      <div class="p-logo-section__item">
         {{
           image(
               url="https://assets.ubuntu.com/v1/5e91ff73-ibm-cloud-logo.svg",
@@ -69,11 +69,11 @@
               height="36",
               hi_def=True,
               loading="lazy",
-              attrs={"class": "p-inline-images__logo", "id": ""},
+              attrs={"class": "p-logo-section__logo", "id": ""},
           ) | safe
         }}
-      </li>
-      <li class="p-inline-images__item">
+      </div>
+      <div class="p-logo-section__item">
         {{
           image(
               url="https://assets.ubuntu.com/v1/d74eebcd-o-redbadge-digital-master.png",
@@ -82,11 +82,11 @@
               height="76",
               hi_def=True,
               loading="lazy",
-              attrs={"class": "p-inline-images__logo", "id": ""},
+              attrs={"class": "p-logo-section__logo", "id": ""},
           ) | safe
         }}
-      </li>
-      <li class="p-inline-images__item">
+      </div>
+      <div class="p-logo-section__item">
         {{
           image(
               url="https://assets.ubuntu.com/v1/73135672-ntt-logo.svg",
@@ -95,11 +95,11 @@
               height="54",
               hi_def=True,
               loading="lazy",
-              attrs={"class": "p-inline-images__logo", "id": ""},
+              attrs={"class": "p-logo-section__logo", "id": ""},
           ) | safe
         }}
-      </li>   
-  </ul>
+      </div>   
+    </div>
     <p class="u-align--center"><a class="p-link--external" href="https://partners.ubuntu.com/find-a-partner?programme=certified-public-cloud ">查看全部认证的公有云合作伙伴</a></p>
   </div>
 </section>
@@ -185,8 +185,8 @@
       </p>
     </div>
     <div class="col-6 u-vertically-center">
-      <ul class="p-inline-images">
-        <li class="p-inline-images__item">
+      <div class="p-logo-section__items">
+        <div class="p-logo-section__item">
           {{
             image(
               url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
@@ -198,7 +198,7 @@
             ) | safe
           }}
         </li>
-        <li class="p-inline-images__item">
+        <div class="p-logo-section__item">
           {{
             image(
               url="https://assets.ubuntu.com/v1/da9a1344-Microsoft-Azure-logo_stacked_transparent.png",
@@ -210,7 +210,7 @@
             ) | safe
           }}
         </li>
-        <li class="p-inline-images__item">
+        <div class="p-logo-section__item">
           {{ image (
             url="https://assets.ubuntu.com/v1/8c1c38b0-google-cloud-3.svg",
             alt="Google Cloud",
@@ -221,7 +221,7 @@
             ) | safe
           }}
         </li>
-      </ul>
+      </div>
     </div>
   </div>
 </section>
