@@ -46,8 +46,8 @@
     "webpack-cli": "4.9.1"
   },
   "dependencies": {
-    "@canonical/global-nav": "2.5.0",
-    "@canonical/cookie-policy": "3.3.0",
+    "@canonical/global-nav": "2.6.0",
+    "@canonical/cookie-policy": "3.4.0",
     "vanilla-framework": "3.0.1"
   }
 }
