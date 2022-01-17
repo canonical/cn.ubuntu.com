@@ -34,7 +34,7 @@
     .u-align--left-medium {
       @media (max-width: $breakpoint-medium) {
         justify-content: left !important;
-        padding: $spv-inner--scaleable 0 ($spv-inner--scaleable * 2) 0;
+        padding: $spv--large 0 $spv--large 0;
         text-align: left !important;
       }
     }

@@ -67,10 +67,10 @@
 </div>
 
 <div class="p-strip is-deep is-bordered" style="padding-top: 2rem;">
-    <div class="u-fixed-width">
+    <div class="u-fixed-width p-logo-section">
       <h3 class="p-muted-heading u-align--center">可与您的硬件和软件一起使用</h3>
-      <ul class="p-inline-images">
-        <li class="p-inline-images__item">
+      <div class="p-logo-section__items">
+        <div class="p-logo-section__item">
           {{
             image(
                 url="https://assets.ubuntu.com/v1/68713fd5-logo-lenovo.svg",
@@ -79,12 +79,12 @@
                 height="24",
                 hi_def=True,
                 loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
+                attrs={"class": "p-logo-section__logo"},
             ) | safe
           }}
 
-        </li>
-        <li class="p-inline-images__item">
+        </div>
+        <div class="p-logo-section__item">
           {{
             image(
                 url="https://assets.ubuntu.com/v1/5ddba83a-logo-dell.svg",
@@ -93,11 +93,11 @@
                 height="88",
                 hi_def=True,
                 loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
+                attrs={"class": "p-logo-section__logo"},
             ) | safe
           }}
-        </li>
-        <li class="p-inline-images__item">
+        </div>
+        <div class="p-logo-section__item">
           {{
             image(
                 url="https://assets.ubuntu.com/v1/683950fd-logo-ibm.svg",
@@ -106,11 +106,11 @@
                 height="58",
                 hi_def=True,
                 loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
+                attrs={"class": "p-logo-section__logo"},
             ) | safe
           }}
-        </li>
-        <li class="p-inline-images__item">
+        </div>
+        <div class="p-logo-section__item">
           {{
             image(
                 url="https://assets.ubuntu.com/v1/a298e7ec-logo-hp.svg",
@@ -119,11 +119,11 @@
                 height="88",
                 hi_def=True,
                 loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
+                attrs={"class": "p-logo-section__logo"},
             ) | safe
           }}
-        </li>
-        <li class="last-item p-inline-images__item">
+        </div>
+        <div class="p-logo-section__item">
           {{
             image(
                 url="https://assets.ubuntu.com/v1/c24cb4b9-logo-intel.svg",
@@ -132,11 +132,11 @@
                 height="88",
                 hi_def=True,
                 loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
+                attrs={"class": "p-logo-section__logo"},
             ) | safe
           }}
-        </li>
-        <li class="p-inline-images__item">
+        </div>
+        <div class="p-logo-section__item">
           {{
             image(
                 url="https://assets.ubuntu.com/v1/4d6054f9-logo-cisco.svg",
@@ -145,11 +145,11 @@
                 height="76",
                 hi_def=True,
                 loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
+                attrs={"class": "p-logo-section__logo"},
             ) | safe
           }}
-        </li>
-        <li class="p-inline-images__item">
+        </div>
+        <div class="p-logo-section__item">
           {{
             image(
                 url="https://assets.ubuntu.com/v1/731aab6c-logo-amd.svg",
@@ -158,11 +158,11 @@
                 height="44",
                 hi_def=True,
                 loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
+                attrs={"class": "p-logo-section__logo"},
             ) | safe
           }}
-        </li>
-        <li class="last-item p-inline-images__item">
+        </div>
+        <div class="p-logo-section__item">
           {{
             image(
                 url="https://assets.ubuntu.com/v1/4efbd291-Arm_logo_blue_cropped.svg",
@@ -171,11 +171,11 @@
                 height="44",
                 hi_def=True,
                 loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
+                attrs={"class": "p-logo-section__logo"},
             ) | safe
           }}
-        </li>
-        <li class="last-item p-inline-images__item">
+        </div>
+        <div class="p-logo-section__item">
           {{
             image(
                 url="https://assets.ubuntu.com/v1/8d90c121-HW_POS_RBG_Vertical-150ppi.png",
@@ -184,66 +184,68 @@
                 height="100",
                 hi_def=True,
                 loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
+                attrs={"class": "p-logo-section__logo"},
             ) | safe
           }}
-        </li>
-      </ul>
-      <p class="u-align--center u-vertically-spaced"><a href="https://certification.ubuntu.com">查看全部已认证的硬件合作伙伴&nbsp;›</a></p>
-      <ul class="p-inline-images">
-        <li class="p-inline-images__item">
-          {{
-            image(
-                url="https://assets.ubuntu.com/v1/76999dfc-logo-centrify.png",
-                alt="Centrify",
-                width="132",
-                height="87",
-                hi_def=True,
-                loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
-            ) | safe
-          }}
-        </li>
-        <li class="p-inline-images__item">
-          {{
-            image(
-                url="https://assets.ubuntu.com/v1/eed716e9-logo-openstack.svg",
-                alt="OpenStack",
-                width="88",
-                height="88",
-                hi_def=True,
-                loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
-            ) | safe
-          }}
-        </li>
-        <li class="p-inline-images__item">
-          {{
-            image(
-                url="https://assets.ubuntu.com/v1/c228b4e9-logo-likewise.png?w=144",
-                alt="Likewise",
-                width="144",
-                height="79",
-                hi_def=True,
-                loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
-            ) | safe
-          }}
-        </li>
-        <li class="last-item p-inline-images__item">
-          {{
-            image(
-                url="https://assets.ubuntu.com/v1/64493bba-logo-openbravo.png?w=144",
-                alt="Openbravo",
-                width="144",
-                height="34",
-                hi_def=True,
-                loading="lazy",
-                attrs={"class": "p-inline-images__logo"},
-            ) | safe
-          }}
-        </li>
-      </ul>
+        </div>
+      </div>
+      <div class="p-logo-section">
+        <p class="u-align--center u-vertically-spaced"><a href="https://certification.ubuntu.com">查看全部已认证的硬件合作伙伴&nbsp;›</a></p>
+        <div class="p-logo-section__items">
+          <div class="p-logo-section__item">
+            {{
+              image(
+                  url="https://assets.ubuntu.com/v1/76999dfc-logo-centrify.png",
+                  alt="Centrify",
+                  width="132",
+                  height="87",
+                  hi_def=True,
+                  loading="lazy",
+                  attrs={"class": "p-logo-section__logo"},
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                  url="https://assets.ubuntu.com/v1/eed716e9-logo-openstack.svg",
+                  alt="OpenStack",
+                  width="88",
+                  height="88",
+                  hi_def=True,
+                  loading="lazy",
+                  attrs={"class": "p-logo-section__logo"},
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                  url="https://assets.ubuntu.com/v1/c228b4e9-logo-likewise.png?w=144",
+                  alt="Likewise",
+                  width="144",
+                  height="79",
+                  hi_def=True,
+                  loading="lazy",
+                  attrs={"class": "p-logo-section__logo"},
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                  url="https://assets.ubuntu.com/v1/64493bba-logo-openbravo.png?w=144",
+                  alt="Openbravo",
+                  width="144",
+                  height="34",
+                  hi_def=True,
+                  loading="lazy",
+                  attrs={"class": "p-logo-section__logo"},
+              ) | safe
+            }}
+          </div>
+        </div>
+      </div>
       <p class="u-align--center u-vertically-spaced"><a href="https://partners.ubuntu.com/programmes/software">查看所有已认证的软件合作伙伴&nbsp;›</a></p>
     </div>
 </div>
