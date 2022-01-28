@@ -5,19 +5,19 @@
 
   <div class="blog-p-card__content">
     <form action="https://ubuntu.com/marketo/submit" method="post" id="mktoForm_3647" onsubmit="ga('send', 'Newsletter', 'Signup', 'New homepage newsletter signup');">
-      <h3 class="p-card--title p-heading--four">选择您感兴趣的主题</h3>
+      <h3 class="p-card--title p-heading--four">订阅您感兴趣的主题</h3>
 
       <div>
         <label>
           <span class="u-no-margin--top">工作邮箱:<span>*</span></span>
-          <input required  id="email" name="email" maxlength="255" type="email" />
+          <input required  id="email" name="email" maxlength="255" type="email" pattern="^[^ ]+@[^ ]+\.[a-z]{2,26}$" />
         </label>
       </div>
 
       <div>
         <span>
-          <input class="u-no-margin--top" name="canonicalUpdatesOptIn" id="CanonicalUpdatesOptIn" value="Receive updates" type="checkbox" />
-          <label for="CanonicalUpdatesOptIn" class="p-form__label u-no-margin--top">
+          <input class="u-no-margin--top" name="canonicalUpdatesOptIn" id="canonicalUpdatesOptIn" value="yes" type="checkbox" />
+          <label for="canonicalUpdatesOptIn" class="p-form__label u-no-margin--top">
             <small>我同意接收有关Canonical的产品和服务信息。</small>
           </label>
         </span>
