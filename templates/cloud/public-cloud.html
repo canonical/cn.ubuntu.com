@@ -124,12 +124,12 @@
       <p><a class="p-link--external" href="https://jujucharms.com/">了解更多关于Juju的内容</a></p>
     </div>
     <div class="col-6 p-divider__block">
-      <h2 class="p-heading--three">最好的管理和支持服务</h2>
-      <div class="u-hide--small u-align--center u-sv1">
+      <h2 class="p-heading--3">受信任的 (OCI) 映像</h2>
+      <div class="u-hide--medium u-hide--small u-align--center u-sv1">
         {{
           image(
-            url="https://assets.ubuntu.com/v1/434e177d-cloud-landscape-chart.jpg",
-            alt="Landscape managing 913 machines screenshot",
+            url="https://assets.ubuntu.com/v1/fcb97fce-canonical-on-amazon-ecr.png",
+            alt="Canonical on Amazon screenshot",
             height="208",
             width="371",
             hi_def=True,
@@ -137,8 +137,8 @@
           ) | safe
         }}
       </div>
-      <p>Ubuntu Advantage支持服务具有灵活的Ubuntu Virtual Guest选项，专为Ubuntu认证的公有云上的虚拟化企业工作负载而设计。 在Landscape的加持下，只需点击几下鼠标，即可高效管理所有Ubuntu实例。借助Canonical的Livepatch服务，无需重新启动即可应用关键的内核补丁。</p>
-      <p><a href="/support">了解关于支持服务的全部内容&nbsp;&rsaquo;</a></p>
+      <p>基础和应用程序映像的来源对于安全性至关重要。虽然像 Docker 这样的工具使拉取和运行映像变得非常容易，但需要确保受信任的软件链。一个简单的入门方法是使用我们强化的仓库。我们为应用程序、运行时和基本容器映像维护一组稳定和安全 (LTS) 的轨道。为企业容器提供最好的 Ubuntu 开发人员体验和商业承诺。</p>
+      <p><a href="https://ubuntu.com/security/docker-images">探索Canonical 的长期支持 Docker 映像组合</a></p>
     </div>
   </div>
 </section>
@@ -146,14 +146,14 @@
 <section class="p-strip--light is-bordered">
   <div class="row u-equal-height u-vertically-center">
     <div class="col-5">
-      <h2>开发者的最爱</h2>
-      <p>Ubuntu是用于开发和部署最流行的Linux发行版。如果您的开发人员已经在使用Ubuntu，那么上云将变得更容易。</p>
-      <p><a href="/desktop/developers">了解更多关于开发者的内容&nbsp;&rsaquo;</a></p>
+      <h2>托管的应用程序</h2>
+      <p>使用完全托管的 Apache Kafka、Kubeflow、ElasticSearch 等应用程序加速跨云创新。我们为您构建和运营解决方案，并以完整的 SLA 为后盾。借助 Canonical 的托管的开源应用程序服务，无任何锁定，您可以随时接管控制权。</p>
+      <p><a href="https://ubuntu.com/managed/apps">了解关于 Canonical 托管的应用程序的更多内容</a></p>
     </div>
-    <div class="col-7 u-hide--small u-align--center">
+    <div class="col-7 u-hide--medium u-hide--small u-align--center">
       {{
         image(
-          url="https://assets.ubuntu.com/v1/b3061ad7-laptop-dev.png",
+          url="https://assets.ubuntu.com/v1/8961ce5a-managed-apps-kafka-osm-mysql-kubeflow-influxdb-mariadb-cassandra-postgresql-grafana.png",
           alt="",
           height="298",
           width="500",
@@ -185,43 +185,46 @@
       </p>
     </div>
     <div class="col-6 u-vertically-center">
-      <div class="p-logo-section__items">
-        <div class="p-logo-section__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
-              alt="AWS",
-              height="67",
-              width="112",
-              hi_def=True,
-              loading="lazy",
-            ) | safe
-          }}
-        </li>
-        <div class="p-logo-section__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/da9a1344-Microsoft-Azure-logo_stacked_transparent.png",
-              alt="Microsoft Azure",
+      <div class="p-logo-section">
+        <div class="p-logo-section__items">
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
+                alt="AWS",
+                height="67",
+                width="112",
+                hi_def=True,
+                loading="lazy",
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/da9a1344-Microsoft-Azure-logo_stacked_transparent.png",
+                alt="Microsoft Azure",
+                width="350",
+                height="100",
+                hi_def=True,
+                loading="auto",
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image (
+              url="https://assets.ubuntu.com/v1/8c1c38b0-google-cloud-3.svg",
+              alt="Google Cloud",
               width="350",
-              height="100",
+              height="61",
               hi_def=True,
-              loading="auto",
-            ) | safe
-          }}
-        </li>
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/8c1c38b0-google-cloud-3.svg",
-            alt="Google Cloud",
-            width="350",
-            height="61",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
-          }}
-        </li>
+              loading="lazy"
+              ) | safe
+            }}
+          </div>
+        </div>
       </div>
+    </div>
     </div>
   </div>
 </section>

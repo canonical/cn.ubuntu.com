@@ -25,6 +25,7 @@
 @import 'pattern_card';
 @import 'pattern_contextual-footer';
 @import 'pattern_calculator';
+@import 'pattern_heading-icon';
 
 // import cookie policy
 @import '@canonical/cookie-policy/build/css/cookie-policy';
@@ -42,6 +43,7 @@
 @include ubuntu-p-cards;
 @include ubuntu-p-contextual-footer;
 @include ubuntu-p-calculator;
+@include ubuntu-p-heading-icon;
 
 body {
   border-top: 32px solid #262626; // Placeholder for global-nav
@@ -204,4 +206,10 @@ p.u-align--center {
 
 td.p-accordion {
   padding-top: 0;
+}
+
+.p-heading-icon__header {
+  .lazyloaded {
+    @extend .p-heading-icon__img;
+  }
 }
