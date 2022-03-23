@@ -36,7 +36,6 @@ previous_previous_lts:
     '20.04.4': '28ccdb56450e643bad03bb7bcf7507ce3d8d90e8bf09e38f6bd9ac298a98eaad *ubuntu-20.04.4-live-server-amd64.iso'
   desktop-arm64+raspi:
     '21.10': '5187d507099f26bc4d8218085109af498fae5ff93b40c668f83bab5c7574d954 *ubuntu-21.10-preinstalled-desktop-arm64+raspi.img.xz'
-    '21.04': 'd89ee327a00b98d7166b1a8cc95d17762aaacd3b4d0fc756c5b6b65df1708f48 *ubuntu-21.04-preinstalled-desktop-arm64+raspi.img.xz'
   server-arm64+raspi:
     '21.10': '126f940d3b270a6c1fc5a183ac8a3d193805fead4f517296a7df9d3e7d691a03 *ubuntu-21.10-preinstalled-server-arm64+raspi.img.xz'
     '20.04.4': '6aeba20c00ef13ee7b48c57217ad0d6fc3b127b3734c113981d9477aceb4dad7 *ubuntu-20.04.4-preinstalled-server-arm64+raspi.img.xz'
