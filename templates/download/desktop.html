@@ -68,95 +68,130 @@
     {% endif %}
   </section>
 
-  {% include '/shared/_everywhere.html' %}
-
-  <section class="p-strip--light">
-    <div class="u-fixed-width">
-      <h2>切换到Ubuntu的简单方法</h2>
+<section class="p-strip">
+  <div class="u-fixed-width">
+    <h2>如何安装 Ubuntu 桌面</h2>
+  </div>
+  <div class="row p-divider">
+    <div class="col-3 p-divider__block">
+      <h3 class="p-heading--4"><a href="https://ubuntu.com/tutorials/install-ubuntu-desktop">安装Ubuntu桌面</a></h3>
+      <p>阅读本教程了解如何在笔记本电脑或PC上安装Ubuntu桌面。</p>
+      <p>你也可以从一个优盘上运行Ubuntu桌面试用而无需安装到你的机器上。</p>
     </div>
-
-    <div class="row u-equal-height">
-      <div class="col-4 p-card">
-        <div class="p-heading-icon--small">
-          <div class="p-heading-icon__header">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/cb3ecebb-picto-ubuntu.svg",
-                  alt="",
-                  width="60",
-                  height="60",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-heading-icon__img"},
-                ) | safe
-            }}
-            <h3 class="p-heading-icon__title">从旧版本</h3>
-          </div>
-        </div>
-        <p>如您正在使用Ubuntu，您可以通过<a class="p-link--external" href="https://ubuntu.com/tutorials/tutorial-upgrading-ubuntu-desktop">软件更新器</a>进行升级。</p>
-        <ul class="p-list">
-          <li class="p-list__item"><a class="p-link--external" href="https://ubuntu.com/tutorials/tutorial-burn-a-dvd-on-ubuntu">如何在Ubuntu上刻录DVD</a></li>
-          <li class="p-list__item"><a class="p-link--external" href="https://ubuntu.com/tutorials/tutorial-create-a-usb-stick-on-ubuntu">如何在Ubuntu上创建一个启动U盘</a></li>
-        </ul>
-      </div>
-
-      <div class="col-4 p-card">
-        <div class="p-heading-icon--small">
-          <div class="p-heading-icon__header">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/08563efa-picto-windows.svg",
-                  alt="",
-                  width="60",
-                  height="60",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-heading-icon__img"},
-                  ) | safe
-            }}
-            <h3 class="p-heading-icon__title">从Windows</h3>
-          </div>
-        </div>
-        <p>如您正在使用Windows 10或其他配有64位处理器的电脑，我们推荐下载64位镜像。</p>
-        <ul class="p-list">
-          <li class="p-list__item"><a class="p-link--external" href="https://ubuntu.com/tutorials/tutorial-burn-a-dvd-on-windows">如何在Windows上刻录DVD</a></li>
-          <li class="p-list__item"><a class="p-link--external" href="https://ubuntu.com/tutorials/tutorial-create-a-usb-stick-on-windows">如何在Windows上创建一个启动U盘</a></li>
-        </ul>
-      </div>
-
-      <div class="col-4 p-card">
-        <div class="p-heading-icon--small">
-          <div class="p-heading-icon__header">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/4239507e-picto-mac.svg",
-                  alt="",
-                  width="60",
-                  height="60",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-heading-icon__img"},
-                ) | safe
-            }}
-            <h3 class="p-heading-icon__title">从macOS</h3>
-          </div>
-        </div>
-        <p>大多数配备英特尔处理器的Mac都可以使用64位或Mac镜像。如果64位镜像不能工作，请尝试使用Mac镜像。</p>
-        <ul class="p-list">
-          <li class="p-list__item"><a class="p-link--external" href="https://ubuntu.com/tutorials/tutorial-burn-a-dvd-on-macos">如何在macOS上刻录DVD</a></li>
-          <li class="p-list__item"><a class="p-link--external" href="https://ubuntu.com/tutorials/tutorial-create-a-usb-stick-on-macos">如何在macOS上创建一个启动U盘</a></li>
-        </ul>
-      </div>
+    <div class="col-3 p-divider__block">
+      <h3 class="p-heading--4"><a href="https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox">如何使用VirtualBox在虚拟机上运行Ubuntu桌面</a></h3>
+      <p>通过此快速入门指南了解如何使用VirtualBox在任何操作系统上通过设置虚拟机来运行Ubuntu桌面。</p>
     </div>
-  </section>
+    <div class="col-3 p-divider__block">
+      <h3 class="p-heading--4"><a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-desktop-on-raspberry-pi-4">如何在树莓派4上安装Ubuntu桌面</a></h3>
+      <p>阅读在树莓派4（2GB内存及以上）上安装Ubuntu桌面的完整教程。</p>
+    </div>
+    <div class="col-3 p-divider__block">
+      <h3 class="p-heading--4"><a href="https://ubuntu.com/tutorials/upgrading-ubuntu-desktop">升级Ubuntu桌面</a></h3>
+      <p>如果您已经在运行Ubuntu，则可以从软件更新程序中单击几下进行升级。</p>
+      <p>可通过本快速教程了解如何操作。</p>
+    </div>            
+  </div>
+</section>
 
-  {% with first_item="_download_desktop_installation",
-  first_item_class="",
-  second_item="_download_try_desktop",
-  second_item_class="",
-  third_item="_download_helping_hands",
-  third_item_class="" %}
-  {% include "shared/contextual_footers/_contextual_footer.html" %}
-  {% endwith %}
+<section class="p-strip--light">
+  <div class="u-fixed-width">
+    <h2>在 Linux、Mac 或 Windows 上快速启动 Ubuntu 虚拟机</h2>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <h3>借助 Multipass 获得桌面上的迷你云</h3>
+      <p>使用Multipass，您可以下载、配置和控制预装了最新更新的Ubuntu服务器版的虚拟机。在您的Linux、Windows或macOS系统上创建迷你云</p>
+      <p><a href="https://multipass.run/#install" class="p-button--positive">下载Multipass（支持macOS | Windows | Linux）</a></p>
+      <p><a href="https://multipass.run">了解更多关于 Multipass 的内容</a></p>
+    </div>
+    <div class="col-4 u-vertically-center u-align--center">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/ea34f006-Multipass+logomark_rgb.svg",
+        alt="",
+        width="150",
+        height="150",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+  </div>
+  <div class="u-fixed-width">
+    <hr class="p-separator">
+  </div>
+  <div class="row">
+    <div class="col-4 u-align--center">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/c4f35e06-products-hero-ubuntu.svg",
+        alt="",
+        width="140",
+        height="140",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+      {{ image (
+        url="https://assets.ubuntu.com/v1/66c99aa0-windows-logo-blue.svg",
+        alt="",
+        width="112",
+        height="115",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+    <div class="col-8">
+      <h3>使用 Ubuntu WSL 在 Windows 上访问 Linux 终端</h3>
+      <p>要获得更集成的环境，请启用适用于Linux的Windows子系统(WSL)以运行Linux应用程序和工作流，同时在Windows机器上进行跨平台开发。</p>
+      <p>您可以直接从微软商店下载 Ubuntu</p>
+      <p><a href="https://www.microsoft.com/zh-cn/p/ubuntu/9pdxgncfsczv?rtc=1&activetab=pivot:overviewtab" class="p-button--positive">下载 Ubuntu WSL</a></p>
+      <p><a href="https://ubuntu.com/wsl">了解更多关于 WSL 的内容</a></p>
+    </div>
+  </div>
+  <div class="u-fixed-width">
+    <hr class="p-separator">
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <h3>使用 LXD 运行系统容器</h3>
+      <p>在Linux上运行Linux时，考虑使用LXD系统容器而不是VM来优化资源。LXD在容器内运行完整的操作系统，提供VM的所有好处而没有常规的开销。</p>
+      <p><a href="https://ubuntu.com/lxd">了解更多关于 LXD 的内容</a></p>
+      <p><a href="https://linuxcontainers.org/lxd/try-it/">通过在线演示工具体验 LXD</a></p>
+    </div>
+    <div class="col-4 u-vertically-center u-align--center">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/459e1d4b-lxd_black-pictogram.svg",
+        alt="",
+        width="152",
+        height="150",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}      
+    </div>
+  </div>    
+</section>
+
+<section class="p-strip">
+  <div class="u-fixed-width">
+    <h2>帮助总是在手边</h2>
+    <p>加入我们的全球社区，获取有关如何开始使用 Ubuntu 的支持和建议。</p>
+  </div>
+  <div class="row">
+    <div class="col-3 p-card">
+      <p class="p-card__content u-align--center"><a href="https://discourse.ubuntu.com/">Ubuntu Discourse</a></p>
+    </div>
+    <div class="col-3 p-card">
+      <p class="p-card__content u-align--center"><a href="https://askubuntu.com/">Ask Ubuntu</a></p>
+    </div>
+    <div class="col-3 p-card">
+      <p class="p-card__content u-align--center"><a href="https://answers.launchpad.net/ubuntu">Launchpad</a></p>
+    </div>
+    <div class="col-3 p-card">
+      <p class="p-card__content u-align--center"><a href="https://wiki.ubuntu.com/IRC/ChannelList">基于 IRC 的支持</a></p>
+    </div>            
+  </div>
+</section>
 
 {% endblock %}

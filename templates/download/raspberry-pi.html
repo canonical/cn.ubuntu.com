@@ -14,7 +14,7 @@
       <p>在树莓派上运行Ubuntu很容易。只需选择您想要的操作系统镜像，将镜像刷入microSD卡，再将microSD加载到Pi的卡槽内即可。</p>
       <p>第一次在树莓派上安装Ubuntu？</p>
       <p>
-        参考我们的<a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-desktop-on-raspberry-pi-4" class="p-link--external">桌面版</a>，<a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi" class="p-link--external">服务器版以及<a class="p-link--external" href="https://ubuntu.com/download/raspberry-pi-core"> Core </a>教程。
+        最简单的方式是使用<a href="https://www.raspberrypi.com/software/">树莓派镜像工具（Raspberry Pi Imager）</a>，其让您在安装时选择一个Ubuntu系统镜像。可参考我们的<a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-desktop-on-raspberry-pi-4#1-overview">桌面</a>，<a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#1-overview">服务器</a> 和 <a href="https://ubuntu.com/download/raspberry-pi-core">core</a> 安装教程以了解更多。
       </p>
     </div>
     <div class="col-5 u-align--center u-hide--small">
@@ -34,7 +34,7 @@
 
 
 {# desktop latest #}
-<section class="p-strip--light {% if releases.latest.short_version < releases.lts.short_version %}is-bordered{% endif %}">
+<section class="p-strip--light">
   <div class="row">
     <div class="col-6">
       <h2 class="u-sv2">
@@ -48,19 +48,32 @@
   <div class="row">
     <div class="col-6">
       <h3>
-        Ubuntu桌面 {{ releases.latest.full_version }}
+        Ubuntu 桌面 {{ releases.lts.full_version }} LTS
       </h3>
       <p>
-        最新的Ubuntu开发版本，拥有9个月支持，至{{ releases.latest.eol }}。
+        最新的Ubuntu开发版本，拥有5年的长期支持，至{{ releases.lts.eol }}。
       </p>
       <p>
         <a
         class="p-button--positive"
-        href="https://cdimage.ubuntu.com/releases/{{ releases.latest.full_version }}/release/ubuntu-{{ releases.latest.full_version }}-preinstalled-desktop-arm64+raspi.img.xz" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Raspberry Pi 64-bit - desktop', 'eventLabel' : '{{ releases.latest.short_version }}', 'eventValue' : undefined });">
+        href="https://cdimage.ubuntu.com/releases/{{ releases.lts.full_version }}/release/ubuntu-{{ releases.lts.full_version }}-preinstalled-desktop-arm64+raspi.img.xz" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Raspberry Pi 64-bit - desktop', 'eventLabel' : '{{ releases.latest.short_version }}', 'eventValue' : undefined });">
         下载64位镜像
         </a>
       </p>
     </div>
+
+    <div class="col-4 u-vertically-center u-align--center u-hide--small u-hide--medium">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/fe859a7f-Jammy+Jellyfish+RGB.svg",
+        alt="",
+        width="260",
+        height="150",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+      }}
+    </div>
+  </div>
 
   <div class="u-hide--medium u-hide--large">
     <div class="col-6">
@@ -99,7 +112,7 @@
     </div>
     <h6 class="u-text-light">
       <em>
-        * 要求至少 4GB 内存
+        * 要求至少 2GB 内存
       </em>
     </h6>
   </div>
@@ -140,7 +153,7 @@
     </div>
     <h6 class="u-text-light">
       <em>
-        * 要求至少 4GB 内存
+        * 要求至少 2GB 内存和16GB 闪存或者SD卡存储
       </em>
     </h6>
   </div>
@@ -162,7 +175,7 @@
   <div class="row">
     <div class="col-6">
       <h3>
-        Ubuntu Server {{ releases.lts.full_version }} LTS
+        Ubuntu 服务器 {{ releases.lts.full_version }} LTS
       </h3>
       <p>
         此版本拥有5年的长期支持，至{{ releases.lts.eol }}。
@@ -318,7 +331,7 @@
     </div>
     <div class="col-2">
       <p class="u-no-padding--top" style="margin-bottom: .5rem;">
-        Raspberry Pi Zero 2
+        Raspberry Pi Zero 2 W
       </p>
       <hr>
       <div>
@@ -492,7 +505,7 @@
     </div>
     <div class="col-2">
       <p class="u-no-padding--top" style="margin-bottom: .5rem;">
-        Raspberry Pi Zero 2
+        Raspberry Pi Zero 2 W
       </p>
       <hr>
       <div>
@@ -505,12 +518,7 @@
           loading="lazy"
           ) | safe
         }}
-      </div>
-      <h6 class="u-text-light">
-        <em>
-          * 仅提供32位
-        </em>
-      </h6>
+      </div>      
     </div>
   </div>
 </section>
@@ -547,9 +555,87 @@
   </div>
 </section>
 
-<section class="p-strip--light is-deep">
-  {% with head="现在开始做些有趣的事", subhead="使用树莓派创建一个包含特定功能的Ubuntu设备" %}{% include "/shared/_appliance-advert-strip.html" %}{% endwith %}
+<section class="p-strip">
+  <div class="u-fixed-width">
+    <h2>从今天开始做一些很棒的事情</h2>
+    <p>查看这些项目创意以帮助您入门。</p>
+  </div>
+  <div class="row p-divider">
+    <div class="col-3 p-divider__block">
+      <div class="p-heading-icon--muted">
+        <div class="p-heading-icon__header">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/e2315503-tutorial.svg",
+            alt="",
+            width="231",
+            height="150",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-heading-icon__img--small"}
+            ) | safe
+          }}
+          <h4 class="p-heading-icon__title">Tutorial</h4>
+        </div>
+        <h3 class="p-heading--4"><a href="https://ubuntu.com/blog/linux-gaming-tutorial-raspberry-pi-minecraft-server-on-ubuntu-desktop">树莓派教程：在 Ubuntu 桌面上托管一个Minecraft服务器</a></h3>
+      </div>
+    </div>
+    <div class="col-3 p-divider__block">
+      <div class="p-heading-icon--muted">
+        <div class="p-heading-icon__header">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/e2315503-tutorial.svg",
+            alt="",
+            width="231",
+            height="150",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-heading-icon__img p-heading-icon__img--small"}
+            ) | safe
+          }}
+          <h4 class="p-heading-icon__title">教程</h4>
+        </div>
+        <h3 class="p-heading--4"><a href="https://ubuntu.com/blog/common-sense-using-the-raspberry-pi-sense-hat-on-ubuntu-impish-indri">在 Ubuntu Impish Indri 上使用树莓派 Sense HAT</a></h3>
+      </div>
+    </div>
+    <div class="col-3 p-divider__block">
+      <div class="p-heading-icon--muted">
+        <div class="p-heading-icon__header">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/e2315503-tutorial.svg",
+            alt="",
+            width="231",
+            height="150",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-heading-icon__img p-heading-icon__img--small"}
+            ) | safe
+          }}
+          <h4 class="p-heading-icon__title">教程</h4>
+        </div>
+        <h3 class="p-heading--4"><a href="https://ubuntu.com/blog/homelab-clusters-lxd-micro-cloud-on-raspberry-pi">家庭实验室集群：树莓派上的 LXD 微型云</a></h3>
+      </div>
+    </div>
+    <div class="col-3 p-divider__block">
+      <div class="p-heading-icon--muted">
+        <div class="p-heading-icon__header">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/e2315503-tutorial.svg",
+            alt="",
+            width="231",
+            height="150",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-heading-icon__img p-heading-icon__img--small"}
+            ) | safe
+          }}
+          <h4 class="p-heading-icon__title">教程</h4>
+        </div>
+        <h3 class="p-heading--4"><a href="https://maas.io/tutorials/build-your-own-bare-metal-cloud-using-a-raspberry-pi-cluster-with-maas#1-overview">使用带有 MAAS 的树莓派集群来构建您自己的裸机云</a></h3>
+      </div>
+    </div>            
+  </div>
 </section>
+
   {% with first_item="_core_learn_more", second_item="_core_contribute", third_item="_iot_further_reading" %}{% include "shared/contextual_footers/_contextual_footer.html" %}{% endwith %}
 
 {% endblock %}
