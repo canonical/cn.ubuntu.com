@@ -13,14 +13,14 @@ lts:
   name: "Jammy Jellyfish"
   short_version: "22.04"
   full_version: "22.04"
-  release_date: "April 2022"
+  release_date: "2022年4月"
   eol: "2027年4月"
   release_notes_url: "https://discourse.ubuntu.com/t/jammy-jellyfish-release-notes/24668"
 previous_lts:
   name: "Focal Fossa"
   short_version: "20.04"
   full_version: "20.04.4"
-  release_date: "April 2020"
+  release_date: "2020年4月"
   eol: "2025年4月"
 previous_previous_lts:
   name: "Bionic Beaver"
@@ -42,7 +42,6 @@ checksums:
   desktop-arm64+raspi:
     "22.04": "75d05ef58e527b36ffb7807eae23d6b63cc80adaf59fff95c39f4077647a6423 *ubuntu-22.04-preinstalled-desktop-arm64+raspi.img.xz"
     "21.10": "5187d507099f26bc4d8218085109af498fae5ff93b40c668f83bab5c7574d954 *ubuntu-21.10-preinstalled-desktop-arm64+raspi.img.xz"
-    "21.04": "d89ee327a00b98d7166b1a8cc95d17762aaacd3b4d0fc756c5b6b65df1708f48 *ubuntu-21.04-preinstalled-desktop-arm64+raspi.img.xz"
   server-arm64+raspi:
     "22.04": "9cd6b5e6b4e4a7453cfde276927efe20380ab9ec0377318d5ce0bc8c8a56993b *ubuntu-22.04-preinstalled-server-arm64+raspi.img.xz"
     "21.10": "126f940d3b270a6c1fc5a183ac8a3d193805fead4f517296a7df9d3e7d691a03 *ubuntu-21.10-preinstalled-server-arm64+raspi.img.xz"

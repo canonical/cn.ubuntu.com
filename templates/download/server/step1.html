@@ -17,8 +17,8 @@
           使用USB或者DVD的物理镜像安装
         </p>
         <ul class="p-list">
-          <li class="p-list__item is-ticked">承诺的系统安全更新至2025年4月</li>
-          <li class="p-list__item is-ticked">扩展更新维护至2030年4月</li>
+          <li class="p-list__item is-ticked">承诺的系统安全更新至{{ releases.lts.eol }}</li>
+          <li class="p-list__item is-ticked">扩展更新维护至2032年4月</li>
           <li class="p-list__item is-ticked">为企业客户提供商业支持</li>
         </ul>
       </div>
@@ -26,12 +26,12 @@
         <div class="u-hide--small u-align--center">
           {{
             image(
-              url="https://assets.ubuntu.com/v1/28e0ebb7-Focal-Fossa-gradient-outline.svg",
+              url="https://assets.ubuntu.com/v1/fe859a7f-Jammy+Jellyfish+RGB.svg",
               alt="",
-              height="200",
-              width="256",
+              height="150",
+              width="260",
               hi_def=True,
-              loading="lazy"
+              loading="auto"
             ) | safe
           }}
         </div>
@@ -48,6 +48,11 @@
           <li class="p-inline-list__item"><a href="#architectures">其他架构&nbsp;&rsaquo;</a></li>
         </ul>
       </div>
+      <p class="u-sv3">
+        <a href="{{ releases.lts.release_notes_url }}">
+          阅读 Ubuntu 服务器 {{ releases.lts.short_version }} LTS 发布公告
+        </a>
+      </p>
   
     </div>
     
