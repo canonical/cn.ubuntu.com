@@ -1,0 +1,185 @@
+{% extends "templates/base.html" %}
+
+{% block title %}Ubuntu Advantage订阅服务{{ page_title }}{% endblock %}
+{% block meta_description %}Ubuntu订阅服务 Ubuntu 14.04 Ubuntu 16.04 Ubuntu企业订阅 Ubuntu企业版 Ubuntu授权{{ meta_description }}{% endblock %}
+
+{% block content %}
+{% include "support/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped" style="padding-bottom: 32px">
+  <div class="row">
+    <div class="col-12">
+      <h1>Ubuntu Advantage订阅<br>基础设施</h1>
+      <p>Ubuntu Advantage订阅——基础设施，是最全面的 Linux 企业订阅，涵盖开放基础架构的所有方面。</p>
+      <h5>
+        <a href="https://ubuntu.com/advantage" class="p-button--positive">在线购买</a>        
+      </h5>
+      <small>或者登陆您的订阅账户编辑或添加新的订阅选项（仅支持已订阅用户）。</small>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light is-shallow">
+  <div class="row u-equal-height">
+    <div class="col-6">
+      <h3>按每台机器计价的企业订阅</h3>
+      <p>企业选择 Ubuntu Advantage 订阅以获得扩展的安全，认证的合规性以及7X24小时支持。</p>
+      <p>
+        <a href="https://ubuntu.com/advantage/subscribe" class="p-button--positive">购买</a>
+        <span>一份企业订阅</span>
+      </p>
+      <p class="u-no-margin--bottom">请参考下表选择适合您的计划。</p>
+    </div>
+    <div class="col-6">
+      <h3>个人免费使用</h3>
+      <p>个人可以在最多3台机器上免费使用UA-I基础版订阅，如果您是<a href="https://wiki.ubuntu.com/Membership">Ubuntu 官方社区成员</a>，则可以使用50台。</p>
+      <p class="u-no-margin--bottom">
+        <a href="https://ubuntu.com/advantage" class="p-button--positive">注册</a>
+        <span>免费订阅</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip is-shallow is-bordered" id="ua-price">
+  <div class="row">
+    <h2>Ubuntu Advantage订阅计划</h2>
+    
+<div class="row">
+<div class="col-12 u-sv3" style="overflow-x: auto;">
+  <table class="p-table advantage-table">
+    <thead>
+      <tr>
+        <th>&nbsp;</th>  
+        <th class="u-align--center">免费版</th>        
+        <th class="u-align--center">基础版</th>
+        <th class="u-align--center">标准版</th>
+        <th class="u-align--center">高级版</th>
+      </tr>
+      <tr>
+        <th colspan="5" style="background-color: #f7f7f7; padding: .75rem;"><strong>包含内容</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="esm">
+        <td>用于Ubuntu 14.04 LTS和Ubuntu 16.04 LTS的<a href="/support/esm">扩展安全维护服务</a>。</td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+      </tr>
+      <tr id="livepatch">
+        <td>避免重启的<a href="https://www.ubuntu.com/livepatch">内核实时补丁</a>服务</td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+      </tr>
+      <tr id="fips">
+        <td><a href="https://www.ubuntu.com/security/certifications#fips">FIPS 140-2 Level 1</a>认证的加密模块</td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+      </tr>
+      <tr id="cce">
+        <td><a href="https://www.ubuntu.com/security/certifications#common-criteria">Common Criteria EAL2</a></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+      </tr>
+      <tr id="kvm-guests">
+        <td>用于KVM客户机的认证的Windows驱动</td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+      </tr>
+      <tr id="landscape">
+        <td><a href="https://landscape.canonical.com">Landscape</a> 内部管理仪表</td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+      </tr>
+      <tr id="landscape">
+        <td><a href="https://landscape.canonical.com">Landscape</a> SaaS管理仪表</td>
+        <td class="u-align--center">-</td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+        <td class="u-align--center"><img src="https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Yes" width="16" height="16"></td>
+      </tr>        
+      <tr id="phone-ticket">
+        <td>电话和工单支持</td>
+        <td class="u-align--center">-</td>
+        <td class="u-align--center">-</td>
+        <td class="u-align--center">5x24小时</td>
+        <td class="u-align--center">7x24小时</td>
+      </tr>
+      <tr id="openstack">
+        <td>OpenStack</td>
+        <td class="u-align--center">安全更新</td>
+        <td class="u-align--center">安全更新</td>
+        <td class="u-align--center">更新和支持</td>
+        <td class="u-align--center">更新和支持</td>
+      </tr>
+      <tr id="kubernetes">
+        <td>Kubernetes</td>
+        <td class="u-align--center">安全更新</td>
+        <td class="u-align--center">安全更新</td>
+        <td class="u-align--center">更新和支持</td>
+        <td class="u-align--center">更新和支持</td>
+      </tr>
+      <tr id="lvm-lxd">
+        <td>KVM/LXD</td>
+        <td class="u-align--center">安全更新</td>
+        <td class="u-align--center">安全更新</td>
+        <td class="u-align--center">更新和支持</td>
+        <td class="u-align--center">更新和支持</td>
+      </tr>
+      <tr id="maas">
+        <td>MAAS</td>
+        <td class="u-align--center">安全更新</td>
+        <td class="u-align--center">安全更新</td>
+        <td class="u-align--center">更新和支持</td>
+        <td class="u-align--center">更新和支持</td>
+      </tr>
+      <tr>
+        <th colspan="5" style="background-color: #f7f7f7;border-top: 1px solid rgba(0,0,0,0.1);padding: .50rem;"><strong>每年价格</strong></th>
+      </tr>
+      <tr>
+        <td>物理服务器</td>
+        <td class="u-align--center">-</td>
+        <td class="u-align--center">$225</td>
+        <td class="u-align--center">$750</td>
+        <td class="u-align--center">$1,500</td>
+      </tr>
+      <tr>
+        <td>虚拟服务器</td>
+        <td class="u-align--center">-</td>
+        <td class="u-align--center">$75</td>
+        <td class="u-align--center">$250</td>
+        <td class="u-align--center">$500</td>
+      </tr>
+      <tr>
+        <td>桌面系统</td>
+        <td class="u-align--center">-</td>
+        <td class="u-align--center">$25</td>
+        <td class="u-align--center">$150</td>
+        <td class="u-align--center">$300</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <div class="col-12">
+    <p><a class="p-button--neutral" href="/contact">联系和购买</a></p>
+    <small>注：上述服务内容仅适用于<a href="https://ubuntu.com/certified">Ubuntu认证硬件</a>。</small>
+  </div>
+</div>
+</div>
+  </div>
+</section>
+
+{% endblock %}
