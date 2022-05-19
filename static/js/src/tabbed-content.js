@@ -1,7 +1,7 @@
 (function () {
   const keys = {
-    left: "ArrowLeft",
-    right: "ArrowRight",
+    left: 'ArrowLeft',
+    right: 'ArrowRight',
   };
 
   const direction = {
@@ -18,8 +18,8 @@
   };
 
   const IEDirection = {
-    37: direction["ArrowLeft"],
-    39: direction["ArrowRight"],
+    37: direction['ArrowLeft'],
+    39: direction['ArrowRight'],
   };
 
   /**
@@ -59,7 +59,7 @@
     */
   const attachEvents = (tabs, persistURLHash) => {
     tabs.forEach(function (tab, index) {
-      tab.addEventListener("keyup", function (e) {
+      tab.addEventListener('keyup', function (e) {
         let compatibleKeys = IEKeys;
         let key = e.keyCode;
 
@@ -73,24 +73,24 @@
         }
       });
 
-      tab.addEventListener("click", (e) => {
+      tab.addEventListener('click', e => {
         e.preventDefault();
 
         if (persistURLHash) {
           // if we're adding the ID of the tab to the URL
           // this prevents the page attempting to jump to
           // the section with that ID
-          history.pushState({}, "", tab.href);
+          history.pushState({}, '', tab.href);
 
           // Update the URL again with the same hash, then go back
-          history.pushState({}, "", tab.href);
+          history.pushState({}, '', tab.href);
           history.back();
         }
 
         setActiveTab(tab, tabs);
       });
 
-      tab.addEventListener("focus", () => {
+      tab.addEventListener('focus', () => {
         setActiveTab(tab, tabs);
       });
 
@@ -105,17 +105,17 @@
       @param {Array} tabs an array of tabs within a container
     */
   const setActiveTab = (tab, tabs) => {
-    tabs.forEach((tabElement) => {
+    tabs.forEach(tabElement => {
       var tabContent = document.querySelectorAll(
-        "#" + tabElement.getAttribute("aria-controls")
+        '#' + tabElement.getAttribute('aria-controls')
       );
-      tabContent.forEach((content) => {
+      tabContent.forEach(content => {
         if (tabElement === tab) {
-          tabElement.setAttribute("aria-selected", true);
-          content.removeAttribute("hidden");
+          tabElement.setAttribute('aria-selected', true);
+          content.removeAttribute('hidden');
         } else {
-          tabElement.setAttribute("aria-selected", false);
-          content.setAttribute("hidden", true);
+          tabElement.setAttribute('aria-selected', false);
+          content.setAttribute('hidden', true);
         }
       });
     });
@@ -128,17 +128,17 @@
       @param {String} selector class name of the element 
       containing the tabs we want to attach events to
     */
-  const initTabs = (selector) => {
+  const initTabs = selector => {
     var tabContainers = [].slice.call(document.querySelectorAll(selector));
 
-    tabContainers.forEach((tabContainer) => {
+    tabContainers.forEach(tabContainer => {
       // if the tab container has this data attribute, the id of the tab
       // is added to the URL, and a particular tab can be directly linked
-      var persistURLHash = tabContainer.getAttribute("data-maintain-hash");
+      var persistURLHash = tabContainer.getAttribute('data-maintain-hash');
       var currentHash = window.location.hash;
 
       var tabs = [].slice.call(
-        tabContainer.querySelectorAll("[aria-controls]")
+        tabContainer.querySelectorAll('[aria-controls]')
       );
       attachEvents(tabs, persistURLHash);
 
@@ -156,7 +156,7 @@
     });
   };
 
-  document.addEventListener("DOMContentLoaded", () => {
-    initTabs(".js-tabbed-content");
+  document.addEventListener('DOMContentLoaded', () => {
+    initTabs('.js-tabbed-content');
   });
 })();
