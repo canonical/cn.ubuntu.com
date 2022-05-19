@@ -20,7 +20,7 @@
           border-left: solid 1px $color-mid-light;
           border-top: solid 1px $color-mid-light;
           bottom: -41px;
-          content: "";
+          content: '';
           display: block;
           height: 2rem;
           left: calc(50% - 1rem);
@@ -64,7 +64,7 @@
         display: none;
       }
 
-      &[aria-selected="true"] {
+      &[aria-selected='true'] {
         background-color: $color-light;
 
         &::before {
@@ -98,7 +98,7 @@
     }
 
     &:active,
-    &[aria-selected="true"] {
+    &[aria-selected='true'] {
       @include vf-highlight-bar($color-tabs-active-bar, bottom, false);
       @extend %focus-visible;
     }
