@@ -1,0 +1,28 @@
+<nav class="p-navigation--secondary">
+    <div class="row">
+      <div class="col-12 u-equal-height">
+        <a class="p-navigation--secondary__banner u-hide--nav-threshold-down" href="/internet-of-things/core">
+          <h5 class="p-navigation--secondary__logo">
+            Core特点
+          </h5>
+        </a>
+        <ul class="breadcrumbs--secondary">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/internet-of-things/core/features' %}p-link--active{% else %}p-link--soft{% endif %}" href="/internet-of-things/core/features">特点概览</a>
+          </li>         
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/internet-of-things/core/features/secure-boot' %}p-link--active{% else %}p-link--soft{% endif %}" href="/internet-of-things/core/features/secure-boot">安全启动</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/internet-of-things/core/features/full-disk-encryption' %}p-link--active{% else %}p-link--soft{% endif %}" href="/internet-of-things/core/features/full-disk-encryption">全盘加密</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/internet-of-things/core/features/recovery' %}p-link--active{% else %}p-link--soft{% endif %}" href="/internet-of-things/core/features/recovery">恢复模式</a>
+          </li> 
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/internet-of-things/core/features/ota-updates' %}p-link--active{% else %}p-link--soft{% endif %}" href="/internet-of-things/core/features/ota-updates">OTA更新</a>
+          </li>                 
+        </ul>
+      </div>
+    </div>
+  </nav>
