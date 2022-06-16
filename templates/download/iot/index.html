@@ -10,7 +10,7 @@
 
 <section class="p-strip--suru-topped">
     <div class="row">
-      <h1>获取适用于IoT的Ubuntu</h1>
+      <h1>获取用于IoT的Ubuntu</h1>
     </div>
   </section>
   <section class="p-strip--light is-shallow">
@@ -117,6 +117,24 @@
           </p>
         </div>
       </div>
+      <div class="row">
+        <div class="col-10">
+          <a class="p-button--positive" href="https://ubuntu.com/certified">最佳的Ubuntu体验：获得认证硬件</a>
+          <p>Ubuntu与芯片供应商和制造商合作，在各种硬件上适配和认证Ubuntu。已认证的硬件通过了我们在实验室中的广泛测试和审查流程，确保Ubuntu开箱即用，并且在每次系统更新交付之前都会执行回归测试。</p>
+        </div>
+        <div class="col-2">
+          {{
+            image (
+            url="https://assets.ubuntu.com/v1/20a610ea-Ubuntu_Certified_Hardware_partner.svg",
+            alt="",
+            width="102",
+            height="150",
+            hi_def=True,
+            loading="auto|lazy"
+            ) | safe
+          }}
+        </div>
+      </div>
     </section>
   
     <section id="core" class="p-strip--light">
@@ -127,7 +145,7 @@
             Ubuntu Core是一个轻量级、严格受限、完全事务化的操作系统。我们从头开始设计它，以专注于安全性和简化维护，以适用于边缘计算和大型设备网络。Ubuntu Core由通用的Linux打包格式snap驱动。
           </p>
           <p>
-            <a class="p-button--neutral is-inline" style="margin-left: 0;" href="/iot/core">了解更多关于Ubuntu Core的内容</a><br class="u-hide--large u-hide--medium" /><a href="https://ubuntu.com/download/kvm" class="p-link--external">在您工作站上的KVM中安装</a>
+            <a class="p-button is-inline" style="margin-left: 0;" href="/internet-of-things/core">了解更多关于Ubuntu Core的内容</a><br class="u-hide--large u-hide--medium" /><a href="https://ubuntu.com/download/kvm" class="p-link--external">在您工作站上的KVM中安装</a>
           </p>
         </div>
         <div class="col-4 u-vertically-center u-align--center u-hide--small">
@@ -142,15 +160,6 @@
             ) | safe
           }}
         </div>
-        <div class="u-fixed-width">
-          <h3 class="p-heading--2">Ubuntu Core 22 Beta 版已可下载</h3>
-          <p>
-            部分最流行的架构可以下载预构建的 Ubuntu Core 22 Beta 镜像。开发人员有机会在计划的稳定版发布（2022年5月24日）前试用新功能。
-          </p>
-          <p>
-            <a class="p-button is-inline" style="margin-left: 0;" href="https://cdimage.ubuntu.com/ubuntu-core/22/beta/current/">浏览所有支持的镜像</a><br class="u-hide--large u-hide--medium" /><a href="https://forum.snapcraft.io/t/ubuntu-core-22-beta-is-now-available/29955">阅读发布日志</a>
-          </p>
-        </div>
       </div>
     </section>
   
@@ -161,11 +170,11 @@
       <div class="row p-divider">
         <div class="col-3">
           <img src="https://assets.ubuntu.com/v1/977f2b7a-raspberry+pi+horizontal.svg" width="168" height="45" alt="Raspberry Pi">
-        <p><a href="https://ubuntu.com/download/raspberry-pi-core" class="p-link--external">安装Ubuntu Core 20</a></p>
+        <p><a href="https://ubuntu.com/download/raspberry-pi-core" class="p-link--external">安装Ubuntu Core 22</a></p>
           </div>
         <div class="col-3">
             <img src="https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg" width="120" height="45" alt="Intel NUC">
-            <p><a href="https://ubuntu.com/download/intel-nuc" class="p-link--external">安装Ubuntu Core 18</a></p>
+            <p><a href="https://ubuntu.com/download/intel-nuc" class="p-link--external">安装Ubuntu Core 22</a></p>
         </div>
         <div class="col-3">
             <img src="https://assets.ubuntu.com/v1/db577ec7-tank-logo.svg" width="163" height="45" alt="Intel IEI TANK 870">
@@ -187,13 +196,17 @@
         </div>
         <div class="u-fixed-width" style="margin-top: 2rem;">
           <p>
-            <a class="p-button" href="https://cdimage.ubuntu.com/ubuntu-core/20/stable/current/">
+            <a class="p-button" href="https://cdimage.ubuntu.com/ubuntu-core/22/stable/current/">
               <span class="p-link--external">浏览支持的镜像</span>
             </a>
           </p>
         </div>
       </div>
    </section>
+
+  <div class="u-fixed-width">
+    <hr />
+  </div>
 
 <section class="p-strip">
     <div class="u-fixed-width">
