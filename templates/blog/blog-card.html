@@ -1,10 +1,6 @@
 <div class="col-4 blog-p-card--post">
-
-  <header class="blog-p-card__header">
-    <h5 class="p-muted-heading u-no-margin--bottom">
-      {{article.group.slug}}
-    </h5>
-  </header>
+  
+  {% include 'blog/blog-card-header.html' %}
 
   <div class="blog-p-card__content">
     {% if article.image and article.image.source_url %}

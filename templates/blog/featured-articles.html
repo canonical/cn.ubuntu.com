@@ -6,7 +6,7 @@
       <h4>精选文章</h4>
     </div>
     <div class="row u-equal-height u-clearfix">
-      {% for article in featured_articles %}
+      {% for article in featured_articles[0:3]%}
       {% include 'blog/blog-card.html' %}
       {% endfor %}
     </div>
