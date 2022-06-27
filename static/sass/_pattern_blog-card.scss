@@ -35,52 +35,51 @@
 
     .blog-p-card__header {
       @extend %post-card-header;
-  
+
       border-top: 3px solid $color-mid-dark;
-      
+
       &--cloud-and-server {
         @extend %post-card-header;
-  
+
         border-top: 3px solid #a87ca0;
       }
-  
+
       &--desktop {
         @extend %post-card-header;
-  
+
         border-top: 3px solid #faba54;
       }
-  
+
       &--internet-of-things {
         @extend %post-card-header;
-  
+
         border-top: 3px solid #8db255;
       }
-  
+
       &--canonical-announcements {
         @extend %post-card-header;
-  
+
         border-top: 3px solid #ff8936;
       }
-  
+
       &--phone-and-tablet {
         @extend %post-card-header;
-  
+
         border-top: 3px solid $color-mid-light;
       }
-  
+
       &--webinar {
         @extend %post-card-header;
-  
+
         border-top: 3px solid #48929b;
       }
-  
+
       &--tutorials {
         @extend %post-card-header;
-  
+
         border-top: 3px solid #47919e;
       }
     }
-    
 
     .p-strip--featured & {
       background-color: rgba(255, 255, 255, 0.9);
@@ -120,8 +119,8 @@
     padding: 0;
 
     > .blog-p-card__header {
-      padding-top: 21px;
       border: none;
+      padding-top: 21px;
     }
 
     > .blog-p-card__content {
