@@ -4,13 +4,8 @@
 
 {% if current_page and current_page == 1 and featured_articles %}
   {% include "blog/featured-articles.html" %}
-{% else %}
-<section class="p-strip is-shallow">
-  <div class="u-fixed-width">
-    <h2 class="u-no-margin--bottom">博客</h2>
-  </div>
-</section>
 {% endif %}
+
 
 <section class="p-strip is-shallow">
   <div class="row u-equal-height u-clearfix">
