@@ -33,6 +33,54 @@
     flex-direction: column;
     padding: 0;
 
+    .blog-p-card__header {
+      @extend %post-card-header;
+
+      border-top: 3px solid $color-mid-dark;
+
+      &--cloud-and-server {
+        @extend %post-card-header;
+
+        border-top: 3px solid #a87ca0;
+      }
+
+      &--desktop {
+        @extend %post-card-header;
+
+        border-top: 3px solid #faba54;
+      }
+
+      &--internet-of-things {
+        @extend %post-card-header;
+
+        border-top: 3px solid #8db255;
+      }
+
+      &--canonical-announcements {
+        @extend %post-card-header;
+
+        border-top: 3px solid #ff8936;
+      }
+
+      &--phone-and-tablet {
+        @extend %post-card-header;
+
+        border-top: 3px solid $color-mid-light;
+      }
+
+      &--webinar {
+        @extend %post-card-header;
+
+        border-top: 3px solid #48929b;
+      }
+
+      &--tutorials {
+        @extend %post-card-header;
+
+        border-top: 3px solid #47919e;
+      }
+    }
+
     .p-strip--featured & {
       background-color: rgba(255, 255, 255, 0.9);
       position: relative;
@@ -64,63 +112,15 @@
     }
   }
 
-  .blog-p-card__header {
-    @extend %post-card-header;
-
-    &--cloud-and-server {
-      @extend %post-card-header;
-
-      border-top: 3px solid #a87ca0;
-    }
-
-    &--desktop {
-      @extend %post-card-header;
-
-      border-top: 3px solid #faba54;
-    }
-
-    &--internet-of-things {
-      @extend %post-card-header;
-
-      border-top: 3px solid #8db255;
-    }
-
-    &--canonical-announcements {
-      @extend %post-card-header;
-
-      border-top: 3px solid #ff8936;
-    }
-
-    &--phone-and-tablet {
-      @extend %post-card-header;
-
-      border-top: 3px solid $color-mid-light;
-    }
-
-    &--webinar {
-      @extend %post-card-header;
-
-      border-top: 3px solid #48929b;
-    }
-
-    &--tutorials {
-      @extend %post-card-header;
-
-      border-top: 3px solid #47919e;
-    }
-  }
-
   .blog-p-card--muted {
-    @extend .p-card;
+    @extend .blog-p-card--post;
 
     background-color: $color-light;
-    box-shadow: 0 1px 2px 0 transparentize($color-dark, 0.8);
     padding: 0;
 
     > .blog-p-card__header {
-      border-bottom: 0;
-      border-top: 3px solid $color-light;
-      margin-bottom: 0;
+      border: none;
+      padding-top: 21px;
     }
 
     > .blog-p-card__content {

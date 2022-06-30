@@ -2,27 +2,18 @@
 {% block title %}{{title}}{% endblock %}
 {% block content %}
 
-<section class="p-strip is-shallow">
-  <div class="row">
-    <div class="col-10">
-      <h2 class="u-no-margin--bottom">博客</h2>
-    </div>
-  </div>
-</section>
-
-{% if current_page and current_page == 1 and featured_posts %}
-  {% include "featured-posts.html" %}
+{% if current_page and current_page == 1 and featured_articles %}
+  {% include "blog/featured-articles.html" %}
 {% endif %}
+
 
 <section class="p-strip is-shallow">
   <div class="row u-equal-height u-clearfix">
     {% for article in articles %}
       {% if loop.index in [1,2] %}
         {% with summary_visible=True %}{% include "blog/blog-card.html" %}{% endwith %}
-      {% elif loop.index ==3 %}
-        <div class="col-4">
-          {% include 'blog/newsletter-form.html' %}
-        </div>
+      {% elif loop.index == 3 %}
+        {% include 'blog/newsletter-form.html' %}
       </div>
       <div class="row u-equal-height u-clearfix">
         {% include 'blog/blog-card.html' %}

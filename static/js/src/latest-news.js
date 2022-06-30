@@ -37,7 +37,7 @@ function htmlForLatestPinnedArticle(article) {
   const articlesTree = document.createDocumentFragment();
 
   // "Featured"
-  const header = '<h3>Spotlight</h3>';
+  const header = '<h3>特别篇</h3>';
 
   const link = `<a href="/blog/${article.slug}">${article.title.rendered}</a>`;
   const linkHeader = `<h4>${link}</h4>`;
@@ -98,7 +98,7 @@ const createReqListenerForDomContainer =
     }
 
     try {
-      const latestPinned = data.latest_pinned_articles[0][0];
+      const latestPinned = data.latest_pinned_articles[0];
       if (latestPinned) {
         containerForLatestNews.classList.add('p-divider', 'col-9');
 
