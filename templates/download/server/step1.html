@@ -58,16 +58,16 @@
     
     <div class="row">
       <div class="col-12">
-        <button disabled class="p-button--neutral u-no-margin--left">
+        <button disabled class="p-button u-no-margin--left">
           选项 1 - 手动安装到服务器
         </button>
         <form action="/download/server/step2" style="display: inline">          
-          <button type="submit" class="p-button--neutral is-inline" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Next option', 'eventLabel' : 'Option 2', 'eventValue' : undefined });">
+          <button type="submit" class="p-button is-inline" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Next option', 'eventLabel' : 'Option 2', 'eventValue' : undefined });">
             选项 2 - 即时Ubuntu VM
           </button>
         </form>        
         <form action="/download/server/choose" style="display: inline">         
-          <button type="submit" class="p-button--neutral is-inline" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Previous option', 'eventLabel' : 'Option 1', 'eventValue' : undefined });">
+          <button type="submit" class="p-button is-inline" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Previous option', 'eventLabel' : 'Option 1', 'eventValue' : undefined });">
             选项 3 - 自动化的服务器配置
           </button>
         </form>
@@ -89,7 +89,7 @@
         <p>最新版本的Ubuntu Server，包括9个月的安全和维护更新，至{{ releases.latest.eol }}。</p>
         <p><a class="p-button--positive" href="https://releases.ubuntu.com/{{ releases.latest.short_version }}/ubuntu-{{ releases.latest.short_version }}-live-server-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '{{ releases.latest.short_version }} Server-cn', 'eventValue' : undefined });">下载Ubuntu Server {{ releases.latest.short_version }}</a>
         </p>
-        <p><a href="{{ releases.latest.release_notes_url }}" class="p-link--external">阅读Ubuntu Server {{ releases.latest.short_version }}发布说明</a>
+        <p><a href="{{ releases.latest.release_notes_url }}">阅读Ubuntu Server {{ releases.latest.short_version }}发布说明</a>
         </p>       
       </div>
 
@@ -175,7 +175,7 @@
         <h3 class="p-card__title">适用于IBM Z的Ubuntu</h3>
         <p>IBM Z和LinuxONE利用开放技术解决方案来满足新应用经济的需求。Ubuntu现在和Multipass、MicroK8s等一起可在这些平台上使用。</p>
         <p>
-          <a href="https://ubuntu.com/download/server/s390x" class="p-link--external">获得适用于IBM Z的Ubuntu</a>
+          <a href="https://ubuntu.com/download/server/s390x">获得适用于IBM Z的Ubuntu</a>
         </p>
       </div>
     </div>

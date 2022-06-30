@@ -18,7 +18,7 @@
           <li class="p-list__item is-ticked">支持Ubuntu Server, CentOS和Windows机器自动部署</li>
           <li class="p-list__item is-ticked">基础设施发现和自动化</li>
         </ul>
-        <p><a href="https://maas.io" class="p-button--positive p-link--external u-no-margin--top" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Select option', 'eventLabel' : 'MAAS', 'eventValue' : undefined });">获取MAAS</a></p>
+        <p><a href="https://maas.io" class="p-button--positive u-no-margin--top" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Select option', 'eventLabel' : 'MAAS', 'eventValue' : undefined });">获取MAAS</a></p>
       </div>
       <div class="col-5 u-hide--small u-align--center u-vertically-center" style="min-height: 328px">
         {{
@@ -37,16 +37,16 @@
     <div class="row">
       <div class="col-12">
         <form action="/download/server/step1" style="display: inline">         
-          <button type="submit" class="p-button--neutral" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Previous option', 'eventLabel' : 'Option 1', 'eventValue' : undefined });">
+          <button type="submit" class="p-button" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Previous option', 'eventLabel' : 'Option 1', 'eventValue' : undefined });">
             选项 1 - 手动安装到服务器
           </button>
         </form>
         <form action="/download/server/step2" method="" style="display: inline">          
-          <button type="submit" class="p-button--neutral is-inline" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Next option', 'eventLabel' : 'Option 2', 'eventValue' : undefined });">
+          <button type="submit" class="p-button is-inline" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Next option', 'eventLabel' : 'Option 2', 'eventValue' : undefined });">
             选项 2 - 即时Ubuntu VM 
           </button>
         </form>
-        <button disabled class="p-button--neutral u-no-margin--top is-inline">
+        <button disabled class="p-button u-no-margin--top is-inline">
           选项 3 - 自动化的服务器配置
         </button>
       </div>
