@@ -6,6 +6,16 @@ env:
   - name: SENTRY_DSN
     value: https://06096678a069442f9e6f72aa985f15ca@sentry.is.canonical.com//32
 
+  - name: DISCOURSE_API_KEY
+    secretKeyRef:
+      key: ubuntu-api-key
+      name: discourse-api
+
+  - name: DISCOURSE_API_USERNAME
+    secretKeyRef:
+      key: ubuntu-api-username
+      name: discourse-api
+
 useProxy: false
 
 readinessPath: "/_status/ping"
