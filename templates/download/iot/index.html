@@ -50,15 +50,13 @@
         }}
       </div>
     </section>
-      
-    <section class="p-strip">
+
+    <section class="p-strip is-deep">
       <div class="row">
-        <div class="col-8">
+        <div class="col-2 col-medium-4">
           <h3>支持的平台</h3>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-3">
+        <div class="col-2 col-medium-3">
           {{
             image(
               url="https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg",
@@ -66,14 +64,14 @@
               width="120",
               height="45",
               hi_def=True,
-              loading="lazy",
+              loading="auto",
             ) | safe
           }}
           <p>
-            <a href="https://ubuntu.com/download/intel-nuc-desktop" class="p-link--external">安装Ubuntu桌面版</a>
+            <a href="https://ubuntu.com/download/intel-nuc-desktop">安装Ubuntu桌面版</a>
           </p>
         </div>
-        <div class="col-3">
+        <div class="col-2 col-medium-3">
           {{
             image(
               url="https://assets.ubuntu.com/v1/88444b11-logo-up2.svg",
@@ -81,31 +79,31 @@
               width="63",
               height="45",
               hi_def=True,
-              loading="lazy",
+              loading="auto",
             ) | safe
           }}
           <p>
-            <a href="https://ubuntu.com/download/intel-nuc-desktop" class="p-link--external">安装Ubuntu服务器版</a>
+            <a href="https://ubuntu.com/download/up-squared-iot-grove-server">安装Ubuntu服务器版</a>
           </p>
         </div>
-        <div class="col-3">
+        <div class="col-2 col-medium-3">
           {{ image (
-            url="https://assets.ubuntu.com/v1/8a8c250f-xilinx-logo.svg",
-            alt="",
-            width="163",
+            url="https://assets.ubuntu.com/v1/f8ef46d3-AMD_Xilinx_logo.svg",
+            alt="AMD XILINX",
+            width="72",
             height="45",
             hi_def=True,
             loading="auto"
             ) | safe
           }}
           <p>
-            <a href="/download/xilinx">安装Ubuntu桌面版&nbsp;&rsaquo;</a>
+            <a href="/download/amd-xilinx">安装Ubuntu桌面版&nbsp;&rsaquo;</a>
           </p>
         </div>
-        <div class="col-3">
+        <div class="col-2 col-medium-3">
           {{ image (
             url="https://assets.ubuntu.com/v1/26cbe599-intel-logo.jpg",
-            alt="",
+            alt="Intel",
             width="75",
             height="42",
             hi_def=True,
@@ -116,13 +114,34 @@
             <a href="/download/iot/intel-iotg">安装Ubuntu桌面版&nbsp;&rsaquo;</a>
           </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-10">
-          <a class="p-button--positive" href="https://ubuntu.com/certified">最佳的Ubuntu体验：获得认证硬件</a>
-          <p>Ubuntu与芯片供应商和制造商合作，在各种硬件上适配和认证Ubuntu。已认证的硬件通过了我们在实验室中的广泛测试和审查流程，确保Ubuntu开箱即用，并且在每次系统更新交付之前都会执行回归测试。</p>
+        <div class="col-2 col-medium-3">
+          {{ image (
+            url="https://assets.ubuntu.com/v1/4d5b8d51-riscv-color.svg",
+            alt="RISC-V",
+            width="147",
+            height="23",
+            hi_def=True,
+            loading="auto",
+            attrs={"style": "margin: 0.5rem 0 0.75rem; max-width: 147px;"}
+            ) | safe
+          }}
+          <p>
+            <a href="/download/risc-v">安装Ubuntu服务器版&nbsp;&rsaquo;</a>
+          </p>
         </div>
-        <div class="col-2">
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-8">
+          <h3>最佳的Ubuntu体验</h3>
+        </div>
+        </div>
+      <div class="row">
+        <div class="col-8">
+          <p>Ubuntu与芯片供应商和制造商合作，在各种硬件上适配和认证Ubuntu。已认证的硬件通过了我们在实验室中的广泛测试和审查流程，确保Ubuntu开箱即用，并且在每次系统更新交付之前都会执行回归测试。</p>  
+          <a class="p-button--positive" href="https://ubuntu.com/certified">查看已认证的硬件</a>
+        </div>
+        <div class="col-4 u-align--center u-hide--medium u-hide--small">
           {{
             image (
             url="https://assets.ubuntu.com/v1/20a610ea-Ubuntu_Certified_Hardware_partner.svg",
@@ -130,13 +149,13 @@
             width="102",
             height="150",
             hi_def=True,
-            loading="auto|lazy"
+            loading="lazy"
             ) | safe
           }}
         </div>
       </div>
     </section>
-  
+    
     <section id="core" class="p-strip--light">
       <div class="row u-equal-height">
         <div class="col-8">
@@ -162,48 +181,98 @@
         </div>
       </div>
     </section>
-  
+
     <section class="p-strip">
-      <div class="u-fixed-width">
+      <div class="u-fixed-width u-sv3">
         <h3>支持的平台</h3>
       </div>
-      <div class="row p-divider">
-        <div class="col-3">
-          <img src="https://assets.ubuntu.com/v1/977f2b7a-raspberry+pi+horizontal.svg" width="168" height="45" alt="Raspberry Pi">
-        <p><a href="https://ubuntu.com/download/raspberry-pi-core" class="p-link--external">安装Ubuntu Core 22</a></p>
+      <div class="row u-sv3">
+        <div class="col-4">
+            {{ image (
+              url="https://assets.ubuntu.com/v1/977f2b7a-raspberry+pi+horizontal.svg",
+              alt="Raspberry Pi logo",
+              width="168",
+              height="45",
+              hi_def=True,
+              loading="lazy"
+              ) | safe
+            }}
+          <p><a href="/download/raspberry-pi">安装Ubuntu Core 22&nbsp;&rsaquo;</a></p>
           </div>
-        <div class="col-3">
-            <img src="https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg" width="120" height="45" alt="Intel NUC">
-            <p><a href="https://ubuntu.com/download/intel-nuc" class="p-link--external">安装Ubuntu Core 22</a></p>
+          <div class="col-4">
+            {{ image (
+              url="https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg",
+              alt="Intel NUC logo",
+              width="120",
+              height="45",
+              hi_def=True,
+              loading="lazy"
+              ) | safe
+            }}
+            <p><a href="https://ubuntu.com/download/iot/intel-nuc">安装Ubuntu Core 22</a></p>
+          </div>
+          <div class="col-4">
+            {{ image (
+              url="https://assets.ubuntu.com/v1/db577ec7-tank-logo.svg",
+              alt="Intel Tank logo",
+              width="163",
+              height="45",
+              hi_def=True,
+              loading="lazy"
+              ) | safe
+            }}
+            <p><a href="https://ubuntu.com/download/intel-iei-tank-870">安装Ubuntu Core 18</a></p>
+          </div>
         </div>
-        <div class="col-3">
-            <img src="https://assets.ubuntu.com/v1/db577ec7-tank-logo.svg" width="163" height="45" alt="Intel IEI TANK 870">
-            <p><a href="https://ubuntu.com/download/intel-iei-tank-870" class="p-link--external">安装Ubuntu Core 18</a></p>
+        <div class="row u-sv3">
+          <div class="col-4">
+            {{ image (
+              url="https://assets.ubuntu.com/v1/2a6d29c9-snapdragon.svg",
+              alt="Qualcomm Snapdragon logo",
+              width="139",
+              height="45",
+              hi_def=True,
+              loading="lazy"
+              ) | safe
+            }}
+            <p><a href="https://ubuntu.com/download/qualcomm-dragonboard-410c">安装Ubuntu Core 18</a></p>
+          </div>
+          <div class="col-4">
+            {{ image (
+              url="https://assets.ubuntu.com/v1/f8ef46d3-AMD_Xilinx_logo.svg",
+              alt="AMD Xilinx logo",
+              width="72",
+              height="45",
+              hi_def=True,
+              loading="auto"
+              ) | safe
+            }}
+            <p><a href="/download/amd-xilinx">安装Ubuntu Core 20&nbsp;&rsaquo;</a></p>
+          </div>
+          <div class="col-4">
+            {{ image (
+              url="https://assets.ubuntu.com/v1/26cbe599-intel-logo.jpg",
+              alt="Intel logo",
+              width="75",
+              height="42",
+              hi_def=True,
+              loading="auto"
+              ) | safe
+            }}
+            <p>
+              <a href="/download/iot/intel-iotg">安装Ubuntu桌面版&nbsp;&rsaquo;</a>
+            </p>
+          </div>
         </div>
-        <div class="row">
-          <div class="col-3">
-            <img src="https://assets.ubuntu.com/v1/2a6d29c9-snapdragon.svg" width="139" height="45" alt="Qualcomm Snapdragon">
-            <p><a href="https://ubuntu.com/download/qualcomm-dragonboard-410c" class="p-link--external">安装Ubuntu Core 18</a></p>
-          </div>
-          <div class="col-3">
-            <img src="https://assets.ubuntu.com/v1/8a8c250f-xilinx-logo.svg" width="163" height="45" alt="Xilinx">
-            <p><a href="/download/xilinx">安装 Ubuntu Core 20&nbsp;&rsaquo;</a></p>
-          </div>
-          <div class="col-3">
-            <img src="https://assets.ubuntu.com/v1/26cbe599-intel-logo.jpg" width="75" height="42" alt="Xilinx">
-            <p><a href="/download/iot/intel-iotg">安装 Ubuntu 桌面&nbsp;&rsaquo;</a></p>
-          </div>
-        </div>
-        <div class="u-fixed-width" style="margin-top: 2rem;">
+        <div class="u-fixed-width">
           <p>
-            <a class="p-button" href="https://cdimage.ubuntu.com/ubuntu-core/22/stable/current/">
-              <span class="p-link--external">浏览支持的镜像</span>
+            <a class="p-button" href="https://cdimage.ubuntu.com/ubuntu-core/20/stable/current/">
+              浏览全部支持的镜像
             </a>
           </p>
         </div>
-      </div>
-   </section>
-
+      </section>
+  
   <div class="u-fixed-width">
     <hr />
   </div>
