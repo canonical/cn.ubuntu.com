@@ -1,0 +1,39 @@
+{% if article.group.slug == "cloud-and-server" %}
+  <header class="blog-p-card__header--cloud-and-server">
+    <h5 class="p-muted-heading u-no-margin--bottom">Cloud and Server</h5>
+  </header>
+{% elif article.group.slug == "desktop" %}
+  <header class="blog-p-card__header--desktop">
+    <h5 class="p-muted-heading u-no-margin--bottom">Desktop</h5>
+  </header>
+{% elif article.group.slug == "internet-of-things" %}
+  <header class="blog-p-card__header--internet-of-things">
+    <h5 class="p-muted-heading u-no-margin--bottom">Internet of Things</h5>
+  </header>
+{% elif article.group.slug == "canonical-announcements" %}
+  <header class="blog-p-card__header--canonical-announcements">
+    <h5 class="p-muted-heading u-no-margin--bottom">Canonical Announcements</h5>
+  </header>
+{% elif article.group.slug == "phone-and-tablet" %}
+  <header class="blog-p-card__header--phone-and-tablet">
+    <h5 class="p-muted-heading u-no-margin--bottom">Phone and Tablet</h5>
+  </header>
+{% elif article.group.slug == "webinar" %}
+  <header class="blog-p-card__header--webinar">
+    <h5 class="p-muted-heading u-no-margin--bottom">Webinar</h5>
+  </header>
+{% elif article.group.slug == "tutorials" %}
+  <header class="blog-p-card__header--tutorials">
+    <h5 class="p-muted-heading u-no-margin--bottom">Tutorials</h5>
+  </header>
+{% else %}
+  <header class="blog-p-card__header">
+    <h5 class="p-muted-heading u-no-margin--bottom">
+      {% if article.group %}
+        {{ article.group.name }}
+      {% else %}
+        Ubuntu
+      {% endif %}
+    </h5>
+  </header>
+{% endif %}

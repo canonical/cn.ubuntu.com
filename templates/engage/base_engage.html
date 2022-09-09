@@ -3,18 +3,18 @@
 {% set section_title="Engage Page" %}
 {% set section_path="/engage" %}
 
-{% block title %}{{document['metadata']['topic_name']}}{% endblock %}
-{% block meta_description %}{{document['metadata']['subtitle']}}{% endblock %}
-{% block meta_image %}{{document['metadata']['meta_image']}}{% endblock %}
+{% block title %}{{metadata['topic_name']}}{% endblock %}
+{% block meta_description %}{{metadata['subtitle']}}{% endblock %}
+{% block meta_image %}{{metadata['meta_image']}}{% endblock %}
 
-{% block meta_copydoc %}{document["metadata"]["meta_copydoc]}{% endblock meta_copydoc %}
+{% block meta_copydoc %}{metadata["meta_copydoc]}{% endblock meta_copydoc %}
 
 {% block content %}
 
-<section class="p-strip p-engage-banner--{{document['metadata']['banner_class']}}">
+<section class="p-strip p-engage-banner--{{metadata['banner_class']}}">
   <div class="u-fixed-width navigation-logo-engage">
     <a href="/">
-      {% if document['metadata']['banner_class'] == 'light' %}
+      {% if metadata['banner_class'] == 'light' %}
         {{
           image(
             url="https://assets.ubuntu.com/v1/04115a7e-ubuntu_black-orange_hex.svg",
@@ -42,26 +42,26 @@
   </div>
   <div class="row">
     <div class="col-7 u-vertically-center">
-      <h1>{{document["title"]}}</h1>
-      <p class="u-no-padding--top p-heading--four">
-        {{document['metadata']['subtitle']}}
+      <h1>{{metadata["topic_name"]}}</h1>
+      <p class="u-no-padding--top p-heading--4">
+        {{metadata['subtitle']}}
       </p>
-      {% if ("primary_cta" in document["metadata"]) and (document["metadata"]["primary_cta"] != "") %}
-      <p class="{% if 'secondary_cta' not in document['metadata'] %}u-hide--large{% endif %}">
-          <a href="{{ document['metadata']['primary_link'] }}" class="p-button--positive">
-            {{ document["metadata"]["primary_cta"] }}
+      {% if ("primary_cta" in metadata) and (metadata["primary_cta"] != "") %}
+      <p class="{% if 'secondary_cta' not in metadata %}u-hide--large{% endif %}">
+          <a href="{{ metadata['primary_link'] }}" class="p-button--positive">
+            {{ metadata["primary_cta"] }}
           </a>
-        {% if ("secondary_cta" in document['metadata']) and (document["metadata"]["secondary_cta"] != "") %}
-          <a href="{{ document['metadata']['secondary_link'] }}" class="p-button--neutral">
-            {{document['metadata']['secondary_cta']}}
+        {% if ("secondary_cta" in metadata) and (metadata["secondary_cta"] != "") %}
+          <a href="{{ metadata['secondary_link'] }}" class="p-button">
+            {{metadata['secondary_cta']}}
           </a>
         {% endif %}
       </p>
       {% endif %}
     </div>
-    {% if document["metadata"]["image"] != '' %}
+    {% if metadata["image"] != '' %}
     <div class="col-5 u-hide--small u-vertically-center u-align--center">
-      <img src="{{document['metadata']['image']}}" alt="" width="{{document['metadata']['image_width']}}"/>
+      <img src="{{metadata['image']}}" alt="" width="{{metadata['image_width']}}"/>
     </div>
     {% endif %}
   </div>
@@ -71,19 +71,17 @@
 
 <section class="p-strip is-shallow is-bordered">
   <div class="row">
-    <div class="{% if document['metadata']['form_id'] != '' %}col-7{% else %}col-8{% endif %}">
-      {% for text in document["body_html"] %}
-      {{ text | safe }}
-      {% endfor %}
+    <div class="{% if metadata['form_id'] != '' %}col-7{% else %}col-8{% endif %}">
+      {{ metadata["body_html"] | safe }}
     </div>
-    {% if document["metadata"]["form_id"] != "" %}
+    {% if metadata["form_id"] != "" %}
     <div class="col-5" id="the-form">
-      {% if "form_cta" in document["metadata"] and document["metadata"]["form_cta"] != '' %}
-        {% with id=document["metadata"]["form_id"], returnURL=document['metadata']['path']+"/thank-you", cta=document['metadata']['form_cta'] %}
+      {% if "form_cta" in metadata and metadata["form_cta"] != '' %}
+        {% with id=metadata["form_id"], returnURL=metadata['path']+"/thank-you", cta=metadata['form_cta'] %}
           {% include "engage/shared/_engage_form.html" %}
         {% endwith %}
       {% else %}
-      {% with id=document["metadata"]["form_id"], returnURL=document['metadata']['path']+"/thank-you", cta="提交" %}
+      {% with id=metadata["form_id"], returnURL=metadata['path']+"/thank-you", cta="提交" %}
         {% include "engage/shared/_engage_form.html" %}
       {% endwith %}
       {% endif %}
@@ -94,9 +92,9 @@
 
 </section>
 
-{% if document["metadata"]["webinar_code"] != "" %}
-  {% if "channel_id" in document["metadata"] %}
-    {% set channel_id = document["metadata"]["channel_id"] %}
+{% if metadata["webinar_code"] != "" %}
+  {% if "channel_id" in metadata %}
+    {% set channel_id = metadata["channel_id"] %}
   {% else %}
     {% set channel_id = 6793 %}
   {% endif %}
@@ -104,7 +102,7 @@
   <section class="p-strip is-shallow" id="register-section">
     <div class="row" id="webinar">
       <div class="jsBrightTALKEmbedWrapper" style="width:100%; height:100%; position:relative;background: #ffffff;">
-        <script class="jsBrightTALKEmbedConfig" type="application/json">{ "channelId" : {{channel_id}}, "language": "cn-ZH", "commId" : {{ document["metadata"]["webinar_code"] }}, "displayMode" : "standalone", "height" : "auto" }</script>
+        <script class="jsBrightTALKEmbedConfig" type="application/json">{ "channelId" : {{channel_id}}, "language": "cn-ZH", "commId" : {{ metadata["webinar_code"] }}, "displayMode" : "standalone", "height" : "auto" }</script>
         <script src="https://www.brighttalk.com/clients/js/player-embed/player-embed.js" class="jsBrightTALKEmbed"></script>
       </div>
     </div>
