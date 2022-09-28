@@ -1206,8 +1206,17 @@
         </div>
 
         <div class="col-4 u-hide--small u-align--center u-vertically-center">
-            <img src="https://assets.ubuntu.com/v1/57d2e0de-Certified.svg" alt="" height= "" width="140px">
-          </div>
+          {{
+            image(
+              url="https://assets.ubuntu.com/v1/57d2e0de-Certified.svg",
+              alt="",              
+              width="140",
+              height="190",
+              hi_def=True,
+              loading="auto"
+            ) | safe
+          }}
+        </div>
     </div>
   </section>
 
