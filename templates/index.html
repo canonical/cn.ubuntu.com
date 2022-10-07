@@ -30,23 +30,20 @@
       </p>
     </div>
     <div class="col-6 col-medium-2">
-      <ul class="row u-no-margin--bottom">
-        <li class="col-2 col-medium-1 col-small-1">
-          <img src="https://assets.ubuntu.com/v1/83ff4203-awshp-strip-customers.png" alt="Amazon Web Services logo">
-        </li>
-        <li class="col-2 col-medium-1 col-small-1">
-          <img src="https://assets.ubuntu.com/v1/7c601cb9-azurehp-strip-customers.png" alt="Microsoft Azure logo">
-        </li>
-        <li class="col-2 col-medium-1 col-small-1 col-start-medium-1">
-          <img src="https://assets.ubuntu.com/v1/5ba04ee8-atthp-strip-customers.png" alt="AT&T logo">
-        </li>
-        <li class="col-2 col-medium-1 col-small-1 col-start-large-2 col-start-small-1 ">
-          <img src="https://assets.ubuntu.com/v1/fdb8126b-google+cloudhp-strip-customers.png" alt="Google Cloud logo">
-        </li>
-        <li class="col-2 col-medium-1 col-small-1 col-start-medium-1">
-          <img src="https://assets.ubuntu.com/v1/3faca6ca-netflixhp-strip-customers.png" alt="Netflix logo">
-        </li>
-      </ul>
+      <div class="p-logo-section__items">
+        <div class="p-logo-section__item">
+          <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/83ff4203-awshp-strip-customers.png" alt="Amazon Web Services logo">
+        </div>
+        <div class="p-logo-section__item">
+          <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/7c601cb9-azurehp-strip-customers.png" alt="Microsoft Azure logo">
+        </div>
+        <div class="p-logo-section__item">
+          <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/5ba04ee8-atthp-strip-customers.png" alt="AT&T logo">
+        </div>
+        <div class="p-logo-section__item">
+          <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/fdb8126b-google+cloudhp-strip-customers.png" alt="Google Cloud logo">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -114,7 +111,7 @@
       <h2>
         激发您的工程师的活力
       </h2>
-      <p class="p-heading--4">        
+      <p class="p-heading--4">
         更好的安全性。更多的软件包。较新的工具。您的所有开源，从云到端。
       </p>
       <p>
@@ -190,7 +187,7 @@
           <a href="https://ubuntu.com/security/certifications#common-criteria">Common Criteria EAL2</a>：由 CSEC 验证的 ISO/IEC IS 15408
         </li>
         <li class="p-list__item is-ticked">
-          用于<abbr title="Department of Defence, USA">DoD</abbr>合规的<a href="https://ubuntu.com/security/certifications#stig"> DISA/STIG </a> 安全加固 
+          用于<abbr title="Department of Defence, USA">DoD</abbr>合规的<a href="https://ubuntu.com/security/certifications#stig"> DISA/STIG </a> 安全加固
         </li>
         <li class="p-list__item is-ticked">
           用于网络防御和恶意软件预防的 <a href="https://ubuntu.com/security/certifications#cis">CIS profiles</a>
@@ -399,19 +396,6 @@
 
   <div class="row p-logo-section">
     <div class="p-logo-section__items">
-      <div class="p-logo-section__item">
-        {{
-          image(
-          url="https://assets.ubuntu.com/v1/ae0456eb-Netflix_logo.svg",
-          alt="Netflix logo",
-          width="130",
-          height="36",
-          hi_def=True,
-          loading="lazy",
-          attrs={"class": "p-logo-section__logo"},
-          ) | safe
-        }}
-      </div>
       <div class="p-logo-section__item">
         {{
           image(
@@ -635,7 +619,7 @@
           本地 MicroK8s, Charmed K8s, kubeadm
         </li>
         <li class="p-list__item is-ticked">
-          <a href="https://ubuntu.com/kubernetes/managed">完全托管</a>的本地或者公有云上的 Kubernetes 
+          <a href="https://ubuntu.com/kubernetes/managed">完全托管</a>的本地或者公有云上的 Kubernetes
         </li>
         <li class="p-list__item is-ticked">
           <a href="https://juju.is/docs/olm/get-started-on-kubernetes">
@@ -1030,7 +1014,7 @@
     <div class="row">
       <ul class="p-list is-split">
         <li class="p-list__item is-ticked">
-          按需供给的服务器的<a href="https://maas.io/how-it-works">裸机云</a> 
+          按需供给的服务器的<a href="https://maas.io/how-it-works">裸机云</a>
         </li>
         <li class="p-list__item is-ticked">
           远程的边缘集群运营
@@ -1173,7 +1157,7 @@
     <div class="row">
       <ul class="p-list is-split">
         <li class="p-list__item is-ticked">
-          全面支持<a href="https://ubuntu.com/robotics/what-is-ros"> ROS 和 ROS2</a> 
+          全面支持<a href="https://ubuntu.com/robotics/what-is-ros"> ROS 和 ROS2</a>
         </li>
         <li class="p-list__item is-ticked">
           为长期支持版 ROS 提供安全补丁
@@ -1185,7 +1169,7 @@
           适用于 ROS 和 ROS2 的<a href="https://ubuntu.com/security/certifications#cis">CIS 认证</a>
         </li>
         <li class="p-list__item is-ticked">
-          通过 SMART START 服务包缩短产品上市时间 
+          通过 SMART START 服务包缩短产品上市时间
         </li>
         <li class="p-list__item is-ticked">
           领先的机器人即平台的生态
@@ -1296,7 +1280,7 @@
 <section class="p-strip">
   <div class="row">
     <h2>
-      PAAS之上的 &nbsp;&ndash;&nbsp;多云应用程序 
+      PAAS之上的 &nbsp;&ndash;&nbsp;多云应用程序
     </h2>
     <p class="p-heading--4">
       适用于经典和 <a href="https://jaas.ai/kubernetes">Kubernetes 资产</a> 的 <a href="https://juju.is/">通用模型驱动 operators</a>。
