@@ -7,29 +7,28 @@
 {% include "support/secondary-nav.html" %}
 
 <section class="p-strip--suru is-dark">
-    <div class="row u-equal-height">
-      <div class="col-8">
-        <h1>Ubuntu订阅服务</h1>
-        <h4>适用于企业级安全，支持和托管的开源支持服务</h4>
-        <p>通过Canonical，可对从数据中心到容器再到数据库，LMA，服务器和云原生应用程序整个堆栈进行永不过时的验证。</p>
-        <p>Ubuntu Advantage（企业订阅服务，简称“UA”）是一站式、每节点的支持方案，为最全面的企业开源基础设施和应用程序提供安全和支持服务，且托管服务已可用。</p>
-        <p><a href="/contact" class="p-button--positive">联系我们</a><a href="/support/advantage">浏览订阅服务计划</a></p>
-        <p>阅读 Ubuntu 企业订阅服务<a href="https://assets.ubuntu.com/v1/7c8938d9-UA-I-qa-list-v1.pdf">常见问题解答文档</a></p>
-      </div>
-      <div class="col-4 u-hide--small u-vertically-center u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/f6bbc63c-get-in-touch_chat_wht.svg",
-            alt="",
-            height="180",
-            width="180",
-            hi_def=True,
-            loading="auto"
-          ) | safe
-        }}
-      </div>
+  <div class="row u-equal-height">
+    <div class="col-8">
+      <h1>Ubuntu Pro</h1>
+      <h4>适用于企业的安全，支持和托管的开源服务</h4>
+      <p>由Canonical提供的开源软件支持，从数据中心到容器再到数据库，<abbr title="日志, 监控和聚合服务">LMA</abbr>，服务器和云原生应用程序的面向未来的完整堆栈。</p>
+      <p>Ubuntu Pro，是一站式、每节点的支持方案，为最全面的企业开源基础设施和应用程序提供安全和支持服务，且托管服务已可用。</p>
+      <p><a href="/contact" class="p-button--positive">联系我们</a><a class="p-button is-inline" href="/support/pro">了解更多Ubuntu Pro的内容</a></p>
     </div>
-  </section>
+    <div class="col-4 u-hide--small u-vertically-center u-align--center">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/f6bbc63c-get-in-touch_chat_wht.svg",
+          alt="",
+          height="180",
+          width="180",
+          hi_def=True,
+          loading="auto"
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
 
   <section class="p-strip">
     <div class="u-fixed-width">
@@ -199,21 +198,21 @@
   <section class="p-strip--light is-deep">
     <div class="row">
       <div class="col-10">
-        <h2>企业Linux和开源支持</h2>
-        <p>Canonical通过Ubuntu Advantage为全栈提供7x24小时，企业级的支持。客户可选择2种服务：Ubuntu Advantages应用版和Ubuntu Advantage基础设施版。</p>
+        <h2>企业 Linux 和开源支持服务</h2>
+        <p>Canonical为全栈开源软件提供7x24小时的支持。客户可在2种支持服务中选择：Ubuntu Pro+基础设施和或开源应用程序支持。</p>
       </div>
     </div>
     <div class="row u-equal-height">
-      <h3>Ubuntu Advantage</h3>
+      <h3>Ubuntu Pro + 支持</h3>
     </div>
     <div class="row p-divider u-equal-height u-vertically-spaced">
       <div class="col-6 p-divider__block">
         <h4>应用程序</h4>
-        <p>对开源数据库、LMA（日志、监控、警报）、服务器和云原生应用程序的安全和支持服务。</p>
+        <p>对开源数据库、<abbr title="日志, 监控和聚合服务">LMA</abbr>、服务器和云原生应用程序的安全和支持服务。</p>
         <ul class="p-list">
-          <li class="p-list__item is-ticked">Ubuntu Universe和Main仓库内的超过28000个软件包的安全补丁支持</li>
-          <li class="p-list__item is-ticked">对Ubuntu LTS最长10年的支持</li>
-          <li class="p-list__item is-ticked">对开源数据库、LMA、云原生应用程序的技术支持</li>
+          <li class="p-list__item is-ticked">Ubuntu Universe和Main仓库中的超过25000个软件包的安全补丁支持</li>
+          <li class="p-list__item is-ticked">对Ubuntu LTS版最长10年的支持</li>
+          <li class="p-list__item is-ticked">对开源数据库、LMA、云原生应用程序的补丁和运营支持</li>
         </ul>
       </div>
       <div class="col-6 p-divider__block">
@@ -221,9 +220,9 @@
         <p>对开源基础设施的安全和IAAS（基础设施即服务）的支持</p>
         <br />
         <ul class="p-list">
-          <li class="p-list__item is-ticked">Ubuntu Main仓库内的超过2500个软件包的安全补丁支持（在LTS 5年免费安全补丁后的支持）</li>
-          <li class="p-list__item is-ticked">对Ubuntu LTS最长10年的支持</li>
-          <li class="p-list__item is-ticked">对OpenStack、KVM、MAAS的技术支持</li>
+          <li class="p-list__item is-ticked">Ubuntu Main仓库中的超过2500个软件包的安全补丁服务（在免费的LTS 5年后安全补丁）</li>
+          <li class="p-list__item is-ticked">对Ubuntu LTS版最长10年的支持</li>
+          <li class="p-list__item is-ticked">对<a href="/cloud/openstack">OpenStack</a>、KVM、MAAS、LXD、Ceph的补丁和运营支持</li>
         </ul>
       </div>
     </div>
@@ -235,7 +234,7 @@
       </div>
       <div class="col-6">
         <p>
-          <a href="/support/advantage">支持的基础设施&nbsp;&rsaquo;</a>
+          <a href="/support/pro">支持的基础设施&nbsp;&rsaquo;</a>
         </p>
       </div>
     </div>
@@ -243,7 +242,7 @@
 
   <section class="p-strip is-deep is-bordered" id="what-is-ua">
     <div class="u-fixed-width">
-      <h2>最全面的企业Linux订阅服务</h2>
+      <h2>最全面的 Linux 企业订阅服务</h2>
       <ul class="p-matrix is-trisected u-clearfix">
         <li class="p-matrix__item">
           <div class="p-matrix__content">
@@ -259,7 +258,7 @@
         </li>
         <li class="p-matrix__item">
           <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--4">Kafka、Nginx、MongoDB和PostgreSQL的支持</h3>
+            <h3 class="p-matrix__title p-heading--4">Kafka、NGINX和PostgreSQL的支持</h3>
             <p class="p-matrix__desc">对开源数据库、LMA、云原生应用程序组合的企业级安全和支持服务。</p>
           </div>
         </li>
@@ -272,16 +271,19 @@
         <li class="p-matrix__item">
           <div class="p-matrix__content">
             <h3 class="p-matrix__title p-heading--4">合规、认证和加固</h3>
-            <p class="p-matrix__desc">Ubuntu使用<a href="https://www.ubuntu.com/security/certifications#fips">FIPS 140-2认证模块，</a><a href="https://www.ubuntu.com/security/certifications#cis">CIS加固</a>驱动您的关键业务工作负载，<a href="https://www.ubuntu.com/security/certifications#common-criteria">通用标准EAL2认证</a>已可用。</p>
+            <p class="p-matrix__desc">Ubuntu使用<a href="https://www.ubuntu.com/security/certifications#fips">FIPS 140-2认证模块，</a><a href="https://www.ubuntu.com/security/certifications#cis">CIS加固</a>和<a href="https://www.ubuntu.com/security/certifications#common-criteria">通用标准EAL2认证</a>推动您的关键任务工作负载。</p>
           </div>
         </li>
         <li class="p-matrix__item">
           <div class="p-matrix__content">
             <h3 class="p-matrix__title p-heading--4">开源托管</h3>
-            <p class="p-matrix__desc">随时使用托管的<a href="https://www.ubuntu.com/openstack/managed">OpenStack</a>、<a href="https://www.ubuntu.com/kubernetes/managed">Kubernetes</a>和<a href="https://www.ubuntu.com/managed">Apps</a>来运行您的业务。</p>
+            <p class="p-matrix__desc">通过托管的<a href="https://www.ubuntu.com/openstack/managed">OpenStack</a>、<a href="https://www.ubuntu.com/kubernetes/managed">Kubernetes</a>和<a href="https://www.ubuntu.com/managed">Apps</a>随时开展您的工作负载。</p>
           </div>
         </li>
       </ul>
+      <p>
+        <a href="https://assets.ubuntu.com/v1/53e01098-Canonical.Technical.Support.Handbook.04.07.22.pdf">阅读Canonical技术支持手册</a>
+      </p>
     </div>
   </section>
   
@@ -290,610 +292,99 @@
       <h2>应用软件的支持</h2>
       <p>通过订阅SLA可在确保的快速响应时间的同时获得对开源应用程序的全栈支持。无论关键应用程序在哪里运行，都可以快速解决其的技术支持问题。</p>
     </div>
-  
-    <div class="row">
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/a854c8a7-postgresql-circle.svg",
-              alt="PostgreSQL",
-              width="80",
-              height="80",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "PostgreSQL"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">PostgreSQL</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/703b9461-apps_mysql.png",
-              alt="MySQL",
-              width="100",
-              height="70",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "MySQL"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">MySQL</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/e25ddbfc-OpenJDK2.png",
-              alt="OpenJDK",
-              width="100",
-              height="35",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "OpenJDK"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">OpenJDK</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/1ce25c5a-kafka.svg",
-              alt="Kafka",
-              width="100",
-              height="100",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Kafka"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Kafka</h4>
-          </span>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/74b37861-apache-zookeeper-app-icon.png",
-              alt="Apache Zookeeper",
-              width="40",
-              height="60",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Apache Zoopkeeper"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Apache Zookeeper</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/494006d5-rabbitmq-logo-png-transparent.png",
-              alt="RabbitMQ",
-              width="30",
-              height="30",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title":"RabbitMQ"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">RabbitMQ</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/234cdd88-memached-logo.png",
-              alt="Memached",
-              width="70",
-              height="50",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Memached"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Memached</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/4d32cece-squid-apache-logo.png",
-              alt="Squid Apache",
-              width="80",
-              height="65",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Squid"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Squid Apache</h4>
-          </span>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/87a673ed-bind-9-app-icon.png",
-              alt="Bind",
-              width="60",
-              height="60",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Bind"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Bind</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/180021a6-openLDAP-app-icon.png",
-              alt="OpenLDAP",
-              width="30",
-              height="60",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "OpenLDAP"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">OpenLDAP</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/eeef6a39-nagios-app-icon.png",
-              alt="Nagios",
-              width="40",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Nagios"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Nagios</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/0c35e505-apache-app-icon.png",
-              alt="Apache",
-              width="30",
-              height="60",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Apache"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Apache</h4>
-          </span>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/6fb97b61-Nginx-logo-app.png",
-              alt="NGINX",
-              width="40",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "NGINX"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">NGINX</h4>
-          </span>
-        </div>        
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/3f39d234-containerd-logo.png",
-              alt="containerd",
-              width="35",
-              height="55",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Containerd"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">containerd</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/84d53087-nodejs-logo.png",
-              alt="NodeJS",
-              width="90",
-              height="55",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "NodeJS"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">NodeJS</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/7ff72a77-mailman-logo.png",
-              alt="Mailman",
-              width="130",
-              height="60",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Mailman"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Mailman</h4>
-          </span>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/dbcc771b-vault-logo.png",
-              alt="Vault",
-              width="60",
-              height="55",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Vault"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Vault</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/54ac468e-grafana_logo_swirl-events.svg",
-              alt="Grafana",
-              width="40",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Grafana"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Grafana</h4>
-          </span>
-        </div>       
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/cbc7da88-beats-logo-color-64px.svg",
-              alt="Filebeat",
-              width="40",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Filebeat"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Filebeat</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/c3ab4a2d-mariadb-logo-app-icon.png",
-              alt="MariaDB",
-              width="40",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "MariaDB"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">MariaDB</h4>
-          </span>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/4a41375d-etcd-icon-color-logo.png",
-              alt="etcd",
-              width="60",
-              height="60",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "etcd"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">etcd</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/14681911-telegraf-app-icon.png",
-              alt="Telegraf",
-              width="40",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Telegraf"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Telegraf</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/826d5be3-1200px-Prometheus_software_logo.svg.png",
-              alt="Prometheus",
-              width="40",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Prometheus"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Prometheus</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/c1d16634-graylog-app-icon.png",
-              alt="Graylog",
-              width="40",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Graylog"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Graylog</h4>
-          </span>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/a57facc8-Apache_Tomcat_logo.svg.png",
-              alt="Apache Tomcat",
-              width="512",
-              height="362",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Apache Tomcat"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Apache Tomcat</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/45a77d4e-Samba-logo.png",
-              alt="Samba",
-              width="80",
-              height="20",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Samba"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Samba</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/87354834-apple-icon-114x114.png",
-              alt="Kubeflow",
-              width="40",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Kubeflow"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Kubeflow</h4>
-          </span>
-        </div>
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/40e0a653-osm-app-icon.jpg",
-              alt="Open Source Mano (OSM)",
-              width="40",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Open Source Mano (OSM)"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Open Source Mano (OSM)</h4>
-          </span>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-3 col-medium-3 p-media-object">
-          <span class="p-media-object__image">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/ee29de9e-Anbox_favicon_64px.png",
-              alt="Anbox",
-              width="40",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-media-object__image", "title": "Anbox"},
-              ) | safe
-            }}
-          </span>
-          <span class="p-media-object__details">
-            <h4 class="p-media-object__title p-heading--5 u-no-margin--bottom">Anbox</h4>
-          </span>
-        </div>
-       
-      </div>
-    <div class="row">
+
+    {% include "shared/_security-patching-logo-cloud.html" %}
+    
+    <div class="u-fixed-width">
       <p>
-        <a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a>
+        <a href="/contact" class="p-button--positive">联系我们</a>
       </p>
+      <p>阅读<a href="https://ubuntu.com/engage/ros-support">通过ROS ESM支持ROS</a>的皮书</p>
     </div>
+   
   </section>
 
-  <section class="p-strip--light is-deep" id="ua-srv">
+  <section class="p-strip--light is-deep">
     <div class="u-fixed-width">
+      <h3 class="p-heading--4 u-align--center">Ubuntu Pro</h3>
       <table class="p-table">
         <thead>
           <tr>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th class="u-align--center"colspan="2"><h4>Ubuntu advantage 订阅服务</h4></th>
-          </tr>
-          <tr>
             <th><em>解决方案</em></th>
             <th><em>范围</em></th>
-            <th class="u-align--center">基础设施</th>
-            <th class="u-align--center">应用程序</th>
+            <th class="u-align--center">Ubuntu Pro (仅基础设施) + 支持</th>
+            <th class="u-align--center">Ubuntu Pro + 基础设施支持</th>
+            <th class="u-align--center">Ubuntu Pro + 支持</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td rowspan="8">安全补丁</td>
-            <td>Ubuntu Main</td>
+            <td rowspan="3">安全补丁</td>
+            <td>Ubuntu Main软件仓库</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
           </tr>
           <tr>
-            <td>Ubuntu Universe</td>
+            <td>Ubuntu Universe软件仓库</td>
             <td class="u-align--center">&ndash;</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
           </tr>
           <tr>
-            <td>Kernel Livepatch</td>
+            <td>Kernel实时补丁</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="7">7x24小时支持</td>
+            <td>Ubuntu服务器版系统</td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
           </tr>
@@ -901,12 +392,17 @@
             <td>Kubernetes</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
           </tr>
@@ -914,12 +410,17 @@
             <td>LXD</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
           </tr>
@@ -927,137 +428,152 @@
             <td>OpenStack</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
-            <td class="u-align--center">&ndash;</td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
           </tr>
           <tr>
             <td>Ceph/Swift</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
-            <td class="u-align--center">&ndash;</td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
           </tr>
           <tr>
             <td>MAAS</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>开源应用程序</td>
             <td class="u-align--center">&ndash;</td>
-          </tr>
-          <tr>
-            <td rowspan="4">7x24小时支持</td>
-            <td>Ubuntu服务器</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>基础设施</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
-              </div>
-            </td>
-            <td class="u-align--center">&ndash;</td>
-          </tr>
-          <tr>
-            <td>Ubuntu Main中的应用程序</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
-              </div>
-            </td> 
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
-              </div>
-            </td>               
-          </tr>
-          <tr>
-            <td>Ubuntu Universe中的应用程序</td>
             <td class="u-align--center">&ndash;</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
-              </div>
-            </td>
-          </tr>        
-          <tr>
-            <td>Ubuntu系统管理工具</td>
-            <td><a href="https://landscape.canonical.com">Landscape</a></td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
           </tr>
           <tr>
-            <td rowspan="3"><a href="https://www.ubuntu.com/security/certifications">合规和认证</a></td>
-            <td><a href="https://www.ubuntu.com/security/certifications#fips">FIPS 140-2 Level 1</a>认证的加密模块</td>
+            <td>系统管理</td>
+            <td><a href="https://ubuntu.com/landscape" >Landscape</a></td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><a href="https://www.ubuntu.com/security/certifications#cis">CIS Benchmark</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
           </tr>
           <tr>
-            <td><a href="https://www.ubuntu.com/security/certifications#common-criteria">Common Criteria /EAL2</td>
+            <td rowspan="3"><a href="https://ubuntu.com/security/certifications">合规和认证</a></td>
+            <td><a href="https://ubuntu.com/security/certifications#fips">FIPS 140-2 Level 1</a> 认证的加密模块</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><a href="https://ubuntu.com/security/certifications#cis">CIS Benchmark</td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><a href="https://ubuntu.com/security/certifications#common-criteria">Common Criteria /EAL2</td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
               </div>
             </td>
           </tr>
         </tbody>
       </table>
+      <p>
+        <a href="/pricing/pro" class="p-button--positive">查看完整价格</a>
+      </p>
     </div>
   </section>
 
   <section class="p-strip is-deep" id="get-ua">
     <div class="u-fixed-width">
       <h2>在AWS，Azure和GCP上通过Ubuntu Pro获取支持</h2>
-      <p class="u-sv3">在Amazon AWS和Microsoft Azure上，您可以购买默认已包含支持服务的Ubuntu Pro来获得支持。</p>
+      <p class="u-sv3">在亚马逊AWS和微软Azure以及谷歌Cloud上，您可以购买默认包含最全面的安全性和合规性功能的Ubuntu Pro。</p>
     </div>
     <div class="row p-divider u-equal-height u-vertically-center u-sv3">
       <div class="col-4">
@@ -1124,15 +640,23 @@
         <thead>
           <tr>
             <th>&nbsp;</th>
-            <th class="u-align--center">Ubuntu Advantage 标准版</th>
-            <th class="u-align--center">Ubuntu Advantage 高级版</th>
+            <th class="u-align--center">UBUNTU PRO + 工作日标准支持</th>
+            <th class="u-align--center">UBUNTU PRO + 7x24高级支持</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>电话和工单支持</td>
-            <td class="u-align--center">5x24</td>
-            <td class="u-align--center">7x24</td>
+            <td>Phone and ticket support</td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+              </div>
+            </td>
           </tr>
           <tr>
             <td>SLA 1 响应时间</td>
@@ -1153,38 +677,6 @@
             <td>SLA 4 响应时间</td>
             <td class="u-align--center">24 小时（工作日）</td>
             <td class="u-align--center">12 小时</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="p-table">
-        <thead>
-          <tr>
-            <th>&nbsp;</th>
-            <th class="u-align--center" colspan="2"><p class="p-heading--5">UA基础设施版</p></th>
-            <th class="u-align--center" colspan="2"><p class="p-heading--5">UA应用程序版</p></th>
-          </tr>
-          <tr>
-            <th><em>每年</em></th>
-            <th class="u-align--center">标准版</th>
-            <th class="u-align--center">高级版</th>
-            <th class="u-align--center">标准版</th>
-            <th class="u-align--center">高级版</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>物理机</td>
-            <td class="u-align--center">$750</td>
-            <td class="u-align--center">$1,500</td>
-            <td class="u-align--center">$1,500</td>
-            <td class="u-align--center">$3,000</td>
-          </tr>
-          <tr>
-            <td>VM</td>
-            <td class="u-align--center">$250</td>
-            <td class="u-align--center">$500</td>
-            <td class="u-align--center">$500</td>
-            <td class="u-align--center">$1,000</td>
           </tr>
         </tbody>
       </table>
