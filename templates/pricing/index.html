@@ -1,0 +1,88 @@
+{% extends "templates/base.html" %}
+
+{% block title %}价格{{ page_title }}{% endblock %}
+{% block meta_description %}Ubuntu订阅 Ubuntu企业版 Ubuntu许可证 Ubuntu官方支持 Linux企业服务 Linux企业支持 Linux订阅 Ubuntu服务器支持{{ meta_description }}{% endblock %}
+
+{% block content %}
+{% include "pricing/secondary-nav.html" %}
+
+<section class="p-strip--suru-topped">
+    <div class="u-fixed-width">
+      <h1>计划和定价</h1>
+    </div>
+    <div class="u-fixed-width"><hr style="margin-top: 4rem; margin-bottom: 2rem;"/></div>
+    <div class="row">
+      <div class="col-5">
+        <h2 class="p-heading--3">Ubuntu Pro + 支持</h2>
+        <p>对超过 25000 个软件包、内核实时补丁、Landscape、FIPS 认证的模块、CIS 和 DISA-STIG 配置文件等进行十年的安全维护。</p>
+        <p>对 Ubuntu 操作系统，基础设施和应用程序可选的电话、工单支持。</p>
+      </div>
+      <div class="col-6 col-start-large-7">
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">Ubuntu基础操作系统</li>
+          <li class="p-list__item is-ticked">内核</li>
+          <li class="p-list__item is-ticked">Kubernetes</li>
+          <li class="p-list__item is-ticked">OpenStack</li>
+          <li class="p-list__item is-ticked">Docker</li>
+          <li class="p-list__item is-ticked">存储</li>
+          <li class="p-list__item is-ticked">应用程序</li>
+        </ul>
+        <ul class="p-inline-list u-no-margin--bottom">
+          <li class="p-inline-list__item"><a class="p-button--positive u-no-margin--bottom" href="/support/pro">购买Ubuntu Pro</a></li>
+          <li class="p-inline-list__item"><a class="p-button u-no-margin--bottom" href="/pricing/pro">查看我们的服务</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <hr style="margin: 2rem 0;" />
+    </div>
+    <div class="row">
+      <div class="col-5">
+        <h2 class="p-heading--3">完全托管的基础设施</h2>
+        <p>完全托管的 OpenStack 和 Kubernetes。</p>
+      </div>
+      <div class="col-6 col-start-large-7">
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">Multi-cloud K8s</li>
+          <li class="p-list__item is-ticked">托管的私有云</li>
+          <li class="p-list__item is-ticked">数据中心自动化</li>
+          <li class="p-list__item is-ticked">日志，警报，监控</li>
+        </ul>
+        <p class="u-no-margin--bottom"><a class="p-button u-no-margin--bottom" href="/pricing/pro#managed">托管的开放基础设施</a></p>
+      </div>
+    </div>
+    <div class="u-fixed-width"><hr style="margin: 2rem 0;"/></div>
+    <div class="row">
+      <div class="col-5">
+        <h2 class="p-heading--3">物联网和设备服务</h2>
+        <p>Ubuntu 是嵌入式 Linux 开发和智能边缘设备的新标准。</p>
+      </div>
+      <div class="col-6 col-start-large-7">
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">硬件使能</li>
+          <li class="p-list__item is-ticked">用于物联网设备的“白牌”应用商店</li>
+          <li class="p-list__item is-ticked">长期的OTA软件更新</li>
+          <li class="p-list__item is-ticked">7x24维护和支持</li>
+          <li class="p-list__item is-ticked">咨询服务</li>
+        </ul>
+        <p class="u-no-margin--bottom"><a class="p-button u-no-margin--bottom" href="https://www.ubuntu.com/pricing/devices">了解和获取Canonical的SMART服务包</a></p>
+      </div>
+    </div>
+    <div class="u-fixed-width"><hr style="margin: 2rem 0;"/></div>
+    <div class="row">
+      <div class="col-5">
+        <h2 class="p-heading--3">咨询和部署</h2>
+        <p>架构设计，部署，培训和集成</p>
+      </div>
+      <div class="col-6 col-start-large-7">
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">OpenStack</li>
+          <li class="p-list__item is-ticked">Kubernetes</li>
+          <li class="p-list__item is-ticked">Kubeflow</li>
+        </ul>
+        <p class="u-no-margin--bottom"><a class="p-button u-no-margin--bottom" href="https://www.ubuntu.com/pricing/consulting">了解更多</a></p>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
