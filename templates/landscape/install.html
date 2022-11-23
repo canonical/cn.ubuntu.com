@@ -1,0 +1,35 @@
+{% extends "templates/base.html" %}
+
+{% block title %}安装{{ page_title }}{% endblock %}
+{% block meta_description %}Ubuntu系统集中管理 Ubuntu订阅 Ubuntu企业版 Linux企业服务{{ meta_description }}{% endblock %}
+
+{% block content %}
+{% include "landscape/secondary-nav.html" %}
+
+<section class="p-strip">
+    <div class="row">
+      <div class="col-8">
+          <h2 class="u-sv4">在Ubuntu 18.04上设置自托管的Landscape服务器</h1>
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <ol class="p-stepped-list--detailed">
+        <li class="p-stepped-list__item">
+          <h3 class="p-stepped-list__title">
+            添加Landscape仓库
+          </h3>
+          <p class="p-stepped-list__content"><code>sudo add-apt-repository --update ppa:landscape/19.10</code></p>
+        </li>
+      
+        <li class="p-stepped-list__item">
+          <h3 class="p-stepped-list__title">
+            安装Landscape
+          </h3>
+          <p class="p-stepped-list__content"><code>sudo apt install landscape-server-quickstart</code></p>
+        </li>
+      </ol>
+      <p>其他相关信息，请参考<a href="https://docs.ubuntu.com/landscape/en/landscape-install-quickstart">Landscape快速开始部署文档</a>。</p>
+    </div>
+  </section>
+
+{% endblock %}
