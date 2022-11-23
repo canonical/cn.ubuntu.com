@@ -1,0 +1,132 @@
+{% extends "templates/base.html" %}
+
+{% block title %}价格{{ page_title }}{% endblock %}
+{% block meta_description %}Ubuntu系统集中管理 Ubuntu订阅 Ubuntu企业版 Linux企业服务{{ meta_description }}{% endblock %}
+
+{% block content %}
+{% include "landscape/secondary-nav.html" %}
+
+<section class="p-strip">
+    <div class="u-fixed-width u-sv4">
+      <h1 class="u-sv4">选择最适合你的Landscape服务包：</h1>
+      <table class="p-table">
+        <thead>
+          <tr>
+            <th style="font-size: 20px;">特点</th>
+            <th class="u-align--center"><span style="font-size: 20px;">Landscape SaaS</span> <br>无需维护服务器软件</th>
+            <th class="u-align--center"><span style="font-size: 20px;">自托管Landscape</span> <br>在您的防火墙后运行</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>软件和库存机器管理</td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>安全补丁和通告</td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>系统监控和自定义报告</td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>库存机器管理</td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>合规管理</td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>基于角色的访问控制（RBAC）</td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>UbuntuOne与SSO集成</td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>第三方SSO集成</td>
+            <td></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>自定义软件仓库</td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>私有化仓库托管</td>
+            <td></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>无限量的虚拟机访客</td>
+            <td></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>无限量的Ubuntu KVM客户机支持</td>
+            <td></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>无限量的Ubuntu KVM客户机支持</td>
+            <td></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>隔离性</td>
+            <td></td>
+            <td class="u-align--center"><i class="p-icon--success"></i></td>
+          </tr>
+          <tr>
+            <td>价格</td>
+            <td><a href="http://ubuntu.com/pro/subscribe">Ubuntu Pro价格计算器</a></td>
+            <td>最多10台机器的免费用于个人使用或项目评估。<br /><br />除了免费额度，自托管Landscape上超过10台机器需要<a href="/support/pro">Ubuntu Pro</a>订阅服务。</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Landscape包含在<a href="/support/pro">Ubuntu Pro</a>中</td>
+            <td><a href="/landscape/install">搭建配置您的自托管Landscape</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section class="p-strip--light">
+    <div class="row u-equal-height">
+      <div class="col-6 u-vertically-center">
+        <div>
+          <h2>与我们团队的成员交谈</h2>
+          <p>如果您想详细地了解Landscape或我们的专业服务选项，请联系我们讨论您的需求。</p>
+          <p><a href="/contact" class="p-button--positive">联系我们</a></p>
+        </div>
+      </div>
+      <div class="col-5 u-hide--small u-hide--medium u-align--right">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
+            alt="",
+            height="280",
+            width="280",
+            hi_def=True,
+            loading="lazy",
+          ) | safe
+        }}
+      </div>
+    </div>
+  </section>
+
+  <script src="https://ubuntu.com/static/js/src/landscape-form.js"></script> 
+
+{% endblock %}
