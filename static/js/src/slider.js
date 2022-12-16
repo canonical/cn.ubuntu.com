@@ -11,11 +11,16 @@ var EMPTY_COLOUR = '#D9D9D9';
 function renderSlider(slider) {
   if (isWebkit) {
     var value = (slider.value - slider.min) / (slider.max - slider.min);
-    slider.style.backgroundImage = (
-      '-webkit-gradient(linear, left top, right top, color-stop('
-      + value + ', ' + PROGRESS_COLOUR + '), color-stop('
-      + value + ', ' + EMPTY_COLOUR + '))'
-    );
+    slider.style.backgroundImage =
+      '-webkit-gradient(linear, left top, right top, color-stop(' +
+      value +
+      ', ' +
+      PROGRESS_COLOUR +
+      '), color-stop(' +
+      value +
+      ', ' +
+      EMPTY_COLOUR +
+      '))';
   }
 }
 
@@ -35,7 +40,7 @@ function initSlider(slider) {
   if (input) {
     // Synchronise values of input and slider
     equaliseValues(input, slider);
-    input.addEventListener('input', function() {
+    input.addEventListener('input', function () {
       if (!input.value) {
         input.value = 0;
       }
@@ -44,7 +49,7 @@ function initSlider(slider) {
     });
   }
 
-  slider.addEventListener('input', function() {
+  slider.addEventListener('input', function () {
     if (input) {
       equaliseValues(input, slider);
     }
