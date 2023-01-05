@@ -31,9 +31,14 @@
             </span>
           </h2>
 
-          <div class="js-tco-calculator__range">
-            <input type="number" name="hosts" id="hosts__input" min="12" max="1000" value="12">
+          <div class="js-tco-calculator__range p-slider__wrapper">
             <input type="range" id="hosts__range" min="12" max="1000" value="12" step="1">
+            <input class="p-slider__input" type="number" name="hosts" id="hosts__input" min="12" max="1000" value="12">
+          </div>
+
+          <div class="js-tco-calculator__range p-slider__wrapper">
+            <input type="range" min="0" max="100" value="50" step="1" id="slider3" aria-label="Example slider, range 0 to 100">
+            <input class="p-slider__input" type="number" maxlength="3" id="slider3-input" tabindex="0">
           </div>
         </div>
       </div>
@@ -48,14 +53,13 @@
             </span>
           </h2>
 
-          <div class="js-tco-calculator__range">
-            <input type="number" name="data-volume" id="data-volume__input" min="1" max="5000" value="1">
+          <div class="js-tco-calculator__range p-slider__wrapper">
             <input type="range" id="data-volume__range" min="1" max="5000" value="1" step="1">
-
-            <div class="p-calculator__range-hint">
-              <span>0</span>
-              <span class="u-align--right">5,000 TB</span>
-            </div>
+            <input class="p-slider__input" type="number" name="data-volume" id="data-volume__input" min="1" max="5000" value="1">
+          </div>
+          <div class="p-calculator__range-hint">
+            <span>0</span>
+            <span class="u-align--right">5,000 TB</span>
           </div>
         </div>
       </div>
@@ -70,16 +74,16 @@
       </h2>
 
       <div>
-        <input type="checkbox" name="cloud-type" id="ct-openstack" class="js-tco-calculator__checkbox" value="openstack" checked="">
         <label for="ct-openstack" class="is-h4">
+          <input type="checkbox" name="cloud-type" id="ct-openstack" class="js-tco-calculator__checkbox" value="openstack" checked="">
           <span class="p-heading--4">OpenStack</span>
           <span class="p-calculator__checkbox-label-copy">OpenStack 是一个开源云平台，可按需提供虚拟机。</span>
         </label>
       </div>
 
       <div>
-        <input type="checkbox" name="cloud-type" id="ct-k8s" class="js-tco-calculator__checkbox" value="kubernetes">
         <label for="ct-k8s" class="is-h4">
+          <input type="checkbox" name="cloud-type" id="ct-k8s" class="js-tco-calculator__checkbox" value="kubernetes">
           <span class="p-heading--4">Kubernetes</span>
           <span class="p-calculator__checkbox-label-copy">Kubernetes 是一个容器协调平台。可以独立运行，也可以在 OpenStack 上运行。</span>
         </label>
@@ -96,24 +100,24 @@
       </h2>
 
       <div>
-        <input type="radio" name="deployment-type" id="dplmt-reference" class="js-tco-calculator__radio" value="reference" checked="checked">
         <label for="dplmt-reference" class="is-h4">
+          <input type="radio" name="deployment-type" id="dplmt-reference" class="js-tco-calculator__radio" value="reference" checked="checked">
           <span class="p-heading--4">参考架构</span>
           <span class="p-calculator__checkbox-label-copy">Canonical 部署基于参考架构的云。</span>
         </label>
       </div>
 
       <div>
-        <input type="radio" name="deployment-type" id="dplmt-custom" class="js-tco-calculator__radio" value="custom">
         <label for="dplmt-custom" class="is-h4">
+          <input type="radio" name="deployment-type" id="dplmt-custom" class="js-tco-calculator__radio" value="custom">
           <span class="p-heading--4">自定义架构</span>
           <span class="p-calculator__checkbox-label-copy">Canonical 根据客户的要求设计和部署云。</span>
         </label>
       </div>
 
       <div>
-        <input type="radio" name="deployment-type" id="dplmt-existing" class="js-tco-calculator__radio" value="existing">
         <label for="dplmt-existing" class="is-h4">
+          <input type="radio" name="deployment-type" id="dplmt-existing" class="js-tco-calculator__radio" value="existing">
           <span class="p-heading--4">现有部署</span>
           <span class="p-calculator__checkbox-label-copy">云已经由 Canonical 部署。只是在寻找支持或完全托管的服务。</span>
         </label>
@@ -184,32 +188,32 @@
       <p>对于已经拥有运营云所需的知识、经验和资源的组织而言，自运营选项可能更好。在这种情况下，应考虑如下所述的支持服务：</p>
 
       <div>
-        <input type="radio" name="self-managed" id="sm-advanced" class="js-tco-calculator__radio" value="advanced" checked="checked">
         <label for="sm-advanced" class="is-h4">
+          <input type="radio" name="self-managed" id="sm-advanced" class="js-tco-calculator__radio" value="advanced" checked="checked">
           <span class="p-heading--4">高级版</span>
           <span class="p-calculator__checkbox-label-copy">最全面的软件包，包括 24*7 支持、生产级 SLA、内核实时补丁服务、Landscape、安全补丁等。</span>
         </label>
       </div>
 
       <div>
-        <input type="radio" name="self-managed" id="sm-standard" class="js-tco-calculator__radio" value="standard">
         <label for="sm-standard" class="is-h4">
+          <input type="radio" name="self-managed" id="sm-standard" class="js-tco-calculator__radio" value="standard">
           <span class="p-heading--4">标准版</span>
           <span class="p-calculator__checkbox-label-copy">包括 24*5 支持、要求较低的 SLA、内核实时补丁服务、Landscape、安全补丁等。是高级版费用的一半。</span>
         </label>
       </div>
 
       <div>
-        <input type="radio" name="self-managed" id="sm-essential" class="js-tco-calculator__radio" value="essential">
         <label for="sm-essential" class="is-h4">
+          <input type="radio" name="self-managed" id="sm-essential" class="js-tco-calculator__radio" value="essential">
           <span class="p-heading--4">基础版</span>
           <span class="p-calculator__checkbox-label-copy">适用于要求最低的组织的最便宜的订阅。包括内核实时补丁服务、Landscape、安全补丁等。</span>
         </label>
       </div>
 
       <div>
-        <input type="radio" name="self-managed" id="sm-none" class="js-tco-calculator__radio" value="none">
         <label for="sm-none" class="is-h4">
+          <input type="radio" name="self-managed" id="sm-none" class="js-tco-calculator__radio" value="none">
           <span class="p-heading--4">无</span>
           <span class="p-calculator__checkbox-label-copy">零成本，用于测试和开发环境的有效选择。仍可获得安全补丁。</span>
         </label>
@@ -238,5 +242,6 @@
 </section>
 
 <script src="/static/js/src/tco-calculator.js"></script>
+<script src="/static/js/src/slider.js"></script>
 
 {% endblock %}
