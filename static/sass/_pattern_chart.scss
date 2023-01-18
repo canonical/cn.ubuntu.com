@@ -31,7 +31,7 @@
 }
 
 .x.axis line {
-  shape-rendering: crispEdges;
+  shape-rendering: crispedges;
   stroke: #d6d3cf; // sass-lint:disable-line no-color-literals
   stroke-dasharray: 3 2;
 }
