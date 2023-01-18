@@ -9,7 +9,7 @@
 
     &__credit {
       @media only screen and (min-width: $breakpoint-medium) {
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgb(0 0 0 / 60%);
         bottom: 0;
         color: $color-light;
         margin-top: -$sp-xxx-large;
