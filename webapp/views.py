@@ -63,7 +63,6 @@ def engage_thank_you(engage_pages):
     """
 
     def render_template(page):
-
         path = f"/engage/{page}"
         metadata = engage_pages.get_engage_page(path)
         all_engage_pages = engage_pages.get_index()
