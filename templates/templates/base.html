@@ -82,6 +82,33 @@
 <script src="{{ versioned_static('js/dist/global-nav.min.js') }}" defer></script>
 <script src="{{ versioned_static('js/dist/cookie-policy.min.js') }}" defer></script>
 
+<script type="text/javascript">
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var utm_campaign = document.getElementById("utm_campaign");
+    if (utm_campaign) {
+      utm_campaign.value = params.get("utm_campaign");
+    }
+    var utm_source = document.getElementById("utm_source");
+    if (utm_source) {
+      utm_source.value = params.get("utm_source");
+    }
+    var utm_medium = document.getElementById("utm_medium");
+    if (utm_medium) {
+      utm_medium.value = params.get("utm_medium");
+    }
+
+    var utm_content = document.getElementById("utm_content");
+    if (utm_content) {
+      utm_content.value = params.get("utm_content");
+    }
+
+    var utm_term = document.getElementById("utm_term");
+    if (utm_term) {
+      utm_term.value = params.get("utm_term");
+    }
+  })()
+</script>
 
 </body>
 </html>
