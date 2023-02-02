@@ -281,3 +281,14 @@ td.p-accordion {
     }
   }
 }
+
+// Successful form submission
+#success {
+  display: none;
+  position: absolute;
+}
+
+#success:target {
+  display: block;
+  z-index: 10;
+}
