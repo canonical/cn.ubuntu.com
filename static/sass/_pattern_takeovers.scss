@@ -1,4 +1,4 @@
-/// homepage takeovers
+// homepage takeovers
 
 @mixin p-takeovers($name) {
   .p-takeover--#{$name} {
@@ -46,22 +46,22 @@
     background-color: #772953;
     background-image: linear-gradient(
         to bottom left,
-        rgba(119, 41, 83, 0.16) 0,
-        rgba(119, 41, 83, 0.16) 49.9%,
+        rgb(119 41 83 / 16%) 0,
+        rgb(119 41 83 / 16%) 49.9%,
         transparent 50%
       ),
       linear-gradient(
         to bottom right,
-        rgba(228, 228, 228, 0.5) 0,
-        rgba(228, 228, 228, 0.5) 49.9%,
+        rgb(228 228 228 / 50%) 0,
+        rgb(228 228 228 / 50%) 49.9%,
         transparent 50%
       ),
       linear-gradient(
         to top left,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 1) 49.3%,
-        rgba(255, 255, 255, 0) 50%,
-        rgba(255, 255, 255, 0) 100%
+        rgb(255 255 255 / 100%) 0%,
+        rgb(255 255 255 / 100%) 49.3%,
+        rgb(255 255 255 / 0%) 50%,
+        rgb(255 255 255 / 0%) 100%
       ),
       linear-gradient(-89deg, #e95420 0%, #772953 42%, #2c001e 94%);
     color: $color-x-light;
@@ -69,22 +69,22 @@
     @supports not (background-blend-mode: multiply) {
       background-image: linear-gradient(
           to bottom left,
-          rgba(119, 41, 83, 0.16) 0,
-          rgba(119, 41, 83, 0.16) 49.9%,
+          rgb(119 41 83 / 16%) 0,
+          rgb(119 41 83 / 16%) 49.9%,
           transparent 50%
         ),
         linear-gradient(
           to bottom right,
-          rgba(228, 228, 228, 0.1) 0,
-          rgba(228, 228, 228, 0.1) 49.9%,
+          rgb(228 228 228 / 10%) 0,
+          rgb(228 228 228 / 10%) 49.9%,
           transparent 50%
         ),
         linear-gradient(
           to top left,
-          rgba(255, 255, 255, 1) 0%,
-          rgba(255, 255, 255, 1) 49.3%,
-          rgba(255, 255, 255, 0) 50%,
-          rgba(255, 255, 255, 0) 100%
+          rgb(255 255 255 / 100%) 0%,
+          rgb(255 255 255 / 100%) 49.3%,
+          rgb(255 255 255 / 0%) 50%,
+          rgb(255 255 255 / 0%) 100%
         ),
         linear-gradient(-89deg, #e95420 0%, #772953 42%, #2c001e 94%);
     }
@@ -94,22 +94,22 @@
     background-color: #326de6;
     background-image: linear-gradient(
         to bottom left,
-        rgba(21, 58, 138, 0.16) 0,
-        rgba(21, 58, 138, 0.16) 49.9%,
+        rgb(21 58 138 / 16%) 0,
+        rgb(21 58 138 / 16%) 49.9%,
         transparent 50%
       ),
       linear-gradient(
         to bottom right,
-        rgba(50, 109, 230, 0.5) 0,
-        rgba(50, 109, 230, 0.5) 49.9%,
+        rgb(50 109 230 / 50%) 0,
+        rgb(50 109 230 / 50%) 49.9%,
         transparent 50%
       ),
       linear-gradient(
         to top left,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 1) 49.3%,
-        rgba(255, 255, 255, 0) 50%,
-        rgba(255, 255, 255, 0) 100%
+        rgb(255 255 255 / 100%) 0%,
+        rgb(255 255 255 / 100%) 49.3%,
+        rgb(255 255 255 / 0%) 50%,
+        rgb(255 255 255 / 0%) 100%
       ),
       linear-gradient(74deg, #173d8b 0%, #326de6 92%);
     color: $color-x-light;
@@ -117,22 +117,22 @@
     @supports not (background-blend-mode: multiply) {
       background-image: linear-gradient(
           to bottom left,
-          rgba(21, 58, 138, 0.16) 0,
-          rgba(21, 58, 138, 0.16) 49.9%,
+          rgba(21 58 138 / 16%) 0,
+          rgba(21 58 138 / 16%) 49.9%,
           transparent 50%
         ),
         linear-gradient(
           to bottom right,
-          rgba(50, 109, 230, 0.1) 0,
-          rgba(50, 109, 230, 0.1) 49.9%,
+          rgb(50 109 230 / 10%) 0,
+          rgb(50 109 230 / 10%) 49.9%,
           transparent 50%
         ),
         linear-gradient(
           to top left,
-          rgba(255, 255, 255, 1) 0%,
-          rgba(255, 255, 255, 1) 49.3%,
-          rgba(255, 255, 255, 0) 50%,
-          rgba(255, 255, 255, 0) 100%
+          rgb(255 255 255 / 100%) 0%,
+          rgb(255 255 255 / 100%) 49.3%,
+          rgb(255 255 255 / 0%) 50%,
+          rgb(255 255 255 / 0%) 100%
         ),
         linear-gradient(74deg, #173d8b 0%, #326de6 92%);
     }
@@ -142,22 +142,22 @@
     background-color: #111;
     background-image: linear-gradient(
         to bottom left,
-        rgba(216, 216, 216, 0.54) 0,
-        rgba(216, 216, 216, 0.54) 49.9%,
+        rgb(216 216 216 / 54%) 0,
+        rgb(216 216 216 / 54%) 49.9%,
         transparent 50%
       ),
       linear-gradient(
         to bottom right,
-        rgba(228, 228, 228, 0.54) 0,
-        rgba(228, 228, 228, 0.54) 49.9%,
+        rgb(228 228 228 / 54%) 0,
+        rgb(228 228 228 / 54%) 49.9%,
         transparent 50%
       ),
       linear-gradient(
         to top left,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 1) 49.3%,
-        rgba(255, 255, 255, 0) 50%,
-        rgba(255, 255, 255, 0) 100%
+        rgb(255 255 255 / 100%) 0%,
+        rgb(255 255 255 / 100%) 49.3%,
+        rgb(255 255 255 / 0%) 50%,
+        rgb(255 255 255 / 0%) 100%
       ),
       linear-gradient(201deg, #4e4e4e 0%, #333 46%, #111 90%);
     color: $color-x-light;
@@ -165,22 +165,22 @@
     @supports not (background-blend-mode: multiply) {
       background-image: linear-gradient(
           to bottom left,
-          rgba(216, 216, 216, 0.14) 0,
-          rgba(216, 216, 216, 0.14) 49.9%,
+          rgb(216 216 216 / 14%) 0,
+          rgb(216 216 216 / 14%) 49.9%,
           transparent 50%
         ),
         linear-gradient(
           to bottom right,
-          rgba(228, 228, 228, 0.14) 0,
-          rgba(228, 228, 228, 0.14) 49.9%,
+          rgb(228 228 228 / 14%) 0,
+          rgb(228 228 228 / 14%) 49.9%,
           transparent 50%
         ),
         linear-gradient(
           to top left,
-          rgba(255, 255, 255, 1) 0%,
-          rgba(255, 255, 255, 1) 49.3%,
-          rgba(255, 255, 255, 0) 50%,
-          rgba(255, 255, 255, 0) 100%
+          rgb(255 255 255 / 100%) 0%,
+          rgb(255 255 255 / 100%) 49.3%,
+          rgb(255 255 255 / 0%) 50%,
+          rgb(255 255 255 / 0%) 100%
         ),
         linear-gradient(201deg, #4e4e4e 0%, #333 46%, #111 90%);
     }
@@ -190,22 +190,22 @@
     background-color: #83bfa1;
     background-image: linear-gradient(
         to bottom left,
-        rgba(74, 131, 125, 0.16) 0,
-        rgba(74, 131, 125, 0.16) 49.9%,
+        rgb(74 131 125 / 16%) 0,
+        rgb(74 131 125 / 16%) 49.9%,
         transparent 50%
       ),
       linear-gradient(
         to bottom right,
-        rgba(63, 120, 115, 0.08) 0,
-        rgba(63, 120, 115, 0.08) 49.9%,
+        rgb(63 120 115 / 8%) 0,
+        rgb(63 120 115 / 8%) 49.9%,
         transparent 50%
       ),
       linear-gradient(
         to top left,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 1) 49.3%,
-        rgba(255, 255, 255, 0) 50%,
-        rgba(255, 255, 255, 0) 100%
+        rgb(255 255 255 / 100%) 0%,
+        rgb(255 255 255 / 100%) 49.3%,
+        rgb(255 255 255 / 0%) 50%,
+        rgb(255 255 255 / 0%) 100%
       ),
       linear-gradient(134deg, #2d6162 0%, #83bfa1 100%);
     color: $color-x-light;
@@ -215,22 +215,22 @@
     background-color: #2b585d;
     background-image: linear-gradient(
         to bottom left,
-        rgba(71, 145, 154, 0.16) 0,
-        rgba(71, 145, 154, 0.16) 49.9%,
+        rgba(71 145 154 / 16%) 0,
+        rgba(71 145 154 / 16%) 49.9%,
         transparent 50%
       ),
       linear-gradient(
         to bottom right,
-        rgba(71, 145, 154, 0.16) 0,
-        rgba(71, 145, 154, 0.16) 49.9%,
+        rgba(71 145 154 / 16%) 0,
+        rgba(71 145 154 / 16%) 49.9%,
         transparent 50%
       ),
       linear-gradient(
         to top left,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 1) 49.3%,
-        rgba(255, 255, 255, 0) 50%,
-        rgba(255, 255, 255, 0) 100%
+        rgb(255 255 255 / 100%) 0%,
+        rgb(255 255 255 / 100%) 49.3%,
+        rgb(255 255 255 / 0%) 50%,
+        rgb(255 255 255 / 0%) 100%
       ),
       linear-gradient(246deg, #47919a 0%, #47919a 53%, #2b585d 100%);
     color: $color-x-light;

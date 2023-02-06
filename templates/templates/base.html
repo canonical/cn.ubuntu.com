@@ -63,8 +63,16 @@
 
   <!-- header content goes here -->
   {% include "templates/header.html" %}
-
   <div class="wrapper u-no-margin--top">
+    <div id="success" class="p-strip u-no-padding--top">
+      <div class="u-fixed-width">
+        <div class="p-notification--positive u-no-margin--bottom">
+          <div class="p-notification__content">
+            <p class="p-notification__message">谢谢您的订阅！<br />当新的内容发布后您将开始接收邮件。您也可以点击邮件内的链接随时取消订阅。<a href="#" onclick="location.href = document.referrer; return false;">关闭<i class="p-notification__close">Close</i></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
     <main id="main-content">
       {% block header %}
       {% endblock %}
@@ -82,6 +90,36 @@
 <script src="{{ versioned_static('js/dist/global-nav.min.js') }}" defer></script>
 <script src="{{ versioned_static('js/dist/cookie-policy.min.js') }}" defer></script>
 
+<script type="text/javascript">
+  (function() {
+
+    // Populate utms for forms
+    var params = new URLSearchParams(window.location.search);
+    var utm_campaign = document.getElementById("utm_campaign");
+    if (utm_campaign) {
+      utm_campaign.value = params.get("utm_campaign");
+    }
+    var utm_source = document.getElementById("utm_source");
+    if (utm_source) {
+      utm_source.value = params.get("utm_source");
+    }
+    var utm_medium = document.getElementById("utm_medium");
+    if (utm_medium) {
+      utm_medium.value = params.get("utm_medium");
+    }
+
+    var utm_content = document.getElementById("utm_content");
+    if (utm_content) {
+      utm_content.value = params.get("utm_content");
+    }
+
+    var utm_term = document.getElementById("utm_term");
+    if (utm_term) {
+      utm_term.value = params.get("utm_term");
+    }
+
+  })()
+</script>
 
 </body>
 </html>
