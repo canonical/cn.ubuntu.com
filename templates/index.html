@@ -1497,6 +1497,14 @@
       secondaryUrl.href = selectedTakeover.secondary_url;
       secondaryUrl.innerHTML = selectedTakeover.secondary_cta + "&nbsp;&rsaquo;";
     }
+
+    dataLayer.push({
+      event: "NonInteractiveGAEvent",
+      eventCategory: "cn.ubuntu.com-impression-takeover",
+      eventAction: "CTA click",
+      eventLabel: selectedTakeover.title,
+      eventValue: undefined,
+    });
   }
 </script>
 
