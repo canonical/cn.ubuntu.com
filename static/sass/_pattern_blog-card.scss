@@ -27,11 +27,15 @@
   }
 
   .blog-p-card--post {
-    @extend .p-card--highlighted;
+    @extend %p-card--highlighted;
 
     display: flex !important;
     flex-direction: column;
     padding: 0;
+
+    img {
+      width: 100%;
+    }
 
     .blog-p-card__header {
       @extend %post-card-header;
