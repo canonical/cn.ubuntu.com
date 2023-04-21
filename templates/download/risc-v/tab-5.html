@@ -1,0 +1,32 @@
+<div tabindex="0" role="tabpanel" id="microchip-polarfire-soc-fpga-icicle-kit-tab" aria-labelledby="allwinner-nezha" aria-hidden="true">
+	<div class="row u-vertically-center u-no-padding">
+		<div class="col-6">
+			<h2>Microchip Polarfire SoC FPGA Icicle 套件</h2>
+			<h3 class="p-heading--4">Ubuntu Server预安装镜像</h3>			
+			<p>
+				<a class="p-button--positive" href="https://cdimage.ubuntu.com/releases/{{ releases.latest.full_version }}/release/ubuntu-{{ releases.latest.full_version }}-preinstalled-server-riscv64+icicle.img.xz">下载 {{ releases.latest.full_version }}</a>
+				<a class="p-button" href="https://cdimage.ubuntu.com/releases/{{ releases.lts.full_version }}/release/ubuntu-{{ releases.lts.full_version }}-preinstalled-server-riscv64+icicle.img.xz">下载 {{ releases.lts.full_version }}</a>
+			</p>
+			<p>适用于：</p>
+			<ul class="p-list">
+				<li class="p-list__item is-ticked">具有<a href="https://github.com/polarfire-soc/hart-software-services/releases/tag/v2022.10">HSS v2022.10</a>的Microchip Polarfire SoC FPGA Icicle套件</li>
+			</ul>
+		</div>
+		<div class="col-2 u-hide--medium u-hide--small">&nbsp;</div>
+		<div class="col-4 u-hide--medium u-hide--small u-align--center">
+			{{ image (
+				url="https://assets.ubuntu.com/v1/40eacb41-Microchip+PolarFire.png",
+				alt="",
+				width="800",
+				height="414",
+				hi_def=True,
+				loading="auto"
+				) | safe
+			  }}
+		</div>
+	</div>
+	<div class="u-fixed-width">
+		<h4>第一次在Microchip Polarfire SoC FPGA Icicle开发套件上安装Ubuntu？</h4>
+		<p>请阅读<a href="https://wiki.ubuntu.com/RISC-V/PolarFire%20SoC%20FPGA%20Icicle%20Kit"> 如何在Microchip Polarfire SoC FPGA Icicle开发套件上安装 Ubuntu </a>以获得更多信息。</p>
+	</div>
+</div>
