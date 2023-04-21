@@ -49,7 +49,7 @@
 
 body {
   border-top: 32px solid #262626; // Placeholder for global-nav
-
+  position: inherit;
   @media only screen and (min-width: $breakpoint-x-large) {
     border-top-width: 36px;
   }
