@@ -8,23 +8,17 @@
         </a>
         <ul class="breadcrumbs--secondary">
           <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link {% if request.path == '/download' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/">概览</a>
+            <a class="breadcrumbs__link {% if request.path == '/download/desktop' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/desktop">桌面</a>
           </li>
           <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link {% if request.path == '/download/cloud' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/cloud">云</a>
-          </li>
+            <a class="breadcrumbs__link {% if request.path == '/download/server' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/server/step1">服务器</a>
+          </li>            
           <li class="breadcrumbs__item">
             <a class="breadcrumbs__link {% if request.path == '/download/iot' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/iot">IoT</a>
           </li>
           <li class="breadcrumbs__item">
             <a class="breadcrumbs__link {% if request.path == '/download/raspberry-pi' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/raspberry-pi">树莓派</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link {% if request.path == '/download/server' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/server/step1">服务器</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link {% if request.path == '/download/desktop' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/desktop">桌面</a>
-          </li>  
+          </li>         
           <li class="breadcrumbs__item">
             <a class="breadcrumbs__link {% if request.path == '/download/amd-xilinx' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/amd-xilinx">AMD-Xilinx</a>
           </li> 
@@ -32,8 +26,8 @@
             <a class="breadcrumbs__link {% if request.path == '/download/risc-v' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/risc-v">RISC-V</a>
           </li> 
           <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link {% if request.path == '/download/alternative-downloads' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/alternative-downloads">其他下载</a>
-          </li>        
+            <a class="breadcrumbs__link {% if request.path == '/download/cloud' %}p-link--active{% else %}p-link--soft{% endif %}" href="/download/cloud">云</a>
+          </li>       
         </ul>       
       </div>
     </div>
