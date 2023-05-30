@@ -13,8 +13,8 @@
       <p>Ubuntu 桌面兼具企业级支持，安全<br>和开源的最好功能性。
       </p>
       <p><a class="p-button--positive" href="/contact">联系我们</a></p>
-      <p><a href="/support">购买Ubuntu Advantage订阅服务&nbsp;&rsaquo;</a></p>
-      <p><a href="https://assets.ubuntu.com/v1/0af12937-Ubuntu.Desktop.DS.23.05.22.2.pdf">阅读产品手册&nbsp;&rsaquo;</a></p>
+      <p><a href="/support/pro">通过Ubuntu Pro获得额外安全覆盖&nbsp;&rsaquo;</a></p>
+      <p><a class="p-button" href="https://assets.ubuntu.com/v1/0af12937-Ubuntu.Desktop.DS.23.05.22.2.pdf">阅读产品手册</a></p>
     </div>
     <div class="col-6">
       {{ image (
@@ -31,99 +31,46 @@
 </section>
 
 <section class="p-strip">
-  <div class="u-fixed-width">
-    <h2>通过Ubuntu Pro桌面版让企业管理<br>更安全</h2>
-  </div>
   <div class="row">
-    <div class="col-4 u-sv3">
-      {{ image (
-        url="https://assets.ubuntu.com/v1/b4cabb3f-68747470733a2f2f696d616765732e7a656e68756275736572636f6e74656e742e636f6d2f3562393738373431393663303830316165643138633461312f65663636653130652d393435662d343565622d393163302d636662633965356564303263.svg",
-        alt="",
-        width="100",
-        height="100",
-        hi_def=True,
-        loading="lazy",
-        attrs={"class": "u-hide--small u-hide--medium"}
-        ) | safe
-      }}
-      <h3>让开源堆栈更安全</h3>
+    <div class="col-7">
+      <h2>通过Ubuntu Pro桌面版让企业管理<br>更安全</h2>
+    </div>  
+  </div>
+
+  <div class="row u-equal-height">
+    <div class="col-4 p-card col-medium-3">     
+      <h4>让开源堆栈更安全</h4>
+      <hr />
       <p>获得十年的 Ubuntu LTS 版本安全补丁，包括<a href="/support/esm">扩展安全维护 (ESM)</a> 和 Ubuntu Universe 仓库中超过23000个软件包的测试覆盖。使用<a href="https://ubuntu.com/security/livepatch">内核实时补丁</a>服务最大限度地减少停机时间。</p>
       <p><a href="/support/pro">了解更多关于Ubuntu Pro的内容&nbsp;&rsaquo;</a></p>
     </div>
-    <div class="col-4 u-sv3">
-      {{ image (
-        url="https://assets.ubuntu.com/v1/ef8dddf4-menu-icon--product-landscape.svg",
-        alt="",
-        width="100",
-        height="100",
-        hi_def=True,
-        loading="lazy",
-        attrs={"class": "u-hide--small u-hide--medium"}
-        ) | safe
-      }}
-      <h3>Landscape—大规模管理</h3>
+    <div class="col-4 p-card col-medium-3">      
+      <h4>Landscape—大规模管理</h4>
+      <hr />
       <p>整个物理和虚拟机群的软件更新、配置管理、策略合规性和权限控制，Landscape易于使用，并且通过强大的API可与任何其他工具顺利集成。</p>
       <p><a href="https://landscape.canonical.com/">了解更多关于Landscape的内容</a></p>
     </div>
-    <div class="col-4 u-sv3">
-      {{ image (
-        url="https://assets.ubuntu.com/v1/e7bcb9fa-4b9bad4c100c73cc2c1c839f3eb5ec03_active-directory-logo.png",
-        alt="",
-        width="243",
-        height="60",
-        hi_def=True,
-        loading="lazy",
-        attrs={"class": "u-hide--small u-hide--medium", "style": "padding-top:40px"}
-        ) | safe
-      }}    
-      <h3>高级的Active Directory策略</h3>
+    <div class="col-4 p-card col-medium-3">         
+      <h4>高级的Active Directory策略</h4>
+      <hr /> 
       <p>通过完整的组策略对象的支持、远程脚本执行和权限管理来提高您的管理能力。</p>
       <p><a href="https://ubuntu.com/engage/New-Active-Directory-integration-features">了解更多关于Active Directory的内容</a></p>
-    </div>        
-  </div>
-  <div class="row">
-    <div class="col-4">
-      {{ image (
-        url="https://assets.ubuntu.com/v1/ec3f53f7-extended-security-maintenance.svg",
-        alt="",
-        width="100",
-        height="100",
-        hi_def=True,
-        loading="lazy",
-        attrs={"class": "u-hide--small u-hide--medium"}
-        ) | safe
-      }}
-      <h3>合规，认证和加固</h3>
+    </div>    
+    <div class="col-4 p-card col-medium-3">
+      <h4>合规，认证和加固</h4>
+      <hr /> 
       <p>Ubuntu Pro通过<a href="https://ubuntu.com/security/certifications#fips">FIPS 140-2认证模块</a>, <a href="https://ubuntu.com/security/certifications#cis">CIS加固</a>和已可用的<a href="https://ubuntu.com/security/certifications#common-criteria">Common Criteria EAL2</a>为最敏感的工作负载提供安全性和合规性。</p>
       <p><a href="https://ubuntu.com/security">了解更多关于Ubuntu的安全实践的内容</a></p>
     </div>
-    <div class="col-4">
-      {{ image (
-        url="https://assets.ubuntu.com/v1/7cafcb2c-Managed-apps.svg",
-        alt="",
-        width="177",
-        height="90",
-        hi_def=True,
-        loading="lazy",
-        attrs={"class": "u-hide--small u-hide--medium", "style": "padding-top:10px"}
-        ) | safe
-      }}   
-      <h3>认证硬件</h3>
+    <div class="col-4 p-card col-medium-3">    
+      <h4>认证硬件</h4>
+      <hr /> 
       <p>Ubuntu桌面版系统已通过各种笔记本电脑、台式机和工作站的认证，包括惠普 Z 系列，联想 Thinkpad P 系列和戴尔 XPS 和 Precision 系列。</p>
       <p><a href="https://ubuntu.com/certified">了解更多关于Ubuntu认证硬件的内容</a></p>
     </div>
-    <div class="col-4">
-      {{ image (
-        url="https://assets.ubuntu.com/v1/b0af9ede-UA_24-7_Support.svg",
-        alt="",
-        width="100",
-        height="100",
-        hi_def=True,
-        loading="lazy",
-        attrs={"class": "u-hide--small u-hide--medium"}
-        ) | safe
-      }}
+    <div class="col-4 p-card col-medium-3">
       <h3>工作日或24/7小时支持</h3>
+      <hr /> 
       <p>通过我们的网站支持入口全天候直接地访问知识库，或电话获得我们世界级的企业开源支持团队的支持。</p>
       <p><a href="/contact" class="p-button">联系我们</a></p>
     </div>        
@@ -237,217 +184,206 @@
   </div>
 </section>
 
-<section class="p-strip--suru-accent is-dark">
-  <div class="u-fixed-width">
-    <blockquote class="p-pull-quote">
-      <p class="p-pull-quote__quote">由于Ubuntu在开发人员中的流行及其云能力，Ubuntu一直是完美的操作系统。这就是为什么Ubuntu预装在我们的第四代 XPS 13 笔记本电脑和我们新的 Precision M3800 移动工作站上。</p>
-      <cite class="p-pull-quote__citation">Barton George，戴尔服务的开发人员项目总监</cite>
-    </blockquote>
-    <p><a href="https://ubuntu.com/blog/dell-xps-13-plus-developer-edition-now-certified-with-ubuntu-22-04-lts" class="p-link--inverted">了解更多关于戴尔开发人员产品线的内容</a></p>
-  </div>
-</section>
-
 <section class="p-strip">
   <div class="u-fixed-width">
-    <h2>Ubuntu提供最好的开源体验</h2>
-    <p>除了<a href="https://multipass.run/">Multipass</a>、<a href="https://jaas.ai/">Juju</a>、<a href="https://ubuntu.com/lxd">LXD</a>、<a href="https://microk8s.io/">MicroK8s</a>等关键工作流工具外，Ubuntu还支持最新的软件库和应用程序以推动数据科学和机器学习等高增长领域的创新。</p>
-    <div class="p-logo-section">
-      <div class="p-logo-section__items">
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/57dd2115-TensorFlow-logo.svg",
-            alt="",
-            width="145",
-            height="145",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}
+    <div class="p-strip u-no-padding-top">
+      <div class="row">
+        <div class="col-5">
+          <h2>Ubuntu提供最好的开源体验</h2>
         </div>
-        <div class="p-logo-section__item">   
-          {{ image (
-            url="https://assets.ubuntu.com/v1/d540aea5-OpenCV-logo.png",
-            alt="",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}
-        </div>        
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/6019771d-logo-docker.svg",
-            alt="",
-            width="97",
-            height="97",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}          
+        <div class="col-6">
+          <p>除了<a href="https://multipass.run/">Multipass</a>、<a href="https://jaas.ai/">Juju</a>、<a href="https://ubuntu.com/lxd">LXD</a>、<a href="https://microk8s.io/">MicroK8s</a>等关键工作流工具外，Ubuntu还支持最新的软件库和应用程序以推动数据科学和机器学习等高增长领域的创新。</p>
+        </div>  
+      </div>
+    </div> 
+
+      <div class="row">
+        <div class="p-logo-section">
+          <div class="p-logo-section__items">
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/be56a944-tensor-flow-logo.png",
+                alt="TensorFlow",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/96c4727f-OpenCV-logo.png",
+                alt="OpenCV",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/5154773b-docker-logo-horizontal.png",
+                alt="Docker",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/94ae6189-edgexfoundry-logo.png",
+                alt="EdgeX Foundry",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/a20afc7d-kubeflow-logo.png",
+                alt="Kubeflow",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/835a5d08-Juju.png",
+                alt="Canonical Juju",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/75145268-acrn-logo.png",
+                alt="Acrn",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/eac2a3ad-openvino-logo.png",
+                alt="OpenVINO",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/1d3e5eaf-flutter-logo.png",
+                alt="Flutter",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/49e6dfc2-ros-logo.png",
+                alt="ROS",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/a984834a-LXD.png",
+                alt="Canonical LXD",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/d60029cc-pytorch-logo.png",
+                alt="Pytorch",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/1ad80137-Multipass.png",
+                alt="Canonical Multipass",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/083fd46b-open-v-switch.png",
+                alt="Open vSwitch",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image (
+                url="https://assets.ubuntu.com/v1/3f49251c-MicroK8s.png",
+                alt="Canonical MicroK8s",
+                width="158",
+                height="158",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>                                      
+          </div>
         </div>
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/3def7411-kubeflow-logo.png",
-            alt="Kubeflow",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}          
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/5ad2c156-edgex-logo.png",
-            alt="",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}
-        </div>        
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/cd765ccc-nvidia-logo.png",
-            alt="Nvidia",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/f41c87c6-pytorch-logo.png",
-            alt="",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}
-        </div>        
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/19487741-acrn-logo.png",
-            alt="",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/1e5e8699-2018-logo-open-vSwitch.svg",
-            alt="",
-            width="146",
-            height="146",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}          
-        </div>        
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/c1b1d4a9-ros-logo.png",
-            alt="ROS",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}          
-        </div> 
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/e1899663-flutter-logo.png",
-            alt="Flutter",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/389dee91-openvino-logo.png",
-            alt="",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/0c374f1b-lxd-logo.png",
-            alt="",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}          
-        </div> 
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/b96a2a65-Multipass+logo_rgb.svg",
-            alt="",
-            width="300",
-            height="55",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/7fe3f290-2019-logo-jaas.svg",
-            alt="",
-            width="145",
-            height="145",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}          
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/89fdda84-microk8s-logo.svg",
-            alt="",
-            width="145",
-            height="144",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-          }}          
-        </div>                                          
       </div>
     </div>
-  </div>
 </section>
 
 <div class="u-fixed-width">
@@ -590,6 +526,30 @@
           width="350",
           hi_def=True,
           loading="lazy"
+        ) | safe
+      }}
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row">
+    <div class="col-6">
+      <h2>由 AWS 提供的虚拟桌面系统</h2>
+      <p>Amazon WorkSpaces上的Ubuntu桌面为开发人员提供了优化的Ubuntu桌面环境，以快速构建、测试和部署代码——根据需要启动和拆除实例。</p>
+      <p>即使IT企业的开发人员在远程工作，IT企业受益于他们托管的Ubuntu桌面的快速部署、配置和可扩展性，同时他们的应用程序和数据在AWS云中保持安全。</p>
+      <p>
+        <a href="https://ubuntu.com/aws/workspaces">了解更多关于Ubuntu工作区的内容</a>
+      </p>
+    </div>
+    <div class="col-6 u-vertically-center u-align--center">
+      {{ image (
+        url="https://assets.ubuntu.com/v1/55bb92be-aws_workspaces.png",
+        alt="",
+        width="400",
+        height="143",
+        hi_def=True,
+        loading="lazy"
         ) | safe
       }}
     </div>
