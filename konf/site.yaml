@@ -1,6 +1,6 @@
 domain: cn.ubuntu.com
 
-image: prod-comms.docker-registry.canonical.com/cn.ubuntu.com
+image: prod-comms.ps5.docker-registry.canonical.com/cn.ubuntu.com
 
 env:
   - name: SENTRY_DSN
