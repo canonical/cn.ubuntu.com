@@ -21,4 +21,17 @@
     margin-top: 0.25rem;
     max-width: 2rem;
   }
+
+  .p-heading-icon--long {
+    .p-heading-icon__img {
+      height: 2rem;
+      width: auto;
+    }
+
+    .p-heading-icon__title {
+      @extend .p-heading--5;
+
+      margin-top: 1.5rem;
+    }
+  }
 }

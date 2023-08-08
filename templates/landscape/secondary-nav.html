@@ -9,12 +9,15 @@
         <ul class="breadcrumbs--secondary">
           <li class="breadcrumbs__item">
             <a class="breadcrumbs__link {% if request.path == '/landscape/features' %}p-link--active{% else %}p-link--soft{% endif %}" href="/landscape/features">特点</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link {% if request.path == '/landscape/managed' %}p-link--active{% else %}p-link--soft{% endif %}" href="/landscape/managed">代管</a>
           </li> 
           <li class="breadcrumbs__item">
             <a class="breadcrumbs__link {% if request.path == '/landscape/pricing' %}p-link--active{% else %}p-link--soft{% endif %}" href="/landscape/pricing">价格</a>
           </li>
           <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link {% if request.path == '/landscape/install' %}p-link--active{% else %}p-link--soft{% endif %}" href="/landscape/install">安装</a>
+            <a class="breadcrumbs__link p-link--soft" href="https://ubuntu.com/landscape/install">安装</a>
           </li>
           <li class="breadcrumbs__item">
             <a class="breadcrumbs__link p-link--soft" href="https://docs.ubuntu.com/landscape/en/">文档</a>
