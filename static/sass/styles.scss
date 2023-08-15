@@ -196,11 +196,6 @@ p.u-align--center {
 }
 
 // Add is-crossed
-.is-crossed {
-  @extend .is-ticked;
-
-  background-image: url('#{$assets-path}9cdb5b1e-cross-darkaubergine.svg');
-}
 
 .p-accordion__tab {
   background-position: top $spv--medium left $sph--large;
@@ -212,7 +207,7 @@ td.p-accordion {
 
 .p-heading-icon__header {
   .lazyloaded {
-    @extend .p-heading-icon__img;
+    flex-shrink: 0;
   }
 }
 
