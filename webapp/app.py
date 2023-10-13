@@ -9,6 +9,7 @@ from canonicalwebteam.discourse import DiscourseAPI, EngagePages
 from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
 
+import webapp.template_utils as template_utils
 from webapp.views import (
     build_engage_index,
     build_engage_page,
@@ -127,7 +128,10 @@ def context():
     return {"releases": releases}
 
 
-# Image template
+# Template utility functions
 @app.context_processor
 def utility_processor():
-    return {"image": image_template}
+    return {
+        "image": image_template,
+        "shorten_acquisition_url": template_utils.shorten_acquisition_url,
+    }
