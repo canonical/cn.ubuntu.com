@@ -10,11 +10,11 @@ env:
 jobs:
   run-linkchecker:
     if: github.repository == 'canonical-web-and-design/cn.ubuntu.com'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
 
     steps:
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Build Docker image
         run: DOCKER_BUILDKIT=1 docker build --build-arg BUILD_ID=test --tag cn.ubuntu.com .
