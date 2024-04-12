@@ -15,7 +15,8 @@
     "serve": "./entrypoint 0.0.0.0:${PORT}",
     "build-css": "sass static/sass/styles.scss static/css/styles.css --load-path=node_modules --style=compressed && postcss --no-map --use autoprefixer --replace 'static/css/**/*.css'",
     "build-js": "mkdir -p static/js && webpack",
-    "build": "mkdir -p static/js && webpack && yarn run build-css",
+    "build-cookie-policy": "cp node_modules/@canonical/cookie-policy/build/js/cookie-policy.js static/js/dist/",
+    "build": "mkdir -p static/js && webpack && yarn run build-css && yarn run build-cookie-policy",
     "start": "yarn run build && concurrently --kill-others --raw 'yarn run watch-css' 'yarn run watch-js' 'yarn run serve'",
     "test-js": "jest --passWithNoTests",
     "format-scss": "prettier -w 'static/**/*.scss'"
@@ -46,9 +47,9 @@
     "webpack": "5.76.0",
     "webpack-cli": "5.0.1"
   },
-  "dependencies": {    
+  "dependencies": {
+    "@canonical/cookie-policy": "^3.6.3",
     "@canonical/global-nav": "2.7.0",
-    "@canonical/cookie-policy": "3.5.0",
     "vanilla-framework": "3.15.1"
   }
 }

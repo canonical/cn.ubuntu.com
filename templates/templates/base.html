@@ -13,6 +13,12 @@
   <link rel="preconnect" href="https://www.gstatic.com">
   <link rel="preconnect" href="https://res.cloudinary.com">
 
+  <!-- Cookie policy -->
+  <script src="{{ versioned_static('js/dist/cookie-policy.js') }}"></script>
+  <script>
+    cpNs.cookiePolicy();
+  </script>
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -88,7 +94,6 @@
   {% include "templates/footer.html" %}
 
 <script src="{{ versioned_static('js/dist/global-nav.min.js') }}" defer></script>
-<script src="{{ versioned_static('js/dist/cookie-policy.min.js') }}" defer></script>
 
 <script type="text/javascript">
   (function() {

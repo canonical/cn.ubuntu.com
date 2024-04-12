@@ -28,9 +28,6 @@
 @import 'pattern_heading-icon';
 @import 'pattern_tabs';
 
-// import cookie policy
-@import '@canonical/cookie-policy/build/css/cookie-policy';
-
 @include blog-p-list;
 @include blog-p-post;
 @include blog-p-card;
