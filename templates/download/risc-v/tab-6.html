@@ -1,25 +1,32 @@
-<div tabindex="0" role="tabpanel" id="sipeed-licheerv-dock-tab" aria-labelledby="sipeed-licheerv-dock-tab" aria-hidden="true">
-	<div class="row u-vertically-center u-no-padding">
-		<div class="col-4">
-			<h2>Sipeed LicheeRV Dock</h2>
-			<h3 class="p-heading--4">Ubuntu Server预安装镜像</h3>			
-			<p>
-				<a class="p-button--positive" href="https://cdimage.ubuntu.com/releases/{{ releases.lts.full_version }}/release/ubuntu-{{ releases.lts.full_version }}-preinstalled-server-riscv64+licheerv.img.xz">下载 {{ releases.lts.full_version }}</a>
-			</p>
-		</div>
-		<div class="col-4 u-hide--medium u-hide--small u-align--center">
-			{{ image (
-				url="https://assets.ubuntu.com/v1/b151abd7-Sipeed+LicheeRV+-+Edited-2.png",
-				alt="",
-				width="900",
-				height="700",
-				hi_def=True,
-				loading="auto"
-				) | safe
-			  }}
-		</div>
-	</div>
-	<div class="u-fixed-width">
-		<p><a href="https://wiki.ubuntu.com/RISC-V/LicheeRV"> 如何在LicheeRV Dock开发板上安装 Ubuntu </a></p>
-	</div>
+<div tabindex="0"
+     role="tabpanel"
+     id="sipeed-licheerv-dock-tab"
+     aria-labelledby="sipeed-licheerv-dock-tab"
+     aria-hidden="true">
+    <div class="row u-vertically-center u-no-padding">
+        <div class="col-4">
+            <h2>Sipeed LicheeRV Dock</h2>
+            <h3 class="p-heading--4">Ubuntu Server预安装镜像</h3>
+            <p>
+                <a class="p-button--positive"
+                   href="https://cdimage.ubuntu.com/releases/{{ releases.lts.full_version }}/release/ubuntu-{{ releases.lts.full_version }}-preinstalled-server-riscv64+licheerv.img.xz">下载 {{ releases.lts.full_version }}</a>
+            </p>
+        </div>
+        <div class="col-4 u-hide--medium u-hide--small u-align--center">
+            {{ image (
+            url="https://assets.ubuntu.com/v1/b151abd7-Sipeed+LicheeRV+-+Edited-2.png",
+            alt="",
+            width="900",
+            height="700",
+            hi_def=True,
+            loading="auto"
+            ) | safe
+            }}
+        </div>
+    </div>
+    <div class="u-fixed-width">
+        <p>
+            <a href="https://wiki.ubuntu.com/RISC-V/LicheeRV">如何在LicheeRV Dock开发板上安装 Ubuntu</a>
+        </p>
+    </div>
 </div>

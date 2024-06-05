@@ -1,82 +1,112 @@
 {% extends "templates/base.html" %}
-
 {% block title %}下载用于RISC-V平台的Ubuntu{% endblock %}
-
-{% block meta_description %}在RISC-V平台上使用Ubuntu以获得相似的开发者体验，RISC-V开发板，RISC-V Ubuntu，RISC-V OS，RISC-V操作系统。{% endblock meta_description %}
-
-{% block meta_copydoc%}https://docs.google.com/document/d/1kkJeq9HdH3iWV35HwihcJd3CxZw9Jy21W66lJl8VbWs/edit#{% endblock meta_copydoc %}
-
+{% block meta_description %}
+  在RISC-V平台上使用Ubuntu以获得相似的开发者体验，RISC-V开发板，RISC-V Ubuntu，RISC-V OS，RISC-V操作系统。
+{% endblock meta_description %}
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/1SPeefGBJBh99XWEx0newZHPxp56mZuaElq1YtUzfY4M/edit#
+{% endblock meta_copydoc %}
 {% block content %}
-
-{% include "download/secondary-nav.html" %}
-
-<section class="p-strip--suru-topped">
-  <div class="row u-vertically-center">
-    <div class="col-6">
-      <h1>下载适用于RISC-V平台的Ubuntu</h1>
-      <h2 class="p-heading--3">Ubuntu——现已支持多个RISC-V平台</h2>
-      <p>在您喜爱的RISC-V开发板上运行Ubuntu。</p>
-      <p>选择与您的硬件相匹配的操作系统镜像，将系统镜像刷入到 SD/microSD 卡上，再将其加载到您的板上即可开始体验Ubuntu。<br/>所有镜像都是基于64位Ubuntu服务器版而为开发者预览所打造。</p>
-      <p>
-        <a href="/contact" class="p-button">联系我们</a>
-      </p>
-    </div>
-    <div class="col-6 u-hide--medium u-hide--small u-align--center">
+  {% include "download/secondary-nav.html" %}
+  <section class="p-strip--suru-topped">
+    <div class="row u-vertically-center">
+      <div class="col-6">
+        <h1>下载适用于RISC-V平台的Ubuntu</h1>
+        <h2 class="p-heading--3">Ubuntu——现已支持多个RISC-V平台</h2>
+        <p>在您喜爱的RISC-V开发板上运行Ubuntu。</p>
+        <p>
+          选择与您的硬件相匹配的操作系统镜像，将系统镜像刷入到 SD/microSD 卡上，再将其加载到您的板上即可开始体验Ubuntu。
+          <br />
+          所有镜像都是基于64位Ubuntu服务器版而为开发者预览所打造。
+        </p>
+        <p>
+          <a href="/contact" class="p-button">联系我们</a>
+        </p>
+      </div>
+      <div class="col-6 u-hide--medium u-hide--small u-align--center">
         {{
-            image (
-            url="https://assets.ubuntu.com/v1/4d5b8d51-riscv-color.svg",
-            alt="",
-            width="300",
-            height="48",
-            hi_def=True,
-            loading="auto"
-            ) | safe
-          }}
-    </div>
-  </div>
-</section>
-
-<section class="p-strip--highlighted">
-  <div class="row">
-    <div class="col-4 col-medium-2">
-    <div class="p-tabs--vertical">
-      <div class="p-tabs__list js-tabbed-content" role="tablist" aria-label="Install RISC-V">
-        <div class="p-tabs__item">
-          <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="allwinner-nezha-tab" id="allwinner-nezha">全志哪吒</button>
-        </div>
-        <div class="p-tabs__item">
-          <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="microchip-polarfire-soc-fpga-icicle-kit-tab" id="microchip-polarfire-soc-fpga-icicle-kit-tab">Microchip Polarfire SoC FPGA Icicle</button>
-        </div>
-        <div class="p-tabs__item">
-          <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="milk-v-mars-tab" id="qemu-tab">Milk-V Mars</button>
-        </div>
-        <div class="p-tabs__item">
-          <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="qemu-tab" id="qemu-tab">QEMU</button>
-        </div>
-        <div class="p-tabs__item">
-          <button class="p-tabs__link" role="tab" aria-selected="true" aria-controls="quemu-sifive-image-tab" id="quemu-sifive-image" tabindex="-1">SiFive Unmatched</button>
-        </div>
-        <div class="p-tabs__item">
-          <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="sipeed-licheerv-dock-tab" id="sipeed-licheerv-dock-tab">Sipeed LicheeRV Dock</button>
-        </div>
-        <div class="p-tabs__item">
-          <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="visionfive-2-board-tab" id="starfive-visionfive-board">赛昉VisionFive 2</button>
-        </div>
+        image (
+        url="https://assets.ubuntu.com/v1/4d5b8d51-riscv-color.svg",
+        alt="",
+        width="300",
+        height="48",
+        hi_def=True,
+        loading="auto"
+        ) | safe
+        }}
       </div>
     </div>
-  </div>
-  <div class="col-8 col-medium-4">
-      {% include "download/risc-v/tab-1.html" %}
-      {% include "download/risc-v/tab-2.html" %}
-      {% include "download/risc-v/tab-3.html" %}
-      {% include "download/risc-v/tab-4.html" %}
-      {% include "download/risc-v/tab-5.html" %}
-      {% include "download/risc-v/tab-6.html" %}
-      {% include "download/risc-v/tab-7.html" %}
+  </section>
+  <section class="p-strip--highlighted">
+    <div class="row">
+      <div class="col-4 col-medium-2">
+        <div class="p-tabs--vertical">
+          <div class="p-tabs__list js-tabbed-content"
+               role="tablist"
+               aria-label="Install RISC-V">
+            <div class="p-tabs__item">
+              <button class="p-tabs__link"
+                      role="tab"
+                      aria-selected="false"
+                      aria-controls="allwinner-nezha-tab"
+                      id="allwinner-nezha">全志哪吒</button>
+            </div>
+            <div class="p-tabs__item">
+              <button class="p-tabs__link"
+                      role="tab"
+                      aria-selected="false"
+                      aria-controls="microchip-polarfire-soc-fpga-icicle-kit-tab"
+                      id="microchip-polarfire-soc-fpga-icicle-kit-tab">Microchip Polarfire SoC FPGA Icicle</button>
+            </div>
+            <div class="p-tabs__item">
+              <button class="p-tabs__link"
+                      role="tab"
+                      aria-selected="false"
+                      aria-controls="milk-v-mars-tab"
+                      id="qemu-tab">Milk-V Mars</button>
+            </div>
+            <div class="p-tabs__item">
+              <button class="p-tabs__link"
+                      role="tab"
+                      aria-selected="false"
+                      aria-controls="qemu-tab"
+                      id="qemu-tab">QEMU</button>
+            </div>
+            <div class="p-tabs__item">
+              <button class="p-tabs__link"
+                      role="tab"
+                      aria-selected="true"
+                      aria-controls="quemu-sifive-image-tab"
+                      id="quemu-sifive-image"
+                      tabindex="-1">SiFive Unmatched</button>
+            </div>
+            <div class="p-tabs__item">
+              <button class="p-tabs__link"
+                      role="tab"
+                      aria-selected="false"
+                      aria-controls="sipeed-licheerv-dock-tab"
+                      id="sipeed-licheerv-dock-tab">Sipeed LicheeRV Dock</button>
+            </div>
+            <div class="p-tabs__item">
+              <button class="p-tabs__link"
+                      role="tab"
+                      aria-selected="false"
+                      aria-controls="visionfive-2-board-tab"
+                      id="starfive-visionfive-board">赛昉VisionFive 2</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 col-medium-4">
+        {% include "download/risc-v/tab-1.html" %}
+        {% include "download/risc-v/tab-2.html" %}
+        {% include "download/risc-v/tab-3.html" %}
+        {% include "download/risc-v/tab-4.html" %}
+        {% include "download/risc-v/tab-5.html" %}
+        {% include "download/risc-v/tab-6.html" %}
+        {% include "download/risc-v/tab-7.html" %}
+      </div>
     </div>
-</div>
-</section>
-
-<script src="/static/js/src/tabbedContent.js"></script>
-
+  </section>
+  <script src="/static/js/src/tabbedContent.js"></script>
 {% endblock content %}
