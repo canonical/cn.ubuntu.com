@@ -94,10 +94,7 @@
     dropdownSelect.addEventListener('change', () => {
       selectBoard();
     });
-  } else {
-    console.error('dropdownSelect element not found');
   }
-
   function selectBoard() {
     boards.forEach(board => {
       if (board.id === dropdownSelect.value) {
