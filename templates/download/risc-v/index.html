@@ -37,10 +37,14 @@
       </div>
     </div>
   </section>
-  <section class="p-strip--highlighted">
+  <section class="p-strip is-deep  u-no-padding--top">
+    <hr class="is-fixed-width u-no-margin--bottom" />
     <div class="row">
       <div class="col-4 col-medium-2">
-        <div class="js-tabbed-content p-tabs--vertical is-black u-hide--small">
+        <div class="p-strip is-shallow u-no-padding--top">
+          <h2 class="p-text--small-caps">Choose a board</h2>
+        </div>
+        <div class="js-tabbed-content p-tabs--vertical is-black  u-hide--small">
           <div role="tablist" aria-label="Install RISC-V">
             <div class="p-tabs__item">
               <button class="p-tabs__link"
@@ -68,7 +72,7 @@
                       role="tab"
                       aria-selected="false"
                       aria-controls="qemu-tab"
-                      id="qemu-tab">QEMU</button>
+                      id="qemu">QEMU</button>
             </div>
             <div class="p-tabs__item">
               <button class="p-tabs__link"
@@ -83,7 +87,7 @@
                       role="tab"
                       aria-selected="false"
                       aria-controls="sipeed-licheerv-dock-tab"
-                      id="sipeed-licheerv-dock-tab">Sipeed LicheeRV Dock</button>
+                      id="sipeed-licheerv-dock">Sipeed LicheeRV Dock</button>
             </div>
             <div class="p-tabs__item">
               <button class="p-tabs__link"
@@ -94,6 +98,17 @@
             </div>
           </div>
         </div>
+        <form class="u-hide--large u-hide--medium">
+          <select name="boardSelect" id="boardSelect">
+            <option value="allwinner-nezha-tab" selected="">全志哪吒</option>
+            <option value="microchip-polarfire-soc-fpga-icicle-kit-tab">Microchip Polarfire SoC FPGA Icicle</option>
+            <option value="milk-v-mars-tab">Milk-V Mars</option>
+            <option value="qemu-tab">QEMU</option>
+            <option value="quemu-sifive-image-tab">SiFive Unmatched</option>
+            <option value="sipeed-licheerv-dock-tab">Sipeed LicheeRV Dock</option>
+            <option value="visionfive-2-board-tab">赛昉VisionFive 2</option>
+          </select>
+        </form>
       </div>
       <div class="col-8 col-medium-4">
         {% include "download/risc-v/tab-1.html" %}

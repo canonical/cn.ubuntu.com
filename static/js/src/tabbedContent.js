@@ -83,3 +83,25 @@
     });
   })();
 })();
+
+(function () {
+  // Toggles show board based on selection on small screens
+
+  const boards = document.querySelectorAll(`[role=tabpanel]`);
+  const dropdownSelect = document.getElementById("boardSelect");
+
+  dropdownSelect?.addEventListener("change", (event) => {
+    selectBoard();
+  });
+
+  function selectBoard() {
+    boards.forEach((board) => {
+      if (board.id === dropdownSelect.value) {
+        board.removeAttribute('hidden');
+        board.focus();
+      } else {
+        board.setAttribute('hidden', true);
+      }
+    });
+  }
+})();
