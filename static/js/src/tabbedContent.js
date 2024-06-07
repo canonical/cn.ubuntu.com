@@ -88,14 +88,18 @@
   // Toggles show board based on selection on small screens
 
   const boards = document.querySelectorAll(`[role=tabpanel]`);
-  const dropdownSelect = document.getElementById("boardSelect");
+  const dropdownSelect = document.getElementById('boardSelect');
 
-  dropdownSelect?.addEventListener("change", (event) => {
-    selectBoard();
-  });
+  if (dropdownSelect) {
+    dropdownSelect.addEventListener('change', () => {
+      selectBoard();
+    });
+  } else {
+    console.error('dropdownSelect element not found');
+  }
 
   function selectBoard() {
-    boards.forEach((board) => {
+    boards.forEach(board => {
       if (board.id === dropdownSelect.value) {
         board.removeAttribute('hidden');
         board.focus();
