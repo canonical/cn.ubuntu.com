@@ -1,11 +1,15 @@
 {% extends "templates/base.html" %}
+
 {% block title %}下载用于RISC-V平台的Ubuntu{% endblock %}
+
 {% block meta_description %}
   在RISC-V平台上使用Ubuntu以获得相似的开发者体验，RISC-V开发板，RISC-V Ubuntu，RISC-V OS，RISC-V操作系统。
 {% endblock meta_description %}
+
 {% block meta_copydoc %}
   https://docs.google.com/document/d/1SPeefGBJBh99XWEx0newZHPxp56mZuaElq1YtUzfY4M/edit#
 {% endblock meta_copydoc %}
+
 {% block content %}
   {% include "download/secondary-nav.html" %}
   <section class="p-strip--suru-topped">
@@ -44,72 +48,73 @@
         <div class="p-strip is-shallow u-no-padding--top">
           <h2 class="p-text--small-caps">Choose a board</h2>
         </div>
-        <div class="js-tabbed-content p-tabs--vertical is-black  u-hide--small">
-          <div role="tablist" aria-label="Install RISC-V">
-            <div class="p-tabs__item">
-              <button class="p-tabs__link"
-                      role="tab"
-                      aria-selected="true"
-                      aria-controls="allwinner-nezha-tab"
-                      id="allwinner-nezha">全志哪吒</button>
-            </div>
-            <div class="p-tabs__item">
-              <button class="p-tabs__link"
-                      role="tab"
-                      aria-selected="false"
-                      aria-controls="microchip-polarfire-soc-fpga-icicle-kit-tab"
-                      id="microchip-polarfire-soc-fpga-icicle-kit">Microchip Polarfire SoC FPGA Icicle</button>
-            </div>
-            <div class="p-tabs__item">
-              <button class="p-tabs__link"
-                      role="tab"
-                      aria-selected="false"
-                      aria-controls="milk-v-mars-tab"
-                      id="milk-v-mars">Milk-V Mars</button>
-            </div>
-            <div class="p-tabs__item">
-              <button class="p-tabs__link"
-                      role="tab"
-                      aria-selected="false"
-                      aria-controls="qemu-tab"
-                      id="qemu">QEMU</button>
-            </div>
-            <div class="p-tabs__item">
-              <button class="p-tabs__link"
-                      role="tab"
-                      aria-selected="true"
-                      aria-controls="quemu-sifive-image-tab"
-                      id="quemu-sifive-image"
-                      tabindex="-1">SiFive Unmatched</button>
-            </div>
-            <div class="p-tabs__item">
-              <button class="p-tabs__link"
-                      role="tab"
-                      aria-selected="false"
-                      aria-controls="sipeed-licheerv-dock-tab"
-                      id="sipeed-licheerv-dock">Sipeed LicheeRV Dock</button>
-            </div>
-            <div class="p-tabs__item">
-              <button class="p-tabs__link"
-                      role="tab"
-                      aria-selected="false"
-                      aria-controls="visionfive-2-board-tab"
-                      id="starfive-visionfive-board">赛昉VisionFive 2</button>
-            </div>
-          </div>
-        </div>
-        <form class="u-hide--large u-hide--medium">
-          <select name="boardSelect" id="boardSelect">
-            <option value="allwinner-nezha-tab" selected="">全志哪吒</option>
-            <option value="microchip-polarfire-soc-fpga-icicle-kit-tab">Microchip Polarfire SoC FPGA Icicle</option>
-            <option value="milk-v-mars-tab">Milk-V Mars</option>
-            <option value="qemu-tab">QEMU</option>
-            <option value="quemu-sifive-image-tab">SiFive Unmatched</option>
-            <option value="sipeed-licheerv-dock-tab">Sipeed LicheeRV Dock</option>
-            <option value="visionfive-2-board-tab">赛昉VisionFive 2</option>
-          </select>
-        </form>
+        <ul class="js-tabbed-content p-tabs--vertical is-black u-hide--small"
+            role="tablist"
+            aria-label="Robotics features">
+          <li>
+            <button class="p-tabs__item"
+                    id="allwinner-nezha"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="allwinner-nezha-tab">全志哪吒</button>
+          </li>
+          <li>
+            <button class="p-tabs__item"
+                    id="microchip-polarfire-soc-fpga-icicle-kit"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="microchip-polarfire-soc-fpga-icicle-kit-tab">
+              Microchip Polarfire SoC FPGA Icicle
+            </button>
+          </li>
+          <li>
+            <button class="p-tabs__item"
+                    id="milk-v-mars"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="milk-v-mars-tab">Milk-V Mars</button>
+          </li>
+          <li>
+            <button class="p-tabs__item"
+                    id="qemu"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="qemu-tab">QEMU</button>
+          </li>
+          <li>
+            <button class="p-tabs__item"
+                    id="quemu-sifive-image"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="quemu-sifive-image-tab">SiFive Unmatched</button>
+          </li>
+          <li>
+            <button class="p-tabs__item"
+                    id="sipeed-licheerv-dock"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="sipeed-licheerv-dock-tab">Sipeed LicheeRV Dock</button>
+          </li>
+          <li>
+            <button class="p-tabs__item"
+                    id="starfive-visionfive-2"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="visionfive-2-board-tab">赛昉VisionFive 2</button>
+          </li>
+        </ul>
       </div>
+      <form class="u-hide--large u-hide--medium">
+        <select name="boardSelect" id="boardSelect">
+          <option value="allwinner-nezha-tab" selected="">全志哪吒</option>
+          <option value="microchip-polarfire-soc-fpga-icicle-kit-tab">Microchip Polarfire SoC FPGA Icicle</option>
+          <option value="milk-v-mars-tab">Milk-V Mars</option>
+          <option value="qemu-tab">QEMU</option>
+          <option value="quemu-sifive-image-tab">SiFive Unmatched</option>
+          <option value="sipeed-licheerv-dock-tab">Sipeed LicheeRV Dock</option>
+          <option value="visionfive-2-board-tab">赛昉VisionFive 2</option>
+        </select>
+      </form>
       <div class="col-8 col-medium-4">
         {% include "download/risc-v/tab-1.html" %}
         {% include "download/risc-v/tab-2.html" %}
