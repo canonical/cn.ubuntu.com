@@ -1107,11 +1107,6 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@canonical/cookie-policy@3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.3.0.tgz#99df0aad2bf01c43e0a6d524b062ebc6066a3121"
-  integrity sha512-G4u2dr04t138BoIsdbnVsL5i2vBl3supgqkAG03AfvAIbbkt1QlIlodGtrv0s3sczmUTEiSNfmT3iC70GY0Suw==
-
  "@canonical/cookie-policy@3.6.4":
   version "3.6.4"
   resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.6.4.tgz#895c3770f621b73d88b0d5843c43a32d99e4a462"
