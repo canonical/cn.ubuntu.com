@@ -4,7 +4,6 @@ import re
 
 #  Packages
 import talisker.requests
-from requests import Session
 
 session = talisker.requests.get_session()
 
@@ -101,6 +100,7 @@ def engage_thank_you(engage_pages):
 
     return render_template
 
+
 def build_engage_pages_sitemap(engage_pages):
     """
     Create sitemaps for each engage page
@@ -138,6 +138,7 @@ def build_engage_pages_sitemap(engage_pages):
 
     return ep_sitemap
 
+
 def sitemap_index():
     xml_sitemap = flask.render_template("sitemap_index.xml")
     response = flask.make_response(xml_sitemap)
@@ -149,6 +150,7 @@ def sitemap_index():
 class BlogView(flask.views.View):
     def __init__(self, blog_views):
         self.blog_views = blog_views
+
 
 class BlogSitemapIndex(BlogView):
     def dispatch_request(self):
