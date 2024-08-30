@@ -12,7 +12,11 @@ from canonicalwebteam.templatefinder import TemplateFinder
 from webapp.views import (
     build_engage_index,
     build_engage_page,
+    build_engage_pages_sitemap,
     engage_thank_you,
+    sitemap_index,
+    BlogSitemapIndex,
+    BlogSitemapPage,
 )
 
 app = FlaskBase(
@@ -52,6 +56,11 @@ engage_pages = EngagePages(
     category_id=110,
     page_type="engage-pages",
     exclude_topics=[29444, 29331],
+)
+
+app.add_url_rule(
+    "/engage/sitemap.xml",
+    view_func=build_engage_pages_sitemap(engage_pages),
 )
 
 app.add_url_rule(engage_path, view_func=build_engage_index(engage_pages))
@@ -108,6 +117,8 @@ session = talisker.requests.get_session()
 app.add_url_rule("/", view_func=template_finder_view)
 app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
+app.add_url_rule("/sitemap.xml", view_func=sitemap_index)
+
 blog_views = BlogViews(
     api=BlogAPI(session=session, thumbnail_width=354, thumbnail_height=199),
     tag_ids=[3265],
@@ -115,6 +126,15 @@ blog_views = BlogViews(
     per_page=11,
 )
 app.register_blueprint(build_blueprint(blog_views), url_prefix="/blog")
+app.add_url_rule(
+    "/blog/sitemap.xml",
+    view_func=BlogSitemapIndex.as_view("sitemap", blog_views=blog_views),
+)
+app.add_url_rule(
+    "/blog/sitemap/<regex('.+'):slug>.xml",
+    view_func=BlogSitemapPage.as_view("sitemap_page", blog_views=blog_views),
+)
+
 
 # read releases.yaml
 with open("releases.yaml") as releases:
