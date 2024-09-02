@@ -108,12 +108,7 @@ def build_engage_pages_sitemap(engage_pages):
 
     def ep_sitemap():
         links = []
-        (
-            metadata,
-            count,
-            active_count,
-            current_total,
-        ) = engage_pages.get_index()
+        metadata = engage_pages.get_index()
 
         if len(metadata) == 0:
             flask.abort(404)
