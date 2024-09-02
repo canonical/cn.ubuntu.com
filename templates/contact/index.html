@@ -1,136 +1,246 @@
 {% extends "templates/base.html" %}
 
-{% if title %}{% block title %}联系Ubuntu {{ title }}{% endblock %}{% endif %}
+{% if title %}
 
-{% if meta_description %}{% block meta_description %}Ubuntu技术支持，授权，咨询，物联网，服务器，ARM服务器{{ meta_description }}{% endblock %}{% endif %}
+  {% block title %}联系Ubuntu {{ title }}{% endblock %}
+{% endif %}
+
+{% if meta_description %}
+
+  {% block meta_description %}Ubuntu技术支持，授权，咨询，物联网，服务器，ARM服务器{{ meta_description }}{% endblock %}
+{% endif %}
 
 {% block content %}
-<div id="main-content" class="inner-wrapper">
+  <div id="main-content" class="inner-wrapper">
 
-<section class="p-strip is-shallow">
-  <div class="row">
-    <h1>获取支持</h1>
-      <div class="col-5">
-        <h4>技术协助</h4>
-        <p>如您正在寻找Ubuntu的支持，<a href="https://www.ubuntu.com/support">我们的支持团队</a>可以帮助您。</p>
-        <h4>售前支持</h4>
-        <p>如您想要了解更多<a href="/support">Ubuntu官方订阅服务</a>和其他相关产品的售前支持，可通过扫描下方二维码<a href="/contact#wechat" >添加Ubuntu企业微信</a>，或填写右侧的表格。</p>
-        <h4>法律查询</h4>
-        <p>请注意，我们无法向您提供法律建议．对于其他任何关于Ubuntu的法律疑问，请联系我们<a href="mailto:legal@canonical.com">legal@canonical.com</a>。</p>
-        <h4>商标咨询</h4>
-        <p>如您要申请Ubuntu商标许可或进行其他商标查询，请<a href="https://www.ubuntu.com/legal/terms-and-policies/contact-us">提交查询</a>。我们的商标团队成员很快会与您联系。</p>
-        <h4>网站支持</h4>
-        <p>如您对Ubuntu中文官网有任何意见或需修正的地方，可到Github<a href="https://github.com/canonical-web-and-design/cn.ubuntu.com/issues/new">提交bug</a>。</p>
+    <section class="p-strip is-shallow">
+      <div class="row">
+        <h1>获取支持</h1>
+        <div class="col-5">
+          <h4>技术协助</h4>
+          <p>
+            如您正在寻找Ubuntu的支持，<a href="https://www.ubuntu.com/support">我们的支持团队</a>可以帮助您。
+          </p>
+          <h4>售前支持</h4>
+          <p>
+            如您想要了解更多<a href="/support">Ubuntu官方订阅服务</a>和其他相关产品的售前支持，可通过扫描下方二维码<a href="/contact#wechat">添加Ubuntu企业微信</a>，或填写右侧的表格。
+          </p>
+          <h4>法律查询</h4>
+          <p>
+            请注意，我们无法向您提供法律建议．对于其他任何关于Ubuntu的法律疑问，请联系我们<a href="mailto:legal@canonical.com">legal@canonical.com</a>。
+          </p>
+          <h4>商标咨询</h4>
+          <p>
+            如您要申请Ubuntu商标许可或进行其他商标查询，请<a href="https://www.ubuntu.com/legal/terms-and-policies/contact-us">提交查询</a>。我们的商标团队成员很快会与您联系。
+          </p>
+          <h4>网站支持</h4>
+          <p>
+            如您对Ubuntu中文官网有任何意见或需修正的地方，可到Github<a href="https://github.com/canonical-web-and-design/cn.ubuntu.com/issues/new">提交bug</a>。
+          </p>
+        </div>
+
+        <div class="col-7">
+          <div class="row">
+            <div class="col-6 col-start-large-3">
+              <h2>联系我们</h2>
+              <p>
+                请填写以下信息，我们将尽快与您联系。
+                <br />
+                （注：请填写工作邮箱）
+              </p>
+
+              <!-- MARKETO FORM -->
+              <form action="https://ubuntu.com/marketo/submit"
+                    method="post"
+                    id="mktoForm_2816"
+                    style="margin-top: -1rem">
+                <fieldset class="u-no-padding--top"
+                          style="border-bottom-width: 1px;
+                                 border-color:#cdcdcd">
+                  <ul class="p-list">
+                    <li class="p-list__item">
+                      <label for="firstName">名字：</label>
+                      <input required=""
+                             id="firstName"
+                             name="firstName"
+                             maxlength="255"
+                             type="text"
+                             aria-label="First Name"
+                             aria-required="true" />
+                    </li>
+                    <li>
+                      <label for="lastName">姓氏：</label>
+                      <input required=""
+                             id="lastName"
+                             name="lastName"
+                             maxlength="255"
+                             type="text"
+                             aria-label="Last Name"
+                             aria-required="true" />
+                    </li>
+                    <li>
+                      <label for="email">工作邮箱：</label>
+                      <input required=""
+                             id="email"
+                             name="email"
+                             maxlength="255"
+                             type="email"
+                             aria-label="Email"
+                             aria-required="true"
+                             pattern="^[^ ]+@[^ ]+\.[a-z]{2,26}$" />
+                    </li>
+                    <li>
+                      <label for="company">公司名称：</label>
+                      <input required=""
+                             id="company"
+                             name="company"
+                             maxlength="255"
+                             type="text"
+                             aria-label="Company Name"
+                             aria-required="true" />
+                    </li>
+                    <li>
+                      <label for="title">职位：</label>
+                      <input required=""
+                             id="title"
+                             name="title"
+                             maxlength="255"
+                             type="text"
+                             aria-label="Job Title"
+                             aria-required="true" />
+                    </li>
+                    <li>
+                      <label for="phone">手机：</label>
+                      <input required=""
+                             id="phone"
+                             name="phone"
+                             maxlength="255"
+                             type="tel"
+                             aria-label="Phone Number"
+                             aria-required="true" />
+                    </li>
+                    <li class="p-list__item">
+                      <label for="Comments_from_lead__c">您的留言:</label>
+                      <textarea required
+                                id="Comments_from_lead__c"
+                                name="Comments_from_lead__c"
+                                rows="4"
+                                maxlength="2000"></textarea>
+                    </li>
+                    <li>
+                      <button type="submit"
+                              class="u-no-margin--bottom p-card--content"
+                              style="width:50%">提交</button>
+                      <input name="formid" aria-label="formid" value="2816" type="hidden" />
+                      <input type="hidden"
+                             aria-hidden="true"
+                             aria-label="hidden field"
+                             name="Consent_to_Processing__c"
+                             value="yes" />
+                      <input type="hidden"
+                             name="acquisition_url"
+                             aria-label="acquisition_url"
+                             value="{{ request.url }}" />
+                      <input type="hidden"
+                             aria-hidden="true"
+                             aria-label="hidden field"
+                             name="utm_campaign"
+                             id="utm_campaign"
+                             value="" />
+                      <input type="hidden"
+                             aria-hidden="true"
+                             aria-label="hidden field"
+                             name="utm_medium"
+                             id="utm_medium"
+                             value="" />
+                      <input type="hidden"
+                             aria-hidden="true"
+                             aria-label="hidden field"
+                             name="utm_source"
+                             id="utm_source"
+                             value="" />
+                      <input type="hidden"
+                             aria-hidden="true"
+                             aria-label="hidden field"
+                             name="utm_content"
+                             id="utm_content"
+                             value="" />
+                      <input type="hidden"
+                             aria-hidden="true"
+                             aria-label="hidden field"
+                             name="utm_term"
+                             id="utm_term"
+                             value="" />
+                      <input type="hidden"
+                             name="returnURL"
+                             aria-label="returnURL"
+                             value="https://cn.ubuntu.com/contact/thank-you.html" />
+                    </li>
+                  </ul>
+                </fieldset>
+              </form>
+
+              <!-- /MARKETO FORM -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="u-align-text--center">您可以通过以下方式关注我们</h3>
+        </div>
       </div>
 
-      <div class="col-7">
-        <div class="row">
-          <div class="col-6 col-start-large-3">
-            <h2>联系我们</h2>
-            <p>请填写以下信息，我们将尽快与您联系。<br>（注：请填写工作邮箱）</p>
+      <div class="row p-divider">
+        <div class="col-4 p-divider__block">
+          <h4 class="u-align--center">官方微博</h4>
+          <div>
+            <a href="https://weibo.com/officialubuntu">
+              <img src="https://assets.ubuntu.com/v1/b8c058fd-weibo.png" class="img1" alt="微博" />
+            </a>
+          </div>
+          <p class="u-align--center">
+            <a class="p-button--positive" href="https://weibo.com/officialubuntu">点击关注</a>
+          </p>
+        </div>
 
-  <!-- MARKETO FORM -->
-  <form action="https://ubuntu.com/marketo/submit" method="post" id="mktoForm_2816" style="margin-top: -1rem;" >
-    <fieldset class="u-no-padding--top" style="border-bottom-width: 1px; border-color:#cdcdcd;">
-      <ul class="p-list">
-        <li class="p-list__item">
-          <label for="firstName">名字：</label>
-          <input required="" id="firstName" name="firstName" maxlength="255" type="text" aria-label="First Name" aria-required="true">
-        </li>
-        <li>
-          <label for="lastName">姓氏：</label>
-          <input required="" id="lastName" name="lastName"maxlength="255" type="text" aria-label="Last Name" aria-required="true">
-        </li>
-        <li>
-          <label for="email">工作邮箱：</label>
-          <input required="" id="email" name="email" maxlength="255" type="email" aria-label="Email" aria-required="true" pattern="^[^ ]+@[^ ]+\.[a-z]{2,26}$">
-        </li>
-        <li>
-          <label for="company">公司名称：</label>
-          <input required="" id="company" name="company" maxlength="255" type="text" aria-label="Company Name" aria-required="true">
-        </li>
-        <li>
-          <label for="title">职位：</label>
-          <input required="" id="title" name="title" maxlength="255" type="text" aria-label="Job Title" aria-required="true">
-        </li>
-        <li>
-          <label for="phone">手机：</label>
-          <input required="" id="phone" name="phone"maxlength="255" type="tel" aria-label="Phone Number" aria-required="true">
-        </li>
-        <li class="p-list__item">
-          <label for="Comments_from_lead__c">您的留言:</label>
-          <textarea required id="Comments_from_lead__c" name="Comments_from_lead__c" rows="4" maxlength="2000"></textarea>
-          </li>
-        <li>
-          <button type="submit" class="u-no-margin--bottom p-card--content" style="width:50%"> 提交 </button>
-          <input name="formid" aria-label="formid" value="2816" type="hidden">
-          <input type="hidden" aria-hidden="true" aria-label="hidden field" name="Consent_to_Processing__c" value="yes" />
-          <input type="hidden" name="acquisition_url" aria-label="acquisition_url" value="{{ request.url }}">
-          <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_campaign" id="utm_campaign" value="" />
-          <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_medium" id="utm_medium" value="" />
-          <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_source" id="utm_source" value="" />
-          <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_content" id="utm_content" value="" />
-          <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_term" id="utm_term" value="" />
-          <input type="hidden" name="returnURL" aria-label="returnURL" value="https://cn.ubuntu.com/contact/thank-you.html">
-        </li>
-      </ul>
-    </fieldset>
-  </form>
+        <div class="col-4 p-divider__block">
+          <h4 class="u-align--center">官方微信/企业微信</h4>
+          <img class="img1" id="wechat" src="https://assets.ubuntu.com/v1/6727c077-wechat.png"　alt="微信" />
+          <p class="u-align--center">
+            <a href="#" class="p-button--base is--disabled" aria-disabled="true">手机微信扫一扫</a>
+          </p>
+        </div>
 
-  <!-- /MARKETO FORM -->
+        <div class="col-4 p-divider__block">
+          <h4 class="p-align--center">开发者QQ群</h4>
+          <img class="img2" src="https://assets.ubuntu.com/v1/2a7dc6e4-qq.png" alt="" />
+          <p class="p-align--center">
+            <a class="p-button--positive"
+               href="//shang.qq.com/wpa/qunwpa?idkey=1a527d1f12599bfbf0fadc97f416fa8d5dd9b69ca91fd807cc3c01b4cc8ea830"
+               alt="ＱＱ群">点击加入</a>
+          </p>
+        </div>
       </div>
-     </div>
-    </div>
+    </section>
+
+    <section class="p-strip is-bordered is-deep">
+      <div class="row u-equal-height">
+        <div class="col-6 p-card">
+          <h3>北京办公室</h3>
+          <p>地址：北京市朝阳区建国门外大街1号国贸写字楼1座11层1118-19室</p>
+          <p>邮编: 100020</p>
+        </div>
+        <div class="col-6 p-card">
+          <h3>上海办公室</h3>
+          <p>地址：上海市漕溪北路331号12楼1246室</p>
+          <p>邮编: 200030</p>
+        </div>
+      </div>
+    </section>
   </div>
-</section>
-
-<section class="p-strip--light">
-  <div class="row">
-    <div class="col-12">
-      <h3 class="u-align-text--center">您可以通过以下方式关注我们</h3>
-    </div>
-  </div>
-
-  <div class="row p-divider">
-    <div class="col-4 p-divider__block">
-      <h4 align="center">官方微博</h4>
-    <div>
-        <a href="http://weibo.com/officialubuntu"> <img class="img1"  src="/static/img/social/weibo.png" alt="微博"></a>
-    </div>
-      <p align="center">
-        <a class="p-button--positive" href="http://weibo.com/officialubuntu" >点击关注</a></p>
-    </div>
-
-    <div class="col-4 p-divider__block">
-      <h4 align="center">官方微信/企业微信</h4>
-      <img class="img1" id="wechat" src="/static/img/social/wechat.png"　alt="微信">
-      <p align="center">
-        <a href="#" class="p-button--base is--disabled" aria-disabled="true">手机微信扫一扫</a></p>
-    </div>
-
-    <div class="col-4 p-divider__block">
-      <h4 align="center">开发者QQ群</h4>
-      <img class="img2" src="/static/img/social/qq.png">
-      <p align="center">
-        <a class="p-button--positive" href="//shang.qq.com/wpa/qunwpa?idkey=1a527d1f12599bfbf0fadc97f416fa8d5dd9b69ca91fd807cc3c01b4cc8ea830"　alt="ＱＱ群">点击加入</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip is-bordered is-deep">
-  <div class="row u-equal-height">
-    <div class="col-6 p-card">
-      <h3>北京办公室</h3>
-      <p>地址：北京市朝阳区建国门外大街1号国贸写字楼1座11层1118-19室</p>
-      <p>邮编: 100020</p>
-    </div>
-    <div class="col-6 p-card">
-      <h3>上海办公室</h3>
-      <p>地址：上海市漕溪北路331号12楼1246室</p>
-      <p>邮编: 200030</p>
-    </div>
-  </div>
-</section>
-</div>
 
 {% endblock %}
