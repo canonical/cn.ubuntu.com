@@ -1,5 +1,11 @@
 import flask
 import math
+import re
+
+#  Packages
+import talisker.requests
+
+session = talisker.requests.get_session()
 
 
 def build_engage_index(engage_docs):
@@ -93,3 +99,84 @@ def engage_thank_you(engage_pages):
         )
 
     return render_template
+
+
+def build_engage_pages_sitemap(engage_pages):
+    """
+    Create sitemaps for each engage page
+    """
+
+    def ep_sitemap():
+        links = []
+        metadata = engage_pages.get_index()
+
+        if len(metadata) == 0:
+            flask.abort(404)
+
+        for page in metadata:
+            links.append(
+                {
+                    "url": f'https://cn.ubuntu.com{page["path"]}',
+                    "last_updated": page["updated"].strftime(
+                        "%Y-%m-%dT%H:%M:%SZ"
+                    ),
+                }
+            )
+
+        xml_sitemap = flask.render_template("sitemap.xml", links=links)
+
+        response = flask.make_response(xml_sitemap)
+        response.headers["Content-Type"] = "application/xml"
+        response.headers["Cache-Control"] = "public, max-age=43200"
+
+        return response
+
+    return ep_sitemap
+
+
+def sitemap_index():
+    xml_sitemap = flask.render_template("sitemap_index.xml")
+    response = flask.make_response(xml_sitemap)
+
+    response.headers["Content-Type"] = "application/xml"
+    return response
+
+
+class BlogView(flask.views.View):
+    def __init__(self, blog_views):
+        self.blog_views = blog_views
+
+
+class BlogSitemapIndex(BlogView):
+    def dispatch_request(self):
+
+        response = session.get(
+            "https://admin.insights.ubuntu.com/sitemap_index.xml"
+        )
+
+        xml = response.text.replace(
+            "https://admin.insights.ubuntu.com/",
+            "https://cn.ubuntu.com/blog/sitemap/",
+        )
+        xml = re.sub(r"<\?xml-stylesheet.*\?>", "", xml)
+
+        response = flask.make_response(xml)
+        response.headers["Content-Type"] = "application/xml"
+        return response
+
+
+class BlogSitemapPage(BlogView):
+    def dispatch_request(self, slug):
+        response = session.get(f"https://admin.insights.ubuntu.com/{slug}.xml")
+
+        if response.status_code == 404:
+            return flask.abort(404)
+
+        xml = response.text.replace(
+            "https://admin.insights.ubuntu.com/", "https://cn.ubuntu.com/blog/"
+        )
+        xml = re.sub(r"<\?xml-stylesheet.*\?>", "", xml)
+
+        response = flask.make_response(xml)
+        response.headers["Content-Type"] = "application/xml"
+        return response
