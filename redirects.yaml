@@ -1,3 +1,4 @@
 (?P<page>.*).html: '/{page}'
 iot(?P<path>.*)/?: '/internet-of-things{path}/'
 landscape/install/?: "https://ubuntu.com/landscape/install"
+support/advantage/?: "/support/pro"
