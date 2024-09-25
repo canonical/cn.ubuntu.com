@@ -8,55 +8,54 @@
 {% include "download/secondary-nav.html" %}
 
 <section class="p-strip--suru-shape-light is-deep">
-    <div class="u-fixed-width">
-      <h1 class="p-heading--2 u-no-margin--bottom"><strong>下载Ubuntu桌面版</strong></h1>
-      <p>为全球数百万台PC和笔记本电脑提供支持的开源桌面操作系统。在下方了解更多关于Ubuntu的功能以及我们如何支持开发人员和组织的信息。</p>
-      <p>
-        <a href="/desktop" class="p-button--positive">访问Ubuntu桌面页</a>
-        <a href="https://ubuntu.com/blog/desktop">阅读Ubuntu桌面博客文章</a>
-      </p>
-    </div>
-  </section>
+  <div class="u-fixed-width">
+    <h1 class="p-heading--2 u-no-margin--bottom"><strong>下载Ubuntu桌面版</strong></h1>
+    <p>为全球数百万台PC和笔记本电脑提供支持的开源桌面操作系统。在下方了解更多关于Ubuntu的功能以及我们如何支持开发人员和组织的信息。</p>
+    <p>
+      <a href="/desktop" class="p-button--positive">访问Ubuntu桌面页</a>
+      <a href="https://ubuntu.com/blog/desktop">阅读Ubuntu桌面博客文章</a>
+    </p>
+  </div>
+</section>
 
-  <section class="p-strip--light">
-    <div class="row">
-      <div class="col-8 p-divider__block">
-        <h2>Ubuntu {{ releases.lts.full_version }} LTS</h2>      
-        <p class="u-no-padding--top">下载专为桌面PC和笔记本精心打造的Ubuntu长期支持(<abbr title="Long-term support">LTS</abbr>)版本。LTS意为“长期支持”，一般为5年。LTS版本将提供免费安全和维护更新至 {{ releases.lts.eol }}。</p>
-        <p><a href="{{ releases.lts.release_notes_url }}">Ubuntu {{ releases.lts.short_version }} LTS发布说明</a></p>
-        <p>推荐的系统配置要求：</p>
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">双核2 GHz处理器或更高</li>
-          <li class="p-list__item is-ticked">4 GB系统内存</li>
-          <li class="p-list__item is-ticked">25 GB磁盘存储空间</li>
-          <li class="p-list__item is-ticked">可访问的互联网</li>
-          <li class="p-list__item is-ticked">光驱或USB安装介质</li>
-        </ul>
-      </div>
-      <div class="col-4">
-        <div class="u-align--center u-sv4">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/3b5fa561-mascot-numbat@2x.png",
-            alt="",
-            width="200",
-            height="200",
-            hi_def=True,
-            loading="auto"
-            ) | safe
-          }}
-        </div>
-        <p>
-          <a class="p-button--positive is-wide" href="https://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.lts.short_version }}', 'eventValue' : undefined });">下载 {{ releases.lts.full_version }}</a>
-          <script>performance.mark("Download (Desktop) button rendered")</script>
-        </p>
-        <p><small>如需其他版本的Ubuntu，请参考Ubuntu桌面的<a href="https://ubuntu.com/desktop">更多信息</a></small></p>
-      </div>
-    </div>
-  </section>
-
- 
 <section class="p-strip--light">
-  <hr class="is-fixed-width">
+  <div class="row">
+    <div class="col-8 p-divider__block">
+      <h2>Ubuntu {{ releases.lts.full_version }} LTS</h2>
+      <p class="u-no-padding--top">下载专为桌面PC和笔记本精心打造的Ubuntu长期支持(<abbr title="Long-term support">LTS</abbr>)版本。LTS意为“长期支持”，一般为5年。LTS版本将提供免费安全和维护更新至 {{ releases.lts.eol }}。</p>
+      <p><a href="{{ releases.lts.release_notes_url }}">Ubuntu {{ releases.lts.short_version }} LTS发布说明</a></p>
+      <p>推荐的系统配置要求：</p>
+      <ul class="p-list is-split">
+        <li class="p-list__item is-ticked">双核2 GHz处理器或更高</li>
+        <li class="p-list__item is-ticked">4 GB系统内存</li>
+        <li class="p-list__item is-ticked">25 GB磁盘存储空间</li>
+        <li class="p-list__item is-ticked">可访问的互联网</li>
+        <li class="p-list__item is-ticked">光驱或USB安装介质</li>
+      </ul>
+    </div>
+    <div class="col-4">
+      <div class="u-align--center u-sv4">
+        {{ image (
+          url="https://assets.ubuntu.com/v1/3b5fa561-mascot-numbat@2x.png",
+          alt="",
+          width="200",
+          height="200",
+          hi_def=True,
+          loading="auto"
+          ) | safe
+        }}
+      </div>
+      <p>
+        <a class="p-button--positive is-wide" href="https://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.lts.short_version }}', 'eventValue' : undefined });">下载 {{ releases.lts.full_version }}</a>
+        <script>performance.mark("Download (Desktop) button rendered")</script>
+      </p>
+      <p><small>如需其他版本的Ubuntu，请参考Ubuntu桌面的<a href="https://ubuntu.com/desktop">更多信息</a></small></p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <hr class="is-fixed-width" />
     <div class="row">
       <h2>Ubuntu {{ releases.latest.full_version }}</h2>
       <div class="row u-equal-height p-divider u-no-padding--left u-no-padding--right">
@@ -79,7 +78,7 @@
             }}
           </div>
           <p>
-            <a class="p-button--positive is-wide js-latest-download" href="https://releases.ubuntu.com/{{ releases.latest.full_version }}/ubuntu-{{ releases.latest.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.latest.short_version }}', 'eventValue' : undefined });">下载 {{ releases.latest.full_version }}</a>
+            <a class="p-button--positive is-wide js-latest-download" href="https://releases.ubuntu.com/{{ releases.latest.desktop_version }}/ubuntu-{{ releases.latest.desktop_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.latest.desktop_version }}', 'eventValue' : undefined });">下载 {{ releases.latest.full_version }}</a>
           </p>
           <p>
             <a href="https://cdimage.ubuntu.com/releases/{{ releases.latest.short_version }}/release/ubuntu-{{ releases.latest.short_version }}-desktop-legacy-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '23.04 legacy installer', 'eventValue' : undefined });">下载 23.04 (旧版桌面安装器版本)</a>
@@ -89,7 +88,7 @@
           </p>
         </div>
       </div>
-    </div> 
+    </div>
 </section>
 
 <section class="p-strip">
@@ -114,7 +113,7 @@
       <h3 class="p-heading--4"><a href="https://ubuntu.com/tutorials/upgrading-ubuntu-desktop">升级Ubuntu桌面</a></h3>
       <p>如果您已经在运行Ubuntu，则可以从软件更新程序中单击几下进行升级。</p>
       <p>可通过本快速教程了解如何操作。</p>
-    </div>            
+    </div>
   </div>
 </section>
 
@@ -175,7 +174,7 @@
     </div>
   </div>
   <div class="u-fixed-width">
-    <hr class="p-separator">
+    <hr class="p-separator" />
   </div>
   <div class="row">
     <div class="col-4 u-align--center u-vertically-center u-hide--small u-hide--medium">
@@ -198,7 +197,7 @@
     </div>
   </div>
   <div class="u-fixed-width">
-    <hr class="p-separator">
+    <hr class="p-separator" />
   </div>
   <div class="row">
     <div class="col-8">
@@ -218,7 +217,7 @@
         ) | safe
       }}
     </div>
-  </div>    
+  </div>
 </section>
 
 <section class="p-strip">
@@ -238,7 +237,7 @@
     </div>
     <div class="col-3 p-card">
       <p class="p-card__content u-align--center"><a href="https://wiki.ubuntu.com/IRC/ChannelList">基于 IRC 的支持</a></p>
-    </div>            
+    </div>
   </div>
 </section>
 
