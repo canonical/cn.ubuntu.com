@@ -6,6 +6,9 @@
   {% include "blog/featured-articles.html" %}
 {% endif %}
 
+{% block extra_metatags %}
+  <link rel="alternate" type="application/rss+xml"  href="/blog/feed" title="cn.ubuntu.com's Blog RSS feed">
+{% endblock %}
 
 <section class="p-strip is-shallow">
   <div class="row u-equal-height u-clearfix">
