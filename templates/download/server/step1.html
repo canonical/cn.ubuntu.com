@@ -20,7 +20,7 @@
           <li class="p-list__item is-ticked">承诺的系统安全更新至{{ releases.lts.eol }}</li>
           <li class="p-list__item is-ticked">Ubuntu Pro提供安全更新维护至2036年4月*</li>
           <li class="p-list__item is-ticked">为企业客户提供商业支持</li>
-        </ul>        
+        </ul>
       </div>
       <div class="col-4 col-start-large-8 u-hide--medium u-hide--small u-align--center u-vertically-center">
           {{ image (
@@ -32,7 +32,7 @@
             loading="auto"
             ) | safe
           }}
-      </div>      
+      </div>
     </div>
 
     <div class="row">
@@ -40,7 +40,7 @@
         <ul class="p-inline-list">
           <li class="p-inline-list__item">
             <a href="/download/server/thank-you?version={{ releases.lts.full_version }}&amp;architecture=amd64" class="p-button--positive" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '{{ releases.lts.short_version }} Server-cn', 'eventValue' : undefined });">下载Ubuntu Server {{ releases.lts.full_version }} LTS</a>
-          </li>          
+          </li>
           <li class="p-inline-list__item"><a href="#downloads">其他下载&nbsp;&rsaquo;</a></li>
           <li class="p-inline-list__item"><a href="#architectures">其他架构&nbsp;&rsaquo;</a></li>
         </ul>
@@ -50,36 +50,36 @@
           阅读 Ubuntu 服务器 {{ releases.lts.short_version }} LTS 发布公告
         </a>
       </p>
-      <small>* Ubuntu Pro提供10年的安全更新，额外的2年需要Add-on组件。</small>         
+      <small>* Ubuntu Pro提供10年的安全更新，额外的2年需要Add-on组件。</small>
       </p>
-  
+
     </div>
-    
+
     <div class="row">
       <div class="col-12">
         <button disabled class="p-button u-no-margin--left">
           选项 1 - 手动安装到服务器
         </button>
-        <form action="/download/server/step2" style="display: inline">          
+        <form action="/download/server/step2" style="display: inline">
           <button type="submit" class="p-button is-inline" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Next option', 'eventLabel' : 'Option 2', 'eventValue' : undefined });">
             选项 2 - 即时Ubuntu VM
           </button>
-        </form>        
-        <form action="/download/server/choose" style="display: inline">         
+        </form>
+        <form action="/download/server/choose" style="display: inline">
           <button type="submit" class="p-button is-inline" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Server download', 'eventAction' : 'Previous option', 'eventLabel' : 'Option 1', 'eventValue' : undefined });">
             选项 3 - 自动化的服务器配置
           </button>
         </form>
       </div>
     </div>
-    
+
     {% if releases.latest.short_version > releases.lts.short_version %}
     <div class="p-strip is-shallow">
       <div class="u-fixed-width">
         <hr>
       </div>
     </div>
-    <div class="row u-equal-height" id="releases">      
+    <div class="row u-equal-height" id="releases">
       <div class="col-7">
         <h2>可选择版本</h2>
         <h3>
@@ -89,11 +89,11 @@
         <p><a class="p-button--positive" href="https://releases.ubuntu.com/{{ releases.latest.short_version }}/ubuntu-{{ releases.latest.short_version }}-live-server-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Server', 'eventLabel' : '{{ releases.latest.short_version }} Server-cn', 'eventValue' : undefined });">下载Ubuntu Server {{ releases.latest.short_version }}</a>
         </p>
         <p><a href="{{ releases.latest.release_notes_url }}">阅读Ubuntu Server {{ releases.latest.short_version }}发布说明</a>
-        </p>       
-      </div>      
+        </p>
+      </div>
       <div class="col-4 col-start-large-8 u-hide--medium u-hide--small u-align--center u-vertically-center">
         {{ image (
-          url="https://assets.ubuntu.com/v1/3a32d136-Lobster_circular.png",
+          url="https://assets.ubuntu.com/v1/91be1162-Oracular%20Oriole%20Mascot%20transparent%20background.png",
           alt="",
           width="260",
           height="260",
@@ -101,11 +101,11 @@
           loading="lazy"
           ) | safe
         }}
-      </div>      
-    </div>    
+      </div>
+    </div>
     {% endif %}
   </section>
-  
+
   <section class="p-strip--light u-no-padding--bottom" id="downloads">
     <div class="row">
       <div class="col-10">
@@ -144,7 +144,7 @@
       </div>
     </div>
   </section>
-  
+
   <section class="p-strip--light" id="architectures">
     <div class="row">
       <div class="col-10">
