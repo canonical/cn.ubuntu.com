@@ -38,6 +38,7 @@ jobs:
             https://ubuntu.com/security
             https://ubuntu.com/static/css/*
             https://www.xilinx.com/applications/*
+            https://player.vimeo.com/video/*
 
           [output]
           status=0
@@ -47,7 +48,7 @@ jobs:
           EOF
 
       - name: Run linkchecker for 404 errors only
-        run: linkchecker --no-warning https://ubuntu.com
+        run: linkchecker --no-warning https://cn.ubuntu.com
 
       - name: Send message on failure
         if: failure()
