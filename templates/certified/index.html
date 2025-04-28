@@ -1,0 +1,744 @@
+{% extends "templates/base.html" %}
+
+{#-
+  TODO replace with upstreamed macro
+  import after https://github.com/canonical/vanilla-framework/pull/5503 is merged
+-#}
+{% from "macros/_vf_tiered-list.jinja" import vf_tiered_list %}
+
+{% block title %}Ubuntu官方认证硬件 {{ title }}{% endblock %}
+
+{% block meta_description %}
+  {{ meta_description }}
+  通过Ubuntu官方认证的硬件，如服务器、笔记本和工作站、IoT物联网设备等等可以获得更好的支持，涵盖最长12年的集成测试和审查，提供开箱即用的体验，无需为繁琐的系统组件驱动程序和兼容性而担忧。
+{% endblock %}
+
+{% block body_class %}
+is-paper
+{% endblock body_class %}
+
+{% block content %}
+  <section class="p-section">
+    <div class="p-suru--25-75">
+      <div class="row--25-75">
+        <div class="col">
+          {{ image(url="https://assets.ubuntu.com/v1/b9b1cbf0-Ubuntu-certified-badge-RGB.svg",
+            alt="Ubuntu 认证硬件徽标",
+            width="90",
+            height="128",
+            hi_def=True,
+            loading="auto"
+          ) | safe }}
+        </div>
+        <div class="col">
+          <h1>Ubuntu 硬件认证计划</h1>
+          <h2>
+            通过广泛的测试和审查过程，<br/>
+            为您确保最佳的Ubuntu使用体验
+          </h2>
+          <p>
+            通过 Ubuntu 官方认证的硬件，如服务器、笔记本和工作站、IoT物联网设备等等可以获得更好的支持，开箱即用的体验，
+            且无需为繁琐的系统组件驱动和兼容性而担忧。
+          </p>
+          <hr class="p-rule--muted" />
+          <p>
+            <a class="p-button--positive" href="/contact">深入了解 Ubuntu 发布周期 ›</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- call(slot) vf_tiered_list(
+    is_description_full_width_on_desktop=false,
+    is_list_full_width_on_tablet=true,
+    is_image_full_width=false
+  ) -%}
+    {%- if slot == 'title' -%}
+      <h2>通过认证的硬件享最佳<br/>Ubuntu体验</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <p>预装开箱即用的Ubuntu操作系统，并已通过广泛的可靠性和性能测试</p>
+    {%- endif -%}
+
+    {%- if slot == "image" -%}
+      <div class="p-image-container--16-9 is-cover">
+        {{ image(
+          url="https://assets.ubuntu.com/v1/966f0d9f-laptop.png",
+          alt="选用Ubuntu认证硬件",
+          width="1200",
+          height="675",
+          hi_def=True,
+          loading="auto",
+          attrs={"class": "p-image-container__image"}
+        ) | safe }}
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">选择值得信赖的硬件</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>查看Ubuntu认证机型列表，选择符合您需求的合作伙伴硬件。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">降低成本</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>可靠的认证硬件可簡化解决方案的实施，降低操作系统开发和支持的成本。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">加速产品上市</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>利用 Canonical 和硬件合作伙伴的专业知识，快速将您的解决方案推向市场。</p>
+    {%- endif -%}
+  {%- endcall -%}
+
+  <section class="p-strip">
+    <div class="p-strip u-no-padding--top">
+      <div class="grid-row">
+        <hr class="p-rule" />
+        <div class="grid-col-4">
+          <h2 id="certified-testing-heading">广泛的测试和验证</h2>
+        </div>
+        <div class="grid-col-4">
+          <h3>确保驱动程序集成和出色的设备性能</h3>
+          <p>
+            Canonical 的认证团队进行超过 500 项专注于操作系统兼容性的硬件测试，以确保 Ubuntu 始终为您提供最佳体验。系统的各个方面，
+            包括驱动程序集成等，都经过全面验证把关。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <ul class="grid-row" aria-labelledby="certified-testing-heading">
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/100c98d5-audio.png",
+            alt="",
+            width="48",
+            height="48",
+            hi_def=True,
+            loading="auto"
+          ) | safe }} Audio
+        </p>
+        <hr class="p-rule--muted" />
+      </li>
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/f7353566-Ethernet.png",
+            alt="",
+            width="48",
+            height="48",
+            hi_def=True,
+            loading="auto"
+          ) | safe }} Ethernet
+        </p>
+        <hr class="p-rule--muted" />
+      </li>
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/87ed7bd3-wireless.png",
+            alt="",
+            width="48",
+            height="48",
+            hi_def=True,
+            loading="auto"
+          ) | safe }} Wireless
+        </p>
+        <hr class="p-rule--muted" />
+      </li>
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/4b1205dd-reference.png",
+            alt="",
+            width="48",
+            height="48",
+            hi_def=True,
+            loading="auto"
+          ) | safe }} TRM
+        </p>
+        <hr class="p-rule--muted" />
+      </li>
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/8fa3dd70-bluetooth.png",
+            alt="",
+            width="48",
+            height="48",
+            hi_def=True,
+            loading="auto"
+          ) | safe }} Bluetooth
+        </p>
+        <hr class="p-rule--muted" />
+      </li>
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/4a8a3e7b-usb.png",
+            alt="",
+            width="48",
+            height="48",
+            hi_def=True,
+            loading="auto"
+          ) | safe }} USB
+        </p>
+        <hr class="p-rule--muted" />
+      </li>
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/7ba42035-download.png",
+            alt="",
+            width="48",
+            height="48",
+            hi_def=True,
+            loading="auto"
+          ) | safe }} Firmware
+        </p>
+        <hr class="p-rule--muted" />
+      </li>
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/eaa5eb3f-battery.png",
+            alt="",
+            width="48",
+            height="48",
+            hi_def=True,
+            loading="auto"
+          ) | safe }} Power management
+        </p>
+        <hr class="p-rule--muted" />
+      </li>
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/70e6519c-WWAN.png",
+            alt="",
+            width="48",
+            height="48",
+            hi_def=True,
+            loading="auto"
+          ) | safe }} WWAN
+        </p>
+        <hr class="p-rule--muted u-hide--large" />
+      </li>
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+          url="https://assets.ubuntu.com/v1/bd64120e-Media%20cards.png",
+          alt="",
+          width="48",
+          height="48",
+          hi_def=True,
+          loading="auto"
+          ) | safe }} Media cards
+        </p>
+        <hr class="p-rule--muted u-hide--large" />
+      </li>
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/c29c13fd-memory.png",
+            alt="",
+            width="48",
+            height="48",
+            hi_def=True,
+            loading="auto"
+          ) | safe }} Memory
+        </p>
+      </li>
+      <li class="grid-col-2 grid-col-medium-2 grid-col-small-2">
+        <p class="p-certified-testing-item">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/960737c5-cpu.png",
+            alt="",
+            width="48",
+            height="48",
+            hi_def=True,
+            loading="auto"
+          ) | safe }} CPU
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="p-section">
+    <hr class="p-rule u-fixed-width" />
+    <div class="grid-row">
+      <div class="grid-col-4">
+        <h2>最长可维持12年的支持</h2>
+      </div>
+      <div class="grid-col-4">
+        <div class="p-image-container--3-2 is-cover is-highlighted">
+          {#- In the current version of flask base used in this project, the {{
+          image }} with loading="lazy" creates an intermediate div.lazyloaded with
+          the image inside it, which will make the image container styling not
+          work. Image needs to be a direct child of the image container. So, we
+          use auto loading for now - this can be changed to lazy once flask base
+          is upgraded. -#}
+          {{ image(
+            url="https://assets.ubuntu.com/v1/89c81238-iso.png",
+            alt="最长可达12年支持",
+            width="1200",
+            height="800",
+            hi_def=True,
+            loading="auto",
+            attrs={"class": "p-image-container__image"}
+            ) | safe }}
+        </div>
+        <p>
+          Ubuntu 大约每三周发布稳定版本更新（Stable Release Updates，SRU），确保提供安全可靠的使用体验。
+          这些更新经过硬件认证团队的精心测试，以确保Ubuntu可以很好地运行并且可以为您的业务做好准备。
+        </p>
+        <hr class="p-rule--muted" />
+        <p>
+          <a href="https://ubuntu.com/about/release-cycle">深入了解 Ubuntu 发布周期 ›</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <hr class="p-rule u-fixed-width" />
+    <div class="grid-row">
+      <div class="grid-col-4">
+        <h2>
+          实机存放于实验室，<br/>
+          持续进行测试
+        </h2>
+      </div>
+      <div class="grid-col-4">
+        <div class="p-image-container--16-9 is-cover is-highlighted">
+          {{ image(
+            url="https://assets.ubuntu.com/v1/af7b3987-server.png",
+            alt="Canonical硬件认证专用实验室",
+            width="1200",
+            height="675",
+            hi_def=True,
+            loading="auto"
+            ) | safe }}
+        </div>
+        <p class="p-heading--5">Canonical 在全球多个专用实验室进行硬件测试。</p>
+        <p>
+          Canonical 将在整个 Ubuntu 版本生命周期内持续进行一系列测试和验证，
+          并以 “Ubuntu Certified” 贴纸作为认证标记。您也可以随时于认证列表中查找该设备经认证的项目。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <hr class="p-rule u-fixed-width" />
+    <div class="grid-row">
+      <div class="grid-col-4">
+        <h2>查看已认证的硬件</h2>
+      </div>
+      <div class="grid-col-4">
+        <ul class="p-list--divided">
+          <li class="p-list__item p-certified-testing-item">
+            {#- Laptop -#}
+            {{ image(
+              url="https://assets.ubuntu.com/v1/7d7ccf9d-laptop.png",
+              alt="笔记本",
+              width="48",
+              height="48",
+              hi_def=True,
+              loading="auto"
+              ) | safe }}
+            <a href="https://ubuntu.com/certified/laptops">笔记本</a>
+          </li>
+          {#- Desktop -#}
+          <li class="p-list__item p-certified-testing-item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/3c5bbe20-desktop.png",
+              alt="工作站",
+              width="48",
+              height="48",
+              hi_def=True,
+              loading="auto"
+              ) | safe }}
+            <a href="https://ubuntu.com/certified/desktops">工作站</a>
+          </li>
+          {#- Server -#}
+          <li class="p-list__item p-certified-testing-item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/e31d2e06-server.png",
+              alt="服务器",
+              width="48",
+              height="48",
+              hi_def=True,
+              loading="auto"
+              ) | safe }}
+            <a href="https://ubuntu.com/certified/servers">服务器</a>
+          </li>
+          {#- IoT -#}
+          <li class="p-list__item p-certified-testing-item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/9f0880b8-IoT.png",
+              alt="IoT物联网设备",
+              width="48",
+              height="48",
+              hi_def=True,
+              loading="auto"
+              ) | safe }}
+            <a href="https://ubuntu.com/certified/devices">IoT物联网设备</a>
+          </li>
+          {#- System-on-chip -#}
+          <li class="p-list__item p-certified-testing-item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/ffe3c497-SoC.png",
+              alt="系统级芯片",
+              width="48",
+              height="48",
+              hi_def=True,
+              loading="auto"
+            ) | safe }}
+            <a href="https://ubuntu.com/certified/socs">系统级芯片</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section u-no-padding--bottom">
+    <div class="u-fixed-width">
+      <hr class="p-rule" />
+      <h2>参与认证计划的部分合作伙伴</h2>
+      <div class="p-logo-section">
+        <div class="p-logo-section__items">
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/1bdd5ed9-hp-logo.png",
+              alt="",
+              width="89",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/84c6e0b1-Dell-logo.png",
+              alt="",
+              width="258",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/617072d2-lenovo-logo.png",
+              alt="",
+              width="135",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/f27a4f07-ibm-logo.png",
+              alt="",
+              width="97",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/8fcb6f0a-qct-logo.png",
+              alt="",
+              width="167",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/6e2e5074-cisco-logo.png",
+              alt="",
+              width="126",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/7346b909-gigabyte-logo.png",
+              alt="",
+              width="156",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/05223ad0-fujitsu-logo.png",
+              alt="",
+              width="117",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/686daa7e-asus-logo.png",
+              alt="",
+              width="149",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/3d7fd2aa-amd-logo.png",
+              alt="",
+              width="151",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/52e4b1f4-intel-new-logo.png",
+              alt="",
+              width="108",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/e91e865e-nvidia-logo.png",
+              alt="",
+              width="207",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/402a1ed7-advantech-logo.png",
+              alt="",
+              width="206",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/f29fb4b0-aaeon-logo.png",
+              alt="",
+              width="148",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/a4150a31-dfi-logo.png",
+              alt="",
+              width="69",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/4c6476d2-adlink-logo.png",
+              alt="",
+              width="191",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/c99c7be2-hp-enterprise-logo.png",
+              alt="",
+              width="180",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/26165d4b-inspur.png",
+              alt="",
+              width="158",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/7782b0b3-raspberry%20pi.png",
+              alt="",
+              width="215",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/b28474d7-ASrock.png",
+              alt="",
+              width="150",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/f27f03b6-Axiomtek.png",
+              alt="",
+              width="244",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/5472634f-eurotech-group-logo.png",
+              alt="",
+              width="176",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/960611bf-onlogic.png",
+              alt="",
+              width="188",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/7c5e69cc-iei-logo.png",
+              alt="",
+              width="86",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/e99dc799-huawei-logo.png",
+              alt="",
+              width="206",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(
+              url="https://assets.ubuntu.com/v1/935823f0-ZTE-logo.png",
+              alt="",
+              width="68",
+              height="208",
+              hi_def=True,
+              loading="auto",
+              attrs={"class": "p-logo-section__logo"}
+              ) | safe }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="p-rule is-fixed-width"/>
+  </section>
+  <section class="p-strip is-deep">
+    <div class="grid-row u-vertically-center">
+      <p class="p-heading--2">
+        通过Ubuntu官方硬件认证是您实现差异化优势的最佳选择<br/>
+        <a href="https://canonical.com/partners">了解 Canonical 合作伙伴 &rsaquo;</a>
+      </p>
+    </div>
+  </section>
+  <section class="p-section">
+    <hr class="p-rule u-fixed-width"/>
+    <div class="grid-row">
+      <div class="grid-col-4">
+        <h2>加入硬件认证计划</h2>
+      </div>
+      <div class="grid-col-4">
+        <p>
+          成为合作伙伴意味着您将与我们的工程和认证团队合作，以确保所有硬件在整个操作系统的生命周期内的兼容性和优化的性能。
+        </p>
+        <p>
+          我们的认证计划能够增强客户对您产品与 Ubuntu 无缝集成的信心，更有机会接触到全球寻找 Ubuntu 兼容设备的消费者。
+        </p>
+        <hr class="p-rule--muted"/>
+        <p>
+          <a class="p-button--positive" href="/contact">与我们联系</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}
