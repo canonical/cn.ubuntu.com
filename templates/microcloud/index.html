@@ -1,0 +1,272 @@
+{% extends "templates/base.html" %}
+
+{% block title %}MicroCloud — 打造开源、灵活、可扩展的云端架构 {{ page_title }}{% endblock %}
+
+{% block meta_description %}
+  {{ meta_description }}MicroCloud 是一个轻量级但功能强大的开源云平台，专为小集群和边缘部署而构建。由三个领先开源解决方案 LXD、Ceph、OVN 合并成一个轻量云，轻松从单节点扩展至多达 50 个节点的大型集群。
+{% endblock %}
+
+{% block content %}
+
+  <section class="p-strip is-shallow">
+    <div class="row--50-50">
+      <div class="col">
+        <h1 class="p-heading--2" style="font-weight: 550">MicroCloud</h1>
+        <h2 class="p-heading--2">
+          打造简单、灵活、
+          <br />
+          轻量且功能丰富的开源云端架构
+        </h2>
+        <div class="p-strip is-shallow">
+          <hr />
+          <a href="engage/guide-to-micro-clouds" class="p-button--positive">阅读 MicroCloud 指南</a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-image-container--3-2 is-cover">
+          <img class="p-image-container__image"
+               src="https://assets.ubuntu.com/v1/1f3fd30d-hero-img.jpg"
+               alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip is-shallow">
+    <div class="row--50-50">
+      <hr />
+      <div class="col">
+        <h2 class="p-heading--2" style="font-weight: 180;">MicroCloud主要特性</h2>
+      </div>
+      <div class="col">
+        <ul class="p-list--divided">
+          <li class="p-list__item is-ticked p-text--small">快速轻松部署集群</li>
+          <li class="p-list__item is-ticked p-text--small">自动安全更新和简化的升级</li>
+          <li class="p-list__item is-ticked p-text--small">支持运行虚拟机或系统容器以实现更高的密度</li>
+          <li class="p-list__item is-ticked p-text--small">支持远程认证、细化访问控制、项目和多用户设置功能</li>
+          <li class="p-list__item is-ticked p-text--small">简化大规模复制操作</li>
+          <li class="p-list__item is-ticked p-text--small">
+            完全开源，并可通过<a href="support/pro">Ubuntu Pro</a>提供企业技术支持
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip is-shallow">
+    <div class="row--50-50">
+      <hr />
+      <div class="col">
+        <h2 style="font-weight: 180;">部署的大小</h2>
+      </div>
+      <div class="col">
+        <div class="u-align-text--small-to-default p-text--small">
+          为小集群和边缘部署而设计，MicroCloud 可从单节点开始运行，但为实现高可用性（HA，high availability）所需的最低默认数量至少使用 3 个节点。系统规模可灵活扩展，从单节点轻松扩展至多达 50 个节点的大型集群。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip is-shallow">
+    <div class="u-fixed-width">
+      <div class="p-strip is-shallow">
+        <hr />
+        <h2 style="font-weight: 180;">在几分钟内部署一个功能齐全且可扩展的云环境</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9 col-start-large-4">
+        <hr class="is-muted" />
+      </div>
+    </div>
+    <div class="row p-strip is-shallow u-no-padding--top">
+      <div class="col-medium-3 col-3 col-start-large-4">
+        <h3 class="p-heading--5">自动化部署</h3>
+      </div>
+      <div class="col-medium-3 col-6">
+        <p class="p-text--small">MicroCloud 注重简单和自动化的设计。无论是在办公室后端还是在难以到达的远程边缘站点，MicroCloud 都能实现部署和运维的自动化，几乎无需派遣人员到现场维护。</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9 col-start-large-4">
+        <hr class="is-muted" />
+      </div>
+    </div>
+    <div class="row p-strip is-shallow u-no-padding--top">
+      <div class="col-medium-3 col-3 col-start-large-4">
+        <h3 class="p-heading--5">自动更新确保安全性</h3>
+      </div>
+      <div class="col-medium-3 col-6">
+        <p class="p-text--small">
+          即便是小规模的 MicroCloud 仍可能处理着大量数据，甚至运行敏感的工作负载。为了确保数据安全，及时应对安全性和漏洞更新是关键。MicroCloud 使用 snap 进行组件打包，以实在无缝更新的同时提供额外的隔离层
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9 col-start-large-4">
+        <hr class="is-muted" />
+      </div>
+    </div>
+    <div class="row p-strip is-shallow u-no-padding--top">
+      <div class="col-medium-3 col-3 col-start-large-4">
+        <h3 class="p-heading--5">高效利用成本和资源</h3>
+      </div>
+      <div class="col-medium-3 col-6">
+        <p class="p-text--small">
+          除了 Ubuntu Server 和 Desktop，MicroCloud 也可运行于专为边缘场景优化的轻量级操作系统 Ubuntu Core。结合 Ubuntu Core，用户可以构建极轻量化的云，不牺牲性能地高效利用资源，同时有效控制成本。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip is-shallow">
+    <div class="u-fixed-width">
+      <div class="p-image-container--16-9">
+        <img class="p-image-container__image"
+             src="https://assets.ubuntu.com/v1/95a4e4a9-server-room.jpg"
+             alt=""
+             width="" />
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip is-shallow">
+    <div class="row--50-50">
+      <hr />
+      <div class="col">
+        <h2 style="font-weight: 180;">MicroCloud组件</h2>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="p-heading--5">由三个领先开源解决方案合并成一个轻量云</div>
+          <div class="u-align-text--small-to-default p-text--small">
+            MicroCloud 将三个领先的开源解决方案合并成一个轻量云，提供企业可随时使用的功能：系统容器和虚拟机管理工具 <a href="https://canonical.com/lxd">LXD</a> 实现计算和虚拟化；<a href="https://ubuntu.com/ceph">Ceph</a> 提供块、文件系统和对象存储；<a href="https://ubuntu.com/blog/data-centre-networking-what-is-ovn">OVN</a> 用于网络。这些都是有频繁更新、得到良好支持的生产级解决方案，基于此三者出色开源工具，Canonical 能够交付构建简单的云平台 MicroCloud。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip is-shallow">
+    <div class="row--25-75">
+      <hr />
+      <div class="p-strip is-shallow">
+        <h2 style="font-weight: 180;">MicroCloud用例</h2>
+      </div>
+      <div class="col-3"></div>
+      <div class="col-9">
+        <ul class="p-list p-text--small">
+          <li>
+            <hr />
+            <div class="p-strip is-shallow">
+              <div class="row">
+                <div class="col-3">
+                  <h3 class="p-heading--5">大规模边缘计算</h3>
+                </div>
+                <div class="col-6">
+                  <ul class="p-list--divided">
+                    <li class="p-list__item">工业、电信、零售、银行等，MicroCloud 是各行业理想的边缘计算解决方案。</li>
+                    <li class="p-list__item has-bullet">高扩展性、低延迟，适用于关键应用的高可用 HA 集群</li>
+                    <li class="p-list__item has-bullet">轻量设计，可在小型服务器或低成本小型设备上运行</li>
+                    <li class="p-list__item has-bullet">低维护、自修复功能，几乎无需人工干预</li>
+                    <li class="p-list__item">
+                      <a href="https://cn.ubuntu.com/engage/guide-to-micro-clouds">了解更多关于 MicroCloud 的边缘计算应用 ›</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <hr />
+            <div class="p-strip is-shallow">
+              <div class="row">
+                <div class="col-3">
+                  <h3 class="p-heading--5">可扩展的云基础设施</h3>
+                </div>
+                <div class="col-6">
+                  <ul class="p-list--divided">
+                    <li class="p-list__item">您是否需要在受控环境中处理机密工作负载，或者因公共云不可预测的费用而感到困扰？MicroCloud 满足您所需的高 CP 值：</li>
+                    <li class="p-list__item has-bullet">高效利用资源，降低成本</li>
+                    <li class="p-list__item has-bullet">简单的部署和运营</li>
+                    <li class="p-list__item has-bullet">随着需求增长，轻松扩展</li>
+                    <li class="p-list__item">
+                      <a href="https://ubuntu.com/engage/hypervisor-to-lxd-case-study?_gl=1*1wvwph3*_gcl_au*MTE0MTYxMDQ5LjE3MzA3ODk3NDI.">从客户案例了解 LXD 的高效性 ›</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <hr />
+            <div class="p-strip is-shallow">
+              <div class="row">
+                <div class="col-3">
+                  <h3 class="p-heading--5">高效的开发环境</h3>
+                </div>
+                <div class="col-6">
+                  <ul class="p-list--divided">
+                    <li class="p-list__item">MicroCloud 够轻量，轻得能直接在开发者的笔记本电脑上运行。一些在开发环境的使用场景例如：</li>
+                    <li class="p-list__item has-bullet">轻量且受限的临时测试环境</li>
+                    <li class="p-list__item has-bullet">模拟或测试复杂的基础设施流程</li>
+                    <li class="p-list__item has-bullet">模拟工作负载在生产环境中的表现</li>
+                    <li class="p-list__item has-bullet">安全地实验新技术</li>
+                    <li class="p-list__item">
+                      <a href="https://canonical-microcloud.readthedocs-hosted.com/stable/microcloud/tutorial/get_started/">按教程部署您自己的 MicroCloud ›</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip is-shallow">
+    <div class="row--50-50">
+      <hr />
+      <div class="col">
+        <h2 style="font-weight: 180;">以MicroCloud在较小的集群中运行基础设施</h2>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="u-align-text--small-to-default p-text--small">
+            许多用户在较小的集群中运行基础设施，每个集群都有特定用途 － 这样的用例非常适合 Canonical MicroCloud。MicroCloud 提供集成选项及明确的默认值，确保操作简单，并使 MicroCloud 在非特制商品硬件上也能正常运行。
+          </div>
+          <hr />
+          <a href="engage/vmware-migration-scenarios">MicroCloud 及 OpenStack 等方案的比较 ›</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip is-shallow">
+    <div class="row--50-50">
+      <hr />
+      <div class="col">
+        <h2 style="font-weight: 180;">向专业团队咨询</h2>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="p-image-container--16-9">
+            <img class="p-image-container__image"
+                 src="https://assets.ubuntu.com/v1/eb91057e-consult-with-professional.jpg"
+                 alt=""
+                 width="" />
+          </div>
+          <div class="u-align-text--small-to-default p-text--small">
+            MicroCloud 具备低维护、高效率和高可靠性的特点。您有具体的使用需求在规划中吗？欢迎联系 Canonical 深入讨论细节。
+          </div>
+          <hr />
+          <p>
+            <a href="contact" class="p-button--positive">联系我们</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
