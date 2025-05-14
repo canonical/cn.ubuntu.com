@@ -1,32 +1,62 @@
-name: Run linkchecker on site
+name: Links on cb.ubuntu.com live
 
 on:
   schedule:
-    - cron:  '0 19 * * *'
-
-env:
-  PORT: 8010
+    - cron: "20 7 * * *"
 
 jobs:
-  run-linkchecker:
-    if: github.repository == 'canonical-web-and-design/cn.ubuntu.com'
-    runs-on: ubuntu-18.04
+  check-links:
+    if: github.repository == 'canonical/cn.ubuntu.com'
+    runs-on: ubuntu-latest
 
     steps:
-
-      - uses: actions/checkout@v3
-
-      - name: Build Docker image
-        run: DOCKER_BUILDKIT=1 docker build --build-arg BUILD_ID=test --tag cn.ubuntu.com .
-
-      - name: Run server with Docker
-        run: docker run -p ${PORT}:80 --env SECRET_KEY=insecure_secret_key cn.ubuntu.com &
-
-      - name: Check server status
-        run: curl localhost:${PORT}/_status/check -I
-
       - name: Install linkchecker
-        run: sudo apt update && sudo apt install linkchecker
+        run: sudo pip install LinkChecker
 
-      - name: Run linkchecker on live site
-        run: linkchecker --threads 2 --no-warnings --check-extern --ignore-url /blog --ignore-url https://assets.ubuntu.com$ --ignore-url ".*(?:png|jpg|jpeg|gif|bmp|svg|js)$" --ignore-url /f_auto --ignore-url /q_auto --ignore-url /fl_sanitize --ignore-url /w_* --ignore-url /h_* --ignore-url https://www.gstatic.com$ --ignore-url https://res.cloudinary.com$ --ignore-url googleusercontent.com http://localhost:${PORT}
+      - name: Write linkchecker config file
+        run: |
+          mkdir -p ~/.linkchecker
+          cat > ~/.linkchecker/linkcheckerrc <<EOF
+          [checking]
+          maxrequestspersecond=5
+          recursionlevel=2
+          timeout=1000
+          sslverify=0
+
+          [filtering]
+          checkextern=1
+          ignore=
+            https://res.cloudinary.com
+            q_auto
+            fl_sanitize
+            c_fill
+            e_sharpen
+            w_[0-9]*
+            h_[0-9]*
+            https://ubuntu.com/blog
+            https://ubuntu.com/security
+            https://ubuntu.com/static/css/*
+            http://www.brendangregg.com
+            http://www.adlinktech.com/en/index
+            https://www.zoominfo.com/legal/privacy-policy
+            https://player.vimeo.com/video/*
+            /flags.png
+            /flags@2x.png
+            https?://[a-z0-9]*\.example\.com
+            https://lenovopress.lenovo.com/*
+            https://www.xilinx.com/applications/*
+
+          [output]
+          status=0
+          warnings=0
+          ignoreerrors=
+            ^http?s://.* ^.*(471|500|503|504|400)
+          EOF
+
+      - name: Run linkchecker for 404 errors only
+        run: linkchecker --no-warning https://cn.ubuntu.com
+
+      - name: Send message on failure
+        if: failure()
+        run: curl -X POST -F "workflow=${GITHUB_WORKFLOW}" -F "repo_name=${GITHUB_REPOSITORY}" -F "action_id=${GITHUB_RUN_ID}" ${{ secrets.BOT_URL }}?room=web--design
+
