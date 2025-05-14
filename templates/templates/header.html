@@ -16,7 +16,7 @@
         <span class="u-off-screen">
           <a href="#main-content">Jump to main content</a>
         </span>
-        <ul class="p-navigation__items" role="menu">
+        <ul class="p-navigation__items global-nav js-navigation-items" role="menu">
           <li class="p-navigation__item{% if request.path == '/internet-of-things' %} is-selected{% endif %}" role="menuitem">
             <a class="p-navigation__link" href="/internet-of-things" onclick='dataLayer.push({
               event: "GAEvent",
@@ -102,4 +102,16 @@
       </nav>
     </div>
   </header>
+  <div class="u-hide dropdown-content-desktop global-nav-desktop"
+  id="all-canonical-content"></div>
+
+  <style>
+    .p-navigation__items {
+      width: 100%;
+    }
+    
+    .p-navigation__items > li#all-canonical {
+      margin-left: auto;
+    }
+  </style>
 {% endblock header_banner %}
