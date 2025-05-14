@@ -1,12 +1,13 @@
 {% extends "templates/base.html" %}
 
-{% block title %} Ubuntu Core {{ page_title }}{% endblock %}
+{% block title %}Ubuntu Core {{ page_title }}{% endblock %}
+
 {% block meta_description %}Ubuntu Core，Ubuntu物联网，Ubuntu嵌入式，Core20开发{{ meta_description }}{% endblock %}
 
 {% block content %}
-{% include "internet-of-things/core/secondary-nav.html" %}
+  {% include "internet-of-things/core/secondary-nav.html" %}
 
-  <section class="p-strip-suru-half-top">
+  <section class="p-strip-suru-half-top is-dark">
     <div class="row u-equal-height u-vertically-center">
       <div class="col-7">
         <h1>安全的嵌入式设备</h1>
@@ -15,11 +16,17 @@
           <a class="p-button--positive" href="https://ubuntu.com/core/smartstart">快速进入市场</a>
         </p>
         <p class="u-sv3">
-          <a class="p-link--inverted" href="https://assets.ubuntu.com/v1/b2c770ea-Ubuntu+Core20+Datasheet.pdf">阅读Ubuntu Core手册</a>
+          <a class="p-link--inverted"
+             href="https://assets.ubuntu.com/v1/b2c770ea-Ubuntu+Core20+Datasheet.pdf">阅读Ubuntu Core手册</a>
         </p>
       </div>
       <div class="col-5 u-align--center u-embedded-media">
-        <iframe title="UC20 video" class="u-embedded-media__element" src="//player.bilibili.com/player.html?aid=501588719&bvid=BV1YN411R7pY&cid=295296600&page=1" frameborder="0" framespacing="0" allowfullscreen=""></iframe>
+        <iframe title="UC20 video"
+                class="u-embedded-media__element"
+                src="//player.bilibili.com/player.html?aid=501588719&bvid=BV1YN411R7pY&cid=295296600&page=1"
+                frameborder="0"
+                framespacing="0"
+                allowfullscreen=""></iframe>
       </div>
     </div>
   </section>
@@ -29,182 +36,173 @@
       <p class="p-logo-section__title u-align--center">与我们的设备合作伙伴快速进入市场</p>
       <div class="p-logo-section__items">
         <div class="p-logo-section__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/c24cb4b9-logo-intel.svg",
-              alt="Intel",
-              height="60",
-              width="91",
-              hi_def=True,
-              loading="lazy"
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/c24cb4b9-logo-intel.svg",
+                    alt="Intel",
+                    height="60",
+                    width="91",
+                    hi_def=True,
+                    loading="lazy") | safe
           }}
         </div>
         <div class="p-logo-section__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/016b770d-raspberry+pi+horizontal.svg",
-              alt="Raspberry Pi",
-              height="80",
-              width="68",
-              hi_def=True,
-              loading="lazy"
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/016b770d-raspberry+pi+horizontal.svg",
+                    alt="Raspberry Pi",
+                    height="80",
+                    width="68",
+                    hi_def=True,
+                    loading="lazy") | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/731aab6c-logo-amd.svg",
-            alt="AMD",
-            width="115",
-            height="27",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/731aab6c-logo-amd.svg",
+          alt="AMD",
+          width="115",
+          height="27",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/1ac0e434-Nvidia_Logo_Horizontal.svg",
-            alt="NVIDIA",
-            width="152",
-            height="29",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/1ac0e434-Nvidia_Logo_Horizontal.svg",
+          alt="NVIDIA",
+          width="152",
+          height="29",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/3cf238fd-Qualcomm-Logo.svg",
-            alt="QUALCOMM",
-            width="158",
-            height="35",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/3cf238fd-Qualcomm-Logo.svg",
+          alt="QUALCOMM",
+          width="158",
+          height="35",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/c95e6028-rigado-logo.png",
-            alt="RIGADO",
-            width="133",
-            height="76",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/c95e6028-rigado-logo.png",
+          alt="RIGADO",
+          width="133",
+          height="76",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/e9dabb1f-adlink+logo.png",
-            alt="ADLINK",
-            width="185",
-            height="52",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/e9dabb1f-adlink+logo.png",
+          alt="ADLINK",
+          width="185",
+          height="52",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/582bee22-avantech-logo.png",
-            alt="Avantech",
-            width="145",
-            height="35",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/582bee22-avantech-logo.png",
+          alt="Avantech",
+          width="145",
+          height="35",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/185a14f4-Avnet.png",
-            alt="Avnet",
-            width="150",
-            height="28",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/185a14f4-Avnet.png",
+          alt="Avnet",
+          width="150",
+          height="28",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <div class="p-logo-section__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/97e29c13-Dell.svg",
-              alt="Dell",
-              height="90",
-              width="90",
-              hi_def=True,
-              loading="lazy"
-            ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/53de61ea-honeywell-logo.png",
-            alt="Honeywell",
-            width="156",
-            height="30",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/97e29c13-Dell.svg",
+                    alt="Dell",
+                    height="90",
+                    width="90",
+                    hi_def=True,
+                    loading="lazy") | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/156ddbf8-rexroth_logo.svg",
-            alt="rexroth",
-            width="131",
-            height="53",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/53de61ea-honeywell-logo.png",
+          alt="Honeywell",
+          width="156",
+          height="30",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/255a3171-abb-logo.svg",
-            alt="ABB",
-            width="120",
-            height="47",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/156ddbf8-rexroth_logo.svg",
+          alt="rexroth",
+          width="131",
+          height="53",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/2234031b-Siemens-logo.svg.png",
-            alt="Siemens",
-            width="128",
-            height="30",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/255a3171-abb-logo.svg",
+          alt="ABB",
+          width="120",
+          height="47",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/3ba27c02-osram-logo.svg",
-            alt="osram",
-            width="128",
-            height="30",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/2234031b-Siemens-logo.svg.png",
+          alt="Siemens",
+          width="128",
+          height="30",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <div class="p-logo-section__item">
           {{ image (
-            url="https://assets.ubuntu.com/v1/24bd5aaf-dfi-logo.png",
-            alt="dfi",
-            width="60",
-            height="30",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/3ba27c02-osram-logo.svg",
+          alt="osram",
+          width="128",
+          height="30",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
+          }}
+        </div>
+        <div class="p-logo-section__item">
+          {{ image (
+          url="https://assets.ubuntu.com/v1/24bd5aaf-dfi-logo.png",
+          alt="dfi",
+          width="60",
+          height="30",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
       </div>
@@ -221,7 +219,7 @@
     <div class="row u-equal-height u-vertically-center u-hide--small">
       <div class="col-4 u-align--center">
         <div class="u-sv2">
-        {{ image (
+          {{ image (
           url="https://assets.ubuntu.com/v1/ec2d60d0-IoT_Digital_Signage.svg",
           alt="Linux",
           width="100",
@@ -229,12 +227,12 @@
           hi_def=True,
           loading="lazy"
           ) | safe
-        }}
+          }}
         </div>
       </div>
       <div class="col-4 u-align--center">
         <div class="u-sv2">
-        {{ image (
+          {{ image (
           url="https://assets.ubuntu.com/v1/9d42b2ab-3B-embedded-linux_AW.svg",
           alt="Linux",
           width="156",
@@ -242,12 +240,12 @@
           hi_def=True,
           loading="lazy"
           ) | safe
-        }}
+          }}
         </div>
       </div>
       <div class="col-4 u-align--center">
         <div class="u-sv2">
-        {{ image (
+          {{ image (
           url="https://assets.ubuntu.com/v1/e39199bc-Internet+of+Things_digital-gateways.svg",
           alt="Digital gateways",
           width="144",
@@ -255,19 +253,25 @@
           hi_def=True,
           loading="lazy"
           ) | safe
-        }}
+          }}
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-4 u-align--center">
-        <p class="p-heading--4 u-sv2"><a href="https://ubuntu.com/internet-of-things/digital-signage">数字标牌</a></p>
+        <p class="p-heading--4 u-sv2">
+          <a href="https://ubuntu.com/internet-of-things/digital-signage">数字标牌</a>
+        </p>
       </div>
       <div class="col-4 u-align--center">
-        <p class="p-heading--4 u-sv2"><a href="https://ubuntu.com/embedded">嵌入式</a></p>
+        <p class="p-heading--4 u-sv2">
+          <a href="https://ubuntu.com/embedded">嵌入式</a>
+        </p>
       </div>
       <div class="col-4 u-align--center">
-        <p class="p-heading--4 u-sv2"><a href="https://ubuntu.com/internet-of-things/networking">IoT</a></p>
+        <p class="p-heading--4 u-sv2">
+          <a href="https://ubuntu.com/internet-of-things/networking">IoT</a>
+        </p>
       </div>
     </div>
 
@@ -275,57 +279,63 @@
       <div class="col-4 u-align--center">
         <div class="u-sv2">
           {{ image (
-            url="https://assets.ubuntu.com/v1/af98e3d6-automotive_car-network.svg",
-            alt="Automotive",
-            width="184",
-            height="107",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/af98e3d6-automotive_car-network.svg",
+          alt="Automotive",
+          width="184",
+          height="107",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
       </div>
       <div class="col-4 u-align--center">
         <div class="u-sv3">
           {{ image (
-            url="https://assets.ubuntu.com/v1/26e28883-Industrial+ML.svg",
-            alt="Industrial",
-            width="192",
-            height="110",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/26e28883-Industrial+ML.svg",
+          alt="Industrial",
+          width="192",
+          height="110",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
       </div>
       <div class="col-4 u-align--center">
         <div class="u-sv2">
           {{ image (
-            url="https://assets.ubuntu.com/v1/f84b4cec-robot-arm.svg",
-            alt="Robotics",
-            width="120",
-            height="121",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/f84b4cec-robot-arm.svg",
+          alt="Robotics",
+          width="120",
+          height="121",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-4 u-align--center">
-        <p class="p-heading--4 u-sv2"><a href="https://ubuntu.com/automotive">自动驾驶</a></p>
+        <p class="p-heading--4 u-sv2">
+          <a href="https://ubuntu.com/automotive">自动驾驶</a>
+        </p>
       </div>
       <div class="col-4 u-align--center">
-        <p class="p-heading--4 u-sv2"><a href="https://ubuntu.com/industrial">工业</a></p>
+        <p class="p-heading--4 u-sv2">
+          <a href="https://ubuntu.com/industrial">工业</a>
+        </p>
       </div>
       <div class="col-4 u-align--center">
-        <p class="p-heading--4 u-sv2"><a href="https://ubuntu.com/robotics">机器人</a></p>
+        <p class="p-heading--4 u-sv2">
+          <a href="https://ubuntu.com/robotics">机器人</a>
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="p-strip--image p-banner-core" id="security-first" >
+  <section class="p-strip--image p-banner-core" id="security-first">
     <div class="row u-vertically-center">
       <div class="col-8">
         <h2>安全第一</h2>
@@ -350,15 +360,12 @@
         </p>
       </div>
       <div class="col-6 u-hide--small u-align--center u-vertically-center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/ad33af0c-Shield.svg",
-            alt="",
-            height="200",
-            width="200",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/ad33af0c-Shield.svg",
+                alt="",
+                height="200",
+                width="200",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
@@ -369,22 +376,21 @@
 
     <div class="row u-vertically-center">
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/9c80823b-confinement.svg",
-            alt="",
-            height="200",
-            width="350",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/9c80823b-confinement.svg",
+                alt="",
+                height="200",
+                width="350",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
       <div class="col-6">
         <h3 class="p-heading--4">无处不在的严格限制</h3>
         <h4 class="p-heading--5">让坏应用只留自己的盒子里</h4>
         <p>您信任您的开发者，但任何人都可能犯错。我们创建并集成了一个全新的Linux安全功能库，以确保应用程序被限制于自己的数据。</p>
-        <p><a href="https://snapcraft.io/docs/snap-confinement">了解更多关于“限制”的内容</a></p>
+        <p>
+          <a href="https://snapcraft.io/docs/snap-confinement">了解更多关于“限制”的内容</a>
+        </p>
       </div>
     </div>
 
@@ -396,18 +402,21 @@
       <div class="col-6">
         <h3 class="p-heading--4">10年安全更新承诺</h3>
         <h4 class="p-heading--5">十年的无忧运营</h4>
-        <p>Ubuntu Core可获得Canonical 10年的维护。<br /> 您的微型设备现在也和服务器一样安全。<br /> 没有其他嵌入式Linux能够与之匹敌。</p>
+        <p>
+          Ubuntu Core可获得Canonical 10年的维护。
+          <br />
+          您的微型设备现在也和服务器一样安全。
+          <br />
+          没有其他嵌入式Linux能够与之匹敌。
+        </p>
       </div>
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/ceb481d1-10+years.svg",
-            alt="",
-            height="200",
-            width="200",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/ceb481d1-10+years.svg",
+                alt="",
+                height="200",
+                width="200",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
@@ -418,19 +427,16 @@
 
     <div class="row u-vertically-center">
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/3505cd01-GRAPHIC_os_image_size.svg",
-            alt="Ubuntu Core: 260 MB. Red Hat coreOS: 807 MB.",
-            height="195",
-            width="335",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/3505cd01-GRAPHIC_os_image_size.svg",
+                alt="Ubuntu Core: 260 MB. Red Hat coreOS: 807 MB.",
+                height="195",
+                width="335",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
       <div class="col-6">
-        <h3 class="p-heading--4">最小的体积、最低的风险、最少的bug </h3>
+        <h3 class="p-heading--4">最小的体积、最低的风险、最少的bug</h3>
         <h4 class="p-heading--5">我们已将Ubuntu Core简化为最基础的运行环境</h4>
         <p>受攻击的软件包变少，要修复的漏洞更少，强制的更改亦更少。我们减少操作系统以缩小攻击面。这样可为您的应用程序和数据留出了更多的磁盘空间。</p>
       </div>
@@ -447,15 +453,12 @@
         <p>自动扫描所有snap应用以查找易受攻击的库和有缺陷的代码，保持Ubuntu Core生态系统的健康。</p>
       </div>
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/7e5a3ee1-scan.svg",
-            alt="",
-            height="200",
-            width="200",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/7e5a3ee1-scan.svg",
+                alt="",
+                height="200",
+                width="200",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
@@ -467,13 +470,13 @@
     <div class="row u-vertically-center">
       <div class="col-6 u-hide--small u-align--center">
         {{ image (
-          url="https://assets.ubuntu.com/v1/6ed19d21-UC20_Secure_boot.svg",
-          alt="Secure boot",
-          width="250",
-          height="250",
-          hi_def=True,
-          loading="lazy"
-          ) | safe
+        url="https://assets.ubuntu.com/v1/6ed19d21-UC20_Secure_boot.svg",
+        alt="Secure boot",
+        width="250",
+        height="250",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
         }}
       </div>
       <div class="col-6">
@@ -486,7 +489,7 @@
       </div>
     </div>
 
-  <div class="u-fixed-width">
+    <div class="u-fixed-width">
       <hr class="p-separator" />
     </div>
 
@@ -501,23 +504,23 @@
       </div>
       <div class="col-6 u-hide--small u-align--center">
         {{ image (
-          url="https://assets.ubuntu.com/v1/1fbe51df-UC20_Full-disc-encryption.svg",
-          alt="Full disk encryption",
-          width="200",
-          height="200",
-          hi_def=True,
-          loading="lazy"
-          ) | safe
+        url="https://assets.ubuntu.com/v1/1fbe51df-UC20_Full-disc-encryption.svg",
+        alt="Full disk encryption",
+        width="200",
+        height="200",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
         }}
       </div>
     </div>
   </section>
 
-  <section class='p-strip--image p-banner-core is-deep' id="built-for-business">
-    <div class='row u-vertically-center'>
-      <div class='col-8'>
+  <section class="p-strip--image p-banner-core is-deep" id="built-for-business">
+    <div class="row u-vertically-center">
+      <div class="col-8">
         <h2>为企业而构建</h2>
-        <p class='p-heading--4 u-no-margin--bottom'>聚焦于您的应用程序, 剩余的部分由我们接管。</p>
+        <p class="p-heading--4 u-no-margin--bottom">聚焦于您的应用程序, 剩余的部分由我们接管。</p>
       </div>
     </div>
   </section>
@@ -530,15 +533,12 @@
         <p>作为一个设备厂商或者snap应用发布者，您可以决定哪些更新被签署，认证和交付给您的设备，以及什么时候推送和推送给哪个设备。</p>
       </div>
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/a43d61ae-update+control.svg",
-            alt="",
-            height="200",
-            width="200",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/a43d61ae-update+control.svg",
+                alt="",
+                height="200",
+                width="200",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
@@ -549,22 +549,22 @@
 
     <div class="row u-vertically-center u-equal-height">
       <div class="col-6 u-hide--small u-align--center u-vertically-center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/bd695c08-app+store.svg",
-            alt="",
-            height="200",
-            width="200",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/bd695c08-app+store.svg",
+                alt="",
+                height="200",
+                width="200",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
       <div class="col-6">
         <h3 class="p-heading--4">应用商店已包含</h3>
         <h4 class="p-heading--5">您自己的应用商店和软件管理</h4>
         <p>每个内建Ubuntu Core设备都拥有一个安全的应用商店。使用全球的商店来访问所有的标准应用，或者仅适用于您自己的软件集。</p>
-        <p><a class="p-button" href="https://ubuntu.com/internet-of-things/appstore"><span>看看应用商店可以为您的设备做些什么</span></a></p>
+        <p>
+          <a class="p-button"
+             href="https://ubuntu.com/internet-of-things/appstore"><span>看看应用商店可以为您的设备做些什么</span></a>
+        </p>
       </div>
     </div>
 
@@ -576,19 +576,15 @@
       <div class="col-6">
         <h3 class="p-heading--4">企业管理</h3>
         <h4 class="p-heading--5">完全控制建筑中的所有设备</h4>
-        <p>无设备制造区别，企业都可以完全控制网络上每个设备上的每个应用程序。并知晓哪个版本的内核和哪些应用程序正在运行。
-        </p>
+        <p>无设备制造区别，企业都可以完全控制网络上每个设备上的每个应用程序。并知晓哪个版本的内核和哪些应用程序正在运行。</p>
       </div>
       <div class="col-6 u-hide--small u-align--center u-vertically-center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/3db02edd-enterprise+management+.svg",
-            alt="",
-            height="200",
-            width="350",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/3db02edd-enterprise+management+.svg",
+                alt="",
+                height="200",
+                width="350",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
@@ -599,15 +595,12 @@
 
     <div class="row u-vertically-center">
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/69aaa876-compliance.svg",
-            alt="",
-            height="200",
-            width="200",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/69aaa876-compliance.svg",
+                alt="",
+                height="200",
+                width="200",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
       <div class="col-6">
@@ -626,19 +619,18 @@
         <h3 class="p-heading--4">应用软件生态已就绪</h3>
         <h4 class="p-heading--5">数千个可跨设备运行的应用程序</h4>
         <p>一个标准平台帮助开发者支持多个设备，无需重新编译。每个人想要来支持Ubuntu——世界上部署最为广泛的Linux。</p>
-        <p><a class="p-button" href="https://snapcraft.io/store"><span>访问Snap应用商店</span></a></p>
+        <p>
+          <a class="p-button" href="https://snapcraft.io/store"><span>访问Snap应用商店</span></a>
+        </p>
       </div>
       <div class="col-6 u-align--center u-hide--small">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/26e55529-snapstore.png",
-            alt="",
-            height="255",
-            width="477",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-image--bordered"}
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/26e55529-snapstore.png",
+                alt="",
+                height="255",
+                width="477",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image--bordered"}) | safe
         }}
       </div>
     </div>
@@ -649,22 +641,21 @@
 
     <div class="row u-vertically-center">
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/4e20332d-mission+critical+support.svg",
-            alt="",
-            height="200",
-            width="350",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/4e20332d-mission+critical+support.svg",
+                alt="",
+                height="200",
+                width="350",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
       <div class="col-6">
         <h3 class="p-heading--4">关键性业务支持</h3>
         <h4 class="p-heading--5">Canonical支持Ubuntu Core的设备</h4>
         <p>世界一流的支持——适用于产品团队和企业客户。更快地找到问题的核心，直接从源头获得解决方案。</p>
-        <p><a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a></p>
+        <p>
+          <a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a>
+        </p>
       </div>
     </div>
   </section>
@@ -677,7 +668,11 @@
     </div>
     <div class="row">
       <div class="col-5">
-        <h3 class="p-heading--4">由软件定义的业务。<br>使开发者满意并保持生产力。</h3>
+        <h3 class="p-heading--4">
+          由软件定义的业务。
+          <br />
+          使开发者满意并保持生产力。
+        </h3>
       </div>
       <div class="col-6 col-start-large-7">
         <ul class="p-list">
@@ -695,18 +690,17 @@
         <h3 class="p-heading--4">从云到设备的一个平台</h3>
         <h4 class="p-heading--5">将应用程序从Ubuntu Server带到Ubuntu Core</h4>
         <p>Snap应用可在Ubuntu Server，桌面和Core上运行。一个平台，一个流程。开发者工作站，构建服务器场，云和服务器都可使用snap。您的设备也可以，以提供额外的安全性。</p>
-        <p><a class="p-button" href="https://snapcraft.io/"><span>使用Snapcraft来构建您的IoT物联网应用</span></a></p>
+        <p>
+          <a class="p-button" href="https://snapcraft.io/"><span>使用Snapcraft来构建您的IoT物联网应用</span></a>
+        </p>
       </div>
       <div class="col-6 u-align--center u-hide--small">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/3089fff7-one+platform.svg",
-            alt="",
-            height="230",
-            width="350",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/3089fff7-one+platform.svg",
+                alt="",
+                height="230",
+                width="350",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
@@ -717,15 +711,12 @@
 
     <div class="row u-vertically-center">
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/9d42b2ab-3B-embedded-linux_AW.svg",
-            alt="",
-            height="200",
-            width="350",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/9d42b2ab-3B-embedded-linux_AW.svg",
+                alt="",
+                height="200",
+                width="350",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
       <div class="col-6">
@@ -749,15 +740,12 @@
         </p>
       </div>
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/f887a7db-deploy+fast.svg",
-            alt="",
-            height="200",
-            width="350",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/f887a7db-deploy+fast.svg",
+                alt="",
+                height="200",
+                width="350",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
@@ -768,22 +756,21 @@
 
     <div class="row u-vertically-center">
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/e59fb1a3-GitHub_Logo.svg",
-            alt="",
-            height="54",
-            width="200",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/e59fb1a3-GitHub_Logo.svg",
+                alt="",
+                height="54",
+                width="200",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
       <div class="col-6">
         <h3 class="p-heading--4">利用开源万物</h3>
         <h4 class="p-heading--5">从GitHub到Ubuntu Core仅需几分钟。</h4>
         <p>乘以开源浪潮，或建立自己的社区。开源项目大多以Ubuntu为基础，因此构建很容易。</p>
-        <p><a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a></p>
+        <p>
+          <a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a>
+        </p>
       </div>
     </div>
   </section>
@@ -798,7 +785,7 @@
       </div>
     </div>
   </section>
-"
+  "
   <section class="p-strip">
     <div class="row u-vertically-center">
       <div class="col-6">
@@ -807,15 +794,12 @@
         <p>您的电源可能不可靠。您的设备将是可靠的。抗风险的灵活性可以节省资金和保护声誉。依靠Ubuntu Core来安全地提供更新。</p>
       </div>
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/fc3ca86d-bullet+proof.svg",
-            alt="",
-            height="200",
-            width="200",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/fc3ca86d-bullet+proof.svg",
+                alt="",
+                height="200",
+                width="200",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
@@ -826,15 +810,12 @@
 
     <div class="row u-vertically-center">
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/d82d3860-backup+boot+paths.svg",
-            alt="",
-            height="200",
-            width="200",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/d82d3860-backup+boot+paths.svg",
+                alt="",
+                height="200",
+                width="200",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
       <div class="col-6">
@@ -855,15 +836,12 @@
         <p>每个设备都有可跟踪关键数据的应用程序。我们确保您可以在所有Ubuntu Core设备上一致地管理您重要的数据。随时随地备份和还原任何内容。</p>
       </div>
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/7de21966-snapshot.svg",
-            alt="",
-            height="200",
-            width="200",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/7de21966-snapshot.svg",
+                alt="",
+                height="200",
+                width="200",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
@@ -875,20 +853,22 @@
     <div class="row u-vertically-center">
       <div class="col-6 u-hide--small u-align--center">
         {{ image (
-          url="https://assets.ubuntu.com/v1/3bbf268f-UC20_Device_Recovery.svg",
-          alt="Device recovery",
-          width="220",
-          height="260",
-          hi_def=True,
-          loading="lazy"
-          ) | safe
+        url="https://assets.ubuntu.com/v1/3bbf268f-UC20_Device_Recovery.svg",
+        alt="Device recovery",
+        width="220",
+        height="260",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
         }}
       </div>
       <div class="col-6">
         <h3 class="p-heading--4">低接触的设备恢复</h3>
         <h4 class="p-heading--5">现场设备远程恢复。</h4>
         <p>大大降低现场维护的成本。</p>
-        <p><a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a></p>
+        <p>
+          <a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a>
+        </p>
       </div>
     </div>
   </section>
@@ -911,15 +891,12 @@
         <p>更新会增加大量流量消耗，通过自动压缩和增量组成以控制成本。</p>
       </div>
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/58e11dd2-delta+updates.svg",
-            alt="",
-            height="200",
-            width="350",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/58e11dd2-delta+updates.svg",
+                alt="",
+                height="200",
+                width="350",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
@@ -930,22 +907,21 @@
 
     <div class="row u-vertically-center">
       <div class="col-6 u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/aec863e2-Off+the+shelf.svg",
-            alt="",
-            height="200",
-            width="350",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/aec863e2-Off+the+shelf.svg",
+                alt="",
+                height="200",
+                width="350",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
       <div class="col-6">
         <h3 class="p-heading--4">Canonical支持的Ubuntu开发板</h3>
         <h4 class="p-heading--5">为广泛使用的开发板和芯片提供一流的支持</h4>
         <p>未达标的适配会干扰进入市场的竞赛。将您的所有精力集中在差异化上，而不是Linux。预先认证的开发板使您更专注。</p>
-        <p><a href="https://ubuntu.com/download/iot#core">查看我们支持的开发板</a></p>
+        <p>
+          <a href="https://ubuntu.com/download/iot#core">查看我们支持的开发板</a>
+        </p>
       </div>
     </div>
 
@@ -960,15 +936,12 @@
         <p>一个标准平台意味着您可以先开发软件和完善您的工业设计，然后根据实际代码和数据选择合适的芯片。</p>
       </div>
       <div class="col-6 u-align--center u-vertically-center u-hide--small">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/47ced1e2-right+size.svg",
-            alt="",
-            height="200",
-            width="350",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/47ced1e2-right+size.svg",
+                alt="",
+                height="200",
+                width="350",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
@@ -979,15 +952,12 @@
 
     <div class="row u-equal-height u-vertically-center">
       <div class="col-6 u-hide--small u-align--center u-vertically-center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/de23ae0e-logos.svg",
-            alt="",
-            height="156",
-            width="270",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/de23ae0e-logos.svg",
+                alt="",
+                height="156",
+                width="270",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
       <div class="col-6">
@@ -1001,145 +971,154 @@
   <!-- end generated -->
 
   <!-- whitepapers and case studies -->
-    <section class="p-strip is-deep">
+  <section class="p-strip is-deep">
     <div class="u-fixed-width">
       <h3>了解更多关于Ubuntu Core的内容</h3>
     </div>
     <div class="row p-divider">
       <div class="col-4 p-divider__block">
         <!-- rtp section left start -->
-        <div class='p-heading-icon--muted'>
-          <div class='p-heading-icon__header'>
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/b061c401-White+paper.svg",
-                alt="",
-                height="28",
-                width="32",
-                hi_def=True,
-                loading="lazy",
-                attrs={"class": "p-heading-icon__img p-heading-icon__img--small"}
-              ) | safe
+        <div class="p-heading-icon--muted">
+          <div class="p-heading-icon__header">
+            {{ image(url="https://assets.ubuntu.com/v1/b061c401-White+paper.svg",
+                        alt="",
+                        height="28",
+                        width="32",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-heading-icon__img p-heading-icon__img--small"}) | safe
             }}
-            <h4 class='p-heading-icon__title'>白皮书</h4>
+            <h4 class="p-heading-icon__title">白皮书</h4>
           </div>
         </div>
-        <h3 class='p-heading--4'><a href='https://ubuntu.com/blog/bosch-rexroth-adopts-ubuntu-core-and-snaps-for-app-based-ctrlx-automation-platform' onclick='dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'product page', 'eventAction' : 'core - left', 'eventLabel' : 'Whitepaper - Embedded Linux ', 'eventValue' : '1' });'>嵌入式Linux：制作或购买？</a></h3>
+        <h3 class="p-heading--4">
+          <a href="https://ubuntu.com/blog/bosch-rexroth-adopts-ubuntu-core-and-snaps-for-app-based-ctrlx-automation-platform"
+             onclick='dataLayer.push({ event: "GAEvent", eventCategory: "product page", eventAction: "core-left", eventLabel: "Whitepaper-Embedded Linux", eventValue: 1 });'>嵌入式Linux：制作或购买？</a>
+        </h3>
         <!-- rtp section left end -->
       </div>
       <div class="col-4 p-divider__block">
         <!-- rtp section left start -->
-        <div class='p-heading-icon--muted'>
-          <div class='p-heading-icon__header'>
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/b061c401-White+paper.svg",
-                alt="",
-                height="28",
-                width="32",
-                hi_def=True,
-                loading="lazy",
-                attrs={"class": "p-heading-icon__img p-heading-icon__img--small"}
-              ) | safe
+        <div class="p-heading-icon--muted">
+          <div class="p-heading-icon__header">
+            {{ image(url="https://assets.ubuntu.com/v1/b061c401-White+paper.svg",
+                        alt="",
+                        height="28",
+                        width="32",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-heading-icon__img p-heading-icon__img--small"}) | safe
             }}
-            <h4 class='p-heading-icon__title'>白皮书</h4>
+            <h4 class="p-heading-icon__title">白皮书</h4>
           </div>
         </div>
-        <h3 class='p-heading--4'><a href='https://ubuntu.com/engage/ubuntu-core-security-audit' onclick='dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Independent security audit', 'eventAction' : 'core - left', 'eventLabel' : 'Whitepaper - IMS Evolve ', 'eventValue' : '1' });'>Ubuntu Core的独立安全审计</a></h3>
+        <h3 class="p-heading--4">
+          <a href="https://ubuntu.com/engage/ubuntu-core-security-audit"
+             onclick='dataLayer.push({ event: "GAEvent", eventCategory: "snapcraft", eventAction: "core-left", eventLabel: "Webinar-make the first snap", eventValue: 1 });'>Ubuntu Core的独立安全审计</a>
+        </h3>
         <!-- rtp section left end -->
       </div>
       <div class="col-4 p-divider__block u-no-padding--bottom">
         <!-- rtp section center start -->
-        <div class='p-heading-icon--muted'>
-          <div class='p-heading-icon__header'>
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/b061c401-White+paper.svg",
-                alt="",
-                height="28",
-                width="32",
-                hi_def=True,
-                loading="lazy",
-                attrs={"class": "p-heading-icon__img p-heading-icon__img--small"}
-              ) | safe
+        <div class="p-heading-icon--muted">
+          <div class="p-heading-icon__header">
+            {{ image(url="https://assets.ubuntu.com/v1/b061c401-White+paper.svg",
+                        alt="",
+                        height="28",
+                        width="32",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-heading-icon__img p-heading-icon__img--small"}) | safe
             }}
-            <h4 class='p-heading-icon__title'>白皮书</h4>
+            <h4 class="p-heading-icon__title">白皮书</h4>
           </div>
         </div>
-        <h3 class='p-heading--4'><a href='https://ubuntu.com/engage/ubuntu-core-and-kura' onclick='dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'product page', 'eventAction' : 'core - center', 'eventLabel' : 'Whitepaper - Ubuntu Core and Kura - a framework for IoT gateways', 'eventValue' : '1' });'>IoT网关框架：Ubuntu Core和Kura</a></h3>
+        <h3 class="p-heading--4">
+          <a href="https://ubuntu.com/engage/ubuntu-core-and-kura"
+             onclick='dataLayer.push({ event: "GAEvent", eventCategory: "product page", eventAction: "core-center", eventLabel: "Whitepaper - Ubuntu Core and Kura - a framework for IoT gateways", eventValue: 1 });'>IoT网关框架：Ubuntu Core和Kura</a>
+        </h3>
         <!-- rtp section center end -->
       </div>
     </div>
 
     <div class="u-fixed-width">
-      <hr class="p-separator"/>
+      <hr class="p-separator" />
     </div>
 
     <div class="row p-divider">
       <div class="col-4 p-divider__block u-no-padding--top">
         <!-- rtp section left start -->
-        <div class='p-heading-icon--muted'>
-          <div class='p-heading-icon__header'>
+        <div class="p-heading-icon--muted">
+          <div class="p-heading-icon__header">
             {{ image (
-              url="https://assets.ubuntu.com/v1/6e184942-Webinar.svg",
-              alt="",
-              width="88",
-              height="72",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "lazyloaded-fix"}
-              ) | safe
+            url="https://assets.ubuntu.com/v1/6e184942-Webinar.svg",
+            alt="",
+            width="88",
+            height="72",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "lazyloaded-fix"}
+            ) | safe
             }}
-            <h4 class='p-heading-icon__title'>研讨会</h4>
+            <h4 class="p-heading-icon__title">研讨会</h4>
           </div>
         </div>
-        <h3 class='p-heading--4'><a href='/engage/ubuntu-tech-live-episode-1' onclick='dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'product page', 'eventAction' : 'core - left', 'eventLabel' : 'Webinar - core episode 1', 'eventValue' : '1' });'>如何在Ubuntu上构建物联网项目&nbsp;&rsaquo;</a></h3>
+        <h3 class="p-heading--4">
+          <a href="/engage/ubuntu-tech-live-episode-1"
+             onclick='dataLayer.push({ event: "GAEvent", eventCategory: "snapcraft", eventAction: "core-left", eventLabel: "Webinar-make the first snap", eventValue: 1 });'>如何在Ubuntu上构建物联网项目&nbsp;&rsaquo;</a>
+        </h3>
         <!-- rtp section left end -->
       </div>
       <div class="col-4 p-divider__block">
         <!-- rtp section left start -->
-        <div class='p-heading-icon--muted'>
-          <div class='p-heading-icon__header'>
+        <div class="p-heading-icon--muted">
+          <div class="p-heading-icon__header">
             {{ image (
-              url="https://assets.ubuntu.com/v1/6e184942-Webinar.svg",
-              alt="",
-              width="88",
-              height="72",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "lazyloaded-fix"}
-              ) | safe
+            url="https://assets.ubuntu.com/v1/6e184942-Webinar.svg",
+            alt="",
+            width="88",
+            height="72",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "lazyloaded-fix"}
+            ) | safe
             }}
-            <h4 class='p-heading-icon__title'>研讨会</h4>
+            <h4 class="p-heading-icon__title">研讨会</h4>
           </div>
         </div>
-        <h3 class='p-heading--4'><a href='https://live.polyv.cn/watch/1929418' onclick='dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'snapcraft', 'eventAction' : 'core - left', 'eventLabel' : 'Webinar - make the first snap', 'eventValue' : '1' });'>如何使用Snapcraft来开发Snap应用</a></h3>
+        <h3 class="p-heading--4">
+          <a href="https://live.polyv.cn/watch/1929418"
+             onclick='dataLayer.push({ event: "GAEvent", eventCategory: "snapcraft", eventAction: "core-left", eventLabel: "Webinar-make the first snap", eventValue: 1 });'>如何使用Snapcraft来开发Snap应用</a>
+        </h3>
         <!-- rtp section left end -->
       </div>
       <div class="col-4 p-divider__block">
         <!-- rtp section center start -->
-        <div class='p-heading-icon--muted'>
-          <div class='p-heading-icon__header'>
+        <div class="p-heading-icon--muted">
+          <div class="p-heading-icon__header">
             {{ image (
-              url="https://assets.ubuntu.com/v1/6e184942-Webinar.svg",
-              alt="",
-              width="88",
-              height="72",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "lazyloaded-fix"}
-              ) | safe
+            url="https://assets.ubuntu.com/v1/6e184942-Webinar.svg",
+            alt="",
+            width="88",
+            height="72",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "lazyloaded-fix"}
+            ) | safe
             }}
-            <h4 class='p-heading-icon__title'>研讨会</h4>
+            <h4 class="p-heading-icon__title">研讨会</h4>
           </div>
         </div>
-        <h3 class='p-heading--4'><a href='/engage/ubuntu-tech-live-episode-4' onclick='dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'product page', 'eventAction' : 'core - center', 'eventLabel' : 'Webinar - rule4 security Ubuntu Core', 'eventValue' : '1' });'>Ubuntu Core的网络安全分析&nbsp;&rsaquo;</a></h3>
+        <h3 class="p-heading--4">
+          <a href="/engage/ubuntu-tech-live-episode-4"
+             onclick='dataLayer.push({ event: "GAEvent", eventCategory: "product page", eventAction: "core-center", eventLabel: "Webinar - rule4 security Ubuntu Core", eventValue: 1 });'>Ubuntu Core的网络安全分析&nbsp;&rsaquo;</a>
+        </h3>
         <!-- rtp section center end -->
       </div>
     </div>
   </section>
 
-  <section class='p-strip--square-suru is-slanted--top-right'>
+  <section class="p-strip--square-suru is-slanted--top-right">
     <div class="row">
       <div class="col-12">
         <h2>通过SMART START快速进入市场</h2>
@@ -1155,17 +1134,24 @@
       <div class="col-4 p-divider__block">
         <h4>下载Ubuntu Core</h4>
         <p>在下面流行的开发板上试用Ubuntu Core 20</p>
-        <p><a class="p-button" href="https://cdimage.ubuntu.com/ubuntu-core/20/stable/current/">下载和安装Ubuntu Core 20</a></p>
+        <p>
+          <a class="p-button"
+             href="https://cdimage.ubuntu.com/ubuntu-core/20/stable/current/">下载和安装Ubuntu Core 20</a>
+        </p>
       </div>
       <div class="col-4 p-divider__block">
         <h4>制作您的Ubuntu Core设备</h4>
         <p>根据教程为设备构建镜像</p>
-        <p><a class="p-button" href="https://ubuntu.com/core/docs/image-building">构建自定义Ubuntu Core镜像</a></p>
+        <p>
+          <a class="p-button" href="https://ubuntu.com/core/docs/image-building">构建自定义Ubuntu Core镜像</a>
+        </p>
       </div>
       <div class="col-4 p-divider__block">
         <h4>与我们合作</h4>
         <p>与我们交流以将Ubuntu Core用于您的下一个项目</p>
-        <p><a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a></p>
+        <p>
+          <a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a>
+        </p>
       </div>
     </div>
   </section>
