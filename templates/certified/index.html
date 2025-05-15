@@ -122,7 +122,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} Audio
         </div>
         <hr class="p-rule--muted" />
@@ -134,7 +134,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} Ethernet
         </div>
         <hr class="p-rule--muted" />
@@ -146,7 +146,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} Wireless
         </div>
         <hr class="p-rule--muted" />
@@ -158,7 +158,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} TPM
         </div>
         <hr class="p-rule--muted" />
@@ -170,7 +170,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} Bluetooth
         </div>
         <hr class="p-rule--muted" />
@@ -182,7 +182,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} USB
         </div>
         <hr class="p-rule--muted" />
@@ -194,7 +194,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} Firmware
         </div>
         <hr class="p-rule--muted" />
@@ -206,7 +206,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} Power management
         </div>
         <hr class="p-rule--muted" />
@@ -218,7 +218,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} WWAN
         </div>
         <hr class="p-rule--muted u-hide--large" />
@@ -230,7 +230,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} Media cards
         </div>
         <hr class="p-rule--muted u-hide--large" />
@@ -242,7 +242,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} Memory
         </div>
       </li>
@@ -253,7 +253,7 @@ is-paper
             width="40",
             height="40",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }} CPU
         </div>
       </li>
@@ -268,19 +268,13 @@ is-paper
       </div>
       <div class="grid-col-4">
         <div class="p-image-container--3-2 is-cover is-highlighted">
-          {#- In the current version of flask base used in this project, the {{
-          image }} with loading="lazy" creates an intermediate div.lazyloaded with
-          the image inside it, which will make the image container styling not
-          work. Image needs to be a direct child of the image container. So, we
-          use auto loading for now - this can be changed to lazy once flask base
-          is upgraded. -#}
           {{ image(
             url="https://assets.ubuntu.com/v1/89c81238-iso.png",
             alt="",
             width="1200",
             height="800",
             hi_def=True,
-            loading="auto",
+            loading="lazy",
             attrs={"class": "p-image-container__image"}
           ) | safe }}
         </div>
@@ -313,7 +307,7 @@ is-paper
             width="1200",
             height="675",
             hi_def=True,
-            loading="auto"
+            loading="lazy"
           ) | safe }}
         </div>
         <p class="p-heading--5">Canonical 在全球多个专用实验室进行硬件测试。</p>
@@ -340,7 +334,7 @@ is-paper
               width="40",
               height="40",
               hi_def=True,
-              loading="auto"
+              loading="lazy"
             ) | safe }}
             <a href="https://ubuntu.com/certified/laptops">笔记本</a>
           </li>
@@ -351,7 +345,7 @@ is-paper
               width="40",
               height="40",
               hi_def=True,
-              loading="auto"
+              loading="lazy"
             ) | safe }}
             <a href="https://ubuntu.com/certified/desktops">工作站</a>
           </li>
@@ -362,7 +356,7 @@ is-paper
               width="40",
               height="40",
               hi_def=True,
-              loading="auto"
+              loading="lazy"
             ) | safe }}
             <a href="https://ubuntu.com/certified/servers">服务器</a>
           </li>
@@ -373,7 +367,7 @@ is-paper
               width="40",
               height="40",
               hi_def=True,
-              loading="auto"
+              loading="lazy"
             ) | safe }}
             <a href="https://ubuntu.com/certified/devices">IoT物联网设备</a>
           </li>
@@ -384,7 +378,7 @@ is-paper
               width="40",
               height="40",
               hi_def=True,
-              loading="auto"
+              loading="lazy"
              ) | safe }}
             <a href="https://ubuntu.com/certified/socs">系统级芯片</a>
           </li>
@@ -406,7 +400,7 @@ is-paper
               width="89",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -417,7 +411,7 @@ is-paper
               width="258",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -428,7 +422,7 @@ is-paper
               width="135",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -439,7 +433,7 @@ is-paper
               width="97",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -450,7 +444,7 @@ is-paper
               width="167",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -461,7 +455,7 @@ is-paper
               width="126",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -472,7 +466,7 @@ is-paper
               width="156",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -483,7 +477,7 @@ is-paper
               width="117",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -494,7 +488,7 @@ is-paper
               width="149",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -505,7 +499,7 @@ is-paper
               width="151",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -516,7 +510,7 @@ is-paper
               width="108",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -527,7 +521,7 @@ is-paper
               width="207",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -538,7 +532,7 @@ is-paper
               width="206",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -549,7 +543,7 @@ is-paper
               width="148",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -560,7 +554,7 @@ is-paper
               width="69",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -571,7 +565,7 @@ is-paper
               width="191",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -582,7 +576,7 @@ is-paper
               width="180",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -593,7 +587,7 @@ is-paper
               width="158",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -604,7 +598,7 @@ is-paper
               width="215",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -615,7 +609,7 @@ is-paper
               width="150",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -626,7 +620,7 @@ is-paper
               width="244",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -637,7 +631,7 @@ is-paper
               width="176",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -648,7 +642,7 @@ is-paper
               width="188",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -659,7 +653,7 @@ is-paper
               width="86",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -670,7 +664,7 @@ is-paper
               width="206",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
@@ -681,7 +675,7 @@ is-paper
               width="68",
               height="208",
               hi_def=True,
-              loading="auto",
+              loading="lazy",
               attrs={"class": "p-logo-section__logo"}
             ) | safe }}
           </div>
