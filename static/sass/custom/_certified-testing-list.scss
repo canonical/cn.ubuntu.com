@@ -1,4 +1,5 @@
 .p-certified-testing-item {
+  @extend %paragraph;
   align-items: center;
   display: flex;
   gap: $sph--small;
