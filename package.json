@@ -36,7 +36,7 @@
     "postcss": "8.4.21",
     "postcss-cli": "10.1.0",
     "prettier": "2.8.2",
-    "sass": "1.57.1",
+    "sass": "1.89.0",
     "stylelint": "14.16.1",
     "stylelint-config-prettier": "9.0.4",
     "stylelint-config-standard-scss": "6.1.0",
@@ -50,6 +50,6 @@
   "dependencies": {
     "@canonical/cookie-policy": "^3.6.4",
     "@canonical/global-nav": "2.7.0",
-    "vanilla-framework": "3.15.1"
+    "vanilla-framework": "4.24.0"
   }
 }
