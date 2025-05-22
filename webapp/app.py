@@ -8,6 +8,7 @@ from canonicalwebteam.blog import BlogAPI, BlogViews, build_blueprint
 from canonicalwebteam.discourse import DiscourseAPI, EngagePages
 from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
+from jinja2 import ChoiceLoader, FileSystemLoader
 
 from webapp.views import (
     build_engage_index,
@@ -28,6 +29,14 @@ app = FlaskBase(
     template_500="500.html",
 )
 
+# ChoiceLoader attempts loading templates from each path in successive order
+loader = ChoiceLoader([
+    FileSystemLoader('templates'),
+    FileSystemLoader('node_modules/vanilla-framework/templates/')
+])
+
+# Loader supplied to jinja_loader overwrites default jinja_loader
+app.jinja_loader = loader\
 
 # Engage pages and takeovers from Discourse
 # This section needs to provide takeover data for /
