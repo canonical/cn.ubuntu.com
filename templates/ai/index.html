@@ -3,6 +3,10 @@
 {% block title %}开源AI人工智能{{ title }}{% endblock %}
 {% block meta_description %}{{ meta_description }}利用 Canonical 开源 MLOps，轻松部署企业级 AI 项目。从工作站到云端与边缘，实现高效开发、自动化运维和快速扩展。{% endblock %}
 
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
 {% block content %}
 
   <section class="p-section--hero">
@@ -23,7 +27,7 @@
       <div class="col">
         <div class="p-image-container--3-2 is-highlighted u-hide--small u-hide--medium">
           {{ image(url="https://assets.ubuntu.com/v1/e549fdc0-Canonical-AI-ML-Illustrations-v5-03.png",
-                    alt="开源 AI 工具",
+                    alt="",
                     width="600",
                     height="400",
                     hi_def=True,
@@ -338,7 +342,7 @@
       </div>
       <hr class="col-9 col-start-large-4 col-medium-6 p-rule--muted" />
       <div class="col-3 col-start-large-4 col-medium-2">
-        <h5>Charmed Kubeflow</h5>
+        <h3 class="p-heading--5">Charmed Kubeflow</h5>
       </div>
       <div class="col-6 col-start-large-7 col-medium-4">
         <p>
@@ -351,7 +355,7 @@
       </div>
       <hr class="p-rule col-9 col-start-large-4 col-medium-6 p-rule--muted" />
       <div class="col-3 col-start-large-4 col-medium-2">
-        <h5>Charmed MLflow</h5>
+        <h3 class="p-heading--5">Charmed MLflow</h5>
       </div>
       <div class="col-6 col-start-large-7 col-medium-4">
         <p>
@@ -364,7 +368,7 @@
       </div>
       <hr class="p-rule col-9 col-start-large-4 col-medium-6 p-rule--muted" />
       <div class="col-3 col-start-large-4 col-medium-2">
-        <h5>Charmed Spark</h5>
+        <h3 class="p-heading--5">Charmed Spark</h5>
       </div>
       <div class="col-6 col-start-large-7 col-medium-4">
         <p>
@@ -377,7 +381,7 @@
       </div>
       <hr class="p-rule col-9 col-start-large-4 col-medium-6 p-rule--muted" />
       <div class="col-3 col-start-large-4 col-medium-2">
-        <h5>Charmed OpenSearch</h5>
+        <h3 class="p-heading--5">Charmed OpenSearch</h5>
       </div>
       <div class="p-section--shallow col-6 col-start-large-7 col-medium-4">
         <p>
@@ -424,7 +428,7 @@
       <div class="col">
         <div class="p-image-container--3-2 is-highlighted u-hide--small">
           {{ image(url="https://assets.ubuntu.com/v1/da26f930-Image%20wrapper.png",
-                    alt="开源 AI 工具",
+                    alt="",
                     width="600",
                     height="400",
                     hi_def=True,
@@ -471,7 +475,7 @@
       <hr class="p-rule" />
       <div class="row--50-50">
         <div class="col">
-          <h4>MLOps 托管服务</h4>
+          <h3 class="p-heading--4">MLOps 托管服务</h4>
           <p>
             基础架构交由 Canonical 专家管理，您可放心专注于构建生产级模型。
           </p>
@@ -487,7 +491,7 @@
         </div>
         </div>
         <div class="col">
-          <h4>AI 咨询服务</h4>
+          <h3 class="p-heading--4">AI 咨询服务</h4>
           <p>
             由 Canonical 專家帶領更深入地理解您的数据，成功实现您的用例。
           </p>
