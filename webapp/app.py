@@ -30,13 +30,15 @@ app = FlaskBase(
 )
 
 # ChoiceLoader attempts loading templates from each path in successive order
-loader = ChoiceLoader([
-    FileSystemLoader('templates'),
-    FileSystemLoader('node_modules/vanilla-framework/templates/')
-])
+loader = ChoiceLoader(
+    [
+        FileSystemLoader("templates"),
+        FileSystemLoader("node_modules/vanilla-framework/templates/"),
+    ]
+)
 
 # Loader supplied to jinja_loader overwrites default jinja_loader
-app.jinja_loader = loader\
+app.jinja_loader = loader
 
 # Engage pages and takeovers from Discourse
 # This section needs to provide takeover data for /
