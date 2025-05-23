@@ -1,47 +1,64 @@
 {% extends "templates/base.html" %}
 
 {% block title %}物联网 {{ title }}{% endblock %}
-{% block meta_description %}{{ meta_description }}Ubuntu Core，物联网OS，Linux操作系统，嵌入式Linux，网关，机器人，智能驾驶，snap，snapcraft{% endblock %}
+
+{% block meta_description %}
+  {{ meta_description }}Ubuntu Core，物联网OS，Linux操作系统，嵌入式Linux，网关，机器人，智能驾驶，snap，snapcraft
+{% endblock %}
 
 {% block content %}
-{% include "internet-of-things/secondary-nav.html" %}
+  {% include "internet-of-things/secondary-nav.html" %}
 
-<style type="text/css">
-  .p-strip--suru {
-	background-blend-mode: multiply, multiply, normal, normal, normal;
-	background-image: linear-gradient(to bottom right, rgba(228,228,228,0.54) 0%, rgba(228,228,228,0.54) 49.9%, rgba(228,228,228,0) 50%, rgba(228,228,228,0) 100%),linear-gradient(to bottom left, rgba(216,216,216,0.54) 0%, rgba(216,216,216,0.54) 49.9%, rgba(216,216,216,0) 50%, rgba(216,216,216,0) 100%),linear-gradient(to top right, #fff 0%, #fff 49%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%),linear-gradient(to top right, #fff 0%, #fff 100%),linear-gradient(-89deg, #e95420 0%, #772953 38%, #2C001e 85%);
-	background-position: 0% 0%, top right, right 0 bottom 4rem, right bottom, 0% 0%;
-	background-repeat: no-repeat;
-	background-size: 100% calc(100% - 4rem),50% 100%,100% 4rem,100% 4rem,auto;
-	margin-bottom: -4rem;
-	overflow: hidden;
-	padding-bottom: 12rem !important;
-	position: relative
-}
-  .p-strip--suru.is-dark {
-	color: #fff
-}
-  .fiximg {
-  padding-top: 4rem
+  <style type="text/css">
+    .p-strip--suru {
+      background-blend-mode: multiply, multiply, normal, normal, normal;
+      background-image: linear-gradient(to bottom right, rgba(228, 228, 228, 0.54) 0%, rgba(228, 228, 228, 0.54) 49.9%, rgba(228, 228, 228, 0) 50%, rgba(228, 228, 228, 0) 100%), linear-gradient(to bottom left, rgba(216, 216, 216, 0.54) 0%, rgba(216, 216, 216, 0.54) 49.9%, rgba(216, 216, 216, 0) 50%, rgba(216, 216, 216, 0) 100%), linear-gradient(to top right, #fff 0%, #fff 49%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to top right, #fff 0%, #fff 100%), linear-gradient(-89deg, #e95420 0%, #772953 38%, #2C001e 85%);
+      background-position: 0% 0%, top right, right 0 bottom 4rem, right bottom, 0% 0%;
+      background-repeat: no-repeat;
+      background-size: 100% calc(100% - 4rem), 50% 100%, 100% 4rem, 100% 4rem, auto;
+      margin-bottom: -4rem;
+      overflow: hidden;
+      padding-bottom: 12rem !important;
+      position: relative
+    }
 
-}
-</style>
+    .p-strip--suru.is-dark {
+      color: #fff
+    }
 
-<section class="p-strip--suru is-dark">
+    .fiximg {
+      padding-top: 4rem
+    }
+  </style>
+
+  <section class="p-strip--suru is-dark">
     <div class="row u-vertically-center">
       <div class="col-6">
-        <h1>专为物联网<br>设计的Ubuntu</br></h1>
-          <p>从智能家居到智能无人机，机器人，工业系统，Ubuntu是<a class="p-link--inverted" href="https://ubuntu.com/embedded" style="font-style: italic;">嵌入式Linux的新标准</a>。获取一个专为IoT物联网设计且具有全球最好的安全性，私有应用商店，庞大的开发者社区和可靠的安全更新的操作系统。
-        </p>
-      </div>
-
-      <div class="col-5 col-start-large-8 u-align--center u-hide--small">
-        <div class=" lazyloaded fiximg" data-noscript="">
-          <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_350,h_350/https://assets.ubuntu.com/v1/049b4cc6-ubuntu+core+18+circular+white.svg " srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_700,h_700/https://assets.ubuntu.com/v1/049b4cc6-ubuntu+core+18+circular+white.svg  2x" alt="" width="350" height="350" loading="lazy">
-        </div>
-      </div>
-
+        <h1>
+          专为物联网
+          <br />
+          设计的Ubuntu
+        </br />
+      </h1>
+      <p>
+        从智能家居到智能无人机，机器人，工业系统，Ubuntu是<a class="p-link--inverted"
+   href="https://ubuntu.com/embedded"
+   style="font-style: italic">嵌入式Linux的新标准</a>。获取一个专为IoT物联网设计且具有全球最好的安全性，私有应用商店，庞大的开发者社区和可靠的安全更新的操作系统。
+      </p>
     </div>
+
+    <div class="col-5 col-start-large-8 u-align--center u-hide--small">
+      <div class=" lazyloaded fiximg" data-noscript="">
+        <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_350,h_350/https://assets.ubuntu.com/v1/049b4cc6-ubuntu+core+18+circular+white.svg "
+             srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_700,h_700/https://assets.ubuntu.com/v1/049b4cc6-ubuntu+core+18+circular+white.svg  2x"
+             alt=""
+             width="350"
+             height="350"
+             loading="lazy" />
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <section class="p-strip">
@@ -50,21 +67,20 @@
       <div class="row p-tile__row">
         <div class="col-3 col-medium-3 u-hide--small">
           <div class="u-align--center">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/33007e71-Internet+of+Things_digital-screens.svg",
-                alt="",
-                width="236",
-                height="180",
-                hi_def=True,
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/33007e71-Internet+of+Things_digital-screens.svg",
+                        alt="",
+                        width="236",
+                        height="180",
+                        hi_def=True,) | safe
             }}
           </div>
         </div>
         <div class="col-3 col-medium-3">
           <h2 class="p-heading--3">数字标牌</h2>
           <p>一个小体积和具有完整 OpenGL 的支持使 Ubuntu Core 成为安全数字标牌的完美平台。</p>
-          <p><a href="/internet-of-things/smart-displays">了解更多&nbsp;&rsaquo;</a></p>
+          <p>
+            <a href="/internet-of-things/smart-displays">了解更多&nbsp;&rsaquo;</a>
+          </p>
         </div>
       </div>
     </div>
@@ -72,21 +88,20 @@
       <div class="row p-tile__row">
         <div class="col-3 col-medium-3 u-hide--small">
           <div class="u-align--center">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/9a250d1b-Internet+of+Things_digital-drone.svg",
-                alt="",
-                width="216",
-                height="180",
-                hi_def=True,
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/9a250d1b-Internet+of+Things_digital-drone.svg",
+                        alt="",
+                        width="216",
+                        height="180",
+                        hi_def=True,) | safe
             }}
           </div>
         </div>
         <div class="col-3 col-medium-3">
           <h2 class="p-heading--3">机器人</h2>
           <p>在 Ubuntu 上使用 ROS 释放机器人。用于自动驾驶汽车和智能制造。</p>
-          <p><a href="https://ubuntu.com/robotics">了解更多</a></p>
+          <p>
+            <a href="https://ubuntu.com/robotics">了解更多</a>
+          </p>
         </div>
       </div>
     </div>
@@ -94,21 +109,20 @@
       <div class="row p-tile__row">
         <div class="col-3 col-medium-3 u-hide--small">
           <div class="u-align--center">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/d40fc8b9-Internet+of+Things_digital-gateways.svg",
-                alt="",
-                width="207",
-                height="180",
-                hi_def=True,
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/d40fc8b9-Internet+of+Things_digital-gateways.svg",
+                        alt="",
+                        width="207",
+                        height="180",
+                        hi_def=True,) | safe
             }}
           </div>
         </div>
         <div class="col-3 col-medium-3">
           <h2 class="p-heading--3">网关</h2>
           <p>丰富的网络和通讯能力使 Ubuntu 成为您工业网关的完美选择。</p>
-          <p><a href="https://ubuntu.com/internet-of-things/gateways">了解更多</a></p>
+          <p>
+            <a href="https://ubuntu.com/internet-of-things/gateways">了解更多</a>
+          </p>
         </div>
       </div>
     </div>
@@ -116,21 +130,41 @@
       <div class="row p-tile__row">
         <div class="col-3 col-medium-3 u-hide--small">
           <div class="u-align--center">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/580f3ae7-automotive.svg",
-                alt="",
-                width="236",
-                height="180",
-                hi_def=True,
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/580f3ae7-automotive.svg",
+                        alt="",
+                        width="236",
+                        height="180",
+                        hi_def=True,) | safe
             }}
           </div>
         </div>
         <div class="col-3 col-medium-3">
           <h2 class="p-heading--3">汽车</h2>
           <p>使用专为关键嵌入式系统设计的 Ubuntu 重塑汽车</p>
-          <p><a href="https://ubuntu.com/automotive">了解更多</a></p>
+          <p>
+            <a href="https://ubuntu.com/automotive">了解更多</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 p-tile">
+      <div class="row p-tile__row">
+        <div class="col-3 col-medium-3 u-hide--small">
+          <div class="u-align--center">
+            {{ image(url="https://assets.ubuntu.com/v1/51aec8b1-Networking+equipment.svg",
+                        alt="Networking",
+                        width="180",
+                        height="165",
+                        hi_def=True,) | safe
+            }}
+          </div>
+        </div>
+        <div class="col-3 col-medium-3">
+          <h2 class="p-heading--3">网络化</h2>
+          <p>构建安全的 SmartNIC 并在 Ubuntu 上大规模地运行。</p>
+          <p>
+            <a href="https://ubuntu.com/internet-of-things/networking">了解更多</a>
+          </p>
         </div>
       </div>
     </div>
@@ -139,43 +173,23 @@
         <div class="col-3 col-medium-3 u-hide--small">
           <div class="u-align--center">
             {{
-              image(
-                url="https://assets.ubuntu.com/v1/51aec8b1-Networking+equipment.svg",
-                alt="Networking",
-                width="180",
-                height="165",
-                hi_def=True,
-              ) | safe
+            image (
+            url="https://assets.ubuntu.com/v1/c75046c4-Smart+City.svg",
+            alt="",
+            width="243",
+            height="180",
+            hi_def=True,
+            loading="lazy"
+            ) | safe
             }}
-          </div>
-        </div>
-        <div class="col-3 col-medium-3">
-          <h2 class="p-heading--3">网络化</h2>
-          <p>构建安全的 SmartNIC 并在 Ubuntu 上大规模地运行。</p>
-          <p><a href="https://ubuntu.com/internet-of-things/networking">了解更多</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-6 p-tile">
-      <div class="row p-tile__row">
-        <div class="col-3 col-medium-3 u-hide--small">
-          <div class="u-align--center">
-            {{ 
-              image (
-                url="https://assets.ubuntu.com/v1/c75046c4-Smart+City.svg",
-                alt="",
-                width="243",
-                height="180",
-                hi_def=True,
-                loading="lazy"
-              ) | safe
-            }}  
           </div>
         </div>
         <div class="col-3 col-medium-3">
           <h2 class="p-heading--3">智慧城市</h2>
           <p>通过 Ubuntu Core 的强大功能来保持分布式设备的连接和安全。</p>
-          <p><a href="https://ubuntu.com/internet-of-things/smart-city">了解更多</a></p>
+          <p>
+            <a href="https://ubuntu.com/internet-of-things/smart-city">了解更多</a>
+          </p>
         </div>
       </div>
     </div>
@@ -185,14 +199,11 @@
 <section class="p-strip--light">
   <div class="row u-equal-height">
     <div class="col-5 u-align--center u-vertically-center u-hide--medium u-hide--small">
-      {{
-        image(
-          url="https://assets.ubuntu.com/v1/805f2b3a-core_black-orange_st_hex.svg",
-          alt="",
-          width="150",
-          height="200",
-          hi_def=True,
-        ) | safe
+      {{ image(url="https://assets.ubuntu.com/v1/805f2b3a-core_black-orange_st_hex.svg",
+            alt="",
+            width="150",
+            height="200",
+            hi_def=True,) | safe
       }}
     </div>
     <div class="col-6 col-start-large-7">
@@ -206,33 +217,39 @@
         <li class="p-list__item is-ticked">关键业务的OTA更新</li>
         <li class="p-list__item is-ticked">十年的长期支持和安全更新</li>
       </ul>
-      <p><a href="/internet-of-things/core">了解更多关于Ubuntu Core的内容&nbsp;&rsaquo;</a></p>
+      <p>
+        <a href="/internet-of-things/core">了解更多关于Ubuntu Core的内容&nbsp;&rsaquo;</a>
+      </p>
     </div>
   </div>
 </section>
 
 <section class="p-strip is-bordered">
-    <div class="row">
-      <div class="col-8">
-        <h2>物联网应用商店</h2>
-        <p>一个可定制的，私有的应用商店。企业服务，可实现高效的软件分发和物联网软件包包管理，通过<strong>本地部署选项</strong>以支持您的用例。利用我们大量的现有应用程序或构建您自己的应用程序。</p>
-      </div>
-      <p><a href="https://assets.ubuntu.com/v1/d6d1d3fc-IoT+App+Store+Datasheet+v3.pdf">阅读产品手册</a></p>
-      <p><a href="https://ubuntu.com/internet-of-things/appstore" class="p-button--positive">了解更多</a></p>
+  <div class="row">
+    <div class="col-8">
+      <h2>物联网应用商店</h2>
+      <p>
+        一个可定制的，私有的应用商店。企业服务，可实现高效的软件分发和物联网软件包包管理，通过<strong>本地部署选项</strong>以支持您的用例。利用我们大量的现有应用程序或构建您自己的应用程序。
+      </p>
     </div>
+    <p>
+      <a href="https://assets.ubuntu.com/v1/d6d1d3fc-IoT+App+Store+Datasheet+v3.pdf">阅读产品手册</a>
+    </p>
+    <p>
+      <a href="https://ubuntu.com/internet-of-things/appstore"
+         class="p-button--positive">了解更多</a>
+    </p>
+  </div>
 
-      <div class="u-fixed-width u-hide--small">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/43b992df-private-app-store.png",
-            alt="Snap store screenshot",
-            width="1040",
-            height="510",
-            hi_def=True,
-            attrs={"class":"p-image--shadowed"},
-          ) | safe
-        }}          
-      </div>
+  <div class="u-fixed-width u-hide--small">
+    {{ image(url="https://assets.ubuntu.com/v1/43b992df-private-app-store.png",
+        alt="Snap store screenshot",
+        width="1040",
+        height="510",
+        hi_def=True,
+        attrs={"class":"p-image--shadowed"},) | safe
+    }}
+  </div>
 </section>
 
 <section class="p-strip">
@@ -242,7 +259,7 @@
       <p>Canonical 提供全方位服务支持、定制和开发，以将您的第一台设备推向市场。应用商店和安全更新选项已可用。</p>
       <ul class="p-list">
         <li class="p-list__item is-ticked">借助我们的物联网专业服务，将您的物联网设备快速推向市场</li>
-        <li class="p-list__item is-ticked">关注您的应用程序，我们负责剩下的部分 </li>
+        <li class="p-list__item is-ticked">关注您的应用程序，我们负责剩下的部分</li>
         <li class="p-list__item is-ticked">更快的上市，低风险，易扩展</li>
       </ul>
       <p>
@@ -252,13 +269,13 @@
     </div>
     <div class="col-6 u-vertically-center u-align--center u-hide--medium u-hide--small">
       {{ image (
-        url="https://assets.ubuntu.com/v1/22007291-DevOps.svg",
-        alt="",
-        width="263",
-        height="150",
-        hi_def=True,
-        loading="lazy"
-        ) | safe
+      url="https://assets.ubuntu.com/v1/22007291-DevOps.svg",
+      alt="",
+      width="263",
+      height="150",
+      hi_def=True,
+      loading="lazy"
+      ) | safe
       }}
     </div>
   </div>
@@ -269,42 +286,36 @@
     <h2>现成的网关解决方案</h2>
     <p>对于工业和企业解决方案，只需添加您的应用程序，其余的由我们的合作伙伴处理。</p>
   </div>
-  <div class="p-logo-section">
+  <div class="p-logo-section u-align--center">
     <div class="p-logo-section__items u-no-margin--bottom">
       <div class="p-logo-section__item">
-        {{
-        image(
-          url="https://assets.ubuntu.com/v1/5ddba83a-logo-dell.svg",
-          alt="Dell",
-          width="88",
-          height="88",
-          hi_def=True,
-          attrs={"class": "p-logo-section__logo"},
-        ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/9beb846b-dell-logo.png",
+                alt="DEll",
+                width="101",
+                height="208",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}) | safe
         }}
       </div>
       <div class="p-logo-section__item">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/c95e6028-rigado-logo.png",
-            alt="Rigado",
-            width="130",
-            height="80",
-            hi_def=True,
-            attrs={"class": "p-logo-section__logo", "style": "max-width: 140px; max-height: 140px;"},
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/b47bc2f0-rigado.png",
+                alt="Rigado",
+                width="852",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}) | safe
         }}
       </div>
       <div class="p-logo-section__item">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/582bee22-avantech-logo.png",
-            alt="Avantech",
-            width="170",
-            height="48",
-            hi_def=True,
-            attrs={"class": "p-logo-section__logo"},
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/8deb7cfd-advantech-logo.png",
+                alt="Advantech",
+                width="211",
+                height="208",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}) | safe
         }}
       </div>
     </div>
@@ -312,199 +323,225 @@
 </section>
 
 <section class="p-strip is-bordered">
-    <div class="row">
-      <div class="col-6">
-        <h2>可控制的安全更新</h2>
-        <p>Ubuntu和您的应用程序的定期更新可保护设备免受持续的攻击。 强大而可靠的更新机制意味着在默认情况下我们会自动安全地解决安全问题。 如您要审查补丁程序，更新控制服务可确保仅在经设备制造商认证后才会生效。</p>
-      </div>
+  <div class="row">
+    <div class="col-6">
+      <h2>可控制的安全更新</h2>
+      <p>Ubuntu和您的应用程序的定期更新可保护设备免受持续的攻击。 强大而可靠的更新机制意味着在默认情况下我们会自动安全地解决安全问题。 如您要审查补丁程序，更新控制服务可确保仅在经设备制造商认证后才会生效。</p>
+    </div>
 
-      <div class="col-6 u-align--center u-vertically-center u-hide--medium u-hide--small">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/a43d61ae-update+control.svg",
+    <div class="col-6 u-align--center u-vertically-center u-hide--medium u-hide--small">
+      {{ image(url="https://assets.ubuntu.com/v1/a43d61ae-update+control.svg",
             alt="",
             width="140",
             height="140",
-            hi_def=True,
-          ) | safe
-        }}
-      </div>
+            hi_def=True,) | safe
+      }}
     </div>
+  </div>
 </section>
 
 <section class="p-strip--light is-bordered">
-    <div class="row u-equal-height">
-      <div class="col-5 u-align--center u-vertically-center u-hide--medium u-hide--small">
-        {{ image (
-          url="https://assets.ubuntu.com/v1/7de21966-snapshot.svg",
-          alt="",
-          width="150",
-          height="150",
-          hi_def=True,
-          loading="lazy"
-          ) | safe
-        }}
-      </div>
-
-      <div class="col-6 col-start-large-7">
-        <h2>Snap应用安全性</h2>
-        <p>Ubuntu Core是一个全snap应用的Ubuntu版本。Snap本身和所有的依赖库应用是安全，易升级的通用linux应用软件格式包。 Snaps的特点有：</p>
-        <ul class="p-list">
-          <li class="p-list__item is-ticked">严格安全的限制</li>
-          <li class="p-list__item is-ticked">可靠的事务化更新</li>
-          <li class="p-list__item is-ticked">支持压缩节约磁盘空间</li>
-          <li class="p-list__item is-ticked">易开发和分发</li>
-          <li class="p-list__item is-ticked">被业界领导者广泛使用</li>
-        </ul>
-        <p><a href="https://snapcraft.io/first-snap?from=cn-iotpage">了解如何开发snap应用</a></p>
-       </div>
+  <div class="row u-equal-height">
+    <div class="col-5 u-align--center u-vertically-center u-hide--medium u-hide--small">
+      {{ image (
+      url="https://assets.ubuntu.com/v1/7de21966-snapshot.svg",
+      alt="",
+      width="150",
+      height="150",
+      hi_def=True,
+      loading="lazy"
+      ) | safe
+      }}
     </div>
+
+    <div class="col-6 col-start-large-7">
+      <h2>Snap应用安全性</h2>
+      <p>Ubuntu Core是一个全snap应用的Ubuntu版本。Snap本身和所有的依赖库应用是安全，易升级的通用linux应用软件格式包。 Snaps的特点有：</p>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">严格安全的限制</li>
+        <li class="p-list__item is-ticked">可靠的事务化更新</li>
+        <li class="p-list__item is-ticked">支持压缩节约磁盘空间</li>
+        <li class="p-list__item is-ticked">易开发和分发</li>
+        <li class="p-list__item is-ticked">被业界领导者广泛使用</li>
+      </ul>
+      <p>
+        <a href="https://snapcraft.io/first-snap?from=cn-iotpage">了解如何开发snap应用</a>
+      </p>
+    </div>
+  </div>
 </section>
 
 <section class="p-strip is-bordered">
-    <div class="row">
-      <div class="col-8">
-        <h2>行业领导者及案例</h2>
-      </div>
+  <div class="row">
+    <div class="col-8">
+      <h2>行业领导者及案例</h2>
     </div>
-    <div class="row u-equal-height">
-      <div class="col-6 p-card">
-        <h3 class="p-card__title">私有云Nextcloud盒子的诞生</h3>
-        <p class="p-card__content">在本次网络研讨会上，Nextcloud的创始人Frank Karlitschek将介绍Nextcloud盒子项目的创立。其旨在提供一个安全的自托管的私有云，让用户能控制私有的数据。</p>
-        <p class="p-card__content"><a href="https://www.brighttalk.com/webcast/6793/224403?utm_campaign=Device_FY17_IOT&amp;utm_medium=iotpage&amp;utm_source=ubuntuwebsite&amp;utm_content=themakingofnextcloudp-cardcasestudy">观看Nextcloud网络研讨会</a></p>
-      </div>
-      <div class="col-6 p-card">
-        <h3 class="p-card__title">能前往任何地方的Tunnel无人机</h3>
-        <p class="p-card__content">AeroLion科技的无人机正在自动执行任务，并帮助考察由于极端或危险条件或该地区在地理上无法到达而无法到达的区域。</p>
-        <p class="p-card__content"><a href="https://pages.ubuntu.com/AerolionCS.html?from=iotpage">阅读AeroLion案例分享</a></p>
-      </div>
+  </div>
+  <div class="row u-equal-height">
+    <div class="col-6 p-card">
+      <h3 class="p-card__title">私有云Nextcloud盒子的诞生</h3>
+      <p class="p-card__content">
+        在本次网络研讨会上，Nextcloud的创始人Frank Karlitschek将介绍Nextcloud盒子项目的创立。其旨在提供一个安全的自托管的私有云，让用户能控制私有的数据。
+      </p>
+      <p class="p-card__content">
+        <a href="https://www.brighttalk.com/webcast/6793/224403?utm_campaign=Device_FY17_IOT&amp;utm_medium=iotpage&amp;utm_source=ubuntuwebsite&amp;utm_content=themakingofnextcloudp-cardcasestudy">观看Nextcloud网络研讨会</a>
+      </p>
     </div>
-    <div class="row u-equal-height">
-      <div class="col-6 p-card">
-        <h3 class="p-card__title">Azeti提高了实时运营的基准</h3>
-        <p class="p-card__content">Azeti网络科技是从电信到制造，金融和医疗健康等公司的全球物联网技术提供商。Azeti选择Ubuntu Core来改善运营和安全。</p>
-        <p class="p-card__content"><a href="https://pages.ubuntu.com/AzetiCS.html?from=iotpage">阅读Azeti案例分享</a></p>
-      </div>
-      <div class="col-6 p-card">
-        <h3 class="p-card__title">戴尔——定义了智能工业</h3>
-        <p class="p-card__content">戴尔边缘网关（Edge Gateway）系列产品为工业市场带来了熟悉的X86平台强大的连接性，从而可以轻松创建和管理用于静态和基于移动应用程序的各种工业控制系统。</p>
-        <p class="p-card__content"><a href="http://www.dell.com/us/business/p/edge-gateway">了解更多关于戴尔边缘网关的内容</a></p>
-      </div>
+    <div class="col-6 p-card">
+      <h3 class="p-card__title">能前往任何地方的Tunnel无人机</h3>
+      <p class="p-card__content">AeroLion科技的无人机正在自动执行任务，并帮助考察由于极端或危险条件或该地区在地理上无法到达而无法到达的区域。</p>
+      <p class="p-card__content">
+        <a href="https://pages.ubuntu.com/AerolionCS.html?from=iotpage">阅读AeroLion案例分享</a>
+      </p>
     </div>
+  </div>
+  <div class="row u-equal-height">
+    <div class="col-6 p-card">
+      <h3 class="p-card__title">Azeti提高了实时运营的基准</h3>
+      <p class="p-card__content">Azeti网络科技是从电信到制造，金融和医疗健康等公司的全球物联网技术提供商。Azeti选择Ubuntu Core来改善运营和安全。</p>
+      <p class="p-card__content">
+        <a href="https://pages.ubuntu.com/AzetiCS.html?from=iotpage">阅读Azeti案例分享</a>
+      </p>
+    </div>
+    <div class="col-6 p-card">
+      <h3 class="p-card__title">戴尔——定义了智能工业</h3>
+      <p class="p-card__content">戴尔边缘网关（Edge Gateway）系列产品为工业市场带来了熟悉的X86平台强大的连接性，从而可以轻松创建和管理用于静态和基于移动应用程序的各种工业控制系统。</p>
+      <p class="p-card__content">
+        <a href="https://www.dell.com/us/business/p/edge-gateway">了解更多关于戴尔边缘网关的内容</a>
+      </p>
+    </div>
+  </div>
 </section>
 
 <section class="p-strip--light is-bordered">
-    <div class="row">
-      <div class="col-8">
-        <h2>在所有主流平台上实现原型机到量产</h2>
-      </div>
+  <div class="row">
+    <div class="col-8">
+      <h2>在所有主流平台上实现原型机到量产</h2>
     </div>
-      <div class="row u-equal-height">
-        <div class="col-6 p-card">
-          <header class="no-border u-align--center u-vertically-center u-hide--small" style="min-height: 7rem;">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/8cb47950-g46.png",
+  </div>
+  <div class="row u-equal-height">
+    <div class="col-6 p-card">
+      <header class="no-border u-align--center u-vertically-center u-hide--small"
+              style="min-height: 7rem">
+        {{ image(url="https://assets.ubuntu.com/v1/8cb47950-g46.png",
                 alt="",
                 width="90",
                 height="65",
-                hi_def=True,
-              ) | safe
-            }}
-           </header>
-           <hr class="u-sv1 u-hide--small">
-           <h3 class="p-card__title">英特尔IOTG平台</h3>
-           <p class="p-card__content">英特尔的边缘就绪计算和连接技术组合使边缘应用程序快速部署变得容易。</p>
-           <p class="p-card__content"><a href="/download/iot/intel-iotg">了解更多</a></p>
-        </div>
-        <div class="col-6 p-card">
-          <header class="no-border u-align--center u-vertically-center u-hide--small" style="min-height: 7rem;">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/dca2e4c4-raspberry-logo.png",
+                hi_def=True,) | safe
+        }}
+      </header>
+      <hr class="u-sv1 u-hide--small" />
+      <h3 class="p-card__title">英特尔IOTG平台</h3>
+      <p class="p-card__content">英特尔的边缘就绪计算和连接技术组合使边缘应用程序快速部署变得容易。</p>
+      <p class="p-card__content">
+        <a href="/download/iot/intel-iotg">了解更多</a>
+      </p>
+    </div>
+    <div class="col-6 p-card">
+      <header class="no-border u-align--center u-vertically-center u-hide--small"
+              style="min-height: 7rem">
+        {{ image(url="https://assets.ubuntu.com/v1/dca2e4c4-raspberry-logo.png",
                 alt="",
                 width="195",
                 height="65",
-                hi_def=True,
-              ) | safe
-            }}
-          </header>
-          <hr class="u-sv1 u-hide--small">
-          <h3 class="p-card__title">树莓派2、3和4</h3>
-          <p class="p-card__content">树莓派提供个人娱乐、教育、商业的开发环境。有了对Pi2、Pi3及新的Pi4的支持，Ubuntu Core支持全世界最受欢迎的开发板。</p>
-          <p class="p-card__content"><a href="https://www.raspberrypi.org/">前往树莓派官网</a></p>
-         </div>
-      </div>
+                hi_def=True,) | safe
+        }}
+      </header>
+      <hr class="u-sv1 u-hide--small" />
+      <h3 class="p-card__title">树莓派2、3和4</h3>
+      <p class="p-card__content">树莓派提供个人娱乐、教育、商业的开发环境。有了对Pi2、Pi3及新的Pi4的支持，Ubuntu Core支持全世界最受欢迎的开发板。</p>
+      <p class="p-card__content">
+        <a href="https://www.raspberrypi.org/">前往树莓派官网</a>
+      </p>
+    </div>
+  </div>
 
-      <div class="row u-equal-height">
-        <div class="col-6 p-card">
-          <header class="no-border u-align--center u-vertically-center u-hide--small" style="min-height: 7rem;">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/a8d80d5a-Qualcomm-Logo.svg",
+  <div class="row u-equal-height">
+    <div class="col-6 p-card">
+      <header class="no-border u-align--center u-vertically-center u-hide--small"
+              style="min-height: 7rem">
+        {{ image(url="https://assets.ubuntu.com/v1/a8d80d5a-Qualcomm-Logo.svg",
                 alt="",
                 width="200",
                 height="65",
-                hi_def=True,
-              ) | safe
-            }}
-          </header>
-          <hr class="u-sv1 u-hide--small">
-          <h3 class="p-card__title">Qualcomm Dragonboard</h3>
-          <p class="p-card__content">64位架构低功耗和高性能的ARM平台开启了新无人机和移动智能时代。</p>
-          <p class="p-card__content"><a href="https://developer.qualcomm.com/hardware/dragonboard-410c">前往qualcomm官网</a></p>
-        </div>
-      <div class="col-6 p-card">
-        <header class="no-border u-align--center u-vertically-center u-hide--medium u-hide--small" style="min-height: 7rem;">
-          {{ image (
-            url="https://assets.ubuntu.com/v1/22011fee-Xilinx_logo.svg.png",
-            alt="",
-            width="256",
-            height="52",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
-          }}
-        </header>
-        <hr class="u-sv1 u-hide--small" />
-        <h3 class="p-card__title">赛灵思评估套件和SOM板</h3>
-        <p class="p-card__content">Zynq&reg; UltraScale+&trade; MPSoCsgic将四核64位Arm应用处理器与实时处理器和FPGA逻辑相集成，以提供一个嵌入式低延迟的加速平台。</p>
-        <p class="p-card__content"><a href="https://www.xilinx.com/applications/industrial/robotics.html#solutionStack?utm_source=canonical&utm_medium=referral&utm_campaign=ubuntu&utm_content=iot&utm_term=eval_kit">前往xilinx.com以了解更多</a></p>
-      </div>
-    </div>       
+                hi_def=True,) | safe
+        }}
+      </header>
+      <hr class="u-sv1 u-hide--small" />
+      <h3 class="p-card__title">Qualcomm Dragonboard</h3>
+      <p class="p-card__content">64位架构低功耗和高性能的ARM平台开启了新无人机和移动智能时代。</p>
+      <p class="p-card__content">
+        <a href="https://developer.qualcomm.com/hardware/dragonboard-410c">前往qualcomm官网</a>
+      </p>
+    </div>
+    <div class="col-6 p-card">
+      <header class="no-border u-align--center u-vertically-center u-hide--medium u-hide--small"
+              style="min-height: 7rem">
+        {{ image (
+        url="https://assets.ubuntu.com/v1/22011fee-Xilinx_logo.svg.png",
+        alt="",
+        width="256",
+        height="52",
+        hi_def=True,
+        loading="lazy"
+        ) | safe
+        }}
+      </header>
+      <hr class="u-sv1 u-hide--small" />
+      <h3 class="p-card__title">赛灵思评估套件和SOM板</h3>
+      <p class="p-card__content">Zynq&reg; UltraScale+&trade; MPSoCsgic将四核64位Arm应用处理器与实时处理器和FPGA逻辑相集成，以提供一个嵌入式低延迟的加速平台。</p>
+      <p class="p-card__content">
+        <a href="https://www.xilinx.com/applications/industrial/robotics.html#solutionStack?utm_source=canonical&utm_medium=referral&utm_campaign=ubuntu&utm_content=iot&utm_term=eval_kit">前往xilinx.com以了解更多</a>
+      </p>
+    </div>
+  </div>
 </section>
 
 <section class="p-strip is-bordered">
-    <div class="row">
-      <div class="col-7">
-        <h2>最适合开发者</h2>
-        <p>只需一台运行Ubuntu的PC，您可以在上面开发snap应用，然后通过上传到snap应用商店来实现营收。</p>
-        <p><a href="https://ubuntu.com/core/docs">了解更多在Ubuntu上开发物联网项目的内容</a></p>
-      </div>
-      <div class="col-5 u-align--center u-vertically-center u-hide--small">
-        <div class=" lazyloaded" data-noscript="">
-          <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_140,h_140/https://assets.ubuntu.com/v1/061edebb-developer.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_280,h_280/https://assets.ubuntu.com/v1/061edebb-developer.svg 2x" alt="" width="140" height="140" loading="lazy">
-        </div>
+  <div class="row">
+    <div class="col-7">
+      <h2>最适合开发者</h2>
+      <p>只需一台运行Ubuntu的PC，您可以在上面开发snap应用，然后通过上传到snap应用商店来实现营收。</p>
+      <p>
+        <a href="https://ubuntu.com/core/docs">了解更多在Ubuntu上开发物联网项目的内容</a>
+      </p>
+    </div>
+    <div class="col-5 u-align--center u-vertically-center u-hide--small">
+      <div class=" lazyloaded" data-noscript="">
+        <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_140,h_140/https://assets.ubuntu.com/v1/061edebb-developer.svg"
+             srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_280,h_280/https://assets.ubuntu.com/v1/061edebb-developer.svg 2x"
+             alt=""
+             width="140"
+             height="140"
+             loading="lazy" />
       </div>
     </div>
+  </div>
 </section>
 
 <section class="p-strip--light">
-    <div class="row u-equal-height">
-      <div class="col-4 u-align--left u-hide--small">
-        <div class=" lazyloaded" data-noscript="">
-          <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_280,h_280/https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_560,h_560/https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg 2x" alt="" width="280" height="280" loading="lazy">
-        </div>
-      </div>
-
-      <div class="col-8 u-vertically-center">
-        <div>
-          <h2>期待与您的合作</h2>
-          <p>如您想将Ubuntu Core用于下一代物联网项目，欢迎与我们联系。</p>
-          <p><a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a></p>
-        </div>
+  <div class="row u-equal-height">
+    <div class="col-4 u-align--left u-hide--small">
+      <div class=" lazyloaded" data-noscript="">
+        <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_280,h_280/https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg"
+             srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_560,h_560/https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg 2x"
+             alt=""
+             width="280"
+             height="280"
+             loading="lazy" />
       </div>
     </div>
+
+    <div class="col-8 u-vertically-center">
+      <div>
+        <h2>期待与您的合作</h2>
+        <p>如您想将Ubuntu Core用于下一代物联网项目，欢迎与我们联系。</p>
+        <p>
+          <a href="/contact" class="p-button--positive js-invoke-modal">联系我们</a>
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
 
 {% endblock %}
