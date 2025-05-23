@@ -1,87 +1,118 @@
 {% extends "templates/base.html" %}
 
-{% if title %}{% block title %}下载Ubuntu桌面系统{{ title }}{% endblock %}{% endif %}
-{% if meta_description %}{% block meta_description %}Ubuntu {{ releases.lts.short_version }}下载, Ubuntu {{ releases.latest.full_version }}下载, Ubuntu系统下载，Ubuntu 18.04下载，Ubuntu 16.04下载，Ubuntu 14.04下载{{ meta_description }}{% endblock %}{% endif %}
-{% block meta_copydoc %}https://docs.google.com/document/d/1-rYu9BV4mN04yXn01QhBillOyHQOeuCbuGKiJQpJjYs/edit{% endblock meta_copydoc %}
+{% if title %}
+
+  {% block title %}下载Ubuntu桌面系统{{ title }}{% endblock %}
+{% endif %}
+{% if meta_description %}
+
+  {% block meta_description %}
+    Ubuntu {{ releases.lts.short_version }}下载, Ubuntu {{ releases.latest.full_version }}下载, Ubuntu系统下载，Ubuntu 18.04下载，Ubuntu 16.04下载，Ubuntu 14.04下载{{ meta_description }}
+  {% endblock %}
+{% endif %}
+
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/1-rYu9BV4mN04yXn01QhBillOyHQOeuCbuGKiJQpJjYs/edit
+{% endblock meta_copydoc %}
+
 {% block content %}
 
-{% include "download/secondary-nav.html" %}
+  {% include "download/secondary-nav.html" %}
 
-<section class="p-strip--suru-shape-light is-deep">
-  <div class="u-fixed-width">
-    <h1 class="p-heading--2 u-no-margin--bottom"><strong>下载Ubuntu桌面版</strong></h1>
-    <p>为全球数百万台PC和笔记本电脑提供支持的开源桌面操作系统。在下方了解更多关于Ubuntu的功能以及我们如何支持开发人员和组织的信息。</p>
-    <p>
-      <a href="/desktop" class="p-button--positive">访问Ubuntu桌面页</a>
-      <a href="https://ubuntu.com/blog/desktop">阅读Ubuntu桌面博客文章</a>
-    </p>
-  </div>
-</section>
-
-<section class="p-strip--light">
-  <div class="row">
-    <div class="col-8 p-divider__block">
-      <h2>Ubuntu {{ releases.lts.full_version }} LTS</h2>
-      <p class="u-no-padding--top">下载专为桌面PC和笔记本精心打造的Ubuntu长期支持(<abbr title="Long-term support">LTS</abbr>)版本。LTS意为“长期支持”，一般为5年。LTS版本将提供免费安全和维护更新至 {{ releases.lts.eol }}。</p>
-      <p><a href="{{ releases.lts.release_notes_url }}">Ubuntu {{ releases.lts.short_version }} LTS发布说明</a></p>
-      <p>推荐的系统配置要求：</p>
-      <ul class="p-list is-split">
-        <li class="p-list__item is-ticked">双核2 GHz处理器或更高</li>
-        <li class="p-list__item is-ticked">4 GB系统内存</li>
-        <li class="p-list__item is-ticked">25 GB磁盘存储空间</li>
-        <li class="p-list__item is-ticked">可访问的互联网</li>
-        <li class="p-list__item is-ticked">光驱或USB安装介质</li>
-      </ul>
-    </div>
-    <div class="col-4">
-      <div class="u-align--center u-sv4">
-        {{ image (
-          url="https://assets.ubuntu.com/v1/3b5fa561-mascot-numbat@2x.png",
-          alt="",
-          width="200",
-          height="200",
-          hi_def=True,
-          loading="auto"
-          ) | safe
-        }}
-      </div>
+  <section class="p-strip--suru-shape-light is-deep">
+    <div class="u-fixed-width">
+      <h1 class="p-heading--2 u-no-margin--bottom">
+        <strong>下载Ubuntu桌面版</strong>
+      </h1>
+      <p>为全球数百万台PC和笔记本电脑提供支持的开源桌面操作系统。在下方了解更多关于Ubuntu的功能以及我们如何支持开发人员和组织的信息。</p>
       <p>
-        <a class="p-button--positive is-wide" href="https://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.lts.short_version }}', 'eventValue' : undefined });">下载 {{ releases.lts.full_version }}</a>
-        <script>performance.mark("Download (Desktop) button rendered")</script>
+        <a href="/desktop" class="p-button--positive">访问Ubuntu桌面页</a>
+        <a href="https://ubuntu.com/blog/desktop">阅读Ubuntu桌面博客文章</a>
       </p>
-      <p><small>如需其他版本的Ubuntu，请参考Ubuntu桌面的<a href="https://ubuntu.com/desktop">更多信息</a></small></p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="p-strip--light">
-  <hr class="is-fixed-width" />
+  <section class="p-strip--light">
+    <div class="row">
+      <div class="col-8 p-divider__block">
+        <h2>Ubuntu {{ releases.lts.full_version }} LTS</h2>
+        <p class="u-no-padding--top">
+          下载专为桌面PC和笔记本精心打造的Ubuntu长期支持(<abbr title="Long-term support">LTS</abbr>)版本。LTS意为“长期支持”，一般为5年。LTS版本将提供免费安全和维护更新至 {{ releases.lts.eol }}。
+        </p>
+        <p>
+          <a href="{{ releases.lts.release_notes_url }}">Ubuntu {{ releases.lts.short_version }} LTS发布说明</a>
+        </p>
+        <p>推荐的系统配置要求：</p>
+        <ul class="p-list is-split">
+          <li class="p-list__item is-ticked">双核2 GHz处理器或更高</li>
+          <li class="p-list__item is-ticked">4 GB系统内存</li>
+          <li class="p-list__item is-ticked">25 GB磁盘存储空间</li>
+          <li class="p-list__item is-ticked">可访问的互联网</li>
+          <li class="p-list__item is-ticked">光驱或USB安装介质</li>
+        </ul>
+      </div>
+      <div class="col-4">
+        <div class="u-align--center u-sv4">
+          {{ image(url="https://assets.ubuntu.com/v1/3b5fa561-mascot-numbat@2x.png",
+                    alt="",
+                    width="268",
+                    height="200",
+                    hi_def=True,
+                    loading="auto") | safe
+          }}
+        </div>
+        <p>
+          <a class="p-button--positive is-wide"
+             href="https://releases.ubuntu.com/{{ releases.lts.short_version }}/ubuntu-{{ releases.lts.full_version }}-desktop-amd64.iso"
+             onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.lts.short_version }}', 'eventValue' : undefined });">下载 {{ releases.lts.full_version }}</a>
+          <script>
+            performance.mark("Download (Desktop) button rendered")
+          </script>
+        </p>
+        <p>
+          <small>如需其他版本的Ubuntu，请参考Ubuntu桌面的<a href="https://ubuntu.com/desktop">更多信息</a></small>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip--light">
+    <hr class="is-fixed-width" />
     <div class="row">
       <h2>Ubuntu {{ releases.latest.full_version }}</h2>
       <div class="row u-equal-height p-divider u-no-padding--left u-no-padding--right">
         <div class="col-8 p-divider__block">
-          <p class="u-no-padding--top">专为桌面PC和笔记本精心打造的最新版Ubuntu操作系统，Ubuntu {{ releases.latest.full_version }}拥有9个月安全和维护更新支持至{{ releases.latest.eol }}。</p>
-          <p>推荐的系统配置和要求与Ubuntu {{ releases.lts.short_version }} <abbr title="Long-term support">LTS</abbr>一致。</p>
-          <p><a href="{{ releases.latest.release_notes_url }}">Ubuntu {{ releases.latest.short_version }} 发布说明</a></p>
+          <p class="u-no-padding--top">
+            专为桌面PC和笔记本精心打造的最新版Ubuntu操作系统，Ubuntu {{ releases.latest.full_version }}拥有9个月安全和维护更新支持至{{ releases.latest.eol }}。
+          </p>
+          <p>
+            推荐的系统配置和要求与Ubuntu {{ releases.lts.short_version }} <abbr title="Long-term support">LTS</abbr>一致。
+          </p>
+          <p>
+            <a href="{{ releases.latest.release_notes_url }}">Ubuntu {{ releases.latest.short_version }} 发布说明</a>
+          </p>
         </div>
         <div class="col-4">
           <div class="u-align--center u-sv4">
             {{
-              image (
-              url="https://assets.ubuntu.com/v1/91be1162-Oracular%20Oriole%20Mascot%20transparent%20background.png",
-              alt="",
-              width="200",
-              height="200",
-              hi_def=True,
-              loading="auto|lazy"
-              ) | safe
+            image (
+            url="https://assets.ubuntu.com/v1/91be1162-Oracular%20Oriole%20Mascot%20transparent%20background.png",
+            alt="",
+            width="200",
+            height="200",
+            hi_def=True,
+            loading="auto|lazy"
+            ) | safe
             }}
           </div>
           <p>
-            <a class="p-button--positive is-wide js-latest-download" href="https://releases.ubuntu.com/{{ releases.latest.desktop_version }}/ubuntu-{{ releases.latest.desktop_version }}-desktop-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.latest.desktop_version }}', 'eventValue' : undefined });">下载 {{ releases.latest.full_version }}</a>
+            <a class="p-button--positive is-wide js-latest-download"
+               href="https://releases.ubuntu.com/{{ releases.latest.desktop_version }}/ubuntu-{{ releases.latest.desktop_version }}-desktop-amd64.iso"
+               onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.latest.desktop_version }}', 'eventValue' : undefined });">下载 {{ releases.latest.full_version }}</a>
           </p>
           <p>
-            <a href="https://cdimage.ubuntu.com/releases/{{ releases.latest.short_version }}/release/ubuntu-{{ releases.latest.short_version }}-desktop-legacy-amd64.iso" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.latest.short_version }} legacy installer', 'eventValue' : undefined });">下载 {{ releases.latest.short_version }} (旧版桌面安装器版本)</a>
+            <a href="https://cdimage.ubuntu.com/releases/{{ releases.latest.short_version }}/release/ubuntu-{{ releases.latest.short_version }}-desktop-legacy-amd64.iso"
+               onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download', 'eventAction' : 'Desktop', 'eventLabel' : '{{ releases.latest.short_version }} legacy installer', 'eventValue' : undefined });">下载 {{ releases.latest.short_version }} (旧版桌面安装器版本)</a>
           </p>
           <p>
             <small>如需其他版本的Ubuntu桌面，包括BT下载，网络安装器，本地镜像站和历史版本，请访问 <a href="/download/alternative-downloads">其他下载</a>。</small>
@@ -89,96 +120,110 @@
         </div>
       </div>
     </div>
-</section>
+  </section>
 
-<section class="p-strip">
-  <div class="u-fixed-width">
-    <h2>如何安装 Ubuntu 桌面</h2>
-  </div>
-  <div class="row p-divider">
-    <div class="col-3 p-divider__block">
-      <h3 class="p-heading--4"><a href="https://ubuntu.com/tutorials/install-ubuntu-desktop">安装Ubuntu桌面</a></h3>
-      <p>阅读本教程了解如何在笔记本电脑或PC上安装Ubuntu桌面。</p>
-      <p>你也可以从一个优盘上运行Ubuntu桌面试用而无需安装到你的机器上。</p>
+  <section class="p-strip">
+    <div class="u-fixed-width">
+      <h2>如何安装 Ubuntu 桌面</h2>
     </div>
-    <div class="col-3 p-divider__block">
-      <h3 class="p-heading--4"><a href="https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox">如何使用VirtualBox在虚拟机上运行Ubuntu桌面</a></h3>
-      <p>通过此快速入门指南了解如何使用VirtualBox在任何操作系统上通过设置虚拟机来运行Ubuntu桌面。</p>
+    <div class="row p-divider">
+      <div class="col-3 p-divider__block">
+        <h3 class="p-heading--4">
+          <a href="https://ubuntu.com/tutorials/install-ubuntu-desktop">安装Ubuntu桌面</a>
+        </h3>
+        <p>阅读本教程了解如何在笔记本电脑或PC上安装Ubuntu桌面。</p>
+        <p>你也可以从一个优盘上运行Ubuntu桌面试用而无需安装到你的机器上。</p>
+      </div>
+      <div class="col-3 p-divider__block">
+        <h3 class="p-heading--4">
+          <a href="https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox">如何使用VirtualBox在虚拟机上运行Ubuntu桌面</a>
+        </h3>
+        <p>通过此快速入门指南了解如何使用VirtualBox在任何操作系统上通过设置虚拟机来运行Ubuntu桌面。</p>
+      </div>
+      <div class="col-3 p-divider__block">
+        <h3 class="p-heading--4">
+          <a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-desktop-on-raspberry-pi-4">如何在树莓派4上安装Ubuntu桌面</a>
+        </h3>
+        <p>阅读在树莓派4（2GB内存及以上）上安装Ubuntu桌面的完整教程。</p>
+      </div>
+      <div class="col-3 p-divider__block">
+        <h3 class="p-heading--4">
+          <a href="https://ubuntu.com/tutorials/upgrading-ubuntu-desktop">升级Ubuntu桌面</a>
+        </h3>
+        <p>如果您已经在运行Ubuntu，则可以从软件更新程序中单击几下进行升级。</p>
+        <p>可通过本快速教程了解如何操作。</p>
+      </div>
     </div>
-    <div class="col-3 p-divider__block">
-      <h3 class="p-heading--4"><a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-desktop-on-raspberry-pi-4">如何在树莓派4上安装Ubuntu桌面</a></h3>
-      <p>阅读在树莓派4（2GB内存及以上）上安装Ubuntu桌面的完整教程。</p>
-    </div>
-    <div class="col-3 p-divider__block">
-      <h3 class="p-heading--4"><a href="https://ubuntu.com/tutorials/upgrading-ubuntu-desktop">升级Ubuntu桌面</a></h3>
-      <p>如果您已经在运行Ubuntu，则可以从软件更新程序中单击几下进行升级。</p>
-      <p>可通过本快速教程了解如何操作。</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="p-strip--light">
-  <div class="row">
-    <div class="col-6">
-      <h2>成百上千款认证的设备</h2>
-      <p>许多世界上最大的PC制造商都为 Ubuntu 认证了他们的笔记本电脑和台式机，从超便携笔记本电脑到高端工作站。Ubuntu认证的硬件已经通过了我们广泛的测试和审查过程，确保Ubuntu开箱即用。我们的合作伙伴还提供预装优化过的Ubuntu镜像的精选设备。</p>
-      <p><a href="https://ubuntu.com/certified">了解更多Ubuntu认证设备</a></p>
+  <section class="p-strip--light">
+    <div class="row">
+      <div class="col-6">
+        <h2>成百上千款认证的设备</h2>
+        <p>
+          许多世界上最大的PC制造商都为 Ubuntu 认证了他们的笔记本电脑和台式机，从超便携笔记本电脑到高端工作站。Ubuntu认证的硬件已经通过了我们广泛的测试和审查过程，确保Ubuntu开箱即用。我们的合作伙伴还提供预装优化过的Ubuntu镜像的精选设备。
+        </p>
+        <p>
+          <a href="https://ubuntu.com/certified">了解更多Ubuntu认证设备</a>
+        </p>
+      </div>
+      <div class="col-6 u-vertically-center u-align--center u-hide--small u-hide--medium">
+        {{ image(url="https://assets.ubuntu.com/v1/f13353fa-ubuntu-certified-logos.png",
+                alt="Ubuntu certified hardware partners (HP, Lenovo and Dell)",
+                width="947",
+                height="400",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      </div>
     </div>
-    <div class="col-6 u-vertically-center u-align--center u-hide--small u-hide--medium">
-      {{
-        image (
-        url="https://assets.ubuntu.com/v1/32b323db-certified-hardware-partners.svg",
-        alt="Ubuntu certified hardware partners (HP, Lenovo and Dell)",
-        width="476",
-        height="187",
-        hi_def=True,
-        loading="lazy"
-        ) | safe
-      }}
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="p-strip">
-  {% include "shared/_pro_strip.html" %}
-  <div class="u-fixed-width">
-    <p>如需了解更多信息，请下载我们的白皮书：</p>
-    <p>
-      <a href="https://ubuntu.com/engage/adopting-secure-enterprise-linux-desktop" class="p-button">采用安全的企业Linux桌面</a>
-    </p>
-    <p><a class="p-button--positive" href="/support/pro">现在注册个人版Ubuntu Pro</a></p>
-  </div>
-</section>
+  <section class="p-strip">
+    {% include "shared/_pro_strip.html" %}
+    <div class="u-fixed-width">
+      <p>如需了解更多信息，请下载我们的白皮书：</p>
+      <p>
+        <a href="https://ubuntu.com/engage/adopting-secure-enterprise-linux-desktop"
+           class="p-button">采用安全的企业Linux桌面</a>
+      </p>
+      <p>
+        <a class="p-button--positive" href="/support/pro">现在注册个人版Ubuntu Pro</a>
+      </p>
+    </div>
+  </section>
 
-<section class="p-strip--light">
-  <div class="u-fixed-width">
-    <h2>在 Linux、Mac 或 Windows 上快速启动 Ubuntu 虚拟机</h2>
-  </div>
-  <div class="row">
-    <div class="col-8">
-      <h3>借助 Multipass 获得桌面上的迷你云</h3>
-      <p>使用Multipass，您可以下载、配置和控制预装了最新更新的Ubuntu服务器版的虚拟机。在您的Linux、Windows或macOS系统上创建迷你云</p>
-      <p><a href="https://multipass.run/#install" class="p-button--positive">下载Multipass（支持macOS | Windows | Linux）</a></p>
-      <p><a href="https://multipass.run">了解更多关于 Multipass 的内容</a></p>
+  <section class="p-strip--light">
+    <div class="u-fixed-width">
+      <h2>在 Linux、Mac 或 Windows 上快速启动 Ubuntu 虚拟机</h2>
     </div>
-    <div class="col-4 u-vertically-center u-align--center u-hide--small u-hide--medium p-divider__block">
-      {{ image (
-        url="https://assets.ubuntu.com/v1/ea3e125b-multipass-logo-45.svg",
-        alt="Canonical Multipass",
-        width="273",
-        height="45",
-        hi_def=True,
-        loading="lazy"
-        ) | safe
-      }}
+    <div class="row">
+      <div class="col-8">
+        <h3>借助 Multipass 获得桌面上的迷你云</h3>
+        <p>使用Multipass，您可以下载、配置和控制预装了最新更新的Ubuntu服务器版的虚拟机。在您的Linux、Windows或macOS系统上创建迷你云</p>
+        <p>
+          <a href="https://multipass.run/#install" class="p-button--positive">下载Multipass（支持macOS | Windows | Linux）</a>
+        </p>
+        <p>
+          <a href="https://multipass.run">了解更多关于 Multipass 的内容</a>
+        </p>
+      </div>
+      <div class="col-4 u-vertically-center u-align--center u-hide--small u-hide--medium p-divider__block">
+        {{ image(url="https://assets.ubuntu.com/v1/446a1242-multipass-logo.png",
+                alt="Canonical Multipass",
+                width="229",
+                height="208",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      </div>
     </div>
-  </div>
-  <div class="u-fixed-width">
-    <hr class="p-separator" />
-  </div>
-  <div class="row">
-    <div class="col-4 u-align--center u-vertically-center u-hide--small u-hide--medium">
-      {{ image (
+    <div class="u-fixed-width">
+      <hr class="p-separator" />
+    </div>
+    <div class="row">
+      <div class="col-4 u-align--center u-vertically-center u-hide--small u-hide--medium">
+        {{ image (
         url="https://assets.ubuntu.com/v1/8b5cbeea-Windows_11+Ubuntu .png",
         alt="",
         width="375",
@@ -186,59 +231,74 @@
         hi_def=True,
         loading="lazy"
         ) | safe
-      }}
+        }}
+      </div>
+      <div class="col-8">
+        <h3>使用 Ubuntu WSL 在 Windows 上访问 Linux 终端</h3>
+        <p>要获得更集成的环境，请启用适用于Linux的Windows子系统(WSL)以运行Linux应用程序和工作流，同时在Windows机器上进行跨平台开发。</p>
+        <p>您可以直接从微软商店下载 Ubuntu</p>
+        <p>
+          <a href="https://www.microsoft.com/zh-cn/p/ubuntu/9pdxgncfsczv?rtc=1&activetab=pivot:overviewtab"
+             class="p-button--positive">下载 Ubuntu WSL</a>
+        </p>
+        <p>
+          <a href="https://ubuntu.com/wsl">了解更多关于 WSL 的内容</a>
+        </p>
+      </div>
     </div>
-    <div class="col-8">
-      <h3>使用 Ubuntu WSL 在 Windows 上访问 Linux 终端</h3>
-      <p>要获得更集成的环境，请启用适用于Linux的Windows子系统(WSL)以运行Linux应用程序和工作流，同时在Windows机器上进行跨平台开发。</p>
-      <p>您可以直接从微软商店下载 Ubuntu</p>
-      <p><a href="https://www.microsoft.com/zh-cn/p/ubuntu/9pdxgncfsczv?rtc=1&activetab=pivot:overviewtab" class="p-button--positive">下载 Ubuntu WSL</a></p>
-      <p><a href="https://ubuntu.com/wsl">了解更多关于 WSL 的内容</a></p>
+    <div class="u-fixed-width">
+      <hr class="p-separator" />
     </div>
-  </div>
-  <div class="u-fixed-width">
-    <hr class="p-separator" />
-  </div>
-  <div class="row">
-    <div class="col-8">
-      <h3>使用 LXD 运行系统容器</h3>
-      <p>在Linux上运行Linux时，考虑使用LXD系统容器而不是VM来优化资源。LXD在容器内运行完整的操作系统，提供VM的所有好处而没有常规的开销。</p>
-      <p><a href="https://ubuntu.com/lxd">了解更多关于 LXD 的内容</a></p>
-      <p><a href="https://linuxcontainers.org/lxd/try-it/">通过在线演示工具体验 LXD</a></p>
+    <div class="row">
+      <div class="col-8">
+        <h3>使用 LXD 运行系统容器</h3>
+        <p>在Linux上运行Linux时，考虑使用LXD系统容器而不是VM来优化资源。LXD在容器内运行完整的操作系统，提供VM的所有好处而没有常规的开销。</p>
+        <p>
+          <a href="https://ubuntu.com/lxd">了解更多关于 LXD 的内容</a>
+        </p>
+        <p>
+          <a href="https://linuxcontainers.org/lxd/try-it/">通过在线演示工具体验 LXD</a>
+        </p>
+      </div>
+      <div class="col-4 p-divider__block u-vertically-center u-align--center u-hide--small u-hide--medium">
+        {{ image(url="https://assets.ubuntu.com/v1/343dc5ee-lxd-logo.png",
+                alt="Canonical LXD",
+                width="129",
+                height="208",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      </div>
     </div>
-    <div class="col-4 p-divider__block u-vertically-center u-align--center u-hide--small u-hide--medium">
-      {{ image (
-        url="https://assets.ubuntu.com/v1/81c90cea-lxd-logo-45.svg",
-        alt="Canonical LXD",
-        width="209",
-        height="45",
-        hi_def=True,
-        loading="lazy"
-        ) | safe
-      }}
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="p-strip">
-  <div class="u-fixed-width">
-    <h2>帮助总是在手边</h2>
-    <p>加入我们的全球社区，获取有关如何开始使用 Ubuntu 的支持和建议。</p>
-  </div>
-  <div class="row">
-    <div class="col-3 p-card">
-      <p class="p-card__content u-align--center"><a href="https://discourse.ubuntu.com/">Ubuntu Discourse</a></p>
+  <section class="p-strip">
+    <div class="u-fixed-width">
+      <h2>帮助总是在手边</h2>
+      <p>加入我们的全球社区，获取有关如何开始使用 Ubuntu 的支持和建议。</p>
     </div>
-    <div class="col-3 p-card">
-      <p class="p-card__content u-align--center"><a href="https://askubuntu.com/">Ask Ubuntu</a></p>
+    <div class="row">
+      <div class="col-3 p-card">
+        <p class="p-card__content u-align--center">
+          <a href="https://discourse.ubuntu.com/">Ubuntu Discourse</a>
+        </p>
+      </div>
+      <div class="col-3 p-card">
+        <p class="p-card__content u-align--center">
+          <a href="https://askubuntu.com/">Ask Ubuntu</a>
+        </p>
+      </div>
+      <div class="col-3 p-card">
+        <p class="p-card__content u-align--center">
+          <a href="https://answers.launchpad.net/ubuntu">Launchpad</a>
+        </p>
+      </div>
+      <div class="col-3 p-card">
+        <p class="p-card__content u-align--center">
+          <a href="https://wiki.ubuntu.com/IRC/ChannelList">基于 IRC 的支持</a>
+        </p>
+      </div>
     </div>
-    <div class="col-3 p-card">
-      <p class="p-card__content u-align--center"><a href="https://answers.launchpad.net/ubuntu">Launchpad</a></p>
-    </div>
-    <div class="col-3 p-card">
-      <p class="p-card__content u-align--center"><a href="https://wiki.ubuntu.com/IRC/ChannelList">基于 IRC 的支持</a></p>
-    </div>
-  </div>
-</section>
+  </section>
 
 {% endblock %}
