@@ -52,27 +52,47 @@
         </p>
       </div>
       <div class="col-6 col-medium-2 u-vertically-center">
-        <div class="p-logo-section has-misaligned-images">
+        <div class="p-logo-section">
           <div class="p-logo-section__items">
             <div class="p-logo-section__item">
-              <img class="p-logo-section__logo"
-                   src="https://assets.ubuntu.com/v1/83ff4203-awshp-strip-customers.png"
-                   alt="Amazon Web Services logo" />
+              {{ image(url="https://assets.ubuntu.com/v1/0d364838-aws-logo.png",
+                            alt="AWS",
+                            width="108",
+                            height="208",
+                            hi_def=True,
+                            loading="auto",
+                            attrs={"class": "p-logo-section__logo"}) | safe
+              }}
             </div>
             <div class="p-logo-section__item">
-              <img class="p-logo-section__logo"
-                   src="https://assets.ubuntu.com/v1/7c601cb9-azurehp-strip-customers.png"
-                   alt="Microsoft Azure logo" />
+              {{ image(url="https://assets.ubuntu.com/v1/4e688679-microsoft-azure-logo.png",
+                            alt="Microsoft Azure",
+                            width="188",
+                            height="208",
+                            hi_def=True,
+                            loading="auto",
+                            attrs={"class": "p-logo-section__logo"}) | safe
+              }}
             </div>
             <div class="p-logo-section__item">
-              <img class="p-logo-section__logo"
-                   src="https://assets.ubuntu.com/v1/5ba04ee8-atthp-strip-customers.png"
-                   alt="AT&T logo" />
+              {{ image(url="https://assets.ubuntu.com/v1/f570b628-AT&T-Logo.png",
+                            alt="AT&T",
+                            width="200",
+                            height="208",
+                            hi_def=True,
+                            loading="auto",
+                            attrs={"class": "p-logo-section__logo"}) | safe
+              }}
             </div>
             <div class="p-logo-section__item">
-              <img class="p-logo-section__logo"
-                   src="https://assets.ubuntu.com/v1/fdb8126b-google+cloudhp-strip-customers.png"
-                   alt="Google Cloud logo" />
+              {{ image(url="https://assets.ubuntu.com/v1/a9d82095-google-cloud-logo.png",
+                            alt="Google Cloud",
+                            width="250",
+                            height="208",
+                            hi_def=True,
+                            loading="auto",
+                            attrs={"class": "p-logo-section__logo"}) | safe
+              }}
             </div>
           </div>
         </div>
