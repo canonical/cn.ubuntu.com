@@ -1,64 +1,60 @@
 {% extends "templates/base.html" %}
 
 {% block title %}合作伙伴{{ title }}{% endblock %}
-{% block meta_description %}{{ meta_description }}Ubuntu系统，联想，戴尔，惠普，认证，Ubuntu 20.04，Ubuntu 18.04，Ubuntu 16.04，snap，snapcraft{% endblock %}
+
+{% block meta_description %}
+  {{ meta_description }}Ubuntu系统，联想，戴尔，惠普，认证，Ubuntu 20.04，Ubuntu 18.04，Ubuntu 16.04，snap，snapcraft
+{% endblock %}
 
 {% block content %}
-{% include "desktop/secondary-nav.html" %}
+  {% include "desktop/secondary-nav.html" %}
 
-<section class="p-strip--suru-bottomed is-bordered">
+  <section class="p-strip--suru-bottomed is-bordered">
     <div class="row u-equal-height">
       <div class="col-6">
         <h1>合作伙伴</h1>
         <p>我们与世界领先的硬件制造商合作，为安全可靠和不断更新的平台提供广泛的Ubuntu认证笔记本电脑，台式机和工作站。成为合作伙伴意味着您将与我们的工程和认证团队合作，以确保所有硬件在整个操作系统的生命周期内的兼容性和优化的性能。</p>
-        <p><a href="https://canonical.com/partners/find-a-partner">了解更多关于我们PC合作伙伴的内容</a></p>
+        <p>
+          <a href="https://canonical.com/partners/find-a-partner">了解更多关于我们PC合作伙伴的内容</a>
+        </p>
       </div>
       <div class="col-6 u-hide--small u-align--center u-vertically-center p-logo-section">
         <div class="p-logo-section__items">
           <div class="p-logo-section__item">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/d258d23b-2018-logo-dell.svg",
-                alt="Dell",
-                height="100",
-                width="100",
-                hi_def=True,
-                attrs={"class": "p-logo-section__logo"},
-                loading="auto",
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/d258d23b-2018-logo-dell.svg",
+                        alt="Dell",
+                        height="100",
+                        width="100",
+                        hi_def=True,
+                        attrs={"class": "p-logo-section__logo"},
+                        loading="auto",) | safe
             }}
           </div>
           <div class="p-logo-section__item">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/f627fbfb-hp.svg",
-                alt="HP",
-                height="100",
-                width="100",
-                hi_def=True,
-                attrs={"class": "p-logo-section__logo"},
-                loading="auto",
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/f627fbfb-hp.svg",
+                        alt="HP",
+                        height="100",
+                        width="100",
+                        hi_def=True,
+                        attrs={"class": "p-logo-section__logo"},
+                        loading="auto",) | safe
             }}
           </div>
           <div class="p-logo-section__item">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/cb3fcdfb-lenovo.svg",
-                alt="Lenovo",
-                height="100",
-                width="144",
-                hi_def=True,
-                attrs={"class": "p-logo-section__logo"},
-                loading="auto",
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/cb3fcdfb-lenovo.svg",
+                        alt="Lenovo",
+                        height="100",
+                        width="144",
+                        hi_def=True,
+                        attrs={"class": "p-logo-section__logo"},
+                        loading="auto",) | safe
             }}
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+
   <section class="p-strip--light is-bordered">
     <div class="u-fixed-width">
       <h2>我们的合作伙伴说道</h2>
@@ -69,25 +65,33 @@
           <p class="p-pull-quote__quote">我们在2020年6月份宣布了新一系列设备认证，我们的目标是消除复杂性，使用户能够更轻松地在联想PC上安装Linux，以及为Linux社区用户提供开箱即用的优秀体验。</p>
           <cite class="p-pull-quote__citation">Igor Bergman, 联想PCSD软件和云副总裁</cite>
         </blockquote>
-        <p><a href="https://ubuntu.com/blog/lenovo-expand-enterprise-desktop-range-preinstalled-with-ubuntu">阅读全文</a></p>
+        <p>
+          <a href="https://ubuntu.com/blog/lenovo-expand-enterprise-desktop-range-preinstalled-with-ubuntu">阅读全文</a>
+        </p>
       </div>
       <div class="col-4 p-divider__block">
         <blockquote class="p-pull-quote">
-          <p class="p-pull-quote__quote">Ubuntu在开发人员中的受欢迎程度及其云功能使其已成为完美的OS。Ubuntu已预装在戴尔第4代XPS 13笔记本电脑和新的Precision M3800移动工作站上。</p>
+          <p class="p-pull-quote__quote">
+            Ubuntu在开发人员中的受欢迎程度及其云功能使其已成为完美的OS。Ubuntu已预装在戴尔第4代XPS 13笔记本电脑和新的Precision M3800移动工作站上。
+          </p>
           <cite class="p-pull-quote__citation">Barton George，戴尔服务-开发者计划总监</cite>
         </blockquote>
-        <p><a href="https://cn.ubuntu.com/blog/ubuntu-20-04-lts-dell-xps-13-intel-10-gen">阅读全文</a></p>
+        <p>
+          <a href="https://cn.ubuntu.com/blog/ubuntu-20-04-lts-dell-xps-13-intel-10-gen">阅读全文</a>
+        </p>
       </div>
       <div class="col-4 p-divider__block">
         <blockquote class="p-pull-quote">
           <p class="p-pull-quote__quote">推出预装Ubuntu的Intel® Compute Stick，这是我们与Canonical富有成效的合作伙伴关系中的又一个里程碑。</p>
           <cite class="p-pull-quote__citation">Joel Christensen, 英特尔NUC和英特尔Compute Stick产品总经理</cite>
         </blockquote>
-        <p><a href="https://ubuntu.com/blog/intel-compute-stick-now-comes-with-ubuntu">阅读全文</span></a></p>
+        <p>
+          <a href="https://ubuntu.com/blog/intel-compute-stick-now-comes-with-ubuntu">阅读全文</a>
+        </p>
       </div>
     </div>
   </section>
-  
+
   <section class="p-strip is-bordered">
     <div class="u-fixed-width">
       <h2>商用信息</h2>
@@ -106,27 +110,29 @@
         <p>更新设备的能力对于安全性和长期竞争力至关重要。Canonical负责基本平台产品的所有安全性和关键bug修复，并且提供对基础结构的更新管理策略的支持。Ubuntu拥有维护安全稳定的操作系统的世界一流的记录。</p>
       </div>
       <div class="u-fixed-width">
-        <p><a href="https://partners.ubuntu.com/programmes/hardware">了解更多关于与Canonical合作的内容</a></p>
+        <p>
+          <a href="https://partners.ubuntu.com/programmes/hardware">了解更多关于与Canonical合作的内容</a>
+        </p>
       </div>
+    </div>
   </section>
-  
+
   <section class="p-strip">
     <div class="row">
       <div class="col-6">
         <h2>Ubuntu桌面认证硬件</h2>
         <p>为了在Ubuntu上提供最佳性能，制造商正在预装预载Ubuntu认证镜像的设备。这样可确保驱动程序集成和出色的设备性能。Canonical致力于与全球领先的制造商紧密合作，以优化和认证其笔记本电脑和PC上的Ubuntu。</p>
-        <p><a href="https://ubuntu.com/certified">了解更多关于Ubuntu认证硬件相关内容</a></p>
+        <p>
+          <a href="https://ubuntu.com/certified">了解更多关于Ubuntu认证硬件相关内容</a>
+        </p>
       </div>
       <div class="col-6 u-vertically-center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/a8e96807-desktop-xps13-small.png",
-            alt="laptop running Ubuntu",
-            height="630",
-            width="1088",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/a8e96807-desktop-xps13-small.png",
+                alt="laptop running Ubuntu",
+                height="630",
+                width="1088",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
