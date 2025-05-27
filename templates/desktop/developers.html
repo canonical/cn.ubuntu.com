@@ -1,50 +1,56 @@
 {% extends "templates/base.html" %}
 
 {% block title %}开发人员桌面系统{{ title }}{% endblock %}
-{% block meta_description %}{{ meta_description }}Ubuntu系统，Ubuntu 21.04，Ubuntu 20.04，Ubuntu 18.04，Ubuntu 16.04，snap，snapcraft{% endblock %}
+
+{% block meta_description %}
+  {{ meta_description }}Ubuntu系统，Ubuntu 21.04，Ubuntu 20.04，Ubuntu 18.04，Ubuntu 16.04，snap，snapcraft
+{% endblock %}
 
 {% block content %}
-{% include "desktop/secondary-nav.html" %}
+  {% include "desktop/secondary-nav.html" %}
 
-<style>
-  .axis {
-    font-size: 13px;
-  }
+  <style>
+    .axis {
+      font-size: 13px;
+    }
 
-  .axis path,
-  .axis line {
-    fill: none;
-    display: none;
-  }
+    .axis path,
+    .axis line {
+      fill: none;
+      display: none;
+    }
 
-  .label {
-    font-size: 13px;
-  }
-</style>
+    .label {
+      font-size: 13px;
+    }
+  </style>
 
-<section class="u-image-position p-strip--suru-topped is-bordered">
+  <section class="u-image-position p-strip--suru-topped is-bordered">
     <div class="row u-equal-height">
       <div class="col-6">
-        <h1>适用于开发人员的<br>Ubuntu桌面系统</h1>
+        <h1>
+          适用于开发人员的
+          <br />
+          Ubuntu桌面系统
+        </h1>
         <p>无论您是移动应用程序或者网站开发人员，工程经理，数据科学家，亦或 AI/ML 研究员——Ubuntu是您的理想平台。</p>
-        <p><a href="/download/desktop" class="p-button--positive">立即获取Ubuntu</a></p>
+        <p>
+          <a href="/download/desktop" class="p-button--positive">立即获取Ubuntu</a>
+        </p>
       </div>
       <div class="col-6 u-vertically-center u-hide--medium u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/676d7b5d-xs9320nt-xnb-shot-15-2-sl-min.png",
-            alt="",
-            width="3677",
-            height="2589",
-            hi_def=True,
-            loading="auto",
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/676d7b5d-xs9320nt-xnb-shot-15-2-sl-min.png",
+                alt="",
+                width="3677",
+                height="2589",
+                hi_def=True,
+                loading="auto",) | safe
         }}
       </div>
     </div>
-</section>
+  </section>
 
-<section class="p-strip">
+  <section class="p-strip">
     <div class="u-fixed-width">
       <h2>为什么选择 Ubuntu 桌面版？</h2>
     </div>
@@ -52,17 +58,14 @@
       <div class="col-6 u-vertically-center">
         <h3>开发人员的选择</h3>
         <ul class="p-list">
-          <li class="p-list__item is-ticked">
-            使用Ubuntu桌面版为开发、测试和生产环境提供了一个通用平台。
-          </li>
+          <li class="p-list__item is-ticked">使用Ubuntu桌面版为开发、测试和生产环境提供了一个通用平台。</li>
           <li class="p-list__item is-ticked">
             工具，如 <a href="https://juju.is/">Juju</a>，<a href="https://microk8s.io/">Microk8s</a>，和<a href="https://multipass.run/">Multipass</a>使得开发，测速和交叉构建更简单且经济。
           </li>
           <li class="p-list__item is-ticked">
             每2年发布一个具有5年标准维护的<strong>长期支持(LTS)</strong>版本，可在Ubuntu Pro桌面订阅的扩展支持下延长至10年。
           </li>
-          <li class="p-list__item is-ticked">
-            Ubuntu桌面的新开发者版本每6个月发布一次，提供9个月的支持和访问最新的内核、库和新的上游操作系统功能。</li>
+          <li class="p-list__item is-ticked">Ubuntu桌面的新开发者版本每6个月发布一次，提供9个月的支持和访问最新的内核、库和新的上游操作系统功能。</li>
         </ul>
         <p>
           <a href="https://ubuntu.com/about/release-cycle">Ubuntu版本发布周期</a>
@@ -93,37 +96,49 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>10.04 LTS (Lucid Lynx)</strong></td>
+              <td>
+                <strong>10.04 LTS (Lucid Lynx)</strong>
+              </td>
               <td>Apr 2010</td>
               <td>Apr 2015</td>
               <td>&nbsp;</td>
             </tr>
             <tr>
-              <td><strong>12.04 LTS (Precise Pangolin)</strong></td>
+              <td>
+                <strong>12.04 LTS (Precise Pangolin)</strong>
+              </td>
               <td>Apr 2012</td>
               <td>Apr 2017</td>
               <td>Apr 2019</td>
             </tr>
             <tr>
-              <td><strong>14.04 LTS (Trusty Tahr)</strong></td>
+              <td>
+                <strong>14.04 LTS (Trusty Tahr)</strong>
+              </td>
               <td>Apr 2014</td>
               <td>Apr 2019</td>
               <td>Apr 2024</td>
             </tr>
             <tr>
-              <td><strong>16.04 LTS (Xenial Xerus)</strong></td>
+              <td>
+                <strong>16.04 LTS (Xenial Xerus)</strong>
+              </td>
               <td>Apr 2016</td>
               <td>Apr 2021</td>
               <td>Apr 2026</td>
             </tr>
             <tr>
-              <td><strong>18.04 LTS (Bionic Beaver)</strong></td>
+              <td>
+                <strong>18.04 LTS (Bionic Beaver)</strong>
+              </td>
               <td>Apr 2018</td>
               <td>Apr 2023</td>
               <td>Apr 2028</td>
             </tr>
             <tr>
-              <td><strong>20.04 LTS (Focal Fossa)</strong></td>
+              <td>
+                <strong>20.04 LTS (Focal Fossa)</strong>
+              </td>
               <td>Apr 2020</td>
               <td>Apr 2025</td>
               <td>Apr 2030</td>
@@ -147,28 +162,32 @@
               <td>&nbsp;</td>
             </tr>
             <tr>
-              <td><strong>22.04 LTS (Jammy Jellyfish)</strong></td>
+              <td>
+                <strong>22.04 LTS (Jammy Jellyfish)</strong>
+              </td>
               <td>Apr 2022</td>
               <td>Apr 2027</td>
               <td>Apr 2032</td>
             </tr>
             <tr>
-              <td><strong>22.10 (Kinetic Kudu)</strong></td>
+              <td>
+                <strong>22.10 (Kinetic Kudu)</strong>
+              </td>
               <td>Apr 2022</td>
               <td>Jul 2023</td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div> 
-    
+    </div>
+
     <div class="u-fixed-width">
       <hr class="p-separator" />
     </div>
-    
+
     <div class="row">
       <div class="col-6 u-vertically-center">
-        <div class="p-logo-section">
+        <div class="p-logo-section has-misaligned-images">
           <div class="p-logo-section__items">
             <div class="p-logo-section__item u-align--center" style="padding:25px">
               {{ image (
@@ -259,16 +278,12 @@
       <div class="col-6">
         <h2>获得最新的硬件和软件</h2>
         <ul class="p-list">
+          <li class="p-list__item is-ticked">Ubuntu附带了适用于Python、Rust、Ruby、Go、PHP和Perl的最新工具链，用户可以率先访问关键库和包的最新更新。</li>
           <li class="p-list__item is-ticked">
-            Ubuntu附带了适用于Python、Rust、Ruby、Go、PHP和Perl的最新工具链，用户可以率先访问关键库和包的最新更新。
+            有了如<a href="https://opencv.org/">OpenCV</a>，<a href="https://www.tensorflow.org/">TensorFlow</a>，<a href="https://keras.io/">Keras</a>，<a href="https://pytorch.org/">PyTorch</a>以及<a href="https://www.kubeflow.org/">Kubeflow</a>等流行框架的支持，Ubuntu是数据科学和机器学习的首选操作系统。
           </li>
           <li class="p-list__item is-ticked">
-            有了如<a href="https://opencv.org/">OpenCV</a>，<a
-              href="https://www.tensorflow.org/">TensorFlow</a>，<a href="https://keras.io/">Keras</a>，<a href="https://pytorch.org/">PyTorch</a>以及<a href="https://www.kubeflow.org/">Kubeflow</a>等流行框架的支持，Ubuntu是数据科学和机器学习的首选操作系统。
-            </li>
-          <li class="p-list__item is-ticked">
-            Ubuntu是<a
-            href="https://github.com/NVIDIA/data-science-stack">NVIDIA数据科学堆栈</a>的目标平台，它使GPU加速的数据科学工作负载能够在部署到云之前在本地运行。
+            Ubuntu是<a href="https://github.com/NVIDIA/data-science-stack">NVIDIA数据科学堆栈</a>的目标平台，它使GPU加速的数据科学工作负载能够在部署到云之前在本地运行。
           </li>
         </ul>
         <p>
@@ -286,15 +301,9 @@
           <li class="p-list__item is-ticked">
             除了Ubuntu软件仓库之外，还有一个包含7000多个应用程序的<a href="https://snapcraft.io/store">Snap Store</a>，您可以轻松地根据您的需要定制Ubuntu桌面。
           </li>
-          <li class="p-list__item is-ticked">
-            开发工具包括：Visual Studio Code、IntelliJ、GitKraken、Unity和Blender。
-          </li>
-          <li class="p-list__item is-ticked">
-            办公生产力工具包括：Slack、微软Teams、Dropbox和Zoom以及与微软兼容的LibreOffice。
-          </li>
-          <li class="p-list__item is-ticked">
-            多媒体、游戏和内容创建应用程序包括：Spotify、Steam、Discord和OBS Studio。
-          </li>
+          <li class="p-list__item is-ticked">开发工具包括：Visual Studio Code、IntelliJ、GitKraken、Unity和Blender。</li>
+          <li class="p-list__item is-ticked">办公生产力工具包括：Slack、微软Teams、Dropbox和Zoom以及与微软兼容的LibreOffice。</li>
+          <li class="p-list__item is-ticked">多媒体、游戏和内容创建应用程序包括：Spotify、Steam、Discord和OBS Studio。</li>
         </ul>
         <p>
           <a href="https://snapcraft.io">了解更多关于Snapcraft的内容</a>
@@ -525,17 +534,15 @@
         <h3>认证硬件</h3>
         <ul class="p-list">
           <li class="p-list__item is-ticked">
-            使用戴尔、联想和惠普等OEM的<a href="https://ubuntu.com/certified">认证硬件</a>简化Ubuntu桌面的部署——无需额外手动配置。
+            使用戴尔、联想和惠普等OEM的<a href="/certified">认证硬件</a>简化Ubuntu桌面的部署——无需额外手动配置。
           </li>
-          <li class="p-list__item is-ticked">
-            Ubuntu开箱即用，适用于各种笔记本电脑、台式机和工作站，包括惠普Z系列和戴尔XPS以及Precision系列。
-          </li>
+          <li class="p-list__item is-ticked">Ubuntu开箱即用，适用于各种笔记本电脑、台式机和工作站，包括惠普Z系列和戴尔XPS以及Precision系列。</li>
           <li class="p-list__item is-ticked">
             <a href="/desktop/partners">战略合作伙伴关系</a>扩展到组件制造商，并且Ubuntu经认证可与NVIDIA全系列GPU一起使用。
           </li>
         </ul>
         <p>
-          <a href="https://ubuntu.com/certified">Ubuntu认证硬件</a>
+          <a href="/certified">Ubuntu认证硬件</a>
         </p>
       </div>
     </div>
@@ -549,7 +556,8 @@
     <div class="u-fixed-width">
       <ul class="p-list is-split">
         <li class="p-list__item is-ticked">Linux 6.2内核</li>
-        <li class="p-list__item is-ticked">GNOME 44桌面环境
+        <li class="p-list__item is-ticked">
+          GNOME 44桌面环境
           <ul>
             <li>新的蓝牙设备和暗黑模式的快速设置用户界面</li>
           </ul>
@@ -558,7 +566,8 @@
         <li class="p-list__item is-ticked">基于Subiquity构建的新安装程序，全新的用户体验</li>
         <li class="p-list__item is-ticked">Snap应用的更新管理改进</li>
         <li class="p-list__item is-ticked">支持Azure Active Directory用户身份验证</li>
-        <li class="p-list__item is-ticked">新的 ADsys 特性:
+        <li class="p-list__item is-ticked">
+          新的 ADsys 特性:
           <ul>
             <li>除了SSSD之外的Winbind支持</li>
             <li>组策略对象支持网络共享和应用限制</li>
@@ -568,11 +577,13 @@
       </ul>
     </div>
     <div class="u-fixed-width">
-      <p><a href="{{ releases.latest.release_notes_url }}">阅读完整的发布日志</a></p>
+      <p>
+        <a href="{{ releases.latest.release_notes_url }}">阅读完整的发布日志</a>
+      </p>
     </div>
   </section>
 
-  <section class="p-strip--suru">
+  <section class="p-strip--suru is-dark">
     <div class="row">
       <div class="col-8">
         <h2>Ubuntu {{ releases.lts.short_version }}有哪些新特点？</h2>
@@ -582,7 +593,8 @@
       <ul class="p-list is-split">
         <li class="p-list__item is-ticked">Linux 5.15 内核</li>
         <li class="p-list__item is-ticked">新版本带有强调色的新 Ubuntu 主题，改善的 snap 集成和支持全系统的深色风格偏好设置</li>
-        <li class="p-list__item is-ticked">GNOME Shell 和 大部分 GNOME 组件库更新至 42 版
+        <li class="p-list__item is-ticked">
+          GNOME Shell 和 大部分 GNOME 组件库更新至 42 版
           <ul>
             <li>简化的用户界面和工作区切换</li>
             <li>紧凑而现代的屏幕显示通知</li>
@@ -591,7 +603,8 @@
             <li>改进的多显示器支持</li>
           </ul>
         </li>
-        <li class="p-list__item is-ticked">GNOME 桌面性能提升
+        <li class="p-list__item is-ticked">
+          GNOME 桌面性能提升
           <ul>
             <li>借助 Intel 和 Raspberry Pi 图形驱动程序使帧速率提高多达2倍</li>
             <li>AMD 和 NVIDIA 的重大改进</li>
@@ -608,9 +621,7 @@
         <li class="p-list__item is-ticked">支持 Wifi 6E</li>
       </ul>
       <p>
-        <a class="p-link--inverted" href="{{ releases.lts.release_notes_url }}">
-          阅读完整的发布日志
-        </a>
+        <a class="p-link--inverted" href="{{ releases.lts.release_notes_url }}">阅读完整的发布日志</a>
       </p>
     </div>
   </section>
@@ -623,57 +634,78 @@
       <div class="col-6">
         <h3 class="u-sv2 p-heading--4">开发者更喜欢的操作系统</h3>
         <p>多项选择投票</p>
-        <p>来源：<a href="https://recruit-c7ff.kxcdn.com/recruit/wp-content/uploads/2020/05/he-developer-survey-2020.pdf">2020 HackerEarth开发人员调查</a></p>
+        <p>
+          来源：<a href="https://recruit-c7ff.kxcdn.com/recruit/wp-content/uploads/2020/05/he-developer-survey-2020.pdf">2020 HackerEarth开发人员调查</a>
+        </p>
         <div>
-          <figure id="hackerearth-chart" class="hackerearth-chart"></figure>
+          <figure id="hackerearth-chart" class="hackerearth-chart">
+          </figure>
         </div>
       </div>
       <div class="col-6">
         <h3 class="p-heading--4">您的组织目前使用以下哪些开源技术来支持您的软件基础架构？</h3>
-        <p>来源：<a href="https://www.openlogic.com/system/files/ebook-openlogic-the-2022-state-of-open-source-report.pdf">OpenLogic——2022年开源状态报告</a></p>
+        <p>
+          来源：<a href="https://www.openlogic.com/system/files/ebook-openlogic-the-2022-state-of-open-source-report.pdf">OpenLogic——2022年开源状态报告</a>
+        </p>
         <div>
-          <figure id="opensource-chart" class="opensource-chart"></figure>
+          <figure id="opensource-chart" class="opensource-chart">
+          </figure>
         </div>
       </div>
     </div>
-  </section>  
+  </section>
 
   <section class="p-strip--light">
     {% include "shared/_pro_strip.html" %}
     <div class="u-fixed-width">
       <p class="p-heading--4">个人最多可免费在5台机器上使用</p>
       <p>使用Ubuntu Pro个人版许可证保护您的开源堆栈，并访问Ubuntu Universe仓库中超过23000个软件包的安全补丁。</p>
-      <p><a href="/support/pro">获取一个免费的订阅&nbsp;&rsaquo;</a></p>
-      <p><a href="/desktop/organisations">用于企业组织的Ubuntu&nbsp;&rsaquo;</a></p>
-    </div>
+      <p>
+        <a href="/support/pro">获取一个免费的订阅&nbsp;&rsaquo;</a>
+      </p>
+      <p>
+        <a href="/desktop/organisations">用于企业组织的Ubuntu&nbsp;&rsaquo;</a>
+      </p>
     </div>
   </section>
 
-  <div class="p-strip p-contextual-footer">  
-    <div class="row p-divider">      
+  <div class="p-strip p-contextual-footer">
+    <div class="row p-divider">
       <div class="col-4 p-divider__block">
         <h3 class="p-heading--4">下载和安装</h3>
         <p>下载 Ubuntu 桌面，替换您当前的操作系统。在 Windows 或 macOS 上安装 Ubuntu 非常简单，或者与之共存运行。</p>
-        <p><a href="/download">立即下载&nbsp;›</a></p>
-      </div>       
-      
+        <p>
+          <a href="/download">立即下载&nbsp;›</a>
+        </p>
+      </div>
+
       <div class="col-4 p-divider__block">
         <h3 class="p-heading--4">购买预载的 PC</h3>
         <p>Ubuntu 在世界上最大的硬件制造商（包括戴尔，惠普和联想）的各种设备上已可用。</p>
-        <p><a href="https://ubuntu.com/certified">浏览 Ubuntu 认证的设备</a></p>
-      </div>       
-      
+        <p>
+          <a href="/certified">浏览 Ubuntu 认证的设备</a>
+        </p>
+      </div>
+
       <div class="col-4 p-divider__block">
         <h3 class="p-heading--4">加入我们的社区</h3>
         <p>分享想法，编写代码，以及从我们活跃的，大型IT专家社区获得建议和帮助。</p>
         <ul class="p-list is-split">
-          <li class="p-list__item"><a href="https://askubuntu.com/" >Ask Ubuntu</a></li>
-          <li class="p-list__item"><a href="https://lists.ubuntu.com">Mailing lists</a></li>
-          <li class="p-list__item"><a href="https://cn.ubuntu.com/blog">Ubuntu博客</a></li>
-          <li class="p-list__item"><a href="https://ubuntuforums.org/" >Ubuntu Forums</a></li>
+          <li class="p-list__item">
+            <a href="https://askubuntu.com/">Ask Ubuntu</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://lists.ubuntu.com">Mailing lists</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://cn.ubuntu.com/blog">Ubuntu博客</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://ubuntuforums.org/">Ubuntu Forums</a>
+          </li>
         </ul>
-      </div> 
-    </div>  
+      </div>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.2/d3.min.js" defer></script>

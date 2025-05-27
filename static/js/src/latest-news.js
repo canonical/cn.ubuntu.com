@@ -40,7 +40,7 @@ function htmlForLatestPinnedArticle(article) {
   const header = '<h3>特别篇</h3>';
 
   const link = `<a href="/blog/${article.slug}">${article.title.rendered}</a>`;
-  const linkHeader = `<h4>${link}</h4>`;
+  const linkHeader = `<div><h4>${link}</h4></div>`;
 
   const date = `<p class="u-no-padding--top">
       <em>

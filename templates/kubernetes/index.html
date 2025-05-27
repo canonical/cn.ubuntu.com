@@ -1,231 +1,230 @@
 {% extends "templates/base.html" %}
 
-{% block title %} 用于多云运营的企业Kubernetes {{ page_title }}{% endblock %}
+{% block title %}用于多云运营的企业Kubernetes {{ page_title }}{% endblock %}
+
 {% block meta_description %}{{ meta_description }}Kubernetes，k8s，Docker, cloud-native，multi-cloud，云原生{% endblock %}
 
 {% block content %}
 
-<section class="p-strip--suru-topped is-bordered">
-  <div class="row u-equal-height u-vertically-center">
-    <div class="col-7">
-      <h1>多云运营的企业Kubernetes</h1>
-      <p class="p-heading--4">适用于从云到端的流线型容器编排</p>
-      <p>
-        Ubuntu 是所有主流公有云上的 Kubernetes 的参考平台。<br>
-        Canonical Kubernetes 构建在 Ubuntu 之上，并且兼备最佳的性价比。<br>
-        我们的云原生自动化框架确保开发人员生产力和业务创新。
-      </p>
-      <p>
-        <a class="p-button--positive" href="/contact">联系我们</a>
-        <a href="https://ubuntu.com/kubernetes/install">现在开始试用</a>
-      </p>
+  <section class="p-strip--suru-topped is-bordered">
+    <div class="row u-equal-height u-vertically-center">
+      <div class="col-7">
+        <h1>多云运营的企业Kubernetes</h1>
+        <p class="p-heading--4">适用于从云到端的流线型容器编排</p>
+        <p>
+          Ubuntu 是所有主流公有云上的 Kubernetes 的参考平台。
+          <br />
+          Canonical Kubernetes 构建在 Ubuntu 之上，并且兼备最佳的性价比。
+          <br />
+          我们的云原生自动化框架确保开发人员生产力和业务创新。
+        </p>
+        <p>
+          <a class="p-button--positive" href="/contact">联系我们</a>
+          <a href="https://ubuntu.com/kubernetes/install">现在开始试用</a>
+        </p>
+      </div>
+      <div class="col-5 u-hide--medium u-hide--small u-align--center u-embedded-media">
+        <iframe title="Kubernetes by Canonical"
+                class="u-embedded-media__element"
+                src="//player.bilibili.com/player.html?aid=382471423&bvid=BV1KZ4y1B7mZ&cid=553104365&page=1"
+                allowfullscreen=""></iframe>
+      </div>
     </div>
-    <div class="col-5 u-hide--medium u-hide--small u-align--center u-embedded-media">
-      <iframe title="Kubernetes by Canonical" class="u-embedded-media__element" src="//player.bilibili.com/player.html?aid=382471423&bvid=BV1KZ4y1B7mZ&cid=553104365&page=1" allowfullscreen=""></iframe>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="p-strip">
-  <div class="row">
-    <div class="col-12">
-      <h2 class="p-heading--2">由 Ubuntu 驱动的公有云 Kubernetes</h2>
-      <p class="p-heading--4 u-sv3">云定制体验，优化内核，无限制选项</p>
-      <ul class="p-list is-split">
-        <li class="p-list__item is-ticked">Ubuntu 是世界上最流行的云托管 Kuberentes 的主机操作系统</li>
-        <li class="p-list__item is-ticked">针对所有主要公有云上的性能、启动速度和驱动程序的每云优化</li>
-        <li class="p-list__item is-ticked">拥有可选的企业级商业支持的开箱即用的云集成</li>
-        <li class="p-list__item is-ticked">Ubuntu Pro 提供更深入的日志记录、监控、分析和身份集成</li>
-        <li class="p-list__item is-ticked">用于高带宽和本地更新的云端 Ubuntu 软件包镜像</li>
-        <li class="p-list__item is-ticked">使用 Canonical Livepatch 服务完全地控制内核安全补丁</li>
-      </ul>
-      <div class="p-logo-section">
-        <div class="p-logo-section__items">
-          <div class="p-logo-section__item">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/22fd6473-MicrosoftAzure_logo.svg",
-              alt="Microsoft Azure",
-              width="151",
-              height="42",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-logo-section__logo"},
-              ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
-              alt="AWS",
-              width="88",
-              height="52",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-logo-section__logo"},
-              ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/6e176d9a-Google+Cloud+stacked.svg",
-              alt="Google Cloud Platform",
-              width="104",
-              height="86",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-logo-section__logo"},
-              ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/8207d0a9-IBM-cloud.svg",
-              alt="IBM Cloud",
-              width="191",
-              height="44",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-logo-section__logo"},
-              ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/f3be98eb-oracle-cloud-logo.png",
-              alt="Oracle Cloud",
-              width="164",
-              height="86",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-logo-section__logo"},
-              ) | safe
-            }}
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="p-heading--2">由 Ubuntu 驱动的公有云 Kubernetes</h2>
+        <p class="p-heading--4 u-sv3">云定制体验，优化内核，无限制选项</p>
+        <ul class="p-list is-split">
+          <li class="p-list__item is-ticked">Ubuntu 是世界上最流行的云托管 Kuberentes 的主机操作系统</li>
+          <li class="p-list__item is-ticked">针对所有主要公有云上的性能、启动速度和驱动程序的每云优化</li>
+          <li class="p-list__item is-ticked">拥有可选的企业级商业支持的开箱即用的云集成</li>
+          <li class="p-list__item is-ticked">Ubuntu Pro 提供更深入的日志记录、监控、分析和身份集成</li>
+          <li class="p-list__item is-ticked">用于高带宽和本地更新的云端 Ubuntu 软件包镜像</li>
+          <li class="p-list__item is-ticked">使用 Canonical Livepatch 服务完全地控制内核安全补丁</li>
+        </ul>
+        <div class="p-logo-section has-misaligned-images">
+          <div class="p-logo-section__items" style="justify-content:center;">
+            <div class="p-logo-section__item">
+              {{ image(url="https://assets.ubuntu.com/v1/4e688679-microsoft-azure-logo.png",
+                            alt="Azure",
+                            width="188",
+                            height="208",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-logo-section__logo"}) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image(url="https://assets.ubuntu.com/v1/0d364838-aws-logo.png",
+                            alt="AWS",
+                            width="108",
+                            height="208",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-logo-section__logo"}) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image(url="https://assets.ubuntu.com/v1/a9d82095-google-cloud-logo.png",
+                            alt="Google Cloud",
+                            width="250",
+                            height="208",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-logo-section__logo"}) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image(url="https://assets.ubuntu.com/v1/43adb0a3-ibm cloud logo.png",
+                            alt="IBM Cloud",
+                            width="414",
+                            height="97",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-logo-section__logo"}) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image(url="https://assets.ubuntu.com/v1/b2206c85-oracle-new-logo.png",
+                            alt="",
+                            width="313",
+                            height="312",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-logo-section__logo"}) | safe
+              }}
+            </div>
           </div>
         </div>
+        <p>
+          <a href="/cloud/public-cloud">了解关于公有云的更多信息&nbsp;&rsaquo;</a>
+        </p>
       </div>
-      <p>
-        <a href="/cloud/public-cloud">了解关于公有云的更多信息&nbsp;&rsaquo;</a>
-      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="p-strip--suru">
-  <div class="u-fixed-width">
-    <h2>混合多云 Kubernetes 的未来</h2>
-  </div>
-  <div class="row p-divider is-dark">
-    <div class="col-4 p-divider__block">
-      <p>结合来自公有云和私有云的同类最佳解决方案，可确保长期成本和性能优化。</p>
+  <section class="p-strip--suru">
+    <div class="u-fixed-width">
+      <h2>混合多云 Kubernetes 的未来</h2>
     </div>
-    <div class="col-4 p-divider__block">
-      <p >我们的 Kubernetes 与公有云和私有云无缝集成。</p>
+    <div class="row p-divider is-dark">
+      <div class="col-4 p-divider__block">
+        <p>结合来自公有云和私有云的同类最佳解决方案，可确保长期成本和性能优化。</p>
+      </div>
+      <div class="col-4 p-divider__block">
+        <p>我们的 Kubernetes 与公有云和私有云无缝集成。</p>
+      </div>
+      <div class="col-4 p-divider__block">
+        <p>为您的业务量身定制的 K8s，构建经济实惠的集群，跨环境连接。</p>
+      </div>
     </div>
-    <div class="col-4 p-divider__block">
-      <p>为您的业务量身定制的 K8s，构建经济实惠的集群，跨环境连接。</p>
+    <div class="row">
+      <div class="col-12">
+        <a href="https://ubuntu.com/engage/enterprise-kubernetes-guide"
+           class="p-button">获取买家指南</a>
+        <a href="https://juju.is/cloud-native-kubernetes-usage-report-2021"
+           class="p-button--positive">阅读行业报告</a>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <a href="https://ubuntu.com/engage/enterprise-kubernetes-guide" class="p-button">获取买家指南</a>
-      <a href="http://juju.is/cloud-native-kubernetes-usage-report-2021" class="p-button--positive">阅读行业报告</a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="p-strip">
-  <div class="row">
-    <div class="col-12">
-      <h2>由 Canonical 提供支持的 Kubernetes</h2>
-      <p class="p-heading--4 u-sv3">具有简化的多云运营且符合 CNCF 标准的 Kubernetes</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="p-card col-6">
-      <p class="p-card__title p-heading--3">MicroK8s</p>
-      <p class="p-heading--5">用于微型云，小型边缘和物联网设备的低接触 Kubernetes</p>
-      <div class="p-card__content">
-        {{
-          image(
-          url="https://assets.ubuntu.com/v1/1781735b-Microk8s.svg",
-          alt="Microk8s",
-          width="440",
-          hi_def=True,
-          loading="lazy",
-          attrs={"class": "u-sv3 u-hide--small"},
-          ) | safe
-        }}
-        <ul class="p-list">
-          <li class="p-list__item is-ticked">一个软件包中的所有 Kubernetes 服务和最流行的附加组件</li>
-          <li class="p-list__item is-ticked">最少的运营，便于集群化、自我修复的 HA 和更简单的升级</li>
-          <li class="p-list__item is-ticked">对资源受限环境友好的轻量级 K8s</li>
-          <li class="p-list__item is-ticked">默认安全性，严格的限制，长期支持</li>
-          <li class="p-list__item is-ticked">固定价格的部署</li>
-          <li class="p-list__item is-ticked">兼容 Linux，Windows 和 macOS</li>
-        </ul>
-        <ul class="p-inline-list">
-          <li class="p-inline-list__item"><a href="https://microk8s.io/">立即开始体验 MicroK8s</a></li>
-          <li class="p-inline-list__item"><a href="https://ubuntu.com/engage/microk8s-451research">阅读白皮书</a></li>
-        </ul>
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-12">
+        <h2>由 Canonical 提供支持的 Kubernetes</h2>
+        <p class="p-heading--4 u-sv3">具有简化的多云运营且符合 CNCF 标准的 Kubernetes</p>
       </div>
     </div>
-    <div class="p-card col-6">
-      <p class="p-card__title p-heading--3">Charmed Kubernetes</p>
-      <p class="p-heading--5">可组合的，基于 Operator 的企业 Kubernetes</p>
-      <div class="p-card__content">
-        {{
-          image(
-          url="https://assets.ubuntu.com/v1/63a03a52-CharmedK8s.svg",
-          alt="Charmed k8s",
-          width="200",
-          hi_def=True,
-          loading="lazy",
-          attrs={"class": "u-sv3 u-hide--small"},
-          ) | safe
-        }}
-        <ul class="p-list">
-          <li class="p-list__item is-ticked">用于完全自动化运营的<a href="https://jaas.ai/canonical-kubernetes">模型驱动的 Kubernetes</a></li>
-          <li class="p-list__item is-ticked">可插拔的 CNI，CSI，CRI 和 监控组件</li>
-          <li class="p-list__item is-ticked">电线运营商级和硬件加速功能</li>
-          <li class="p-list__item is-ticked">支持第三方组件和服务</li>
-          <li class="p-list__item is-ticked">细粒度服务放置</li>
-        </ul>
-        <ul class="p-inline-list">
-          <li class="p-inline-list__item"><a href="https://ubuntu.com/kubernetes/install#multi-node">安装 Charmed Kubernetes</a></li>
-          <li class="p-inline-list__item"><a href="https://assets.ubuntu.com/v1/c5f59e1c-Enterprise_Kubernetes+Datasheet_16.09.21.pdf">阅读产品手册</a></li>
-        </ul>
+    <div class="row">
+      <div class="p-card col-6">
+        <p class="p-card__title p-heading--3">MicroK8s</p>
+        <p class="p-heading--5">用于微型云，小型边缘和物联网设备的低接触 Kubernetes</p>
+        <div class="p-card__content">
+          {{ image(url="https://assets.ubuntu.com/v1/1781735b-Microk8s.svg",
+                    alt="Microk8s",
+                    width="440",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "u-sv3 u-hide--small"},) | safe
+          }}
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">一个软件包中的所有 Kubernetes 服务和最流行的附加组件</li>
+            <li class="p-list__item is-ticked">最少的运营，便于集群化、自我修复的 HA 和更简单的升级</li>
+            <li class="p-list__item is-ticked">对资源受限环境友好的轻量级 K8s</li>
+            <li class="p-list__item is-ticked">默认安全性，严格的限制，长期支持</li>
+            <li class="p-list__item is-ticked">固定价格的部署</li>
+            <li class="p-list__item is-ticked">兼容 Linux，Windows 和 macOS</li>
+          </ul>
+          <ul class="p-inline-list">
+            <li class="p-inline-list__item">
+              <a href="https://microk8s.io/">立即开始体验 MicroK8s</a>
+            </li>
+            <li class="p-inline-list__item">
+              <a href="https://ubuntu.com/engage/microk8s-451research">阅读白皮书</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="p-card col-6">
+        <p class="p-card__title p-heading--3">Charmed Kubernetes</p>
+        <p class="p-heading--5">可组合的，基于 Operator 的企业 Kubernetes</p>
+        <div class="p-card__content">
+          {{ image(url="https://assets.ubuntu.com/v1/63a03a52-CharmedK8s.svg",
+                    alt="Charmed k8s",
+                    width="200",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "u-sv3 u-hide--small"},) | safe
+          }}
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">
+              用于完全自动化运营的<a href="https://jaas.ai/canonical-kubernetes">模型驱动的 Kubernetes</a>
+            </li>
+            <li class="p-list__item is-ticked">可插拔的 CNI，CSI，CRI 和 监控组件</li>
+            <li class="p-list__item is-ticked">电线运营商级和硬件加速功能</li>
+            <li class="p-list__item is-ticked">支持第三方组件和服务</li>
+            <li class="p-list__item is-ticked">细粒度服务放置</li>
+          </ul>
+          <ul class="p-inline-list">
+            <li class="p-inline-list__item">
+              <a href="https://ubuntu.com/kubernetes/install#multi-node">安装 Charmed Kubernetes</a>
+            </li>
+            <li class="p-inline-list__item">
+              <a href="https://assets.ubuntu.com/v1/c5f59e1c-Enterprise_Kubernetes+Datasheet_16.09.21.pdf">阅读产品手册</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="p-card col-12">
-      <h3 class="p-card__title">共享的优势点</h3>
-      <div class="p-card__content">
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">跨各种形式的云的纯上游 Kubernetes</li>
-          <li class="p-list__item is-ticked">广泛的工具目录、生命周期自动化和数百种集成</li>
-          <li class="p-list__item is-ticked">经过所有主要云测试的企业级高可用和显卡（GPU）加速</li>
-          <li class="p-list__item is-ticked">Ubuntu 安全团队提供的安全补丁和更新</li>
-          <li class="p-list__item is-ticked">ARM，x86 和<a href="https://ubuntu.com/certified">专有认证的硬件</a>以驱动您的创新</li>
-        </ul>
+    <div class="row">
+      <div class="p-card col-12">
+        <h3 class="p-card__title">共享的优势点</h3>
+        <div class="p-card__content">
+          <ul class="p-list is-split">
+            <li class="p-list__item is-ticked">跨各种形式的云的纯上游 Kubernetes</li>
+            <li class="p-list__item is-ticked">广泛的工具目录、生命周期自动化和数百种集成</li>
+            <li class="p-list__item is-ticked">经过所有主要云测试的企业级高可用和显卡（GPU）加速</li>
+            <li class="p-list__item is-ticked">Ubuntu 安全团队提供的安全补丁和更新</li>
+            <li class="p-list__item is-ticked">
+              ARM，x86 和<a href="/certified">专有认证的硬件</a>以驱动您的创新
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="p-strip--light">
-  <div class="row">
-    <div class="p-logo-section">
-      <h2 class="p-logo-section__title u-align--center">全面支持的 Kubernetes 云</h2>
-      <div class="p-logo-section__items">
-        <div class="p-logo-section__item">
-          <a href="https://maas.io/">
-            {{ image (
+  <section class="p-strip--light">
+    <div class="row">
+      <div class="p-logo-section has-misaligned-images">
+        <h2 class="p-logo-section__title u-align--center">全面支持的 Kubernetes 云</h2>
+        <div class="p-logo-section__items" style="justify-content:center;">
+          <div class="p-logo-section__item">
+            <a href="https://maas.io/">
+              {{ image (
               url="https://assets.ubuntu.com/v1/f05bbf77-maas-logo.png",
               alt="MAAS",
               width="288",
@@ -234,12 +233,12 @@
               loading="auto",
               attrs={"class": "p-logo-section__logo"}
               ) | safe
-            }}
-          </a>
-        </div>
-        <div class="p-logo-section__item">
-          <a href="https://linuxcontainers.org/">
-            {{ image (
+              }}
+            </a>
+          </div>
+          <div class="p-logo-section__item">
+            <a href="https://linuxcontainers.org/">
+              {{ image (
               url="https://assets.ubuntu.com/v1/0c374f1b-lxd-logo.png",
               alt="LXD",
               width="288",
@@ -248,36 +247,30 @@
               loading="auto",
               attrs={"class": "p-logo-section__logo"}
               ) | safe
+              }}
+            </a>
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(url="https://assets.ubuntu.com/v1/f7f8709c-logo-joyent.svg",
+                        alt="Joyent",
+                        width="146",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
             }}
-          </a>
-        </div>
-        <div class="p-logo-section__item">
-          {{
-            image(
-            url="https://assets.ubuntu.com/v1/f7f8709c-logo-joyent.svg",
-            alt="Joyent",
-            width="146",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"},
-            ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{
-            image(
-            url="https://assets.ubuntu.com/v1/ff936628-rackspace.svg",
-            alt="Rackspace",
-            width="136",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"},
-            ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          <a href="/kubernetes/docs/equinix">
-            {{ 
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(url="https://assets.ubuntu.com/v1/ff936628-rackspace.svg",
+                        alt="Rackspace",
+                        width="136",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            <a href="/kubernetes/docs/equinix">
+              {{
               image (
               url="https://assets.ubuntu.com/v1/659a637a-Equinix+Metal+Vertical+RGB.svg",
               alt="Equinix",
@@ -286,447 +279,420 @@
               hi_def=True,
               loading="lazy"
               ) | safe
-            }}
-          </a>
-        </div>
-        <div class="p-logo-section__item">
-          {{
-            image(
-            url="https://assets.ubuntu.com/v1/760109ef-CloudSigma_Logo_Full.png",
-            alt="Cloud Sigma",
-            width="130",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"},
-            ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          <a href="/kubernetes/docs/openstack-integration">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/314085ad-openstack.svg",
-              alt="Openstack",
-              width="156",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-logo-section__logo"},
-              ) | safe
-            }}
-          </a>
-        </div>
-        <div class="p-logo-section__item">
-          <a href="/kubernetes/docs/vsphere-integration">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/d584bd83-logo-vmware.svg",
-              alt="VMWARE",
-              width="170",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-logo-section__logo"},
-              ) | safe
-            }}
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip">
-  <div class="row">
-    <div class="col-6">
-      <h2>完全托管的 Kubernetes</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <p class="p-heading--4">公有和私有云上具有成本效益的 Kubernetes 即服务</p>
-      {{
-        image(
-        url="https://assets.ubuntu.com/v1/91154a9f-Managed+Kubernetes.svg",
-        alt="Managed Kubernetes",
-        width="284",
-        height="200",
-        hi_def=True,
-        loading="lazy",
-        attrs={"class": "u-hide--small"},
-        ) | safe
-      }}
-    </div>
-    <div class="col-6">
-      <ul class="p-list">
-        <li class="p-list__item is-ticked">可预测的经济性、全栈监控和明确的职责</li>
-        <li class="p-list__item is-ticked">量身定制的 Kubernetes 部署以解决您的用例</li>
-        <li class="p-list__item is-ticked">我们的专家团队7x24小时的主动管理</li>
-        <li class="p-list__item is-ticked">99.9% 的正常运行时间的 SLA 意味着您有更多时间重新专注于您的业务</li>
-        <li class="p-list__item is-ticked">遇到流量高峰？按需扩展是此服务的一部分</li>
-        <li class="p-list__item is-ticked">以 SAAS 方式快速升级到最新的稳定版 Kubernetes</li>
-        <li class="p-list__item is-ticked">通过行业标准认证的数据和安全合规性</li>
-        <li class="p-list__item is-ticked">当您准备好后可立即取回 Kubernetes 的密钥</li>
-      </ul>
-      <p>
-        <a href="https://ubuntu.com/kubernetes/managed">转到托管的 Kubernetes</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<div class="u-fixed-width">
-  <hr>
-</div>
-
-<section class="p-strip">
-  <div class="row">
-    <div class="col-6">
-      <h2>控制您的 Kubernetes</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <p class="p-heading--4">用于目的驱动的运营和集成的下一阶基础架构即代码</p>
-      {{
-        image(
-        url="https://assets.ubuntu.com/v1/52579016-JAAS+diagram-update.svg",
-        alt="Managed Kubernetes",
-        width="213",
-        height="200",
-        hi_def=True,
-        loading="lazy",
-        attrs={"class": "u-hide--small"},
-        ) | safe
-      }}
-    </div>
-    <div class="col-6">
-      <ul class="p-list">
-        <li class="p-list__item is-ticked">应用域的运营知识，提炼成代码</li>
-        <li class="p-list__item is-ticked">通过可组合的应用程序拓扑降低复杂性</li>
-        <li class="p-list__item is-ticked"><a href="https://juju.is/">Charmed operator 生命周期管理器</a> (OLM)</li>
-        <li class="p-list__item is-ticked">参数化的异步第 2 天运营</li>
-        <li class="p-list__item is-ticked">精细的sidecar工作负载控制</li>
-        <li class="p-list__item is-ticked">用于可共享、可重用的 <a href="https://pythonoperatorframework.io/">Charmed operator 框架</a></li>
-        <li class="p-list__item is-ticked">更少的 YAML 文件配置，更简单的操作代码</li>
-      </ul>
-      <p>
-        <a href="https://charmhub.io/overview">探索 Charmed Operator 集</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<div class="u-fixed-width">
-  <hr>
-</div>
-
-<section class="p-strip">
-  <div class="row">
-    <div class="col-6">
-      <h2>集成的集群管理平台</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <p class="p-heading--4">消除 Kubernetes 集群管理的复杂性</p>
-      {{
-        image(
-        url="https://assets.ubuntu.com/v1/db240da7-K8s_management_platform-01.svg",
-        alt="Managed Kubernetes",
-        width="290",
-        height="200",
-        hi_def=True,
-        loading="lazy",
-        attrs={"class": "u-hide--small"},
-        ) | safe
-      }}
-    </div>
-    <div class="col-6">
-      <ul class="p-list u-no-margin--bottom">
-        <li class="p-list__item is-ticked">无需 yaml 和 cli，我们已与最流行的 GUI 集成</li>
-        <li class="p-list__item is-ticked">Kubernetes 和容器资产的单一管理平台</li>
-        <li class="p-list__item is-ticked">统一的多集群管理和实时监控</li>
-        <li class="p-list__item is-ticked">基于策略的管理、治理、安全性和合规性</li>
-        <li class="p-list__item is-ticked">用于大规模应用程序管理和配置的 GitOps</li>
-        <li class="p-list__item is-ticked">从<a href="/cloud/public-cloud">公有云</a>到边缘的跨环境的灵活性</li>
-      </ul>
-      <div class="p-logo-section">
-        <div class="p-logo-section__items u-hide--small">
-          <div class="p-logo-section__item u-no-margin--left">
-            <a href="/kubernetes/features">
-              {{ image (
-                  url="https://assets.ubuntu.com/v1/017e0818-rancher-logo.png",
-                  alt="Rancher",
-                  width="288",
-                  height="288",
-                  hi_def=True,
-                  loading="auto",
-                  attrs={"class": "p-logo-section__logo"}
-                  ) | safe
-                }}
+              }}
             </a>
           </div>
           <div class="p-logo-section__item">
-            {{
-              image(
-              url="https://assets.ubuntu.com/v1/c767b383-Portainer+Logo.svg",
-              alt="",
-              width="137",
-              height="40",
-              hi_def=True,
-              loading="lazy",
-              attrs={"class": "p-logo-section__logo"},
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/760109ef-CloudSigma_Logo_Full.png",
+                        alt="Cloud Sigma",
+                        width="130",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
             }}
           </div>
-          <div class="p-logo-section__item u-no-margin--right">
-            <a href="/kubernetes/features">
-              {{
-                image(
-                url="https://assets.ubuntu.com/v1/e372106d-azurearcWAC.png",
-                alt="",
-                width="70",
-                height="50",
-                hi_def=True,
-                loading="lazy",
-                attrs={"class": "p-logo-section__logo"},
-                ) | safe
+          <div class="p-logo-section__item">
+            <a href="/kubernetes/docs/openstack-integration">
+              {{ image(url="https://assets.ubuntu.com/v1/314085ad-openstack.svg",
+                            alt="Openstack",
+                            width="156",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-logo-section__logo"},) | safe
+              }}
+            </a>
+          </div>
+          <div class="p-logo-section__item">
+            <a href="/kubernetes/docs/vsphere-integration">
+              {{ image(url="https://assets.ubuntu.com/v1/d584bd83-logo-vmware.svg",
+                            alt="VMWARE",
+                            width="170",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-logo-section__logo"},) | safe
               }}
             </a>
           </div>
         </div>
       </div>
-      <p>
-        <a href="http://ubuntu.com/kubernetes/features">浏览全部特性</a>
-      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="u-fixed-width">
-  <hr>
-</div>
-
-<section class="p-strip">
-  <div class="row">
-    <div class="col-8">
-      <h2 id="services">全栈 K8s 服务</h2>
-      <p class="p-heading--4 u-sv3">转变您的业务并保护基础设施</p>
-    </div>
-  </div>
-  <div class="row u-sv3">
-    <div class="col-8">
-      <h3>长期的企业支持</h3>
-      <p>
-        通过<a href="https://ubuntu.com/pricing/infra">Ubuntu Pro</a>获得全栈的支持。<br>
-        单一订阅即可获得从内核到容器的长期安全维护、内核实时补丁和关键业务基础架构的支持。从公有云到边缘，对 K8s、操作系统和应用程序的 7x24 小时的企业级支持。
-      </p>
-    </div>
-    <div class="col-4 u-hide--medium u-hide--small u-align--center">
-      {{
-        image(
-        url="https://assets.ubuntu.com/v1/91b86713-Enterprise_support.svg",
-        alt="Enterprise support",
-        width="150",
-        hi_def=True,
-        loading="lazy"
-        ) | safe
-      }}
-    </div>
-  </div>
-  
-  <div class="row">
-    <h3>开始您的 Kubernetes 之旅</h3>
-  </div>
-  <div class="row">
-    <div class="p-card col-4">
-      <h4 class="p-card__title">Kubernetes Explorer</h4>
-      <p>培训 &amp; 管理服务包</p>
-      <hr>
-      <div class="p-card__content">
-        <p>为期三天的 Kubernetes 培训，以提高团队的技能，包括：</p>
-        <ul class="p-list">
-          <li class="p-list__item is-ticked">Kubernetes 基本原理</li>
-          <li class="p-list__item is-ticked">容器开发基础</li>
-          <li class="p-list__item is-ticked">MicroK8s 使能</li>
-          <li class="p-list__item is-ticked">Charmed Kubernetes 使能</li>
-          <li class="p-list__item is-ticked">监控和日志</li>
-          <li class="p-list__item is-ticked">Kubernetes 生命周期管理</li>
-          <li class="p-list__item is-ticked">安全概要</li>
-        </ul>
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-6">
+        <h2>完全托管的 Kubernetes</h2>
       </div>
     </div>
-    <div class="p-card col-4">
-      <h4 class="p-card__title">Kubernetes Discoverer</h4>
-      <p>参考架构设计和部署</p>
-      <hr>
-      <div class="p-card__content">
-        <p>为期三天的培训和为期两周的参考 K8s 架构部署，包括：</p>
+    <div class="row">
+      <div class="col-6">
+        <p class="p-heading--4">公有和私有云上具有成本效益的 Kubernetes 即服务</p>
+        {{ image(url="https://assets.ubuntu.com/v1/91154a9f-Managed+Kubernetes.svg",
+                alt="Managed Kubernetes",
+                width="284",
+                height="200",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "u-hide--small"},) | safe
+        }}
+      </div>
+      <div class="col-6">
         <ul class="p-list">
-          <li class="p-list__item is-ticked">高可用</li>
-          <li class="p-list__item is-ticked"><a href="/cloud/public-cloud">公有云</a>, VMware, <a href="/cloud/openstack">Openstack</a></li>
-          <li class="p-list__item is-ticked">存储和 SDN 基本选项</li>
-          <li class="p-list__item is-ticked">日志，监控，警报</li>
-          <li class="p-list__item is-ticked">Kubernetes 生命周期管理</li>
-          <li class="p-list__item is-ticked">安全概要</li>
-          <li class="p-list__item is-ticked">可支持的或完全托管</li>
+          <li class="p-list__item is-ticked">可预测的经济性、全栈监控和明确的职责</li>
+          <li class="p-list__item is-ticked">量身定制的 Kubernetes 部署以解决您的用例</li>
+          <li class="p-list__item is-ticked">我们的专家团队7x24小时的主动管理</li>
+          <li class="p-list__item is-ticked">99.9% 的正常运行时间的 SLA 意味着您有更多时间重新专注于您的业务</li>
+          <li class="p-list__item is-ticked">遇到流量高峰？按需扩展是此服务的一部分</li>
+          <li class="p-list__item is-ticked">以 SAAS 方式快速升级到最新的稳定版 Kubernetes</li>
+          <li class="p-list__item is-ticked">通过行业标准认证的数据和安全合规性</li>
+          <li class="p-list__item is-ticked">当您准备好后可立即取回 Kubernetes 的密钥</li>
         </ul>
+        <p>
+          <a href="https://ubuntu.com/kubernetes/managed">转到托管的 Kubernetes</a>
+        </p>
       </div>
     </div>
-    <div class="p-card col-4">
-      <h4 class="p-card__title">Kubernetes Discoverer Plus</h4>
-      <p>定制架构设计和部署</p>
-      <hr>
-      <div class="p-card__content">
-        <p>三周定制架构部署项目和知识传授，包括：</p>
-        <ul class="p-list">
-          <li class="p-list__item is-ticked">高可用</li>
-          <li class="p-list__item is-ticked"><a href="/cloud/public-cloud">公有云</a>, VMware, <a href="/cloud/openstack">Openstack</a>, <a href="https://maas.io/">裸机</a></li>
-          <li class="p-list__item is-ticked">存储和 SDN 广泛的选项</li>
-          <li class="p-list__item is-ticked">第三方集成</li>
-          <li class="p-list__item is-ticked">显卡加速</li>
-          <li class="p-list__item is-ticked">私有 registry 选项</li>
-          <li class="p-list__item is-ticked">日志，监控，警报</li>
-          <li class="p-list__item is-ticked">Kubernetes 生命周期管理</li>
-          <li class="p-list__item is-ticked">安全概要</li>
-          <li class="p-list__item is-ticked">可支持的或完全托管</li>
-        </ul>
+  </section>
+
+  <div class="u-fixed-width">
+    <hr />
+  </div>
+
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-6">
+        <h2>控制您的 Kubernetes</h2>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <a href="https://ubuntu.com/pricing/consulting#kubernetes">Canonical Kubernetes 服务定价</a>
-  </div>
-</section>
-
-<section class="p-strip is-shallow">
-  <div class="row">
-    <div class="col-6">
-      <h1 class="p-heading--3">使用 Kubeadm 部署的 Kubernetes 集群</h1>
-      <p>Canonical 对使用 kubeadmin 部署的 Kubernetes 集群提供商业支持。</p>
-      <p><a class="p-button--positive" href="/contact">获取对 kubeadm 的支持</a></p>
+    <div class="row">
+      <div class="col-6">
+        <p class="p-heading--4">用于目的驱动的运营和集成的下一阶基础架构即代码</p>
+        {{ image(url="https://assets.ubuntu.com/v1/52579016-JAAS+diagram-update.svg",
+                alt="Managed Kubernetes",
+                width="213",
+                height="200",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "u-hide--small"},) | safe
+        }}
+      </div>
+      <div class="col-6">
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">应用域的运营知识，提炼成代码</li>
+          <li class="p-list__item is-ticked">通过可组合的应用程序拓扑降低复杂性</li>
+          <li class="p-list__item is-ticked">
+            <a href="https://juju.is/">Charmed operator 生命周期管理器</a> (OLM)
+          </li>
+          <li class="p-list__item is-ticked">参数化的异步第 2 天运营</li>
+          <li class="p-list__item is-ticked">精细的sidecar工作负载控制</li>
+          <li class="p-list__item is-ticked">
+            用于可共享、可重用的 <a href="https://pythonoperatorframework.io/">Charmed operator 框架</a>
+          </li>
+          <li class="p-list__item is-ticked">更少的 YAML 文件配置，更简单的操作代码</li>
+        </ul>
+        <p>
+          <a href="https://charmhub.io/overview">探索 Charmed Operator 集</a>
+        </p>
+      </div>
     </div>
-    <div class="col-6 u-hide--medium u-hide--small u-align--center">
-      {{
-        image(
-        url="https://assets.ubuntu.com/v1/d0fcc7ea-kubeadm-stacked-color.png",
-        alt="Kubeadm",
-        width="150",
-        hi_def=True,
-        loading="lazy"
-        ) | safe
-      }}
-    </div>
-  </div>
-</section>
+  </section>
 
-<div class="u-fixed-width">
-  <hr>
-</div>
-
-<section class="p-strip">
-  <div class="row u-vertically-center">
-    <div class="col-6">
-      <h1 class="p-heading--3">为未来而训练</h1>
-      <p>培训您的系统管理员和 DevOps 工程师成为 Kubernetes、OpenStack 或 Ubuntu Server 专家。Canonical 提供培训计划使以适应所有环境和所有经验水平。充分利用您的投资。</p>
-      <p><a href="https://ubuntu.com/training">了解关于培训的更多内容</a></p>
-    </div>
-    <div class="col-6 u-hide--medium u-hide--small u-align--center">
-      {{
-        image(
-        url="https://assets.ubuntu.com/v1/3a4d4155-Training.svg",
-        alt="Kubeadm",
-        width="300",
-        hi_def=True,
-        loading="lazy"
-        ) | safe
-      }}
-    </div>
+  <div class="u-fixed-width">
+    <hr />
   </div>
-</section>
 
-<section class="p-strip--suru">
-  <div class="row">
-    <h2>Kubernetes 资源</h2>
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-6">
+        <h2>集成的集群管理平台</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <p class="p-heading--4">消除 Kubernetes 集群管理的复杂性</p>
+        {{ image(url="https://assets.ubuntu.com/v1/db240da7-K8s_management_platform-01.svg",
+                alt="Managed Kubernetes",
+                width="290",
+                height="200",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "u-hide--small"},) | safe
+        }}
+      </div>
+      <div class="col-6">
+        <ul class="p-list u-no-margin--bottom">
+          <li class="p-list__item is-ticked">无需 yaml 和 cli，我们已与最流行的 GUI 集成</li>
+          <li class="p-list__item is-ticked">Kubernetes 和容器资产的单一管理平台</li>
+          <li class="p-list__item is-ticked">统一的多集群管理和实时监控</li>
+          <li class="p-list__item is-ticked">基于策略的管理、治理、安全性和合规性</li>
+          <li class="p-list__item is-ticked">用于大规模应用程序管理和配置的 GitOps</li>
+          <li class="p-list__item is-ticked">
+            从<a href="/cloud/public-cloud">公有云</a>到边缘的跨环境的灵活性
+          </li>
+        </ul>
+        <div class="p-logo-section">
+          <div class="p-logo-section__items u-hide--small">
+            <div class="p-logo-section__item u-no-margin--left">
+              <a href="/kubernetes/features">
+                {{ image (
+                url="https://assets.ubuntu.com/v1/017e0818-rancher-logo.png",
+                alt="Rancher",
+                width="288",
+                height="288",
+                hi_def=True,
+                loading="auto",
+                attrs={"class": "p-logo-section__logo"}
+                ) | safe
+                }}
+              </a>
+            </div>
+            <div class="p-logo-section__item">
+              {{ image(url="https://assets.ubuntu.com/v1/c767b383-Portainer+Logo.svg",
+                            alt="",
+                            width="137",
+                            height="40",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-logo-section__logo"},) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item u-no-margin--right">
+              <a href="/kubernetes/features">
+                {{ image(url="https://assets.ubuntu.com/v1/e372106d-azurearcWAC.png",
+                                alt="",
+                                width="70",
+                                height="50",
+                                hi_def=True,
+                                loading="lazy",
+                                attrs={"class": "p-logo-section__logo"},) | safe
+                }}
+              </a>
+            </div>
+          </div>
+        </div>
+        <p>
+          <a href="https://ubuntu.com/kubernetes/features">浏览全部特性</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="u-fixed-width">
+    <hr />
   </div>
-  <div class="row p-divider is-dark">
-    <div class="col-4 p-divider__block">
-      <div class="p-heading-icon--small">
-        <div class="p-heading-icon__header">
-          {{
-            image(
-            url="https://assets.ubuntu.com/v1/271921af-Datasheet+-+white.svg",
-            alt="",
-            width="32",
-            height="28",
-            hi_def=True,
-            loading="lazy",
-            ) | safe
-          }}
-          <p class="p-heading--4">产品手册</p>
+
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-8">
+        <h2 id="services">全栈 K8s 服务</h2>
+        <p class="p-heading--4 u-sv3">转变您的业务并保护基础设施</p>
+      </div>
+    </div>
+    <div class="row u-sv3">
+      <div class="col-8">
+        <h3>长期的企业支持</h3>
+        <p>
+          通过<a href="https://ubuntu.com/pricing/infra">Ubuntu Pro</a>获得全栈的支持。
+          <br />
+          单一订阅即可获得从内核到容器的长期安全维护、内核实时补丁和关键业务基础架构的支持。从公有云到边缘，对 K8s、操作系统和应用程序的 7x24 小时的企业级支持。
+        </p>
+      </div>
+      <div class="col-4 u-hide--medium u-hide--small u-align--center">
+        {{ image(url="https://assets.ubuntu.com/v1/91b86713-Enterprise_support.svg",
+                alt="Enterprise support",
+                width="150",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      </div>
+    </div>
+
+    <div class="row">
+      <h3>开始您的 Kubernetes 之旅</h3>
+    </div>
+    <div class="row">
+      <div class="p-card col-4">
+        <h4 class="p-card__title">Kubernetes Explorer</h4>
+        <p>培训 &amp; 管理服务包</p>
+        <hr />
+        <div class="p-card__content">
+          <p>为期三天的 Kubernetes 培训，以提高团队的技能，包括：</p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">Kubernetes 基本原理</li>
+            <li class="p-list__item is-ticked">容器开发基础</li>
+            <li class="p-list__item is-ticked">MicroK8s 使能</li>
+            <li class="p-list__item is-ticked">Charmed Kubernetes 使能</li>
+            <li class="p-list__item is-ticked">监控和日志</li>
+            <li class="p-list__item is-ticked">Kubernetes 生命周期管理</li>
+            <li class="p-list__item is-ticked">安全概要</li>
+          </ul>
         </div>
       </div>
-      <a class="p-link--inverted" href="https://assets.ubuntu.com/v1/b5f9ae49-Enterprise_Kubernetes_Datasheet.pdf">适用于企业的 Kubernetes</a>
-    </div>
-    <div class="col-4 p-divider__block">
-      <div class="p-heading-icon--small">
-        <div class="p-heading-icon__header">
-          {{
-            image(
-            url="https://assets.ubuntu.com/v1/fc781c43-Case+study+-+white.svg",
-            alt="",
-            width="32",
-            height="28",
-            hi_def=True,
-            loading="lazy",
-            ) | safe
-          }}
-          <p class="p-heading--4">案例分享</p>
+      <div class="p-card col-4">
+        <h4 class="p-card__title">Kubernetes Discoverer</h4>
+        <p>参考架构设计和部署</p>
+        <hr />
+        <div class="p-card__content">
+          <p>为期三天的培训和为期两周的参考 K8s 架构部署，包括：</p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">高可用</li>
+            <li class="p-list__item is-ticked">
+              <a href="/cloud/public-cloud">公有云</a>, VMware, <a href="/cloud/openstack">Openstack</a>
+            </li>
+            <li class="p-list__item is-ticked">存储和 SDN 基本选项</li>
+            <li class="p-list__item is-ticked">日志，监控，警报</li>
+            <li class="p-list__item is-ticked">Kubernetes 生命周期管理</li>
+            <li class="p-list__item is-ticked">安全概要</li>
+            <li class="p-list__item is-ticked">可支持的或完全托管</li>
+          </ul>
         </div>
       </div>
-      <a class="p-link--inverted" href="https://ubuntu.com/engage/atresmedia-charmed-kubernetes-case-study">Atresmedia 凭借 Charmed Kubernetes 主导西班牙的 OTT 媒体市场</a>
-    </div>
-    <div class="col-4 p-divider__block">
-      <div class="p-heading-icon--small">
-        <div class="p-heading-icon__header">
-          {{
-            image(
-            url="https://assets.ubuntu.com/v1/4ab8ff35-Whitepaper+-+white.svg",
-            alt="",
-            width="32",
-            height="28",
-            hi_def=True,
-            loading="lazy",
-            ) | safe
-          }}
-          <p class="p-heading--4">行业报告</p>
+      <div class="p-card col-4">
+        <h4 class="p-card__title">Kubernetes Discoverer Plus</h4>
+        <p>定制架构设计和部署</p>
+        <hr />
+        <div class="p-card__content">
+          <p>三周定制架构部署项目和知识传授，包括：</p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">高可用</li>
+            <li class="p-list__item is-ticked">
+              <a href="/cloud/public-cloud">公有云</a>, VMware, <a href="/cloud/openstack">Openstack</a>, <a href="https://maas.io/">裸机</a>
+            </li>
+            <li class="p-list__item is-ticked">存储和 SDN 广泛的选项</li>
+            <li class="p-list__item is-ticked">第三方集成</li>
+            <li class="p-list__item is-ticked">显卡加速</li>
+            <li class="p-list__item is-ticked">私有 registry 选项</li>
+            <li class="p-list__item is-ticked">日志，监控，警报</li>
+            <li class="p-list__item is-ticked">Kubernetes 生命周期管理</li>
+            <li class="p-list__item is-ticked">安全概要</li>
+            <li class="p-list__item is-ticked">可支持的或完全托管</li>
+          </ul>
         </div>
       </div>
-      <a class="p-link--inverted" href="https://juju.is/cloud-native-kubernetes-usage-report-2021">2021 年 Kubernetes 和云原生运营报告</a>
     </div>
-  </div>
-</section>
+    <div class="row">
+      <a href="https://ubuntu.com/pricing/consulting#kubernetes">Canonical Kubernetes 服务定价</a>
+    </div>
+  </section>
 
-<section class="p-strip">
-  <div class="row u-vertically-center">
-    <div class="col-8">
-      <h1 class="p-heading--3">现在获得您的 K8s 问题的答案</h1>
-      <p>
-        <a class="p-button--positive js-invoke-modal" href="/contact">联系我们</a>
-      </p>
+  <section class="p-strip is-shallow">
+    <div class="row">
+      <div class="col-6">
+        <h1 class="p-heading--3">使用 Kubeadm 部署的 Kubernetes 集群</h1>
+        <p>Canonical 对使用 kubeadmin 部署的 Kubernetes 集群提供商业支持。</p>
+        <p>
+          <a class="p-button--positive" href="/contact">获取对 kubeadm 的支持</a>
+        </p>
+      </div>
+      <div class="col-6 u-hide--medium u-hide--small u-align--center">
+        {{ image(url="https://assets.ubuntu.com/v1/d0fcc7ea-kubeadm-stacked-color.png",
+                alt="Kubeadm",
+                width="150",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      </div>
     </div>
-    <div class="col-4 u-hide--small">
-      {{
-        image(
-        url="https://assets.ubuntu.com/v1/24a03775-Contact+us.svg",
-        alt="",
-        width="240",
-        height="171",
-        hi_def=True,
-        loading="lazy"
-        ) | safe
-      }}
-    </div>
+  </section>
+
+  <div class="u-fixed-width">
+    <hr />
   </div>
-</section>
+
+  <section class="p-strip">
+    <div class="row u-vertically-center">
+      <div class="col-6">
+        <h1 class="p-heading--3">为未来而训练</h1>
+        <p>培训您的系统管理员和 DevOps 工程师成为 Kubernetes、OpenStack 或 Ubuntu Server 专家。Canonical 提供培训计划使以适应所有环境和所有经验水平。充分利用您的投资。</p>
+        <p>
+          <a href="https://ubuntu.com/training">了解关于培训的更多内容</a>
+        </p>
+      </div>
+      <div class="col-6 u-hide--medium u-hide--small u-align--center">
+        {{ image(url="https://assets.ubuntu.com/v1/3a4d4155-Training.svg",
+                alt="Kubeadm",
+                width="300",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip--suru">
+    <div class="row">
+      <h2>Kubernetes 资源</h2>
+    </div>
+    <div class="row p-divider is-dark">
+      <div class="col-4 p-divider__block">
+        <div class="p-heading-icon--small">
+          <div class="p-heading-icon__header">
+            {{ image(url="https://assets.ubuntu.com/v1/271921af-Datasheet+-+white.svg",
+                        alt="",
+                        width="32",
+                        height="28",
+                        hi_def=True,
+                        loading="lazy",) | safe
+            }}
+            <p class="p-heading--4">产品手册</p>
+          </div>
+        </div>
+        <a class="p-link--inverted"
+           href="https://assets.ubuntu.com/v1/b5f9ae49-Enterprise_Kubernetes_Datasheet.pdf">适用于企业的 Kubernetes</a>
+      </div>
+      <div class="col-4 p-divider__block">
+        <div class="p-heading-icon--small">
+          <div class="p-heading-icon__header">
+            {{ image(url="https://assets.ubuntu.com/v1/fc781c43-Case+study+-+white.svg",
+                        alt="",
+                        width="32",
+                        height="28",
+                        hi_def=True,
+                        loading="lazy",) | safe
+            }}
+            <p class="p-heading--4">案例分享</p>
+          </div>
+        </div>
+        <a class="p-link--inverted"
+           href="https://ubuntu.com/engage/atresmedia-charmed-kubernetes-case-study">Atresmedia 凭借 Charmed Kubernetes 主导西班牙的 OTT 媒体市场</a>
+      </div>
+      <div class="col-4 p-divider__block">
+        <div class="p-heading-icon--small">
+          <div class="p-heading-icon__header">
+            {{ image(url="https://assets.ubuntu.com/v1/4ab8ff35-Whitepaper+-+white.svg",
+                        alt="",
+                        width="32",
+                        height="28",
+                        hi_def=True,
+                        loading="lazy",) | safe
+            }}
+            <p class="p-heading--4">行业报告</p>
+          </div>
+        </div>
+        <a class="p-link--inverted"
+           href="https://juju.is/cloud-native-kubernetes-usage-report-2021">2021 年 Kubernetes 和云原生运营报告</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-strip">
+    <div class="row u-vertically-center">
+      <div class="col-8">
+        <h1 class="p-heading--3">现在获得您的 K8s 问题的答案</h1>
+        <p>
+          <a class="p-button--positive js-invoke-modal" href="/contact">联系我们</a>
+        </p>
+      </div>
+      <div class="col-4 u-hide--small">
+        {{ image(url="https://assets.ubuntu.com/v1/24a03775-Contact+us.svg",
+                alt="",
+                width="240",
+                height="171",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      </div>
+    </div>
+  </section>
 
 {% endblock content %}

@@ -1,182 +1,153 @@
 {% extends "templates/base.html" %}
 
 {% block title %}Ubuntu支持和服务 {{ page_title }}{% endblock %}
-{% block meta_description %}Ubuntu订阅 Ubuntu企业版 Ubuntu许可证 Ubuntu官方支持 Linux企业服务 Linux企业支持 Linux订阅 Ubuntu服务器支持{{ meta_description }}{% endblock %}
+
+{% block meta_description %}
+  Ubuntu订阅 Ubuntu企业版 Ubuntu许可证 Ubuntu官方支持 Linux企业服务 Linux企业支持 Linux订阅 Ubuntu服务器支持{{ meta_description }}
+{% endblock %}
 
 {% block content %}
-{% include "support/secondary-nav.html" %}
+  {% include "support/secondary-nav.html" %}
 
-<section class="p-strip--suru is-dark">
-  <div class="row u-equal-height">
-    <div class="col-8">
-      <h1>Ubuntu Pro</h1>
-      <h4>适用于企业的安全，支持和托管的开源服务</h4>
-      <p>由Canonical提供的开源软件支持，从数据中心到容器再到数据库，<abbr title="日志, 监控和聚合服务">LMA</abbr>，服务器和云原生应用程序的面向未来的完整堆栈。</p>
-      <p>Ubuntu Pro，是一站式、每节点的支持方案，为最全面的企业开源基础设施和应用程序提供安全和支持服务，且托管服务已可用。</p>
-      <p><a href="/contact" class="p-button--positive">联系我们</a><a class="p-button is-inline" href="/support/pro">了解更多Ubuntu Pro的内容</a></p>
+  <section class="p-strip--suru is-dark">
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h1>Ubuntu Pro</h1>
+        <h4>适用于企业的安全，支持和托管的开源服务</h4>
+        <p>
+          由Canonical提供的开源软件支持，从数据中心到容器再到数据库，<abbr title="日志, 监控和聚合服务">LMA</abbr>，服务器和云原生应用程序的面向未来的完整堆栈。
+        </p>
+        <p>Ubuntu Pro，是一站式、每节点的支持方案，为最全面的企业开源基础设施和应用程序提供安全和支持服务，且托管服务已可用。</p>
+        <p>
+          <a href="/contact" class="p-button--positive">联系我们</a><a class="p-button is-inline" href="/support/pro">了解更多Ubuntu Pro的内容</a>
+        </p>
+      </div>
+      <div class="col-4 u-hide--small u-vertically-center u-align--center">
+        {{ image(url="https://assets.ubuntu.com/v1/f6bbc63c-get-in-touch_chat_wht.svg",
+                alt="",
+                height="180",
+                width="180",
+                hi_def=True,
+                loading="auto") | safe
+        }}
+      </div>
     </div>
-    <div class="col-4 u-hide--small u-vertically-center u-align--center">
-      {{
-        image(
-          url="https://assets.ubuntu.com/v1/f6bbc63c-get-in-touch_chat_wht.svg",
-          alt="",
-          height="180",
-          width="180",
-          hi_def=True,
-          loading="auto"
-        ) | safe
-      }}
-    </div>
-  </div>
-</section>
+  </section>
 
   <section class="p-strip">
     <div class="u-fixed-width u-align--center">
-      <div class="p-logo-section">
-        <div class="p-logo-section__items">
+      <div class="p-logo-section has-misaligned-images">
+        <div class="p-logo-section__items" style="justify-content:center;">
           <div class="p-logo-section__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/b1e3d2d2-bloomberg-logo.png",
-                  alt="Bloomberg",
-                  width="288",
-                  height="288",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/b1e3d2d2-bloomberg-logo.png",
+                        alt="Bloomberg",
+                        width="288",
+                        height="288",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
             }}
           </div>
           <div class="p-logo-section__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/6cd78b57-at%26t-logo.png",
-                  alt="AT&amp;T",
-                  width="288",
-                  height="288",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-              ) | safe
-            }}
-          </div>      
-          <div class="p-logo-section__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/c6e197c4-deutsche-telekom-logo.png",
-                  alt="Deutsche Telekom",
-                  width="288",
-                  height="288",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/6cd78b57-at%26t-logo.png",
+                        alt="AT&amp;T",
+                        width="288",
+                        height="288",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
             }}
           </div>
           <div class="p-logo-section__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/d7356bae-ebay-logo.png",
-                  alt="Ebay",
-                  width="288",
-                  height="288",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/c6e197c4-deutsche-telekom-logo.png",
+                        alt="Deutsche Telekom",
+                        width="288",
+                        height="288",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
             }}
           </div>
           <div class="p-logo-section__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/7eebe11c-cisco-logo.png",
-                  alt="Cisco",
-                  width="288",
-                  height="288",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/d7356bae-ebay-logo.png",
+                        alt="Ebay",
+                        width="288",
+                        height="288",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
             }}
           </div>
           <div class="p-logo-section__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/f69a071a-ntt-logo.png",
-                  alt="NTT",
-                  width="288",
-                  height="288",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/7eebe11c-cisco-logo.png",
+                        alt="Cisco",
+                        width="288",
+                        height="288",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
             }}
           </div>
           <div class="p-logo-section__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/698f7a58-best-buy-logo.png",
-                  alt="Best Buy",
-                  width="288",
-                  height="288",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-              ) | safe
-            }}
-          </div>       
-          <div class="p-logo-section__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/a6d62ef1-paypal-logo.png",
-                  alt="Paypal",
-                  width="288",
-                  height="288",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/f69a071a-ntt-logo.png",
+                        alt="NTT",
+                        width="288",
+                        height="288",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
             }}
           </div>
           <div class="p-logo-section__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/6c41357e-chinalife-logo.png",
-                  alt="China life",
-                  width="178",
-                  height="65",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-              ) | safe
-            }}
-          </div>  
-          <div class="p-logo-section__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/99381e78-hw-horizontal-.png",
-                  alt="Huawei",
-                  width="166",
-                  height="36",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/698f7a58-best-buy-logo.png",
+                        alt="Best Buy",
+                        width="288",
+                        height="288",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
             }}
           </div>
           <div class="p-logo-section__item">
-            {{
-              image(
-                  url="https://assets.ubuntu.com/v1/60af0752-newlogo-1.png",
-                  alt="新东方",
-                  width="166",
-                  height="36",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/a6d62ef1-paypal-logo.png",
+                        alt="Paypal",
+                        width="288",
+                        height="288",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
             }}
-          </div>         
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(url="https://assets.ubuntu.com/v1/6c41357e-chinalife-logo.png",
+                        alt="China life",
+                        width="178",
+                        height="65",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(url="https://assets.ubuntu.com/v1/99381e78-hw-horizontal-.png",
+                        alt="Huawei",
+                        width="166",
+                        height="36",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(url="https://assets.ubuntu.com/v1/60af0752-newlogo-1.png",
+                        alt="新东方",
+                        width="166",
+                        height="36",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"},) | safe
+            }}
+          </div>
         </div>
       </div>
     </div>
@@ -195,7 +166,9 @@
     <div class="row p-divider u-equal-height u-vertically-spaced">
       <div class="col-6 p-divider__block">
         <h4>应用程序</h4>
-        <p>对开源数据库、<abbr title="日志, 监控和聚合服务">LMA</abbr>、服务器和云原生应用程序的安全和支持服务。</p>
+        <p>
+          对开源数据库、<abbr title="日志, 监控和聚合服务">LMA</abbr>、服务器和云原生应用程序的安全和支持服务。
+        </p>
         <ul class="p-list">
           <li class="p-list__item is-ticked">Ubuntu Universe和Main仓库中的超过25000个软件包的安全补丁支持</li>
           <li class="p-list__item is-ticked">对Ubuntu LTS版最长10年的支持</li>
@@ -209,7 +182,9 @@
         <ul class="p-list">
           <li class="p-list__item is-ticked">Ubuntu Main仓库中的超过2500个软件包的安全补丁服务（在免费的LTS 5年后安全补丁）</li>
           <li class="p-list__item is-ticked">对Ubuntu LTS版最长10年的支持</li>
-          <li class="p-list__item is-ticked">对<a href="/cloud/openstack">OpenStack</a>、KVM、MAAS、LXD、Ceph的补丁和运营支持</li>
+          <li class="p-list__item is-ticked">
+            对<a href="/cloud/openstack">OpenStack</a>、KVM、MAAS、LXD、Ceph的补丁和运营支持
+          </li>
         </ul>
       </div>
     </div>
@@ -252,19 +227,25 @@
         <li class="p-matrix__item">
           <div class="p-matrix__content">
             <h3 class="p-matrix__title p-heading--4">企业级安全和审计</h3>
-            <p class="p-matrix__desc">通过使用 <a href="https://www.ubuntu.com/security/esm">ESM</a>、<a href="https://www.ubuntu.com/server/livepatch">Livepatch</a>和<a href="/landscape">Landscape</a>服务来进行安全修补，审计和合规报告。</p>
+            <p class="p-matrix__desc">
+              通过使用 <a href="https://www.ubuntu.com/security/esm">ESM</a>、<a href="https://www.ubuntu.com/server/livepatch">Livepatch</a>和<a href="/landscape">Landscape</a>服务来进行安全修补，审计和合规报告。
+            </p>
           </div>
         </li>
         <li class="p-matrix__item">
           <div class="p-matrix__content">
             <h3 class="p-matrix__title p-heading--4">合规、认证和加固</h3>
-            <p class="p-matrix__desc">Ubuntu使用<a href="https://www.ubuntu.com/security/certifications#fips">FIPS 140-2认证模块，</a><a href="https://www.ubuntu.com/security/certifications#cis">CIS加固</a>和<a href="https://www.ubuntu.com/security/certifications#common-criteria">通用标准EAL2认证</a>推动您的关键任务工作负载。</p>
+            <p class="p-matrix__desc">
+              Ubuntu使用<a href="https://www.ubuntu.com/security/certifications#fips">FIPS 140-2认证模块，</a><a href="https://www.ubuntu.com/security/certifications#cis">CIS加固</a>和<a href="https://www.ubuntu.com/security/certifications#common-criteria">通用标准EAL2认证</a>推动您的关键任务工作负载。
+            </p>
           </div>
         </li>
         <li class="p-matrix__item">
           <div class="p-matrix__content">
             <h3 class="p-matrix__title p-heading--4">开源托管</h3>
-            <p class="p-matrix__desc">通过托管的<a href="https://www.ubuntu.com/openstack/managed">OpenStack</a>、<a href="https://www.ubuntu.com/kubernetes/managed">Kubernetes</a>和<a href="https://www.ubuntu.com/managed">Apps</a>随时开展您的工作负载。</p>
+            <p class="p-matrix__desc">
+              通过托管的<a href="https://www.ubuntu.com/openstack/managed">OpenStack</a>、<a href="https://www.ubuntu.com/kubernetes/managed">Kubernetes</a>和<a href="https://www.ubuntu.com/managed">Apps</a>随时开展您的工作负载。
+            </p>
           </div>
         </li>
       </ul>
@@ -273,7 +254,7 @@
       </p>
     </div>
   </section>
-  
+
   <section class="p-strip" id="apps-support">
     <div class="row">
       <h2>应用软件的支持</h2>
@@ -281,14 +262,16 @@
     </div>
 
     {% include "shared/_security-patching-logo-cloud.html" %}
-    
+
     <div class="u-fixed-width">
       <p>
         <a href="/contact" class="p-button--positive">联系我们</a>
       </p>
-      <p>阅读<a href="https://ubuntu.com/engage/ros-support">通过ROS ESM支持ROS</a>的皮书</p>
+      <p>
+        阅读<a href="https://ubuntu.com/engage/ros-support">通过ROS ESM支持ROS</a>的皮书
+      </p>
     </div>
-   
+
   </section>
 
   <section class="p-strip--light is-deep" id="pro-all">
@@ -297,8 +280,12 @@
       <table class="p-table">
         <thead>
           <tr>
-            <th><em>解决方案</em></th>
-            <th><em>范围</em></th>
+            <th>
+              <em>解决方案</em>
+            </th>
+            <th>
+              <em>范围</em>
+            </th>
             <th class="u-align--center">Ubuntu Pro (仅基础设施) + 支持</th>
             <th class="u-align--center">Ubuntu Pro + 基础设施支持</th>
             <th class="u-align--center">Ubuntu Pro + 支持</th>
@@ -310,17 +297,20 @@
             <td>Ubuntu Main软件仓库</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
@@ -329,12 +319,14 @@
             <td class="u-align--center">&ndash;</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
@@ -342,17 +334,20 @@
             <td>Kernel实时补丁</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
@@ -361,17 +356,20 @@
             <td>Ubuntu服务器版系统</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
@@ -379,17 +377,20 @@
             <td>Kubernetes</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
@@ -397,17 +398,20 @@
             <td>LXD</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
@@ -415,17 +419,20 @@
             <td>OpenStack</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
@@ -433,17 +440,20 @@
             <td>Ceph/Swift</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
@@ -451,17 +461,20 @@
             <td>MAAS</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
@@ -471,81 +484,104 @@
             <td class="u-align--center">&ndash;</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
           <tr>
             <td>系统管理</td>
-            <td><a href="/landscape" >Landscape</a></td>
+            <td>
+              <a href="/landscape">Landscape</a>
+            </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="3"><a href="https://ubuntu.com/security/certifications">合规和认证</a></td>
-            <td><a href="https://ubuntu.com/security/certifications#fips">FIPS 140-2 Level 1</a> 认证的加密模块</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
           <tr>
-            <td><a href="https://ubuntu.com/security/certifications#cis">CIS Benchmark</td>
+            <td rowspan="3">
+              <a href="https://ubuntu.com/security/certifications">合规和认证</a>
+            </td>
+            <td>
+              <a href="https://ubuntu.com/security/certifications#fips">FIPS 140-2 Level 1</a> 认证的加密模块
+            </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
           <tr>
-            <td><a href="https://ubuntu.com/security/certifications#common-criteria">Common Criteria /EAL2</td>
+            <td>
+              <a href="https://ubuntu.com/security/certifications#cis">CIS Benchmark</a>
+            </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://ubuntu.com/security/certifications#common-criteria">Common Criteria /EAL2</a>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
+              </div>
+            </td>
+            <td class="u-align--center">
+              <div class="lazy-loaded">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
@@ -565,48 +601,42 @@
     <div class="row p-divider u-equal-height u-vertically-center u-sv3">
       <div class="col-4">
         <div class="u-sv2 u-align--center">
-        {{
-            image(
-                url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
-                alt="AWS",
-                width="126",
-                height="75",
-                hi_def=True,
-                loading="lazy",                
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
+                    alt="AWS",
+                    width="126",
+                    height="75",
+                    hi_def=True,
+                    loading="lazy",) | safe
           }}
         </div>
         <p class="u-align--center">
-          <a  href="https://www.ubuntu.com/aws">了解更多AWS上的Ubuntu Pro&nbsp;&rsaquo;</a>
+          <a href="https://www.ubuntu.com/aws">了解更多AWS上的Ubuntu Pro&nbsp;&rsaquo;</a>
         </p>
       </div>
       <div class="col-4">
         <div class="u-sv2 u-align--center">
-        {{
-            image(
-                url="https://assets.ubuntu.com/v1/22fd6473-MicrosoftAzure_logo.svg",
-                alt="Microsoft Azure",
-                width="256",
-                height="75",
-                hi_def=True,
-                loading="lazy",
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/22fd6473-MicrosoftAzure_logo.svg",
+                    alt="Microsoft Azure",
+                    width="256",
+                    height="75",
+                    hi_def=True,
+                    loading="lazy",) | safe
           }}
         </div>
         <p class="u-align--center">
-          <a  href="https://www.ubuntu.com/azure">了解更多Azure上的Ubuntu Pro&nbsp;&rsaquo;</a>
+          <a href="https://www.ubuntu.com/azure">了解更多Azure上的Ubuntu Pro&nbsp;&rsaquo;</a>
         </p>
       </div>
       <div class="col-4">
         <div class="u-sv2 u-align--center">
           {{ image (
-            url="https://assets.ubuntu.com/v1/6e176d9a-Google+Cloud+stacked.svg",
-            alt="Google cloud",
-            width="91",
-            height="75",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
+          url="https://assets.ubuntu.com/v1/6e176d9a-Google+Cloud+stacked.svg",
+          alt="Google cloud",
+          width="91",
+          height="75",
+          hi_def=True,
+          loading="lazy"
+          ) | safe
           }}
         </div>
         <p class="u-align--center">
@@ -615,14 +645,16 @@
       </div>
     </div>
     <div class="u-fixed-width">
-      <p>如您是公有云厂商，<a href="/contact">欢迎与我们联系</a>。</p>
+      <p>
+        如您是公有云厂商，<a href="/contact">欢迎与我们联系</a>。
+      </p>
     </div>
-  </section> 
-  
+  </section>
+
   <section class="p-strip--light is-deep">
     <div class="u-fixed-width">
       <h2 class="u-sv3">2种支持级别可供选择</h2>
-      <p>从2个SLA支持级别中选择：7X24小时无休支持或5x24工作日支持<p>
+      <p>从2个SLA支持级别中选择：7X24小时无休支持或5x24工作日支持</p>
       <table class="p-table">
         <thead>
           <tr>
@@ -636,12 +668,14 @@
             <td>电话和工单支持</td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
             <td class="u-align--center">
               <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg" alt="Included">
+                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
+                     alt="Included" />
               </div>
             </td>
           </tr>
@@ -667,92 +701,85 @@
           </tr>
         </tbody>
       </table>
-      <p>不确定哪个支持级别适合您？如果您有关于支持级别的问题，请<a class="js-invoke-modal" href="/contact">联系我们</a>。
-  </p>
+      <p>
+        不确定哪个支持级别适合您？如果您有关于支持级别的问题，请<a class="js-invoke-modal" href="/contact">联系我们</a>。
+      </p>
     </div>
   </section>
 
   <section class="p-strip">
-    <div class="u-fixed-width">
+    <div class="u-fixed-width p-logo-section has-misaligned-images">
       <h2 class="u-align--center">我们的合作伙伴</h2>
-        <p class="p-logo-section__title u-align--center">我们的合作伙伴为您的多样化的Ubuntu操作系统采购需求提供帮助。您也可以<a href="/contact">联系我们</a>以获得合作伙伴的联系信息。</p>
-    </div>    
-    <div class="u-fixed-width">       
-      <div class="p-logo-section__items">
+      <p class="p-logo-section__title u-align--center">
+        我们的合作伙伴为您的多样化的Ubuntu操作系统采购需求提供帮助。您也可以<a href="/contact">联系我们</a>以获得合作伙伴的联系信息。
+      </p>
+      <div class="p-logo-section__items" style="justify-content:center;">
         <div class="p-logo-section__item">
-          {{
-            image(
-            url="https://assets.ubuntu.com/v1/1fb7ac1b-shenzhen-eden.png",
-            alt="Shenzhen Eden",
-            width="547",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"},
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/1fb7ac1b-shenzhen-eden.png",
+                    alt="Shenzhen Eden",
+                    width="547",
+                    height="288",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "p-logo-section__logo"},) | safe
           }}
         </div>
         <div class="p-logo-section__item">
-          {{
-            image(
-            url="https://assets.ubuntu.com/v1/5989a4f3-beijing-comlan-logo.jpg",
-            alt="Beijing ComLan",
-            width="892",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"},
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/5989a4f3-beijing-comlan-logo.jpg",
+                    alt="Beijing ComLan",
+                    width="892",
+                    height="288",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "p-logo-section__logo"},) | safe
           }}
         </div>
-      </div>   
-    </div>
-  </section> 
-  
-  {% include "shared/_education-discount.html" %}
-
-  <section class="p-strip" id="hw-certified">
-    <div class="row u-equal-height">    
-        <div class="col-8">
-          <h2>Ubuntu认证硬件</h2>
-          <p>Ubuntu认证的硬件已经通过了广泛的测试和审查过程，以确保Ubuntu可以很好地运行并且可以为您的业务做好准备。我们与OEM紧密合作，共同使Ubuntu在各种设备上可用。</p>
-          <p>通过Ubuntu官方认证的硬件，如服务器、笔记本和工作站、IoT物联网设备等等可以获得更好的支持，开箱即用的体验，且无需为繁琐的系统组件驱动和兼容性而担忧。</p>
-          <p><a href="https://ubuntu.com/certified">浏览所有认证的硬件&nbsp;›</a>
-          </p>
-        </div>
-
-        <div class="col-4 u-hide--small u-align--center u-vertically-center">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/57d2e0de-Certified.svg",
-              alt="",              
-              width="140",
-              height="190",
-              hi_def=True,
-              loading="auto"
-            ) | safe
-          }}
-        </div>
+      </div>
     </div>
   </section>
 
-  <section id="community-support" class="p-strip--light is-deep is-shallow is-bordered">
+  {% include "shared/_education-discount.html" %}
+
+  <section class="p-strip" id="hw-certified">
+    <div class="row u-equal-height">
+      <div class="col-8">
+        <h2>Ubuntu认证硬件</h2>
+        <p>Ubuntu认证的硬件已经通过了广泛的测试和审查过程，以确保Ubuntu可以很好地运行并且可以为您的业务做好准备。我们与OEM紧密合作，共同使Ubuntu在各种设备上可用。</p>
+        <p>通过Ubuntu官方认证的硬件，如服务器、笔记本和工作站、IoT物联网设备等等可以获得更好的支持，开箱即用的体验，且无需为繁琐的系统组件驱动和兼容性而担忧。</p>
+        <p>
+          <a href="/certified">浏览所有认证的硬件&nbsp;›</a>
+        </p>
+      </div>
+
+      <div class="col-4 u-hide--small u-align--center u-vertically-center">
+        {{ image(url="https://assets.ubuntu.com/v1/57d2e0de-Certified.svg",
+                alt="",
+                width="140",
+                height="190",
+                hi_def=True,
+                loading="auto") | safe
+        }}
+      </div>
+    </div>
+  </section>
+
+  <section id="community-support"
+           class="p-strip--light is-deep is-shallow is-bordered">
     <div class="row u-equal-height">
       <div class="col-8">
         <h2>社区支持</h2>
-            <p>Ubuntu是世界上最大的开源项目之一，因此可以很容易从各种各样的来源中获得支持。看看社区论坛——正在使用Ubuntu的全球的爱好者们可以与您分享他们的专业知识和经验。</p>
-        <p><a href="http://www.ubuntu.com/support/community-support">了解更多社区支持&nbsp;&rsaquo;</a></p>
+        <p>Ubuntu是世界上最大的开源项目之一，因此可以很容易从各种各样的来源中获得支持。看看社区论坛——正在使用Ubuntu的全球的爱好者们可以与您分享他们的专业知识和经验。</p>
+        <p>
+          <a href="https://www.ubuntu.com/support/community-support">了解更多社区支持&nbsp;&rsaquo;</a>
+        </p>
       </div>
       <div class="col-4 u-hide--small u-align--center u-vertically-center">
-        {{
-          image(
-              url="https://assets.ubuntu.com/v1/5552afb7-community-support.svg",
-              alt="Community",
-              width="150",
-              height="150",
-              hi_def=True,
-              loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/5552afb7-community-support.svg",
+                alt="Community",
+                width="150",
+                height="150",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
