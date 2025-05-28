@@ -1,0 +1,540 @@
+{% extends 'templates/base.html' %}
+
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+
+{% block title %}开源AI人工智能{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}利用 Canonical 开源 MLOps，轻松部署企业级 AI 项目。从工作站到云端与边缘，实现高效开发、自动化运维和快速扩展。{% endblock %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
+{% block content %}
+
+  {% call(slot) vf_hero(
+    title_text='利用开源工具部署企业级 AI 项目',
+    layout='50/50'
+  ) -%}
+  {%- if slot == 'description' -%}
+  <p>
+    借助合规的开源技术，实现从工作站到云端和智能设备的快速创新。在您的 Ubuntu 上利用 Charmed Kubeflow 或 Charmed MLFlow 进行开发，并通过开源工具快速扩展您的技术栈。
+  </p>
+  {%- endif -%}
+  {%- if slot == 'cta' -%}
+  <a href="/contact" class="p-button--positive">与我们联系</a>
+  <a href="/engage/mlops-guide" class="p-button">阅读MLOps指南</a>
+  {%- endif -%}
+  {%- if slot == 'image' -%}
+  <div class="p-image-container--3-2 is-highlighted u-hide--small u-hide--medium">
+    {{ image(url="https://assets.ubuntu.com/v1/e549fdc0-Canonical-AI-ML-Illustrations-v5-03.png",
+              alt="",
+              width="600",
+              height="400",
+              hi_def=True,
+              attrs={"class": "p-image-container__image"},
+              loading="auto") | safe
+    }}
+  </div>
+  {%- endif -%}
+  {% endcall -%}
+
+  <section class="p-section">
+    <div class="row--50-50">
+      <hr class="p-rule" />
+      <div class="col">
+        <h2>Canonical AI 解决方案的优势</h2>
+      </div>
+      <div class="col">
+        <ul class="p-list--divided">
+          <li class="p-list__item is-ticked">专家引导加速 AI 部署</li>
+          <li class="p-list__item is-ticked">单一供应商即可支持全栈 AI 技术</li>
+          <li class="p-list__item is-ticked">支持在混合云和多云等任何环境运行工作负载</li>
+          <li class="p-list__item is-ticked">通过生命周期管理和自动化来简化运维</li>
+          <li class="p-list__item is-ticked">以每节点计算的简单订阅模式</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="u-fixed-width">
+      <hr class="p-rule" />
+      <h2>在任何环境中开发人工智能项目</h2>
+      <div class="p-logo-section">
+        <div class="p-logo-section__items">
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/0adc7049-jupyter-logo.png",
+                alt="Jupyter",
+                width="192",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/1652445f-keras-logo.png",
+                alt="Keras",
+                width="277",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/d49635e3-mlflow-logo.png",
+                alt="ML Flow",
+                width="273",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/913372cb-kubeflow-logo.png",
+                alt="Kubeflow",
+                width="379",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/f1779d86-apache-spark-logo.png",
+                alt="Apache Spark",
+                width="197",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/6abe939c-kafka-logo.png",
+                alt="Kafka",
+                width="294",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/88043445-prometheus logo.png",
+                alt="Prometheus",
+                width="125",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/7cf825b5-opensearch-logo.png",
+                alt="OpenSearch",
+                width="319",
+                height="256",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/f48de5d9-katib-logo.png",
+                alt="Katib",
+                width="125",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/54efd5a7-tensor-flow-logo.png",
+                alt="Tensorflow",
+                width="371",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/5e048b8e-tensor-rt-logo.png",
+                alt="Tensor RT",
+                width="320",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/795f2fc2-knative-logo.png",
+                alt="Knative",
+                width="153",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/20a0d896-pytorch-logo.png",
+                alt="PyTorch",
+                width="336",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/86e6c732-seldon-logo.png",
+                alt="Seldon",
+                width="374",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/c6a757b1-pachyderm-logo.png",
+                alt="Pachyderm",
+                width="376",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/31c63bdf-onnx logo.png",
+                alt="ONNX",
+                width="348",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/ddbc4d23-kserve-logo.png",
+                alt="Kserve",
+                width="125",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/73accfaf-nvidia-triton-server-logo.png",
+                alt="Nvidia Triton Server",
+                width="249",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{
+              image(
+                url="https://assets.ubuntu.com/v1/797287f7-grafana-logo.png",
+                alt="Grafana",
+                width="173",
+                height="384",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-logo-section__logo"}
+              ) | safe
+            }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="row--50-50">
+      <hr class="p-rule" />
+      <div class="col">
+        <h2>以 MLOps 方法（机器学习运维）将模型部署到实际生产环境</h2>
+      </div>
+      <div class="col">
+        <p>
+          使用 Canonical 的模块化 MLOps 解决方案，在任何规模的机器学习简化工作流程并自动化部署。 MLOps 使您能够高效地大规模部署和维护模型以进行生产。
+        </p>
+        <p>
+          由 Canonical 支持的 Kubeflow 发行版，能与不断发展的 AI 和数据工具生态系统相结合，为您的机器学习操作做到可扩展、可移植和可重制性。
+        </p>
+        <div class="p-cta-block">
+          <a href="/engage/mlops-guide" class="p-button--positive">MLOps指南</a>
+          <a href="/blog/mlops-challenges-cn" class="p-button">MLOps五大挑战</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
+  {%- if slot == 'title' -%}
+  <h2>开源 MLOps 工具选择</h2>
+  {%- endif -%}
+
+  {%- if slot == 'list_item_title_1' -%}
+  <h3 class="p-heading--5">Charmed Kubeflow</h3>
+  {%- endif -%}
+
+  {%- if slot == 'list_item_description_1' -%}
+  <p>
+    Charmed Kubeflow 是一款端到端的 MLOps 平台，旨在大规模运行 AI。它是 Canonical MLOps 的基础，并能与其他大数据和机器学习工具无缝集成。
+  </p>
+  <div class="p-cta-block">
+    <a href="https://ubuntu.com/ai/what-is-kubeflow">什么是 Kubeflow&nbsp;&rsaquo;</a>
+  </div>
+  {%- endif -%}
+
+  {%- if slot == 'list_item_title_2' -%}
+  <h3 class="p-heading--5">Charmed MLflow</h3>
+  {%- endif -%}
+
+  {%- if slot == 'list_item_description_2' -%}
+  <p>
+    追踪你的实验并得到更好的模型目录。Charmed MLFlow 是一个用于管理机器学习工作负载的开源平台。它能够与其他 MLOps 工具集成，覆盖机器学习生命周期的各个功能。
+  </p>
+  <div class="p-cta-block">
+    <a href="https://ubuntu.com/engage/lightweight-ml-mlflow">轻量的机器学习&nbsp;&rsaquo;</a>
+  </div>
+  {%- endif -%}
+
+  {%- if slot == 'list_item_title_3' -%}
+  <h3 class="p-heading--5">Charmed Spark</h3>
+  {%- endif -%}
+
+  {%- if slot == 'list_item_description_3' -%}
+  <p>
+    无论是在云端还是在数据中心，Charmed Spark 都是运行 Spark® 的最佳方式。在 Kubernetes 上运行，并包含 Apache Spark 的完全支持发行版。
+  </p>
+  <div class="p-cta-block">
+    <a href="https://canonical.com/data/spark">什么是 Spark&nbsp;&rsaquo;</a>
+  </div>
+  {%- endif -%}
+
+  {%- if slot == 'list_item_title_4' -%}
+  <h3 class="p-heading--5">Charmed OpenSearch</h3>
+  {%- endif -%}
+
+  {%- if slot == 'list_item_description_4' -%}
+  <p>
+    OpenSearch 是一个开源的搜索和分析套件，而 Charmed OpenSearch 简化了它的操作。此外，可用 OpenSearch 集成的矢量数据库作为知识库来支持人工智能系统。
+  </p>
+  <div class="p-cta-block">
+    <a href="https://canonical.com/data/opensearch/what-is-opensearch">什么是 OpenSearch&nbsp;&rsaquo;</a>
+  </div>
+  {%- endif -%}
+
+  {%- if slot == 'list_item_title_5' -%}
+  <h3 class="p-heading--5">Technical enablement</h3>
+  {%- endif -%}
+
+  {%- if slot == 'list_item_description_5' -%}
+  <p>We provide in-depth technical training for your customer engineering
+    teams with access to technical resources for your labs and customer
+    engagements.</p>
+  {%- endif -%}
+  {%- endcall -%}
+
+  <section class="p-section">
+    <div class="row--50-50">
+      <hr class="p-rule" />
+      <div class="col">
+        <h2>全栈式 AI 基础架构</h2>
+      </div>
+      <div class="col">
+        <p>Canonical 的产品组合覆盖从操作系统到 Kubernetes 以及各种云环境的完整 AI 基础架构。您可以选择端到端解决方案，或根据需求挑选特定组件，灵活构建您的 AI 环境。</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="p-rule is-fixed-width" />
+
+  <section class="p-strip is-deep">
+    <div class="u-fixed-width">
+      <h2>
+        在 NVIDIA DGX 上运行 Canonical Kubernetes
+        <br />
+        <a href="https://pages.ubuntu.com/rs/066-EOV-335/images/Kubernetes_by_Canonical_delivered_on_NVIDIA_DGX_systems_Solution_Brief.pdf">阅读解决方案简介&nbsp;&rsaquo;</a>
+      </h2>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="row--50-50">
+      <hr class="p-rule" />
+      <div class="col">
+        <h2>从工作站、边缘或大型云环境，实现灵活部署</h2>
+      </div>
+      <div class="col">
+        <div class="p-image-container--3-2 is-highlighted u-hide--small">
+          {{ image(url="https://assets.ubuntu.com/v1/da26f930-Image%20wrapper.png",
+                    alt="",
+                    width="600",
+                    height="400",
+                    hi_def=True,
+                    attrs={"class": "p-image-container__image"},
+                    loading="lazy") | safe
+          }}
+        </div>
+        <p>
+          Ubuntu 是数据科学家的首选操作系统。在 Ubuntu 工作站上开发机器学习模型，并部署到 Ubuntu 服务器。无论是在云端还是边缘（edge），整个 AI 生命周期都能享受一致且熟悉的 Ubuntu 体验。
+        </p>
+        <p>
+          而生产级项目更需要一个能够实现可扩展、可移植和可重制的解决方案。Canonical MLOps 加速 AI 项目的开发进程，为您提供：
+        </p>
+        <ul class="p-list--divided">
+          <li class="p-list__item has-bullet">在任何云环境中，无论是私有云还是公共云，都能获得相同的体验</li>
+          <li class="p-list__item has-bullet">低运维、简化的生命周期管理</li>
+          <li class="p-list__item has-bullet">一套模块化的开源工具，支持可重用的部署</li>
+        </ul>
+        <div class="p-cta-block">
+          <a href="/blog/edge-ai_cn" class="p-button--positive">边缘 AI 用例与实践</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="p-rule is-fixed-width" />
+
+  <section class="p-strip is-deep">
+    <div class="u-fixed-width">
+      <h2>
+        使用开源技术在边缘部署
+        <br />
+        <a href="https://ubuntu.com/engage/guide-to-deploying-ai-at-the-edge">深入了解 Edge AI&nbsp;&rsaquo;</a>
+      </h2>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="row">
+      <hr class="p-rule--highlight" />
+      <div class="p-section--shallow">
+        <h2>企业级开源 AI 服务及支持</h2>
+      </div>
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h3 class="p-heading--4">MLOps 托管服务</h3>
+          <p>
+            基础架构交由 Canonical 专家管理，您可放心专注于构建生产级模型。
+          </p>
+          <ul class="p-list--divided">
+            <li class="p-list__item is-ticked">99.9% uptime</li>
+            <li class="p-list__item is-ticked">24/7 全天监控</li>
+            <li class="p-list__item is-ticked">高可用性</li>
+          </ul>
+          <div class="p-cta-block is-borderless u-hide--medium u-hide--large">
+            <a href="https://pages.ubuntu.com/rs/066-EOV-335/images/Charmed%20Kubeflow%20-%20Digital.pdf">MLOps 托管手册&nbsp;&rsaquo;</a>
+          </div>
+        </div>
+        <div class="col">
+          <h3 class="p-heading--4">AI 咨询服务</h3>
+          <p>
+            由 Canonical 專家帶領更深入地理解您的数据，成功实现您的用例。
+          </p>
+          <ul class="p-list--divided">
+            <li class="p-list__item is-ticked">数据探索 workshop</li>
+            <li class="p-list__item is-ticked">Canonical MLOps 部署</li>
+            <li class="p-list__item is-ticked">MLOps 实作 workshop</li>
+            <li class="p-list__item is-ticked">基于 PoC 实施</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row--50-50">
+        <div class="col u-hide--small">
+          <div class="p-cta-block is-borderless">
+            <a href="https://pages.ubuntu.com/rs/066-EOV-335/images/Charmed%20Kubeflow%20-%20Digital.pdf">MLOps 托管手册&nbsp;&rsaquo;</a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-cta-block is-borderless">
+            <a href="https://assets.ubuntu.com/v1/429359fe-MLOps%20advisory%20DS%2029.11.22.pdf">AI 咨询服务&nbsp;&rsaquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="p-rule is-fixed-width" />
+
+  <section class="p-strip is-deep">
+    <div class="u-fixed-width">
+      <h2>
+        了解如何构建您的边缘策略
+        <br />
+        <a href="/engage/guide-to-micro-clouds">边缘计算微云指南&nbsp;&rsaquo;</a>
+      </h2>
+    </div>
+  </section>
+
+{% endblock %}
