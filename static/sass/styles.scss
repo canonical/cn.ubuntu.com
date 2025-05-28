@@ -12,6 +12,7 @@
 // Import custom styles
 @import 'custom/ubuntu_intro';
 @import 'custom/heading-icon-small';
+@import 'custom/certified-testing-list';
 @import 'pattern_blog-post';
 @import 'pattern_blog-card';
 @import 'pattern_blog-list';
@@ -45,24 +46,7 @@
 @include ubuntu-p-tabs;
 
 body {
-  border-top: 32px solid #262626; // Placeholder for global-nav
   position: inherit;
-  @media only screen and (min-width: $breakpoint-x-large) {
-    border-top-width: 36px;
-  }
-}
-
-.global-nav {
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-// Custom fix for global nav padding, so it aligns with the indented logo
-// Copied from www.ubuntu.com: https://github.com/canonical-websites/www.ubuntu.com/blob/b68edf2e3b1f605f4a4fdbb4dd84155f699f27a3/static/sass/styles.scss#L210
-.global-nav .global-nav__header-logo-anchor {
-  padding: 0.6875rem 1rem !important;
 }
 
 // XXX Fix the max-width

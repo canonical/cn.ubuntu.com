@@ -1,90 +1,103 @@
 {% extends "templates/base.html" %}
 
 {% block title %}Ubuntu扩展安全维护{{ page_title }}{% endblock %}
-{% block meta_description %}Ubuntu扩展安全维护 Ubuntu订阅 ESM Ubuntu生命周期 Ubuntu 16.04 Ubuntu企业订阅{{ meta_description }}{% endblock %}
+
+{% block meta_description %}
+  Ubuntu扩展安全维护 Ubuntu订阅 ESM Ubuntu生命周期 Ubuntu 16.04 Ubuntu企业订阅{{ meta_description }}
+{% endblock %}
 
 {% block content %}
-{% include "support/secondary-nav.html" %}
+  {% include "support/secondary-nav.html" %}
 
-<section class="p-strip--suru-topped is-bordered">
+  <section class="p-strip--suru-topped is-bordered">
     <div class="row u-equal-height">
       <div class="col-8">
-        <span class="u-sv3"><h1>扩展安全维护</h1></span>
-        <span class="u-sv3"><p class="p-heading--4">为Ubuntu LTS版本提供额外5年的安全更新</p></span>
-        <p>通过扩展安全维护（Extended Security Maintenance，简称“ESM”）从而继续接收Ubuntu基础系统，关键软件包和基础结构组件的安全更新。ESM提供5年的额外安全维护，使得组织能够持续地进行安全漏洞管理。</p>
-        <p>ESM已包含在Ubuntu Advantage订阅服务内，适用于物理服务器、虚拟机、容器和桌面，免费提供给个人使用。在公有云上，Ubuntu Pro高级镜像已为认证的<a href="/cloud/public-cloud">公有云</a>所优化，且为Ubuntu预载的整个软件包集的高优先级、关键CVE（通用漏洞披露）提供安全维护。</p>
+        <span class="u-sv3">
+          <h1>扩展安全维护</h1>
+        </span>
+        <span class="u-sv3">
+          <p class="p-heading--4">为Ubuntu LTS版本提供额外5年的安全更新</p>
+        </span>
+        <p>
+          通过扩展安全维护（Extended Security Maintenance，简称“ESM”）从而继续接收Ubuntu基础系统，关键软件包和基础结构组件的安全更新。ESM提供5年的额外安全维护，使得组织能够持续地进行安全漏洞管理。
+        </p>
+        <p>
+          ESM已包含在Ubuntu Advantage订阅服务内，适用于物理服务器、虚拟机、容器和桌面，免费提供给个人使用。在公有云上，Ubuntu Pro高级镜像已为认证的<a href="/cloud/public-cloud">公有云</a>所优化，且为Ubuntu预载的整个软件包集的高优先级、关键CVE（通用漏洞披露）提供安全维护。
+        </p>
         <p>
           <a href="/support" class="p-button--positive">获取Ubuntu订阅服务</a>
-          <a href="/contact" class="p-button">联系我们</a  >
+          <a href="/contact" class="p-button">联系我们</a>
         </p>
       </div>
       <div class="col-4 u-vertically-center u-align--center u-hide--small">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/92a095cb-Shield-greentick.svg",
-            alt="",
-            height="226",
-            width="190",
-            hi_def=True,
-            loading="auto",
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/92a095cb-Shield-greentick.svg",
+                alt="",
+                height="226",
+                width="190",
+                hi_def=True,
+                loading="auto",) | safe
         }}
       </div>
     </div>
   </section>
-  
+
   <div class="p-strip is-shallow">
     <div class="u-fixed-width">
       <div class="p-heading-icon--small">
         <div class="p-heading-icon__header">
-          <h4 class="p-heading-icon__title u-no-max-width u-no-margin--bottom">Ubuntu 16.04 LTS的ESM服务将于2021年4月可用，支持至2026年。<a href="/blog/ubuntu-16-04-lts-esm-support-extended-maintenance">了解更多&nbsp;›</a></h4>
+          <h4 class="p-heading-icon__title u-no-max-width u-no-margin--bottom">
+            Ubuntu 16.04 LTS的ESM服务将于2021年4月可用，支持至2026年。<a href="/blog/ubuntu-16-04-lts-esm-support-extended-maintenance">了解更多&nbsp;›</a>
+          </h4>
         </div>
       </div>
     </div>
   </div>
-  
-  <section class="p-strip--suru">
-    <div class="row p-divider is-dark">
+
+  <section class="p-strip--suru p-strip--dark">
+    <div class="row p-divider">
       <div class="col-6 p-divider__block">
         <div class="p-heading-icon--small">
           <div class="p-heading-icon__header">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/fc781c43-Case+study+-+white.svg",
-                alt="",
-                height="32",
-                width="32",
-                hi_def=True,
-                loading="lazy",
-                attrs={"class": "p-heading-icon__img"},
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/fc781c43-Case+study+-+white.svg",
+                        alt="",
+                        height="32",
+                        width="32",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-heading-icon__img"},) | safe
             }}
-            <p class="p-muted-heading u-sv3" style="color: #fff; line-height: 1.5rem;">案例分享</p>
+            <p class="p-muted-heading u-sv3"
+               style="color: #fff;
+                      line-height: 1.5rem">案例分享</p>
           </div>
-          <h4>Interana在计划将公共云升级到18.04的同时使用ESM</h4>          
+          <h4>Interana在计划将公共云升级到18.04的同时使用ESM</h4>
           <p>由于Interana处理大量客户的数据，确保安全性是首要任务。Interana并没有选择急于从Ubuntu 14.04LTS进行升级，给客户带来了极大的不便，而是转向了Canonical和ESM。</p>
-          <p><a class="p-button" href="https://ubuntu.com/blog/interana-uses-esm-to-maintain-system-security-while-upgrading-its-customers-to-ubuntu-18-04-lts-across-public-clouds" class="p-button">阅读更多</a></p>
+          <p>
+            <a class="p-button is-light"
+               href="https://ubuntu.com/blog/interana-uses-esm-to-maintain-system-security-while-upgrading-its-customers-to-ubuntu-18-04-lts-across-public-clouds">阅读更多</a>
+          </p>
         </div>
       </div>
       <div class="col-6 p-divider__block">
         <div class="p-heading-icon--small">
           <div class="p-heading-icon__header">
-            {{
-              image(
-                url="https://assets.ubuntu.com/v1/fc781c43-Case+study+-+white.svg",
-                alt="",
-                height="32",
-                width="32",
-                hi_def=True,
-                loading="lazy",
-                attrs={"class": "p-heading-icon__img"},
-              ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/fc781c43-Case+study+-+white.svg",
+                        alt="",
+                        height="32",
+                        width="32",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-heading-icon__img"},) | safe
             }}
-            <p class="p-muted-heading u-sv3" style="color: #fff; line-height: 1.5rem;">案例分享</p>
+            <p class="p-muted-heading u-sv3"
+               style="color: #fff;
+                      line-height: 1.5rem">案例分享</p>
           </div>
-          <h4>TIM通过ESM维护系统安全和客户信心</h4>          
+          <h4>TIM通过ESM维护系统安全和客户信心</h4>
           <p>为了确保正运行Ubuntu 14.04 LTS的机器的持续安全性，ESM为世界上最大的贸易推荐网络——TIM提供了在自己的时间表内进行升级的自由。这种方法为这个金融服务（Finserv）组织节省了时间和金钱。</p>
-          <p><a class="p-button" href="https://ubuntu.com/engage/case-study-acuris" class="p-button">阅读更多</a></p>
+          <p>
+            <a class="p-button is-light" href="https://ubuntu.com/engage/case-study-acuris">阅读更多</a>
+          </p>
         </div>
       </div>
     </div>
@@ -104,19 +117,24 @@
     <div class="row">
       <div class="col-8">
         <h2>个人免费使用</h2>
-        <p>Canonical提供的Ubuntu基础版订阅服务，其中就包括了ESM，个人可免费在最多3台计算机上使用ESM。对于我们的<a href="https://wiki.ubuntu.com/Membership">Ubuntu社区成员</a>，我们将很高兴将数量增加到50台。此订阅服务还覆盖了<a href="https://ubuntu.com/livepatch">Livepatch</a>。</p>
-        <a href="https://ubuntu.com/advantage" class="p-button--positive u-no-margin--bottom">获取ESM</a>
+        <p>
+          Canonical提供的Ubuntu基础版订阅服务，其中就包括了ESM，个人可免费在最多3台计算机上使用ESM。对于我们的<a href="https://wiki.ubuntu.com/Membership">Ubuntu社区成员</a>，我们将很高兴将数量增加到50台。此订阅服务还覆盖了<a href="https://ubuntu.com/livepatch">Livepatch</a>。
+        </p>
+        <a href="https://ubuntu.com/advantage"
+           class="p-button--positive u-no-margin--bottom">获取ESM</a>
       </div>
     </div>
-  
+
     <div class="u-fixed-width">
-      <hr class="p-separator">
+      <hr class="p-separator" />
     </div>
-  
+
     <div class="row" id="benefits">
       <div class="col-10">
         <h2>涵盖范围</h2>
-        <p>ESM继续对高危CVE（Common Vulnerabilities and Exposures）提供安全更新和<a href="https://ubuntu.com/security/livepatch">内核补丁</a>。</p>
+        <p>
+          ESM继续对高危CVE（Common Vulnerabilities and Exposures）提供安全更新和<a href="https://ubuntu.com/security/livepatch">内核补丁</a>。
+        </p>
         <div class="row">
           <div class="col-10" style="overflow: auto;">
             <table style="width: auto;">
@@ -135,50 +153,60 @@
                       <li>Kernel实时补丁</li>
                       <li>64位 x86架构</li>
                     </ul>
-                    <a href="https://wiki.ubuntu.com/SecurityTeam/ESM/14.04" class="p-button">了解更多</a>
+                    <a href="https://wiki.ubuntu.com/SecurityTeam/ESM/14.04"
+                       class="p-button">了解更多</a>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="https://www.ubuntu.com/16-04">Ubuntu 16.04 LTS (Xenial Xerus)</a></td>
+                  <td>
+                    <a href="https://www.ubuntu.com/16-04">Ubuntu 16.04 LTS (Xenial Xerus)</a>
+                  </td>
                   <td>
                     <ul>
                       <li>Ubuntu基础系统和扩展的基础设施</li>
                       <li>Kernel实时补丁</li>
                       <li>s390x，arm64，x86-64架构</li>
                     </ul>
-                    <a href="https://wiki.ubuntu.com/SecurityTeam/ESM/16.04" class="p-button">了解更多</a>
+                    <a href="https://wiki.ubuntu.com/SecurityTeam/ESM/16.04"
+                       class="p-button">了解更多</a>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
+        </div>
       </div>
-    </div>
-  
-    <div class="u-fixed-width">
-      <hr class="p-separator">
-    </div>
-  
-    <div class="row">
-      <div class="col-8">
-        <h2>Azure、AWS和Google上的Ubuntu Pro的ESM</h2>
-        <p>如果您正在公有上运行Ubuntu 16.04 LTS镜像，并且希望通过ESM继续获得安全覆盖，建议您在Azure、AWS和Google云（即将推出）上启动新的Ubuntu Pro镜像。Ubuntu Pro镜像是付费的高级镜像，针对云上用例进行优化和定价，并且内置了安全性和合规性的功能。</p>
-        <p>了解更多关于Ubuntu Pro 16.04 LTS在<a href="https://ubuntu.com/azure/pro">Azure</a> | <a href="https://ubuntu.com/aws/pro">AWS</a> | <a href="https://ubuntu.com/gcp/pro">Google云</a>上的内容</p>
+
+      <div class="u-fixed-width">
+        <hr class="p-separator" />
       </div>
-    </div>
-    <div class="u-fixed-width">
-      <hr class="p-separator">
-    </div>
-  
-    <div class="row" id="faq">
-      <div class="col-8">
-        <h2>常见问题</h2>  
-        <h4 class="u-no-max-width">如何启用ESM？</h4>
+
+      <div class="row">
+        <div class="col-8">
+          <h2>Azure、AWS和Google上的Ubuntu Pro的ESM</h2>
+          <p>
+            如果您正在公有上运行Ubuntu 16.04 LTS镜像，并且希望通过ESM继续获得安全覆盖，建议您在Azure、AWS和Google云（即将推出）上启动新的Ubuntu Pro镜像。Ubuntu Pro镜像是付费的高级镜像，针对云上用例进行优化和定价，并且内置了安全性和合规性的功能。
+          </p>
+          <p>
+            了解更多关于Ubuntu Pro 16.04 LTS在<a href="https://ubuntu.com/azure/pro">Azure</a> | <a href="https://ubuntu.com/aws/pro">AWS</a> | <a href="https://ubuntu.com/gcp/pro">Google云</a>上的内容
+          </p>
+        </div>
+      </div>
+      <div class="u-fixed-width">
+        <hr class="p-separator" />
+      </div>
+
+      <div class="row" id="faq">
+        <div class="col-8">
+          <h2>常见问题</h2>
+          <h4 class="u-no-max-width">如何启用ESM？</h4>
           <div class="row">
             <h5 class="col-4">使用 ua 命令附上您的订阅</h5>
             <div class="col-4">
               <pre><code>sudo ua attach [TOKEN]</code></pre>
-              <p>注：订阅的token可通过<a href="https://ubuntu.com/advantage">Ubuntu订阅服务入口</a>获得。Ubuntu Pro上已集成，无需此操作。</p>
+              <p>
+                注：订阅的token可通过<a href="https://ubuntu.com/advantage">Ubuntu订阅服务入口</a>获得。Ubuntu Pro上已集成，无需此操作。
+              </p>
             </div>
           </div>
           <div class="row">
@@ -197,75 +225,82 @@
             <h5 class="col-4">现在，ESM服务现已启用！</h5>
           </div>
 
-        <h4 class="u-no-max-width">全部的Ubuntu Advantage订阅级别都可以访问Ubuntu ESM吗？</h4>
-        <p>是的。Ubuntu ESM已包含在基础、标准、高级版订阅服务内。关于不同级别的内容请访问我们<a href="/support">价格页面</a>。现有的Ubuntu Advantage（简称“UA”）客户可通过<a href="https://ubuntu.com/advantage">UA入口页</a>取得他们的凭据。</p>
-        <h4 class="u-no-max-width">标准安全维护结束后，我们如何确保Ubuntu系统的安全性？</h4>
-        <p>当特定版本到达其“标准安全维护”窗口末尾时，为确保安全的连续性，前往<a href="https://ubuntu.com/advantage">UA入口页</a>注册以获得最多3台计算机的ESM服务，或通过付费的企业订阅使用。</p>
-        <p><a href="https://ubuntu.com/about/release-cycle">了解更多关于版本发布日期和维护周期的信息</a></p>
-        <p><a class="p-button" href="https://ubuntu.com/advantage">注册以获得Ubuntu Advantage订阅</a></p>
-        <h4 id="how-long" class="u-no-max-width">Ubuntu ESM将维护多长时间？</h4>
-        <p>在进一步声明发布前，所有 Ubuntu LTS 版本都提供5年的ESM更新，生命周期延长至10年。 </p>
-        <table>
-          <thead>
-            <tr>
-              <th>版本</th>
-              <th>发布时间</th>
-              <th>支持终止</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Ubuntu 14.04 (Trusty Tahr)</td>
-              <td>2014年4月</td>
-              <td>2024年4月</td>
-            </tr>
-            <tr>
-              <td>Ubuntu 16.04 (Xenial Xerus)</td>
-              <td>2016年4月</td>
-              <td>2026年4月</td>
-            </tr>
-            <tr>
-              <td>Ubuntu 18.04 (Bionic Beaver)</td>
-              <td>2018年4月</td>
-              <td>2028年4月</td>
-            </tr>
-            <tr>
-              <td>Ubuntu 20.04 (Focal Fossa)</td>
-              <td>2020年4月</td>
-              <td>2030年4月</td>
-            </tr>
-          </tbody>
-        </table>  
-        <h4 class="u-no-max-width">是否可以在Ubuntu ESM已开始且需要时购买Ubuntu ESM？这样会不会产生回溯的成本？需要提前购买吗？</h4>
-        <p>您可以随时购买Ubuntu订阅服务。尽管我们强烈建议您消除在系统上启用Ubuntu ESM的时间间隔，以避免因系统安全漏洞暴露而产生的风险。不一定需要提前购买，Ubuntu订阅服务的价格是按年计算的，因此没有回溯日期。</p>  
-        <h4 class="u-no-max-width">我们正在将仓库镜像到内部的Landscape服务器上。如果使用Landscape，我们还能获得Ubuntu ESM吗？</h4>
-        <p>ESM只是常规Ubuntu归档，但通过HTTPS进行身份验证并提供服务。归档镜像已在Landscape中提供，ESM归档镜像机制也是受支持的。</p>
+          <h4 class="u-no-max-width">全部的Ubuntu Advantage订阅级别都可以访问Ubuntu ESM吗？</h4>
+          <p>
+            是的。Ubuntu ESM已包含在基础、标准、高级版订阅服务内。关于不同级别的内容请访问我们<a href="/support">价格页面</a>。现有的Ubuntu Advantage（简称“UA”）客户可通过<a href="https://ubuntu.com/advantage">UA入口页</a>取得他们的凭据。
+          </p>
+          <h4 class="u-no-max-width">标准安全维护结束后，我们如何确保Ubuntu系统的安全性？</h4>
+          <p>
+            当特定版本到达其“标准安全维护”窗口末尾时，为确保安全的连续性，前往<a href="https://ubuntu.com/advantage">UA入口页</a>注册以获得最多3台计算机的ESM服务，或通过付费的企业订阅使用。
+          </p>
+          <p>
+            <a href="https://ubuntu.com/about/release-cycle">了解更多关于版本发布日期和维护周期的信息</a>
+          </p>
+          <p>
+            <a class="p-button" href="https://ubuntu.com/advantage">注册以获得Ubuntu Advantage订阅</a>
+          </p>
+          <h4 id="how-long" class="u-no-max-width">Ubuntu ESM将维护多长时间？</h4>
+          <p>在进一步声明发布前，所有 Ubuntu LTS 版本都提供5年的ESM更新，生命周期延长至10年。</p>
+          <table>
+            <thead>
+              <tr>
+                <th>版本</th>
+                <th>发布时间</th>
+                <th>支持终止</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ubuntu 14.04 (Trusty Tahr)</td>
+                <td>2014年4月</td>
+                <td>2024年4月</td>
+              </tr>
+              <tr>
+                <td>Ubuntu 16.04 (Xenial Xerus)</td>
+                <td>2016年4月</td>
+                <td>2026年4月</td>
+              </tr>
+              <tr>
+                <td>Ubuntu 18.04 (Bionic Beaver)</td>
+                <td>2018年4月</td>
+                <td>2028年4月</td>
+              </tr>
+              <tr>
+                <td>Ubuntu 20.04 (Focal Fossa)</td>
+                <td>2020年4月</td>
+                <td>2030年4月</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 class="u-no-max-width">是否可以在Ubuntu ESM已开始且需要时购买Ubuntu ESM？这样会不会产生回溯的成本？需要提前购买吗？</h4>
+          <p>您可以随时购买Ubuntu订阅服务。尽管我们强烈建议您消除在系统上启用Ubuntu ESM的时间间隔，以避免因系统安全漏洞暴露而产生的风险。不一定需要提前购买，Ubuntu订阅服务的价格是按年计算的，因此没有回溯日期。</p>
+          <h4 class="u-no-max-width">我们正在将仓库镜像到内部的Landscape服务器上。如果使用Landscape，我们还能获得Ubuntu ESM吗？</h4>
+          <p>ESM只是常规Ubuntu归档，但通过HTTPS进行身份验证并提供服务。归档镜像已在Landscape中提供，ESM归档镜像机制也是受支持的。</p>
+        </div>
       </div>
     </div>
   </section>
-  
+
   <section class="p-strip--light">
     <div class="row u-equal-height">
       <div class="col-5 u-align--center u-hide--small">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
-            alt="",
-            height="200",
-            width="281",
-            hi_def=True,
-            loading="lazy",
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
+                alt="",
+                height="200",
+                width="281",
+                hi_def=True,
+                loading="lazy",) | safe
         }}
       </div>
       <div class="col-7 u-vertically-center">
         <div>
           <h2>保护您的Ubuntu资产</h2>
-          <p class="u-no-margin--bottom">如果您想要了解ESM或者Ubuntu订阅服务，请与<a href="/contact">我们联系</a>。</p>
+          <p class="u-no-margin--bottom">
+            如果您想要了解ESM或者Ubuntu订阅服务，请与<a href="/contact">我们联系</a>。
+          </p>
         </div>
       </div>
     </div>
   </section>
 
 {% endblock %}
-
