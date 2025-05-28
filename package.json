@@ -13,7 +13,7 @@
     "watch-css": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'",
     "watch-js": "watch -p static/js/**/*.js -c 'webpack --env.development'",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
-    "build-css": "sass static/sass/styles.scss static/css/styles.css --load-path=node_modules --style=compressed && postcss --no-map --use autoprefixer --replace 'static/css/**/*.css'",
+    "build-css": "sass static/sass/styles.scss static/css/styles.css --load-path=node_modules --style=compressed --silence-deprecation=mixed-decls,import,global-builtin && postcss --no-map --use autoprefixer --replace 'static/css/**/*.css'",
     "build-js": "mkdir -p static/js && webpack",
     "build-cookie-policy": "cp node_modules/@canonical/cookie-policy/build/js/cookie-policy.js static/js/dist/",
     "build": "mkdir -p static/js && webpack && yarn run build-css && yarn run build-cookie-policy",
@@ -36,7 +36,7 @@
     "postcss": "8.4.21",
     "postcss-cli": "10.1.0",
     "prettier": "2.8.2",
-    "sass": "1.89.0",
+    "sass": "1.87.0",
     "stylelint": "14.16.1",
     "stylelint-config-prettier": "9.0.4",
     "stylelint-config-standard-scss": "6.1.0",
@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@canonical/cookie-policy": "^3.6.4",
-    "@canonical/global-nav": "2.7.0",
-    "vanilla-framework": "4.24.0"
+    "@canonical/global-nav": "3.6.4",
+    "vanilla-framework": "4.23.2"
   }
 }

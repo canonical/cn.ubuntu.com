@@ -1,225 +1,216 @@
 {% extends "templates/base.html" %}
 
 {% block title %}桌面系统特点{{ title }}{% endblock %}
-{% block meta_description %}{{ meta_description }}Ubuntu Core，物联网OS，Linux操作系统，嵌入式Linux，网关，机器人，智能驾驶，snap，snapcraft{% endblock %}
+
+{% block meta_description %}
+  {{ meta_description }}Ubuntu Core，物联网OS，Linux操作系统，嵌入式Linux，网关，机器人，智能驾驶，snap，snapcraft
+{% endblock %}
 
 {% block content %}
-{% include "desktop/secondary-nav.html" %}
+  {% include "desktop/secondary-nav.html" %}
 
-
-<section class="p-strip--suru-half-and-half-reversed is-dark">
+  <section class="p-strip--suru-half-and-half-reversed is-dark">
     <div class="row u-equal-height u-vertically-center">
       <div class="col-6 col-medium-4">
         <h1>特点</h1>
         <p>体验Ubuntu直观界面的简单性。成千上万种应用可供选择，快速且安全。Ubuntu可以满足您的所有需求。</p>
-        <p><a href="/download" class="p-button--positive">下载Ubuntu</a></p>
+        <p>
+          <a href="/download" class="p-button--positive">下载Ubuntu</a>
+        </p>
       </div>
       <div class="col-6 u-vertically-center u-hide--medium u-hide--small u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/1930f20c-desktop-xps13-alt.png",
-            alt="",
-            height="498",
-            width="600",
-            hi_def=True,
-            loading="auto"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/1930f20c-desktop-xps13-alt.png",
+                alt="",
+                height="498",
+                width="600",
+                hi_def=True,
+                loading="auto") | safe
         }}
       </div>
     </div>
   </section>
-  
+
   <section class="p-strip is-deep is-bordered">
     <div class="row">
       <div class="col-8">
         <h2>海量的应用程序</h2>
-        <p >Ubuntu上有成千上万个应用软件可供下载。大部分应用软件是免费的，只需几下点击即可完成安装。</p>
+        <p>Ubuntu上有成千上万个应用软件可供下载。大部分应用软件是免费的，只需几下点击即可完成安装。</p>
       </div>
     </div>
     <div class="u-fixed-width">
       <ul class="p-matrix is-trisected">
         <li class="p-matrix__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/c9be8d47-Spotify_logo_without_text.svg",
-              alt="Spotify icon",
-              height="48",
-              width="48",
-              hi_def=True,
-              attrs={"class": "p-matrix__img"}
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/c9be8d47-Spotify_logo_without_text.svg",
+                    alt="Spotify icon",
+                    height="48",
+                    width="48",
+                    hi_def=True,
+                    attrs={"class": "p-matrix__img"}) | safe
           }}
           <div class="p-matrix__content">
-            <h3 class="p-matrix__title"><a href="https://snapcraft.io/spotify">Spotify</a></h3>
+            <h3 class="p-matrix__title">
+              <a href="https://snapcraft.io/spotify">Spotify</a>
+            </h3>
             <p class="p-matrix__desc">使用Spotify免费播放和串流您喜欢的歌曲，播放列表和专辑。</p>
           </div>
         </li>
         <li class="p-matrix__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/4bb576dc-bitwarden.svg",
-              alt="Bitwarden icon",
-              height="48",
-              width="48",
-              hi_def=True,
-              attrs={"class": "p-matrix__img"}
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/4bb576dc-bitwarden.svg",
+                    alt="Bitwarden icon",
+                    height="48",
+                    width="48",
+                    hi_def=True,
+                    attrs={"class": "p-matrix__img"}) | safe
           }}
           <div class="p-matrix__content">
-            <h3 class="p-matrix__title"><a href="https://snapcraft.io/bitwarden">Bitwarden</a></h3>
+            <h3 class="p-matrix__title">
+              <a href="https://snapcraft.io/bitwarden">Bitwarden</a>
+            </h3>
             <p class="p-matrix__desc">一款可用于您全部设备的免费密码管理器</p>
           </div>
         </li>
         <li class="p-matrix__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/7b460167-vlc-icon.png",
-              alt="VLC icon",
-              height="48",
-              width="48",
-              hi_def=True,
-              attrs={"class": "p-matrix__img"}
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/7b460167-vlc-icon.png",
+                    alt="VLC icon",
+                    height="48",
+                    width="48",
+                    hi_def=True,
+                    attrs={"class": "p-matrix__img"}) | safe
           }}
           <div class="p-matrix__content">
-            <h3 class="p-matrix__title"><a href="https://snapcraft.io/vlc">VLC播放器</a></h3>
+            <h3 class="p-matrix__title">
+              <a href="https://snapcraft.io/vlc">VLC播放器</a>
+            </h3>
             <p class="p-matrix__desc">没有其他视频播放器有与之匹配的对不同格式的兼容性。</p>
           </div>
         </li>
         <li class="p-matrix__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/a45d30aa-vf.io-firefox.svg",
-              alt="Firefox icon",
-              height="48",
-              width="48",
-              hi_def=True,
-              attrs={"class": "p-matrix__img"}
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/a45d30aa-vf.io-firefox.svg",
+                    alt="Firefox icon",
+                    height="48",
+                    width="48",
+                    hi_def=True,
+                    attrs={"class": "p-matrix__img"}) | safe
           }}
           <div class="p-matrix__content">
-            <h3 class="p-matrix__title"><a href="https://snapcraft.io/firefox">火狐浏览器</a></h3>
+            <h3 class="p-matrix__title">
+              <a href="https://snapcraft.io/firefox">火狐浏览器</a>
+            </h3>
             <p class="p-matrix__desc">Firefox Quantum现在比Chrome快2倍，体积轻了30%。</p>
           </div>
         </li>
         <li class="p-matrix__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/8a2851df-slack-icon-vanilla.svg",
-              alt="Slack icon",
-              height="48",
-              width="48",
-              hi_def=True,
-              attrs={"class": "p-matrix__img"}
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/8a2851df-slack-icon-vanilla.svg",
+                    alt="Slack icon",
+                    height="48",
+                    width="48",
+                    hi_def=True,
+                    attrs={"class": "p-matrix__img"}) | safe
           }}
           <div class="p-matrix__content">
-            <h3 class="p-matrix__title"><a href="https://snapcraft.io/slack">Slack</a></h3>
+            <h3 class="p-matrix__title">
+              <a href="https://snapcraft.io/slack">Slack</a>
+            </h3>
             <p class="p-matrix__desc">团队交流和协作集中在一个地方，所以您可以完成更多事情。</p>
           </div>
         </li>
         <li class="p-matrix__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/ccb8872b-Icon_Atom.svg",
-              alt="Atom icon",
-              height="48",
-              width="48",
-              hi_def=True,
-              attrs={"class": "p-matrix__img"}
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/ccb8872b-Icon_Atom.svg",
+                    alt="Atom icon",
+                    height="48",
+                    width="48",
+                    hi_def=True,
+                    attrs={"class": "p-matrix__img"}) | safe
           }}
           <div class="p-matrix__content">
-            <h3 class="p-matrix__title"><a href="https://snapcraft.io/atom">Atom</a></h3>
+            <h3 class="p-matrix__title">
+              <a href="https://snapcraft.io/atom">Atom</a>
+            </h3>
             <p class="p-matrix__desc">为21世纪打造的hackable文本编辑器。</p>
           </div>
         </li>
         <li class="p-matrix__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/171fcf42-Chromium_11_Logo.svg",
-              alt="Chromium icon",
-              height="48",
-              width="48",
-              hi_def=True,
-              attrs={"class": "p-matrix__img"}
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/171fcf42-Chromium_11_Logo.svg",
+                    alt="Chromium icon",
+                    height="48",
+                    width="48",
+                    hi_def=True,
+                    attrs={"class": "p-matrix__img"}) | safe
           }}
           <div class="p-matrix__content">
-            <h3 class="p-matrix__title"><a href="https://snapcraft.io/chromium">Chromium浏览器</a></h3>
+            <h3 class="p-matrix__title">
+              <a href="https://snapcraft.io/chromium">Chromium浏览器</a>
+            </h3>
             <p class="p-matrix__desc">一个快速，简单，安全且专为现代网络而设计的网络浏览器。</p>
           </div>
         </li>
         <li class="p-matrix__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/4ecb4f50-PyCharm_Logo.svg",
-              alt="PyCharm",
-              height="48",
-              width="48",
-              hi_def=True,
-              attrs={"class": "p-matrix__img"}
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/4ecb4f50-PyCharm_Logo.svg",
+                    alt="PyCharm",
+                    height="48",
+                    width="48",
+                    hi_def=True,
+                    attrs={"class": "p-matrix__img"}) | safe
           }}
           <div class="p-matrix__content">
-            <h3 class="p-matrix__title"><a href="https://snapcraft.io/pycharm-community">PyCharm</a></h3>
+            <h3 class="p-matrix__title">
+              <a href="https://snapcraft.io/pycharm-community">PyCharm</a>
+            </h3>
             <p class="p-matrix__desc">PyCharm提供了高效的Python编程所需的所有工具。</p>
           </div>
         </li>
         <li class="p-matrix__item">
-          {{
-            image(
-              url="https://assets.ubuntu.com/v1/3f3a15ef-logo-telegram.svg",
-              alt="Telegram icon",
-              height="48",
-              width="48",
-              hi_def=True,
-              attrs={"class": "p-matrix__img"}
-            ) | safe
+          {{ image(url="https://assets.ubuntu.com/v1/3f3a15ef-logo-telegram.svg",
+                    alt="Telegram icon",
+                    height="48",
+                    width="48",
+                    hi_def=True,
+                    attrs={"class": "p-matrix__img"}) | safe
           }}
           <div class="p-matrix__content">
-            <h3 class="p-matrix__title"><a href="https://snapcraft.io/telegram-desktop">Telegram</a></h3>
+            <h3 class="p-matrix__title">
+              <a href="https://snapcraft.io/telegram-desktop">Telegram</a>
+            </h3>
             <p class="p-matrix__desc">快速，安全的桌面即时通讯应用程序，可与您的手机完美同步。</p>
           </div>
         </li>
       </ul>
-      <p><a href="https://snapcraft.io/store">在Snap商店中发现更多应用</a></p>
+      <p>
+        <a href="https://snapcraft.io/store">在Snap商店中发现更多应用</a>
+      </p>
     </div>
   </section>
-  
+
   <section class="p-strip">
     <div class="row u-vertically-center">
       <div class="col-4">
         <h2>办公软件</h2>
-        <p>使用与微软Office兼容的开源办公套件LibreOffice在Ubuntu上创建专业文档，电子表格和演示文稿。这意味着您可以打开和编辑Word文档，Excel电子表格和幻灯片演示文稿之类的文件，并与其他用户快速，轻松地共享。您也可以直接在桌面电脑上使用Google文档。</p>
+        <p>
+          使用与微软Office兼容的开源办公套件LibreOffice在Ubuntu上创建专业文档，电子表格和演示文稿。这意味着您可以打开和编辑Word文档，Excel电子表格和幻灯片演示文稿之类的文件，并与其他用户快速，轻松地共享。您也可以直接在桌面电脑上使用Google文档。
+        </p>
       </div>
       <div class="col-7 col-start-large-6">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/3ed8eec4-desktop-22.04-libre.png",
-            alt="",
-            height="732",
-            width="1187",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/3ed8eec4-desktop-22.04-libre.png",
+                alt="",
+                height="732",
+                width="1187",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
   </section>
-  
-  <section class="p-strip--image is-dark is-deep" style="background-image:url('https://assets.ubuntu.com/v1/10998eba-desktop-22.04-web-browsing-big.jpg')">
+
+  <section class="p-strip--image is-dark is-deep"
+           style="background-image:url('https://assets.ubuntu.com/v1/10998eba-desktop-22.04-web-browsing-big.jpg')">
     <div class="row u-equal-height u-vertically-center">
       <div class="col-6 u-align--center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/b0cbd8b1-firefox-raspberrypi.png",
-            alt="",
-            height="665",
-            width="1166",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/b0cbd8b1-firefox-raspberrypi.png",
+                alt="",
+                height="665",
+                width="1166",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
       <div class="col-5 col-start-large-8">
@@ -230,28 +221,27 @@
       </div>
     </div>
   </section>
-  
+
   <section class="p-strip">
     <div class="row u-vertically-center">
       <div class="col-5">
         <h2>邮件</h2>
-        <p>Ubuntu预装了Mozilla最受欢迎的电子邮件应用程序——Thunderbird，所以您可以快速地通过桌面访问电子邮件。无论您使用哪种电子邮件服务：Microsoft Exchange，Gmail，Hotmail，POP或IMAP都可以正常使用。</p>
+        <p>
+          Ubuntu预装了Mozilla最受欢迎的电子邮件应用程序——Thunderbird，所以您可以快速地通过桌面访问电子邮件。无论您使用哪种电子邮件服务：Microsoft Exchange，Gmail，Hotmail，POP或IMAP都可以正常使用。
+        </p>
       </div>
       <div class="col-6 col-start-large-7 u-vertically-center">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/f55b4bed-desktop-22.04-email.jpg",
-            alt="",
-            height="714",
-            width="1068",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/f55b4bed-desktop-22.04-email.jpg",
+                alt="",
+                height="714",
+                width="1068",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
   </section>
-  
+
   <section class="p-strip--image p-strip-photos">
     <div class="row">
       <div class="col-6 p-strip-photos__container">
@@ -263,19 +253,16 @@
     </div>
     <span class="p-strip-photos__credit u-float-right u-hide--small"></span>
   </section>
-  
+
   <section class="p-strip is-bordered is-deep">
     <div class="row p-divider">
       <div class="col-8 p-divider__block">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/1aef005e-desktop-22.04-photos.jpg",
-            alt="Shotwell screenshot",
-            height="518",
-            width="900",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/1aef005e-desktop-22.04-photos.jpg",
+                alt="Shotwell screenshot",
+                height="518",
+                width="900",
+                hi_def=True,
+                loading="lazy") | safe
         }}
         <h2>整理您的照片</h2>
         <p>借助Shotwell，您可以快速，轻松地导入，管理，编辑和查看图片。您可以在所有流行的照片网站和社交网络上分享自己喜欢的快照。</p>
@@ -283,45 +270,36 @@
       <div class="col-4 p-divider__block">
         <h2>图片编辑和插图</h2>
         <p>使用Ubuntu软件中心提供的Gimp和Krita之类的工具编辑照片或创建专业插图和设计。</p>
-        <div class="p-logo-section">
+        <div class="p-logo-section has-misaligned-images">
           <div class="p-logo-section__items">
             <div class="p-logo-section__item">
-              {{
-                image(
-                  url="https://assets.ubuntu.com/v1/b38df947-krita.png",
-                  alt="Krita icon",
-                  height="60",
-                  width="60",
-                  hi_def=True,
-                  attrs={"class": "p-logo-section__logo"},
-                  loading="lazy"
-                ) | safe
+              {{ image(url="https://assets.ubuntu.com/v1/b38df947-krita.png",
+                            alt="Krita",
+                            width="256",
+                            height="256",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-logo-section__logo"}) | safe
               }}
             </div>
             <div class="p-logo-section__item">
-              {{
-                image(
-                  url="https://assets.ubuntu.com/v1/4d47a674-gimp-60x43.svg",
-                  alt="",
-                  height="60",
-                  width="60",
-                  hi_def=True,
-                  loading="lazy",
-                  attrs={"class": "p-logo-section__logo"},
-                ) | safe
+              {{ image(url="https://assets.ubuntu.com/v1/4d47a674-gimp-60x43.svg",
+                            alt="Gimp",
+                            width="210",
+                            height="150",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-logo-section__logo"}) | safe
               }}
             </div>
             <div class="p-logo-section__item">
-              {{
-                image(
-                  url="https://assets.ubuntu.com/v1/786ed546-blender.svg",
-                  alt="Blender icon",
-                  height="60",
-                  width="60",
-                  hi_def=True,
-                  attrs={"class": "p-logo-section__logo"},
-                  loading="lazy"
-                ) | safe
+              {{ image(url="https://assets.ubuntu.com/v1/f0bd491c-blender.png",
+                            alt="",
+                            width="512",
+                            height="512",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-logo-section__logo"}) | safe
               }}
             </div>
           </div>
@@ -329,7 +307,7 @@
       </div>
     </div>
   </section>
-  
+
   <section class="p-strip--light is-deep">
     <div class="row u-equal-height u-vertically-center">
       <div class="col-4">
@@ -337,32 +315,31 @@
         <p>在Ubuntu上通过浏览器观看高清视频，或使用Snap Store中的默认Movie Player和VLC或者OpenShot。使用Shotcut或kdenlive编辑电影，然后在Movie Player中观看。</p>
       </div>
       <div class="col-7 col-start-large-6 u-hide--small">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/de158d4e-desktop-22.04-video.jpg",
-            alt="",
-            height="768",
-            width="1360",
-            hi_def=True,
-            loading="lazy"
-          ) | safe
+        {{ image(url="https://assets.ubuntu.com/v1/de158d4e-desktop-22.04-video.jpg",
+                alt="",
+                height="768",
+                width="1360",
+                hi_def=True,
+                loading="lazy") | safe
         }}
       </div>
     </div>
   </section>
-  
+
   <section class="p-strip p-gaming">
     <div class="row">
       <div class="col-6 col-start-large-7 p-gaming__content">
         <div class="p-card--overlay">
           <h2>游戏</h2>
-          <p>从数独游戏到第一人称射击游戏，Ubuntu上有着大量的游戏，可让您忙活几个小时。Ubuntu有包括Unity和Steam平台上的成千上万款游戏可用。从备受赞誉的影片中进行挑选，例如Dota 2，Kerbal Space Program，《反恐精英：全球攻势》和《无主之地：前传》。</p>
+          <p>
+            从数独游戏到第一人称射击游戏，Ubuntu上有着大量的游戏，可让您忙活几个小时。Ubuntu有包括Unity和Steam平台上的成千上万款游戏可用。从备受赞誉的影片中进行挑选，例如Dota 2，Kerbal Space Program，《反恐精英：全球攻势》和《无主之地：前传》。
+          </p>
         </div>
       </div>
       <div class="u-hide--small p-gaming__flash"></div>
     </div>
   </section>
-  
+
   <section class="p-strip--light">
     <div class="row p-divider">
       <div class="col-6 p-divider__block">
@@ -372,7 +349,9 @@
       <div class="col-6 p-divider__block">
         <h3>由Canonical提供支持</h3>
         <p>Canonical是为Ubuntu项目提供商业，设计和工程支持的全球软件供应商。今天，我们的硬件支持团队支持了全球数百个笔记本电脑和工作站型号上的Ubuntu预装。</p>
-        <p><a href="http://partners.ubuntu.com/partnering-with-us">了解更多关于我们如何支持Ubuntu的内容</a></p>
+        <p>
+          <a href="https://partners.ubuntu.com/partnering-with-us">了解更多关于我们如何支持Ubuntu的内容</a>
+        </p>
       </div>
     </div>
   </section>
@@ -382,9 +361,11 @@
   <script>
     var photoRow = document.querySelector('.p-strip-photos');
     var caption = photoRow.querySelector('.p-strip-photos__credit');
-    var credits = {'photo-1': '照片来自于社区成员：Tomáš Kijas',
-    'photo-2': '照片来自于社区成员：Life Nomadic',
-    'photo-3': '照片来自于社区成员：Martin Wagner'};
+    var credits = {
+      'photo-1': '照片来自于社区成员：Tomáš Kijas',
+      'photo-2': '照片来自于社区成员：Life Nomadic',
+      'photo-3': '照片来自于社区成员：Martin Wagner'
+    };
     if (photoRow) {
       var n = Math.floor((Math.random() * 3) + 1);
       if (!credits['photo-' + n]) {
