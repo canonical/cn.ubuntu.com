@@ -54,6 +54,12 @@
                href="/kubernetes"
                onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /kubernetes", eventLabel: "Kubernetes", eventValue: undefined, });'>Kubernetes</a>
           </li>
+          <li class="p-navigation__item{% if request.path == '/infrastructure' %} is-selected{% endif %}"
+              role="menuitem">
+            <a class="p-navigation__link"
+               href="/infrastructure"
+               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /infrastructure", eventLabel: "Infrastructure", eventValue: undefined, });'>基础架构</a>
+          </li>
           <li class="p-navigation__item{% if request.path == '/server' %} is-selected{% endif %}" role="menuitem">
             <a class="p-navigation__link" href="/server" onclick='dataLayer.push({
               event: "GAEvent",
