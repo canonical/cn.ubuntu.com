@@ -36,7 +36,7 @@
     </div>
   </section>
 
-  {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
     {%- if slot == 'title' -%}
       <h2>按需定制的云</h2>
     {%- endif -%}
@@ -50,11 +50,11 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_description_1' -%}
-      <p class="p-section--shallow">您的公共云总拥有成本是否随着时间的推移而不断增加？对于长期大规模运行的工作负载，私有云将更加经济实用。</p>
+      <p>您的公共云总拥有成本是否随着时间的推移而不断增加？对于长期大规模运行的工作负载，私有云将更加经济实用。</p>
       <a class="p-button--positive"
          href="https://cn.ubuntu.com/engage/cloud-pricing-report">云服务价格报告&nbsp;&rsaquo;</a>
       <a class="p-button"
-         href="https://cn.ubuntu.com/engage/optimize-cloud-storage-costs">优化云存储成本&nbsp;&rsaquo;</a>
+         href="https://cn.ubuntu.com/engage/optimize-cloud-storage-costs_cn">优化云存储成本&nbsp;&rsaquo;</a>
     {%- endif -%}
 
     {%- if slot == 'list_item_title_2' -%}
@@ -125,7 +125,7 @@
           <h2>无障碍的开源基础架构</h2>
         </div>
         <div class="col">
-          <p class="p-section--shallow">通过开源工具，Canonical 让云变更加自由可得。与专有解决方案不同，其不存在许可证费用，您只需支付所需的支持与维护费用。</p>
+          <p>通过开源工具，Canonical 让云变更加自由可得。与专有解决方案不同，其不存在许可证费用，您只需支付所需的支持与维护费用。</p>
           <hr class="p-rule" />
           <a href="https://cn.ubuntu.com/engage/vmware-migration-scenarios">如何从 VMware 等专有解决方案迁移到开源&nbsp;&rsaquo;</a>
         </div>
@@ -141,7 +141,7 @@
           <h2>全堆栈自动化</h2>
         </div>
         <div class="col">
-          <p class="p-section--shallow">维护和运营数据中心成本高昂，既耗费时间，还需要专业人才。Canonical 基础架构技术包含先进的生命周期管理功能，可减轻这些负担。</p>
+          <p>维护和运营数据中心成本高昂，既耗费时间，还需要专业人才。Canonical 基础架构技术包含先进的生命周期管理功能，可减轻这些负担。</p>
           <hr class="p-rule--muted" />
           <ul class="p-list--divided">
             <li class="p-list__item has-bullet">短短几分钟内即可完成常见及复杂的管理任务</li>
@@ -160,7 +160,7 @@
           <h2>一次订阅，纵享安全与支持服务</h2>
         </div>
         <div class="col">
-          <p class="p-section--shallow">告别不可预测的成本开支。Canonical 提供单一便捷的订阅产品，为您的平台提供安全维护、支持和合规性保障：Ubuntu Pro。</p>
+          <p>告别不可预测的成本开支。Canonical 提供单一便捷的订阅产品，为您的平台提供安全维护、支持和合规性保障：Ubuntu Pro。</p>
           <hr class="p-rule--muted" />
           <ul class="p-list--divided p-section--shallow" style="margin-bottom: 0;">
             <li class="p-list__item has-bullet">提供最长可达 12 年的基础架构和应用程序安心使用保障，为您构建和扩展平台建立可靠的基础</li>
@@ -186,10 +186,10 @@
       ) -%}
 
       {%- if slot == 'signpost_image' -%}
-        {{ image(url="https://assets.ubuntu.com/v1/7b82c3fc-phoenix-logo.png",
+        {{ image(url="https://assets.ubuntu.com/v1/7464ce1c-phoenix-logo.png",
                 alt="Phoenix Systems",
-                width="200",
-                height="54",
+                width="163",
+                height="44",
                 hi_def=True,
                 loading="lazy") | safe
         }}
@@ -208,10 +208,10 @@
       quote_size="small")
       -%}
       {%- if slot == 'signpost_image' -%}
-        {{ image(url="https://assets.ubuntu.com/v1/d27938ed-OneUptime%20logo.svg",
+        {{ image(url="https://assets.ubuntu.com/v1/f448e43d-one%20uptime%20logo.png",
                 alt="OneUptime",
-                width="200",
-                height="200",
+                width="113",
+                height="59",
                 hi_def=True,
                 loading="lazy") | safe
         }}
@@ -228,10 +228,10 @@
       quote_size="small")
       -%}
       {%- if slot == 'signpost_image' -%}
-        {{ image(url="https://assets.ubuntu.com/v1/5dacced3-firmus-logo.png",
+        {{ image(url="https://assets.ubuntu.com/v1/42bf0beb-firmus%20logo.png",
                 alt="Firmus",
-                width="200",
-                height="45",
+                width="142",
+                height="32",
                 hi_def=True,
                 loading="lazy") | safe
         }}
@@ -242,7 +242,7 @@
     {%- endcall -%}
   </section>
 
-  {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
     {%- if slot == 'title' -%}
       <h2>Canonical 开源基础架构用例</h2>
     {%- endif -%}
@@ -308,7 +308,7 @@
     {%- endif -%}
   {%- endcall -%}
 
-  {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
     {%- if slot == 'title' -%}
       <h2>适用于各种计算规模与领域的工具</h2>
     {%- endif -%}
@@ -318,10 +318,10 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_title_1' -%}
-      {{ image(url="https://assets.ubuntu.com/v1/7714a29b-Canonical%20Product%20Logo1.png",
+      {{ image(url="https://assets.ubuntu.com/v1/a2451eac-microcloud-logo.png",
             alt="Microcloud",
-            width="270",
-            height="40",
+            width="131",
+            height="37",
             hi_def=True,
             loading="lazy") | safe
       }}
@@ -335,10 +335,10 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_title_2' -%}
-      {{ image(url="https://assets.ubuntu.com/v1/e8d7486f-Canonical%20Product%20Logo.png",
+      {{ image(url="https://assets.ubuntu.com/v1/9f2b7261-openstack-logo.png",
             alt="Openstack",
-            width="270",
-            height="40",
+            width="128",
+            height="37",
             hi_def=True,
             loading="lazy") | safe
       }}
@@ -352,10 +352,10 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_title_3' -%}
-      {{ image(url="https://assets.ubuntu.com/v1/3a90d809-Canonical%20Product%20Logo-1.png",
+      {{ image(url="https://assets.ubuntu.com/v1/ebb3d09a-kubernetes-logo.png",
             alt="Kubernetes",
-            width="270",
-            height="40",
+            width="132",
+            height="37",
             hi_def=True,
             loading="lazy") | safe
       }}
@@ -369,10 +369,10 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_title_4' -%}
-      {{ image(url="https://assets.ubuntu.com/v1/66bc1a95-Canonical%20Product%20Logo-2.png",
+      {{ image(url="https://assets.ubuntu.com/v1/12b6e9de-charmed-ceph-logo.png",
             alt="Ceph",
-            width="270",
-            height="40",
+            width="162",
+            height="37",
             hi_def=True,
             loading="lazy") | safe
       }}
@@ -386,10 +386,10 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_title_5' -%}
-      {{ image(url="https://assets.ubuntu.com/v1/058a75ad-Canonical%20Product%20Logo-3.png",
+      {{ image(url="https://assets.ubuntu.com/v1/1bd45905-maas-logo.png",
             alt="MAAS",
-            width="270",
-            height="40",
+            width="83",
+            height="37",
             hi_def=True,
             loading="lazy") | safe
       }}
@@ -423,10 +423,10 @@
       quote_size="small")
       -%}
       {%- if slot == 'signpost_image' -%}
-        {{ image(url="https://assets.ubuntu.com/v1/99d0612b-ESA_logo_2020_Deep.png",
+        {{ image(url="https://assets.ubuntu.com/v1/8b4e120f-eesa%20logo.png",
                 alt="ESA",
-                width="200",
-                height="126",
+                width="109",
+                height="40",
                 hi_def=True,
                 loading="lazy") | safe
         }}
@@ -443,10 +443,10 @@
       quote_size="small")
       -%}
       {%- if slot == 'signpost_image' -%}
-        {{ image(url="https://assets.ubuntu.com/v1/8bf34efc-University%2520de%2520l%27ontario%2520francais%2520logo%2520(transparent).png",
+        {{ image(url="https://assets.ubuntu.com/v1/c1206546-uof%20logo.png",
                 alt="Université de l'Ontario Français",
-                width="200",
-                height="200",
+                width="118",
+                height="80",
                 hi_def=True,
                 loading="lazy") | safe
         }}
@@ -472,7 +472,7 @@
             <a href="/engage/vmware-migration-scenarios">从 VMware 迁移到开源</a>
           </li>
           <li class="p-list__item">
-            <a href="/engage/software-defined-storage-for-enterprises">降低云存储总拥有成本</a>
+            <a href="https://cn.ubuntu.com/engage/optimize-cloud-storage-costs_cn">降低云存储总拥有成本</a>
           </li>
         </ul>
       </div>
