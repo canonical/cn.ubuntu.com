@@ -1,0 +1,491 @@
+{% extends 'templates/base.html' %}
+
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+{% from "_macros/vf_quote-wrapper.jinja" import vf_quote_wrapper %}
+
+{% block title %}Canonical开源基础架构解决方案助您轻松掌控全局{{ title }}{% endblock %}
+
+{% block meta_description %}
+  {{ meta_description }}Canonical 基础架构解决方案让您借助开源技术构建企业级云平台。自由设计架构，快速启动、降低总拥有成本，轻松扩展并由自己掌控数据。
+{% endblock %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/1NVwHNla10QiqnctuDERbHEQjNT0FvUP0xL93hEo96VU/edit?tab=t.0
+{% endblock meta_copydoc %}
+
+{% block content %}
+
+  <section class="p-strip is-shallow u-no-padding--bottom">
+    <div class="p-section">
+      <div class="row">
+        <div class="col-start-large-4 col-9">
+          <div class="p-section--shallow">
+            <h1 class="u-no-margin--bottom">如云一般地运行数据中心</h1>
+          </div>
+          <div class="p-section--shallow">
+            <p>利用 Canonical 的开源基础架构解决方案，助您轻松优化成本、掌控全局，并通过自动化工具快速构建环境且简化运营流程。</p>
+          </div>
+          <hr class="p-rule--muted u-hide--small u-hide--medium" />
+          <a class="p-button--positive" href="/contact">与我们联系</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
+    {%- if slot == 'title' -%}
+      <h2>按需定制的云</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <p>无论您是想要从专有解决方案迁移、回迁工作负载，还是转而采用现代化平台，让 Canonical 的开源基础架构解决方案为您带来高效率的多样选择。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">降低总拥有成本（TCO）</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>您的公共云总拥有成本是否随着时间的推移而不断增加？对于长期大规模运行的工作负载，私有云将更加经济实用。</p>
+      <a class="p-button--positive"
+         href="https://cn.ubuntu.com/engage/cloud-pricing-report">云服务价格报告&nbsp;&rsaquo;</a>
+      <a class="p-button"
+         href="https://cn.ubuntu.com/engage/optimize-cloud-storage-costs_cn">优化云存储成本&nbsp;&rsaquo;</a>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">由自己掌控数据</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>可完全自主决定数据的存储位置、保护措施以及访问权限。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">自由设计架构</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>可按照自身业务需求，自主选择软件、计算、存储和网络配置。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_4' -%}
+      <h3 class="p-heading--5">降低对专有产品供应商的依赖</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_4' -%}
+      <p>采用开源组件，自主决定云工作负载的运行和迁移位置。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_5' -%}
+      <h3 class="p-heading--5">构建混合环境，纵享双重优势</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_5' -%}
+      <p>可根据需求灵活利用公共云和私有云资源。</p>
+    {%- endif -%}
+  {%- endcall -%}
+
+  <section class="u-fixed-width">
+    <hr class="p-rule" />
+    <div class="p-strip is-deep">
+      <h2>
+        <a href="https://cn.ubuntu.com/engage/hybrid-cloud-strategy-playbook">阅读混合云策略指南&nbsp;&rsaquo;</a>
+      </h2>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="row--50-50">
+      <hr class="p-rule" />
+      <div class="col">
+        <h2>Canonical 基础架构解决方案的优势</h2>
+      </div>
+      <div class="col">
+        <ul class="p-list--divided">
+          <li class="p-list__item is-ticked">可预测的按节点定价</li>
+          <li class="p-list__item is-ticked">全堆栈自动化</li>
+          <li class="p-list__item is-ticked">最长可达 12 年的企业级安全维护和支持服务</li>
+          <li class="p-list__item is-ticked">完全符合 FIPS、DISA-STIG、PCI-DSS 等及更多规范</li>
+          <li class="p-list__item is-ticked">专家引导助您更快实现目标</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h2>无障碍的开源基础架构</h2>
+        </div>
+        <div class="col">
+          <p>通过开源工具，Canonical 让云变更加自由可得。与专有解决方案不同，其不存在许可证费用，您只需支付所需的支持与维护费用。</p>
+          <hr class="p-rule--muted" />
+          <a href="https://cn.ubuntu.com/engage/vmware-migration-scenarios">如何从 VMware 等专有解决方案迁移到开源&nbsp;&rsaquo;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h2>全堆栈自动化</h2>
+        </div>
+        <div class="col">
+          <p>维护和运营数据中心成本高昂，既耗费时间，还需要专业人才。Canonical 基础架构技术包含先进的生命周期管理功能，可减轻这些负担。</p>
+          <ul class="p-list--divided">
+            <li class="p-list__item has-bullet">短短几分钟内即可完成常见及复杂的管理任务</li>
+            <li class="p-list__item has-bullet">通过自动化减少人为错误、配置错误以及应用程序攻击面</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h2>一次订阅，纵享安全与支持服务</h2>
+        </div>
+        <div class="col">
+          <p>告别不可预测的成本开支。Canonical 提供单一便捷的订阅产品，为您的平台提供安全维护、支持和合规性保障：Ubuntu Pro。</p>
+          <ul class="p-list--divided p-section--shallow" style="margin-bottom: 0;">
+            <li class="p-list__item has-bullet">提供最长可达 12 年的基础架构和应用程序安心使用保障，为您构建和扩展平台建立可靠的基础</li>
+            <li class="p-list__item has-bullet">按节点定价，经济实惠，可预测性强</li>
+            <li class="p-list__item has-bullet">符合 FedRAMP、FIPS、DISA-STIG、CIS 等众多标准</li>
+          </ul>
+          <hr class="p-rule--muted" />
+          <a class="p-button" href="https://cn.ubuntu.com/support/pro">了解 Ubuntu Pro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="u-fixed-width"></div>
+
+    {% call(slot) vf_quote_wrapper(
+      title_text="听听客户怎么说",
+      quote_text="仅仅实现部分堆栈自动化是无济于事的。从 DNS 域名到 IP 网络、防火墙、虚拟机，再到数据中心的裸机服务器，每一层都需要进行编排，而且各种工具之间也需要相互通信。这正是 Canonical 解决方案所能实现的。",
+      citation_source_name_text="Thomas Taroni",
+      citation_source_title_text="Phoenix Systems 产品副总裁",
+      quote_size="small",
+      ) -%}
+
+      {%- if slot == 'signpost_image' -%}
+        {{ image(url="https://assets.ubuntu.com/v1/7464ce1c-phoenix-logo.png",
+                alt="Phoenix Systems",
+                width="163",
+                height="44",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      {%- endif -%}
+
+      {%- if slot == 'cta' -%}
+        <a href="https://ubuntu.com/engage/phoenix-systems-case-study-ibm-openstack">阅读案例&nbsp;&rsaquo;</a>
+      {%- endif -%}
+
+    {% endcall -%}
+
+    {%- call(slot) vf_quote_wrapper(
+      quote_text="如今，我们对硬件拥有完全的掌控力。这种自主性让我们能够根据自身特定需求调整服务器，从而优化性能与效率。从操作系统、网络架构，到存储类型与容量，我们可以对基础架构的方方面面进行定制。",
+      citation_source_name_text="Nawaz Dhandala",
+      citation_source_title_text="OneUptime 创始人兼 CEO",
+      quote_size="small")
+      -%}
+      {%- if slot == 'signpost_image' -%}
+        {{ image(url="https://assets.ubuntu.com/v1/f448e43d-one%20uptime%20logo.png",
+                alt="OneUptime",
+                width="113",
+                height="59",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      {%- endif -%}
+      {%- if slot == 'cta' -%}
+        <a href="https://ubuntu.com/engage/oneuptime-cost-savings-case-study">阅读案例&nbsp;&rsaquo;</a>
+      {%- endif -%}
+    {%- endcall -%}
+
+    {%- call(slot) vf_quote_wrapper(
+      quote_text="我们需要一个稳定、可靠且高性能的云解决方案。Canonical 助力我们快速设计并部署云服务，让我们得偿所愿。",
+      citation_source_name_text="Peter Blain",
+      citation_source_title_text="Firmus 产品及 AI 总监",
+      quote_size="small")
+      -%}
+      {%- if slot == 'signpost_image' -%}
+        {{ image(url="https://assets.ubuntu.com/v1/42bf0beb-firmus%20logo.png",
+                alt="Firmus",
+                width="142",
+                height="32",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      {%- endif -%}
+      {%- if slot == 'cta' -%}
+        <a href="https://ubuntu.com/engage/kubernetes-openstack-case-study-firmus">阅读案例&nbsp;&rsaquo;</a>
+      {%- endif -%}
+    {%- endcall -%}
+  </section>
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
+    {%- if slot == 'title' -%}
+      <h2>Canonical 开源基础架构用例</h2>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">AI/ML 的基础架构</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>减少耗费在操作上的时间，讓您更能專注於模型工作。</p>
+      <div class="p-cta-block">
+        <a href="https://cn.ubuntu.com/engage/mlops-guide">MLOps指南&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">可扩展的私有云</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>根据需求的成長，能隨時轻松扩展。亦是 VMware vSphere、Hyper-V 及 Proxmox 等虚拟化环境的实惠开源替代方案。</p>
+      <div class="p-cta-block">
+        <a href="https://cn.ubuntu.com/engage/build-price-performance-private-cloud">构建高性价比的私有云&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">主权云</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>确保敏感数据免遭威胁和泄露的理想之选。</p>
+      <div class="p-cta-block">
+        <a href="https://canonical.com/solutions/sovereign-cloud">了解如何使用 Canonical 构建主权云&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_4' -%}
+      <h3 class="p-heading--5">本地或区域公共云</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_4' -%}
+      <p>创建一个适用于您所在国家或地区的可靠、高可用性且性能卓越的云平台，畅享更出色的性能。</p>
+      <div class="p-cta-block">
+        <a href="https://ubuntu.com/engage/phoenix-systems-case-study-ibm-openstack">Phoenix Systems 的用例&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_5' -%}
+      <h3 class="p-heading--5">大规模边缘计算</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_5' -%}
+      <p>部署低接触、自我修复且几乎不需要人工交互的云平台。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_6' -%}
+      <h3 class="p-heading--5">适用于电信领域的 NFVI 或 CSP 云</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_6' -%}
+      <p>提供安全、低延迟和专享支持，经济实惠无与伦比。</p>
+    {%- endif -%}
+  {%- endcall -%}
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
+    {%- if slot == 'title' -%}
+      <h2>适用于各种计算规模与领域的工具</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <p>Canonical 提供可以构建适用于分布式边缘环境或大规模数据中心的云，这些开源基础架构产品组合为您提供多样化的选择，并享受统一的管理体验。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/a2451eac-microcloud-logo.png",
+            alt="Microcloud",
+            width="131",
+            height="37",
+            hi_def=True,
+            loading="lazy") | safe
+      }}
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>为小集群和边缘部署而设计，具自动化部署和无忧维护的轻量级云平台。</p>
+      <div class="p-cta-block">
+        <a href="https://cn.ubuntu.com/microcloud">查看产品&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/9f2b7261-openstack-logo.png",
+            alt="Openstack",
+            width="128",
+            height="37",
+            hi_def=True,
+            loading="lazy") | safe
+      }}
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>高效、灵活，且更具成本效益的数据中心操作参考平台。</p>
+      <div class="p-cta-block">
+        <a href="https://cn.ubuntu.com/cloud/openstack">查看产品&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/ebb3d09a-kubernetes-logo.png",
+            alt="Kubernetes",
+            width="132",
+            height="37",
+            hi_def=True,
+            loading="lazy") | safe
+      }}
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>提供长期支持服务且独立于云架构的 Kubernetes。</p>
+      <div class="p-cta-block">
+        <a href="https://cn.ubuntu.com/kubernetes">查看产品&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_4' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/12b6e9de-charmed-ceph-logo.png",
+            alt="Ceph",
+            width="162",
+            height="37",
+            hi_def=True,
+            loading="lazy") | safe
+      }}
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_4' -%}
+      <p>支持高度自动化操作的软件定义存储。Canonical Ceph 为 OpenStack、Kubernetes 或独立存储集群提供灵活的开源存储解决方案。</p>
+      <div class="p-cta-block">
+        <a href="https://ubuntu.com/ceph">了解更多&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_5' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/1bd45905-maas-logo.png",
+            alt="MAAS",
+            width="83",
+            height="37",
+            hi_def=True,
+            loading="lazy") | safe
+      }}
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_5' -%}
+      <p>Metal-as-a-Service：通过远程安装，超快速的将物理服务器配置为裸机云。</p>
+      <div class="p-cta-block">
+        <a href="https://maas.io/">了解更多&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+  {%- endcall -%}
+
+  <section class="u-fixed-width">
+    <hr class="p-rule" />
+    <div class="p-strip is-deep">
+      <h2>
+        <a href="https://cn.ubuntu.com/certified">使用经认证的硬件加快构建速度&nbsp;&rsaquo;</a>
+      </h2>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="u-fixed-width"></div>
+
+    {%- call(slot) vf_quote_wrapper(
+      title_text="更多案例研究",
+      quote_text="我们想要一家服务提供商为我们整个内部云提供支持，其中不仅包括 Kubernetes，还涵盖 Ceph 存储解决方案、PostgreSQL 和 Kafka。这些都是我们所需要的服务，这样我们就能拥有一体化的方案。",
+      citation_source_name_text="Michael Hawkshaw",
+      citation_source_title_text="ESA 任务操作基础架构信息技术服务经理",
+      quote_size="small")
+      -%}
+      {%- if slot == 'signpost_image' -%}
+        {{ image(url="https://assets.ubuntu.com/v1/8b4e120f-eesa%20logo.png",
+                alt="ESA",
+                width="109",
+                height="40",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      {%- endif -%}
+      {%- if slot == 'cta' -%}
+        <a href="https://ubuntu.com/engage/European-space-agency-case-study">阅读案例&nbsp;&rsaquo;</a>
+      {%- endif -%}
+    {%- endcall -%}
+
+    {%- call(slot) vf_quote_wrapper(
+      quote_text="目前我们有 200 名学生，目标是在未来 4 到 5 年内发展到 2000 名。我们基础架构团队仅有三四名成员，我们需要能够管理所有事务的单一界面，让即使只有一人也能完成作业。而且最重要的是该解决方案要能与我们过去配置的硬件相容。我认为 MicroCloud 对是个绝佳的选择，它能轻松扩展以满足我们的目标。",
+      citation_source_name_text="Hugo Adjamagbo",
+      citation_source_title_text="Université de l'Ontario Français（安省法文大学） IT 基础架构与安全架构师",
+      quote_size="small")
+      -%}
+      {%- if slot == 'signpost_image' -%}
+        {{ image(url="https://assets.ubuntu.com/v1/c1206546-uof%20logo.png",
+                alt="Université de l'Ontario Français",
+                width="118",
+                height="80",
+                hi_def=True,
+                loading="lazy") | safe
+        }}
+      {%- endif -%}
+      {%- if slot == 'cta' -%}
+        <a href="https://ubuntu.com/engage/university-ontario-francais-microcloud-case-study">阅读案例&nbsp;&rsaquo;</a>
+      {%- endif -%}
+    {%- endcall -%}
+  </section>
+
+  <section class="p-section--deep">
+    <div class="row--50-50">
+      <hr class="p-rule" />
+      <div class="col">
+        <h2>踏上开源基础架构的新篇章</h2>
+      </div>
+      <div class="col">
+        <ul class="p-list--divided">
+          <li class="p-list__item">
+            <a href="/engage/hybrid-cloud-strategy-playbook">制定您的混合云策略</a>
+          </li>
+          <li class="p-list__item">
+            <a href="/engage/vmware-migration-scenarios">从 VMware 迁移到开源</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://cn.ubuntu.com/engage/optimize-cloud-storage-costs_cn">降低云存储总拥有成本</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="u-fixed-width">
+    <hr class="p-rule" />
+    <div class="p-strip is-deep">
+      <h2>
+        <a href="/contact">
+          与专家讨论云设计与交付
+        &nbsp;&rsaquo;</a>
+      </h2>
+    </div>
+  </section>
+
+{% endblock %}
