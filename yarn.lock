@@ -940,9 +940,9 @@
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
 "@canonical/cookie-policy@^3.6.4":
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.6.4.tgz#895c3770f621b73d88b0d5843c43a32d99e4a462"
-  integrity sha512-kfwamTpAaBhtH5TzlMb8wE814a8lIbONUuSYnS7VPiHDfcdmw4NoBPNpldmNY1j3CAT5vMKOx5kulRTWpEXpag==
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.6.5.tgz#50d82df6da2970b6b5d78d066dd94fcc1317e591"
+  integrity sha512-CQJKSkuLXhSumkIIw4YPSjR7k9561hZ3EEdMPQTkAVTxXURhm3WzJm/uyrvcAuU/a//jzWa8ScltCaHFBdACew==
 
 "@canonical/global-nav@3.6.4":
   version "3.6.4"
@@ -2859,11 +2859,6 @@ ignore@^5.2.0, ignore@^5.2.1, ignore@^5.2.4:
   integrity sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==
 
 immutable@^5.0.2:
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-5.1.2.tgz#e8169476414505e5a4fa650107b65e1227d16d4b"
-  integrity sha512-qHKXW1q6liAk1Oys6umoaZbDRqjcjgSrbnrifHsfsttza7zcvRAsL7mMV6xWcyhwQy7Xj5v4hhbr6b+iDYwlmQ==
-
-immutable@^5.0.2:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-5.1.1.tgz#d4cb552686f34b076b3dcf23c4384c04424d8354"
   integrity sha512-3jatXi9ObIsPGr3N5hGw/vWWcTkq6hUYhpQz4k0wLC+owqWi/LiugIw9x0EdNZ2yGedKN/HzePiBvaJRXa0Ujg==
@@ -4285,17 +4280,6 @@ sass@1.87.0:
   optionalDependencies:
     "@parcel/watcher" "^2.4.1"
 
-sass@1.87.0:
-  version "1.87.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.87.0.tgz#8cceb36fa63fb48a8d5d7f2f4c13b49c524b723e"
-  integrity sha512-d0NoFH4v6SjEK7BoX810Jsrhj7IQSYHAHLi/iSpgqKc7LaIDshFRlSg5LOymf9FqQhxEHs2W5ZQXlvy0KD45Uw==
-  dependencies:
-    chokidar "^4.0.0"
-    immutable "^5.0.2"
-    source-map-js ">=0.6.2 <2.0.0"
-  optionalDependencies:
-    "@parcel/watcher" "^2.4.1"
-
 schema-utils@^3.1.0, schema-utils@^3.1.1:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-3.3.0.tgz#f50a88877c3c01652a15b622ae9e9795df7a60fe"
@@ -4885,15 +4869,15 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-framework@4.23.2:
-  version "4.23.2"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.23.2.tgz#41e1055502b70707c3e86a7eb8c2fd03fd15624a"
-  integrity sha512-+tPWTMjmzaH0M0AratJQO5iXnieIzzbwx1HLEDpEh9dA+SrLdzDd1MrNSBhKsnFlHMjDrhCzKSP4zID2DrVM+w==
+vanilla-framework@4.24.1:
+  version "4.24.1"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.24.1.tgz#cd1f24ef3d048d410fda252aeafc015c44adc8cf"
+  integrity sha512-mX2kugxhMtoo1IbvRDyA0WY8IJ/z7Q3MO4k8LMz0Plc/ZnPTuOcUYretx/e/TmgLrCko0rmTLjrSiEkWJWySxA==
 
-vanilla-framework@4.23.2:
-  version "4.23.2"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.23.2.tgz#41e1055502b70707c3e86a7eb8c2fd03fd15624a"
-  integrity sha512-+tPWTMjmzaH0M0AratJQO5iXnieIzzbwx1HLEDpEh9dA+SrLdzDd1MrNSBhKsnFlHMjDrhCzKSP4zID2DrVM+w==
+vanilla-framework@4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.9.0.tgz#7566b42a22c2394ea1d7ea843d24ec305446cb3e"
+  integrity sha512-iTmvqWlsX0ic69VZ1sR9NPQtYRR9+iM679HZCl7SDQhMQSsEeJEQ6Ejjen3JN5a7YxiYmeIhxaLlmC4rExRT1w==
 
 verbalize@^0.1.2:
   version "0.1.2"
