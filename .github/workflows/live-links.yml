@@ -40,6 +40,7 @@ jobs:
             https://www.xilinx.com/applications/*
             https://player.vimeo.com/video/*
             ^https://assets\.ubuntu\.com/?$
+            \.css
 
           [output]
           status=0
