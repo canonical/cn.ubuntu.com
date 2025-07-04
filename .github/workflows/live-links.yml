@@ -41,8 +41,6 @@ jobs:
             https://player.vimeo.com/video/*
             https://beian.miit.gov.cn/*
             ^https://assets\.ubuntu\.com/?$
-            \.css
-            \.js
 
           [output]
           status=0
