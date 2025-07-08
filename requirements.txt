@@ -1,5 +1,5 @@
 canonicalwebteam.flask_base==2.6.0
-canonicalwebteam.discourse==5.4.3
+canonicalwebteam.discourse==6.3.0
 canonicalwebteam.http==1.0.4
 canonicalwebteam.blog==6.4.0
 canonicalwebteam.templatefinder==1.0.0
