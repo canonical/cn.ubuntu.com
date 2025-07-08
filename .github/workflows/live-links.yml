@@ -39,8 +39,8 @@ jobs:
             https://ubuntu.com/static/css/*
             https://www.xilinx.com/applications/*
             https://player.vimeo.com/video/*
+            https://beian.miit.gov.cn/*
             ^https://assets\.ubuntu\.com/?$
-            \.css
 
           [output]
           status=0
