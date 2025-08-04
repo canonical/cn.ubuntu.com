@@ -114,8 +114,16 @@ jobs:
       - name: Deploy Application to staging
         run: |
           export JUJU_MODEL=admin/stg-cn-ubuntu-com
-          juju refresh cn-ubuntu-com --path ./cn-ubuntu-com_ubuntu-22.04-amd64.charm --resource flask-app-image=${{ needs.publish-image.outputs.image_url }}
-          juju refresh cn-ubuntu-com-blog --path ./cn-ubuntu-com_ubuntu-22.04-amd64.charm --resource flask-app-image=${{ needs.publish-image.outputs.image_url }}
+          if juju status --color --relations | grep -q "^cn-ubuntu-com\\s"; then
+            juju refresh cn-ubuntu-com --path ./*.charm --resource flask-app-image=${{ needs.publish-image.outputs.image_url }}
+          else
+            juju deploy cn-ubuntu-com ./*.charm --resource flask-app-image=${{ needs.publish-image.outputs.image_url }}
+          fi
+          if juju status --color --relations | grep -q "^cn-ubuntu-com-blog\\s"; then
+            juju refresh cn-ubuntu-com-blog --path ./*.charm --resource flask-app-image=${{ needs.publish-image.outputs.image_url }}
+          else
+            juju deploy cn-ubuntu-com-blog ./*.charm --resource flask-app-image=${{ needs.publish-image.outputs.image_url }}
+          fi
           juju wait-for application cn-ubuntu-com --query='name=="cn-ubuntu-com" && (status=="active" || status=="idle")'
 
   deploy-production:
