@@ -2,3 +2,4 @@
 iot(?P<path>.*)/?: '/internet-of-things{path}/'
 landscape/install/?: "https://ubuntu.com/landscape/install"
 support/advantage/?: "/support/pro"
+cloud/openstack/tco-calculator/?: "https://canonical.com/solutions/infrastructure/private-cloud-pricing"
