@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Setup LXD
         uses: canonical/setup-lxd@main
@@ -36,10 +36,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
 
       - name: Build Assets
         run: |
@@ -68,7 +68,7 @@ jobs:
       image_url: ${{ steps.set_image_url.outputs.image_url }}
     steps:
       - name: Get Rock
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cn-ubuntu-com-rock
 
@@ -84,7 +84,7 @@ jobs:
     needs: [pack-charm, publish-image]
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Install Dependencies
         run: |
@@ -92,7 +92,7 @@ jobs:
           sudo snap install vault --classic
 
       - name: Download Charm Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cn-ubuntu-com-charm
 
@@ -131,7 +131,7 @@ jobs:
     needs: [pack-charm, publish-image]
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Install Dependencies
         run: |
@@ -139,7 +139,7 @@ jobs:
           sudo snap install vault --classic
 
       - name: Download Charm Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: cn-ubuntu-com-charm
 
