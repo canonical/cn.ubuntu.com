@@ -50,6 +50,6 @@
   "dependencies": {
     "@canonical/cookie-policy": "^3.6.4",
     "@canonical/global-nav": "3.6.4",
-    "vanilla-framework": "4.23.2"
+    "vanilla-framework": "4.32.1"
   }
 }

@@ -5,9 +5,12 @@
 // Import Vanilla Framework
 @import 'vanilla-framework/scss/build';
 
+// Import footer and navigation patterns
 @import 'patterns_navigation';
+@import 'pattern_footer';
 @include cn-p-navigation;
 @include cn-p-secondary-navigation;
+@include cn-p-footer;
 
 // Import custom styles
 @import 'custom/ubuntu_intro';
