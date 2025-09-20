@@ -1,131 +1,195 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="zh" dir="ltr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="keywords" content="Ubuntu"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Ubuntu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>{% block title %}{{ title }}{% endblock %} | Ubuntu</title>
+    <title>
 
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ versioned_static('css/styles.css') }}" />
-  <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js" defer></script>
+      {% block title %}{{ title }}{% endblock %}
+    | Ubuntu</title>
 
-  <link rel="preconnect" href="https://www.google-analytics.com"/>
-  <link rel="preconnect" href="https://www.gstatic.com"/>
-  <link rel="preconnect" href="https://res.cloudinary.com"/>
+    <link rel="stylesheet"
+          type="text/css"
+          media="screen"
+          href="{{ versioned_static('css/styles.css') }}" />
+    <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js"
+            defer></script>
 
-  <!-- Cookie policy -->
-  <script src="{{ versioned_static('js/dist/cookie-policy.js') }}"></script>
-  <script>
-    cpNs.cookiePolicy();
-  </script>
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://www.gstatic.com" />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MCKGLV');</script>
-  <!-- End Google Tag Manager -->
-
-  {% block head_extra %}{% endblock %}
-
-  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/e8c07df6-Ubuntu-L_W.woff2" crossorigin />
-  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/7f100985-Ubuntu-Th_W.woff2" crossorigin />
-  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/f8097dea-Ubuntu-LI_W.woff2" crossorigin />
-  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/fff37993-Ubuntu-R_W.woff2" crossorigin />
-
-  <meta name="description" content="{% block meta_description %}Ubuntu是适用于企业服务器、桌面电脑、云、IoT物联网的现代化开源Linux操作系统。Ubuntu官网。{% endblock %}" />
-  <meta name="author" content="Canonical" />
-
-  {% include "templates/_extra_metadata.html" %}
-
-  <link rel="shortcut icon" href="{{ versioned_static('img/favicon.ico') }}" type="image/x-icon" />
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ versioned_static('img/apple-touch-icon-144x144-precomposed.png') }}" />
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ versioned_static('img/apple-touch-icon-114x114-precomposed.png') }}" />
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ versioned_static('img/apple-touch-icon-72x72-precomposed.png') }}" />
-  <link rel="apple-touch-icon-precomposed" href="{{ versioned_static('img/apple-touch-icon-precomposed.png') }}" />
-  <link type="text/plain" rel="author" href="{{ versioned_static('files/humans.txt') }}" />
-
-  <meta name="copydoc" content="{% block meta_copydoc %}https://drive.google.com/open?id=1CmZB0nNrC9JTi0PoHb12c2L-808Z64eG{% endblock %}">
-
-</head>
-<body class="{% block body_class %}{% endblock %}">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCKGLV"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- Baidu Tongji (noscript) -->
- <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?5582d6ac67409e7cebf074c88039f479";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
+    <!-- Cookie policy -->
+    <script src="{{ versioned_static('js/dist/cookie-policy.js') }}"></script>
+    <script>
+      cpNs.cookiePolicy();
     </script>
-  <!-- End Baidu Tongji (noscript) -->
 
-  <!-- header content goes here -->
-  {% include "templates/header.html" %}
-  <div class="wrapper u-no-margin--top">
-    <div id="success" class="p-strip u-no-padding--top">
-      <div class="u-fixed-width">
-        <div class="p-notification--positive u-no-margin--bottom">
-          <div class="p-notification__content">
-            <p class="p-notification__message">谢谢您的订阅！<br />当新的内容发布后您将开始接收邮件。您也可以点击邮件内的链接随时取消订阅。<a href="#" onclick="location.href = document.referrer; return false;">关闭<i class="p-notification__close">Close</i></a></p>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MCKGLV');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    {% block head_extra %}{% endblock %}
+
+    <link rel="preload"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/e8c07df6-Ubuntu-L_W.woff2"
+          crossorigin />
+    <link rel="preload"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/7f100985-Ubuntu-Th_W.woff2"
+          crossorigin />
+    <link rel="preload"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/f8097dea-Ubuntu-LI_W.woff2"
+          crossorigin />
+    <link rel="preload"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/fff37993-Ubuntu-R_W.woff2"
+          crossorigin />
+
+    <meta name="description" content=" 
+      {% block meta_description %}Ubuntu是适用于企业服务器、桌面电脑、云、IoT物联网的现代化开源Linux操作系统。Ubuntu官网。{% endblock %}" />
+      <meta name="author" content="Canonical" />
+
+      {% include "templates/_extra_metadata.html" %}
+
+      <link rel="shortcut icon"
+            href="{{ versioned_static('img/favicons/COF-favicon-48x48.png') }}"
+            type="image/x-icon" />
+
+      <link rel="apple-touch-icon"
+            sizes="180x180"
+            href="https://assets.ubuntu.com/v1/f38b9c7e-COF%20apple-touch-icon.png" />
+      <link rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="https://assets.ubuntu.com/v1/be7e4cc6-COF-favicon-32x32.png" />
+      <link rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="https://assets.ubuntu.com/v1/16c27f81-COF%20favicon-16x16.png" />
+      <!-- Serving favicon for search engines locally -->
+      <link rel="icon"
+            type="image/png"
+            sizes="48x48"
+            href="{{ versioned_static('img/favicons/COF-favicon-48x48.png') }}" />
+
+      <link type="text/plain"
+            rel="author"
+            href="{{ versioned_static('files/humans.txt') }}" />
+
+      <meta name="copydoc" content=" 
+        {% block meta_copydoc %}https://drive.google.com/open?id=1CmZB0nNrC9JTi0PoHb12c2L-808Z64eG{% endblock %}" />
+
+      </head>
+      <body class=" 
+        {% block body_class %}{% endblock %}">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCKGLV"
+        height="0"
+        width="0"
+        style="display:none;
+               visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <!-- Baidu Tongji (noscript) -->
+        <script>
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?5582d6ac67409e7cebf074c88039f479";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+          })();
+        </script>
+        <!-- End Baidu Tongji (noscript) -->
+
+        <!-- header content goes here -->
+        {% include "templates/header.html" %}
+        <div class="wrapper u-no-margin--top">
+          <div id="success" class="p-strip u-no-padding--top">
+            <div class="u-fixed-width">
+              <div class="p-notification--positive u-no-margin--bottom">
+                <div class="p-notification__content">
+                  <p class="p-notification__message">
+                    谢谢您的订阅！
+                    <br />
+                    当新的内容发布后您将开始接收邮件。您也可以点击邮件内的链接随时取消订阅。<a href="#" onclick="location.href = document.referrer; return false;">关闭<i class="p-notification__close">Close</i></a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+          <main id="main-content">
+
+            {% block header %}{% endblock %}
+
+            {% block content_container %}
+
+              {% block outer_content %}
+                {% block content %}{% endblock %}
+              {% endblock outer_content %}
+            {% endblock content_container %}
+          </main>
         </div>
-      </div>
-    </div>
-    <main id="main-content">
-      {% block header %}
-      {% endblock %}
-      {% block content_container %}
-          {% block outer_content %}
-            {% block content %}{% endblock %}
-          {% endblock outer_content %}
-      {% endblock content_container %}
-    </main>
-  </div>
 
-  <!-- footer content goes here -->
-  {% include "templates/footer.html" %}
+        <!-- footer content goes here -->
+        {% include "templates/footer.html" %}
 
-<script src="{{ versioned_static('js/dist/global-nav.min.js') }}" defer></script>
+        <script src="{{ versioned_static('js/dist/global-nav.min.js') }}" defer></script>
 
-<script type="text/javascript">
-  (function() {
+        <script type="text/javascript">
+          (function() {
 
-    // Populate utms for forms
-    var params = new URLSearchParams(window.location.search);
-    var utm_campaign = document.getElementById("utm_campaign");
-    if (utm_campaign) {
-      utm_campaign.value = params.get("utm_campaign");
-    }
-    var utm_source = document.getElementById("utm_source");
-    if (utm_source) {
-      utm_source.value = params.get("utm_source");
-    }
-    var utm_medium = document.getElementById("utm_medium");
-    if (utm_medium) {
-      utm_medium.value = params.get("utm_medium");
-    }
+            // Populate utms for forms
+            var params = new URLSearchParams(window.location.search);
+            var utm_campaign = document.getElementById("utm_campaign");
+            if (utm_campaign) {
+              utm_campaign.value = params.get("utm_campaign");
+            }
+            var utm_source = document.getElementById("utm_source");
+            if (utm_source) {
+              utm_source.value = params.get("utm_source");
+            }
+            var utm_medium = document.getElementById("utm_medium");
+            if (utm_medium) {
+              utm_medium.value = params.get("utm_medium");
+            }
 
-    var utm_content = document.getElementById("utm_content");
-    if (utm_content) {
-      utm_content.value = params.get("utm_content");
-    }
+            var utm_content = document.getElementById("utm_content");
+            if (utm_content) {
+              utm_content.value = params.get("utm_content");
+            }
 
-    var utm_term = document.getElementById("utm_term");
-    if (utm_term) {
-      utm_term.value = params.get("utm_term");
-    }
+            var utm_term = document.getElementById("utm_term");
+            if (utm_term) {
+              utm_term.value = params.get("utm_term");
+            }
 
-  })()
-</script>
+          })()
+        </script>
 
-</body>
-</html>
+      </body>
+    </html>
