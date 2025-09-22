@@ -3,6 +3,7 @@ import { createNav } from '@canonical/global-nav';
 createNav({
   maxWidth: '80rem',
   breakpoint: 1150,
+  isSliding: true,
 });
 
 function handleGlobalNavItems() {

@@ -3,9 +3,11 @@ $color-accent: $color-brand;
 
 // Navigation theme
 $theme-default-nav: dark;
+$breakpoint-medium: 875px;
+$viewport-threshold: 1250px;
 
 // Navigation for small screen
-$breakpoint-navigation-threshold: 820px;
+$breakpoint-navigation-threshold: $viewport-threshold;
 $breakpoint-medium: 875px;
 $sp-small: 0.5rem;
 $sp-xxx-large: 3rem;

@@ -1,0 +1,108 @@
+# Navigation structure extracted from secondary-nav.html files
+internet-of-things:
+  title: 物联网
+  path: /internet-of-things
+  children:
+    - title: Overview
+      path: /internet-of-things
+    - title: Ubuntu Core
+      path: /internet-of-things/core
+    - title: 智能显示屏
+      path: /internet-of-things/smart-displays
+    - title: 英特尔IoT平台
+      path: /download/iot/intel-iotg
+    - title: 认证硬件
+      path: /certified
+
+infrastructure:
+  title: 基础架构
+  path: /infrastructure
+  children:
+    - title: Overview
+      path: /infrastructure
+    - title: 公有云
+      path: /cloud/public-cloud
+    - title: OpenStack
+      path: /cloud/openstack
+    - title: MicroCloud
+      path: /microcloud
+    - title: Kubernetes
+      path: /kubernetes
+    - title: MAAS
+      path: https://canonical.com/maas
+
+ai:
+  title: 开源 AI
+  path: /ai
+  children:
+    - title: Overview
+      path: /ai
+
+enterprise:
+  title: 产品和支持
+  path: /enterprise
+  children:
+    - title: Overview
+      path: /enterprise
+    - title: Ubuntu Pro
+      path: /support/pro
+    - title: 扩展安全维护
+      path: /support/esm
+    - title: 系统集中管理
+      path: /landscape
+    - title: 价格
+      path: /pricing
+
+desktop:
+  title: 桌面系统
+  path: /desktop
+  children:
+    - title: Overview
+      path: /desktop
+    - title: 特点
+      path: /desktop/features
+    - title: 企业使用
+      path: /desktop/organisations
+    - title: 开发者
+      path: /desktop/developers
+    - title: 合作伙伴
+      path: /desktop/partners
+
+server:
+  title: 服务器
+  path: /server
+  children:
+    - title: Overview
+      path: /server
+    - title: Ubuntu Server文档
+      path: https://ubuntu.com/server/docs
+    - title: Ubuntu安全通告
+      path: https://ubuntu.com/security/notices
+
+download:
+  title: 下载
+  path: /download
+  children:
+    - title: Overview
+      path: /download
+    - title: 桌面
+      path: /download/desktop
+    - title: 服务器
+      path: /download/server/step1
+    - title: IoT
+      path: /download/iot
+    - title: 树莓派
+      path: /download/raspberry-pi
+    - title: AMD-Xilinx
+      path: /download/amd-xilinx
+    - title: RISC-V
+      path: /download/risc-v
+    - title: 云
+      path: /download/cloud
+
+blog:
+  title: 博客
+  path: /blog
+  children:
+    - title: Overview
+      path: /blog
