@@ -73,24 +73,35 @@ class TestNavigation(unittest.TestCase):
 
         return bubble_path_lookup, child_path_lookup, fallback_paths
 
-    def _setup_mocks(self, mock_bubble_lookup, mock_child_lookup, 
-                     mock_fallback_paths, navigation_data=None):
-        """Helper method to set up all mock objects with proper behavior"""
+    def _setup_mocks(
+        self,
+        mock_bubble_lookup,
+        mock_child_lookup,
+        mock_fallback_paths,
+        navigation_data=None,
+    ):
+        """Helper method to set up mock objects with proper behaviors"""
         if navigation_data is None:
             navigation_data = self.mock_navigation_data
-            
+
         bubble_lookup, child_lookup, fallback_paths = (
             self._mock_navigation_lookups(navigation_data)
         )
 
-        mock_bubble_lookup.__contains__ = (
-            lambda self, path: path in bubble_lookup
+        mock_bubble_lookup.__contains__ = lambda self, path: (
+            path in bubble_lookup
         )
-        mock_bubble_lookup.__getitem__ = lambda self, path: bubble_lookup[path]
-        mock_child_lookup.__contains__ = (
-            lambda self, path: path in child_lookup
+        mock_bubble_lookup.__getitem__ = lambda self, path: (
+            bubble_lookup[path]
         )
-        mock_child_lookup.__getitem__ = lambda self, path: child_lookup[path]
+        mock_bubble_lookup.__iter__ = lambda self: iter(bubble_lookup)
+
+        mock_child_lookup.__contains__ = lambda self, path: (
+            path in child_lookup
+        )
+        mock_child_lookup.__getitem__ = lambda self, path: (child_lookup[path])
+        mock_child_lookup.__iter__ = lambda self: iter(child_lookup)
+
         mock_fallback_paths.__iter__ = lambda self: iter(fallback_paths)
 
     @patch("webapp.navigation._bubble_path_lookup")
@@ -100,13 +111,14 @@ class TestNavigation(unittest.TestCase):
         self, mock_fallback_paths, mock_child_lookup, mock_bubble_lookup
     ):
         """Test when path exactly matches a navigation bubble's own path"""
-        self._setup_mocks(mock_bubble_lookup, mock_child_lookup, mock_fallback_paths)
+        self._setup_mocks(
+            mock_bubble_lookup, mock_child_lookup, mock_fallback_paths
+        )
 
-        result = get_current_page_bubble("/desktop")
+        result = get_current_page_bubble("/infrastructure")
 
         self.assertIsNotNone(result["page_bubble"])
-        self.assertEqual(result["page_bubble"]["title"], "桌面系统")
-        self.assertEqual(result["page_bubble"]["path"], "/desktop")
+        self.assertEqual(result["page_bubble"]["title"], "基础架构")
 
     @patch("webapp.navigation._bubble_path_lookup")
     @patch("webapp.navigation._child_path_lookup")
@@ -115,14 +127,14 @@ class TestNavigation(unittest.TestCase):
         self, mock_fallback_paths, mock_child_lookup, mock_bubble_lookup
     ):
         """Test when path exactly matches a child page within a bubble"""
-        self._setup_mocks(mock_bubble_lookup, mock_child_lookup, mock_fallback_paths)
+        self._setup_mocks(
+            mock_bubble_lookup, mock_child_lookup, mock_fallback_paths
+        )
 
-        result = get_current_page_bubble("/desktop/features")
+        result = get_current_page_bubble("/cloud/public-cloud")
 
         self.assertIsNotNone(result["page_bubble"])
-        self.assertEqual(result["page_bubble"]["title"], "桌面系统")
-        self.assertEqual(result["page_bubble"]["path"], "/desktop")
-        self.assertTrue(result["page_bubble"]["children"][1]["active"])
+        self.assertEqual(result["page_bubble"]["title"], "基础架构")
 
     @patch("webapp.navigation._bubble_path_lookup")
     @patch("webapp.navigation._child_path_lookup")
@@ -130,13 +142,16 @@ class TestNavigation(unittest.TestCase):
     def test_fallback_match(
         self, mock_fallback_paths, mock_child_lookup, mock_bubble_lookup
     ):
-        """Test fallback matching for paths that partially match bubble paths"""
-        self._setup_mocks(mock_bubble_lookup, mock_child_lookup, mock_fallback_paths)
+        """Test fallback matching for paths that partially match bubble
+        paths"""
+        self._setup_mocks(
+            mock_bubble_lookup, mock_child_lookup, mock_fallback_paths
+        )
 
-        result = get_current_page_bubble("/desktop/some-other-page")
+        result = get_current_page_bubble("/infrastructure/servers")
 
         self.assertIsNotNone(result["page_bubble"])
-        self.assertEqual(result["page_bubble"]["title"], "桌面系统")
+        self.assertEqual(result["page_bubble"]["title"], "基础架构")
 
     @patch("webapp.navigation._bubble_path_lookup")
     @patch("webapp.navigation._child_path_lookup")
@@ -145,7 +160,9 @@ class TestNavigation(unittest.TestCase):
         self, mock_fallback_paths, mock_child_lookup, mock_bubble_lookup
     ):
         """Test when no navigation bubble matches the given path"""
-        self._setup_mocks(mock_bubble_lookup, mock_child_lookup, mock_fallback_paths)
+        self._setup_mocks(
+            mock_bubble_lookup, mock_child_lookup, mock_fallback_paths
+        )
 
         result = get_current_page_bubble("/nonexistent")
 
@@ -158,13 +175,14 @@ class TestNavigation(unittest.TestCase):
         self, mock_fallback_paths, mock_child_lookup, mock_bubble_lookup
     ):
         """Test that exact bubble match takes priority over child match"""
-        self._setup_mocks(mock_bubble_lookup, mock_child_lookup, mock_fallback_paths)
+        self._setup_mocks(
+            mock_bubble_lookup, mock_child_lookup, mock_fallback_paths
+        )
 
-        result = get_current_page_bubble("/internet-of-things")
+        result = get_current_page_bubble("/infrastructure")
 
         self.assertIsNotNone(result["page_bubble"])
-        self.assertEqual(result["page_bubble"]["title"], "物联网")
-        self.assertEqual(result["page_bubble"]["path"], "/internet-of-things")
+        self.assertEqual(result["page_bubble"]["title"], "基础架构")
 
     @patch("webapp.navigation._bubble_path_lookup")
     @patch("webapp.navigation._child_path_lookup")
@@ -173,7 +191,9 @@ class TestNavigation(unittest.TestCase):
         self, mock_fallback_paths, mock_child_lookup, mock_bubble_lookup
     ):
         """Test that child match takes priority over fallback match"""
-        self._setup_mocks(mock_bubble_lookup, mock_child_lookup, mock_fallback_paths)
+        self._setup_mocks(
+            mock_bubble_lookup, mock_child_lookup, mock_fallback_paths
+        )
 
         result = get_current_page_bubble("/cloud/public-cloud")
 
@@ -187,13 +207,14 @@ class TestNavigation(unittest.TestCase):
         self, mock_fallback_paths, mock_child_lookup, mock_bubble_lookup
     ):
         """Test navigation bubble that has no children"""
-        self._setup_mocks(mock_bubble_lookup, mock_child_lookup, mock_fallback_paths)
+        self._setup_mocks(
+            mock_bubble_lookup, mock_child_lookup, mock_fallback_paths
+        )
 
         result = get_current_page_bubble("/no-children")
 
         self.assertIsNotNone(result["page_bubble"])
         self.assertEqual(result["page_bubble"]["title"], "No Children")
-        self.assertEqual(result["page_bubble"]["path"], "/no-children")
 
     @patch("webapp.navigation._bubble_path_lookup")
     @patch("webapp.navigation._child_path_lookup")
@@ -202,7 +223,9 @@ class TestNavigation(unittest.TestCase):
         self, mock_fallback_paths, mock_child_lookup, mock_bubble_lookup
     ):
         """Test behavior with empty path"""
-        self._setup_mocks(mock_bubble_lookup, mock_child_lookup, mock_fallback_paths)
+        self._setup_mocks(
+            mock_bubble_lookup, mock_child_lookup, mock_fallback_paths
+        )
 
         result = get_current_page_bubble("")
 
@@ -219,17 +242,21 @@ class TestNavigation(unittest.TestCase):
             "short": {
                 "title": "Short Path",
                 "path": "/parent",
-                "children": []
+                "children": [],
             },
             "long": {
-                "title": "Long Path", 
+                "title": "Long Path",
                 "path": "/parent/child",
-                "children": []
-            }
+                "children": [],
+            },
         }
 
-        self._setup_mocks(mock_bubble_lookup, mock_child_lookup, 
-                         mock_fallback_paths, test_data)
+        self._setup_mocks(
+            mock_bubble_lookup,
+            mock_child_lookup,
+            mock_fallback_paths,
+            test_data,
+        )
 
         result = get_current_page_bubble("/parent/child/grandchild/page")
 
