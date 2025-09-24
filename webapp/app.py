@@ -10,6 +10,10 @@ from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
 from jinja2 import ChoiceLoader, FileSystemLoader
 
+from webapp.navigation import (
+    get_current_page_bubble,
+)
+
 from webapp.views import (
     build_engage_index,
     build_engage_page,
@@ -155,7 +159,10 @@ with open("releases.yaml") as releases:
 # Template context
 @app.context_processor
 def context():
-    return {"releases": releases}
+    return {
+        "releases": releases,
+        "get_current_page_bubble": get_current_page_bubble,
+    }
 
 
 # Image template

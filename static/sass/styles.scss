@@ -6,10 +6,8 @@
 @import 'vanilla-framework/scss/build';
 
 // Import footer and navigation patterns
-@import 'patterns_navigation';
 @import 'pattern_footer';
-@include cn-p-navigation;
-@include cn-p-secondary-navigation;
+@include vf-p-navigation;
 @include cn-p-footer;
 
 // Import custom styles
@@ -31,6 +29,7 @@
 @import 'pattern_calculator';
 @import 'pattern_heading-icon';
 @import 'pattern_tabs';
+@import 'pattern_navigation';
 
 @include blog-p-list;
 @include blog-p-post;
@@ -47,6 +46,9 @@
 @include ubuntu-p-calculator;
 @include ubuntu-p-heading-icon;
 @include ubuntu-p-tabs;
+
+@include ubuntu-p-navigation;
+@include ubuntu-p-navigation-reduced;
 
 body {
   position: inherit;
