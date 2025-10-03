@@ -104,7 +104,8 @@ def takeovers_json():
 
 
 def takeovers_index():
-    all_takeovers = discourse_takeovers.get_index()
+    result = discourse_takeovers.get_index()
+    all_takeovers = result[0]
     all_takeovers.sort(
         key=lambda takeover: takeover["active"] == "true", reverse=True
     )

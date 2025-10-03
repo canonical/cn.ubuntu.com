@@ -15,13 +15,13 @@ def build_engage_index(engage_docs):
         sort = flask.request.args.get("sort", default=None, type=str)
         posts_per_page = 15
         metadata = engage_docs.get_index()
+        topics = metadata[0]
 
-        total_pages = math.ceil(len(metadata) / posts_per_page)
-
+        total_pages = math.ceil(len(topics) / posts_per_page)
         return flask.render_template(
             "engage/index.html",
             forum_url=engage_docs.api.base_url,
-            metadata=metadata,
+            metadata=topics,
             page=page,
             topic=topic,
             sort=sort,
