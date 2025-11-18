@@ -31,6 +31,9 @@
 @import 'pattern_tabs';
 @import 'pattern_navigation';
 
+// Import cookie policy styles
+@import '@canonical/cookie-policy/build/css/cookie-policy';
+
 @include blog-p-list;
 @include blog-p-post;
 @include blog-p-card;
