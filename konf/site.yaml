@@ -16,6 +16,11 @@ env:
       key: ubuntu-api-username
       name: discourse-api
 
+  - name: COOKIE_SERVICE_API_KEY
+    secretKeyRef:
+      key: cookies-api-key
+      name: cookies-canonical-com-credentials
+
 useProxy: false
 
 readinessPath: "/_status/ping"
