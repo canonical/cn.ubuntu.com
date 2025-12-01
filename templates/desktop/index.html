@@ -4,6 +4,7 @@
 {% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
 {% from "_macros/vf_equal-heights.jinja" import vf_equal_heights %}
 {% from "_macros/vf_blog.jinja" import vf_blog %}
+{% from "_macros/vf_divided-section.jinja" import vf_divided_section %}
 
 {% block title %}Ubuntu桌面系统{{ title }}{% endblock title %}
 
@@ -203,7 +204,7 @@
     </div>
   </section>
 
-  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=true) -%}
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
     {%- if slot == 'title' -%}
       <h2>在您喜爱的硬件上实现高性能</h2>
     {%- endif -%}
@@ -235,36 +236,37 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_description_1' -%}
-      <p>经过认证的设备可享有定制优化，并在我们专属的硬件实验室进行了可靠性和性能测试。无论购买预装版本还是自行安装在认证硬件上，您都可获得相同设备特定优化。</p>
-    {%- endif -%}
-
-    {%- if slot == 'list_item_title_2' -%}
-      <h3 class="p-heading--5">支持最新设备</h3>
-    {%- endif -%}
-
-    {%- if slot == 'list_item_description_2' -%}
+      <div class="p-image-wrapper">
+        {{ image(url="https://assets.ubuntu.com/v1/622b4fe1-numpy-numbat-on-dell-xps-13.jpg",
+                      alt="",
+                      width="1800",
+                      height="1012",
+                      hi_def=True,
+                      loading="lazy") | safe
+        }}
+      </div>
       <p>经过认证的设备可享有定制优化，并在我们专属的硬件实验室进行了可靠性和性能测试。无论购买预装版本还是自行安装在认证硬件上，您都可获得相同设备特定优化。</p>
       <div class="p-cta-block">
         <a href="/certified">Ubuntu 认证硬件 &rsaquo;</a>
       </div>
     {%- endif -%}
 
-    {%- if slot == 'list_item_title_3' -%}
+    {%- if slot == 'list_item_title_2' -%}
       <h3 class="p-heading--5">在旧硬件上展现更优性能</h3>
     {%- endif -%}
 
-    {%- if slot == 'list_item_description_3' -%}
+    {%- if slot == 'list_item_description_2' -%}
       <p>Ubuntu 是一款轻量且高效的操作系统，在旧硬件上安装 可提升设备性能并延长其使用寿命。</p>
       <div class="p-cta-block">
         <a href="https://ubuntu.com/blog/ubuntu-in-education-a-k-12-it-directors-experience">Ubuntu 在教育领域的应用 &rsaquo;</a>
       </div>
     {%- endif -%}
 
-    {%- if slot == 'list_item_title_4' -%}
+    {%- if slot == 'list_item_title_3' -%}
       <h3 class="p-heading--5">支持 Raspberry Pi 创客</h3>
     {%- endif -%}
 
-    {%- if slot == 'list_item_description_4' -%}
+    {%- if slot == 'list_item_description_3' -%}
       <p>除惠普、戴尔、联想等原始设备制造商的设备外，Ubuntu Desktop 通过了 Raspberry Pi 认证，为这款强大的 Arm 设备提供了丰富的开发者体验。</p>
       <div class="p-cta-block">
         <a href="https://ubuntu.com/download/raspberry-pi">Raspberry Pi 上的 Ubuntu &rsaquo;</a>
@@ -275,22 +277,24 @@
   {% call(slot) vf_equal_heights(
     title_text="企业级支持和集成",
     image_aspect_ratio_large="auto",
+    image_aspect_ratio_medium="auto",
+    image_aspect_ratio_small="auto",
     items=[
       {
         "title_text": "Ubuntu Pro Desktop",
-        "image_html":  '<img src="https://assets.ubuntu.com/v1/2f32b5f5-Ubuntu-Pro-logo.svg" width="170" height="42" alt="Ubuntu Pro" />',
+        "image_html":  '<img src="https://assets.ubuntu.com/v1/2f32b5f5-Ubuntu-Pro-logo.svg" width="205" alt="Ubuntu Pro" />',
         "description_html": "<p>一项综合订阅服务，为开发人员和企业提供企业级安全防护、管理工具及扩展支持。Ubuntu Pro Desktop 供个人免费使用，企业用户可以免费试用 30 天。</p>",
         "cta_html": "<a href='/pro'>了解 Ubuntu Pro&nbsp;&rsaquo;</a><br /><a href='https://ubuntu.com/pro/free-trial'>开始 30 天免费试用&nbsp;&rsaquo;</a>"
       },
       {
         "title_text": "以 WSL 在 Windows 上运行 Ubuntu",
-        "image_html":  '<img src="https://assets.ubuntu.com/v1/7a019410-ms logo.png" width="40" height="41" alt="Windows WSL" />',
+        "image_html":  '<img src="https://assets.ubuntu.com/v1/7a019410-ms logo.png" width="51" alt="Windows WSL" />',
         "description_html": "<p>在 Windows 上使用适用于 Linux 的 Windows 子系统，即可获得完整的 Ubuntu 终端环境。无需离开 Windows即可简化 web 应用程序开发、运行尖端 AI/ML 工具、开发跨平台应用程序和管理 IT 基础架构。</p>",
         "cta_html": "<a href='https://ubuntu.com/desktop/wsl'>如何在 WSL 上支持 Ubuntu&nbsp;&rsaquo;</a>"
       },
       {
         "title_text": "使用 Amazon WorkSpaces 的虚拟桌面",
-        "image_html":  '<img src="https://assets.ubuntu.com/v1/476cc8de-amazon-workspaces-icon.png" width="40" height="51" alt="Amazon Workspaces" />',
+        "image_html":  '<img src="https://assets.ubuntu.com/v1/476cc8de-amazon-workspaces-icon.png" width="40" alt="Amazon Workspaces" />',
         "description_html": "<p>Amazon WorkSpaces 为开发人员提供了一个优化的 Ubuntu Desktop 环境，用于快速构建、测试和部署代码。即使开发人员远程工作，仍可确保 AWS 云中应用程序和数据的安全。</p>",
         "cta_html": "<a href='https://ubuntu.com/aws/workspaces'>了解 Ubuntu WorkSpaces&nbsp;&rsaquo;</a>"
       }
@@ -298,72 +302,158 @@
   ) %}
     {% if slot == "description" %}
       <p>Ubuntu Desktop 为各行各业的开发人员赋能。从汽车和航空航天领域到制药研究实验室、视觉特效公司及学术机构。借助 Canonical 与 Ubuntu Pro，轻松管理并保障您的开源堆栈安全无忧。</p>
+      <p><a href="https://ubuntu.com/desktop/organizations">了解更多面向组织的 Ubuntu Desktop 信息&nbsp;&rsaquo;</a></p>
     {% endif %}
   {% endcall %}
 
-  {% call(slot) vf_equal_heights(
-    title_text="汇聚全球开源力量，共享社区支持",
-    image_aspect_ratio_large="auto",
-    items=[
+  {{ vf_divided_section(
+    title={
+      "text": "汇聚全球开源力量，共享社区支持",
+    },
+    blocks=[
       {
-        "title_text": "Ask Ubuntu",
-        "description_html": "<p>一个供用户提问和解答关于 Ubuntu 故障排除问题的论坛，隶属于 Stack Exchange 网络。</p>",
-        "cta_html": "<a href='https://askubuntu.com/'>任何困难请随时提问&nbsp;&rsaquo;</a>"
+        "type": "description-block",
+        "items": [
+          {
+            "type": "description",
+            "item": {
+              "type": "text",
+              "content": "开发者社区是 Ubuntu 的核心所在。使用 Ubuntu，您将共享功能设计、代码贡献、问题解决经验、学习资源等，来自全球数百万用户二十年积累的智慧结晶。"
+            }
+          }
+        ]
       },
       {
-        "title_text": "Ubuntu Discourse",
-        "description_html": "<p>Ubuntu 开发人员在这里讨论新功能和进度更新，并为希望参与其中的社区成员分享教程和建议。</p>",
-        "cta_html": "<a href='https://discourse.ubuntu.com/'>加入对话&nbsp;&rsaquo;</a>"
-      },
-      {
-        "title_text": "Ubuntu flavors",
-        "description_html": "<p>Ubuntu 风味版（Ubuntu flavors）让您自由体验不同默认应用程序、设置的Ubuntu，其由Ubuntu 归档（Ubuntu Archive）提供软件包和更新。</p>",
-        "cta_html": "<a href='https://ubuntu.com/desktop/flavors'>关于 Ubuntu flavors&nbsp;&rsaquo;</a>"
+        "type": "divided-block",
+        "bullet_type": "none",
+        "items": [
+          {
+            "contents": [
+              {
+                "type": "image",
+                "item": {
+                  "aspect_ratio": "",
+                  "attrs": {
+                    "src": "https://assets.ubuntu.com/v1/83e4e4c5-summit2022_crowd%201.jpg",
+                    "alt": ""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "Ask Ubuntu",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "一个供用户提问和解答关于 Ubuntu 故障排除问题的论坛，隶属于 Stack Exchange 网络。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "任何困难请随时提问&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://askubuntu.com/"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "Ubuntu Discourse",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "Ubuntu 开发人员在这里讨论新功能和进度更新，并为希望参与其中的社区成员分享教程和建议。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "加入对话&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://discourse.ubuntu.com/"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "Ubuntu flavors",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "Ubuntu 风味版（Ubuntu flavors）让您自由体验不同默认应用程序、设置的Ubuntu，其由Ubuntu 归档（Ubuntu Archive）提供软件包和更新。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "关于 Ubuntu flavors&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://ubuntu.com/desktop/flavors"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
       }
     ]
-  ) %}
-    {% if slot == "description" %}
-      <p>开发者社区是 Ubuntu 的核心所在。使用 Ubuntu，您将共享功能设计、代码贡献、问题解决经验、学习资源等，来自全球数百万用户二十年积累的智慧结晶。</p>
-    {% endif %}
-  {% endcall %}
+  ) }}
 
-  {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
-    {%- if slot == 'title' -%}
-      <h2>立即开始使用 Ubuntu</h2>
-    {%- endif -%}
+  <div class="p-section">
+    {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
+      {%- if slot == 'title' -%}
+        <h2>立即开始使用 Ubuntu</h2>
+      {%- endif -%}
 
-    {%- if slot == 'list_item_title_1' -%}
-      <h3 class="p-heading--5">下载并安装</h3>
-    {%- endif -%}
+      {%- if slot == 'list_item_title_1' -%}
+        <h3 class="p-heading--5">下载并安装</h3>
+      {%- endif -%}
 
-    {%- if slot == 'list_item_description_1' -%}
-      <p>下载 Ubuntu Desktop 并替换当前的操作系统。它既可直接安装，轻松替代 Windows，亦可与 Windows 并行运行 Ubuntu。</p>
-      <div class="p-cta-block">
-        <a class="p-button--positive" href="/download#desktop">立即下载</a>
-      </div>
-    {%- endif -%}
+      {%- if slot == 'list_item_description_1' -%}
+        <p>下载 Ubuntu Desktop 并替换当前的操作系统。它既可直接安装，轻松替代 Windows，亦可与 Windows 并行运行 Ubuntu。</p>
+        <div class="p-cta-block">
+          <a class="p-button--positive" href="/download#desktop">立即下载</a>
+        </div>
+      {%- endif -%}
 
-    {%- if slot == 'list_item_title_2' -%}
-      <h3 class="p-heading--5">购买预装版本</h3>
-    {%- endif -%}
+      {%- if slot == 'list_item_title_2' -%}
+        <h3 class="p-heading--5">购买预装版本</h3>
+      {%- endif -%}
 
-    {%- if slot == 'list_item_description_2' -%}
-      <p>向包括戴尔、惠普、联想等全球最大硬件制造商购买预装 Ubuntu 的设备。</p>
-      <div class="p-cta-block">
-        <a href="https://ubuntu.com/certified">浏览 Ubuntu 认证硬件清单 &rsaquo;</a>
-      </div>
-    {%- endif -%}
+      {%- if slot == 'list_item_description_2' -%}
+        <p>向包括戴尔、惠普、联想等全球最大硬件制造商购买预装 Ubuntu 的设备。</p>
+        <div class="p-cta-block">
+          <a href="https://ubuntu.com/certified">浏览 Ubuntu 认证硬件清单 &rsaquo;</a>
+        </div>
+      {%- endif -%}
 
-    {%- if slot == 'list_item_title_3' -%}
-      <h3 class="p-heading--5">专业支持</h3>
-    {%- endif -%}
+      {%- if slot == 'list_item_title_3' -%}
+        <h3 class="p-heading--5">专业支持</h3>
+      {%- endif -%}
 
-    {%- if slot == 'list_item_description_3' -%}
-      <p>Canonical 可提供全天候支持，为您的 Ubuntu 桌面或服务器的部署提供全面安全防护与管理。</p>
-      <div class="p-cta-block">
-        <a href="/support">了解技术支持和托管服务 &rsaquo;</a>
-      </div>
-    {%- endif -%}
-  {%- endcall -%}
+      {%- if slot == 'list_item_description_3' -%}
+        <p>Canonical 可提供全天候支持，为您的 Ubuntu 桌面或服务器的部署提供全面安全防护与管理。</p>
+        <div class="p-cta-block">
+          <a href="/support">了解技术支持和托管服务 &rsaquo;</a>
+        </div>
+      {%- endif -%}
+    {%- endcall -%}
+  </div>
 
 {% endblock content %}
