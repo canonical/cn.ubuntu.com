@@ -1,22 +1,16 @@
-{% set page_bubble = get_current_page_bubble(request.path).page_bubble %}
-
 {% block header_banner %}
   <header id="navigation"
-          class="p-navigation--sliding is-dark {% if page_bubble and page_bubble.children or page_bubble.grandchildren %}is-reduced p-navigation--reduced {% else %}is-sticky{% endif %} js-enabled">
+          class="p-navigation--sliding is-dark is-sticky js-enabled">
     <div class="p-navigation__row--25-75">
       <div class="p-navigation__banner">
         <div class="p-navigation__tagged-logo">
           <a class="p-navigation__link" href="/">
-            {% if page_bubble and page_bubble.children or page_bubble.grandchildren %}
-              Canonical Ubuntu
-            {% else %}
-              <div class="p-navigation__logo-tag">
-                <img class="p-navigation__logo-icon"
-                     src="https://assets.ubuntu.com/v1/82818827-CoF_white.svg"
-                     alt="" />
-              </div>
-              <span class="p-navigation__logo-title">Canonical Ubuntu</span>
-            {% endif %}
+            <div class="p-navigation__logo-tag">
+              <img class="p-navigation__logo-icon"
+                    src="https://assets.ubuntu.com/v1/82818827-CoF_white.svg"
+                    alt="" />
+            </div>
+            <span class="p-navigation__logo-title">Canonical Ubuntu</span>
           </a>
         </div>
         <div>
@@ -48,8 +42,8 @@
           </li>
           <li class="p-navigation__item" role="menuitem">
             <a class="p-navigation__link"
-               href="/enterprise"
-               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /enterprise", eventLabel: "Enterprise", eventValue: undefined, });'>产品和支持</a>
+               href="/support"
+               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /support", eventLabel: "Enterprise", eventValue: undefined, });'>产品和支持</a>
           </li>
           <li class="p-navigation__item" role="menuitem">
             <a class="p-navigation__link"
@@ -78,54 +72,6 @@
       </nav>
     </div>
   </header>
-
-  {% if page_bubble and page_bubble.children or page_bubble.grandchildren %}
-    <div id="secondary-navigation"
-         class="p-navigation is-sticky is-secondary is-dark">
-      <div class="p-navigation__row--25-75">
-        <div class="p-navigation__banner">
-          <div class="p-navigation__tagged-logo">
-            <a class="p-navigation__link" href="{{ page_bubble.path }}">
-              <div class="p-navigation__logo-tag">
-                <img class="p-navigation__logo-icon"
-                     src="https://assets.ubuntu.com/v1/82818827-CoF_white.svg"
-                     alt="" />
-              </div>
-              <span class="p-navigation__logo-title">{{ page_bubble.title | replace(' ', '&nbsp;') | safe }}</span>
-            </a>
-          </div>
-          {% if page_bubble.children %}
-            {% if not (page_bubble.children | length == 1 and page_bubble.children[0].title == "Overview") %}
-              <a href="#"
-                 class="p-navigation__toggle--open js-secondary-menu-toggle-button"
-                 title="Toggle navigation"><i class="p-icon--chevron-down is-light"></i></a>
-            {% endif %}
-          {% endif %}
-        </div>
-
-        <nav class="p-navigation__nav js-show-nav"
-             aria-label="{{ page_bubble.title | replace(' ', '&nbsp;') | safe }} navigation">
-          {% if page_bubble.children %}
-            <ul class="p-navigation__items">
-              {% for child in page_bubble.children %}
-                {% if child.title != "Overview" %}
-                  {% set has_access = not child.login_required or child.login_required and user_info %}
-                  {% if has_access %}
-                    <li class="p-navigation__item {% if child.active %}is-selected{% endif %}">
-                      <a class="p-navigation__link"
-                         href="{{ child.path }}"
-                         {% if child.active %}aria-current="page"{% endif %}>{{
-                      child.title }}</a>
-                    </li>
-                  {% endif %}
-                {% endif %}
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </nav>
-      </div>
-    </div>
-  {% endif %}
 
   <style>
     .p-navigation__items {
