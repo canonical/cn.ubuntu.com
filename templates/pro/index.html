@@ -1,0 +1,691 @@
+{% from "_macros/vf_quote-wrapper.jinja" import vf_quote_wrapper %}
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_cta-section.jinja" import vf_cta_section %}
+{% from "_macros/vf_basic-section.jinja" import vf_basic_section %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+{% from "_macros/vf_equal-heights.jinja" import vf_equal_heights %}
+{% from "_macros/vf_divided-section.jinja" import vf_divided_section %}
+
+{% extends "templates/base.html" %}
+
+{% block title %}Ubuntu Pro 订阅服务{% endblock %}
+
+{% block meta_description %}
+  Ubuntu Pro 是 Canonical 推出的全面订阅服务，涵盖开源安全、合规管理、自动化补丁与技术支持，为企业提供从基础设施到应用的整体防护方案。
+{% endblock %}
+
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/1UZbm3xhOt9jVujIPuVFdFhXTN7D3ypbW55T8OqFdK0o/edit?tab=t.0
+{% endblock meta_copydoc %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
+{% block content %}
+  {% call(slot) vf_hero(
+    title_text='Ubuntu Pro',
+    subtitle_text='最全面的开源安全与合规订阅服务',
+    layout='25/75'
+  ) -%}
+    {%- if slot == 'signpost_image' -%}
+      <!-- Have to put an empty div to preserve the spacing  -->
+      <div></div>
+    {%- endif -%}
+    {%- if slot == 'description' -%}
+      <p>为企业提供 30 天的试用期。个人使用永久免费。</p>
+    {%- endif -%}
+    {%- if slot == 'cta' -%}
+      <a href="/contact" class="p-button--positive">咨询专家</a>
+      <a href="https://ubuntu.com/pro/subscribe" class="p-button">获取 Ubuntu Pro</a>
+    {%- endif -%}
+  {%- endcall -%}
+
+  {{ vf_basic_section(
+      title={"text": "同样出色的操作系统<br />更多的安全更新"},
+      items=[
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "通过 Ubuntu Pro，您可获得："
+          }
+        },
+        {
+          "type": "list",
+          "item": {
+            "list_items": [
+              {
+                "list_item_type": "bullet",
+                "content": "一个可基于其进行开发的可信开源代码库"
+              },
+              {
+                "list_item_type": "bullet",
+                "content": "通过经测试的漏洞修复方案实现快速补救"
+              },
+              {
+                "list_item_type": "bullet",
+                "content": "用于确保可见性与运行时间的审计、补丁自动化及管理工具"
+              },
+              {
+                "list_item_type": "bullet",
+                "content": "针对最主流安全标准的合规配置文件"
+              },
+              {
+                "list_item_type": "bullet",
+                "content": "涵盖您的操作系统、基础设施及应用程序栈，包括 GCC、PostgreSQL、OpenSSL、Nagios、Rust、PHP、Redis 等。"
+              }
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "Ubuntu Pro 将每个 Ubuntu LTS 版本的支持周期从 Main 软件库的 5 年标准安全维护延长至整个 Ubuntu （Main 和 Universe 软件库）的 10 年支持。"
+          }
+        },
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "通过 Legacy 附加服务，此支持周期可额外延长 2 年，为您提供为期 12 年的安全维护与支持保障。"
+          }
+        },
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "现有 Ubuntu LTS 系统可就地升级至 Ubuntu Pro，无需重新部署；通过一条命令，即可简化大型 Ubuntu 环境集群的升级流程。"
+          }
+        },
+        {
+          "type": "cta-block",
+          "item": {
+            "link": {
+              "content_html": "安全专家为何选择 Ubuntu Pro&nbsp;&rsaquo;",
+              "attrs": {
+                "href": "https://ubuntu.com/pro/why-pro"
+              }
+            }
+          }
+        }
+      ]
+    ) }}
+
+  {% call(slot) vf_quote_wrapper(
+    is_shallow=true,
+    title_text="专业人士在使用 Ubuntu Pro",
+    quote_size="small",
+    quote_text="电信行业对可靠性要求极高，在产品开发期间以及集成到客户环境之前，都需要经过多轮测试。<br /><br />使用 Ubuntu Pro 为我们提供了所需的安全性、支持服务以及对产品生命周期的掌控能力，这些构成了我们开发 Metaswitch Clearwater 系列产品的基础。",
+    citation_source_name_text="Jon Rowland",
+    citation_source_title_text="首席集团软件工程经理",
+    citation_source_organisation_text="Microsoft Azure for Operators"
+  ) -%}
+    {%- if slot == 'signpost_image' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/70245349-microsoft_logo.png",
+              alt="Microsoft",
+              width="852",
+              height="205",
+              hi_def=True,
+              loading="lazy") | safe
+      }}
+    {%- endif -%}
+  {% endcall -%}
+
+  {% call(slot) vf_quote_wrapper(
+    quote_size="small",
+    quote_text="在过去的十年中，谷歌与 Canonical 合作促进开源软件的采用。<br /> <br />通过在 Google Compute Engine 上提供 Ubuntu Pro，我们共同帮助客户增强其生产工作负载的安全性和合规性。",
+    citation_source_name_text="Derry Cheng",
+    citation_source_title_text="计算引擎产品经理",
+  ) -%}
+    {%- if slot == 'signpost_image' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/3100c850-gcp_logo.png",
+              alt="Google Cloud Platform",
+              width="852",
+              height="203",
+              hi_def=True,
+              loading="lazy") | safe
+      }}
+    {%- endif -%}
+  {% endcall -%}
+
+  {{ vf_basic_section(
+      title={"text": "您的团队花多少时间在处理安全补丁？"},
+      is_split_on_medium=true,
+      items=[
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "根据相关研究，七成的团队每周几乎要花一整天的时间来应用补丁（来源：IDC 报告）。而这一整天的时间，原本可以用于开展创造价值的工作。"
+          }
+        },
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "Ubuntu Pro 可协助您减轻安全维护负担，并满足开源技术栈的合规要求，让您能够专注于业务的构建与运营。"
+          }
+        }
+      ]
+    )
+  }}
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
+    {%- if slot == 'title' -%}
+      <h2>包含企业级功能</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <p>
+        扩展安全维护（ESM）依据 Ubuntu 优先级定义，为整个 Ubuntu 存档中的严重、高危及特定中危漏洞提供长达 10 年的漏洞修复支持。通过 Legacy Support 附加服务，可将此支持期限延长至 12 年。
+      </p>
+
+      <div class="p-cta-block  u-no-padding--bottom">
+        <a href="https://ubuntu.com/security/esm" class="p-button--positive">了解 ESM</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">内核 Livepatch</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>
+        Livepatch 提供无需重启的安全补丁自动化功能，可用于修复在计划维护窗口之外出现的高危及严重级内核漏洞。为需保障关键业务运行时间及最高安全级别的设备，消除非预期的强制重启需求。
+      </p>
+      <div class="p-cta-block ">
+        <a href="https://ubuntu.com/security/livepatch">了解 Livepatch&nbsp;&rsquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">合规与加固工具</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>
+        Ubuntu Pro 包含安全加固功能，可助力用户轻松满足各类常见监管框架的合规要求，包括 FIPS 140、DISA-STIG、CIS、FedRAMP、CMMC、PCI-DSS 和 Cyber Essentials。
+      </p>
+      <div class="p-cta-block ">
+        <a href="https://ubuntu.com/security/security-standards">受支持的安全标准&nbsp;&rsquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">集中式环境管理</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>
+        通过 Landscape，可实现对大型 Ubuntu 环境集群的集中化管理。  支持通过分阶段更新、资产清单、安全加固及审计功能，实现对数据中心、工作站和 IoT 设备的大规模管理。
+      </p>
+      <div class="p-cta-block">
+        <a href="https://ubuntu.com/landscape">了解 Landscape&nbsp;&rsquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_4' -%}
+      <h3 class="p-heading--5">符合 OCI 标准的轻量级容器</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_4' -%}
+      <p>
+        精简化镜像可缩减资源占用并加快启动速度，而 Ubuntu Pro 则能提供 CVE 修复，为生产级安全提供支持。
+        此外，借助容器构建服务，Canonical 还可提供定制化容器设计与维护服务（需额外付费）。
+      </p>
+      <div class="p-cta-block">
+        <a href="https://ubuntu.com/containers">了解 Canonical 容器产品&nbsp;&rsquo;</a>
+      </div>
+    {%- endif -%}
+  {%- endcall -%}
+
+  {% call(slot) vf_quote_wrapper(
+    is_shallow=true,
+    title_text="专业人士在使用 Ubuntu Pro",
+    quote_size="small",
+    quote_text="AI 与深度学习等变革性创新正逐步投入应用，助力企业自动化水平迈向新高度。<br /> <br />随着 Ubuntu Pro 的推出，企业将获得更完善的安全性、支持服务与长期维护保障，这些保障覆盖数千个开源库，而这些开源库正是现代 AI 与数据科学工作流程的核心所在。",
+    citation_source_name_text="Justin Boitano",
+    citation_source_title_text="企业计算业务副总裁",
+  ) -%}
+    {%- if slot == 'signpost_image' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/d77e6fb4-nvidia_logo.png",
+              alt="Nvidia",
+              width="852",
+              height="179",
+              hi_def=True,
+              loading="lazy") | safe
+      }}
+    {%- endif -%}
+  {% endcall -%}
+
+  {% call(slot) vf_quote_wrapper(
+    quote_size="small",
+    quote_text="企业需要模块化、云原生的应用平台，这类平台能加快企业构建、运行和管理应用的速度，同时又不影响其合规性、安全性或支持需求。<br /> <br />VMware 很高兴能与 Canonical 合作，后者在开源软件的安全保障与支持方面拥有经实践验证的专业能力。通过为 VMware Tanzu 提供 Ubuntu Pro 服务，我们能够为客户打造一个经过强化、性能更优、安全可靠且达到企业级标准的应用环境，这个环境对开发人员而言十分友好，对首席信息安全官而言亦是如此。",
+    citation_source_name_text="Ajay Patel",
+    citation_source_title_text="现代应用与云管理业务部",
+    citation_source_organisation_text="总经理兼高级副总裁"
+  ) -%}
+    {%- if slot == 'signpost_image' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/e2fa868e-vmware_logo.png",
+              alt="VMware",
+              width="852",
+              height="170",
+              hi_def=True,
+              loading="lazy") | safe
+      }}
+    {%- endif -%}
+  {% endcall -%}
+
+  {{ vf_basic_section(
+      title={"text": "公有云集成"},
+      items=[
+        {
+          "type": "linked-logo-block",
+          "item": {
+            "links": [
+              {
+                "href": "https://ubuntu.com/aws/pro",
+                "text": "了解 AWS 上的 Ubuntu Pro&nbsp;&rsaquo;",
+                "label": "AWS",
+                "image_attrs": {
+                  "src": "https://assets.ubuntu.com/v1/dcaf2f49-aws_linked_logo.png",
+                  "alt": "AWS",
+                  "width": "852",
+                  "height": "480"
+                }
+              },
+              {
+                "href": "https://ubuntu.com/azure/pro",
+                "text": "了解 Azure 上的 Ubuntu Pro&nbsp;&rsaquo;",
+                "label": "Azure",
+                "image_attrs": {
+                  "src": "https://assets.ubuntu.com/v1/3794a576-azure_linked_logo.png",
+                  "alt": "Azure",
+                  "width": "852",
+                  "height": "480"
+                }
+              },
+              {
+                "href": "https://ubuntu.com/gcp/pro",
+                "text": "了解谷歌云上的 Ubuntu Pro&nbsp;&rsaquo;",
+                "label": "Google cloud",
+                "image_attrs": {
+                  "src": "https://assets.ubuntu.com/v1/def7402a-gcp_linked_logo.png",
+                  "alt": "Google cloud",
+                  "width": "852",
+                  "height": "484"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "Ubuntu Pro 与主流公有云深度集成，您可通过云市场直接激活高级安全与合规功能；其定价方式灵活可预测，能根据您的云使用量及现有支出承诺进行调整。"
+          }
+        },
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "该无缝集成意味着您无需改变现有的云工作流程，就能享受到企业级的安全、合规与支持服务；而且相关费用会统一计入您当前云服务商的现有账单中，由该服务商进行收费。"
+          }
+        },
+        {
+          "type": "cta-block",
+          "item": {
+            "link": {
+              "content_html": "公有云上的 Ubuntu",
+              "attrs": {
+                "class":"p-button",
+                "href": "https://ubuntu.com/cloud/public-cloud"
+              }
+            }
+          }
+        }
+      ]) 
+    }}
+
+  {% call(slot) vf_quote_wrapper(
+    is_shallow=true,
+    title_text="专业人士在使用 Ubuntu Pro",
+    quote_size="small",
+    quote_text="Tenable和Canonical合作提供及时、准确和可操作的漏洞警报。<br /> <br />Ubuntu Pro为广泛的开源软件提供安全补丁保证。我们共同为客户提供可信赖开源的基础。",
+    citation_source_name_text="Robert Huber",
+    citation_source_title_text="首席安全官",
+  ) -%}
+    {%- if slot == 'signpost_image' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/ad9fb473-tenable_logo.png",
+              alt="Tenable",
+              width="852",
+              height="220",
+              hi_def=True,
+              loading="lazy") | safe
+      }}
+    {%- endif -%}
+  {% endcall -%}
+
+  {% call(slot) vf_quote_wrapper(
+    quote_size="small",
+    quote_text="AWS 上经过 FIPS 140-2 认证的 Ubuntu 镜像，满足了我们的 FedRAMP 合规要求。<br /> <br />依托企业级 Ubuntu Pro 支持服务，以及 Canonical 公司承诺的 10 年安全维护保障，我们为全球部分最知名品牌提供了关键的开发基础设施。",
+    citation_source_name_text="Patrick Kaeding",
+    citation_source_title_text="安全工程师",
+  ) -%}
+    {%- if slot == 'signpost_image' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/a3a852d1-launchdarkly_logo.png",
+              alt="LaunchDarkly",
+              width="852",
+              height="209") | safe
+      }}
+    {%- endif -%}
+  {% endcall -%}
+
+  {{ vf_basic_section(
+      title={"text": "取得额外的专业支持"},
+      is_split_on_medium=true,
+      items=[
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "Ubuntu Pro 覆盖开源基础设施与应用的方方面面，能为您的整个技术栈提供便捷高效的安全防护、合规保障、安全加固、自动化管理及技术支持服务。"
+          }
+        }
+      ]
+    )
+  }}
+
+  <section class="p-section u-fixed-width">
+    <hr class="p-rule" />
+    <div class="p-section--shallow">
+      <div class="grid-row--50-50-on-large">
+        <div class="grid-col">
+          <h2>类别</h2>
+        </div>
+
+        <div class="grid-col">
+          <p>
+            Ubuntu Pro 所覆盖的应用程序与工具链示例
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="p-section--shallow">
+      <div class="grid-row">
+
+        <div class="grid-col-8 grid-col-start-large-3">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 35%;">Category</th>
+                <th>Example applications and toolchains covered by Ubuntu Pro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>工具链与框架</td>
+                <td>
+                  <p>Python、Rust、Go、C/C++</p>
+                  <a href="https://ubuntu.com/toolchains">探索工具链&nbsp;&rsquo;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>数据管理与处理</td>
+                <td>
+                  <p>Apache Cassandra、Apache Kafka、Apache Spark、etcd、MongoDB、OpenSearch、PostgreSQL、Redis、Valkey</p>
+                  <a href="https://canonical.com/data">浏览数据解决方案&nbsp;&rsquo;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>AI/ML 和数据科学</td>
+                <td>
+                  <p>Kubeflow、MLFlow、Feast</p>
+                  <a href="https://ubuntu.com/ai/mlops">发现模块化 MLOps 工具&nbsp;&rsquo;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>基础设施与编排</td>
+                <td>
+                  <p>OpenStack、Kubernetes、MicroCloud、MAAS、Ceph 存储</p>
+                  <a href="https://canonical.com/solutions/infrastructure">了解我们的基础设施产品组合&nbsp;&rsquo;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>可观测性</td>
+                <td>
+                  <p>Grafana、Prometheus、Graylog</p>
+                  <a href="https://canonical.com/observability">了解我们的可观测性产品组合&nbsp;&rsquo;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>集中式管理</td>
+                <td>
+                  <p>Landscape</p>
+                  <a href="https://ubuntu.com/landscape">了解 Landscape&nbsp;&rsquo;</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ vf_basic_section(
+      title={"text": "取得额外的专业支持"},
+      is_split_on_medium=true,
+      items=[
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "借助开源专家提供的全天候支持服务，为 Ubuntu Pro 的安全维护提供补充保障。Ubuntu Pro + 支持服务是一个额外层级，可为您的基础设施和应用程序提供故障修复与漏洞修复支持，确保业务连续性，让您高枕无忧。"
+          }
+        },
+        {
+          "type": "cta-block",
+          "item": {
+            "link": {
+              "content_html": "关于电话与工单支持",
+              "attrs": {
+                "class": "p-button--positive",
+                "href": "https://ubuntu.com/support"
+              }
+            }
+          }
+        }
+      ]
+    )
+  }}
+
+  {% call(slot) vf_equal_heights(
+    title_text="现在升级到 Ubuntu Pro",
+    image_aspect_ratio_medium="2-3",
+    image_aspect_ratio_small="2-3",
+    highlight_images=True,
+    items=[
+      {
+        "title_text": "适用于私有云、公有云或混合云环境",
+        "image_html": image(url="https://assets.ubuntu.com/v1/987967b2-available_for_private.png",
+          alt="",
+          width="852",
+          height="1279",
+          hi_def=True,
+          loading="lazy",
+          attrs={"class":"p-image-container__image"}
+        ) | safe,
+        "description_html": "<p>免费试用 Ubuntu Pro 30 天，探索它能为您带来的价值。</p>",
+        "cta_html": "<a href='https://ubuntu.com/pro/free-trial'>免费试用&nbsp;&rsaquo;</a>"
+      },
+      {
+        "title_text": "嵌入式设备",
+        "image_html": image(url="https://assets.ubuntu.com/v1/54b33af9-embedded_devices.png",
+          alt="",
+          width="852",
+          height="1279",
+          hi_def=True,
+          loading="lazy",
+          attrs={"class":"p-image-container__image"}
+        ) | safe,
+        "description_html": "<p>轻松管理您所有的软件包更新，并为您的 IoT 设备集群保障安全性与合规性。</p>",
+        "cta_html": "<a href='/blog/https-canonical-com-blog-ubuntu-pro-for-devices_cn'>探索 Ubuntu Pro 设备版&nbsp;&rsaquo;</a>"
+      },
+      {
+        "title_text": "教育、研究与学术领域",
+        "image_html": image(url="https://assets.ubuntu.com/v1/0274126b-education_research.png",
+          alt="",
+          width="852",
+          height="1279",
+          hi_def=True,
+          loading="lazy",
+          attrs={"class":"p-image-container__image"}
+        ) | safe,
+        "description_html": "<p>Canonical 为经审核通过的机构（如学校、研究机构及学术单位）提供 Ubuntu Pro 折扣优惠。</p>",
+        "cta_html": "<a href='https://ubuntu.com/contact-us/form?product=pro'>请联系我们申请需求&nbsp;&rsaquo;</a>"
+      },
+      {
+        "title_text": "个人使用",
+        "image_html": image(url="https://assets.ubuntu.com/v1/a5677e3b-personal_use.png",
+          alt="",
+          width="852",
+          height="1279",
+          hi_def=True,
+          loading="lazy",
+          attrs={"class":"p-image-container__image"}
+        ) | safe,
+        "description_html": "<p>Ubuntu Pro 目前、将来也始终免费供个人使用，可覆盖最多 5 台物理设备，而<a href='https://wiki.ubuntu.com/Membership?_gl=1*hmddw0*_gcl_au*MTYwMjAxNDk2NS4xNzQ2NzE1MjI5'>官方 Ubuntu 社区成员</a>则可覆盖最多 50 台设备。</p>",
+        "cta_html": "<a href='https://ubuntu.com/pro/subscribe'>即刻注册&nbsp;&rsaquo;</a>"
+      }
+    ]
+  ) %}
+  {% endcall %}
+
+  {% call(slot) vf_cta_section(
+    variant='default',
+    layout='100',
+    ) -%}
+    {%- if slot == 'cta' -%}
+      <a href="/contact">现在升级您的安全覆盖<br />联系我们获得 Ubuntu Pro&nbsp;&rsaquo;</a>
+    {%- endif -%}
+  {% endcall -%}
+
+  {{ vf_divided_section(
+    title={
+      "text": "研究报告及客户案例",
+    },
+    is_split_on_medium=true,
+    blocks=[
+      {
+        "type": "divided-block",
+        "bullet_type": "none",
+        "items": [
+          {
+            "title_text": "软件供应链研究现状报告",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "Canonical 与 IDC 的研究表明，70% 的 IT 团队每周在安全补丁更新上花费的时间超过 6 小时。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "IDC 研究：如何增强软件供应链的韧性&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "/blog/70-of-it-teams-spend-more-than-6-hours-per-week-on-security-patching-new-idc-research_cn"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "Lucid Software 通过 Ubuntu Pro 满足国际安全认证",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "Lucid 公司希望向政府机构提供协作，因而必须符合特定规范要求。为解决这一难题，Lucid 通过 AWS 采用了 Ubuntu Pro，进而获取适用于 AWS 的合规 Ubuntu 镜像及相关软件包。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "阅读案例&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://canonical.com/case-study/lucid-aws-fedramp-compliance-case-study"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "Ubuntu Pro 帮助大型游戏发行商节省迁移成本",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "游戏开发商以 Ubuntu Pro 为旗下游戏作品的关键任务代码提供安全保障，且避免了一场成本高昂、耗费大量精力的迁移工作。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "阅读案例&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://canonical.com/case-study/ubuntu-pro-support-for-games-developer"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "Airlock Digital 在 Azure 上提升 30% 的运营性能",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "面对 CentOS 7 EoL，Airlock Digital 迁移至适用于 Azure 的 Ubuntu 24.04 LTS。借此，Airlock Digital 得以持续稳定运营，满足更严格的安全要求，同时节省 40% 的运营成本。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "阅读案例&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://canonical.com/case-study/airlock-digital-ubuntu-pro-azure-case-study"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]) 
+  }}
+
+  {% call(slot) vf_cta_section(
+    variant='default',
+    layout='100',
+    ) -%}
+    {%- if slot == 'cta' -%}
+      <a href="https://discourse.ubuntu.com/t/ubuntu-pro-faq/34042">了解更多 Ubuntu Pro 订阅计划特点<br />浏览常见问题解答（FAQ）&nbsp;&rsaquo;</a>
+    {%- endif -%}
+  {% endcall -%}
+{% endblock content %}
