@@ -53,6 +53,10 @@
 @include ubuntu-p-navigation;
 @include ubuntu-p-navigation-reduced;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: inherit;
 }
