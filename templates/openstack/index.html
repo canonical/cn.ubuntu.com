@@ -25,7 +25,8 @@
 {% block content %}
 
   {% call(slot) vf_hero(
-    title_text='Canonical OpenStack<br />打造企业级私有云解决方案',
+    title_text='Canonical OpenStack',
+    subtitle_text='打造企业级私有云解决方案',
     layout='50/50'
   ) -%}
     {%- if slot == 'description' -%}
@@ -252,7 +253,7 @@
         "text": "案例分享&nbsp;&rsaquo;",
         "label": "Firmus",
         "image_html": image(url="https://assets.ubuntu.com/v1/052c9997-firmus-logo.png",
-            alt="",
+            alt="Firmus",
             width="91",
             height="104",
             hi_def=True,
@@ -264,7 +265,7 @@
         "text": "案例分享&nbsp;&rsaquo;",
         "label": "SBI BITS",
         "image_html": image(url="https://assets.ubuntu.com/v1/2839f807-sbi-bits.png",
-            alt="",
+            alt="SBI BITS",
             width="852",
             height="480",
             hi_def=True,
