@@ -148,84 +148,100 @@
     {%- endif -%}
   {% endcall -%}
 
-  <section class="p-section">
-    <hr class="p-rule is-fixed-width" />
-    <div class="p-section--shallow u-fixed-width">
-      <h2>Supporting Kubernetes since 2015</h2>
-    </div>
-    <div class="p-section--shallow">
-      <div class="row--50-50">
-        <div class="col">
-          <h3>Canonical Kubernetes</h3>
-          <p>
-            Secure and automate your Kubernetes infrastructure with a trusted provider. Build on the experience we gained since 2015.  Our new Kubernetes distribution offers hassle-free maintenance, single-line installation process, and more control over your upgrade cadence. It's secure by default and comes with a 12-year support commitment  offered with an Ubuntu Pro subscription.
-          </p>
-
-        </div>
-        <div class="col">
-          <div class="p-image-container">
-            {{ image(url="https://assets.ubuntu.com/v1/6dffa7f1-kubernetes-platform-updated.png",
-                        alt="",
-                        width="1800",
-                        height="1013",
-                        hi_def=True,
-                        attrs={"class": "p-image-container__image"},
-                        loading="lazy") | safe
-            }}
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="p-section--shallow">
-      <div class="row">
-        <hr class="p-rule--muted" />
-        <div class="col-3">
-          <h3>Other distributions</h3>
-        </div>
-        <div class="col-9">
-          <div class="row">
-            <div class="col-3">
-              <h4 class="p-heading--5">MicroK8s</h4>
-            </div>
-            <div class="col-6">
-              <p>
-                Lightweight, low-touch Kubernetes for cloud, edge and IoT. It brings all Kubernetes services and the most popular addons in a single package, and requires minimal ops for easy clustering, self-healing HA and simpler upgrades. Secure by default and CNCF conformant.
-              </p>
-              <hr class="p-rule--muted" />
-              <p>
-                <a href="https://microk8s.io/">Learn more about MicroK8s&nbsp;&rsaquo;</a>
-              </p>
-            </div>
-          </div>
-          <hr class="p-rule--muted" />
-          <div class="row">
-            <div class="col-3">
-              <h4 class="p-heading--5">Charmed Kubernetes</h4>
-            </div>
-            <div class="col-6">
-              <p>
-                Composable, operator-based Kubernetes for the enterprise, with full life-cycle management for host and in-cluster with <a href="https://juju.is/">Juju</a>. It provides carrier-grade and hardware acceleration features, and support for third-party components and services. It gives you fully customizable deployments, with pluggable CNI, CSI, CRI and monitoring components. Secure by default and CNCF conformant.
-              </p>
-              <hr class="p-rule--muted" />
-              <p>
-                <a href="/kubernetes/charmed-k8s">Learn more about Charmed Kubernetes&nbsp;&rsaquo;</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <hr class="p-rule--muted" />
-      <div class="col-start-large-7 col-6">
-        <p>
-          <a class="p-button js-invoke-modal"
-             href="/kubernetes/contact-us"
-             aria-controls="kubernetes-modal">Talk to us to learn more</a>
-        </p>
-      </div>
-    </div>
-  </section>
+  {{ vf_divided_section(
+    title={
+      "text": "为何选择<br />Canonical Kubernetes 平台？",
+    },
+    blocks=[
+      {
+        "type": "divided-block",
+        "bullet_type": "none",
+        "items": [
+          {
+            "title_text": "Canonical Kubernetes",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "通过值得信赖的提供商，实现 Kubernetes 基础设施的安全与自动化管理。基于我们自 2015 年以来积累的丰富经验，我们新的 Kubernetes 发行版可轻松维护，提供单行命令安装流程，并让您更好地掌控升级节奏。系统默认安全可靠，并可通过 Ubuntu Pro 订阅获得最长 12 年的技术支持。"
+                }
+              },
+              {
+                "type": "image",
+                "item": {
+                  "attrs": {
+                    "src": "https://assets.ubuntu.com/v1/6dffa7f1-kubernetes-platform-updated.png",
+                    "alt": "",
+                    "style": "margin-bottom: 1.5rem;"
+                  }
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "secondaries": [
+                    {
+                      "content_html": "联系咨询适配方案",
+                      "attrs": {
+                        "href": "/contact"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "MicroK8s",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "一款轻量级、低运维的 Kubernetes，适用于云、边缘和物联网场景。它将所有 Kubernetes 服务及主流插件整合到单一软件包中，仅需极少运维即可轻松实现集群部署、高可用自我修复及更简便的升级流程。系统默认安全且符合 CNCF 规范。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "关于 MicroK8s&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://microk8s.io/"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "Charmed Kubernetes",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "一款面向企业、可组合、operator-based 的 Kubernetes。通过 <a href='https://canonical.com/juju'>Juju</a> 实现覆盖主机及集群的全生命周期管理。它具备运营商级性能和硬件加速能力，并支持第三方组件与服务。为您提供可完全定制的部署，具有可插拔的 CNI、CSI、CRI 和监控组件。系统默认安全且符合 CNCF 规范。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "关于 Charmed Kubernetes&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://ubuntu.com/kubernetes/charmed-k8s"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ])
+  }}
 
   {% call(slot) vf_rich_vertical_list(
     title_text='由 Ubuntu 驱动的<br />公有云 Kubernetes',
