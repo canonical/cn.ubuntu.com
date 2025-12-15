@@ -30,7 +30,7 @@
       </p>
     {%- endif -%}
     {%- if slot == "cta" -%}
-      <a href="/contact-us" class="p-button--positive">联系咨询</a>
+      <a href="/contact" class="p-button--positive">联系咨询</a>
       <a href="/download#iot" class="p-button">下载 IoT 版 Ubuntu</a>
     {%- endif -%}
     {%- if slot == "image" -%}
@@ -93,7 +93,7 @@
     highlight_images=True,
     items=[
       {
-        "title_text": "工业",
+        "title_text": "<a href='https://canonical.com/solutions/industrial'>工业</a>",
         "image_html": image(url="https://assets.ubuntu.com/v1/f92ba3c0-industrial.png",
             alt="",
             width="852",
@@ -106,7 +106,7 @@
         "cta_html": "<a href='https://ubuntu.com/engage/realtime-webinar-ga'>实时 Linux 如何加速工业转型&nbsp;&rsaquo;</a>"
       },
       {
-        "title_text": "机器人",
+        "title_text": "<a href='https://ubuntu.com/robotics'>机器人</a>",
         "image_html": image(url="https://assets.ubuntu.com/v1/db47732b-smart home.png",
           alt="",
           width="852",
@@ -119,7 +119,7 @@
         "cta_html": "<a href='/engage/robot-operating-system-choice'>选择最合适的企业机器人操作系统&nbsp;&rsaquo;</a>"
       },
       {
-        "title_text": "数字标牌",
+        "title_text": "<a href='https://ubuntu.com/internet-of-things/smart-displays'>数字标牌</a>",
         "image_html": image(url="https://assets.ubuntu.com/v1/6e82d484-digital%20signage.png",
           alt="",
           width="852",
@@ -132,7 +132,7 @@
         "cta_html": "<a href='https://ubuntu.com/engage/Embedding_IoT_GUI_with_Ubuntu_Frame'>物联网图形用户界面开发指南&nbsp;&rsaquo;</a>"
       },
       {
-        "title_text": "汽车",
+        "title_text": "<a href='https://canonical.com/solutions/automotive'>汽车</a>",
         "image_html": image (
           url="https://assets.ubuntu.com/v1/1451ae8d-automotive.png",
           alt="",
@@ -146,7 +146,7 @@
         "cta_html": "<a href='https://ubuntu.com/engage/software-defined-vehicles-whitepaper'>软件定义汽车指南&nbsp;&rsaquo;</a>"
       },
       {
-        "title_text": "智能城市",
+        "title_text": "<a href='https://ubuntu.com/internet-of-things/smart-city'>智能城市</a>",
         "image_html": image(url="https://assets.ubuntu.com/v1/15ad6c73-smart-city.png",
           alt="",
           width="852",
@@ -159,7 +159,7 @@
         "cta_html": "<a href='/engage/top-five-iot-challenges-cn'>物联网五大挑战及其应对措施&nbsp;&rsaquo;</a>"
       },
       {
-        "title_text": "智能家居",
+        "title_text": "<a href='https://ubuntu.com/internet-of-things/smart-home'>智能家居</a>",
         "image_html": image(url="https://assets.ubuntu.com/v1/0eef89bd-robotics.png",
           alt="",
           width="852",
@@ -335,7 +335,7 @@
               "content_html": "联系详谈",
               "attrs": {
                 "class": "p-button--positive",
-                "href": "#"
+                "href": "/contact"
               }
             },
             "link": {
@@ -378,7 +378,7 @@
 
   {% call(slot) vf_logo_section(
     title={
-      "text": "从原型到生产，覆盖所有主流平台"
+      "text": "<h2>从原型到生产，覆盖所有主流平台</h2>"
     },
     blocks=[
       {
