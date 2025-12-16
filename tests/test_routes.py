@@ -8,6 +8,7 @@ class TestRoutes(unittest.TestCase):
         Set up Flask app for testing
         """
         app.config["TESTING"] = True
+        app.config["COOKIE_SERVICE_API_KEY"] = "test-cookies-api-key"
         self.client = app.test_client()
 
     def test_homepage(self):
