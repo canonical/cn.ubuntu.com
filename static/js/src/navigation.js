@@ -8,7 +8,7 @@ const initNavigationSliding = () => {
   const menuButton = document.querySelector('.js-menu-button');
 
   const closeAllDropdowns = () => {
-    if ('classList' in navigation) {
+    if (navigation && 'classList' in navigation) {
       navigation.classList.remove('has-menu-open');
       if (secondaryNavigation) {
         secondaryNavigation.classList.remove('has-menu-open');
