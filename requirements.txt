@@ -4,7 +4,7 @@ canonicalwebteam.http==1.0.4
 canonicalwebteam.blog==6.8.2
 canonicalwebteam.templatefinder==1.0.0
 canonicalwebteam.image-template==1.9.0
-canonicalwebteam.cookie-services==1.0.3
+canonicalwebteam.cookie-service==1.0.3
 Flask-Caching==2.1.0
 pyyaml==6.0.2
 gunicorn[gevent]
