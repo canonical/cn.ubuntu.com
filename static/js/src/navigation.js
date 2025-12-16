@@ -8,11 +8,13 @@ const initNavigationSliding = () => {
   const menuButton = document.querySelector('.js-menu-button');
 
   const closeAllDropdowns = () => {
-    navigation.classList.remove('has-menu-open');
-    if (secondaryNavigation) {
-      secondaryNavigation.classList.remove('has-menu-open');
+    if ('classList' in navigation) {
+      navigation.classList.remove('has-menu-open');
+      if (secondaryNavigation) {
+        secondaryNavigation.classList.remove('has-menu-open');
+      }
+      menuButton.innerHTML = 'Menu';
     }
-    menuButton.innerHTML = 'Menu';
   };
 
   const secondaryNavToggle = document.querySelector(
