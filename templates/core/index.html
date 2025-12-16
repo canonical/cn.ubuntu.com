@@ -2,6 +2,7 @@
 
 {% from "_macros/vf_hero.jinja" import vf_hero %}
 {% from "_macros/vf_basic-section.jinja" import vf_basic_section %}
+{% from "_macros/vf_equal-heights.jinja" import vf_equal_heights %}
 
 {% block title %}Ubuntu Core {{ page_title }}{% endblock %}
 
@@ -44,133 +45,82 @@ meta_copydoc %}
     {%- endif -%}
   {% endcall -%}
 
-  <section class="p-section">
-    <div class="grid-row--50-50 p-section--shallow">
-      <hr class="p-rule" />
-      <div class="grid-col">
-        <h2>不仅操作系统，更是基础设施</h2>
-      </div>
-      <div class="grid-col">
-        <p>Ubuntu Core 不仅是您的嵌入式 Linux 操作系统，更是您的整个部署基础设施。构建定向生产就绪镜像、解锁 OTA 更新、部署物理隔离环境、管理设备群组、实现实时操作、遵守网络安全要求等。</p>
-        <p>最长可达 12 年支持，Ubuntu Core 革新您的设备部署方式。</p>
-      </div>
-    </div>
-    <div class="p-equal-height-row u-no-padding--bottom p-section--shallow">
-      <div class="p-equal-height-row__col">
-        <div class="p-equal-height-row__item">
-          <div class="p-image-container is-highlighted u-hide--small u-hide--medium">
-            {{ image(url="https://assets.ubuntu.com/v1/f1888c9c-Kernelt%20industries-80%201.png",
-                        alt="",
-                        width="568",
-                        height="932",
-                        hi_def=True,
-                        loading="auto",
-                        attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe
-            }}
-          </div>
-          <div class="p-equal-height-row__item">
-            <hr class="p-rule--highlight u-hide--medium u-hide--small" />
-            <h3 class="p-heading--5">持续安全</h3>
-          </div>
-        </div>
-        <p class="p-equal-height-row__item">
-          想象一个每个设备都值得信赖的世界。我们在 Ubuntu Core 的每个细节都融入安全理念，致力于打造最安全的嵌入式 Linux 系统，并提供最长可达 12 年的支持（LTS）。
-        </p>
-        <div class="p-equal-height-row__item">
-          <hr class="p-rule--muted u-hide--small" />
-          <p>
-            <a href="https://ubuntu.com/security">了解更多关于 Ubuntu 安全性 &rsaquo;</a>
-          </p>
-        </div>
-      </div>
-      <div class="p-equal-height-row__col">
-        <div class="p-equal-height-row__item">
-          <div class="p-image-container is-highlighted u-hide--small u-hide--medium">
-            {{ image(url="https://assets.ubuntu.com/v1/3493be78-Kernelt%20industries-80%201-1.png",
-                        alt="",
-                        width="568",
-                        height="932",
-                        hi_def=True,
-                        loading="auto",
-                        attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe
-            }}
-          </div>
-          <div class="p-equal-height-row__item">
-            <hr class="p-rule--highlight u-hide--medium u-hide--small" />
-            <h3 class="p-heading--5">设备管理</h3>
-          </div>
-        </div>
-        <p class="p-equal-height-row__item">体验可靠、可远程访问且可快速恢复的设备，通过关键任务级 OTA 更新保持设备的最新状态。无论在联网还是物理隔离环境中，都能轻松管理。</p>
-        <div class="p-equal-height-row__item">
-          <hr class="p-rule--muted u-hide--small" />
-          <p>
-            <a href="https://ubuntu.com/internet-of-things/management">了解更多关于设备管理 &rsaquo;</a>
-          </p>
-        </div>
-      </div>
-      <div class="p-equal-height-row__col">
-        <div class="p-equal-height-row__item">
-          <div class="p-image-container is-highlighted u-hide--small u-hide--medium">
-            {{ image(url="https://assets.ubuntu.com/v1/97807e18-Kernelt%20industries-80%201-2.png",
-                        alt="",
-                        width="568",
-                        height="932",
-                        hi_def=True,
-                        loading="auto",
-                        attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe
-            }}
-          </div>
-          <div class="p-equal-height-row__item">
-            <hr class="p-rule--highlight u-hide--medium u-hide--small" />
-            <h3 class="p-heading--5">灵活容器化</h3>
-          </div>
-        </div>
-        <p class="p-equal-height-row__item">Ubuntu Core 具不可变性和严格的隔离机制。内核、系统镜像和应用程序之间明确隔离，各自独立更新，并具备防篡改和免渗透加固。</p>
-        <div class="p-equal-height-row__item">
-          <hr class="p-rule--muted u-hide--small" />
-          <p>
-            <a href="https://ubuntu.com/core/docs/components#heading--confinement">深入了解隔离机制 &rsaquo;</a>
-          </p>
-        </div>
-      </div>
-      <div class="p-equal-height-row__col">
-        <div class="p-equal-height-row__item">
-          <div class="p-image-container is-highlighted u-hide--small u-hide--medium">
-            {{ image(url="https://assets.ubuntu.com/v1/d5a229cb-Kernelt%20industries-80%201-3.png",
-                        alt="",
-                        width="568",
-                        height="932",
-                        hi_def=True,
-                        loading="auto",
-                        attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe
-            }}
-          </div>
-          <div class="p-equal-height-row__item">
-            <hr class="p-rule--highlight u-hide--medium u-hide--small" />
-            <h3 class="p-heading--5">强大的硬件生态体系</h3>
-          </div>
-        </div>
-        <p class="p-equal-height-row__item">与全球领先的 ODM 厂商和芯片供应商深度合作，共同优化 Ubuntu Core 的发展。我们持续在主流物联网与边缘设备上进行测试，确保稳定与可靠性。</p>
-        <div class="p-equal-height-row__item">
-          <hr class="p-rule--muted u-hide--small" />
-          <p>
-            <a href="/certified">浏览所有 Ubuntu 认证硬件 &rsaquo;</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% call(slot) vf_equal_heights(
+    title_text="不仅操作系统，更是基础设施",
+    highlight_images=true,
+    items=[
+      {
+        "title_text": "持续安全",
+        "image_html": image(url="https://assets.ubuntu.com/v1/f1888c9c-Kernelt%20industries-80%201.png",
+          alt="",
+          width="568",
+          height="932",
+          hi_def=True,
+          loading="auto",
+          attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe,
+        "description_html": "<p>想象一个每个设备都值得信赖的世界。我们在 Ubuntu Core 的每个细节都融入安全理念，致力于打造最安全的嵌入式 Linux 系统，并提供最长可达 12 年的支持（LTS）。</p>",
+        "cta_html": "<hr class='p-rule--muted u-hide--small' /><a href='https://ubuntu.com/security'>了解更多关于 Ubuntu 安全性 &rsaquo;</a>"
+      },
+      {
+        "title_text": "设备管理",
+        "image_html": image(url="https://assets.ubuntu.com/v1/3493be78-Kernelt%20industries-80%201-1.png",
+          alt="",
+          width="568",
+          height="932",
+          hi_def=True,
+          loading="auto",
+          attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe,
+        "description_html": "<p>体验可靠、可远程访问且可快速恢复的设备，通过关键任务级 OTA 更新保持设备的最新状态。无论在联网还是物理隔离环境中，都能轻松管理。</p>",
+        "cta_html": "<hr class='p-rule--muted u-hide--small' /><a href='https://ubuntu.com/internet-of-things/management'>了解更多关于设备管理 &rsaquo;</a>"
+      },
+      {
+        "title_text": "灵活容器化",
+        "image_html": image(url="https://assets.ubuntu.com/v1/97807e18-Kernelt%20industries-80%201-2.png",
+          alt="",
+          width="568",
+          height="932",
+          hi_def=True,
+          loading="auto",
+          attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe,
+        "description_html": "<p>Ubuntu Core 具不可变性和严格的隔离机制。内核、系统镜像和应用程序之间明确隔离，各自独立更新，并具备防篡改和免渗透加固。</p>",
+        "cta_html": "<hr class='p-rule--muted u-hide--small' /><a href='https://ubuntu.com/core/docs/components#heading--confinement'>深入了解隔离机制 &rsaquo;</a>"
+      },
+      {
+        "title_text": "强大的硬件生态体系",
+        "image_html": image(url="https://assets.ubuntu.com/v1/d5a229cb-Kernelt%20industries-80%201-3.png",
+          alt="",
+          width="568",
+          height="932",
+          hi_def=True,
+          loading="auto",
+          attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe,
+        "description_html": "<p>与全球领先的 ODM 厂商和芯片供应商深度合作，共同优化 Ubuntu Core 的发展。我们持续在主流物联网与边缘设备上进行测试，确保稳定与可靠性。</p>",
+        "cta_html": "<hr class='p-rule--muted u-hide--small' /><a href='/certified'>浏览所有 Ubuntu 认证硬件 &rsaquo;</a>"
+      }
+    ]
+  ) %}
+  {% if slot == "description" %}
+    <p>Ubuntu Core 不仅是您的嵌入式 Linux 操作系统，更是您的整个部署基础设施。构建定向生产就绪镜像、解锁 OTA 更新、部署物理隔离环境、管理设备群组、实现实时操作、遵守网络安全要求等。</p>
+    <p>最长可达 12 年支持，Ubuntu Core 革新您的设备部署方式。</p>
+  {% endif %}
+{% endcall %}
+
+  {{ vf_basic_section(
+    title={"text": "从开发到部署"},
+    is_split_on_medium=true,
+    padding="shallow",
+    items=[
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "使用相同的内核、库和系统组件，实现从开发到生产的无缝衔接。在 Ubuntu Desktop 或 Server 上完成应用开发后，您即可基于已开发的应用和目标硬件，构建不可改变的 Ubuntu Core 镜像。"
+        }
+      }
+    ]
+  ) }}
 
   <section class="p-section">
-    <div class="grid-row--50-50 p-section--shallow">
-      <hr class="p-rule" />
-      <div class="grid-col">
-        <h2>从开发到部署</h2>
-      </div>
-      <div class="grid-col">
-        <p>使用相同的内核、库和系统组件，实现从开发到生产的无缝衔接。在 Ubuntu Desktop 或 Server 上完成应用开发后，您即可基于已开发的应用和目标硬件，构建不可改变的 Ubuntu Core 镜像。</p>
-      </div>
-    </div>
     <div class="grid-row">
       <hr class="p-rule grid-col-6 grid-col-start-large-3" />
       <div class="grid-col-2 grid-col-medium-2 grid-col-start-large-3">
@@ -412,7 +362,7 @@ meta_copydoc %}
             </div>
             <div class="p-image-container">
               {{ image(url="https://assets.ubuntu.com/v1/2d152c25-rexroth-testimonial-image.jpg",
-                            alt="Rexroth",
+                            alt="",
                             width="2748",
                             height="1048",
                             hi_def=True,
@@ -762,25 +712,32 @@ meta_copydoc %}
     </div>
   </section>
 
-  <section class="p-strip is-deep u-no-padding--top">
-    <div class="grid-row--50-50">
-      <hr class="p-rule" />
-      <div class="col">
-        <h2>准备好进行创新了吗？</h2>
-      </div>
-      <div class="col">
-        <div class="p-section--shallow">
-          <p>
-            无论您是正将创意推向市场的初创企业，还是已经在现场部署了大量群组设备的企业，我们都具备专业能力和基础设施来助力您启动，为您提供支持。
-          </p>
-        </div>
-        <hr class="p-rule--muted" />
-        <p>
-          <a class="p-button--positive" href="/contact">联系我们</a>
-        </p>
-      </div>
-    </div>
-  </section>
+  {{ vf_basic_section(
+  title={"text": "准备好进行创新了吗？"},
+  is_split_on_medium=true,
+  padding="deep",
+  items=[
+    {
+      "type": "description",
+      "padding": "shallow",
+      "item": {
+        "type": "text",
+        "content": "无论您是正将创意推向市场的初创企业，还是已经在现场部署了大量群组设备的企业，我们都具备专业能力和基础设施来助力您启动，为您提供支持。"
+      }
+    },
+    {
+      "type": "cta-block",
+      "item": {
+        "primary": {
+          "content_html": "联系我们",
+          "attrs": {
+            "href": "/contact",
+          }
+        }
+      }
+    },
+  ]
+) }}
 
   <script src="{{ versioned_static('js/src/tabbedContent.js') }}"></script>
 
