@@ -351,7 +351,9 @@
   }}
 
   {{ vf_basic_section(
-      title={"text": "物联网专业服务"},
+      title={
+        "text": "物联网专业服务"
+      },
       is_split_on_medium=true,
       items=[
         {
@@ -376,75 +378,140 @@
     )
   }}
 
-  {% call(slot) vf_logo_section(
-    title={
-      "text": "<h2>从原型到生产，覆盖所有主流平台</h2>"
-    },
-    blocks=[
-      {
-        "type": "cta-block",
-        "item": {
-          "primary": {
-            "content_html": "Ubuntu 硬件认证计划",
-            "attrs": {
-              "href": "/certified"
+  {{ vf_basic_section(
+      title={
+        "text": "从原型到生产，覆盖所有主流平台"
+      },
+      is_split_on_medium=true,
+      items=[
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "Canonical 与多家伙伴紧密协作，提供硬件兼容与认证保障。Ubuntu 认证硬件皆通过广泛的测试和审查过程，确保您开箱即可享受最佳 Ubuntu 体验。且在硬件所认证的 Ubuntu 版本的整个生命周期内，我们都会在实际硬件上进行定期测试。"
+          }
+        },
+        {
+          "type": "cta-block",
+          "item": {
+            "primary": {
+              "content_html": "Ubuntu 硬件认证计划",
+              "attrs": {
+                "href": "/certified"
+              }
             }
           }
         }
-      },
-      {
-        "type": "logo-block",
-        "item": {
-          "logos": [
-            {
-              "src": "https://assets.ubuntu.com/v1/d1b356e2-amd-logo.png",
-              "alt": "AMD"
-            },
-            {
-              "src": "https://assets.ubuntu.com/v1/fdbc1be5-arm-logo-no-cutoff.png",
-              "alt": "ARM"
-            },
-            {
-              "src": "https://assets.ubuntu.com/v1/931165b5-intel-new-logo.png",
-              "alt": "Intel"
-            },
-            {
-              "src": "https://assets.ubuntu.com/v1/16a400a7-mediatek-logo.png",
-              "alt": "MediaTek"
-            },
-            {
-              "src": "https://assets.ubuntu.com/v1/753902ac-nvidia-logo.png",
-              "alt": "NVIDIA"
-            },
-            {
-              "src": "https://assets.ubuntu.com/v1/2311cd1a-qualcomm_logo.png",
-              "alt": "Qualcomm"
-            },
-            {
-              "src": "https://assets.ubuntu.com/v1/cbf6ee3c-raspberry-pi-logo.png",
-              "alt": "Raspberry Pi"
-            },
-            {
-              "src": "https://assets.ubuntu.com/v1/e44032ec-risc_v_logo.png",
-              "alt": "RISC-V"
-            },
-            {
-              "src": "https://assets.ubuntu.com/v1/6e12ae75-renesas-logo.png",
-              "alt": "Renesas"
-            },
-            {
-              "src": "https://assets.ubuntu.com/v1/88253bb4-huawei_logo.png",
-              "alt": "Huawei"
-            }
-          ]
-        }
-      }
-    ]
-  ) -%}
-    {%- if slot == 'description' -%}
-      <p>Canonical 与多家伙伴紧密协作，提供硬件兼容与认证保障。Ubuntu 认证硬件皆通过广泛的测试和审查过程，确保您开箱即可享受最佳 Ubuntu 体验。且在硬件所认证的 Ubuntu 版本的整个生命周期内，我们都会在实际硬件上进行定期测试。</p>
-    {%- endif -%}
-  {% endcall -%}
+      ]
+    )
+  }}
+
+  <div class="p-section u-fixed-width">
+    <div class="p-logo-section">
+      <div class="p-logo-section__items">
+        <div class="p-logo-section__item">
+          {{ image(url="https://assets.ubuntu.com/v1/d1b356e2-amd-logo.png",
+            alt="AMD",
+            width="225",
+            height="313",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-logo-section__logo"}) | safe
+          }}
+        </div>
+        <div class="p-logo-section__item">
+          {{ image(url="https://assets.ubuntu.com/v1/fdbc1be5-arm-logo-no-cutoff.png",
+            alt="ARM",
+            width="154",
+            height="313",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-logo-section__logo"}) | safe
+          }}
+        </div>
+        <div class="p-logo-section__item">
+          {{ image(url="https://assets.ubuntu.com/v1/931165b5-intel-new-logo.png",
+            alt="Intel",
+            width="162",
+            height="313",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-logo-section__logo"}) | safe
+          }}
+        </div>
+        <div class="p-logo-section__item">
+          {{ image(url="https://assets.ubuntu.com/v1/16a400a7-mediatek-logo.png",
+            alt="Mediatek",
+            width="249",
+            height="313",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-logo-section__logo"}) | safe
+          }}
+        </div>
+        <div class="p-logo-section__item">
+          {{ image(url="https://assets.ubuntu.com/v1/753902ac-nvidia-logo.png",
+            alt="Nvidia",
+            width="309",
+            height="313",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-logo-section__logo"}) | safe
+          }}
+        </div>
+        <div class="p-logo-section__item">
+          {{ image(url="https://assets.ubuntu.com/v1/2311cd1a-qualcomm_logo.png",
+            alt="Qualcomm",
+            width="384",
+            height="312",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-logo-section__logo"}) | safe
+          }}
+        </div>
+        <div class="p-logo-section__item">
+          {{ image(url="https://assets.ubuntu.com/v1/cbf6ee3c-raspberry-pi-logo.png",
+            alt="Raspberry Pi",
+            width="502",
+            height="313",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-logo-section__logo"}) | safe
+          }}
+        </div>
+        <div class="p-logo-section__item">
+          {{ image(url="https://assets.ubuntu.com/v1/e44032ec-risc_v_logo.png",
+            alt="Risc-v",
+            width="285",
+            height="313",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-logo-section__logo"}) | safe
+          }}
+        </div>
+        <div class="p-logo-section__item">
+          {{ image(url="https://assets.ubuntu.com/v1/6e12ae75-renesas-logo.png",
+            alt="Renesas",
+            width="285",
+            height="313",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-logo-section__logo"}) | safe
+          }}
+        </div>
+        <div class="p-logo-section__item">
+          {{ image(url="https://assets.ubuntu.com/v1/88253bb4-huawei_logo.png",
+            alt="Huawei",
+            width="285",
+            height="313",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-logo-section__logo"}) | safe
+          }}
+        </div>
+      </div>
+    </div>
+  </div>
 
   {% call(slot) vf_cta_section(
     variant='default',
