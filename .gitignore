@@ -53,6 +53,7 @@ _site/
 .*.hash
 .envrc
 .env.local
+.env.local.swp
 env/
 env[23]/
 

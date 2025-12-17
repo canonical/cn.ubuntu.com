@@ -1,3 +1,4 @@
+from datetime import timedelta
 import os
 
 import flask
@@ -8,6 +9,8 @@ from canonicalwebteam.blog import BlogAPI, BlogViews, build_blueprint
 from canonicalwebteam.discourse import DiscourseAPI, EngagePages
 from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
+from canonicalwebteam.cookie_service import CookieConsent
+from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
 
 from webapp.navigation import (
@@ -31,6 +34,34 @@ app = FlaskBase(
     static_folder="../static",
     template_404="404.html",
     template_500="500.html",
+)
+
+# Configure Flask session
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=365)
+app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
+app.config["SESSION_COOKIE_HTTPONLY"] = True
+app.config["SESSION_COOKIE_SECURE"] = True
+
+
+# Initialize Flask-Caching
+app.config["CACHE_TYPE"] = "SimpleCache"
+cache = Cache(app)
+
+
+# Set up cache functions for cookie consent service
+def get_cache(key):
+    return cache.get(key)
+
+
+def set_cache(key, value, timeout):
+    cache.set(key, value, timeout)
+
+
+cookie_service = CookieConsent().init_app(
+    app,
+    get_cache_func=get_cache,
+    set_cache_func=set_cache,
+    start_health_check=True,
 )
 
 # ChoiceLoader attempts loading templates from each path in successive order
