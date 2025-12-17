@@ -165,7 +165,7 @@ meta_copydoc %}
         </ul>
         <form class="u-hide--large u-hide--medium">
           <select name="boardSelect" id="boardSelect">
-            <option value="overview-tab" selected="">Overview</option>
+            <option value="overview-tab" selected="">概览</option>
             <option value="ubuntu-vision-tab">Ubuntu</option>
             <option value="snapcraft-tab">Snapcraft</option>
             <option value="snap-store-tab">Snap 应用商店</option>
@@ -247,7 +247,7 @@ meta_copydoc %}
         <hr class="u-hide--small p-rule" />
         <div class="grid-row">
           <div class="grid-col-2 grid-col-medium-1">
-            <a href="/internet-of-things/smart-displays">
+            <a href="https://ubuntu.com/internet-of-things/smart-displays">
               <h3 class="p-heading--5">数字标牌</h3>
               <div class="p-image-container">
                 {{ image(url="https://assets.ubuntu.com/v1/9db3f004-For-smart-use-cases__Signage.png",
@@ -282,12 +282,12 @@ meta_copydoc %}
   </section>
 
   <section class="p-section">
-    <div class="row">
+    <div class="grid-row">
       <hr class="p-rule--highlight" />
-      <div class="col-9 col-medium-4">
+      <div class="grid-col-6 grid-col-medium-3">
         <h2 class="p-text--small-caps p-heading--5">Ubuntu core 客户案例</h2>
       </div>
-      <div class="col-3 col-medium-2 p-section--shallow">
+      <div class="grid-col-2 grid-col-medium-1 p-section--shallow">
         <p>
           <a href="https://ubuntu.com/core/stories">所有成功案例 &rsaquo;</a>
         </p>
@@ -421,7 +421,13 @@ meta_copydoc %}
            aria-hidden="hidden">
         <div class="grid-row u-no-margin--bottom">
           <div class="grid-col-2 grid-col-medium-1">
-            {{ image(url="https://assets.ubuntu.com/v1/80f5af45-rigado-testimonial-logo.png", alt="Rigado", width="217", height="51", hi_def=True, loading="lazy",) | safe }}
+            {{ image(url="https://assets.ubuntu.com/v1/80f5af45-rigado-testimonial-logo.png",
+                        alt="Rigado",
+                        width="217",
+                        height="51",
+                        hi_def=True,
+                        loading="lazy",) | safe
+            }}
           </div>
           <div class="grid-col-6 grid-col-medium-3 u-no-margin--top">
             <div class="grid-row">
@@ -504,67 +510,73 @@ meta_copydoc %}
               "href": "https://ubuntu.com/certified?q=adlink&limit=20",
               "text": "浏览 ADlink 的认证硬件 ›",
               "label": "Adlink",
-              "image_attrs": {
-                "src": "https://assets.ubuntu.com/v1/6eff0263-adlink-logo.png",
-                "alt": "Adlink",
-                "width": "506",
-                "height": "481"
-              }
+              "image_html": image(url="https://assets.ubuntu.com/v1/6eff0263-adlink-logo.png",
+                alt="Adlink",
+                width="506",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
             },
             {
               "href": "https://ubuntu.com/certified?q=advantech",
               "text": "浏览 Advantech 的认证硬件 ›",
               "label": "Advantech",
-              "image_attrs": {
-                "src": "https://assets.ubuntu.com/v1/d65da7f3-advantech-logo.png",
-                "alt": "Advantech",
-                "width": "250",
-                "height": "481"
-              }
+              "image_html": image(url="https://assets.ubuntu.com/v1/d65da7f3-advantech-logo.png",
+                alt="Advantech",
+                width="250",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
             },
             {
               "href": "https://ubuntu.com/download/amd",
               "text": "在 AMD 上安装 Ubuntu ›",
               "label": "AMD",
-              "image_attrs": {
-                "src": "https://assets.ubuntu.com/v1/4bf8a9bc-amd-logo.png",
-                "alt": "AMD",
-                "width": "346",
-                "height": "481"
-              }
+              "image_html": image(url="https://assets.ubuntu.com/v1/4bf8a9bc-amd-logo.png",
+                alt="AMD",
+                width="346",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
             },
             {
               "href": "https://ubuntu.com/download/server/arm",
               "text": "了解适用 Arm 的 Ubuntu 服务器版 ›",
               "label": "Arm",
-              "image_attrs": {
-                "src": "https://assets.ubuntu.com/v1/e37f5aa1-arm_logo_black_rgb.svg",
-                "alt": "Arm",
-                "width": "294",
-                "height": "481"
-              }
+              "image_html": image(url="https://assets.ubuntu.com/v1/e37f5aa1-arm_logo_black_rgb.svg",
+                alt="Arm",
+                width="294",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
             },
             {
               "href": "https://ubuntu.com/download/iot/intel-iot",
               "text": "在 Intel IoT 平台安装 Ubuntu ›",
               "label": "Intel",
-              "image_attrs": {
-                "src": "https://assets.ubuntu.com/v1/59996fad-intel-new-logo.png",
-                "alt": "Intel",
-                "width": "250",
-                "height": "481"
-              }
+              "image_html": image(url="https://assets.ubuntu.com/v1/59996fad-intel-new-logo.png",
+                alt="Intel",
+                width="250",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
             },
             {
               "href": "https://ubuntu.com/download/mediatek-genio",
               "text": "在 MediaTek Genio 上安装 Ubuntu ›",
               "label": "MediaTek",
-              "image_attrs": {
-                "src": "https://assets.ubuntu.com/v1/96d65ee2-mediatek-logo.png",
-                "alt": "MediaTek",
-                "width": "386",
-                "height": "481"
-              }
+              "image_html": image(url="https://assets.ubuntu.com/v1/96d65ee2-mediatek-logo.png",
+                alt="MediaTek",
+                width="386",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
             }
           ]
         }
@@ -578,45 +590,49 @@ meta_copydoc %}
               "href": "https://ubuntu.com/download/nvidia-jetson",
               "text": "在 Nvidia Jetson 上安装 Ubuntu ›",
               "label": "NVIDIA",
-              "image_attrs": {
-                "src": "https://assets.ubuntu.com/v1/e7b81879-nvidia-logo.png",
-                "alt": "NVIDIA",
-                "width": "471",
-                "height": "481"
-              }
+              "image_html": image(url="https://assets.ubuntu.com/v1/e7b81879-nvidia-logo.png",
+                alt="NVIDIA",
+                width="471",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
             },
             {
               "href": "https://www.nxp.com/",
               "text": "深入了解 NXP ›",
               "label": "NXP",
-              "image_attrs": {
-                "src": "https://assets.ubuntu.com/v1/be8db080-nxp-logo.png",
-                "alt": "NXP",
-                "width": "205",
-                "height": "481"
-              }
+              "image_html": image(url="https://assets.ubuntu.com/v1/be8db080-nxp-logo.png",
+                alt="NXP",
+                width="205",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
             },
             {
               "href": "https://ubuntu.com/download/qualcomm-iot",
               "text": "在 Qualcomm IoT 平台安装 Ubuntu ›",
               "label": "Qualcomm",
-              "image_attrs": {
-                "src": "https://assets.ubuntu.com/v1/31b259ec-qualcom-logo.png",
-                "alt": "Qualcomm",
-                "width": "481",
-                "height": "481"
-              }
+              "image_html": image(url="https://assets.ubuntu.com/v1/31b259ec-qualcom-logo.png",
+                alt="Qualcomm",
+                width="481",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
             },
             {
               "href": "https://ubuntu.com/download/renesas-iot",
               "text": "在 Renesas IoT 平台安装 Ubuntu ›",
               "label": "Renesas",
-              "image_attrs": {
-                "src": "https://assets.ubuntu.com/v1/6e12ae75-renesas-logo.png",
-                "alt": "Renesas",
-                "width": "240",
-                "height": "481"
-              }
+              "image_html": image(url="https://assets.ubuntu.com/v1/6e12ae75-renesas-logo.png",
+                alt="Renesas",
+                width="240",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
             }
           ]
         }
