@@ -1,284 +1,428 @@
 {% extends "templates/base.html" %}
 
-{% block title %}系统管理{{ page_title }}{% endblock %}
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_quote-wrapper.jinja" import vf_quote_wrapper %}
+{% from "_macros/vf_basic-section.jinja" import vf_basic_section %}
+{% from "_macros/vf_data-spotlight.jinja" import vf_data_spotlight %}
+{% from "_macros/vf_cta-section.jinja" import vf_cta_section %}
+{% from "_macros/vf_logo-section.jinja" import vf_logo_section %}
 
-{% block meta_description %}Ubuntu系统集中管理 Ubuntu订阅 Ubuntu企业版 Linux企业服务{{ meta_description }}{% endblock %}
+{% block title %}系统管理工具 Landscape | 自动化管理您的 Ubuntu 资产{% endblock %}
+
+{% block meta_description %}
+  Landscape 是适用于所有版本 Ubuntu 的领先系统管理与运维平台，无论部署在本地还是云端。它提供自动化补丁管理、系统审计和访问控制等功能，帮助您轻松实现集中化、高效化的运维管理。
+{% endblock %}
+
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/1igNK3qralCPng3niEvaHMLfZNfpSUVb5XPDEf_Ocg5I/edit?tab=t.0
+{% endblock meta_copydoc %}
+
+{% block meta_image %}
+  https://assets.ubuntu.com/v1/6b9a0b06-landscape-metatag.svg
+{% endblock meta_image %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
 
 {% block content %}
 
-  <section class="p-strip--suru-topped is-bordered">
-    <div class="row">
-      <div class="col-6">
-        <h1>管控您的基础设施</h1>
-        <p>Landscape是领先的Ubuntu系统管理工具。</p>
-        <p>
-          <a class="p-button" href="/contact">联系我们</a>
-        </p>
-      </div>
-      <div class="col-6 u-hide--small u-hide--medium u-align--center">
-        {{
-        image (
-        url="https://assets.ubuntu.com/v1/71baccc3-ubuntu-advantage-circular.svg",
-        alt="",
-        width="250",
-        height="270",
-        hi_def=True,
-        loading="lazy"
-        ) | safe
+  {% call(slot) vf_hero(
+    title_text='掌控您的基础设施',
+    layout='50/50-full-width-image'
+    ) -%}
+    {%- if slot == 'description' -%}
+      <p>
+        Landscape 是一款系统管理工具，可通过 Web 服务或 API 使用。Landscape Server 可通过 Canonical 以托管解决方案或 SaaS（软件即服务）的形式提供，也可自行托管。Landscape Client 安装在 Ubuntu 中，用于注册并连接至 Landscape Server。
+      </p>
+      <p>Landscape 自动化运行整个 Ubuntu 资产的安全补丁、审计、访问管理和合规性任务。可在联网或物理隔离环境中使用：在海上、太空和两者之间的任何地方都能稳定运行。</p>
+      <p>
+        订阅 <a href="/pro">Ubuntu Pro</a> 即可使用 Landscape。
+      </p>
+    {%- endif -%}
+    {%- if slot == 'cta' -%}
+      <a href="/contact"
+         class="p-button--positive">与我们联系</a>
+    {%- endif -%}
+    {%- if slot == 'image' -%}
+      <div class="p-image-container--cinematic is-cover">
+        {{ image(url="https://assets.ubuntu.com/v1/8776d218-hero-img-iot.png",
+                alt="",
+                width="3696",
+                height="1541",
+                hi_def=True,
+                loading="auto",
+                attrs={"class": "p-image-container__image"}) | safe
         }}
       </div>
-    </div>
-  </section>
+    {% endif -%}
+  {% endcall -%}
 
-  <section class="p-strip">
-    <div class="u-fixed-width u-sv3">
-      <h2 class="u-sv3">节省时间并提高大规模机器的安全性</h2>
-      <ul class="p-list is-split u-sv3">
-        <li class="p-list__item is-ticked">安全，加固和合规的自动化</li>
-        <li class="p-list__item is-ticked">接收警报以更新您指定的机器</li>
-        <li class="p-list__item is-ticked">使用最新的安全补丁确保安全</li>
-        <li class="p-list__item is-ticked">使用单一界面管理多达40000台机器</li>
-        <li class="p-list__item is-ticked">创建您自己的软件仓库（支持本地离线仓库）</li>
-        <li class="p-list__item is-ticked">通过我们的 API 扩展和定制 Landscape</li>
-      </ul>
-    </div>
-    <div class="u-fixed-width">
-      <div class="u-hide--small u-hide--medium u-sv3">
-        <img src="https://assets.ubuntu.com/v1/44ac1c31-web-ui-2.gif"
-             alt="Landscape admin splashscreen" />
+  {{ vf_basic_section(
+    title={"text": "省时并提高安全性"},
+    is_split_on_medium=true,
+    items=[
+      {
+        "type": "list",
+        "item": {
+          "list_items": [
+            {
+              "list_item_type": "tick",
+              "content": "自动化执行安全防护、强化和合规管理"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "接收指定设备的更新提醒"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "通过安装最新的安全补丁保障安全"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "通过单一平台了解整个 Ubuntu 资产"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "创建自己的软件存储库"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "通过我们的 API 扩展和定制 Landscape"
+            }
+          ]
+        }
+      },
+      {
+      "type": "cta-block",
+      "item": {
+          "primary": {
+            "content_html": "Landscape 产品手册",
+            "attrs": {
+              "href": "https://pages.ubuntu.com/rs/066-EOV-335/images/Landscape%20DS%20v3%205.4.2024.pdf",
+              "class": "p-button--positive",
+            }
+          }
+        }
+      },
+    ]) }}
+
+  {{ vf_basic_section(
+    title={"text": "Landscape 的工作原理"},
+    is_split_on_medium=true,
+    items=[
+      {
+        "type": "list",
+        "item": {
+          "list_items": [
+            {
+              "list_item_type": "tick",
+              "content": "Landscape 可通过在每台设备上安装的管理代理程序来监控系统"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "代理程序与 Landscape 服务器通信，对自动选定的一组基本健康指标参数进行更新"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "数据将被安全地收集并存储在 Landscape 数据库中，同时支持自定义指标的采集"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "通过 Landscape 还可以远程更新和升级设备，并管理用户和权限"
+            },
+          ]
+        }
+      },
+      {
+      "type": "cta-block",
+      "item": {
+          "link": {
+            "content_html": "了解 Landscape 功能 &rsaquo;",
+            "attrs": {
+              "href": "https://ubuntu.com/landscape/features",
+            }
+          }
+        }
+      },
+    ]) }}
+
+  <section class="p-section">
+    <div class="grid-row--50-50">
+      <hr class="p-rule" />
+      <div class="grid-col">
+        <h2 id="savings">
+          使用 Landscape 节省成本
+        </h2>
+      </div>
+      <div class="grid-col">
+        <div class="p-section--shallow">
+          <p>一家拥有 1000 台 desktop 的公司在使用 Landscape 后，短短三年内即可节省 20 多万美元</p>
+          <div class="p-cta-block">
+            <a href="https://insights.ubuntu.com/2014/06/12/enterprise-class-ubuntu-management-with-canonical-landscape/">阅读案例研究&rsaquo;</a>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-
-  <div class="u-fixed-width">
-    <hr class="p-seperator" />
-  </div>
-
-  <section class="p-strip">
-    <div class="u-fixed-width u-sv3">
-      <h2 class="u-sv3">Landscape工作机制</h2>
-      <ul class="p-list is-split">
-        <li class="p-list__item is-ticked">Landscape通过安装在每台机器上的管理Agent监控您的系统</li>
-        <li class="p-list__item is-ticked">Agent 与 Landscape 服务器通信以更新自动选择的一组基础健康指标</li>
-        <li class="p-list__item is-ticked">数据被安全地收集并存储在 Landscape 数据库中，并支持自定义指标数据收集</li>
-        <li class="p-list__item is-ticked">Landscape还使得您能远程更新和升级机器以及管理用户和权限</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="p-strip--light">
-    <div class="row">
-      <div class="col-9">
-        <h2>Landscape可以在短短三年内为拥有1000个桌面电脑的公司节省超过20万美元</h2>
-        <p>
-          <a href="https://assets.ubuntu.com/v1/0233c8a3-EMA_Canonical_Landscape_0812_WP.pdf">阅读案例分享</a>
+    {{ vf_data_spotlight(
+      blocks=[
+        {
+          "stat": "1,121%",
+          "description": "五年投资回报率",
+        },
+        {
+          "stat": "68.8 万美元",
+          "description": "年节省费用",
+        },
+        {
+          "stat": "2 个月%",
+          "description": "投资回收期",
+        },
+      ],
+    ) }}
+    <div class="grid-row">
+      <div class="grid-col-6 grid-col-start-large-3">
+        <hr class="p-rule--muted" />
+        <p class="u-text--muted">
+          <i>这些数字是基于部署 1000 台 desktop 得出的。</i>
         </p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-4">
-        <div class="p-card--highlighted">
-          <h3 class="p-heading--1">1,121%</h3>
-          <p>5年以上的投资回报率</p>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="p-card--highlighted">
-          <h3 class="p-heading--1">$688000</h3>
-          <p>每年节省</p>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="p-card--highlighted">
-          <h3 class="p-heading--1">2个月</h3>
-          <p>投资回收期</p>
-        </div>
-      </div>
-    </div>
-    <div class="u-fixed-width">
-      <p class="u-align-text--right">以上数字基于1000个桌面系统的部署。</p>
-    </div>
   </section>
 
-  <section class="p-strip">
-    <div class="row">
-      <div class="col-4 u-hide--small u-hide--medium u-vertically-center u-align--center">
-        {{
-        image (
-        url="https://assets.ubuntu.com/v1/db86a8d0-Capgemini_logo.svg",
-        alt="",
-        width="430",
-        height="95",
-        hi_def=True,
-        loading="lazy"
-        ) | safe
-        }}
-      </div>
-      <div class="col-8">
-        <blockquote class="p-pull-quote--large">
-          <p class="p-pull-quote__quote">Canonical通过快速响应和解决突出问题帮助我们消除业务影响因素，并确保我们的设备提供最佳性能。</p>
-          <span class="p-pull-quote__citation">Capgemini, Paweł Zięba的高级IT创新顾问</span>
-        </blockquote>
-        <p>
-          <a href="https://insights.ubuntu.com/2012/09/06/capgemini-bpo-deploys-hybrid-thin-client-solution-with-ubuntu-advantage/">阅读案例分享</a>
-        </p>
-      </div>
-    </div>
-  </section>
+  {% call(slot) vf_quote_wrapper(
+    title_text="客户评价",
+    quote_size="small",
+    quote_text="Canonical 通过快速响应并解决突出问题来帮助我们消除业务影响，并确保我们的设备提供最佳性能。",
+    citation_source_name_text="Paweł Zięba,",
+    citation_source_title_text="高级 IT 创新顾问",
+    citation_source_organisation_text="Capgemini"
+    ) -%}
 
-  <section class="p-strip--light">
-    <div class="row">
-      <div class="col-8">
-        <h2>获取作为Canonical支持服务Ubuntu Pro一部分的Landscape</h2>
-        <p>通过Ubuntu Pro订阅获得Landscape的访问</p>
-        <ul class="p-list">
-          <li class="p-list__item is-ticked">7*24电话、工单支持</li>
-          <li class="p-list__item is-ticked">Canonical的专家支持团队的支持</li>
-          <li class="p-list__item is-ticked">访问我们专家支持团队的知识库</li>
-          <li class="p-list__item is-ticked">知识产权法律保障</li>
-          <li class="p-list__item is-ticked">Livepatch使得内核补丁无需重启机器</li>
-        </ul>
-        <p>
-          <a href="/support">了解更多Ubuntu Pro订阅的内容&nbsp;&rsaquo;</a>
-        </p>
-      </div>
-      <div class="col-4 u-hide--small u-hide--medium u-vertically-center u-align--center">
-        {{
-        image (
-        url="https://assets.ubuntu.com/v1/6dd24c11-ubuntu-advantage-linear.svg",
-        alt="",
-        width="394",
-        height="198",
-        hi_def=True,
-        loading="lazy"
-        ) | safe
-        }}
-      </div>
-    </div>
-  </section>
+    {%- if slot == 'signpost_image' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/4bc68c0d-capgemini-logo.png",
+            alt="Capgemini",
+            width="852",
+            height="313",
+            hi_def=True,
+            loading="lazy") | safe
+      }}
+    {%- endif -%}
+    {%- if slot == 'cta' -%}
+      <a href="https://insights.ubuntu.com/2012/09/06/capgemini-bpo-deploys-hybrid-thin-client-solution-with-ubuntu-advantage/">阅读案例研究 &rsaquo;</a>
+    {%- endif -%}
 
-  <section class="p-strip">
-    <div class="u-fixed-width">
-      <div class="p-logo-section has-misaligned-images">
-        <p class="p-logo-section__title u-align--center">部分Ubuntu订阅用户列表</p>
-        <div class="p-logo-section__items" style="justify-content:center;">
-          <div class="p-logo-section__item">
-            {{
-            image (
-            url="https://assets.ubuntu.com/v1/b637b55f-logo-bloomberg.png",
-            alt="Bloomberg",
-            width="189",
-            height="70",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{
-            image (
-            url="https://assets.ubuntu.com/v1/e7dd8cc4-logo-at%26t.png",
-            alt="AT&T",
-            width="399",
-            height="399",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{
-            image (
-            url="https://assets.ubuntu.com/v1/bc54a1da-Walmart.png",
-            alt="Walmart",
-            width="292",
-            height="290",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{
-            image (
-            url="https://assets.ubuntu.com/v1/c6e197c4-deutsche-telekom-logo.png",
-            alt="Deutsche Telekom",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="auto|lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-            }}
-          </div>
-        </div>
-        <div class="p-logo-section__items" style="justify-content:center;">
-          <div class="p-logo-section__item">
-            {{
-            image (
-            url="https://assets.ubuntu.com/v1/d7356bae-ebay-logo.png",
-            alt="Ebay",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{
-            image (
-            url="https://assets.ubuntu.com/v1/4a09336c-logo-cisco.png",
-            alt="Cisco",
-            width="95",
-            height="70",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{
-            image (
-            url="https://assets.ubuntu.com/v1/673fa219-logo-ntt.png",
-            alt="NTT",
-            width="399",
-            height="399",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{
-            image (
-            url="https://assets.ubuntu.com/v1/698f7a58-best-buy-logo.png",
-            alt="Best Buy",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy"
-            ) | safe
-            }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% endcall -%}
 
-  <section class="p-strip--light">
-    <div class="row">
-      <div class="col-8">
-        <h2 class="p-heading--2 u-sv3">随时随地为所有版本的Ubuntu（服务器版、桌面版）提供出色的大规模系统管理</h2>
-      </div>
-    </div>
-  </section>
-  <script src="https://ubuntu.com/static/js/src/landscape-form.js"></script>
+  {{ vf_basic_section(
+    title={"text": "订阅 Ubuntu Pro 即可使用<br />Landscape"},
+    is_split_on_medium=true,
+    items=[
+      {
+      "type": "image",
+      "padding": "shallow",
+      "item": {
+          "aspect_ratio": "3-2",
+          "attrs": image(
+            url="https://assets.ubuntu.com/v1/65c0e352-get%20landscape.png",
+            alt="",
+            width="1800",
+            height="1201",
+            hi_def=True,
+            loading="lazy",
+            output_mode="attrs"
+          )
+        }
+      },
+      {
+      "type": "description",
+      "item": {
+          "type": "html",
+          "content": "<p>Ubuntu Pro 订阅包含：</p><hr class=\"p-rule--muted u-no-margin\"/>"
+        }
+      },
+      {
+        "type": "list",
+        "item": {
+          "list_items": [
+            {
+              "list_item_type": "tick",
+              "content": "全天候电话、门户网站和电子邮件支持"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "可选择您所在地的专属 Canonical 支持工程师"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "访问我们世界一流的技术团队和知识库"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "IP 法律保障设备管理从此更轻松安心"
+            },
+            {
+              "list_item_type": "tick",
+              "content": "适用于所有设备的 Kernel Livepatching"
+            },
+          ]
+        }
+      },
+      {
+      "type": "cta-block",
+      "item": {
+          "link": {
+            "content_html": "了解 Ubuntu Pro &rsaquo;",
+            "attrs": {
+              "href": "/pro",
+            }
+          }
+        }
+      },
+    ]) }}
+
+  {% call(slot) vf_logo_section(
+    title={
+      "text": "Ubuntu Pro 的客户"
+    },
+    blocks=[
+      {
+        "type": "logo-block",
+        "item": {
+          "logos": [
+            image(
+              url="https://assets.ubuntu.com/v1/43095e11-Bloomberg-Logo.png",
+              alt="Bloomberg",
+              width="313",
+              height="313",
+              hi_def=True,
+              loading="lazy",
+              output_mode="attrs"
+            ),
+            image(
+              url="https://assets.ubuntu.com/v1/1ebdf7ea-AT&T-Logo.png",
+              alt="AT&T",
+              width="290",
+              height="313",
+              hi_def=True,
+              loading="lazy",
+              output_mode="attrs"
+            ),
+            image(
+              url="https://assets.ubuntu.com/v1/b6ba6d69-Walmart-logo.png",
+              alt="Walmart",
+              width="355",
+              height="313",
+              hi_def=True,
+              loading="lazy",
+              output_mode="attrs"
+            ),
+            image(
+              url="https://assets.ubuntu.com/v1/1fad8ca7-deutsche-telekom.png",
+              alt="Deutsche Telekom",
+              width="313",
+              height="313",
+              hi_def=True,
+              loading="lazy",
+              output_mode="attrs"
+            ),
+            image(
+              url="https://assets.ubuntu.com/v1/14bd7913-ebay-logo.png",
+              alt="Ebay",
+              width="232",
+              height="313",
+              hi_def=True,
+              loading="lazy",
+              output_mode="attrs"
+            ),
+            image(
+              url="https://assets.ubuntu.com/v1/9752f428-cisco-logo.png",
+              alt="Cisco",
+              width="189",
+              height="313",
+              hi_def=True,
+              loading="lazy",
+              output_mode="attrs"
+            ),
+            image(
+              url="https://assets.ubuntu.com/v1/62464cc4-NTT-logo.png",
+              alt="NTT",
+              width="254",
+              height="313",
+              hi_def=True,
+              loading="lazy",
+              output_mode="attrs"
+            ),
+            image(
+              url="https://assets.ubuntu.com/v1/55bc7680-bestbuy-logo.png",
+              alt="Best Buy",
+              width="143",
+              height="313",
+              hi_def=True,
+              loading="lazy",
+              output_mode="attrs"
+            ),
+          ]
+        }
+      }
+    ]
+  ) -%}
+  {% endcall -%}
+
+  {{ vf_basic_section(
+    title={"text": "探索适用于物联网设备管理的<br />Landscape"},
+    is_split_on_medium=true,
+    items=[
+      {
+      "type": "description",
+      "item": {
+          "type": "text",
+          "content": "使用 Landscape 来管理 Ubuntu 资产中的所有设备，包括嵌入式设备！"
+        }
+      },
+      {
+      "type": "description",
+      "item": {
+          "type": "text",
+          "content": "通过一个集中式远程门户，您可以管理整个资产中的已安装 snap、snap 配置和更新。从单台设备到数千台设备都能做到。"
+        }
+      },
+      {
+      "type": "description",
+      "item": {
+          "type": "text",
+          "content": "通过基于角色的访问控制、零接触启用、运行状况监测和远程调试与脚本功能，设备管理从此更轻松安心。"
+        }
+      },
+      {
+      "type": "cta-block",
+      "item": {
+          "primary": {
+            "content_html": "探索物联网设备管理",
+            "attrs": {
+              "href": "/internet-of-things",
+            }
+          },
+          "link": {
+            "content_html": "IoT 设备补丁白皮书 &rsaquo;",
+            "attrs": {
+              "href": "https://ubuntu.com/engage/iot-management-landscape",
+            }
+          }
+        }
+      },
+    ]) }}
+
+  {% call(slot) vf_cta_section(
+        title_text='卓越的大规模系统管理平台，支持所有版本的 Ubuntu。',
+        variant='block',
+        layout='100'
+        ) -%}
+    {%- if slot == 'cta' -%}
+      <h2>
+        <a href="/pro">包含在 Ubuntu Pro &rsaquo;</a>
+      </h2>
+    {%- endif -%}
+  {% endcall -%}
 
 {% endblock %}
