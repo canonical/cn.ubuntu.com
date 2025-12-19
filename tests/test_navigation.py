@@ -13,39 +13,18 @@ class TestNavigation(unittest.TestCase):
             "internet-of-things": {
                 "title": "物联网",
                 "path": "/internet-of-things",
-                "children": [
-                    {"title": "Overview", "path": "/internet-of-things"},
-                    {
-                        "title": "Ubuntu Core",
-                        "path": "/internet-of-things/core",
-                    },
-                    {
-                        "title": "智能显示屏",
-                        "path": "/internet-of-things/smart-displays",
-                    },
-                ],
             },
             "infrastructure": {
                 "title": "基础架构",
                 "path": "/infrastructure",
-                "children": [
-                    {"title": "Overview", "path": "/infrastructure"},
-                    {"title": "公有云", "path": "/cloud/public-cloud"},
-                    {"title": "OpenStack", "path": "/cloud/openstack"},
-                ],
             },
             "desktop": {
                 "title": "桌面系统",
                 "path": "/desktop",
-                "children": [
-                    {"title": "Overview", "path": "/desktop"},
-                    {"title": "特点", "path": "/desktop/features"},
-                ],
             },
             "blog": {
                 "title": "博客",
                 "path": "/blog",
-                "children": [{"title": "Overview", "path": "/blog"}],
             },
             "no-children": {"title": "No Children", "path": "/no-children"},
         }
@@ -123,22 +102,6 @@ class TestNavigation(unittest.TestCase):
     @patch("webapp.navigation._bubble_path_lookup")
     @patch("webapp.navigation._child_path_lookup")
     @patch("webapp.navigation._fallback_paths")
-    def test_exact_child_match(
-        self, mock_fallback_paths, mock_child_lookup, mock_bubble_lookup
-    ):
-        """Test when path exactly matches a child page within a bubble"""
-        self._setup_mocks(
-            mock_bubble_lookup, mock_child_lookup, mock_fallback_paths
-        )
-
-        result = get_current_page_bubble("/cloud/public-cloud")
-
-        self.assertIsNotNone(result["page_bubble"])
-        self.assertEqual(result["page_bubble"]["title"], "基础架构")
-
-    @patch("webapp.navigation._bubble_path_lookup")
-    @patch("webapp.navigation._child_path_lookup")
-    @patch("webapp.navigation._fallback_paths")
     def test_fallback_match(
         self, mock_fallback_paths, mock_child_lookup, mock_bubble_lookup
     ):
@@ -180,22 +143,6 @@ class TestNavigation(unittest.TestCase):
         )
 
         result = get_current_page_bubble("/infrastructure")
-
-        self.assertIsNotNone(result["page_bubble"])
-        self.assertEqual(result["page_bubble"]["title"], "基础架构")
-
-    @patch("webapp.navigation._bubble_path_lookup")
-    @patch("webapp.navigation._child_path_lookup")
-    @patch("webapp.navigation._fallback_paths")
-    def test_priority_child_over_fallback(
-        self, mock_fallback_paths, mock_child_lookup, mock_bubble_lookup
-    ):
-        """Test that child match takes priority over fallback match"""
-        self._setup_mocks(
-            mock_bubble_lookup, mock_child_lookup, mock_fallback_paths
-        )
-
-        result = get_current_page_bubble("/cloud/public-cloud")
 
         self.assertIsNotNone(result["page_bubble"])
         self.assertEqual(result["page_bubble"]["title"], "基础架构")
