@@ -54,7 +54,7 @@
             ) | safe
           }}
         {% else %}
-          <img src="{% if 'http' not in header_image %}https://assets.ubuntu.com/v1/{% endif %}{{ header_image }}" alt="" {% if image_style %}style="{{ image_style }}"{% endif %} />
+          <img src="{{ header_image }}" alt="" {% if image_style %}style="{{ image_style }}"{% endif %} />
         {% endif %}
       </div>
     {% endif %}
