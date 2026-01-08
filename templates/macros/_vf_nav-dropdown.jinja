@@ -1,0 +1,48 @@
+{% macro vf_nav_dropdown(content_id, columns) %}
+  <div class="dropdown-content-desktop" id="{{ content_id }}">
+    <nav class="dropdown-window__content-container">
+        <div class="dropdown-window__content row--25-75">
+
+          <div class="col"></div>
+
+          <div class="col u-no-padding">
+            <div class="dropdown-window__sidenav-content is-dark"
+                  id="support-enterprise-tab-content"
+                  tabindex="-1"
+                  role="tabpanel"
+                  aria-labelledby="support-enterprise-tab">
+              <div class="row u-no-padding">
+                <div class="col dropdown-window__main-panel">
+                  <div class="row">
+                    {% for column in columns %}
+                    <div class="col-3">
+                      <ul class="p-list">
+                        {% for item in column %}
+                        <li class="p-navigation__dropdown-item">
+                          <a href="{{ item.href }}"
+                              class="p-link--inverted"
+                              onclick="event.stopPropagation()"
+                              tabindex="0">
+                            <span>{{ item.title }}</span>
+                            <br />
+                            <small class="is-muted">{{ item.description }}</small>
+                          </a>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                    {% endfor %}
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </nav>
+  </div>
+{% endmacro %}
