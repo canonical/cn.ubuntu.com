@@ -234,4 +234,10 @@
     opacity: 0;
     visibility: hidden;
   }
+
+  .p-navigation__item--dropdown-toggle .p-navigation__link {
+    &::before {
+      display: none !important;
+    }
+  }
 }
