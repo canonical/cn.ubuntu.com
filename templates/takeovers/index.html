@@ -6,8 +6,8 @@
 
 {% block content %}
 
-<section class="p-strip is-shallow">
-  <div class="row">
+<section class="p-strip is-dark is-shallow">
+  <div class="grid-row">
     <ul class="p-inline-list u-no-margin--bottom">
       <li class="p-inline-list__item">
         Active takeovers: <strong>{{ active_count }}</strong>
@@ -20,25 +20,25 @@
 </section>
 
 {% for takeover in takeovers %}
-    {% with 
-      title=takeover['title'],
-      subtitle=takeover['subtitle'],
-      class="p-takeover--" + takeover['class'],
-      header_image=takeover['header_image'],
-      image_style="width: " + takeover['image_width'] + "px; height: " + takeover['image_height'] + "px; ",
-      image_hide_small="true",
-      primary_url=takeover['primary_url'],
-      primary_cta=takeover['primary_cta'],
-      primary_cta_class="",
-      secondary_cta=takeover['secondary_cta'],
-      secondary_url=takeover['secondary_url'],
-      lang=takeover['language'],
-      lang_skip=takeover['lang_skip'],
-      active=takeover['active']
-    %}
+  {% with 
+    title=takeover['title'],
+    subtitle=takeover['subtitle'],
+    class="p-takeover--" + takeover['class'],
+    header_image=takeover['header_image'],
+    image_style="width: " + takeover['image_width'] + "px; height: " + takeover['image_height'] + "px; ",
+    image_hide_small="true",
+    primary_url=takeover['primary_url'],
+    primary_cta=takeover['primary_cta'],
+    primary_cta_class="",
+    secondary_cta=takeover['secondary_cta'],
+    secondary_url=takeover['secondary_url'],
+    lang=takeover['language'],
+    lang_skip=takeover['lang_skip'],
+    active=takeover['active']
+  %}
     {% include "takeovers/_template.html" %}
-    {% endwith %}
-  {% endfor %}  
+  {% endwith %}
+{% endfor %}  
 
 <style>
   .is-active::after {

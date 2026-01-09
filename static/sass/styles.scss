@@ -124,12 +124,12 @@ body {
   &.is-loaded {
     animation-delay: 0s !important;
 
-    .col-7 {
+    .grid-col-6 {
       animation: slide-in-from-left map-get($animation-duration, 'fast')
         map-get($animation-easing, 'out');
     }
 
-    .col-5 {
+    .grid-col-2 {
       animation: slide-in-from-right map-get($animation-duration, 'fast')
         map-get($animation-easing, 'out');
     }
