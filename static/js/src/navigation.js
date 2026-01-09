@@ -1,25 +1,40 @@
-const initNavigationSliding = () => {
-  const navigation = document.querySelector(
-    '.p-navigation, .p-navigation--reduced'
-  );
-  const secondaryNavigation = document.querySelector(
-    '.p-navigation--reduced + .p-navigation'
-  );
-  const menuButton = document.querySelector('.js-menu-button');
+const menuButton = document.querySelector('.js-menu-button');
+const secondaryNavigation = document.querySelector(
+  '.p-navigation--reduced + .p-navigation'
+);
+const secondaryNavToggle = document.querySelector(
+  '.js-secondary-menu-toggle-button'
+);
 
-  const closeAllDropdowns = () => {
-    if (navigation && 'classList' in navigation) {
-      navigation.classList.remove('has-menu-open');
-      if (secondaryNavigation) {
-        secondaryNavigation.classList.remove('has-menu-open');
-      }
-      menuButton.innerHTML = 'Menu';
+const overlay = document.querySelector('.dropdown-window-overlay');
+const dropdownWindow = document.querySelector('.dropdown-window');
+const dropdownWindowOverlay = document.querySelector(
+  '.dropdown-window-overlay'
+);
+const navigation = document.querySelector(
+  '.p-navigation, .p-navigation--reduced, .p-navigation--sliding'
+);
+
+const closeAllDropdowns = () => {
+  if (navigation && 'classList' in navigation) {
+    // Add fade and slide animation classes to hide overlay and dropdown window
+    overlay.classList.add('fade-animation');
+    dropdownWindow.classList.add('slide-animation');
+
+    // Hide all dropdown contents
+    const dropdownContents = dropdownWindow.children;
+    for (const content of dropdownContents) {
+      content.classList.add('u-hide');
     }
-  };
 
-  const secondaryNavToggle = document.querySelector(
-    '.js-secondary-menu-toggle-button'
-  );
+    if (secondaryNavigation) {
+      secondaryNavigation.classList.remove('has-menu-open');
+    }
+    menuButton.innerHTML = 'Menu';
+  }
+};
+
+const initNavigationSliding = () => {
   if (secondaryNavToggle) {
     secondaryNavToggle.addEventListener('click', event => {
       event.preventDefault();
@@ -125,3 +140,42 @@ const initNavigationSliding = () => {
 };
 
 initNavigationSliding();
+
+const toggleDropdown = (toggleEl, shouldOpen) => {
+  navigation.classList.toggle('has-menu-open', false);
+  toggleEl.classList.remove('is-selected');
+
+  dropdownWindow.classList.toggle('slide-animation', !shouldOpen);
+  dropdownWindowOverlay.classList.toggle('fade-animation', !shouldOpen);
+
+  const dropdownContentID = toggleEl.id + '-content';
+  const dropdownContent = document.getElementById(dropdownContentID);
+  dropdownContent.classList.toggle('u-hide', !shouldOpen);
+};
+
+// Setup dropdown toggle functionality
+document.addEventListener('DOMContentLoaded', function () {
+  const dropdownToggles = document.querySelectorAll('[data-dropdown-url]');
+
+  dropdownToggles.forEach(el => {
+    const anchor = el.querySelector('a');
+
+    if (anchor) {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        if (el.classList.contains('is-active')) {
+          // Close dropdown
+          console.log('Closing dropdown:', el);
+          toggleDropdown(el, false);
+        } else {
+          closeAllDropdowns();
+
+          // Open this dropdown
+          console.log('Opening dropdown:', el);
+          toggleDropdown(el, true);
+        }
+      });
+    }
+  });
+});
