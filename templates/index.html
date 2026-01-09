@@ -13,24 +13,36 @@
   <!-- Default Takeover: Download the latest Ubuntu -->
   <section data-lang="all"
            id="takeover"
-           class="p-takeover--grad is-dark is-deep">
-    <div class="row p-takeover-animation" id="takeover-animation">
-      <div class="col-7 u-vertically-center">
-        <h1 id="takeover-title">Ubuntu {{ releases.latest.short_version }}有什么新功能 ?</h1>
-        <h4 id="takeover-subtitle">Raspberry Pi的Ubuntu桌面，最新的桌面功能和微云。</h4>
+           class="p-strip is-dark">
+    <div class="grid-row p-takeover-animation" id="takeover-animation">
+      <div class="grid-col-6">
+        <div class="p-section--shallow">
+          <h1 id="takeover-title">Ubuntu {{ releases.latest.short_version }}有什么新功能 ?</h1>
+          <h2 id="takeover-subtitle">Raspberry Pi的Ubuntu桌面，最新的桌面功能和微云。</h2>
+        </div>
+        <hr class="p-rule--muted" />
         <div id="takeover-ctas">
           <p>
             <a id="takeover-primary-url" href="/download" class="p-button--positive">下载Ubuntu{{ releases.latest.short_version }}</a>
           </p>
         </div>
       </div>
-      <div class="col-5 u-vertically-center u-align--center u-align--left-medium u-hide--small">
-        <img id="takeover-image" src="" width="200" alt="" />
+      <div class="grid-col-2 u-vertically-center u-align--center u-hide--medium u-hide--small">
+        <picture>
+          <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(max-width: 536px)" /> 
+          {{ image(url="https://assets.ubuntu.com/v1/33b5133c-Noble-Numbat-optimised.svg",
+                    alt="",
+                    width="200",
+                    hi_def=True,
+                    loading="auto",
+                    attrs={"id": "takeover-image"}) | safe
+          }}
+        </picture>
       </div>
     </div>
   </section>
 
-  <section class="p-strip notice u-no-padding--bottom">
+  <section class="p-strip is-dark notice u-no-padding--top">
     <div class="u-fixed-width">
       <div class="p-notification--information u-no-margin--bottom">
         <div class="p-notification__content">
@@ -45,7 +57,7 @@
     </div>
   </section>
 
-  <section class="p-strip u-no-padding--bottom">
+  <section class="p-strip u-no-padding">
     <hr class="is-fixed-width" />
     <div class="row">
       <div class="col-6 col-medium-4">
@@ -1244,17 +1256,17 @@
       // Set values to homepage takeover
       var selectedTakeover = takeovers[index];
 
-      takeover.className = "";
       takeover.removeAttribute("style");
 
       // Add takeover classes
-      var classNameString = "js-takeover p-takeover--" + selectedTakeover.class;
+      var classNameString = " js-takeover p-takeover--" + selectedTakeover.class;
       takeover.className += classNameString;
 
       // Set takeover content
       title.innerHTML = selectedTakeover.title;
       subtitle.innerHTML = selectedTakeover.subtitle;
       image.src = selectedTakeover.header_image;
+      image.srcset = selectedTakeover.header_image;
       image.onload = function() {
         // Remove animation delay
         if (takeoverAnimation) {
@@ -1263,9 +1275,15 @@
         }
       }
 
+      if (image.getAttribute("src") === "") {
+        takeoverAnimation.className = takeoverAnimation.className.replace(" is-loading", "");
+        takeoverAnimation.className += " is-loaded";
+      }
+
       image.removeAttribute("style");
       image.width = selectedTakeover.image_width;
       image.height = selectedTakeover.image_height;
+
       primaryUrl.href = selectedTakeover.primary_url;
       primaryUrl.textContent = selectedTakeover.primary_cta;
       if (selectedTakeover.secondary_url && selectedTakeover.secondary_url !== "") {
