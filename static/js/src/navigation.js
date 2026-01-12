@@ -155,8 +155,16 @@ const toggleDropdown = (toggleEl, shouldOpen) => {
 
 // Setup dropdown toggle functionality
 document.addEventListener('DOMContentLoaded', function () {
-  const dropdownToggles = document.querySelectorAll('[data-dropdown-url]');
+  // Global nav toggle
+  const globalNavToggle = document.querySelector(
+    '.global-nav__dropdown-toggle'
+  );
+  const globalNavBtn = globalNavToggle.querySelector('button');
+  globalNavBtn.addEventListener('click', function () {
+    closeAllDropdowns();
+  });
 
+  const dropdownToggles = document.querySelectorAll('[data-dropdown-url]');
   dropdownToggles.forEach(el => {
     const anchor = el.querySelector('a');
 
@@ -171,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           closeAllDropdowns();
 
-          // Open this dropdown
+          // Open dropdown
           console.log('Opening dropdown:', el);
           toggleDropdown(el, true);
         }

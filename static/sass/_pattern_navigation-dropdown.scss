@@ -236,8 +236,10 @@
   }
 
   .p-navigation__item--dropdown-toggle .p-navigation__link {
-    &::before {
-      display: none !important;
+    @media (min-width: $breakpoint-navigation-threshold) {
+      &::before {
+        display: none !important;
+      }
     }
   }
 }
