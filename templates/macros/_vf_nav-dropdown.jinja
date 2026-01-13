@@ -1,4 +1,4 @@
-{% macro vf_nav_dropdown(content_id, columns) %}
+{% macro vf_nav_dropdown(content_id, items) %}
   <div class="dropdown-content-desktop" id="{{ content_id }}">
     <nav class="dropdown-window__content-container">
         <div class="dropdown-window__content row--25-75">
@@ -13,11 +13,11 @@
                   aria-labelledby="support-enterprise-tab">
               <div class="row u-no-padding">
                 <div class="col dropdown-window__main-panel">
+                  {% for row in items|batch(3) %}
                   <div class="row">
-                    {% for column in columns %}
+                    {% for item in row %}
                     <div class="col-3">
-                      <ul class="p-list">
-                        {% for item in column %}
+                      <ul class="p-list u-no-margin">
                         <li class="p-navigation__dropdown-item">
                           <a href="{{ item.href }}"
                               class="p-link--inverted"
@@ -28,11 +28,11 @@
                             <small class="is-muted">{{ item.description }}</small>
                           </a>
                         </li>
-                        {% endfor %}
                       </ul>
                     </div>
                     {% endfor %}
                   </div>
+                  {% endfor %}
 
                 </div>
 
