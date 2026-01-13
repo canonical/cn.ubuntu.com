@@ -12,6 +12,7 @@
     "scss/double-slash-comment-empty-line-before": null,
     "scss/no-global-function-names": null,
     "selector-class-pattern": null,
-    "scss/at-extend-no-missing-placeholder": null
+    "scss/at-extend-no-missing-placeholder": null,
+    "color-function-notation": null
   }
 }

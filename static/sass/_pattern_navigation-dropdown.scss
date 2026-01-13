@@ -29,7 +29,7 @@
   .dropdown-window-overlay {
     @include vf-animation(opacity, brisk, out);
 
-    background-color: rgba(17, 17, 17, 0.4);
+    background-color: rgba(17, 17, 17, 40%);
     height: 100%;
     position: fixed;
     top: 0;
@@ -127,7 +127,7 @@
     margin: 2rem 0 2.5rem -0.5rem;
 
     .p-muted-heading {
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 60%);
       padding-left: 0.5rem;
       padding-top: 0.25rem;
     }
@@ -155,7 +155,7 @@
         }
 
         &:hover:not([class*='p-button--positive']) {
-          background-color: rgba(170, 170, 170, 0.1);
+          background-color: rgba(170, 170, 170, 10%);
           text-decoration: none;
         }
 
