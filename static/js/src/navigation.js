@@ -14,8 +14,6 @@ const dropdownWindowOverlay = document.querySelector(
 const navigation = document.querySelector(
   '.p-navigation, .p-navigation--reduced, .p-navigation--sliding'
 );
-const globalNavToggle = document.querySelector('.global-nav__dropdown-toggle');
-const globalNavBtn = globalNavToggle.querySelector('button');
 
 // Helper functions
 const isDesktop = window.matchMedia('(min-width: 1150px)').matches;
@@ -52,10 +50,19 @@ const closeAllDropdowns = () => {
   }
 };
 
-const closeGlobalNav = () => {
-  if (globalNavBtn) {
-    globalNavBtn.click();
+const closeDesktopGlobalNav = () => {
+  if (!isDesktop) {
+    return;
   }
+  const globalNavToggle = document.querySelector(
+    '.global-nav__dropdown-toggle'
+  );
+  const globalNavBtn = globalNavToggle.querySelector('button');
+  globalNavBtn.classList.remove('is-selected');
+  globalNavBtn.setAttribute('aria-expanded', 'false');
+
+  const globalDesktopContent = document.querySelector('#all-canonical-desktop');
+  globalDesktopContent.classList.remove('show-content');
 };
 
 const toggleDropdown = (toggleEl, shouldOpen) => {
@@ -219,7 +226,11 @@ initNavigationSliding();
 
 // Setup dropdown toggle functionality
 document.addEventListener('DOMContentLoaded', function () {
-  // Close all dropdowns if global nav is triggered
+  // Close all dropdowns when global nav toggle is clicked
+  const globalNavToggle = document.querySelector(
+    '.global-nav__dropdown-toggle'
+  );
+  const globalNavBtn = globalNavToggle.querySelector('button');
   globalNavBtn.addEventListener('click', function () {
     closeAllDropdowns();
   });
@@ -234,10 +245,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const isOpen = el.classList.contains('is-active') ? true : false;
         if (isOpen) {
+          // Close dropdown
           toggleDropdown(el, false);
         } else {
-          closeGlobalNav();
+          // Open dropdown
+          closeDesktopGlobalNav();
           closeAllDropdowns();
+
           toggleDropdown(el, true);
         }
       });
