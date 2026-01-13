@@ -1,4 +1,4 @@
-@use "sass:color";
+@use 'sass:color';
 
 @mixin ubuntu-p-navigation-dropdown {
   $dropdown-border: 1px solid $colors--dark-theme--border-low-contrast;
@@ -58,7 +58,7 @@
   .dropdown-window__content {
     color: $color-light;
 
-    [hidden="true"] {
+    [hidden='true'] {
       display: none;
     }
 
@@ -74,7 +74,7 @@
       &::after {
         background: #262626;
         bottom: 0;
-        content: "";
+        content: '';
         display: block;
         left: -50vw;
         position: absolute;
@@ -116,7 +116,7 @@
     justify-content: space-between;
     padding: 1rem 0;
 
-    [class*="p-button"] {
+    [class*='p-button'] {
       background: transparent;
       margin: 0;
     }
@@ -154,7 +154,7 @@
           color: #f7f7f7;
         }
 
-        &:hover:not([class*="p-button--positive"]) {
+        &:hover:not([class*='p-button--positive']) {
           background-color: rgba(170, 170, 170, 0.1);
           text-decoration: none;
         }
@@ -217,7 +217,7 @@
       @include vf-icon-chevron;
 
       bottom: 0;
-      content: "";
+      content: '';
       left: 1.25rem;
       margin: auto;
       position: absolute;
