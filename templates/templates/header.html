@@ -1,3 +1,78 @@
+{% from "macros/_vf_nav-mobile.jinja" import vf_nav_mobile %}
+{% from "macros/_vf_nav-dropdown.jinja" import vf_nav_dropdown %}
+
+{% set dropdown = {
+  'products': [
+    {
+      'href': '/desktop',
+      'title': 'Ubuntu 桌面系统',
+      'description': '现代且安全的 Linux 桌面'
+    },
+    {
+      'href': '/openstack',
+      'title': 'OpenStack',
+      'description': '面向企业的高性能云平台'
+    },
+    {
+      'href': '/landscape',
+      'title': '系统管理',
+      'description': '集中监控与管理多台设备'
+    },
+    {
+      'href': '/server',
+      'title': 'Ubuntu 服务器',
+      'description': '面向云环境的可扩展 Linux'
+    },
+    {
+      'href': '/microcloud',
+      'title': 'MicroCloud',
+      'description': '轻量、自动化的云端部署'
+    },
+    {
+      'href': '/support',
+      'title': '技术支持',
+      'description': '面向全栈的全天候技术支持'
+    },
+    {
+      'href': '/core',
+      'title': 'Ubuntu Core',
+      'description': '为物联网设计的嵌入式 Linux'
+    },
+    {
+      'href': '/core',
+      'title': 'Kubernetes',
+      'description': '容器化应用的运行环境'
+    },
+    {
+      'href': '/certified',
+      'title': '认证硬件',
+      'description': '经 Ubuntu 认证的硬件设备'
+    },
+    {
+      'href': '/pro',
+      'title': 'Ubuntu Pro 订阅',
+      'description': '长期的安全与合规保障服务'
+    }
+  ],
+  'solutions': [
+    {
+      'href': '/ai',
+      'title': '开源 AI/ML',
+      'description': '人工智能和机器学习工作负载'
+    },
+    {
+      'href': '/infrastructure',
+      'title': '基础架构',
+      'description': '高效敏捷的数据中心运维'
+    },
+    {
+      'href': '/internet-of-things',
+      'title': '物联网',
+      'description': '实现大规模设备部署与管理'
+    }
+  ]
+} %}
+
 {% block header_banner %}
   <header id="navigation"
           class="p-navigation--sliding is-dark is-sticky">
@@ -34,7 +109,8 @@
                aria-controls="products-content"
                tabindex="0">产品和服务</a>
 
-            {% include "templates/navigation/products-mobile.html" %}
+               {{ vf_nav_mobile('products-cn-content-mobile', dropdown.products) }}
+
           </li>
           
           <li class="p-navigation__item--dropdown-toggle"
@@ -46,7 +122,7 @@
                aria-controls="solution-content"
                tabindex="0">解决方案</a>
 
-            {% include "templates/navigation/solution-mobile.html" %}
+            {{ vf_nav_mobile('solution-cn-content-mobile', dropdown.solutions) }}
           </li>
           <li class="p-navigation__item" role="menuitem">
             <a class="p-navigation__link"
@@ -78,8 +154,8 @@
 
   <div class="dropdown-window-overlay fade-animation"></div>
   <div class="dropdown-window is-dark slide-animation">
-    {% include "templates/navigation/products.html" %}
-    {% include "templates/navigation/solution.html" %}
+    {{ vf_nav_dropdown('products-cn-content', dropdown.products) }}
+    {{ vf_nav_dropdown('solution-cn-content', dropdown.solutions) }}
   </div>
 
   <style>

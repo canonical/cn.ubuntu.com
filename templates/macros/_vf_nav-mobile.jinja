@@ -1,0 +1,14 @@
+{% macro vf_nav_mobile(content_id, items) %}
+  <div class="u-hide dropdown-content-mobile" id="{{ content_id }}">
+    <ul class="p-navigation__dropdown u-no-padding">
+      <li class="p-navigation__item--dropdown-close">
+        <button aria-controls="back" class="p-navigation__link js-back-button" tabindex="0">Back</button>
+      </li>
+      {% for item in items %}
+        <li>
+          <a href="{{ item.href }}" class="p-navigation__dropdown-item">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}
