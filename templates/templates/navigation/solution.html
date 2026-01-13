@@ -24,18 +24,4 @@
   ]
 ] %}
 
-<!-- Desktop dropdown content -->
-{{ vf_nav_dropdown('solution-content', solution_columns) }}
-
-<!-- Mobile dropdown content -->
-<div class="u-hide dropdown-content-mobile">
-  <ul class="p-navigation__dropdown" aria-hidden="true">
-    {% for column in solution_columns %}
-      {% for item in column %}
-        <li class="p-navigation__item">
-          <a href="{{ item.href }}" class="p-navigation__link">{{ item.title }}</a>
-        </li>
-      {% endfor %}
-    {% endfor %}
-  </ul>
-</div>
+{{ vf_nav_dropdown('solution-cn-content', solution_columns) }}

@@ -26,23 +26,27 @@
         <ul class="p-navigation__items js-navigation-items global-nav"
             role="menu">
           <li class="p-navigation__item--dropdown-toggle"
-              id="products"
+              id="products-cn"
               data-dropdown-url="/templates/navigation/products">
             <a class="p-navigation__link"
                role="menuitem"
                href="/navigation#products-navigation"
                aria-controls="products-content"
                tabindex="0">产品和服务</a>
+
+            {% include "templates/navigation/products-mobile.html" %}
           </li>
           
           <li class="p-navigation__item--dropdown-toggle"
-              id="solution"
+              id="solution-cn"
               data-dropdown-url="/templates/navigation/solution">
             <a class="p-navigation__link"
                role="menuitem"
                href="/navigation#solution-navigation"
                aria-controls="solution-content"
                tabindex="0">解决方案</a>
+
+            {% include "templates/navigation/solution-mobile.html" %}
           </li>
           <li class="p-navigation__item" role="menuitem">
             <a class="p-navigation__link"
