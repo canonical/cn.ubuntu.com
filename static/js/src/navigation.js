@@ -16,7 +16,7 @@ const navigation = document.querySelector(
 );
 
 // Helper functions
-const isDesktop = window.matchMedia('(min-width: 1150px)').matches;
+const isDesktop = () => window.matchMedia('(min-width: 1150px)').matches;
 
 const closeAllDropdowns = () => {
   if (navigation && 'classList' in navigation) {
@@ -51,7 +51,7 @@ const closeAllDropdowns = () => {
 };
 
 const closeDesktopGlobalNav = () => {
-  if (!isDesktop) {
+  if (!isDesktop()) {
     return;
   }
   const globalNavToggle = document.querySelector(
@@ -67,22 +67,22 @@ const closeDesktopGlobalNav = () => {
 
 const toggleDropdown = (toggleEl, shouldOpen) => {
   // Handle navigation and dropdown window states
-  navigation.classList.toggle('has-menu-open', isDesktop ? false : true);
+  navigation.classList.toggle('has-menu-open', isDesktop() ? false : true);
 
   toggleEl.classList.remove('is-selected');
   toggleEl.classList.toggle('is-active', shouldOpen);
 
   const dropdownContentID = toggleEl.id + '-content';
-  const mobileContentID = isDesktop
+  const mobileContentID = isDesktop()
     ? dropdownContentID
     : dropdownContentID + '-mobile';
 
   const dropdownContents = document.querySelectorAll(
-    `#${isDesktop ? dropdownContentID : mobileContentID}`
+    `#${isDesktop() ? dropdownContentID : mobileContentID}`
   );
 
   // On mobile, add "is-active" to navigation items container when it should toggle open
-  if (!isDesktop) {
+  if (!isDesktop()) {
     const navigationEl = document.querySelector('.js-navigation-items');
     if (shouldOpen) {
       navigationEl.classList.add('is-active');
