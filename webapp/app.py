@@ -57,12 +57,14 @@ def set_cache(key, value, timeout):
     cache.set(key, value, timeout)
 
 
-cookie_service = CookieConsent().init_app(
-    app,
-    get_cache_func=get_cache,
-    set_cache_func=set_cache,
-    start_health_check=True,
-)
+cookie_service = None
+if not app.debug:
+    cookie_service = CookieConsent().init_app(
+        app,
+        get_cache_func=get_cache,
+        set_cache_func=set_cache,
+        start_health_check=True,
+    )
 
 # ChoiceLoader attempts loading templates from each path in successive order
 loader = ChoiceLoader(
