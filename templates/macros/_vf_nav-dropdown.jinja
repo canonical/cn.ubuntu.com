@@ -1,38 +1,46 @@
 {% macro vf_nav_dropdown(content_id, items) %}
-  <div class="dropdown-content-desktop" id="{{ content_id }}">
+  <div class="dropdown-content-desktop u-hide" id="{{ content_id }}">
     <nav class="dropdown-window__content-container">
-        <div class="dropdown-window__content row--25-75">
+        <div class="dropdown-window__content grid-row--25-75">
 
-          <div class="col"></div>
+          <div class="grid-col"></div>
 
-          <div class="col u-no-padding">
+          <div class="grid-col u-no-padding">
             <div class="dropdown-window__sidenav-content is-dark"
                   id="support-enterprise-tab-content"
                   tabindex="-1"
                   role="tabpanel"
                   aria-labelledby="support-enterprise-tab">
-              <div class="row u-no-padding">
-                <div class="col dropdown-window__main-panel">
-                  {% for row in items|batch(3) %}
-                  <div class="row">
-                    {% for item in row %}
-                    <div class="col-3">
+              <div class="grid-row u-no-padding">
+                <div class="grid-col dropdown-window__main-panel">
+                  {% set maxPerRow = 3 %}
+                  {% set totalItems = items|length %}
+                  {% set base_items = totalItems // maxPerRow %}
+                  {% set extra_items = totalItems % maxPerRow %}
+                  
+                  <div class="grid-row">
+                    {% for col in range(maxPerRow) %}
+                    {% set col_height = base_items + (1 if col < extra_items else 0) %}
+                    <div class="grid-col-2">
                       <ul class="p-list u-no-margin">
+                        {% for row in range(col_height) %}
+                        {% set start_item_for_col = col * base_items + [col, extra_items]|min %}
+                        {% set item_index = start_item_for_col + row %}
                         <li class="p-navigation__dropdown-item">
-                          <a href="{{ item.href }}"
+                          <a href="{{ items[item_index].href }}"
                               class="p-link--inverted"
                               onclick="event.stopPropagation()"
                               tabindex="0">
-                            <span>{{ item.title }}</span>
+                            <span>{{ items[item_index].title }}</span>
                             <br />
-                            <small class="is-muted">{{ item.description }}</small>
+                            <small class="is-muted">{{ items[item_index].description }}</small>
                           </a>
                         </li>
+                        {% endfor %}
                       </ul>
                     </div>
                     {% endfor %}
                   </div>
-                  {% endfor %}
 
                 </div>
 

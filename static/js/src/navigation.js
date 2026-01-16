@@ -15,6 +15,18 @@ const navigation = document.querySelector(
   '.p-navigation, .p-navigation--reduced, .p-navigation--sliding'
 );
 
+// Override global-nav functionality that changes menu button innerHTML
+if (menuButton) {
+  Object.defineProperty(menuButton, 'innerHTML', {
+    set: function(value) {
+      Object.getOwnPropertyDescriptor(Element.prototype, 'innerHTML')?.set.call(this, 'Menu');
+    },
+    get: function() {
+      return Object.getOwnPropertyDescriptor(Element.prototype, 'innerHTML')?.get.call(this);
+    }
+  });
+}
+
 // Helper functions
 const isDesktop = () => window.matchMedia('(min-width: 1150px)').matches;
 
@@ -96,10 +108,14 @@ const toggleDropdown = (toggleEl, shouldOpen) => {
   }
 
   dropdownContents.forEach(content => {
-    content.classList.toggle('u-hide', !shouldOpen);
     if (shouldOpen) {
+      content.classList.remove('u-hide');
       content.removeAttribute('aria-hidden');
     } else {
+      // Delay hiding content after fade out animation
+      setTimeout(() => {
+        content.classList.add('u-hide');
+      }, 300);
       content.setAttribute('aria-hidden', !shouldOpen);
     }
 
@@ -152,6 +168,14 @@ const initNavigationSliding = () => {
       ) {
         closeAllDropdowns();
       }
+    }
+  });
+
+  // When keyboard escape key is pressed, close all dropdowns
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' || event.key === 'Esc') {
+      closeAllDropdowns();
+      closeDesktopGlobalNav();
     }
   });
 
