@@ -17,13 +17,17 @@ const navigation = document.querySelector(
 
 // Override global-nav functionality that changes menu button innerHTML
 if (menuButton) {
+  const menuBtnDesc = Object.getOwnPropertyDescriptor(
+    Element.prototype,
+    'innerHTML'
+  );
   Object.defineProperty(menuButton, 'innerHTML', {
-    set: function(value) {
-      Object.getOwnPropertyDescriptor(Element.prototype, 'innerHTML')?.set.call(this, 'Menu');
+    set: function () {
+      menuBtnDesc.set.call(this, 'Menu');
     },
-    get: function() {
-      return Object.getOwnPropertyDescriptor(Element.prototype, 'innerHTML')?.get.call(this);
-    }
+    get: function () {
+      return menuBtnDesc.get.call(this);
+    },
   });
 }
 
