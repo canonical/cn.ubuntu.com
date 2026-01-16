@@ -1,129 +1,597 @@
 {% extends "templates/base.html" %}
 
-{% if title %}{% block title %}Ubuntu系统下载{{ title }}{% endblock %}{% endif %}
-{% if meta_description %}{% block meta_description %}Ubuntu {{ releases.lts.short_version }}下载, Ubuntu {{ releases.latest.full_version }}下载, Ubuntu 服务器下载， Ubuntu系统下载， Ubuntu官网系统下载， Ubuntu OpenStack{{ meta_description }}{% endblock %}{% endif %}
-{% block meta_copydoc %}https://docs.google.com/document/d/1-rYu9BV4mN04yXn01QhBillOyHQOeuCbuGKiJQpJjYs/edit{% endblock meta_copydoc %}
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_divided-section.jinja" import vf_divided_section %}
+{% from "_macros/vf_tab-section.jinja" import vf_tab_section %}
+{% from "_macros/vf_basic-section.jinja" import vf_basic_section %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+
+{% block title %}Ubuntu系统下载{{ title }}{% endblock %}
+
+{% block meta_copydoc %}https://docs.google.com/document/d/1WGnJtO-xMo4iGAe031eBGeXi8U22xsKzh0_nVtSLuY4/edit{% endblock meta_copydoc %}
+
 {% block content %}
 
-<section class="p-strip--suru-shape-light is-deep">
-  <div class="row u-vertically-center u-pull-up--large">
-    <div class="col-6">
-      <h1 class="p-heading--2 u-no-margin--bottom"><strong>Ubuntu下载</strong></h1>
-      <h2 class="u-no-padding--top u-text--muted">Ubuntu桌面</h2>
+  {% call(slot) vf_hero(
+    title_text='Ubuntu 下载',
+    layout='50/50'
+  ) -%}
+    {%- if slot == 'description' -%}
       <p>
-        快速、免费且充满新功能。最新版本的 Ubuntu桌面版 为开发人员、创作者、游戏玩家和系统管理员提供了新工具和增强功能。
+        Ubuntu 是世界上最受欢迎的 Linux 操作系统。您可以在桌面电脑、笔记本、工作站、服务器或物联网设备上运行，并享受五年的常规安全更新。
       </p>
-      <p>
-        下载 Ubuntu桌面 并替换您当前的操作系统或与之同时运行Ubuntu。
-      </p>
-      <p><a href="/download" class="p-button--positive">下载Ubuntu桌面版</a></p>
-      <p>
-        <strong>想要升级系统吗？</strong> <a href="https://ubuntu.com/tutorials/tutorial-upgrading-ubuntu-desktop">参考我们的简易指南</a>
-      </p>
-    </div>
-    <div class="col-6 u-hide--medium u-hide--small u-align--center">
-      {{ image (
-        url="https://assets.ubuntu.com/v1/3b5fa561-mascot-numbat@2x.png", 
-        alt="",
-        width="230",
-        height="230",
-        hi_def=True,
-        loading="auto"
+    {%- endif -%} 
+    {%- if slot == 'image' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/25fb3db9-ubuntu_xia_zai.png",
+          alt="",
+          width="1800",
+          height="1200",
+          hi_def=True,
+          loading="auto",
+          attrs={"class": "p-image-container is-highlighted"}
         ) | safe
       }}
-    </div>
-  </div>
-</section>
+    {%- endif -%}
+  {% endcall -%}
 
-<section class="p-strip--light">
-    <div class="row u-equal-height">
-      <div class="col-1 u-hide--small u-vertically-center u-align--center">
-        {{
-        image(
-        url="https://assets.ubuntu.com/v1/ea34f006-Multipass+logomark_rgb.svg",
-        alt="Ubuntu",
-        width="40",
-        height="40",
-        hi_def=True,
-        loading="auto",
-        ) | safe
-        }}
-      </div>
-      <div class="col-5 u-vertically-center">
-        <span>在虚拟机里面使用Ubuntu？适用于Linux，Windows或者macOS上的Ubuntu VM即时迷你云。<br />
-          <a href="https://multipass.run/">试试Multipass</a>
-        </span>
-      </div>
-      <div class="col-1 u-hide--small u-vertically-center u-align--center">
-        {{
-        image(
-        url="https://assets.ubuntu.com/v1/08563efa-picto-windows.svg",
-        alt="Windows",
-        width="40",
-        height="40",
-        hi_def=True,
-        loading="auto",
-        ) | safe
-        }}
-      </div>
-      <div class="col-5 u-vertically-center">
-        <span>在Windows上使用Ubuntu终端和运行Linux应用程序。<br />
-          <a href="https://ubuntu.com/wsl">在适用于Linux的Windows子系统（WSL）上启用Ubuntu</a>
-        </span>
-    </div>
-    </div>
-</section>
-
-<section class="p-strip">
-  <div class="row">
-    <div class="col-6 u-sv3">
-      <h3>
-        <a href="/download">
-          Ubuntu服务器版&nbsp;&rsaquo;
-        </a>
-      </h3>
-      <p>无论您是想配置一个简单的文件服务器还是构建一个5万节点的云，您都可以依靠Ubuntu Server版本及其免费的5年升级保证。</p>
-    </div>
-    <div class="col-6 u-sv3">
-      <h3>
-        <a href="/download">
-          云上的Ubuntu&nbsp;&rsaquo;
-        </a>
-      </h3>
-      <p>Ubuntu是OpenStack的参考操作系统。在单机上试用Canonical的OpenStack或者在集群上以开始构建生产云（只需添加服务器）。</p>
-    </div>
+  <div id="desktop">
+    {{ vf_divided_section(
+      title={
+        "text": "Ubuntu 桌面系统",
+      },
+      blocks=[
+        {
+          "type": "divided-block",
+          "bullet_type": "none",
+          "items": [
+            {
+              "contents": [
+                {
+                  "type": "description",
+                  "item": {
+                    "type": "text",
+                    "content": "为全球数百万台 PC 和笔记本电脑提供支持的开源桌面操作系统。了解 Ubuntu 的功能，以及我们如何支持开发者和各类组织。若您正在進行升級，<a href='https://ubuntu.com/tutorials/upgrading-ubuntu-desktop'>请参阅升级指南</a>。"
+                  }
+                },
+                {
+                  "type": "cta-block",
+                  "item": {
+                    "link": {
+                      "content_html": "关于 Ubuntu 桌面版&nbsp;&rsaquo;",
+                      "attrs": {
+                        "href": "/desktop"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title_text": "Ubuntu 24.04.03 LTS",
+              "contents": [
+                {
+                  "type": "description",
+                  "item": {
+                    "type": "text",
+                    "content": "专为桌面 PC 和笔记本精心打造的 Ubuntu 长期支持（LTS）版本。LTS 意为 long-term support，24.04 LTS 将提供五年常规安全更新和维护，并可通过 Ubuntu Pro 延长至 15 年。"
+                  }
+                },
+                {
+                  "type": "cta-block",
+                  "item": {
+                    "primary": {
+                      "content_html": "立即下载",
+                      "attrs": {
+                        "href": "https://releases.ubuntu.com/" + releases.lts.full_version + "/ubuntu-" + releases.lts.full_version + "-desktop-amd64.iso"
+                      }
+                    },
+                    "link": {
+                      "content_html": "Ubuntu 24.04 LTS 发布说明&nbsp;&rsaquo;",
+                      "attrs": {
+                        "href": "https://discourse.ubuntu.com/t/noble-numbat-release-notes/39890"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title_text": "Ubuntu 25.10",
+              "contents": [
+                {
+                  "type": "description",
+                  "item": {
+                    "type": "text",
+                    "content": "为桌面 PC 和笔记本打造的最新 Ubuntu 子版本。Ubuntu 25.10 将提供九个月的常规安全更新和维护至 2026 年 7 月。"
+                  }
+                },
+                {
+                  "type": "cta-block",
+                  "item": {
+                    "secondaries": [
+                      {
+                        "content_html": "立即下载",
+                        "attrs": {
+                          "href": "https://releases.ubuntu.com/" + releases.latest.full_version + "/ubuntu-" + releases.latest.full_version + "-desktop-amd64.iso"
+                        }
+                      }
+                    ],
+                    "link": {
+                      "content_html": "Ubuntu 25.10 发布说明&nbsp;&rsaquo;",
+                      "attrs": {
+                        "href": "https://discourse.ubuntu.com/t/questing-quokka-release-notes/59220"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title_text": "推荐的系统配置要求",
+              "contents": [
+                {
+                  "type": "list",
+                  "item": {
+                    "list_items": [
+                      {
+                        "list_item_type": "bullet",
+                        "content": "双核 2 GHz 处理器或更高"
+                      },
+                      {
+                        "list_item_type": "bullet",
+                        "content": "4 GB系统内存"
+                      },
+                      {
+                        "list_item_type": "bullet",
+                        "content": "25 GB 磁盘存储空间"
+                      },
+                      {
+                        "list_item_type": "bullet",
+                        "content": "USB 接口或 DVD 光驱安装介质"
+                      },
+                      {
+                        "list_item_type": "bullet",
+                        "content": "建议联网环境"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    ) }}
   </div>
-  <div class="row">
-    <div class="col-6 u-sv3">
-      <h3>
-        <a href="https://ubuntu.com/download/ubuntu-flavours">
-          Ubuntu风味版
-        </a>
-      </h3>
-      <p>Ubuntu风味版提供了一种特别的方式来体验不同默认应用程序、设置的Ubuntu，其由Ubuntu归档（Ubuntu Archive）提供软件包和更新。</p>
-    </div>
-    <div class="col-6 u-sv3">
-      <h3>
-        <a href="/download">
-          Ubuntu IoT版&nbsp;&rsaquo;
-        </a>
-      </h3>
-      <p>您是一个想要尝试Ubuntu Core的开发者吗？Ubuntu Core是适用于云和物联网设备，重新设计的，安全的，事务化更新的，轻量级的Ubuntu。
-      </p>
-    </div>
-  </div>
-</section>
 
-<section class="p-strip--light">
-  <div class="u-fixed-width">
-    <h2>其他下载</h2>
-    <p>还有其他几种获取Ubuntu系统镜像的方法，包括BT下载，其可能会有更快的下载速度，用于旧系统和特殊配置的网络安装器以及旧（和新）版本的区域镜像的链接。</p>
-    <p>
-      <a href="/download" class="p-button">其他下载</a>
-    </p>
+  <div id="server">
+    {{- vf_tab_section(
+      title={
+        "text": "Ubuntu 服务器版"
+      },
+      description={
+        "content": "无论您是要配置一台简单的文件服务器，还是构建拥有五万个节点的云环境，都可以信赖 Ubuntu 服务器版及其提供的五年常规更新支持。"
+      },
+      cta={
+        "link": {
+          "content_html": "关于 Ubuntu 服务器版&nbsp;&rsaquo;",
+          "attrs": {
+            "href": "/server"
+          }
+        }
+      },
+      tabs=[
+        {
+          "tab_html": "手动安装到服务器",
+          "type": "divided-section",
+          "item": {
+            "blocks": [
+              {
+                "type": "description-block",
+                "items": [
+                  {
+                    "type": "description",
+                    "item": {
+                      "type": "html",
+                      "content": "<p><strong>Ubuntu Server 24.04 LTS</strong></p>"
+                    }
+                  },
+                  {
+                    "type": "description",
+                    "item": {
+                      "type": "text",
+                      "content": "最新的 Ubuntu 服务器长期支持（LTS）版本。LTS 意为 long-term support，24.04 LTS 将提供五年常规安全更新和维护，并可通过 Ubuntu Pro 延长至 15 年。"
+                    }
+                  },
+                  {
+                    "type": "cta-block",
+                    "item": {
+                      "primary": {
+                        "content_html": "立即下载",
+                        "attrs": {
+                          "href": "/download/server/thank-you?version=" + releases.lts.full_version + "&architecture=amd64"
+                        }
+                      },
+                      "link": {
+                        "content_html": "Ubuntu 24.04 LTS 发布说明&nbsp;&rsaquo;",
+                        "attrs": {
+                          "href": "https://discourse.ubuntu.com/t/noble-numbat-release-notes/39890"
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "divided-block",
+                "bullet_type": "none",
+                "items": [
+                  {
+                    "title_text": "Ubuntu Server 25.10",
+                    "contents": [
+                      {
+                        "type": "description",
+                        "item": {
+                          "type": "text",
+                          "content": "最新 Ubuntu Server 子版本。将提供九个月的常规安全和维护更新至 2026 年 7 月。"
+                        }
+                      },
+                      {
+                        "type": "cta-block",
+                        "item": {
+                          "secondaries": [
+                            {
+                              "content_html": "立即下载",
+                              "attrs": {
+                                "href": "https://releases.ubuntu.com/" + releases.latest.full_version + "/ubuntu-" + releases.latest.full_version + "-live-server-amd64.iso"
+                              }
+                            }
+                          ],
+                          "link": {
+                            "content_html": "Ubuntu 25.10 发布说明&nbsp;&rsaquo;",
+                            "attrs": {
+                              "href": "https://discourse.ubuntu.com/t/questing-quokka-release-notes/59220"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "tab_html": "其他安装",
+          "type": "divided-section",
+          "item": {
+            "blocks": [
+              {
+                "type": "description-block",
+                "items": [
+                  {
+                    "type": "description",
+                    "item": {
+                      "type": "html",
+                      "content": "<p><strong>即时 Ubuntu VM</strong></p>"
+                    }
+                  },
+                  {
+                    "type": "description",
+                    "item": {
+                      "type": "text",
+                      "content": "使用 Multipass 在 Windows、Mac 和 Linux 上按需创建 Ubuntu 虚拟机。"
+                    }
+                  },
+                  {
+                    "type": "list",
+                    "item": {
+                      "list_items": [
+                        {
+                          "list_item_type": "bullet",
+                          "content": "带有最新的安全补丁程序，始终保持最新"
+                        },
+                        {
+                          "list_item_type": "bullet",
+                          "content": "Cloud-init，适用于云开发和测试的元数据"
+                        },
+                        {
+                          "list_item_type": "bullet",
+                          "content": "Virtualbox，Hyper-V，HyperKit或KVM"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "cta-block",
+                    "item": {
+                      "link": {
+                        "content_html": "获取 Multipass&nbsp;&rsaquo;",
+                        "attrs": {
+                          "href": "https://canonical.com/multipass",
+                          "class": "u-sv3"
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "divided-block",
+                "bullet_type": "none",
+                "items": [
+                  {
+                    "title_text": "自动化的服务器配置",
+                    "contents": [
+                      {
+                        "type": "description",
+                        "item": {
+                          "type": "text",
+                          "content": "通过 MAAS 以全自动化的方式使用 Ubuntu Server 来配置机器。"
+                        }
+                      },
+                      {
+                        "type": "list",
+                        "item": {
+                          "list_items": [
+                            {
+                              "list_item_type": "bullet",
+                              "content": "裸机云体验"
+                            },
+                            {
+                              "list_item_type": "bullet",
+                              "content": "支持 Ubuntu Server、CentOS 和 Windows 机器"
+                            },
+                            {
+                              "list_item_type": "bullet",
+                              "content": "基础设施发现和自动化"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "cta-block",
+                        "item": {
+                          "link": {
+                            "content_html": "获取 MAAS&nbsp;&rsaquo;",
+                            "attrs": {
+                              "href": "https://canonical.com/maas"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title_text": "其他可选择的架构",
+                    "contents": [
+                      {
+                        "type": "list",
+                        "item": {
+                          "list_items": [
+                            {
+                              "list_item_type": "bullet",
+                              "content": "<a href='https://ubuntu.com/download/server/arm'>ARM</a>"
+                            },
+                            {
+                              "list_item_type": "bullet",
+                              "content": "<a href='https://ubuntu.com/download/server/power'>IBM POWER</a>"
+                            },
+                            {
+                              "list_item_type": "bullet",
+                              "content": "<a href='https://ubuntu.com/download/server/s390x'>IBM Z（s390x）</a>"
+                            },
+                            {
+                              "list_item_type": "bullet",
+                              "content": "<a href='https://ubuntu.com/download/risc-v'>RISC-V</a>"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    ) -}}
   </div>
-</section>
 
-{% with first_item="_download_enterprise_support", second_item="_download_documentation", third_item="_download_helping_hands" %}{% include "shared/contextual_footers/_contextual_footer.html" %}{% endwith %}
+  <div id="iot">
+    {{- vf_tab_section(
+      title={
+        "text": "物联网"
+      },
+      tabs=[
+        {
+          "tab_html": "物联网的 Ubuntu",
+          "type": "basic-section",
+          "item": {
+            "items": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "Ubuntu Core 是一款极简、安全且严格隔离的操作系统。它专注于安全性和简化维护，以适用于边缘计算和大型设备网络。构建专属定制的 Ubuntu Core 生产镜像，为性能与安全性优化做好准备。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "关于 Ubuntu Core&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "/core",
+                      "class": "u-sv2"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "secondaries": [
+                    {
+                      "content_html": "建构自己的 Ubuntu Core",
+                      "attrs": {
+                        "href": "https://ubuntu.com/core/docs/getting-started"
+                      }
+                    }
+                  ],
+                  "link": {
+                    "content_html": "Core 24 发布说明&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://documentation.ubuntu.com/core/reference/release-notes/index.html"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "tab_html": "预构建的 Ubuntu Core 镜像",
+          "type": "divided-section",
+          "item": {
+            "blocks": [
+              {
+                "type": "description-block",
+                "items": [
+                  {
+                    "type": "description",
+                    "item": {
+                      "type": "html",
+                      "content": "<p class='u-sv3'>Canonical 预构建的 Ubuntu Core 镜像是体验 Ubuntu Core 最理想的方式。它们针对特定硬件平台构建，您也可以在虚拟环境中进行测试。</p>"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "divided-block",
+                "bullet_type": "none",
+                "items": [
+                  {
+                    "title_text": "选项 1 - 在虚拟机上",
+                    "contents": [
+                      {
+                        "type": "description",
+                        "item": {
+                          "type": "text",
+                          "content": "使用 Multipass 在 Ubuntu、Windows 或 macOS 上试用预构建的 Ubuntu Core 镜像。"
+                        }
+                      },
+                      {
+                        "type": "cta-block",
+                        "item": {
+                          "secondaries": [
+                            {
+                              "content_html": "在虚拟机上安装",
+                              "attrs": {
+                                "href": "https://ubuntu.com/core/docs/install-on-a-vm"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title_text": "选项 2 - 在设备上",
+                    "contents": [
+                      {
+                        "type": "description",
+                        "item": {
+                          "type": "text",
+                          "content": "在多种 x86 与 ARM 设备上使用预构建的 Ubuntu Core 镜像。"
+                        }
+                      },
+                      {
+                        "type": "cta-block",
+                        "item": {
+                          "secondaries": [
+                            {
+                              "content_html": "在开发板上安装",
+                              "attrs": {
+                                "href": "https://ubuntu.com/core/docs/install-on-a-device"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    ) -}}
+  </div>
+
+  <div id="cloud">
+    {{ vf_basic_section(
+      title={"text": "公有云上优化的 Ubuntu"},
+      items=[
+        {
+          "type": "description",
+          "item": {
+            "type": "text",
+            "content": "Ubuntu 为亚马逊 AWS、微软 Azure、Google Cloud Platform、IBM Cloud 和甲骨文等合作伙伴优化和认证的服务器镜像。另外，Canonical 也为这些镜像提供 Ubuntu 订阅服务，企业级商业支持。"
+          }
+        },
+        {
+          "type": "cta-block",
+          "item": {
+            "secondaries": [
+              {
+                "content_html": "前往选择运行的云",
+                "attrs": {
+                  "href": "https://ubuntu.com/download/cloud"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    ) }}
+  </div>
+
+  <div id="others">
+    {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=true) -%}
+      {%- if slot == 'title' -%}
+        <h2>其他版本</h2>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_title_1' -%}
+        <h3 class="p-heading--5">Ubuntu 风味版</h3>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_description_1' -%}
+        <p>Ubuntu 风味版 - Ubuntu flavors 提供特别的方式来体验不同默认应用程序、设置的 Ubuntu，其由 Ubuntu 归档（Ubuntu Archive）提供软件包和更新。</p>
+        <div class="p-cta-block">
+          <a href="https://ubuntu.com/desktop/flavors">Ubuntu flavors&nbsp;&rsaquo;</a>
+        </div>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_title_2' -%}
+        <h3 class="p-heading--5">其他下载</h3>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_description_2' -%}
+        <p>还有其他几种获取 Ubuntu 系统镜像的方法，包括 BT 下载等能会有更快的下载速度。或是用于旧系统和特殊配置的网络安装器，以及旧（和新）版本的区域镜像链接。</p>
+        <div class="p-cta-block">
+          <a href="https://ubuntu.com/download/alternative-downloads">查看其他下载&nbsp;&rsaquo;</a>
+        </div>
+      {%- endif -%}
+    {%- endcall -%}
+  </div>
+
+  {% with first_item="_download_enterprise_support", second_item="_download_documentation", third_item="_download_helping_hands" %}
+    {% include "shared/_contextual_footer.html" %}
+  {% endwith %}
 
 {% endblock %}

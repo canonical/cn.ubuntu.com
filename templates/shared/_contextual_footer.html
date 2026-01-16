@@ -1,0 +1,38 @@
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+
+<div class="p-section">
+  {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
+    {%- if slot == 'title' -%}
+      <h2>最全面的开源安全支持</h2>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">最全面的开源安全支持</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>为 Ubuntu LTS 提供更全面的企业级支持。</p>
+      <div class="p-cta-block">
+        <a href="/download#desktop">前往了解 Ubuntu Pro&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">寻求帮助</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">
+          <a href="https://discourse.ubuntu.com/">Ubuntu Discourse</a>
+        </li>
+        <li class="p-list__item has-bullet">
+          <a href="https://askubuntu.com/">Ask Ubuntu</a>
+        </li>
+        <li class="p-list__item has-bullet">
+          <a href="https://answers.launchpad.net/ubuntu">Launchpad Answers</a>
+        </li>
+      </ul>
+    {%- endif -%}
+  {%- endcall -%}
+</div>
