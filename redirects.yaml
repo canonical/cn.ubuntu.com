@@ -21,5 +21,5 @@ cloud/openstack/tco-calculator/?: "https://canonical.com/solutions/infrastructur
 cloud/openstack(?P<path>/.*)?/?: "/openstack"
 cloud(?P<path>/.*)?/?: "/infrastructure"
 download/server/provisioning/?: "https://canonical.com/maas"
-download(?P<path>/.*)/?: "/download"
+download(?!/server/thank-you(?:/|$))(?P<path>/.*)/?: "/download"
 pricing/pro/?: "https://ubuntu.com/pricing/pro"
