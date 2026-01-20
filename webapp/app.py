@@ -56,13 +56,14 @@ def get_cache(key):
 def set_cache(key, value, timeout):
     cache.set(key, value, timeout)
 
+# TODO: Removed for local QA purposes. Uncomment before merging
+# cookie_service = CookieConsent().init_app(
+#     app,
+#     get_cache_func=get_cache,
+#     set_cache_func=set_cache,
+#     start_health_check=True,
+# )
 
-cookie_service = CookieConsent().init_app(
-    app,
-    get_cache_func=get_cache,
-    set_cache_func=set_cache,
-    start_health_check=True,
-)
 
 # ChoiceLoader attempts loading templates from each path in successive order
 loader = ChoiceLoader(
