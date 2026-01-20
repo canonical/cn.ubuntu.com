@@ -4,4 +4,5 @@ module.exports = {
   ['navigation']: './static/js/src/navigation.js',
   ['tabbed-content.js']: './static/js/src/tabbed-content.js',
   ['tabbedContent.js']: './static/js/src/tabbedContent.js',
+  ['vanilla']: './static/js/src/vanilla.js',
 };

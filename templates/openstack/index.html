@@ -1,0 +1,367 @@
+{% extends 'base_index.html' %}
+
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_data-spotlight.jinja" import vf_data_spotlight %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+{% from "_macros/vf_quote-wrapper.jinja" import vf_quote_wrapper %}
+{% from "_macros/vf_divided-section.jinja" import vf_divided_section %}
+{% from "_macros/vf_linked-logo-section.jinja" import vf_linked_logo_section %}
+{% from "_macros/vf_logo-section.jinja" import vf_logo_section %}
+
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/1ZrqXlfIaWS2jm6i8_EjK_yb6rlF4A7Jzxa8-gsOQxSo/edit?tab=t.0
+{% endblock meta_copydoc %}
+
+{% block title %}Canonical OpenStack 打造企业级私有云解决方案{% endblock %}
+
+{% block meta_description %}
+  利用 Canonical OpenStack，在自有数据中心构建高效、安全且可扩展的私有云平台，实现与公有云相媲美的灵活性与性能。
+{% endblock %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
+{% block content %}
+
+  {% call(slot) vf_hero(
+    title_text='Canonical OpenStack',
+    subtitle_text='打造企业级私有云解决方案',
+    layout='50/50'
+  ) -%}
+    {%- if slot == 'description' -%}
+      <p>
+        在您自己的数据中心托管应用程序，同时享受公有云般的灵活与便捷。凭借符合最高行业标准的基础设施，增强您的企业实力。
+      </p>
+    {%- endif -%}
+    {%- if slot == 'cta' -%}
+      <a href="#get-openstack" class="p-button--positive">取得 Canonical OpenStack</a>
+      <a href="https://ubuntu.com/engage/openstack-ebook-beginners" class="p-button">下载 OpenStack 电子书</a>
+    {%- endif -%}
+  {% endcall -%}
+
+  {{ vf_data_spotlight(
+    title={
+      "text": "Canonical OpenStack 数据概览",
+    },
+    blocks=[
+      {
+        "stat": "10+",
+        "description": "10 年以上市场经验"
+      },
+      {
+        "stat": "500+",
+        "description": "已投入生产 500 个以上的云服务"
+      },
+      {
+        "stat": "~30 分钟",
+        "description": "大约 30 分钟即可启动"
+      }
+    ],
+  ) }}
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=true) -%}
+    {%- if slot == 'title' -%}
+      <h2>以专属的云，掌控您的未来</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <p>将您的数据中心转变为功能齐全且专业的云环境。充分利用云端操作的优势，同时保留自有计算基础设施的所有益处。</p>
+      <div class="p-cta-block u-no-padding--bottom">
+        <a class="p-button--positive" href="/contact">联系我们</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">提升企业效率</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>为您的团队配备自助式 IT 基础设施。Canonical OpenStack 提供云计算般的体验和按需资源，以满足您企业的计算需求。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">降低并优化基础设施成本</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>将其部署在您现有的多云生态系统中，降低长期总拥有成本 (TCO)，从而获得裨益。使用 Canonical OpenStack 时，不存在任何隐藏的许可或订阅费用。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">重新掌控您的数据</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>将您的敏感数据保存在您可以完全掌控底层基础设施的环境中。Canonical OpenStack 助您构建主权云，并遵守当地政策法规。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_4' -%}
+      <h3 class="p-heading--5">避免锁定和高昂的意外支出</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_4' -%}
+      <p>选择一款底层采用稳定、成熟且经提炼的上游开源代码的产品。受益于多年社区协作成果，同时依托我们通过 SLA 服务保障，提供的安全更新和支持。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_5' -%}
+      <h3 class="p-heading--5">加速数字化转型</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_5' -%}
+      <p>插入 GPU，几分钟内即可在 Canonical OpenStack 上运行可扩展的 Kubernetes 层。请放心使用，可满足您复杂的 AI/ML 及其他云原生的工作负载需求。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_6' -%}
+      <h3 class="p-heading--5">轻松构建并大规模运营</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_6' -%}
+      <p>只需几个简单的步骤，即可在实验室中启动自己的 Canonical OpenStack 实例。轻松实现横向扩展，并受益于全面的自下而上自动化日常运营。</p>
+    {%- endif -%}
+  {%- endcall -%}
+
+  {% call(slot) vf_quote_wrapper(
+    title_text="获得企业高管的认可",
+    quote_size="small",
+    quote_text="Canonical 领先于其他服务商，因为其他服务商的每台服务器均需手动配置。",
+    citation_source_name_text="Hubert Tsang",
+    citation_source_title_text="互太纺织 首席信息官"
+  ) -%}
+    {%- if slot == 'signpost_image' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/1db9d47a-Rectangle%204.png",
+              alt="Pacific Textiles Holding Limited",
+              width="188",
+              height="33",
+              hi_def=True,
+              loading="lazy") | safe
+      }}
+    {%- endif -%}
+  {% endcall -%}
+
+  {% call(slot) vf_quote_wrapper(
+    quote_size="small",
+    quote_text="近期，我们重新评估了云策略，成本效益是其中一个评估参数。我们发现，Canonical OpenStack 相比公有云，能帮助我们实现两到三倍的成本效益提升。",
+    citation_source_name_text="Cléber Alexandre Agazzi",
+    citation_source_title_text="Sicredi 基础设施与 IT 运营主管"
+  ) -%}
+    {%- if slot == 'signpost_image' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/59a71df3-Rectangle%206.png",
+              alt="Sicredi",
+              width="124",
+              height="30",
+              hi_def=True,
+              loading="lazy") | safe
+      }}
+    {%- endif -%}
+  {% endcall -%}
+
+  {% call(slot) vf_quote_wrapper(
+    quote_size="small",
+    quote_text="将 OCS 在线计费系统程序迁移到云端可提供所需的基础设施要求和灵活性，确保持续为客户提供一流的解决方案。选择 [Canonical OpenStack] 是不二之选，它使我们能够将计费能力扩展至面向未来的私有云平台。",
+    citation_source_name_text="Flavio Matiello",
+    citation_source_title_text="Telefonica Brazil 预付费平台与 OCS 负责人"
+  ) -%}
+    {%- if slot == 'signpost_image' -%}
+      {{ image(url="https://assets.ubuntu.com/v1/4108a96c-Rectangle%207.png",
+              alt="Telefonica",
+              width="123",
+              height="33",
+              hi_def=True,
+              loading="lazy") | safe
+      }}
+    {%- endif -%}
+  {% endcall -%}
+
+  {{ vf_divided_section(
+    title={
+      "text": "Canonical OpenStack<br />适用于哪些用途？",
+    },
+    blocks=[
+      {
+        "type": "description-block",
+        "items": [
+          {
+            "type": "list",
+            "item": {
+              "list_items": [
+                {
+                  "list_item_type": "tick",
+                  "content": "本地化通用型云计算"
+                },
+                {
+                  "list_item_type": "tick",
+                  "content": "专有虚拟化解决方案的替代方案"
+                },
+                {
+                  "list_item_type": "tick",
+                  "content": "实施主权云以实现数字主权"
+                },
+                {
+                  "list_item_type": "tick",
+                  "content": "为您的客户构建本地／区域公有云"
+                },
+                {
+                  "list_item_type": "tick",
+                  "content": "性能密集型工作负载，如 HPC 和 AI/ML"
+                },
+                {
+                  "list_item_type": "tick",
+                  "content": "电信网络功能虚拟化基础设施 (NFVI)"
+                },
+                {
+                  "list_item_type": "tick",
+                  "content": "边缘基础设施分布于数千个边缘位置"
+                }
+              ]
+            },
+          }
+        ]
+      }
+    ])
+  }}
+
+  {{ vf_linked_logo_section(
+    title_text="成功实绩",
+    links=[
+      {
+        "href": "https://ubuntu.com/engage/5G-with-open-source-infrastructure",
+        "text": "案例分享&nbsp;&rsaquo;",
+        "label": "BT",
+        "image_html": image(url="https://assets.ubuntu.com/v1/89e42e5e-bt-logo%20.png",
+            alt="BT",
+            width="45",
+            height="104",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-image-container__image"}) | safe
+      },
+      {
+        "href": "https://www.unicc.org/news/2023/10/19/unicc-partners-with-canonical-to-build-unicc-cloud/",
+        "text": "阅读公告&nbsp;&rsaquo;",
+        "label": "UNICC",
+        "image_html": image(url="https://assets.ubuntu.com/v1/e49d170a-unicc-logo.png",
+            alt="UNICC",
+            width="104",
+            height="104",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-image-container__image"}) | safe
+      },
+      {
+        "href": "https://ubuntu.com/engage/kubernetes-openstack-case-study-firmus",
+        "text": "案例分享&nbsp;&rsaquo;",
+        "label": "Firmus",
+        "image_html": image(url="https://assets.ubuntu.com/v1/052c9997-firmus-logo.png",
+            alt="Firmus",
+            width="91",
+            height="104",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-image-container__image"}) | safe
+      },
+      {
+        "href": "https://ubuntu.com/case-study/sbi-bits",
+        "text": "案例分享&nbsp;&rsaquo;",
+        "label": "SBI BITS",
+        "image_html": image(url="https://assets.ubuntu.com/v1/2839f807-sbi-bits.png",
+            alt="SBI BITS",
+            width="852",
+            height="480",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-image-container__image"}) | safe
+      }
+    ]
+  ) }}
+
+  {% call(slot) vf_logo_section(
+    title={
+      "text": ""
+    },
+    blocks=[
+      {
+        "type": "logo-block",
+        "item": {
+          "logos": [
+            {
+              "src": "https://assets.ubuntu.com/v1/3b6e70ee-mercedes-logo.png",
+              "alt": "Mercedes Benz"
+            },
+            {
+              "src": "https://assets.ubuntu.com/v1/30b9be5d-gamma-logo.png",
+              "alt": "Gamma"
+            },
+            {
+              "src": "https://assets.ubuntu.com/v1/b5fac278-Bloomberg-Logo.png",
+              "alt": "Bloomberg"
+            },
+            {
+              "src": "https://assets.ubuntu.com/v1/1fe52e76-bsi-logo.png",
+              "alt": "Bundesamt für Sicherheit in der Informationstechnik (BSI)"
+            },
+            {
+              "src": "https://assets.ubuntu.com/v1/ff8921fa-bnp-paribas-logo.png",
+              "alt": "BNP Paribas"
+            },
+            {
+              "src": "https://assets.ubuntu.com/v1/75778d8c-kcl-logo.png",
+              "alt": "Kings College London"
+            },
+            {
+              "src": "https://assets.ubuntu.com/v1/ea10e051-dggn-logo.png",
+              "alt": "Gendarmerie"
+            }
+          ]
+        }
+      }
+    ]
+  ) -%}
+  {% endcall -%}
+
+  <section class="p-section--deep" id="get-openstack">
+    <div class="grid-row--50-50">
+      <hr class="p-rule" />
+      <div class="grid-col">
+        <h2>取得 Canonical OpenStack</h2>
+      </div>
+      <div class="grid-col">
+        <div class="p-section--shallow">
+          <p>
+            自行部署，还是由 Canonical 部署？选择最适合您的方案，立即踏上您的专业云之路。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-row--50-50">
+      <div class="grid-col">
+        <hr class="p-rule--highlight u-no-margin--bottom" />
+        <div class="p-card--overlay u-no-padding--top u-no-padding--bottom"
+             style="padding: 1.5rem">
+          <h3>自行部署</h3>
+          <p>
+            您可以通过公开资料如<a href="https://canonical-openstack.readthedocs-hosted.com/en/latest/">产品文档</a>和<a href="https://ubuntu.com/openstack/tutorials">教程</a>自行部署 Canonical OpenStack。按照 Canonical 的最佳实践进行部署，您的云平台即可享受不同层级的<a href="/contact">商业服务支持</a>。
+          </p>
+          <div class="p-cta-block">
+            <a href="https://canonical-openstack.readthedocs-hosted.com/en/latest/tutorial/get-started-with-openstack/"
+               class="p-button">开始自行部署</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-col">
+        <hr class="p-rule--highlight u-no-margin--bottom" />
+        <div class="p-card--overlay u-no-padding--top u-no-padding--bottom"
+             style="padding: 1.5rem">
+          <h3>由 Canonical 部署</h3>
+          <p>
+            我们将为您部署 Canonical OpenStack，并与您共同确定最契合您使用场景和需求的设计。我们会提供最佳实践经验，在完成云平台的构建、测试和验证后将其移交给您。
+          </p>
+          <div class="p-cta-block">
+            <a href="/contact" class="p-button">与我们讨论需求</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
