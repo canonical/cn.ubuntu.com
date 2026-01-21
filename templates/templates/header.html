@@ -32,8 +32,10 @@
                role="menuitem"
                href="/navigation#products-navigation"
                aria-controls="products-content"
-               tabindex="0">产品和服务</a>
-
+               tabindex="0"
+               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "Products dropdown click", eventLabel: "Products", eventValue: undefined, });'>
+                产品和服务
+            </a>
                {{ vf_nav_mobile('products-cn-content-mobile', dropdown.products) }}
           </li>
           
@@ -44,7 +46,10 @@
                role="menuitem"
                href="/navigation#solution-navigation"
                aria-controls="solution-content"
-               tabindex="0">解决方案</a>
+               tabindex="0"
+               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "Solution dropdown click", eventLabel: "Solution", eventValue: undefined, });'>
+                解决方案
+            </a>
 
             {{ vf_nav_mobile('solution-cn-content-mobile', dropdown.solution) }}
           </li>
