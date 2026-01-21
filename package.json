@@ -16,7 +16,8 @@
     "build-css": "sass static/sass/styles.scss static/css/styles.css --load-path=node_modules --style=compressed --silence-deprecation=mixed-decls,import,global-builtin && postcss --no-map --use autoprefixer --replace 'static/css/**/*.css'",
     "build-js": "mkdir -p static/js && webpack",
     "build-cookie-policy": "cp node_modules/@canonical/cookie-policy/build/js/cookie-policy.js static/js/dist/",
-    "build": "mkdir -p static/js && webpack && yarn run build-css && yarn run build-cookie-policy",
+    "build-latest-news": "cp node_modules/@canonical/latest-news/dist/latest-news.js static/js/dist/",
+    "build": "mkdir -p static/js && webpack && yarn run build-css && yarn run build-cookie-policy && yarn run build-latest-news",
     "start": "yarn run build && concurrently --kill-others --raw 'yarn run watch-css' 'yarn run watch-js' 'yarn run serve'",
     "test-js": "jest --passWithNoTests",
     "format-scss": "prettier -w 'static/**/*.scss'"
@@ -50,6 +51,7 @@
   "dependencies": {
     "@canonical/cookie-policy": "3.8.4",
     "@canonical/global-nav": "3.7.3",
+    "@canonical/latest-news": "^2.2.1",
     "vanilla-framework": "4.39.0"
   }
 }
