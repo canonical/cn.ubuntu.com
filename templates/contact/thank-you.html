@@ -1,61 +1,52 @@
 {% extends "engage/base_engage.html" %}
 
-{% block meta_description %}
-  Extended Security Maintenance (ESM) will be available for Ubuntu 14.04 LTS Trusty Tahr after End of Life for continued security and compliance of the most popular linux operating system.
-{% endblock %}
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_blog.jinja" import vf_blog %}
+
+{% block meta_description %}{% endblock %}
 
 {% block title %}联系我们{% endblock %}
 
 {% block meta_copydoc %}
-  https://docs.google.com/document/d/1zAv3ouUrzQcQDw2DSefaePXcMu35BAumIMpzqmIkycs/edit
+  https://docs.google.com/document/d/1iAsaedmSWG_0EXRXpEoNLaOsMXQHRmgNvg9u1iBrFvg/edit
 {% endblock meta_copydoc %}
+
+{% block body_class %}is-paper{% endblock %}
 
 {% block content %}
 
-  <div class="p-strip">
-    <div class="row">
-      <div class="col-7">
-        <h1 class="p-heading--2">感谢来信！</h1>
-        <h3>我们将尽快与您取得联系。</h3>
+  {% call(slot) vf_hero(
+    title_text='感谢来信！',
+    subtitle_text='我们将尽快与您取得联系。',
+    layout='50/50',
+    is_split_on_medium=true
+    ) -%}
+    {%- if slot == 'image' -%}
+      <div class="p-image-container--3-2 is-cover">
+        {{ image(url="https://assets.ubuntu.com/v1/253b0e79-hero_img.jpg",
+                alt="",
+                width="1200",
+                height="800",
+                hi_def=True,
+                attrs={"class": "p-image-container__image"},
+                loading="auto") | safe
+        }}
       </div>
-      <div class="col-5 u-align-center u-vertically-center">
-        <img src="https://pages.ubuntu.com/rs/066-EOV-335/images/Devices-Thankyou.svg"
-             width="200"
-             height="200"
-             alt="" />
-      </div>
-    </div>
-  </div>
+    {%- endif -%}
+  {% endcall -%}
 
-  <section class="p-strip--light is-shallow">
-    <div class="row">
-      <div class="col-8">
-        <h3>阅读Ubuntu最新的博客</h3>
-      </div>
-    </div>
-    <div class="row p-divider">
-      <div class="col-4 p-divider__block">
-        <h4>
-          <a href="/blog/how-to-buy-ubuntu-subscription">企业专业支持：Ubuntu Advantage介绍</a>
-        </h4>
-        <p>
-          Ubuntu Advantage for Infrastructure为业内最全面的软件、安全和IaaS提供单一 ，每节点包支持。OpenStack和Kubernetes支持的加入，UA基础设施建设提供了验证未来数据中心所需要的一切...
-        </p>
-      </div>
+  {{ vf_blog(title={"text": "阅读Ubuntu最新的博客"},
+    padding="deep",
+    template_config={"enabled": True, "template_container_id": "articles"}) }}
 
-      <div class="col-4 p-divider__block">
-        <h4>
-          <a href="/blog/canonical-kubernetes-1-15-upgrade">Canonical现提供Kubernetes 1.15升级</a>
-        </h4>
-        <p>Canonical宣布为那些使用kubeadm deployments，Charmed Kubernetes和MicroK8s（非常流行的单节点版Kubernetes）的企业提供1.15版Kubernetes的全面支持...</p>
-      </div>
-
-      <div class="col-4 p-divider__block">
-        <h4>
-          <a href="/blog/ubuntu-core-18-webinar-chinese">Ubuntu Core 18专题研讨会图文版</a>
-        </h4>
-        <p>Ubuntu在公有云、混合云、容器、AI机器学习、IoT边缘计算领域有着广泛的使用和庞大的生态圈。今天我们着重介绍Ubuntu Core在物联网的应用，Ubuntu Core正在驱动着整个物联网设备...</p>
-      </div>
-    </div>
-  </section>
+  <script src="{{ versioned_static('js/dist/latest-news.js') }}"></script>
+  <script>
+    canonicalLatestNews.fetchLatestNews({
+      imageClasses: ["p-image-container__image"],
+      limit: "4",
+      articlesContainerSelector: "#articles",
+      articleTemplateSelector: "#template",
+      excerptLength: 180,
+    })
+  </script>
 {% endblock content %}
