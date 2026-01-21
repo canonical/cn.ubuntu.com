@@ -1,24 +1,19 @@
 {% macro vf_nav_dropdown(content_id, items) %}
   <div class="dropdown-content-desktop u-hide" id="{{ content_id }}">
     <nav class="dropdown-window__content-container">
-        <div class="dropdown-window__content grid-row--25-75">
-
-          <div class="grid-col"></div>
-
-          <div class="grid-col u-no-padding">
+        <div class="dropdown-window__content grid-row">
+          <div class="grid-col-start-large-3 grid-col-6 u-no-padding">
             <div class="dropdown-window__sidenav-content is-dark"
                   id="support-enterprise-tab-content"
                   tabindex="-1"
                   role="tabpanel"
                   aria-labelledby="support-enterprise-tab">
-              <div class="grid-row u-no-padding">
-                <div class="grid-col dropdown-window__main-panel">
                   {% set maxPerRow = 3 %}
                   {% set totalItems = items|length %}
                   {% set base_items = totalItems // maxPerRow %}
                   {% set extra_items = totalItems % maxPerRow %}
                   
-                  <div class="grid-row">
+                  <div class="grid-row u-no-padding dropdown-window__main-panel">
                     {% for col in range(maxPerRow) %}
                     {% set col_height = base_items + (1 if col < extra_items else 0) %}
                     <div class="grid-col-2">
@@ -29,8 +24,8 @@
                         <li class="p-navigation__dropdown-item">
                           <a href="{{ items[item_index].href }}"
                               class="p-link--inverted"
-                              onclick="event.stopPropagation()"
-                              tabindex="0">
+                              tabindex="0"
+                              onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: " + "{{ items[item_index].href }}", eventLabel: "{{ items[item_index].title }}", eventValue: undefined, });'>
                             <span>{{ items[item_index].title }}</span>
                             <br />
                             <small class="is-muted">{{ items[item_index].description }}</small>
@@ -41,10 +36,6 @@
                     </div>
                     {% endfor %}
                   </div>
-
-                </div>
-
-              </div>
 
             </div>
 

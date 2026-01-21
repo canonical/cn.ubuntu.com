@@ -6,7 +6,11 @@
       </li>
       {% for item in items %}
         <li>
-          <a href="{{ item.href }}" class="p-navigation__dropdown-item">{{ item.title }}</a>
+          <a href="{{ item.href }}" 
+             class="p-navigation__dropdown-item"
+             onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: " + "{{ item.href }}", eventLabel: "{{ item.title }}", eventValue: undefined, });'>
+             {{ item.title }}
+          </a>
         </li>
       {% endfor %}
     </ul>
