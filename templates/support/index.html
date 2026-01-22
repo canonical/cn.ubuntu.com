@@ -28,12 +28,15 @@
     {%- endif -%}
     {%- if slot == 'cta' -%}
       <a href="/contact" class="p-button--positive">与我们联系</a>
-      <a href="/pro" class="p-button">探索 Ubuntu Pro + 支持 &rsaquo;</a>
+      <a href="/pro" class="p-button">探索 Ubuntu Pro + 支持</a>
     {%- endif -%}
   {%- endcall -%}
 
   {% call(slot) vf_equal_heights(
     title_text="Canonical 开源支持服务特点",
+    highlight_images=true,
+    image_aspect_ratio_medium="2-3",
+    image_aspect_ratio_small="2-3",
     items=[
       {
         "title_text": "单一供应商，一站式开源支持服务",
@@ -189,7 +192,7 @@
   {%- endcall -%}
 
   {{ vf_basic_section(
-    title={"text": "在您的 Ubuntu LTS 基础上，额外提供服务"},
+    title={"text": "在您的 Ubuntu LTS 基础上，<br />额外提供服务"},
     items=[
       {
         "type": "description",
@@ -456,11 +459,11 @@
           "list_items": [
             {
               "list_item_type": "bullet",
-              "content": "<a href='https://ubuntu.com/kubernetes'>Kubernetes</a>"
+              "content": "<a href='/kubernetes'>Kubernetes</a>"
             },
             {
               "list_item_type": "bullet",
-              "content": "<a href='https://ubuntu.com/openstack'>OpenStack</a>"
+              "content": "<a href='/openstack'>OpenStack</a>"
             },
             {
               "list_item_type": "bullet",
@@ -476,7 +479,7 @@
             },
             {
               "list_item_type": "bullet",
-              "content": "<a href='https://canonical.com/microcloud'>MicroCloud</a>"
+              "content": "<a href='/microcloud'>MicroCloud</a>"
             },
           ]
         }
@@ -484,8 +487,8 @@
       {
         "type": "description",
         "item": {
-          "type": "html",
-          "content": "<p>* 数据来源：<a href='https://uptimeinstitute.com/uptime_assets/5f40588be8d57272f91e4526dc8f821521950b7bec7148f815b6612651d5a9b3-annual-outages-analysis-2023.pdf'>Uptime Institute 2023 年系统中断分析报告</a></p>"
+          "type": "text",
+          "content": "* 数据来源：<a href='https://uptimeinstitute.com/uptime_assets/5f40588be8d57272f91e4526dc8f821521950b7bec7148f815b6612651d5a9b3-annual-outages-analysis-2023.pdf'>Uptime Institute 2023 年系统中断分析报告</a>"
         }
       },
     ]
@@ -517,8 +520,8 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_description_2' -%}
-      <p>除了在 Canonical <a href="https://github.com/orgs/canonical/packages?ecosystem=container&tab=packages&ecosystem=container&q=charmed-">GitHub</a><a href="https://hub.docker.com/u/ubuntu/">Docker</a> 中心和 <a href="https://gallery.ecr.aws/ubuntu">Amazon ECR</a>中列出的、符合 <a href="https://opencontainers.org/">OCI</a> 标准的容器镜像外，您还可获得针对以下内容的全面支持：</p>
-      <ul>
+      <p>除了在 Canonical <a href="https://github.com/orgs/canonical/packages?ecosystem=container&tab=packages&ecosystem=container&q=charmed-">GitHub</a>、<a href="https://hub.docker.com/u/ubuntu/">Docker</a> 中心和 <a href="https://gallery.ecr.aws/ubuntu">Amazon ECR</a>中列出的、符合 <a href="https://opencontainers.org/">OCI</a> 标准的容器镜像外，您还可获得针对以下内容的全面支持：</p>
+      <ul class="u-text-max-width">
         <li>
           <a href="https://ubuntu.com/server/docs/about-rock-images">Rocks</a> 是 Canonical 推出的新一代符合 OCI 标准的容器镜像，基于 Ubuntu LTS 构建，且针对应用程序运行进行了优化。
         </li>
@@ -554,7 +557,7 @@
                   "type": "description",
                   "padding": "shallow",
                   "item": {
-                    "type": "html",
+                    "type": "text",
                     "content": "简化运维工作并专注于创新，解决方案涵盖 <a href='https://canonical.com/data/spark'>Spark</a>、<a href='https://canonical.com/data/kafka'>Kafka®</a>、<a href='https://canonical.com/data/mongodb'>MongoDB®</a>、<a href='https://canonical.com/data/opensearch'>OpenSearch</a>、<a href='https://canonical.com/data/mysql'>MySQL</a> 和 <a href='https://canonical.com/data/postgresql'>PostgreSQL</a>。可预期的定价方案与专家级技术支持，助您自信扩展项目规模。"
                   }
                 },
@@ -565,7 +568,7 @@
                     "logos": [
                       {
                         "attrs": image(url="https://assets.ubuntu.com/v1/6e18d17f-apache-spark-logo.png",
-                                        alt="",
+                                        alt="Apache Spark",
                                         width="150",
                                         height="256",
                                         hi_def=True,
@@ -575,7 +578,7 @@
                       },
                       {
                         "attrs": image(url="https://assets.ubuntu.com/v1/c2d27381-kafka.png",
-                                        alt="",
+                                        alt="Kafka",
                                         width="228",
                                         height="256",
                                         hi_def=True,
@@ -585,7 +588,7 @@
                       },
                       {
                         "attrs": image(url="https://assets.ubuntu.com/v1/662c72e2-mongodb.png",
-                                        alt="",
+                                        alt="MongoDB",
                                         width="425",
                                         height="512",
                                         hi_def=True,
@@ -595,7 +598,7 @@
                       },
                       {
                         "attrs": image(url="https://assets.ubuntu.com/v1/7cf825b5-opensearch-logo.png",
-                                        alt="",
+                                        alt="Opensearch",
                                         width="407",
                                         height="384",
                                         hi_def=True,
@@ -605,7 +608,7 @@
                       },
                       {
                         "attrs": image(url="https://assets.ubuntu.com/v1/0c7a5744-mysql-logo.png",
-                                        alt="",
+                                        alt="MySQL",
                                         width="490",
                                         height="512",
                                         hi_def=True,
@@ -615,7 +618,7 @@
                       },
                       {
                         "attrs": image(url="https://assets.ubuntu.com/v1/3fb0b600-postgresql-logo.png",
-                                        alt="",
+                                        alt="PostgreSQL",
                                         width="67",
                                         height="192",
                                         hi_def=True,
@@ -646,7 +649,7 @@
                   "type": "description",
                   "padding": "shallow",
                   "item": {
-                    "type": "html",
+                    "type": "text",
                     "content": "在 Canonical MLOps 体系中，<a href='https://canonical.com/mlops/kubeflow/what-is-kubeflow'>Kubeflow</a> 和 <a href='https://canonical.com/mlops/mlflow'>MLFlow</a> 等领先的开源工具兼具安全性与支持保障。从实验阶段到生产落地，让 Canonical 助力您的 AI 项目规模化推进。由我们的团队负责维护工作，并在出现任何意外情况时为您的团队提供支持。"
                   }
                 },
@@ -657,7 +660,7 @@
                     "logos": [
                       {
                         "attrs": image(url="https://assets.ubuntu.com/v1/fd33f39c-kubeflow_logo.png",
-                                        alt="",
+                                        alt="Kubeflow",
                                         width="306",
                                         height="312",
                                         hi_def=True,
@@ -667,7 +670,7 @@
                       },
                       {
                         "attrs": image(url="https://assets.ubuntu.com/v1/3e9fb809-mlflow_logo.png",
-                                        alt="",
+                                        alt="MLflow",
                                         width="221",
                                         height="312",
                                         hi_def=True,
@@ -698,7 +701,7 @@
                   "type": "description",
                   "padding": "shallow",
                   "item": {
-                    "type": "html",
+                    "type": "text",
                     "content": "以 <a href='/openstack'>Canonical OpenStack</a> 构建高性价比的混合多云基础设施，在专家团队的全程支持下高枕无忧。"
                   }
                 },
@@ -706,18 +709,19 @@
                   "type": "description",
                   "padding": "shallow",
                   "item": {
-                    "type": "html",
+                    "type": "text",
                     "content": "您是否希望只需一条简单命令，就能在几分钟内部署好您的云环境？<a href='/microcloud'>Canonical MicroCloud</a> 是一款简单灵活的云解决方案，针对便捷且可重复的部署流程进行了优化。"
                   }
                 },
                 {
                   "type": "logo-block",
+                  "padding": "shallow",
                   "item": {
                     "is_fixed_width": true,
                     "logos": [
                       {
                         "attrs": image(url="https://assets.ubuntu.com/v1/edf269a5-openstack_logo.png",
-                                        alt="",
+                                        alt="OpenStack",
                                         width="384",
                                         height="312",
                                         hi_def=True,
@@ -727,7 +731,7 @@
                       },
                       {
                         "attrs": image(url="https://assets.ubuntu.com/v1/ca14457f-microcloud_logo.png",
-                                        alt="",
+                                        alt="MicroCloud",
                                         width="393",
                                         height="312",
                                         hi_def=True,
@@ -736,6 +740,13 @@
                                         attrs={"class": "p-logo-section__logo"})
                       }
                     ]
+                  }
+                },
+                {
+                  "type": "description",
+                  "item": {
+                    "type": "html",
+                    "content": '<hr class="p-rule--muted" />'
                   }
                 },
                 {
@@ -772,11 +783,11 @@
         <h2>服务级别</h2>
       </div>
     </div>
-    <div class="u-fixed-width">
-      <table aria-label="Ubuntu Pro security and compliance">
+    <div class="u-fixed-width u-table-scroll--medium u-table-scroll--small">
+      <table aria-label="Ubuntu Pro security and compliance" class="u-table-horizontal-scroll__table" style="table-layout: unset">
         <thead>
           <tr>
-            <th style="width: 25%;"></th>
+            <th style="width: 50%;"></th>
             <th>
               <span class="u-text--muted">自助支持<sup>1</sup></span>
             </th>
@@ -886,7 +897,7 @@
         </tbody>
       </table>
     </div>
-    <hr class="p-rule is-fixed-width" />
+    <hr class="p-rule--muted is-fixed-width" />
     <div class="grid-row--50-50">
       <div class="grid-col"></div>
       <ol class="grid-col">
@@ -900,7 +911,7 @@
           全年全天候支持仅适用于 1 级严重程度的问题。其他严重程度级别的问题将在标准工作时间内处理。若发生 1 级严重程度的问题，我们将与您协作，直至问题解决，或通过临时解决方案得到缓解。一旦生产环境中的服务或核心功能恢复可用，我们将相应调整严重程度级别。我们认为，在功能恢复的整个过程中，您应保持可联络状态。
         </li>
         <li>
-          全年全天候支持仅适用于 1 级严重程度的问题。其他严重程度级别的问题将在标准工作时间内处理。若发生 1 级严重程度的问题，我们将与您协作，直至问题解决，或通过临时解决方案得到缓解。一旦生产环境中的服务或核心功能恢复可用，我们将相应调整严重程度级别。我们认为，在功能恢复的整个过程中，您应保持可联络状态。
+          Canonical 支持团队在响应客户咨询后，将在规定的时间范围内提供后续更新。这些持续的响应时间范围根据问题的严重程度级别来界定，且从最新的严重程度更新时间点开始计算。
         </li>
       </ol>
     </div>

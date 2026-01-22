@@ -286,6 +286,28 @@ td.p-accordion {
   padding-bottom: $sp-xx-large;
 }
 
+@media screen and ((max-width: #{ $breakpoint-large - 1 }) and (min-width: $breakpoint-medium)) {
+  .u-table-scroll--medium {
+    overflow-x: hidden;
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+}
+
+@media screen and (max-width: #{ $breakpoint-medium - 1 }) {
+  .u-table-scroll--small {
+    overflow-x: hidden;
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+}
+
 .p-icon-section {
   @extend .p-icon-section;
 
