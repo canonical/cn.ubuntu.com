@@ -285,9 +285,10 @@ td.p-accordion {
   padding-bottom: $sp-xx-large;
 }
 
-@media screen and ((max-width: #{ $breakpoint-large - 1 }) and (min-width: $breakpoint-medium)) {
+@media screen and (max-width: ($breakpoint-large - 1)) and (min-width: $breakpoint-medium) {
   .u-table-scroll--medium {
     overflow-x: hidden;
+
     table {
       display: block;
       overflow-x: auto;
@@ -299,6 +300,7 @@ td.p-accordion {
 @media screen and (max-width: #{ $breakpoint-medium - 1 }) {
   .u-table-scroll--small {
     overflow-x: hidden;
+
     table {
       display: block;
       overflow-x: auto;
@@ -318,7 +320,7 @@ td.p-accordion {
     padding-top: 0.5rem;
     row-gap: calc(1rem + 1vw);
 
-    @media screen and (max-width: $breakpoint-large - 1) {
+    @media screen and (max-width: ($breakpoint-large - 1)) {
       row-gap: 1rem;
     }
   }
@@ -328,7 +330,7 @@ td.p-accordion {
     margin-right: 2.5rem;
     margin-top: -0.5rem;
 
-    @media screen and (max-width: $breakpoint-small - 1) {
+    @media screen and (max-width: ($breakpoint-small - 1)) {
       margin-right: 1rem;
     }
   }
@@ -337,7 +339,7 @@ td.p-accordion {
     height: 3.75rem;
     width: auto;
 
-    @media screen and (max-width: $breakpoint-large - 1) {
+    @media screen and (max-width: ($breakpoint-large - 1)) {
       height: 3rem;
     }
   }
