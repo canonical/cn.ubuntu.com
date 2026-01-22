@@ -2,22 +2,20 @@
 
 {% block title %}500 - Internal server error{% endblock %}
 
-{% block header %}
+{% block meta_description %}Ubuntu是适用于企业服务器、桌面电脑、云、IoT物联网的现代化开源Linux操作系统。Ubuntu官网。{% endblock %}
 
-<div class="p-strip">
-  <div class="row">
-    <div class="u-equal-height u-vertically-center">
-      <div class="col-6">
-        <img src="/static/img/image-404.svg" alt="Error owl" />
+{% block content %}
+  <div class="p-strip is-deep">
+    <hr class="p-rule is-fixed-width" />
+    <div class="u-fixed-width">
+      <div class="p-section--deep">
+        <h1 class="p-heading--display">500</h1>
       </div>
-      <div class="col-6">
-        <h1>500: Server error.</h1>
-        <p>Sorry for the inconvenience, please pop back soon.</p>
-      </div>
+      <p class="p-heading--1">服务器问题</p>
+      <p class="p-heading--2">我们无法加载此页面，请尝试重新加载或<a href="https://github.com/canonical/cn.ubuntu.com/issues/new">提交问题反馈</a>。</p>
+      <p class="p-heading--2">
+        提示：这可能是一个<a href="https://github.com/canonical/cn.ubuntu.com/issues">已知问题</a>，我们正在积极修复中。
+      </p>
     </div>
   </div>
-</div>
-
-{% endblock %}
-{% block content %}
 {% endblock content %}
