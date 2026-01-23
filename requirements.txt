@@ -5,7 +5,7 @@ canonicalwebteam.blog==6.8.2
 canonicalwebteam.templatefinder==1.0.0
 canonicalwebteam.image-template==1.9.0
 canonicalwebteam.cookie-service==1.0.5
-Flask-Caching==2.1.0
-pyyaml==6.0.2
+Flask-Caching==2.3.1
+pyyaml==6.0.3
 gunicorn[gevent]
 djlint==1.36.4
