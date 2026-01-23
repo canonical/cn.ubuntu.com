@@ -1,14 +1,17 @@
+{% from "macros/_vf_nav-mobile.jinja" import vf_nav_mobile %}
+{% from "macros/_vf_nav-dropdown.jinja" import vf_nav_dropdown %}
+
 {% block header_banner %}
   <header id="navigation"
-          class="p-navigation--sliding is-dark is-sticky js-enabled">
+          class="p-navigation--sliding is-dark is-sticky">
     <div class="p-navigation__row--25-75">
       <div class="p-navigation__banner">
         <div class="p-navigation__tagged-logo">
           <a class="p-navigation__link" href="/">
             <div class="p-navigation__logo-tag">
               <img class="p-navigation__logo-icon"
-                    src="https://assets.ubuntu.com/v1/82818827-CoF_white.svg"
-                    alt="" />
+                   src="https://assets.ubuntu.com/v1/82818827-CoF_white.svg"
+                   alt="" />
             </div>
             <span class="p-navigation__logo-title">Canonical Ubuntu</span>
           </a>
@@ -17,43 +20,38 @@
           <a href="#navigation"
              class="p-navigation__toggle--open js-menu-button"
              title="menu">Menu</a>
-          <button href="#navigation-closed"
-                  class="p-navigation__toggle--close js-menu-button"
-                  title="close menu">Close menu</button>
         </div>
       </div>
       <nav class="p-navigation__nav js-show-nav" role="menubar">
         <ul class="p-navigation__items js-navigation-items global-nav"
             role="menu">
-          <li class="p-navigation__item" role="menuitem">
+          <li class="p-navigation__item--dropdown-toggle"
+              id="products-cn"
+              data-dropdown-url="/templates/navigation/products">
             <a class="p-navigation__link"
-               href="/internet-of-things"
-               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /internet-of-things", eventLabel: "IoT", eventValue: undefined, });'>物联网</a>
+               role="menuitem"
+               href="/navigation#products-navigation"
+               aria-controls="products-content"
+               tabindex="0"
+               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "Products dropdown click", eventLabel: "Products", eventValue: undefined, });'>
+                产品和服务
+            </a>
+               {{ vf_nav_mobile('products-cn-content-mobile', dropdown.products) }}
           </li>
-          <li class="p-navigation__item" role="menuitem">
+          
+          <li class="p-navigation__item--dropdown-toggle"
+              id="solution-cn"
+              data-dropdown-url="/templates/navigation/solution">
             <a class="p-navigation__link"
-               href="/infrastructure"
-               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /infrastructure", eventLabel: "Infrastructure", eventValue: undefined, });'>基础架构</a>
-          </li>
-          <li class="p-navigation__item" role="menuitem">
-            <a class="p-navigation__link"
-               href="/ai"
-               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /ai", eventLabel: "AI", eventValue: undefined, });'>开源 AI</a>
-          </li>
-          <li class="p-navigation__item" role="menuitem">
-            <a class="p-navigation__link"
-               href="/support"
-               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /support", eventLabel: "Enterprise", eventValue: undefined, });'>产品和支持</a>
-          </li>
-          <li class="p-navigation__item" role="menuitem">
-            <a class="p-navigation__link"
-               href="/desktop"
-               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /desktop", eventLabel: "Desktop", eventValue: undefined, });'>桌面系统</a>
-          </li>
-          <li class="p-navigation__item" role="menuitem">
-            <a class="p-navigation__link"
-               href="/server"
-               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /server", eventLabel: "Server", eventValue: undefined, });'>服务器</a>
+               role="menuitem"
+               href="/navigation#solution-navigation"
+               aria-controls="solution-content"
+               tabindex="0"
+               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "Solution dropdown click", eventLabel: "Solution", eventValue: undefined, });'>
+                解决方案
+            </a>
+
+            {{ vf_nav_mobile('solution-cn-content-mobile', dropdown.solution) }}
           </li>
           <li class="p-navigation__item" role="menuitem">
             <a class="p-navigation__link"
@@ -65,6 +63,16 @@
                href="/blog"
                onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /blog", eventLabel: "Blog", eventValue: undefined, });'>博客</a>
           </li>
+          <li class="p-navigation__item" role="menuitem">
+            <a class="p-navigation__link"
+               href="/engage"
+               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /engage", eventLabel: "Engage", eventValue: undefined, });'>案例和资源</a>
+          </li>
+          <li class="p-navigation__item" role="menuitem">
+            <a class="p-navigation__link"
+               href="/contact"
+               onclick='dataLayer.push({ event: "GAEvent", eventCategory: "Primary navigation", eventAction: "from:" + window.location.href + " to: /contact", eventLabel: "Contact", eventValue: undefined, });'>联系我们</a>
+          </li>
         </ul>
         <span class="u-off-screen">
           <a href="#main-content">Jump to main content</a>
@@ -72,6 +80,12 @@
       </nav>
     </div>
   </header>
+
+  <div class="dropdown-window-overlay fade-animation"></div>
+  <div class="dropdown-window is-dark slide-animation">
+    {{ vf_nav_dropdown('products-cn-content', dropdown.products) }}
+    {{ vf_nav_dropdown('solution-cn-content', dropdown.solution) }}
+  </div>
 
   <style>
     .p-navigation__items {
