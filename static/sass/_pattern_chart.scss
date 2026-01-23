@@ -48,7 +48,8 @@
   font-weight: bold;
 }
 
-.x.axis line {
+.x.axis line,
+.y.axis line {
   shape-rendering: crispedges;
   stroke: #d6d3cf; // sass-lint:disable-line no-color-literals
   stroke-dasharray: 3 2;

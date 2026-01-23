@@ -321,3 +321,14 @@ td.p-accordion {
     }
   }
 }
+
+@media screen and (max-width: #{ $breakpoint-medium - 1 }) {
+  .u-table-scroll--small {
+    overflow-x: hidden;
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+}

@@ -10,6 +10,10 @@
 
 {% block title %}Ubuntu 服务器{% endblock %}
 
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
 {% block content %}
 
   {% call(slot) vf_hero(
@@ -158,7 +162,7 @@
           "link": {
             "content_html": "探索认证软件合作伙伴&nbsp;&rsaquo;",
             "attrs": {
-              "href": "/certified"
+              "href": "https://partners.ubuntu.com/programmes/software"
             }
           }
         }
@@ -286,13 +290,16 @@
     ]
   ) }}
 
-  {% include "shared/_release_schedule.html" %}
+  <div class="p-section">
+    {% include "shared/_release_schedule.html" %}
+  </div>
 
   {% call(slot) vf_equal_heights(
     title_text="与其他 Canonical 产品搭配使用",
     image_aspect_ratio_large="auto",
     image_aspect_ratio_medium="auto",
     image_aspect_ratio_small="auto",
+    highlight_images=True,
     items=[
       {
         "title_text": "多云编排",
@@ -368,6 +375,7 @@
     title={
       "text": "即刻行动",
     },
+    padding="deep",
     blocks=[
       {
         "type": "divided-block",
