@@ -26,11 +26,30 @@
   stroke-width: 1px;
 }
 
+.chart__bar--aubergine-mid-light {
+  fill: #923a66;
+  stroke: #923a66;
+  stroke-width: 1px;
+}
+
+.chart__bar--aubergine-light {
+  fill: #cba7b8;
+  stroke: #cba7b8;
+  stroke-width: 1px;
+}
+
+.chart__bar--black {
+  fill: #111;
+  stroke: #111;
+  stroke-width: 1px;
+}
+
 .chart__label--bold {
   font-weight: bold;
 }
 
-.x.axis line {
+.x.axis line,
+.y.axis line {
   shape-rendering: crispedges;
   stroke: #d6d3cf; // sass-lint:disable-line no-color-literals
   stroke-dasharray: 3 2;
