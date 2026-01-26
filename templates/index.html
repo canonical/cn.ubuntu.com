@@ -1,5 +1,15 @@
 {% extends "base_index.html" %}
 
+{% from "_macros/vf_blog.jinja" import vf_blog %}
+{% from "_macros/vf_basic-section.jinja" import vf_basic_section %}
+{% from "_macros/vf_equal-heights.jinja" import vf_equal_heights %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+{% from "_macros/vf_logo-section.jinja" import vf_logo_section %}
+
+{% block title %}Ubuntu中国官网{% endblock %}
+
+{% block body_class %}is-dark{% endblock %}
+
 {% block page_content %}
 
   <noscript>
@@ -11,9 +21,7 @@
   </noscript>
 
   <!-- Default Takeover: Download the latest Ubuntu -->
-  <section data-lang="all"
-           id="takeover"
-           class="p-strip is-dark">
+  <section data-lang="all" id="takeover" class="p-strip is-dark">
     <div class="grid-row p-takeover-animation" id="takeover-animation">
       <div class="grid-col-6">
         <div class="p-section--shallow">
@@ -29,7 +37,8 @@
       </div>
       <div class="grid-col-2 u-vertically-center u-align--center u-hide--medium u-hide--small">
         <picture>
-          <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(max-width: 536px)" /> 
+          <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                  media="(max-width: 536px)" />
           {{ image(url="https://assets.ubuntu.com/v1/33b5133c-Noble-Numbat-optimised.svg",
                     alt="",
                     width="200",
@@ -42,1125 +51,372 @@
     </div>
   </section>
 
-  <section class="p-strip is-dark notice u-no-padding--top">
-    <div class="u-fixed-width">
-      <div class="p-notification--information u-no-margin--bottom">
-        <div class="p-notification__content">
-          <h5 class="p-notification__title">
-            <a href="/blog/18-04-end-of-standard-support-cn">18.04 LTS常规支持已于2023年5月31日结束</a>
-          </h5>
-          <p class="p-notification__message">
-            <span>您可以选择升级到最新的Ubuntu LTS版本或者通过Ubuntu Pro获得延长的安全更新至2028年。</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  {{ vf_basic_section(
+    title={"text": "现代化的企业与开源"},
+    is_split_on_medium=true,
+    items=[
+      {
+        "type": "description",
+        "item": {
+          "type": "html",
+          "content": '<h3 class="p-heading--5">来自 Ubuntu 的发布者。安全，支持，代管服务。</h3>'
+        }
+      },
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "Canonical 是 Ubuntu 发行商，致力于提供开源安全软件、支持与服务。我们的产品组合涵盖範圍，从最小规模的设备到最大规模的云，从内核到容器，从数据库到 AI 等各种关键系统元素。我们的客户包括顶尖的技术品牌、新兴的初创企业、政府以及家庭用户，Canonical 致力于为每一位用户提供值得信赖的开源解决方案。"
+        }
+      },
+      {
+        "type": "cta-block",
+        "item": {
+          "link": {
+            "content_html": "联系 Canonical &rsaquo;",
+            "attrs": {
+              "href": "/contact"
+            }
+          }
+        }
+      }
+    ]
+  ) }}
 
-  <section class="p-strip u-no-padding">
-    <hr class="is-fixed-width" />
-    <div class="row">
-      <div class="col-6 col-medium-4">
-        <h2>现代化的企业与开源</h2>
-        <p class="p-heading--4">
-          Ubuntu的发布者。
-          <br />
-          安全，支持。代管服务。
-        </p>
-        <p>
-          <a class="p-button--positive" href="/contact">联系Canonical</a>
-        </p>
-      </div>
-      <div class="col-6 col-medium-2 u-vertically-center">
-        <div class="p-logo-section">
-          <div class="p-logo-section__items">
-            <div class="p-logo-section__item">
-              {{ image(url="https://assets.ubuntu.com/v1/0d364838-aws-logo.png",
-                            alt="AWS",
-                            width="108",
-                            height="208",
-                            hi_def=True,
-                            loading="auto",
-                            attrs={"class": "p-logo-section__logo"}) | safe
-              }}
-            </div>
-            <div class="p-logo-section__item">
-              {{ image(url="https://assets.ubuntu.com/v1/4e688679-microsoft-azure-logo.png",
-                            alt="Microsoft Azure",
-                            width="188",
-                            height="208",
-                            hi_def=True,
-                            loading="auto",
-                            attrs={"class": "p-logo-section__logo"}) | safe
-              }}
-            </div>
-            <div class="p-logo-section__item">
-              {{ image(url="https://assets.ubuntu.com/v1/f570b628-AT&T-Logo.png",
-                            alt="AT&T",
-                            width="200",
-                            height="208",
-                            hi_def=True,
-                            loading="auto",
-                            attrs={"class": "p-logo-section__logo"}) | safe
-              }}
-            </div>
-            <div class="p-logo-section__item">
-              {{ image(url="https://assets.ubuntu.com/v1/a9d82095-google-cloud-logo.png",
-                            alt="Google Cloud",
-                            width="250",
-                            height="208",
-                            hi_def=True,
-                            loading="auto",
-                            attrs={"class": "p-logo-section__logo"}) | safe
-              }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  {{ vf_blog(title={"text": "最新博客动态"},
+    template_config={"enabled": True, "template_container_id": "articles"}) }}
 
-    <div class="u-fixed-width">
-      <hr class="p-separator" />
-    </div>
-  </section>
-
-  <!-- Section 1: Hero -->
-  <section class="p-strip is-deep is-bordered">
-    {% include "shared/_latest-news.html" %}
-  </section>
-
-  <div class="p-strip is-deep is-bordered">
-    <div class="row">
-      <div class="col-12">
-        <h2>研讨会及案例分享</h2>
-      </div>
-    </div>
-    <div class="row p-divider">
-      <div class="col-4 p-divider__block"
-           id="ubuntu-com_iot-digital-signage_left">
-        <!-- rtp section start -->
-        <div class="p-heading-icon">
-          <div class="p-heading-icon__header">
-            <img class="p-heading-icon__img p-heading-icon__img--small"
-                 src="https://assets.ubuntu.com/v1/f6d6f78b-Case+study.svg"
-                 alt="case study" />
-            <h4 class="p-heading-icon__title p-muted-heading">案例分享</h4>
-          </div>
-        </div>
-        <h3 class="p-heading--4">
-          <a href="/engage/xdf-maas-ebook.html">新东方使用Canonical MAAS使得数据中心裸机部署高自动化且更迅速</a>
-        </h3>
-        <!-- rtp section end -->
-      </div>
-
-      <div class="col-4 p-divider__block"
-           id="ubuntu-com_iot-digital-signage_center">
-        <!-- rtp section start -->
-        <div class="p-heading-icon">
-          <div class="p-heading-icon__header">
-            <img class="p-heading-icon__img p-heading-icon__img--small"
-                 src="https://assets.ubuntu.com/v1/75902002-news-feed-strip-stock_ebook.svg"
-                 alt="whitepaper" />
-            <h4 class="p-heading-icon__title p-muted-heading">白皮书</h4>
-          </div>
-        </div>
-
-        <h3 class="p-heading--4">
-          <a href="/engage/vmware-to-openstack.html">从VMware迁移到Charmed OpenStack，降低成本和减少运营支出</a>
-        </h3>
-        <!-- rtp section end -->
-      </div>
-
-      <div class="col-4 p-divider__block"
-           id="ubuntu-com_iot-digital-signage_right">
-        <!-- rtp section start -->
-        <div class="p-heading-icon">
-          <div class="p-heading-icon__header">
-            <img class="p-heading-icon__img p-heading-icon__img--small"
-                 src="https://assets.ubuntu.com/v1/75902002-news-feed-strip-stock_ebook.svg"
-                 alt="whitepaper" />
-            <h4 class="p-heading-icon__title p-muted-heading">白皮书</h4>
-          </div>
-        </div>
-        <h3 class="p-heading--4">
-          <a href="/engage/developer-desktop.html">开发者选择Ubuntu桌面的六大理由</a>
-        </h3>
-        <!-- rtp section end -->
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <a href="/engage">阅读更多内容&nbsp;&rsaquo;</a>
-      </div>
-    </div>
-  </div>
-
-  <section class="p-strip--light">
-    <div class="row">
-      <div class="col-8">
-        <h2>激发您的工程师的活力</h2>
-        <p class="p-heading--4">更好的安全性。更多的软件包。较新的工具。您的所有开源，从云到端。</p>
-        <p>66%有经验的开发者更喜欢 Ubuntu。</p>
-        <p>这就是为什么Ubuntu支持最快，最大以及最成功的数字运营的原因。</p>
-        <ul class="p-inline-list">
-          <li class="p-inline-list__item">
-            <a href="/contact">让我们来谈谈开源 &nbsp;&rsaquo;</a>
-          </li>
-          <li class="p-inline-list__item">
-            <a href="https://ubuntu.com/masters-conference">观看 Ubuntu Masters 在实践中的系列视频</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-4 u-vertically-center u-align--left u-hide--small">
-        <div>
-          <p>
-            <a href="https://recruit-c7ff.kxcdn.com/recruit/wp-content/uploads/2020/05/he-developer-survey-2020.pdf"
-               aria-label="Visit the PDF file for 2020 HackerEarth Developer Survey">2020 HackerEarth 开发者调研</a>
-          </p>
-          {{ image(url="https://assets.ubuntu.com/v1/934a0626-Hackerearth_logo.svg",
-                    alt="HackerEarth logo",
-                    width="200",
-                    height="40",
-                    hi_def=True,
-                    loading="lazy",) | safe
-          }}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip">
-    <div class="row">
-      <h2>开源安全</h2>
-      <p class="p-heading--4">
-        不只是Linux。全栈的<a href="https://ubuntu.com/security/certifications">安全和合规</a>。
+  {% call(slot) vf_equal_heights(
+    title_text="广泛的產品組合",
+    image_aspect_ratio_medium="2-3",
+    image_aspect_ratio_small="2-3",
+    items=[
+      {
+        "title_text": "以坚实统一的平台，支持所有开源生态",
+        "image_html": image(url="https://assets.ubuntu.com/v1/a29ed679-yi_jian_shi_tong_yi_de_ping_tai_zhi_chi_suo_you_kai_yuan_sheng_tai.jpg",
+            alt="",
+            width="852",
+            height="1278",
+            hi_def=True,
+            attrs={"class": "p-image-container__image"},
+            loading="lazy"),
+        "description_html": "<p>基于全球广泛使用的 Linux 操作系统，自信构建面向未来、稳定可靠的平台。</p>",
+        "cta_html": "<a href='/pro'>订阅 Ubuntu Pro &rsaquo;</a>"
+      },
+      {
+        "title_text": "云端的最佳选择",
+        "image_html": image(url="https://assets.ubuntu.com/v1/c88cc1d8-yun_duan_de_zui_jia_xuan_ze.jpg",
+            alt="",
+            width="852",
+            height="1278",
+            hi_def=True,
+            attrs={"class": "p-image-container__image"},
+            loading="lazy"),
+        "description_html": "<p>从小型私有云到大规模云环境，灵活应对各种业务需求。</p>",
+        "cta_html": "<a href='/infrastructure'>基础架构解决方案 &rsaquo;</a>"
+      },
+      {
+        "title_text": "多云数据与 AI 赋能",
+        "image_html": image(url="https://assets.ubuntu.com/v1/c9594f95-duo_yun_shu_ju_yu_ai_fu_neng.jpg",
+            alt="",
+            width="852",
+            height="1278",
+            hi_def=True,
+            attrs={"class": "p-image-container__image"},
+            loading="lazy"),
+        "description_html": "<p>借力 Canonical 的多云数据与人工智能解决方案，专注创新，实现高效运维。</p>",
+        "cta_html": "<a href='/ai'>以开源工具部署 AI 项目 &rsaquo;</a>"
+      },
+      {
+        "title_text": "为物联网及与边缘计算量身打造",
+        "image_html": image(url="https://assets.ubuntu.com/v1/1e760355-wei_wu_lian_wang_ji_yu_bian_yuan_ji_suan_liang_shen_da_zao.jpg",
+            alt="",
+            width="852",
+            height="1278",
+            hi_def=True,
+            attrs={"class": "p-image-container__image"},
+            loading="lazy"),
+        "description_html": "<p>出厂即具安全与自动更新能力，让设备始终保持最佳状态。</p>",
+        "cta_html": "<a href='/internet-of-things'>物联网中的 Ubuntu &rsaquo;</a>"
+      }
+    ]
+  ) %}
+    {% if slot == "description" %}
+      <p>
+        优先重视可靠度，为降低基础架构成本而设计。
       </p>
-      <p>让您的开源软件变得更安全。给从内核到库和应用程序的全栈修补以实现 CVE 合规。政府和审计认证 Ubuntu 以适应和满足 FedRAMP、FISMA 和 HITECH 的合规规范。</p>
-    </div>
+    {% endif %}
+  {% endcall %}
 
-    <div class="p-strip is-shallow">
-      <div class="row">
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">10年的安全维护和 CVE 补丁</li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/livepatch">Kernel Livepatch</a> ：7*24小时无停机修复
-          </li>
-          <li class="p-list__item is-ticked">
-            适用于基础设施和应用程序的<a href="/pro">扩展安全维护&nbsp;&rsaquo;</a>
-          </li>
-          <li class="p-list__item is-ticked">
-            NIST 认证的 <a href="https://ubuntu.com/security/certifications#fips">FIPS 140-2</a> 加密模块
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/security/certifications#common-criteria">Common Criteria EAL2</a>：由 CSEC 验证的 ISO/IEC IS 15408
-          </li>
-          <li class="p-list__item is-ticked">
-            用于<abbr title="Department of Defence, USA">DoD</abbr>合规的<a href="https://ubuntu.com/security/certifications#stig">DISA/STIG</a> 安全加固
-          </li>
-          <li class="p-list__item is-ticked">
-            用于网络防御和恶意软件预防的 <a href="https://ubuntu.com/security/certifications#cis">CIS profiles</a>
-          </li>
-        </ul>
-        <p>
-          <a href="https://ubuntu.com/security">与我们一起让您的开源更安全</a>
-        </p>
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=true) -%}
+    {%- if slot == 'title' -%}
+      <h2>加速创新</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <p>我们与科技领域的顶级企业合作，共同扩大开源技术的影响力。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">云计算</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>以 Ubuntu 赋能云端部署，轻松实现高效与可扩展性。</p>
+
+      {% call(slot) vf_logo_section(
+        title={"text": ""},
+        top_rule_variant="none",
+        padding="none",
+        scope="block",
+        blocks=[
+          {
+            "type": "logo-block",
+            "item": {
+              "logos": [
+              image(url="https://assets.ubuntu.com/v1/37cdf96b-aws_logo.png",
+                  alt="AWS",
+                  width="151",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              image(url="https://assets.ubuntu.com/v1/fd400ad4-google_cloud_logo.png",
+                  alt="Google Cloud",
+                  width="369",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              image(url="https://assets.ubuntu.com/v1/052a776b-ibm_cloud_logo.png",
+                  alt="IBM Cloud",
+                  width="292",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              image(url="https://assets.ubuntu.com/v1/e3c7b0cd-microsoft_azure_logo.png",
+                  alt="Microsoft Azure",
+                  width="272",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              image(url="https://assets.ubuntu.com/v1/8cb65738-oracle_new_logo.png",
+                  alt="Oracle",
+                  width="312",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              ]
+            }
+          }
+        ]
+      ) -%}
+      {% endcall -%}
+
+      <div class="p-cta-block">
+        <a href="https://canonical.com/partners/public-cloud">公有云合作伙伴 &rsaquo;</a>
       </div>
-    </div>
+    {%- endif -%}
 
-    <div class="u-fixed-width u-align--center">
-      <div class="p-logo-section">
-        <div class="p-logo-section__items">
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/0a7ef7af-nist-logo.png",
-                        alt="NIST",
-                        width="128",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/55260180-atsec-logo.png",
-                        alt="@Sec",
-                        width="194",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/7a2e74a7-DISA-logo.png",
-                        alt="DISA",
-                        width="160",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/d1637074-CIS-logo.png",
-                        alt="CIS",
-                        width="90",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/ba34ab6a-csec-logo.png",
-                        alt="CSec",
-                        width="90",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-        </div>
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">芯片</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>借助 Canonical 生态，加速创新，缩短产品上市周期。</p>
+
+      {% call(slot) vf_logo_section(
+        title={"text": ""},
+        top_rule_variant="none",
+        padding="none",
+        scope="block",
+        blocks=[
+          {
+            "type": "logo-block",
+            "item": {
+              "logos": [
+              image(url="https://assets.ubuntu.com/v1/b8e228a6-nvidia_logo.png",
+                  alt="Nvidia",
+                  width="308",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              image(url="https://assets.ubuntu.com/v1/a0eebbf1-intel_new_logo.png",
+                  alt="Intel",
+                  width="152",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+                image(url="https://assets.ubuntu.com/v1/c44c5da2-qualcom_logo.png",
+                  alt="Qualcomm",
+                  width="311",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+                image(url="https://assets.ubuntu.com/v1/9fbc4875-amd_logo.png",
+                  alt="AMD",
+                  width="222",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+                image(url="https://assets.ubuntu.com/v1/c52c8a8e-mediatek_logo.png",
+                  alt="Mediatek",
+                  width="315",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+                image(url="https://assets.ubuntu.com/v1/6e1f25e1-arm_logo.png",
+                  alt="ARM",
+                  width="152",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              ]
+            }
+          }
+        ]
+      ) -%}
+      {% endcall -%}
+
+      <div class="p-cta-block">
+        <a href="https://canonical.com/partners/silicon">释放芯片潜能 &rsaquo;</a>
       </div>
-    </div>
-  </section>
+    {%- endif -%}
 
-  <section class="p-strip--light">
-    <div class="row u-equal-height">
-      <div class="col-8">
-        <h2>显著的企业节省</h2>
-        <p class="p-heading--4">以最低的成本以及各种可用的方式实现可持续的开源。</p>
-        <p>重新思考 Linux 和开源的可能性。</p>
-        <p>企业与 Canonical 合作来降低开源运营成本。全自动化：多云运营、数据中心裸机发现配置、边缘集群和物联网。</p>
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">硬件</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>Ubuntu 认证硬件，为您带来卓越性能与无缝体验。</p>
+
+      {% call(slot) vf_logo_section(
+        title={"text": ""},
+        top_rule_variant="none",
+        padding="none",
+        scope="block",
+        blocks=[
+          {
+            "type": "logo-block",
+            "item": {
+              "logos": [
+              image(url="https://assets.ubuntu.com/v1/fc5b3f54-huawei_logo.png",
+                  alt="Huawei",
+                  width="308",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              image(url="https://assets.ubuntu.com/v1/5e7f1d7e-lenovo_logo.png",
+                  alt="Lenovo",
+                  width="202",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              image(url="https://assets.ubuntu.com/v1/f7cb4855-hp_logo.png",
+                  alt="HP",
+                  width="130",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              image(url="https://assets.ubuntu.com/v1/ff84823c-dell_logo.png",
+                  alt="Dell",
+                  width="145",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              image(url="https://assets.ubuntu.com/v1/96739842-ibm_logo.png",
+                  alt="IBM",
+                  width="152",
+                  height="312",
+                  hi_def=True,
+                  output_mode="attrs",
+                  attrs={"class": "p-logo-section__logo"},
+                  loading="lazy"),
+              ]
+            }
+          }
+        ]
+      ) -%}
+      {% endcall -%}
+
+      <div class="p-cta-block">
+        <a href="/certified">认证硬件合作伙伴 &rsaquo;</a>
       </div>
-      <div class="col-4 u-hide--small u-vertically-center u-align--center">
-        {{ image(url="https://assets.ubuntu.com/v1/f129afea-Save+Money-Yen-Euro-Dollar-2020.svg",
-                alt="",
-                width="266",
-                height="200",
-                hi_def=True,
-                loading="lazy",) | safe
-        }}
+    {%- endif -%}
+  {%- endcall -%}
+
+  {% call(slot) vf_equal_heights(
+    title_text="研讨会、白皮书及案例分享",
+    image_aspect_ratio_medium="2-3",
+    image_aspect_ratio_small="2-3",
+    attrs={ "class": "p-section--deep" },
+    items=[
+      {
+        "title_text": "<a href='/engage/adlink-funcode-case-study'>加速上市：ADLINK 和 Funcode 联手借力 Ubuntu 打造 AI 驱动工业相机</a>",
+        "image_html": image(url="https://assets.ubuntu.com/v1/bd49a858-jia_su_shang_shi.jpg",
+            alt="",
+            width="852",
+            height="1278",
+            hi_def=True,
+            attrs={"class": "p-image-container__image"},
+            loading="lazy"),
+      },
+      {
+        "title_text": "<a href='/engage/pentera-centos-migration-to-ubuntu'>打破大众对于从 CentOS移转的误解：Pentera 的无缝迁移实际案例</a>",
+        "image_html": image(url="https://assets.ubuntu.com/v1/eaffe75d-da_po_da_zhong_dui_yu_cong_centosyi_zhuan_de_wu_jie.jpg",
+            alt="",
+            width="852",
+            height="1278",
+            hi_def=True,
+            attrs={"class": "p-image-container__image"},
+            loading="lazy"),
+      },
+      {
+        "title_text": "<a href='/engage/2024-automotive-trends'>视野拓展：汽车行业领导者趋势指南</a>",
+        "image_html": image(url="https://assets.ubuntu.com/v1/b032ce21-shi_ye_tuo_zhan.jpg",
+            alt="",
+            width="852",
+            height="1278",
+            hi_def=True,
+            attrs={"class": "p-image-container__image"},
+            loading="lazy"),
+      },
+    ]
+  ) %}
+    {% if slot == "description" %}
+      <div class="p-cta-block">
+        <a href="/engage" class="p-button">阅读更多内容</a>
       </div>
-    </div>
-    <div class="p-strip is-shallow">
-      <div class="row">
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">Ubuntu 没有强制订阅</li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/security">安全</a>，<a href="/support">支持</a> 以及全代管的 <a href="https://ubuntu.com/openstack/managed">基础设施</a> 和 <a href="https://ubuntu.com/managed/apps">应用程序</a>
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="/infrastructure">公有云</a>，<a href="/download">数据中心</a>，<a href="https://microk8s.io">边缘集群</a> 和 <a href="https://ubuntu.com/appliance">家用设备</a>
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/about/release-cycle">长期维护承诺</a>
-          </li>
-          <li class="p-list__item is-ticked">用于企业和ISV（独立软件开发商）的透明计价</li>
-          <li class="p-list__item is-ticked">
-            <a href="/engage/vmware-to-openstack">从 VMware 切换到 OpenStack</a>
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="/openstack">开放基础设施的 TCO 分析</a>
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/engage/cloud-economics">451研究报告：私有云/公有云的成本研究</a>
-          </li>
-        </ul>
-        <a href="/contact">联系我们&nbsp;&rsaquo;</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip">
-    <div class="row">
-      <h2>公有云优化</h2>
-      <p class="p-heading--4">大部分的公有云实例都是Ubuntu，因为可获得性能和安全。</p>
-    </div>
-    <div class="p-strip is-shallow">
-      <div class="row">
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">专为 AWS、Azure、Google、Oracle、IBM 优化内核</li>
-          <li class="p-list__item is-ticked">
-            Ubuntu Pro 提供的<a href="https://ubuntu.com/security/certifications#fips">FIPS</a>, <a href="https://ubuntu.com/security/certifications#cis">CIS 加固</a> 以及 CVE 补丁
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/livepatch">Kernel Livepatch</a> 最大限度地减少滚动重启
-          </li>
-          <li class="p-list__item is-ticked">网络 &amp; 存储性能优化</li>
-          <li class="p-list__item is-ticked">机器和容器的GPU支持</li>
-          <li class="p-list__item is-ticked">即付即用的计费方式，无额外许可证</li>
-          <li class="p-list__item is-ticked">
-            <a href="/support">企业支持</a> 和 <a href="/pro">扩展安全维护</a>
-          </li>
-          <li class="p-list__item is-ticked">云工作负载迁移服务</li>
-          <li class="p-list__item is-ticked">容器化和云原生迁移服务</li>
-          <li class="p-list__item is-ticked">完全托管的应用程序服务</li>
-        </ul>
-        <ul class="p-inline-list">
-          <li class="p-inline-list__item">
-            <a href="/infrastructure">了解更多&nbsp;&rsaquo;</a>
-          </li>
-          <li class="p-inline-list__item">
-            <a href="/contact">联系我们&nbsp;&rsaquo;</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="u-fixed-width u-align--center">
-      <div class="p-logo-section">
-        <div class="p-logo-section__items">
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/2ab5f1e4-uber-logo.png",
-                        alt="Uber",
-                        width="102",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/7bd1bc78-spotify-logo.png",
-                        alt="Spotify",
-                        width="200",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/891cc3bf-Walmart-logo.png",
-                        alt="Walmart",
-                        width="242",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/c0bc102a-bnp-paribas-logo.png",
-                        alt="BNP Paribas",
-                        width="328",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip--light">
-    <div class="row">
-      <div class="col-8">
-        <h2>电信级私有云</h2>
-        <p class="p-heading--4">
-          <a href="/openstack">智能地运营私有云</a>&nbsp;&ndash;&nbsp; 受支持的或 <a href="https://ubuntu.com/openstack/managed">完全代管</a>。
-        </p>
-      </div>
-    </div>
-
-    <div class="p-strip is-shallow">
-      <div class="row">
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">
-            10年的 <a href="/pro">安全维护</a> 和 <a href="/support">支持</a>
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/openstack/features">超融合</a> 或者隔离架构
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/security">用于 GDPR，HIPAA，FedRAMP 的静态加密</a>
-          </li>
-          <li class="p-list__item is-ticked">更多的 SDN 和存储选择</li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/engage/charmed-openstack-adoption-whitepaper">自动化的升级和 Day-2 运营</a>
-          </li>
-          <li class="p-list__item is-ticked">集成日志记录，监控，和警报</li>
-          <li class="p-list__item is-ticked">平台和基础设施强化</li>
-          <li class="p-list__item is-ticked">高可用（HA）</li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/telco">电信级 NFVI</a>
-          </li>
-        </ul>
-        <ul class="p-inline-list">
-          <li class="p-inline-list__item">
-            <a href="/openstack">了解更多&nbsp;&rsaquo;</a>
-          </li>
-          <li class="p-inline-list__item">
-            <a href="/contact">联系我们&nbsp;&rsaquo;</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="u-fixed-width u-align--center">
-      <div class="p-logo-section">
-        <div class="p-logo-section__items">
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/a8e8b05a-bt-logo.png",
-                        alt="BT",
-                        width="100",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/527a666b-deutsche-telekom.png",
-                        alt="Deutsche Telekom",
-                        width="208",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/4d30d53f-rabobank-logo.png",
-                        alt="Rabobank",
-                        width="208",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/0907ebef-best-buy-logo.png",
-                        alt="Best Buy",
-                        width="108",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/f06114dc-Bloomberg-Logo.png",
-                        alt="Bloomberg",
-                        width="212",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/f570b628-AT&T-Logo.png",
-                        alt="AT&T",
-                        width="200",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip">
-    <div class="row">
-      <h2>多云 Kubernetes 和容器</h2>
-      <p class="p-heading--4">
-        <a href="https://docs.microsoft.com/en-us/azure/aks/cluster-configuration">AKS，</a> <a href="https://cloud-images.ubuntu.com/docs/aws/eks">EKS，</a> <a href="https://cloud.google.com/kubernetes-engine/docs/concepts/node-images#ubuntu">GKE，</a> Kubeadm，<a href="https://microk8s.io">MicroK8s，</a><a href="https://ubuntu.com/kubernetes/features">Charmed Kubernetes。</a> 在Ubuntu上都可用。
-      </p>
-    </div>
-
-    <div class="p-strip is-shallow">
-      <div class="row">
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">支持所有的公有云 Kubernetes</li>
-          <li class="p-list__item is-ticked">本地 MicroK8s, Charmed K8s, kubeadm</li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/kubernetes/managed">完全托管</a>的本地或者公有云上的 Kubernetes
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="https://documentation.ubuntu.com/juju/3.6/reference/cloud/kubernetes-clouds-and-juju/">
-              模型驱动的 Kubernetes Operators
-            </a>
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/managed/apps">应用程序</a>，<a href="https://ubuntu.com/pricing/infra">Kubernetes</a>，和 <a href="/support">OS</a> 的全栈支持
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="https://jaas.ai/canonical-kubernetes">K8s 架构和部署咨询</a>
-          </li>
-          <li class="p-list__item is-ticked">云原生工作负载迁移服务</li>
-          <li class="p-list__item is-ticked">
-            <a href="https://charmed-kubeflow.io">K8s上的 AI/ML 工作负载的</a> GPU的支持
-          </li>
-          <li class="p-list__item is-ticked">
-            <a href="https://maas.io/">裸机</a>，<a href="/openstack">OpenStack</a> 和 VMware
-          </li>
-          <li class="p-list__item is-ticked">
-            可插拔的 <a href="https://ubuntu.com/kubernetes/features">CNIs，CSIs，CRIs 以及第三方工具</a>
-          </li>
-        </ul>
-        <ul class="p-inline-list">
-          <li class="p-inline-list__item">
-            <a href="/kubernetes">了解更多&nbsp;&rsaquo;</a>
-          </li>
-          <li class="p-inline-list__item">
-            <a href="/contact">联系我们&nbsp;&rsaquo;</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="u-fixed-width u-align--center">
-      <div class="p-logo-section">
-        <div class="p-logo-section__items">
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/0d364838-aws-logo.png",
-                        alt="AWS",
-                        width="108",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/4e688679-microsoft-azure-logo.png",
-                        alt="Azure",
-                        width="188",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/a9d82095-google-cloud-logo.png",
-                        alt="Google Cloud",
-                        width="250",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/a108ea3f-liberty-global-logo.png",
-                        alt="Liberty global",
-                        width="92",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/768ee1d7-aci-logo.png",
-                        alt="ACI",
-                        width="206",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip--light">
-    <div class="row">
-      <h2>超安全的物联网设备</h2>
-      <p class="p-heading--4">
-        <a href="https://ubuntu.com/appliance">Ubuntu Core Appliance</a> 具有<abbr title="可回滚更新机制">事务化更新</abbr>功能，为<a href="https://ubuntu.com/embedded">嵌入式 Linux</a> 提供更高的安全性。
-      </p>
-    </div>
-
-    <div class="p-strip is-shallow">
-      <div class="row">
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">用于应用程序，内核和操作系统的压缩的 OTA 更新</li>
-          <li class="p-list__item is-ticked">自动回滚和数据快照</li>
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/internet-of-things/appstore">托管的私有应用程序商店</a> 为大规模设备安全管理提供支撑
-          </li>
-          <li class="p-list__item is-ticked">边缘应用程序交付的 DevSecOps 管道</li>
-          <li class="p-list__item is-ticked">内建的设备恢复和远程磁盘修复</li>
-          <li class="p-list__item is-ticked">为每个设备提供10年的安全维护</li>
-          <li class="p-list__item is-ticked">可证明的系统和软件的完整性</li>
-          <li class="p-list__item is-ticked">由信任根支持的安全启动</li>
-          <li class="p-list__item is-ticked">由硬件密钥支持的全盘加密</li>
-          <li class="p-list__item is-ticked">具有 FIPS 认证模块的嵌入式 Linux</li>
-        </ul>
-        <ul class="p-inline-list">
-          <li class="p-inline-list__item">
-            <a href="/core">了解更多&nbsp;&rsaquo;</a>
-          </li>
-          <li class="p-inline-list__item">
-            <a href="/contact">联系我们&nbsp;&rsaquo;</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="u-fixed-width u-align--center">
-      <div class="p-logo-section">
-        <div class="p-logo-section__items">
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/6f3e10ca-intel-new-logo.png",
-                        alt="Intel",
-                        width="102",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/2062a631-rexroth-logo.png",
-                        alt="Rexroth",
-                        width="197",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/62896c37-arm-logo.png",
-                        alt="ARM",
-                        width="107",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/9beb846b-dell-logo.png",
-                        alt="Dell",
-                        width="101",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/8deb7cfd-advantech-logo.png",
-                        alt="Advantech",
-                        width="211",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip">
-    <div class="row">
-      <h2>工作站和台式机</h2>
-      <p class="p-heading--4">
-        <a href="https://ubuntu.com/ai">已优化的 AI/ML</a> 和云开发、运维。专业开发人员的首选。
-      </p>
-    </div>
-    <div class="p-strip is-shallow">
-      <div class="row">
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">
-            <a href="https://ubuntu.com/engage/linux-enterprise-whitepaper">Active Directory 和 LDAP 集成</a>
-          </li>
-          <li class="p-list__item is-ticked">全盘加密</li>
-          <li class="p-list__item is-ticked">
-            支持<a href="/pro">全部开源堆栈</a>的安全更新
-          </li>
-          <li class="p-list__item is-ticked">
-            数字资产 <a href="https://landscape.canonical.com/landscape-features">监控和管理</a>
-          </li>
-          <li class="p-list__item is-ticked">锁定的预配置文件</li>
-          <li class="p-list__item is-ticked">支持离线部署的本地 Kubernetes</li>
-          <li class="p-list__item is-ticked">
-            Windows 和 macOS 上的即时实例（VM） <a href="https://ubuntu.com/wsl">WSL</a> 和 <a href="https://multipass.run">Multipass</a>
-          </li>
-          <li class="p-list__item is-ticked">
-            优化的镜像和<a href="/blog/why-you-should-buy-a-pre-installed-ubuntu-workstation-cn">认证的工作站</a>
-          </li>
-        </ul>
-        <ul class="p-inline-list">
-          <li class="p-inline-list__item">
-            <a href="/desktop">了解更多&nbsp;&rsaquo;</a>
-          </li>
-          <li class="p-inline-list__item">
-            <a href="/contact">联系我们&nbsp;&rsaquo;</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="u-fixed-width u-align--center">
-      <div class="p-logo-section">
-        <div class="p-logo-section__items">
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/6fa9308c-hp-logo.png",
-                        alt="HP",
-                        width="93",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/baf2934e-lenovo-logo.png",
-                        alt="Lenovo",
-                        width="199",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/6f3e10ca-intel-new-logo.png",
-                        alt="Intel",
-                        width="102",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/1c8f9a57-nvidia-logo.png",
-                        alt="nVidia",
-                        width="257",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/847b262e-amd-logo.png",
-                        alt="AMD",
-                        width="150",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/9beb846b-dell-logo.png",
-                        alt="Dell",
-                        width="101",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip--light">
-    <div class="row">
-      <h2>数据中心自动化</h2>
-      <p class="p-heading--4">
-        将机架式（服务器）变成裸机云。支持Windows，ESX 和 Linux 的<a href="https://maas.io">裸机即服务供给</a>。
-      </p>
-    </div>
-    <div class="p-strip is-shallow">
-      <div class="row">
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">
-            按需供给的服务器的<a href="https://maas.io/how-it-works">裸机云</a>
-          </li>
-          <li class="p-list__item is-ticked">远程的边缘集群运营</li>
-          <li class="p-list__item is-ticked">
-            基础设施 <a href="https://maas.io/docs/prometheus-metrics">监控</a> 和发现
-          </li>
-          <li class="p-list__item is-ticked">
-            Ansible, Chef, Puppet, SALT, <a href="https://juju.is">Juju</a> 集成
-          </li>
-          <li class="p-list__item is-ticked">
-            从零开始，<a href="https://maas.io/docs/install-from-a-snap">超快安装体验</a>
-          </li>
-          <li class="p-list__item is-ticked">VMWare ESX, Windows, CentOS, RHEL, Ubuntu</li>
-          <li class="p-list__item is-ticked">预装应用程序的自定义镜像</li>
-          <li class="p-list__item is-ticked">
-            <a href="https://maas.io/docs/storage">磁盘</a> 和 <a href="https://maas.io/docs/networking">网络</a> 配置
-          </li>
-          <li class="p-list__item is-ticked">API 驱动的 DHCP, DNS, PXE, IPAM, 配置</li>
-          <li class="p-list__item is-ticked">LDAP 身份验证和 RBAC</li>
-        </ul>
-        <ul class="p-inline-list">
-          <li class="p-inline-list__item">
-            <a href="https://maas.io">了解更多</a>
-          </li>
-          <li class="p-inline-list__item">
-            <a href="/contact">联系我们&nbsp;&rsaquo;</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="u-fixed-width u-align--center">
-      <div class="p-logo-section">
-        <div class="p-logo-section__items">
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/5809a2fc-verizon-logo.png",
-                        alt="Verizon",
-                        width="209",
-                        height="211",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/a277d671-telefonica-logo.png",
-                        alt="Telefonica",
-                        width="267",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/cf00f957-tele2-logo.png",
-                        alt="Tele2",
-                        width="107",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/0c18fa55-telecom-italia-logo.png",
-                        alt="Telecom Italia",
-                        width="209",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/84a8cfa3-nec-logo.png",
-                        alt="NEC",
-                        width="135",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/348a2fb9-barclays-logo.png",
-                        alt="Barclays",
-                        width="249",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip is-bordered">
-    <div class="row">
-      <h2>所有形状和尺寸的智能机器人</h2>
-      <p class="p-heading--4">
-        从小型机器人到大型卡车, <a href="https://ubuntu.com/robotics">Ubuntu 驱动着机器人的发展</a>。
-      </p>
-    </div>
-
-    <div class="p-strip is-shallow">
-      <div class="row">
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">
-            全面支持<a href="https://ubuntu.com/robotics/what-is-ros">ROS 和 ROS2</a>
-          </li>
-          <li class="p-list__item is-ticked">为长期支持版 ROS 提供安全补丁</li>
-          <li class="p-list__item is-ticked">容错式的 over-the-air(OTA) 更新</li>
-          <li class="p-list__item is-ticked">
-            适用于 ROS 和 ROS2 的<a href="https://ubuntu.com/security/certifications#cis">CIS 认证</a>
-          </li>
-          <li class="p-list__item is-ticked">通过 SMART START 服务包缩短产品上市时间</li>
-          <li class="p-list__item is-ticked">领先的机器人即平台的生态</li>
-          <li class="p-list__item is-ticked">精选应用程序商店</li>
-        </ul>
-        <ul class="p-inline-list">
-          <li class="p-inline-list__item">
-            <a href="https://ubuntu.com/robotics">了解更多</a>
-          </li>
-          <li class="p-inline-list__item">
-            <a href="/contact">联系我们&nbsp;&rsaquo;</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="u-fixed-width u-align--center">
-      <div class="p-logo-section">
-        <div class="p-logo-section__items">
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/72ebbe9b-ABB-logo.png",
-                        alt="ABB",
-                        width="101",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/385ec007-pal-robotics-logo.png",
-                        alt="Pal Robotics",
-                        width="122",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/55080ab7-Kuka-logo.png",
-                        alt="Kuka",
-                        width="194",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/86b858ad-apollo-logo.png",
-                        alt="Apollo",
-                        width="173",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/8778829d-bosch-logo.png",
-                        alt="Bosch",
-                        width="229",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/8ffd1f82-bmw-logo.png",
-                        alt="BMW",
-                        width="91",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip">
-    <div class="row">
-      <h2>PAAS之上的 &nbsp;&ndash;&nbsp;多云应用程序</h2>
-      <p class="p-heading--4">
-        适用于经典和 <a href="https://jaas.ai/kubernetes">Kubernetes 资产</a> 的 <a href="https://juju.is/">通用模型驱动 operators</a>。
-      </p>
-    </div>
-
-    <div class="p-strip is-shallow">
-      <div class="row">
-        <ul class="p-list is-split">
-          <li class="p-list__item is-ticked">跨公有云和私有云的平滑运行</li>
-          <li class="p-list__item is-ticked">像开源包一样可重复使用的集成代码</li>
-          <li class="p-list__item is-ticked">用于快速开发的 Python Operator 框架</li>
-          <li class="p-list__item is-ticked">将 K8s operator 模式引入经典的工作负载</li>
-          <li class="p-list__item is-ticked">生命周期管理和 Day 2 运营</li>
-          <li class="p-list__item is-ticked">
-            社区驱动的 operators 的<a href="https://jaas.ai/store">开放集合</a>
-          </li>
-        </ul>
-        <p>
-          <a href="https://juju.is">了解更多关于通用 operators 的内容</a>
-        </p>
-      </div>
-    </div>
-
-    <div class="u-fixed-width u-align--center">
-      <div class="p-logo-section">
-        <div class="p-logo-section__items">
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/5d70c4fc-Panasonic_logo.png",
-                        alt="Panasonic",
-                        width="221",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/df0dc3e8-scania-logo.png",
-                        alt="Scania",
-                        width="287",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/400a4a56-sbi-bits-logo.png",
-                        alt="SBI Bits",
-                        width="201",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/e8ea161a-swissquote-logo.png",
-                        alt="Swissquote",
-                        width="311",
-                        height="208",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"}) | safe
-            }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    {% endif %}
+  {% endcall %}
 
   <script>
     function getPrimaryParentLanguage() {
@@ -1299,6 +555,17 @@
         eventValue: undefined,
       });
     }
+  </script>
+
+  <script src="{{ versioned_static('js/dist/latest-news.js') }}"></script>
+  <script>
+    canonicalLatestNews.fetchLatestNews({
+      imageClasses: ["p-image-container__image"],
+      limit: "4",
+      articlesContainerSelector: "#articles",
+      articleTemplateSelector: "#template",
+      excerptLength: 180,
+    })
   </script>
 
 {% endblock page_content %}
