@@ -52,6 +52,6 @@
     "@canonical/cookie-policy": "3.8.4",
     "@canonical/global-nav": "3.7.3",
     "@canonical/latest-news": "^2.2.1",
-    "vanilla-framework": "4.40.0"
+    "vanilla-framework": "git+https://github.com/vanilla-framework/vanilla-framework.git#WD-33213"
   }
 }
