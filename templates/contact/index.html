@@ -17,11 +17,11 @@
 
   {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
     {%- if slot == 'title' -%}
-      <h2 style="padding-top: 1.5rem;">获取支持</h2>
+      <h1 style="padding-top: 1.5rem;">获取支持</h1>
     {%- endif -%}
 
     {%- if slot == 'list_item_title_1' -%}
-      <h3 class="p-heading--5">售前支持</h3>
+      <h2 class="p-heading--5">售前支持</h2>
     {%- endif -%}
 
     {%- if slot == 'list_item_description_1' -%}
@@ -31,7 +31,7 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_title_2' -%}
-      <h3 class="p-heading--5">技术协助</h3>
+      <h2 class="p-heading--5">技术协助</h2>
     {%- endif -%}
 
     {%- if slot == 'list_item_description_2' -%}
@@ -41,7 +41,7 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_title_3' -%}
-      <h3 class="p-heading--5">商标咨询</h3>
+      <h2 class="p-heading--5">商标咨询</h2>
     {%- endif -%}
 
     {%- if slot == 'list_item_description_3' -%}
@@ -51,7 +51,7 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_title_4' -%}
-      <h3 class="p-heading--5">法律查询</h3>
+      <h2 class="p-heading--5">法律查询</h2>
     {%- endif -%}
 
     {%- if slot == 'list_item_description_4' -%}
@@ -61,7 +61,7 @@
     {%- endif -%}
 
     {%- if slot == 'list_item_title_5' -%}
-      <h3 class="p-heading--5">媒体洽詢</h3>
+      <h2 class="p-heading--5">媒体洽詢</h2>
     {%- endif -%}
 
     {%- if slot == 'list_item_description_5' -%}
@@ -250,14 +250,14 @@
     items=[
     {
     "title_text": "官方微博",
-    "image_html":  '<img src="https://assets.ubuntu.com/v1/b8c058fd-weibo.png"
+    "image_html":  '<img src="https://assets.ubuntu.com/v1/2281ca17-weibo.jpg"
      class="p-image-container__image"
      alt="Weibo" />',
     "description_html": "<p><a href='https://weibo.com/officialubuntu'>点击关注</a></p>"
     },
     {
     "title_text": "官方微信",
-    "image_html":  '<img src="https://assets.ubuntu.com/v1/6727c077-wechat.png"
+    "image_html":  '<img src="https://assets.ubuntu.com/v1/d2e90121-wechat.jpg"
      class="p-image-container__image"
      width="284"
      height="426"
@@ -277,36 +277,34 @@
     ) %}
   {% endcall %}
 
-  <section class="p-section--deep">
-    {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
-      {%- if slot == 'title' -%}
-        <h2>我們的办公室</h2>
-      {%- endif -%}
+  {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false, padding="deep") -%}
+    {%- if slot == 'title' -%}
+      <h2>我們的办公室</h2>
+    {%- endif -%}
 
-      {%- if slot == 'list_item_title_1' -%}
-        <h3 class="p-heading--5">北京办公室</h3>
-      {%- endif -%}
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">北京办公室</h3>
+    {%- endif -%}
 
-      {%- if slot == 'list_item_description_1' -%}
-        <p>
-          北京市东城区安定门外大街208号玖安广场B座304室
-          <br />
-          邮编: 100011
-        </p>
-      {%- endif -%}
+    {%- if slot == 'list_item_description_1' -%}
+      <p>
+        北京市东城区安定门外大街208号玖安广场B座304室
+        <br />
+        邮编: 100011
+      </p>
+    {%- endif -%}
 
-      {%- if slot == 'list_item_title_2' -%}
-        <h3 class="p-heading--5">上海办公室</h3>
-      {%- endif -%}
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">上海办公室</h3>
+    {%- endif -%}
 
-      {%- if slot == 'list_item_description_2' -%}
-        <p>
-          上海市徐汇区淮海中路1045号28楼2827室
-          <br />
-          邮编: 200031
-        </p>
-      {%- endif -%}
-    {%- endcall -%}
-  </section>
+    {%- if slot == 'list_item_description_2' -%}
+      <p>
+        上海市徐汇区淮海中路1045号28楼2827室
+        <br />
+        邮编: 200031
+      </p>
+    {%- endif -%}
+  {%- endcall -%}
 
 {% endblock %}
