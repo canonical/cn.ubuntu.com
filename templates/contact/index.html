@@ -234,7 +234,7 @@
               <input type="hidden"
                      name="returnURL"
                      aria-label="returnURL"
-                     value="/contact/thank-you.html" />
+                     value="/contact/thank-you" />
             </li>
           </ul>
         </form>
@@ -245,7 +245,6 @@
 
   {% call(slot) vf_equal_heights(
     title_text="您可以通过以下方式关注我们",
-    attrs={ "id": "3-columns-responsive" },
     image_aspect_ratio_large="square",
     items=[
     {
@@ -257,7 +256,7 @@
     },
     {
     "title_text": "官方微信",
-    "image_html":  '<img src="https://assets.ubuntu.com/v1/722f3435-qr_code_2.png"
+    "image_html":  '<img id="wechat" src="https://assets.ubuntu.com/v1/722f3435-qr_code_2.png"
      class="p-image-container__image"
      width="284"
      height="426"
