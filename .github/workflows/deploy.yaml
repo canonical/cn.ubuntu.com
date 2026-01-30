@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - add-charm
+      - samhotep-patch-2
       - main
 
 env:
