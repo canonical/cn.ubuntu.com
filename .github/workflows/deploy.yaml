@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cn-ubuntu-com-charm
-          path: ./*.charm
+          path: ./charm/*.charm
 
   pack-rock:
     runs-on: ubuntu-latest
