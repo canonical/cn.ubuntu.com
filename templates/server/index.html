@@ -1,440 +1,446 @@
 {% extends "templates/base.html" %}
 
-{% block title %}服务器 {{ page_title }}{% endblock %}
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+{% from "_macros/vf_logo-section.jinja" import vf_logo_section %}
+{% from "_macros/vf_basic-section.jinja" import vf_basic_section %}
+{% from "_macros/vf_equal-heights.jinja" import vf_equal_heights %}
+{% from "_macros/vf_cta-section.jinja" import vf_cta_section %}
+{% from "_macros/vf_divided-section.jinja" import vf_divided_section %}
 
-{% block meta_description %}Ubuntu 服务器下载 Ubuntu 20.04 server Ubuntu服务器安装 服务器部署{{ meta_description }}{% endblock %}
+{% block title %}Ubuntu 服务器{% endblock %}
+
+{% block meta_description %}
+  Ubuntu服务器以安全設计为核心，Ubuntu Server 兼具高性能与可扩展性，帮助企业高效利用基础设施资源。无论是部署云平台还是 Web 集群，均支持主流硬件与软件环境。
+{% endblock %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
 
 {% block content %}
-  <section class="p-strip--suru is-dark is-deep">
-    <div class="row u-vertically-center fiximg">
-      <div class="col-7">
-        <h1>使用Ubuntu Server横向扩展</h1>
-        <p>
-          Ubuntu Server可让您的公共或私有数据中心在经济和技术上都具有出色的可扩展性。无论是部署OpenStack云、Kubernetes集群还是50000个节点的大型渲染场，Ubuntu Server都能提供性价比最佳的横向扩展能力。
-        </p>
-        <p>
-          <a class="p-button--positive" href="/download/server/step1">下载Ubuntu服务器版</a>
-        </p>
-        <p>
-          技术支持服务、商用等咨询，请点击并扫码添加<a href="/contact#wechat" class="p-button--positive is-small">Ubuntu企业微信</a>。
-        </p>
-      </div>
-      <div class="col-5 u-vertically-center u-align--center u-hide--small ">
-        {{ image(url="https://assets.ubuntu.com/v1/55eda3ae-Servers+-white.svg",
-                alt="",
-                width="350",
-                height="121",
-                hi_def=True,
-                loading="auto",) | safe
-        }}
-      </div>
-    </div>
-  </section>
 
-  <div class="p-strip is-bordered">
-    <div class="u-fixed-width">
-      <h2>Ubuntu Server {{ releases.lts.short_version }} 新功能</h2>
-      <ul class="p-list is-split">
-        <li class="p-list__item is-ticked">
-          由<a href="/support">Canonical 提供10年的支持</a>至2032年
-        </li>
-        <li class="p-list__item is-ticked">
-          具有安全强化、合规性计划、内核实时补丁等的Ubuntu Pro且用于<a href="https://ubuntu.com/aws/pro">AWS</a>，<a href="https://ubuntu.com/azure/pro">Azure</a> 和 <a href="https://ubuntu.com/gcp/pro">GCP</a>的云镜像
-        </li>
-        <li class="p-list__item is-ticked">
-          Kafka, Grafana 和 Loki 加入了不断增长的<a href="https://ubuntu.com/security/docker-images">受信任 OCI 镜像组合</a>，基于 Ubuntu 并由 Canonical 维护。
-        </li>
-        <li class="p-list__item is-ticked">用于现代，通用加密和安全通信的 OpenSSL 3.0</li>
-        <li class="p-list__item is-ticked">用于 NVIDIA 虚拟 GPU (vGPU) 软件 14 的本地主机和客户机驱动</li>
-        <li class="p-list__item is-ticked">借助 Netplan 中的 SmartNIC 的支持改善网络加速</li>
-        <li class="p-list__item is-ticked">在 Ubuntu 主要组件下对 GlusterFS、FRRouting 和 realmd/adcli 的一般支持</li>
-        <li class="p-list__item is-ticked">可在所有主要架构上运行：x86-64、ARM v7、ARM64、POWER8、POWER9、IBM s390x (LinuxONE) 和 RISC-V</li>
-        <li class="p-list__item is-ticked">用于最新硬件和安全更新的最新长期 Linux 5.15 内核</li>
-        <li class="p-list__item is-ticked">
-          软件更新：QEMU (v6.2), libvirt (v8.0), PHP (v8.1), Ruby (v3.0), GCC (V11.2), Python (v3.10.1), MySQL (v8.0.28), OpenLDAP (v.2.5.11), Samba 4.15.5
-        </li>
-      </ul>
-    </div>
-    <div class="u-fixed-width">
+  {% call(slot) vf_hero(
+    title_text='使用 Ubuntu Server 横向扩展',
+    layout='50/50'
+  ) -%}
+    {%- if slot == 'description' -%}
       <p>
-        <a href="{{ releases.lts.release_notes_url }}">在发布公告中阅读更多内容</a>
+        Ubuntu Server 可让您的公有或私有数据中心在经济和技术上都具有出色的可扩展性。无论是部署 OpenStack 云、Kubernetes 集群还是 50000 个节点的大型渲染场，Ubuntu Server 都能提供性价比最佳的横向扩展能力。
       </p>
-    </div>
+    {%- endif -%} 
+    {%- if slot == 'cta' -%}
+      <a href="/download#server" class="p-button--positive">下载 Ubuntu 服务器版</a>
+    {%- endif -%}
+  {% endcall -%}
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=true) -%}
+    {%- if slot == 'title' -%}
+      <h2>为快速发展的企业提供灵活、安全、可随处部署的技术</h2>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">卓越性能与多功能性</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>Ubuntu Server 获得领先硬件原始设备制造商（OEM）的认证，具备精简的初始部署，并包含集成的部署和应用程序建模工具，因此无论您是部署 NoSQL 数据库、web farm 还是云，都可以最大限度地利用基础设施。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">可信赖的发布时间表</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>Ubuntu Server 的长期支持（LTS）版本默认在五年内接收 Ubuntu Main 软件库中约 2500 个软件包的标准安全更新。每六个月，子版本都会带来新功能，而硬件支持的更新会为所有受支持的LTS版本添加对最新机器的支持。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">最广泛使用且值得信赖的平台</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>根据 <a href='https://www.openlogic.com/system/files/2025-05/report-openlogic-2025-state-of-open-source-support.pdf'>OpenLogic 2025 年开源现状报告</a>，Ubuntu 是私有云实施的基础，且连续三年蝉联全球使用最广泛的 Linux 发行版。</p>
+    {%- endif -%}
+  {%- endcall -%}
+
+  {% call(slot) vf_logo_section(
+    title={
+      "text": "与您的硬件一起使用"
+    },
+    blocks=[
+      {
+        "type": "cta-block",
+        "item": {
+          "link": {
+            "content_html": "探索认证硬件合作伙伴&nbsp;&rsaquo;",
+            "attrs": {
+              "href": "/certified"
+            }
+          }
+        }
+      },
+      {
+        "type": "logo-block",
+        "item": {
+          "logos": [
+            image(url="https://assets.ubuntu.com/v1/052ae274-lenovo_logo.png",
+              alt="Lenovo",
+              width="202",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            ),
+            image(url="https://assets.ubuntu.com/v1/5988324b-dell_logo.png",
+              alt="Dell",
+              width="145",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            ),
+            image(url="https://assets.ubuntu.com/v1/7e02dc6b-ibm_logo.png",
+              alt="IBM",
+              width="152",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            ),
+            image(url="https://assets.ubuntu.com/v1/70d6a378-hp_logo.png",
+              alt="HP",
+              width="130",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            ),
+            image(url="https://assets.ubuntu.com/v1/cb6ca54f-intel_new_logo.png",
+              alt="Intel",
+              width="152",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            ),
+            image(url="https://assets.ubuntu.com/v1/71a123b5-cisco_logo.png",
+              alt="Cisco",
+              width="187",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            ),
+            image(url="https://assets.ubuntu.com/v1/cfd9de60-amd_logo.png",
+              alt="AMD",
+              width="222",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            ),
+            image(url="https://assets.ubuntu.com/v1/475cb5d7-arm_logo.png",
+              alt="ARM",
+              width="152",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            )
+          ]
+        }
+      }
+    ]
+  ) -%}
+  {% endcall -%}
+
+  {% call(slot) vf_logo_section(
+    title={
+      "text": "和您的软件相兼容"
+    },
+    blocks=[
+      {
+        "type": "cta-block",
+        "item": {
+          "link": {
+            "content_html": "探索认证软件合作伙伴&nbsp;&rsaquo;",
+            "attrs": {
+              "href": "https://partners.ubuntu.com/programmes/software"
+            }
+          }
+        }
+      },
+      {
+        "type": "logo-block",
+        "item": {
+          "logos": [
+            image(url="https://assets.ubuntu.com/v1/221ba6f5-centrify_logo.png",
+              alt="Centrify",
+              width="308",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            ),
+            image(url="https://assets.ubuntu.com/v1/62c942f6-openstack_logo.png",
+              alt="OpenStack",
+              width="413",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            ),
+            image(url="https://assets.ubuntu.com/v1/4bad733a-likewise_logo.png",
+              alt="Likewise",
+              width="252",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            ),
+            image(url="https://assets.ubuntu.com/v1/661c182b-open_bravo_logo.png",
+              alt="Open Bravo",
+              width="114",
+              height="312",
+              hi_def=True,
+              loading="auto",
+              output_mode="attrs"
+            )
+          ]
+        }
+      }
+    ]
+  ) -%}
+  {% endcall -%}
+
+  {{ vf_basic_section(
+    title={"text": "获取最新的安全更新和支持"},
+    items=[
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "Ubuntu Pro 是一项综合订阅服务，为开发人员和企业提供企业级安全防护、管理工具及扩展支持。"
+        }
+      },
+      {
+        "type": "list",
+        "item": {
+          "list_items": [
+            {
+              "list_item_type": "bullet",
+              "content": "完整开源堆栈的安全更新"
+            },
+            {
+              "list_item_type": "bullet",
+              "content": "使用 <a href='/landscape'>Landscape</a> 对您的整个资产进行监控和管理"
+            },
+            {
+              "list_item_type": "bullet",
+              "content": "<a href='https://ubuntu.com/security/security-standards'>FIPS 140、CIS 加固、STIG、PCI-DSS 等</a>"
+            },
+            {
+              "list_item_type": "bullet",
+              "content": "使用 Kernel Livepatch 最大限度地减少滚动重启"
+            },
+            {
+              "list_item_type": "bullet",
+              "content": "可选工作日或全天候支持级别"
+            }
+          ]
+        }
+      },
+      {
+        "type": "cta-block",
+        "item": {
+          "primary": {
+            "content_html": "了解 Ubuntu Pro",
+            "attrs": {
+              "href": "/pro"
+            }
+          },
+          "secondaries": [
+            {
+              "content_html": "开始 30 天免费试用",
+              "attrs": {
+                "href": "https://ubuntu.com/pro/free-trial"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  ) }}
+
+  {{ vf_basic_section(
+    title={"text": "Ubuntu 版本的安全支持周期"},
+    padding="shallow",
+    items=[
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "Ubuntu 长期支持（LTS）版本默认提供 Ubuntu Main 软件库的五年标准安全维护。通过订阅 Ubuntu Pro 或扩展安全维护（ESM），可选择将支持期限延长至 10 年并覆盖 Ubuntu Universe 软件库。针对长期维护需求，Canonical 还提供可延长至第 11 至 15 年的 Legacy Support 服务。"
+        }
+      },
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "可预测的版本发布周期，为您带来稳定、可靠的产品体验。"
+        }
+      }
+    ]
+  ) }}
+
+  <div class="p-section">
+    {% include "shared/_release_schedule.html" %}
   </div>
 
-  <div class="p-strip is-deep" style="padding-bottom: 2rem;">
-    <div class="u-fixed-width">
-      <h2 id="performance-and-versatility">性能和通用性</h2>
-      <p class="p-heading--3">为快速发展的企业提供灵活、安全、可随处部署的技术</p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-6">
-      <p>无论您要部署NoSQL数据库、Web服务场还是云，Ubuntu出色的性能和通用性都能满足您的需求。Ubuntu获得业内领先硬件OEM厂商的认证，并提供全面的部署工具，让您的基础架构可以物尽其用。</p>
-    </div>
-    <div class="col-6">
-      <p>我们的定期发布周期意味着您可以使用最新，性能最高的开源软件。简化的初始安装和整合式的部署与应用程序建模技术，使Ubuntu Server成为简化大规模部署和管理的理想解决方案。</p>
-    </div>
-  </div>
-
-  <div class="p-strip is-deep is-bordered" style="padding-top: 2rem;">
-    <div class="u-fixed-width p-logo-section has-misaligned-images">
-      <p class="p-logo-section__title u-align--center">可与您的硬件和软件一起使用</p>
-      <div class="p-logo-section__items" style="justify-content:center;">
-        <div class="p-logo-section__item">
-          {{ image (
-          url="https://assets.ubuntu.com/v1/c70b529e-lenovo-logo.png",
-          alt="Lenovo",
-          width="288",
-          height="288",
+  {% call(slot) vf_equal_heights(
+    title_text="与其他 Canonical 产品搭配使用",
+    image_aspect_ratio_large="auto",
+    image_aspect_ratio_medium="auto",
+    image_aspect_ratio_small="auto",
+    highlight_images=True,
+    items=[
+      {
+        "title_text": "多云编排",
+        "image_html": image(url="https://assets.ubuntu.com/v1/5c974fac-juju.png",
+          alt="Canonical Juju",
+          width="852",
           hi_def=True,
-          loading="lazy",
-          attrs={"class": "p-logo-section__logo"}
-          ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-          url="https://assets.ubuntu.com/v1/987acdaa-dell-logo.png",
-          alt="Dell",
-          width="288",
-          height="288",
+          loading="lazy"
+        ) | safe,
+        "description_html": "<p>Juju 提供命令行或基于浏览器的界面选项，让您只需点击几下即可设计并部署整个工作负载。它可用于 AWS 和 Microsoft Azure 等公有云、基于 OpenStack 构建的私有云，甚至通过 MAAS 可直接在裸机上运行。</p>",
+        "cta_html": "<a href='https://charmhub.io/'>关于 Juju&nbsp;&rsaquo;</a>"
+      },
+      {
+        "title_text": "裸机配置",
+        "image_html": image(url="https://assets.ubuntu.com/v1/d80281bd-maas.png",
+          alt="Canonical MAAS",
+          width="852",
           hi_def=True,
-          loading="lazy",
-          attrs={"class": "p-logo-section__logo"}
-          ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-          url="https://assets.ubuntu.com/v1/5588e80d-ibm-logo.png",
-          alt="IBM",
-          width="288",
-          height="288",
+          loading="lazy"
+        ) | safe,
+        "description_html": "<p>MAAS 是一种很省时的配置系统，可以快速、轻松地设置部署复杂服务所需的物理硬件，如 Ubuntu 的 OpenStack 云基础设施。只需插入服务器，连接至网络，其余交给 MAAS 来完成即可。</p>",
+        "cta_html": "<a href='https://canonical.com/maas'>关于 MAAS&nbsp;&rsaquo;</a>"
+      },
+      {
+        "title_text": "机器容器",
+        "image_html": image(url="https://assets.ubuntu.com/v1/39571d15-lxd.png",
+          alt="Canonical LXD",
+          width="852",
           hi_def=True,
-          loading="lazy",
-          attrs={"class": "p-logo-section__logo"}
-          ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-          url="https://assets.ubuntu.com/v1/a9b3cc95-hpe.png",
-          alt="Hewlett Packard",
-          width="288",
-          height="288",
-          hi_def=True,
-          loading="lazy",
-          attrs={"class": "p-logo-section__logo"}
-          ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-          url="https://assets.ubuntu.com/v1/67f81bfe-intel-new-logo.png",
-          alt="Intel",
-          width="288",
-          height="288",
-          hi_def=True,
-          loading="lazy",
-          attrs={"class": "p-logo-section__logo"}
-          ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-          url="https://assets.ubuntu.com/v1/7eebe11c-cisco-logo.png",
-          alt="Cisco",
-          width="288",
-          height="288",
-          hi_def=True,
-          loading="lazy",
-          attrs={"class": "p-logo-section__logo"}
-          ) | safe
-          }}
-        </div>
+          loading="lazy"
+         ) | safe,
+        "description_html": "<p>经济效益与计算密度直接相关。LXD 是 Linux 容器管理程序，它将容器的速度和密度与传统虚拟机的可管理性和安全性完美结合。</p>",
+        "cta_html": "<a href='https://ubuntu.com/lxd'>关于 LXD&nbsp;&rsaquo;</a>"
+      }
+    ]
+  ) %}
+  {% endcall %}
 
-        <div class="p-logo-section__item">
-          {{ image (
-          url="https://assets.ubuntu.com/v1/6079d02b-amd-logo.png",
-          alt="AMD",
-          width="288",
-          height="288",
-          hi_def=True,
-          loading="lazy",
-          attrs={"class": "p-logo-section__logo"}
-          ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image (
-          url="https://assets.ubuntu.com/v1/711be910-arm-logo.png",
-          alt="ARM",
-          width="288",
-          height="288",
-          hi_def=True,
-          loading="lazy",
-          attrs={"class": "p-logo-section__logo"}
-          ) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image(url="https://assets.ubuntu.com/v1/8d90c121-HW_POS_RBG_Vertical-150ppi.png",
-                    alt="Huawei",
-                    width="100",
-                    height="100",
-                    hi_def=True,
-                    loading="lazy",
-                    attrs={"class": "p-logo-section__logo"},) | safe
-          }}
-        </div>
-      </div>
-      <div class="p-logo-section">
-        <p class="u-align--center u-vertically-spaced">
-          <a href="https://ubuntu.com/certified/servers">查看全部已认证的硬件合作伙伴&nbsp;›</a>
-        </p>
-        <div class="p-logo-section__items" style="justify-content:center;">
-          <div class="p-logo-section__item">
-            {{ image (
-            url="https://assets.ubuntu.com/v1/d784fe44-centrify-logo.png",
-            alt="Centrify",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image (
-            url="https://assets.ubuntu.com/v1/f0089726-openstack-logo.png",
-            alt="OpenStack",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image (
-            url="https://assets.ubuntu.com/v1/ae513503-likewise-logo.png",
-            alt="Likewise",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image (
-            url="https://assets.ubuntu.com/v1/1ebe929e-openbravo-logo.png",
-            alt="Openbravo",
-            width="288",
-            height="288",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
-            }}
-          </div>
-        </div>
-      </div>
-      <p class="u-align--center u-vertically-spaced">
-        <a href="https://partners.ubuntu.com/programmes/software">查看所有已认证的软件合作伙伴&nbsp;›</a>
-      </p>
-    </div>
-  </div>
+  {% call(slot) vf_cta_section(
+    variant='default',
+    layout='100',
+  ) -%}
+    {%- if slot == 'cta' -%}
+      <a href="/contact">和我们讨论版本与支持需求&nbsp;&rsaquo;</a>
+    {%- endif -%}
+  {% endcall -%}
 
-  {% include "shared/_release_schedule.html" %}
+  {{ vf_basic_section(
+    title={"text": "蓬勃发展的 Ubuntu 社区"},
+    items=[
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "与其他 Ubuntu 用戶和 IT 专业人员交流专业知识和创意想法：与我们庞大且活跃的 IT 专业社区一起交流想法、获取建议与互助。我们的社区以友善与包容著称，欢迎您的提问与参与！"
+        }
+      },
+      {
+        "type": "cta-block",
+        "item": {
+          "link": {
+            "content_html": "加入社区交流&nbsp;&rsaquo;",
+            "attrs": {
+              "href": "https://ubuntu.com/community"
+            }
+          }
+        }
+      }
+    ]
+  ) }}
 
-  <section class="p-strip is-bordered">
-    <div class="row">
-      <div class="col-7">
-        <h2>基础设施和应用的基础</h2>
-        <h3>从公有云到数据中心到边缘设备</h3>
-        <p>
-          <a href="https://recruit-c7ff.kxcdn.com/recruit/wp-content/uploads/2020/05/he-developer-survey-2020.pdf">根据 2020 年 HackerEarth 开发者调查</a>，Ubuntu 是公有云上最受欢迎的客户机操作系统，是私有云实施的基础和开发者选择的平台。
-        </p>
-        <p>
-          <a href="/cloud/public-cloud">了解更多用于公有云的Ubuntu的内容&nbsp;&rsaquo;</a>
-        </p>
-        <p>
-          <a href="/cloud/openstack">了解更多用于私有云的Ubuntu的内容&nbsp;&rsaquo;</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip--light is-deep is-bordered">
-    <div class="row p-divider">
-      <div class="col-4 p-divider__block">
-        <div class="p-heading-icon--long">
-          <div class="p-heading-icon__header is-stacked">
-            {{ image (
-            url="https://assets.ubuntu.com/v1/6405175c-Canonical+Juju+dark+text.svg",
-            alt="",
-            width="300",
-            height="65",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-heading-icon__img"},
-            ) | safe
-            }}
-            <h3 class="p-heading-icon__title">Juju——多云编排</h3>
-          </div>
-          <p>Juju 提供命令行和基于浏览器的界面选项，只需点击几下鼠标便可设计和部署整个工作负载。它可用于AWS和Microsoft Azure等公共云、基于OpenStack的私有云，甚至可通过MAAS直接在裸机运行。</p>
-          <p>
-            <a href="https://jujucharms.com/">了解更多</a>
-          </p>
-        </div>
-      </div>
-
-      <div class="col-4 p-divider__block">
-        <div class="p-heading-icon--long">
-          <div class="p-heading-icon__header is-stacked">
-            {{ image(url="https://assets.ubuntu.com/v1/477f8662-maas-logo-long.svg",
-                        alt="",
-                        width="175",
-                        height="34",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-heading-icon__img"},) | safe
-            }}
-            <h3 class="p-heading-icon__title">MAAS——裸机配置</h3>
-          </div>
-          <p>MAAS是一套省时的配置系统，通过它可快速轻松地设置物理硬件来部署各种复杂的服务，例如Ubuntu的OpenStack云基础架构。只需将服务器接上电源并连接到网络，剩下的工作交给MAAS即可。</p>
-          <p>
-            <a href="https://maas.io/">了解更多</a>
-          </p>
-        </div>
-      </div>
-
-      <div class="col-4 p-divider__block">
-        <div class="p-heading-icon--long">
-          <div class="p-heading-icon__header is-stacked">
-            {{ image(url="https://assets.ubuntu.com/v1/52b3819e-lxd-logo-long.svg",
-                        alt="LXD",
-                        width="157",
-                        height="34",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-heading-icon__img"},) | safe
-            }}
-            <h3 class="p-heading-icon__title">LXD——容器</h3>
-          </div>
-          <p>经济效益与计算密度直接关联。LXD是Linux平台的将容器管理器，其将容器的速度和密度与传统虚拟机的可管理性和安全性相结合。</p>
-          <p>
-            <a href="https://linuxcontainers.org/">了解更多</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip is-bordered">
-    <div class="u-fixed-width">
-      <h2>Ubuntu Pro</h2>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <p>
-          Ubuntu Pro是一个单一、按每节点的订阅服务包，其提供了业内最全面的软件、强化和安全性。凭借基本操作系统、OpenStack、Kubernetes和应用程序的安全维护，Ubuntu Pro提供了让您的数据中心面向未来所需的一切。
-        </p>
-        <p>此外，您还可以对基本操作系统、基础架构和应用程序添加支持。</p>
-        <p>
-          <a href="pricing/pro">了解更多关于Canonical支持的内容&nbsp;›</a>
-        </p>
-      </div>
-      <div class="col-4 col-start-large-9 u-float-right">
-        <div class="p-card">
-          <h3 class="p-card__title">联系我们</h3>
-          <p class="p-card__content">请联系我们的技术支持团队讲述您所需的支持需求。</p>
-          <p class="p-card__content">
-            <a class="p-button--positive js-invoke-modal" href="/contact">联系我们</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-strip--light">
-    <div class="row u-equal-height">
-      <div class="col-8">
-        <h2 id="a-thriving-community">蓬勃发展的社区</h2>
-        <p>与成千上万的IT专业人士交流专业知识和奇思妙想</p>
-        <p>想直接与其他Ubuntu用户交流？现在就来我们庞大而活跃的IT专业社区，分享你的奇思妙想，并从中汲取有益的建议和帮助。我们的社区有着非常友好和宽容的氛围，欢迎您提出问题和作出贡献！</p>
-        <p>
-          <a href="https://www.ubuntu.com/community">加入我们的社区&nbsp;›</a>
-        </p>
-      </div>
-
-      <div class="col-3 u-vertically-center u-align--center">
-        <div class=" lazyloaded" data-noscript="">
-          {{ image(url="https://assets.ubuntu.com/v1/5552afb7-community-support.svg",
-                    alt="",
-                    width="150",
-                    height="150",
-                    hi_def=True,
-                    loading="lazy",
-                    attrs={"class": "u-hide--small"},) | safe
-          }}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="p-strip p-contextual-footer">
-    <div class="row p-divider">
-      <div class="col-4 p-divider__block">
-        <h3 class="p-heading--4">下载</h3>
-        <p>无论您是要配置简单的文件服务器还是构建五万个节点的云，都可以依靠Ubuntu Server及其五年的免费升级保证。</p>
-        <p>
-          <a href="/download"
-             onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contextual footer link', 'eventAction' : 'server download', 'eventLabel' : 'Download', 'eventValue' : undefined });">下载Ubuntu server&nbsp;›</a>
-        </p>
-      </div>
-
-      <div class="col-4 p-divider__block">
-        <h3 class="p-heading--4">Ubuntu Advantage企业支持服务</h3>
-        <p>从Canonical获得Ubuntu server的专业支持。</p>
-        <p>
-          <a href="https://buy.ubuntu.com"
-             class="p-button"
-             onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contextual footer link', 'eventAction' : 'server contact-us', 'eventLabel' : 'Ubuntu Advantage store', 'eventValue' : undefined });"><span>访问商店</span></a>
-        </p>
-        <p>
-          <a href="/contact"
-             class="js-invoke-modal"
-             onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contextual footer link', 'eventAction' : 'server contact-us', 'eventLabel' : 'For business', 'eventValue' : undefined });">联系我们&nbsp;›</a>
-        </p>
-      </div>
-
-      <div class="col-4 p-divider__block">
-        <h3 class="p-heading--4">阅读更多</h3>
-        <ul class="p-list" id="latest-articles">
-          <li class="p-list__item">
-            <a class="article-link article-title"
-               href="/blog/how-to-buy-ubuntu-subscription">Ubuntu Advantage专业企业支持服务介绍</a>
-          </li>
-
-          <li class="p-list__item">
-            <a class="article-link article-title"
-               href="https://cn.ubuntu.com/blog/canonical-aws-ubuntu-pro">Ubuntu Pro已在AWS和Azure上使用</a>
-          </li>
-
-          <li class="p-list__item">
-            <a class="article-link article-title"
-               href="https://ubuntu.com/legal/ubuntu-advantage-service-description">Ubuntu Advantage服务支持文档</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  {{ vf_divided_section(
+    title={
+      "text": "即刻行动",
+    },
+    padding="deep",
+    blocks=[
+      {
+        "type": "divided-block",
+        "items": [
+          {
+            "title_text": "下载",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "无论您是想配置一个简易的文件服务器还是构建一个 5 万节点的云平台，都可以 Ubuntu Server 来完成，还可享受五年的常规安全维护。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "primary": {
+                    "content_html": "立即下载",
+                    "attrs": {
+                      "href": "/download#server"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "订阅 Ubuntu Pro",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "透过 Canonical 取得有关 Ubuntu Server 的最新安全更新和支持。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "secondaries": [
+                    {
+                      "content_html": "探索 Ubuntu Pro",
+                      "attrs": {
+                        "href": "/pro"
+                      }
+                    }
+                  ],
+                  "link": {
+                    "content_html": "联系我们讨论需求&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "/contact"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  ) }}
 
 {% endblock %}

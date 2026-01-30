@@ -1,0 +1,762 @@
+{% extends "templates/base.html" %}
+
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_basic-section.jinja" import vf_basic_section %}
+{% from "_macros/vf_equal-heights.jinja" import vf_equal_heights %}
+
+{% block title %}Ubuntu Core{% endblock %}
+
+{% block meta_description %}
+  Ubuntu Core 是专为物联网 IoT 和嵌入式设备打造的 Ubuntu 系统，提供高安全性、不可变架构和可靠 OTA 更新，让应用在嵌入式 Linux 上稳定高效运行。
+{% endblock %}
+
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/1WP57BjUSVEJvwEfNGfz6dqlcgc1GHhxWOMkL6bQuMyA/edit?tab=t.0
+{% endblock
+meta_copydoc %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
+{% block content %}
+
+  {% call(slot) vf_hero(
+    title_text='Ubuntu Core',
+    subtitle_text='安全的嵌入式设备 Linux 操作系统',
+    layout='50/50'
+    ) -%}
+    {%- if slot == 'description' -%}
+      <p>Ubuntu Core 是一款极简、安全且严格隔离的操作系统，能够驱动全球各类设备稳定运行。立即构建您的 Ubuntu Core 镜像。</p>
+    {%- endif -%}
+    {%- if slot == 'cta' -%}
+      <a href="https://ubuntu.com/core/docs/getting-started"
+         class="p-button--positive">建构您的 Core</a>
+      <a href="https://pages.ubuntu.com/rs/066-EOV-335/images/Ubuntu_Core_4_pager_DS_revised_may_2024.pdf?version=0">Ubuntu Core 产品手册 &rsaquo;</a>
+    {%- endif -%}
+    {%- if slot == 'image' -%}
+      <div class="u-embedded-media">
+        <iframe title="UC20 video"
+                class="u-embedded-media__element"
+                src="//player.bilibili.com/player.html?aid=501588719&bvid=BV1YN411R7pY&cid=295296600&page=1"
+                frameborder="0"
+                framespacing="0"
+                allowfullscreen=""></iframe>
+      </div>
+
+    {%- endif -%}
+  {% endcall -%}
+
+  {% call(slot) vf_equal_heights(
+    title_text="不仅操作系统，更是基础设施",
+    highlight_images=true,
+    items=[
+      {
+        "title_text": "持续安全",
+        "image_html": image(url="https://assets.ubuntu.com/v1/f1888c9c-Kernelt%20industries-80%201.png",
+          alt="",
+          width="568",
+          height="932",
+          hi_def=True,
+          loading="auto",
+          attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe,
+        "description_html": "<p>想象一个每个设备都值得信赖的世界。我们在 Ubuntu Core 的每个细节都融入安全理念，致力于打造最安全的嵌入式 Linux 系统，并提供最长可达 12 年的支持（LTS）。</p>",
+        "cta_html": "<hr class=\"p-rule--muted u-hide--small\" /><a href='https://ubuntu.com/security'>了解更多关于 Ubuntu 安全性 &rsaquo;</a>"
+      },
+      {
+        "title_text": "设备管理",
+        "image_html": image(url="https://assets.ubuntu.com/v1/3493be78-Kernelt%20industries-80%201-1.png",
+          alt="",
+          width="568",
+          height="932",
+          hi_def=True,
+          loading="auto",
+          attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe,
+        "description_html": "<p>体验可靠、可远程访问且可快速恢复的设备，通过关键任务级 OTA 更新保持设备的最新状态。无论在联网还是物理隔离环境中，都能轻松管理。</p>",
+        "cta_html": "<hr class=\"p-rule--muted u-hide--small\" /><a href='https://ubuntu.com/internet-of-things/management'>了解更多关于设备管理 &rsaquo;</a>"
+      },
+      {
+        "title_text": "灵活容器化",
+        "image_html": image(url="https://assets.ubuntu.com/v1/97807e18-Kernelt%20industries-80%201-2.png",
+          alt="",
+          width="568",
+          height="932",
+          hi_def=True,
+          loading="auto",
+          attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe,
+        "description_html": "<p>Ubuntu Core 具不可变性和严格的隔离机制。内核、系统镜像和应用程序之间明确隔离，各自独立更新，并具备防篡改和免渗透加固。</p>",
+        "cta_html": "<hr class=\"p-rule--muted u-hide--small\" /><a href='https://ubuntu.com/core/docs/components#heading--confinement'>深入了解隔离机制 &rsaquo;</a>"
+      },
+      {
+        "title_text": "强大的硬件生态体系",
+        "image_html": image(url="https://assets.ubuntu.com/v1/d5a229cb-Kernelt%20industries-80%201-3.png",
+          alt="",
+          width="568",
+          height="932",
+          hi_def=True,
+          loading="auto",
+          attrs={"class": "p-image-container__image", "style": "width:320px"}) | safe,
+        "description_html": "<p>与全球领先的 ODM 厂商和芯片供应商深度合作，共同优化 Ubuntu Core 的发展。我们持续在主流物联网与边缘设备上进行测试，确保稳定与可靠性。</p>",
+        "cta_html": "<hr class=\"p-rule--muted u-hide--small\" /><a href='/certified'>浏览所有 Ubuntu 认证硬件 &rsaquo;</a>"
+      }
+    ]
+  ) %}
+  {% if slot == "description" %}
+    <p>Ubuntu Core 不仅是您的嵌入式 Linux 操作系统，更是您的整个部署基础设施。构建定向生产就绪镜像、解锁 OTA 更新、部署物理隔离环境、管理设备群组、实现实时操作、遵守网络安全要求等。</p>
+    <p>最长可达 12 年支持，Ubuntu Core 革新您的设备部署方式。</p>
+  {% endif %}
+{% endcall %}
+
+  {{ vf_basic_section(
+    title={"text": "从开发到部署"},
+    is_split_on_medium=true,
+    padding="shallow",
+    items=[
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "使用相同的内核、库和系统组件，实现从开发到生产的无缝衔接。在 Ubuntu Desktop 或 Server 上完成应用开发后，您即可基于已开发的应用和目标硬件，构建不可改变的 Ubuntu Core 镜像。"
+        }
+      }
+    ]
+  ) }}
+
+  <section class="p-section">
+    <div class="grid-row">
+      <hr class="p-rule--muted grid-col-6 grid-col-start-large-3" />
+      <div class="grid-col-2 grid-col-medium-2 grid-col-start-large-3">
+        <ul class="p-tabs js-tabbed-content p-tabs--vertical is-black u-hide--small"
+            role="tablist"
+            aria-label="Dev to deployment">
+          <li>
+            <button class="p-tabs__item"
+                    id="overview"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="overview-tab">概览</button>
+          </li>
+          <li>
+            <button class="p-tabs__item"
+                    id="ubuntu-vision"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="ubuntu-vision-tab">Ubuntu</button>
+          </li>
+          <li>
+            <button class="p-tabs__item"
+                    id="snapcraft"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="snapcraft-tab">Snapcraft</button>
+          </li>
+          <li>
+            <button class="p-tabs__item"
+                    id="snap-store"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="snap-store-tab">Snap 应用商店</button>
+          </li>
+          <li>
+            <button class="p-tabs__item"
+                    id="ubuntu-core"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="ubuntu-core-tab">Ubuntu Core</button>
+          </li>
+        </ul>
+        <form class="u-hide--large u-hide--medium">
+          <select name="boardSelect" id="boardSelect">
+            <option value="overview-tab" selected="">概览</option>
+            <option value="ubuntu-vision-tab">Ubuntu</option>
+            <option value="snapcraft-tab">Snapcraft</option>
+            <option value="snap-store-tab">Snap 应用商店</option>
+            <option value="ubuntu-core-tab">Ubuntu Core</option>
+          </select>
+        </form>
+      </div>
+      <div class="grid-col-4 grid-col-medium-2">{% include "core/tabs.html" %}</div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-col-6 grid-col-start-large-3">
+        <hr class="p-rule--muted" />
+        <p>
+          <a href="/contact">联系我们 &rsaquo;</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="u-fixed-width p-section--shallow">
+      <hr class="p-rule" />
+      <h2>适用于智能设备与应用场景</h2>
+    </div>
+    <div class="grid-row--25-75 p-section--shallow">
+      <div class="grid-col">
+        <hr class="u-hide--small p-rule" />
+        <div class="grid-row">
+          <div class="grid-col-2 grid-col-medium-1">
+            <a href="https://canonical.com/solutions/automotive">
+              <h3 class="p-heading--5">汽车行业</h3>
+              <div class="p-image-container">
+                {{ image(url="https://assets.ubuntu.com/v1/f867c883-For-smart-use-cases__Automotivew.png",
+                                alt="",
+                                width="852",
+                                height="480",
+                                hi_def=True,
+                                loading="lazy",
+                                attrs={"class": "p-image-container__image"}) | safe
+                }}
+              </div>
+            </a>
+          </div>
+          <div class="grid-col-2 grid-col-medium-1">
+            <a href="https://canonical.com/solutions/industrial">
+              <h3 class="p-heading--5">工业</h3>
+              <div class="p-image-container">
+                {{ image(url="https://assets.ubuntu.com/v1/0162bc71-For-smart-use-cases__Industrial.png",
+                                alt="",
+                                width="852",
+                                height="480",
+                                hi_def=True,
+                                loading="lazy",
+                                attrs={"class": "p-image-container__image"}) | safe
+                }}
+              </div>
+            </a>
+          </div>
+          <div class="grid-col-2 grid-col-medium-1">
+            <a href="https://ubuntu.com/robotics">
+              <h3 class="p-heading--5">机器人</h3>
+              <div class="p-image-container">
+                {{ image(url="https://assets.ubuntu.com/v1/aeeeb32d-For-smart-use-cases__Robotics.png",
+                                alt="",
+                                width="852",
+                                height="480",
+                                hi_def=True,
+                                loading="lazy",
+                                attrs={"class": "p-image-container__image"}) | safe
+                }}
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-row--25-75">
+      <div class="grid-col">
+        <hr class="u-hide--small p-rule" />
+        <div class="grid-row">
+          <div class="grid-col-2 grid-col-medium-1">
+            <a href="https://ubuntu.com/internet-of-things/smart-displays">
+              <h3 class="p-heading--5">数字标牌</h3>
+              <div class="p-image-container">
+                {{ image(url="https://assets.ubuntu.com/v1/9db3f004-For-smart-use-cases__Signage.png",
+                                alt="",
+                                width="852",
+                                height="480",
+                                hi_def=True,
+                                loading="lazy",
+                                attrs={"class": "p-image-container__image"}) | safe
+                }}
+              </div>
+            </a>
+          </div>
+          <div class="grid-col-2 grid-col-medium-1">
+            <a href="https://ubuntu.com/internet-of-things/smart-city">
+              <h3 class="p-heading--5">智能城市</h3>
+              <div class="p-image-container">
+                {{ image(url="https://assets.ubuntu.com/v1/8dd2f04d-For-smart-use-cases__Smart-cities.png",
+                                alt="",
+                                width="852",
+                                height="480",
+                                hi_def=True,
+                                loading="lazy",
+                                attrs={"class": "p-image-container__image"}) | safe
+                }}
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="grid-row">
+      <hr class="p-rule--highlight" />
+      <div class="grid-col-6 grid-col-medium-3">
+        <h2 class="p-text--small-caps p-heading--5">Ubuntu core 客户案例</h2>
+      </div>
+      <div class="grid-col-2 grid-col-medium-1 p-section--shallow">
+        <p>
+          <a href="https://ubuntu.com/core/stories">所有成功案例 &rsaquo;</a>
+        </p>
+      </div>
+    </div>
+    <div class="p-tabs">
+      <div class="grid-row--25-75">
+        <div class="grid-col">
+          <div class="u-no-margin--bottom p-tabs__list js-tabbed-content"
+               role="tablist"
+               aria-label="Customer stories">
+            <div class="p-tabs__item">
+              <button class="p-tabs__link"
+                      role="tab"
+                      aria-selected="true"
+                      aria-controls="industrial-tab"
+                      id="industrial">工业</button>
+            </div>
+            <div class="p-tabs__item">
+              <button class="p-tabs__link"
+                      role="tab"
+                      aria-selected="false"
+                      aria-controls="smart-kiosk-tab"
+                      id="smart-kiosk"
+                      tabindex="-1">智能自助服务端</button>
+            </div>
+            <div class="p-tabs__item">
+              <button class="p-tabs__link"
+                      role="tab"
+                      aria-selected="false"
+                      aria-controls="network-tab"
+                      id="network"
+                      tabindex="-1">网络</button>
+            </div>
+            <div class="p-tabs__item">
+              <button class="p-tabs__link"
+                      role="tab"
+                      aria-selected="false"
+                      aria-controls="cloud-tab"
+                      id="cloud"
+                      tabindex="-1">云</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div tabindex="0"
+           role="tabpanel"
+           id="industrial-tab"
+           aria-labelledby="industrial">
+        <div class="grid-row u-no-margin--bottom">
+          <div class="grid-col-2 grid-col-medium-1">
+            {{ image(url="https://assets.ubuntu.com/v1/ffd88101-rexroth-for-testimonial.png",
+                        alt="Rexroth",
+                        width="284",
+                        height="70",
+                        hi_def=True,
+                        loading="lazy",) | safe
+            }}
+          </div>
+          <div class="grid-col-6 grid-col-medium-3 u-no-margin--top">
+            <div class="grid-row">
+              <div class="grid-col-4 grid-col-medium-4">
+                <h3 class="p-heading--2">Bosch Rexroth 重新定义自动化</h3>
+              </div>
+              <div class="grid-col-2 grid-col-medium-2">
+                <p>Bosch 采用 Ubuntu Core 和 snaps 作为基于应用程序的 ctrl-X 工业 4.0 平台。</p>
+                <hr class="p-rule--muted" />
+                <p>
+                  <a href="https://ubuntu.com/blog/bosch-rexroth-adopts-ubuntu-core-and-snaps-for-app-based-ctrlx-automation-platform">阅读新闻稿 &rsaquo;</a>
+                </p>
+              </div>
+            </div>
+            <div class="p-image-container">
+              {{ image(url="https://assets.ubuntu.com/v1/2d152c25-rexroth-testimonial-image.jpg",
+                            alt="",
+                            width="2748",
+                            height="1048",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-image-container__image"}) | safe
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div tabindex="0"
+           role="tabpanel"
+           id="smart-kiosk-tab"
+           aria-labelledby="smart-kiosk"
+           aria-hidden="hidden">
+        <div class="grid-row u-no-margin--bottom">
+          <div class="grid-col-2 grid-col-medium-1">
+            {{ image(url="https://assets.ubuntu.com/v1/36c27b25-pudo-testimonial-logo-new.png",
+                        alt="Pudo",
+                        width="125",
+                        height="56",
+                        hi_def=True,
+                        loading="lazy",) | safe
+            }}
+          </div>
+          <div class="grid-col-6 grid-col-medium-3 u-no-margin--top">
+            <div class="grid-row">
+              <div class="grid-col-4 grid-col-medium-4">
+                <h3 class="p-heading--2">Pudo 部署物流车队实现高效末端配送物流</h3>
+              </div>
+              <div class="grid-col-2 grid-col-medium-2">
+                <p>Pudo 选择 Ubuntu Core 作为其基于物联网的 APM 的基础平台，最大限度地提高安全性和正常运行时间。</p>
+                <hr class="p-rule" />
+                <p>
+                  <a href="https://ubuntu.com/engage/pudo-case-study">阅读案例 &rsaquo;</a>
+                </p>
+              </div>
+            </div>
+            <div class="p-image-container">
+              {{ image(url="https://assets.ubuntu.com/v1/576c8402-pudo-testimonial-image.jpg",
+                            alt="",
+                            width="2748",
+                            height="1177",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-image-container__image"}) | safe
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div tabindex="0"
+           role="tabpanel"
+           id="network-tab"
+           aria-labelledby="network"
+           aria-hidden="hidden">
+        <div class="grid-row u-no-margin--bottom">
+          <div class="grid-col-2 grid-col-medium-1">
+            {{ image(url="https://assets.ubuntu.com/v1/80f5af45-rigado-testimonial-logo.png",
+                        alt="Rigado",
+                        width="217",
+                        height="51",
+                        hi_def=True,
+                        loading="lazy",) | safe
+            }}
+          </div>
+          <div class="grid-col-6 grid-col-medium-3 u-no-margin--top">
+            <div class="grid-row">
+              <div class="grid-col-4 grid-col-medium-4">
+                <h3 class="p-heading--2">Rigado 缩短了客户的上市时间</h3>
+              </div>
+              <div class="grid-col-2 grid-col-medium-2">
+                <p>Ubuntu Core 使 Rigado 能够管理商业物联网网关的端到端安全。</p>
+                <hr class="p-rule" />
+                <p>
+                  <a href="https://ubuntu.com/engage/case-study-rigado">阅读案例 &rsaquo;</a>
+                </p>
+              </div>
+            </div>
+            <div class="p-image-container">
+              {{ image(url="https://assets.ubuntu.com/v1/297369c0-rigado--testimonial-image.jpg",
+                            alt="",
+                            width="2748",
+                            height="1177",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-image-container__image"}) | safe
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div tabindex="0"
+           role="tabpanel"
+           id="cloud-tab"
+           aria-labelledby="cloud"
+           aria-hidden="hidden">
+        <div class="grid-row u-no-margin--bottom">
+          <div class="grid-col-2 grid-col-medium-1">
+            {{ image(url="https://assets.ubuntu.com/v1/134756c3-ibm-cloud-testimonial-logo.png",
+                        alt="IBM",
+                        width="190",
+                        height="58",
+                        hi_def=True,
+                        loading="lazy",) | safe
+            }}
+          </div>
+          <div class="grid-col-6 grid-col-medium-3 u-no-margin--top">
+            <div class="grid-row">
+              <div class="grid-col-4 grid-col-medium-4">
+                <h3 class="p-heading--2">IBM Cloud 提供高度隔离且性能卓越的裸机服务器</h3>
+              </div>
+              <div class="grid-col-2 grid-col-medium-2">
+                <p>IBM Cloud 的裸机服务器通过使用 Ubuntu Core 提供高度隔离且高性能的租户云隔离。</p>
+                <hr class="p-rule" />
+                <p>
+                  <a href="https://canonical.com/blog/cloud-isolation-ibm-bare-metal-ubuntu-core">阅读新闻稿 &rsaquo;</a>
+                </p>
+              </div>
+            </div>
+            <div class="p-image-container">
+              {{ image(url="https://assets.ubuntu.com/v1/534be2a2-ibm-leadspace.jpg",
+                            alt="",
+                            width="1585",
+                            height="633",
+                            hi_def=True,
+                            loading="lazy",
+                            attrs={"class": "p-image-container__image"}) | safe
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    {{ vf_basic_section(
+    title={"text": "借助硬件伙伴生态加速上市"},
+    items=[
+      {
+        "type": "linked-logo-block",
+        "item": {
+          "links": [
+            {
+              "href": "https://ubuntu.com/certified?q=adlink&limit=20",
+              "text": "浏览 ADlink 的认证硬件 &rsaquo;",
+              "label": "Adlink",
+              "image_html": image(url="https://assets.ubuntu.com/v1/6eff0263-adlink-logo.png",
+                alt="Adlink",
+                width="506",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
+            },
+            {
+              "href": "https://ubuntu.com/certified?q=advantech",
+              "text": "浏览 Advantech 的认证硬件 &rsaquo;",
+              "label": "Advantech",
+              "image_html": image(url="https://assets.ubuntu.com/v1/d65da7f3-advantech-logo.png",
+                alt="Advantech",
+                width="250",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
+            },
+            {
+              "href": "https://ubuntu.com/download/amd",
+              "text": "在 AMD 上安装 Ubuntu &rsaquo;",
+              "label": "AMD",
+              "image_html": image(url="https://assets.ubuntu.com/v1/4bf8a9bc-amd-logo.png",
+                alt="AMD",
+                width="346",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
+            },
+            {
+              "href": "https://ubuntu.com/download/server/arm",
+              "text": "了解适用 Arm 的 Ubuntu 服务器版 &rsaquo;",
+              "label": "Arm",
+              "image_html": image(url="https://assets.ubuntu.com/v1/e37f5aa1-arm_logo_black_rgb.svg",
+                alt="Arm",
+                width="294",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
+            },
+            {
+              "href": "https://ubuntu.com/download/iot/intel-iot",
+              "text": "在 Intel IoT 平台安装 Ubuntu &rsaquo;",
+              "label": "Intel",
+              "image_html": image(url="https://assets.ubuntu.com/v1/59996fad-intel-new-logo.png",
+                alt="Intel",
+                width="250",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
+            },
+            {
+              "href": "https://ubuntu.com/download/mediatek-genio",
+              "text": "在 MediaTek Genio 上安装 Ubuntu &rsaquo;",
+              "label": "MediaTek",
+              "image_html": image(url="https://assets.ubuntu.com/v1/96d65ee2-mediatek-logo.png",
+                alt="MediaTek",
+                width="386",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
+            }
+          ]
+        }
+      },
+      {
+        "type": "linked-logo-block",
+        "padding": "shallow",
+        "item": {
+          "links": [
+              {
+              "href": "https://ubuntu.com/download/nvidia-jetson",
+              "text": "在 Nvidia Jetson 上安装 Ubuntu &rsaquo;",
+              "label": "NVIDIA",
+              "image_html": image(url="https://assets.ubuntu.com/v1/e7b81879-nvidia-logo.png",
+                alt="NVIDIA",
+                width="471",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
+            },
+            {
+              "href": "https://www.nxp.com/",
+              "text": "深入了解 NXP &rsaquo;",
+              "label": "NXP",
+              "image_html": image(url="https://assets.ubuntu.com/v1/be8db080-nxp-logo.png",
+                alt="NXP",
+                width="205",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
+            },
+            {
+              "href": "https://ubuntu.com/download/qualcomm-iot",
+              "text": "在 Qualcomm IoT 平台安装 Ubuntu &rsaquo;",
+              "label": "Qualcomm",
+              "image_html": image(url="https://assets.ubuntu.com/v1/31b259ec-qualcom-logo.png",
+                alt="Qualcomm",
+                width="481",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
+            },
+            {
+              "href": "https://ubuntu.com/download/renesas-iot",
+              "text": "在 Renesas IoT 平台安装 Ubuntu &rsaquo;",
+              "label": "Renesas",
+              "image_html": image(url="https://assets.ubuntu.com/v1/6e12ae75-renesas-logo.png",
+                alt="Renesas",
+                width="240",
+                height="481",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"}) | safe,
+            }
+          ]
+        }
+      },
+      {
+        "type": "cta-block",
+        "item": {
+          "primary": {
+            "content_html": "浏览所有认证硬件",
+            "attrs": {
+              "href": "/certified"
+            }
+          },
+          "secondaries": [
+            {
+              "content_html": "联系我们",
+              "attrs": {
+                "href": "/contact",
+              }
+            }
+          ],
+        }
+      }
+    ]
+  ) }}
+
+  <section class="p-section">
+    <div class="grid-row--50-50">
+      <hr class="p-rule" />
+      <div class="grid-col">
+        <h2>更多关于 Ubuntu Core</h2>
+      </div>
+      <div class="grid-col">
+        <div class="grid-row">
+          <div class="grid-col-2 grid-col-medium-1">
+            <h5 class="p-heading--5">文档</h5>
+          </div>
+          <div class="grid-col-2 grid-col-medium-1">
+            <p>
+              <a href="https://ubuntu.com/core/docs/getting-started">立即开启您的 Core 之旅</a>
+            </p>
+          </div>
+        </div>
+        <hr class="p-rule--muted" />
+        <div class="grid-row">
+          <div class="grid-col-2 grid-col-medium-1">
+            <h5 class="p-heading--5">功能</h5>
+          </div>
+          <div class="grid-col-2 grid-col-medium-1">
+            <p>
+              <a href="https://ubuntu.com/core/features">查看 Core 为您提供的一切</a>
+            </p>
+          </div>
+        </div>
+        <hr class="p-rule--muted" />
+        <div class="grid-row">
+          <div class="grid-col-2 grid-col-medium-1">
+            <h5 class="p-heading--5">客户案例</h5>
+          </div>
+          <div class="grid-col-2 grid-col-medium-1">
+            <p>
+              <a href="https://ubuntu.com/core/stories">了解我们的用户如何通过 Core 取得成功</a>
+            </p>
+          </div>
+        </div>
+        <hr class="p-rule--muted" />
+        <div class="grid-row">
+          <div class="grid-col-2 grid-col-medium-1">
+            <h5 class="p-heading--5">白皮书</h5>
+          </div>
+          <div class="grid-col-2 grid-col-medium-1">
+            <p>
+              <a href="https://ubuntu.com/engage/ubuntu-core-security-audit">Ubuntu Core 的独立安全审计</a>
+            </p>
+            <hr class="p-rule--muted" />
+            <p>
+              <a href="https://cn.ubuntu.com/engage/embedded-linux-buy-or-make">嵌入式Linux：自研还是外购？</a>
+            </p>
+          </div>
+        </div>
+        <hr class="p-rule--muted" />
+        <div class="grid-row">
+          <div class="grid-col-2 grid-col-medium-1">
+            <h5 class="p-heading--5">网络研讨会</h5>
+          </div>
+          <div class="grid-col-2 grid-col-medium-1">
+            <p>
+              <a href="https://ubuntu.com/engage/intro-to-ubuntu-core22-webinar#:~:text=With%204%20releases%20behind%2C%20Ubuntu,edge%20devices%20makers%20must%20face.">Ubuntu Core 22 简介</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ vf_basic_section(
+  title={"text": "准备好进行创新了吗？"},
+  is_split_on_medium=true,
+  padding="deep",
+  items=[
+    {
+      "type": "description",
+      "padding": "shallow",
+      "item": {
+        "type": "text",
+        "content": "无论您是正将创意推向市场的初创企业，还是已经在现场部署了大量群组设备的企业，我们都具备专业能力和基础设施来助力您启动，为您提供支持。"
+      }
+    },
+    {
+      "type": "cta-block",
+      "item": {
+        "primary": {
+          "content_html": "联系我们",
+          "attrs": {
+            "href": "/contact",
+          }
+        }
+      }
+    },
+  ]
+) }}
+
+  <script src="{{ versioned_static('js/src/tabbedContent.js') }}"></script>
+
+{% endblock content %}

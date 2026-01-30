@@ -189,12 +189,17 @@ app.add_url_rule(
 with open("releases.yaml") as releases:
     releases = yaml.load(releases, Loader=yaml.FullLoader)
 
+# read navigation-dropdown.yaml
+with open("navigation-dropdown.yaml") as dropdown_file:
+    dropdown_data = yaml.load(dropdown_file, Loader=yaml.FullLoader)
+
 
 # Template context
 @app.context_processor
 def context():
     return {
         "releases": releases,
+        "dropdown": dropdown_data,
         "get_current_page_bubble": get_current_page_bubble,
     }
 

@@ -1092,6 +1092,11 @@
   dependencies:
     vanilla-framework "4.26.1"
 
+"@canonical/latest-news@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@canonical/latest-news/-/latest-news-2.2.1.tgz#ec2764c348980f5b25120307c05b987c8d7aab6f"
+  integrity sha512-r7L/GkmqFUa2p+I8cYjHKLKrtIQEtSKo/As8WYnbssCcc6CWFf/zFiBX9vhbKxU63Cma7x5BFOo6CBlvlUrvxQ==
+
 "@csstools/selector-specificity@^2.0.2":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.2.0.tgz#2cbcf822bf3764c9658c4d2e568bd0c0cb748016"
@@ -5147,10 +5152,10 @@ vanilla-framework@4.26.1:
   resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.26.1.tgz#d076f26a7215cf8b0babae81753ef535e6486257"
   integrity sha512-7m3qX4rm+I+go5mNjzO8gkp2qxr5m4n1jAxTh+bJ8hx/Wrsx3hiWDmJHylZ2GqjeqdtOiidvWgU2ToZJK6ELUg==
 
-vanilla-framework@4.37.0:
-  version "4.37.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.37.0.tgz#9f76557bd427a5994249b9f146f20135cb66c8d0"
-  integrity sha512-9cyUYfpZ9VSqlgfyG5JVNV2kY1CZaV9EmojsXCsAzevYRU0w1TJSx1nGv4UTUUmHdCmLtqnaGpx9Jpdib3J6vw==
+vanilla-framework@4.41.0:
+  version "4.41.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.41.0.tgz#bc981035c536bd6cca5b6f3ded2abad679231499"
+  integrity sha512-UMCb+1+kfSoMFmXwwfjR/oyliojQ6pjOsBYwSRN6HgNtL14KhQc0VECYnv4YlkNTAJqQLR7VFwq95aXJrSrJSw==
 
 verbalize@^0.1.2:
   version "0.1.2"

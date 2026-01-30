@@ -1,42 +1,17 @@
 @mixin cn-p-footer {
   .p-footer {
-    background: #2d2d2d;
-  }
-
-  .p-footer-body {
-    @media (max-width: ($threshold-4-8-col - 1)) {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
-  .p-footer-body__links {
-    @media (max-width: ($threshold-4-8-col - 1)) {
-      order: 1;
-    }
-  }
-
-  .p-footer-body__copyright {
-    @media (max-width: ($threshold-4-8-col - 1)) {
-      order: 2;
-    }
-  }
-
-  .p-footer-list {
-    @media (min-width: $threshold-4-8-col) {
-      @include vf-p-inline-list;
-    }
+    background: #2d2d2d !important;
   }
 
   .p-footer-list__item {
-    @media (min-width: $threshold-4-8-col) {
-      @include vf-inline-list-item;
-    }
+    @include vf-inline-list-item;
+
+    overflow-wrap: normal;
+    word-break: keep-all;
   }
 
   .p-footer__qr-code {
     max-width: 96px;
-
     @media (min-width: $threshold-4-8-col) {
       margin-left: auto;
       text-align: right;

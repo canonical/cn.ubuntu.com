@@ -1,11 +1,14 @@
 {% extends "templates/base.html" %}
 
-{% block title %}价格{{ page_title }}{% endblock %}
-{% block meta_description %}Ubuntu订阅 Ubuntu企业版 Ubuntu许可证 Ubuntu官方支持 Linux企业服务 Linux企业支持 Linux订阅 Ubuntu服务器支持{{ meta_description }}{% endblock %}
+{% block title %}计划和定价{% endblock %}
+
+{% block meta_description %}
+  Canonical 产品及服务多元，提供企业级开源支持 Ubuntu Pro，嵌入式 Linux 和智能边缘设备开发，OpenStack、Kubernetes 基础设施全栈托管与服务一应俱全。
+{% endblock %}
 
 {% block content %}
 
-<section class="p-strip--suru-topped">
+  <section class="p-strip--suru-topped">
     <div class="u-fixed-width">
       <h1>计划和定价</h1>
     </div>
@@ -27,8 +30,8 @@
           <li class="p-list__item is-ticked">应用程序</li>
         </ul>
         <ul class="p-inline-list u-no-margin--bottom">
-          <li class="p-inline-list__item"><a class="p-button--positive u-no-margin--bottom" href="/support/pro">购买Ubuntu Pro</a></li>
-          <li class="p-inline-list__item"><a class="p-button u-no-margin--bottom" href="/pricing/pro">查看我们的服务</a></li>
+          <li class="p-inline-list__item"><a class="p-button--positive u-no-margin--bottom" href="/pro">购买Ubuntu Pro</a></li>
+          <li class="p-inline-list__item"><a class="p-button u-no-margin--bottom" href="/pricing">查看我们的服务</a></li>
         </ul>
       </div>
     </div>
@@ -47,7 +50,7 @@
           <li class="p-list__item is-ticked">数据中心自动化</li>
           <li class="p-list__item is-ticked">日志，警报，监控</li>
         </ul>
-        <p class="u-no-margin--bottom"><a class="p-button u-no-margin--bottom" href="/pricing/pro#managed">托管的开放基础设施</a></p>
+        <p class="u-no-margin--bottom"><a class="p-button u-no-margin--bottom" href="/pricing">托管的开放基础设施</a></p>
       </div>
     </div>
     <div class="u-fixed-width"><hr style="margin: 2rem 0;"/></div>

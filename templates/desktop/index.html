@@ -1,147 +1,512 @@
 {% extends "templates/base.html" %}
 
-{% block title %}Ubuntu桌面系统{{ title }}{% endblock %}
-{% block meta_description %}{{ meta_description }}Ubuntu系统，Ubuntu 22.04，Ubuntu 20.04，Ubuntu 18.04，Ubuntu 16.04，snap，snapcraft{% endblock %}
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+{% from "_macros/vf_equal-heights.jinja" import vf_equal_heights %}
+{% from "_macros/vf_blog.jinja" import vf_blog %}
+{% from "_macros/vf_divided-section.jinja" import vf_divided_section %}
+
+{% block title %}Ubuntu桌面系统{{ title }}{% endblock title %}
+
+{% block meta_description %}
+  快速、安全、简洁易用，现代化开源 Linux操作系统Ubuntu 每天为全球用户提供服务。立即下载体验最新版 Ubuntu操作系统。
+{% endblock meta_description %}
+
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/15p9N8lM9AXBCFCyltM6K-Jh6nLAESmzpp2vHBGM9p9M/edit?tab=t.0
+{% endblock meta_copydoc %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
 
 {% block content %}
-<!--fix the video title cropped-->
-<style>
-  @media (min-width: 1036px){
-    .bilibili_title {
-      width: 90%;
-    }
-  }
-</style>
 
-<section class="p-strip--image is-dark is-deep u-no-padding--top u-no-padding--bottom desktop-hero">
-    <div class="p-strip--suru">
-      <div class="row">
-        <div class="col-6">
-          <h1>Ubuntu桌面系统</h1>
-          <p class="desktop-hero--subtext">开源的Ubuntu桌面操作系统为全球数百万的PC和笔记本电脑提供了生产力。</p>
-          <p><a href="/download/desktop" class="p-button--positive">下载Ubuntu</a></p>
-          <p><a href="/desktop/features" class="p-link--inverted">了解功能特点&nbsp;&rsaquo;</a></p>
+  {% call(slot) vf_hero(
+    title_text='Ubuntu 桌面系统',
+    subtitle_text='排名第一的开源操作系统，为全球数百万台 PC 和笔记本电脑提供支持。',
+    layout='50/50'
+  ) -%}
+    {%- if slot == 'cta' -%}
+      <a href="/download#desktop" class="p-button--positive">下载 Ubuntu</a>
+    {%- endif -%}
+  {% endcall -%}
+
+  {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
+    {%- if slot == 'title' -%}
+      <h2>百万用户信赖的安全、现代化操作系统</h2>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">专业开发人员的首选</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>Ubuntu 的每个版本都提供最新的应用程序和工具链。Ubuntu 是所有主流集成开发环境、游戏开发工具以及 AI/ML 软件的主要平台。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">日常计算所需的一切</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>Ubuntu 提供用于网页浏览、消息传送、游戏娱乐及内容创建等核心应用程序，包括 Firefox、Chrome、Discord、Steam 和 OBS Studio，全面满足您的日常计算需求。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">专属设计，私密安全</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>凭借定期更新和内置安全功能，Ubuntu 优先保障用户隐私与系统完整性，成为重视数据保护者的安全之选。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_4' -%}
+      <h3 class="p-heading--5">与企业工具深度集成</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_4' -%}
+      <p>Ubuntu 与企业环境无缝集成。订阅 <a href="/pro">Ubuntu Pro</a>，获取在高安全性环境中运行 Ubuntu 所需的所有工具：安全补丁、群组管理等工具一应俱全。任何人都可以在最多 5 台机器上免费使用 Ubuntu，企业用户可免费试用 30 天。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_5' -%}
+      <h3 class="p-heading--5">完全开源</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_5' -%}
+      <p>Ubuntu 可免费下载、使用和分享。我们坚信开源软件的力量；若没有遍布全球的志愿开发者社区，Ubuntu 就无法存在。</p>
+    {%- endif -%}
+  {%- endcall -%}
+
+  <section class="p-section--deep">
+    <div class="u-fixed-width">
+      <hr class="p-rule" />
+      <h2>我们认证的公有云合作伙伴集</h2>
+      <span class="u-sv3">Ubuntu上有成千上万个应用软件可供下载。大部分应用软件是免费的，只需几下点击即可完成安装。</span>
+      <div class="p-icon-section">
+      <div class="p-icon-section__items">
+        <div class="p-icon-section__item">
+          <a href="https://snapcraft.io/blender">
+            {{ image(url="https://assets.ubuntu.com/v1/f0bd491c-blender.png",
+                          alt="Blender",
+                          width="60",
+                          height="60",
+                          hi_def=True,
+                          loading="lazy",
+                          attrs={"class": "p-icon-section__icon"},) | safe
+            }}
+          </a>
         </div>
-        <div class="col-6 u-vertically-center bilibili_title">
-          <div class="u-embedded-media">
-            <iframe class="u-embedded-media__element" width="560" height="315" src="https://player.bilibili.com/player.html?aid=645535740&bvid=BV1fY4y1K793&cid=833405913&page=1&high_quality=1&danmaku=0&autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="p-icon-section__item">
+          <a href="https://snapcraft.io/spotify">
+            {{ image(url="https://assets.ubuntu.com/v1/9917aba6-spotify-linux-256.png",
+                          alt="Spotify",
+                          width="60",
+                          height="60",
+                          hi_def=True,
+                          loading="lazy",
+                          attrs={"class": "p-icon-section__icon"},) | safe
+            }}
+          </a>
+        </div>
+        <div class="p-icon-section__item">
+          <a href="https://snapcraft.io/code">
+            {{ image(url="https://assets.ubuntu.com/v1/034147e9-code_ozwVHSV.png",
+                          alt="Visual Studio Code",
+                          width="60",
+                          height="60",
+                          hi_def=True,
+                          loading="lazy",
+                          attrs={"class": "p-icon-section__icon"},) | safe
+            }}
+          </a>
+        </div>
+        <div class="p-icon-section__item">
+          <a href="https://snapcraft.io/clion">
+            {{ image(url="https://assets.ubuntu.com/v1/eb5ccb1d-clion.ico.png",
+                          alt="CLion",
+                          width="60",
+                          height="60",
+                          hi_def=True,
+                          loading="lazy",
+                          attrs={"class": "p-icon-section__icon"},) | safe
+            }}
+          </a>
+        </div>
+        <div class="p-icon-section__item">
+          <a href="https://snapcraft.io/firefox">
+            {{ image(url="https://assets.ubuntu.com/v1/8daf0eb5-firefox_logo.png",
+                          alt="Firefox",
+                          width="60",
+                          height="60",
+                          hi_def=True,
+                          loading="lazy",
+                          attrs={"class": "p-icon-section__icon"},) | safe
+            }}
+          </a>
+        </div>
+        <div class="p-icon-section__item">
+          <a href="https://snapcraft.io/telegram-desktop">
+            {{ image(url="https://assets.ubuntu.com/v1/d77f0f3a-icon256.png",
+                          alt="Telegram",
+                          width="60",
+                          height="60",
+                          hi_def=True,
+                          loading="lazy",
+                          attrs={"class": "p-icon-section__icon"},) | safe
+            }}
+          </a>
+        </div>
+        <div class="p-icon-section__item">
+          <a href="https://snapcraft.io/discord">
+            {{ image(url="https://assets.ubuntu.com/v1/43dcefb8-discord.png",
+                          alt="Discord",
+                          width="60",
+                          height="60",
+                          hi_def=True,
+                          loading="lazy",
+                          attrs={"class": "p-icon-section__icon"},) | safe
+            }}
+          </a>
+        </div>
+        <div class="p-icon-section__item">
+          <a href="https://snapcraft.io/powershell">
+            {{ image(url="https://assets.ubuntu.com/v1/8d51d7ff-powershell.png",
+                          alt="Powershell",
+                          width="60",
+                          height="60",
+                          hi_def=True,
+                          loading="lazy",
+                          attrs={"class": "p-icon-section__icon"},) | safe
+            }}
+          </a>
+        </div>
+        <div class="p-icon-section__item">
+          <a href="https://snapcraft.io/slack">
+            {{ image(url="https://assets.ubuntu.com/v1/7f08620e-Snapcraft_144.png",
+                          alt="Slack",
+                          width="60",
+                          height="60",
+                          hi_def=True,
+                          loading="lazy",
+                          attrs={"class": "p-icon-section__icon"},) | safe
+            }}
+          </a>
+        </div>
+        <div class="p-icon-section__item">
+          <a href="https://snapcraft.io/steam">
+            {{ image(url="https://assets.ubuntu.com/v1/88ff7b82-steam.png",
+                          alt="Steam",
+                          width="60",
+                          height="60",
+                          hi_def=True,
+                          loading="lazy",
+                          attrs={"class": "p-icon-section__icon"},) | safe
+            }}
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
+    {%- if slot == 'title' -%}
+      <h2>在您喜爱的硬件上实现高性能</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <div class="p-section--shallow">
+        <p>Canonical与戴尔、联想、惠普等全球领先的硬件制造商合作，提供多款 Ubuntu 认证笔记本电脑和工作站，带给您前所未有的无缝 Ubuntu 体验。</p>
+        <div class="p-logo-section">
+          <div class="p-logo-section__items">
+            <div class="p-logo-section__item">
+              {{ image(url="https://assets.ubuntu.com/v1/f76dd871-ubuntu-certified.png",
+                  alt="Ubuntu Certified",
+                  width="317",
+                  height="449",
+                  hi_def=True,
+                  loading="lazy",
+                  attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image(url="https://assets.ubuntu.com/v1/a5bec84b-hp-logo.png",
+                  alt="HP",
+                  width="159",
+                  height="372",
+                  hi_def=True,
+                  loading="lazy",
+                  attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item">
+              {{ image(url="https://assets.ubuntu.com/v1/43635925-dell-technologies-logo.png",
+                  alt="Dell",
+                  width="172",
+                  height="312",
+                  hi_def=True,
+                  loading="lazy",
+                  attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
+            <div class="p-logo-section__item u-no-margin--right">
+              {{ image(url="https://assets.ubuntu.com/v1/3b24973b-lenovo-logo.png",
+                  alt="Lenovo",
+                  width="169",
+                  height="256",
+                  hi_def=True,
+                  loading="auto|lazy",
+                  attrs={"class": "p-logo-section__logo"}
+                ) | safe
+              }}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  
-  <section class="p-strip is-deep is-bordered">
-    <div class="row u-equal-height">
-      <div class="col-8 u-vertically-center u-align--center u-hide--small">
-        {{
-          image(
-          url="https://assets.ubuntu.com/v1/741b30ec-desktop-logos.png",
-          alt="Apps you can use on Ubuntu 20.04.LTS",
-          height="235",
-          width="510",
-          hi_def=True,
-          loading="lazy",
-          ) | safe
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">支持最新设备</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <div class="p-image-wrapper">
+        {{ image(url="https://assets.ubuntu.com/v1/622b4fe1-numpy-numbat-on-dell-xps-13.jpg",
+                      alt="",
+                      width="1800",
+                      height="1012",
+                      hi_def=True,
+                      loading="lazy") | safe
         }}
       </div>
-      <div class="col-4">
-        <h2>完整的桌面系统</h2>
-        <p>Ubuntu为您运营组织，学校，家庭或企业提供了所需的一切。预装了所有必要的应用程序，例如办公套件，浏览器，电子邮件和多媒体应用等等。Ubuntu软件中心提供了成千上万的游戏和应用程序。</p>
-        <p><a href="/desktop/features">探索功能特点&nbsp;&rsaquo;</a></p>
+      <p>经过认证的设备可享有定制优化，并在我们专属的硬件实验室进行了可靠性和性能测试。无论购买预装版本还是自行安装在认证硬件上，您都可获得相同设备特定优化。</p>
+      <div class="p-cta-block">
+        <a href="/certified">Ubuntu 认证硬件 &rsaquo;</a>
       </div>
-    </div>
-  </section>
-  
-  <section class="p-strip--light is-bordered">
-    <div class="row p-divider">
-      <div class="col-4 p-divider__block">
-        <h2>开源</h2>
-        <p>Ubuntu一直是免费下载，使用和分享。我们相信开源软件的力量，因为没有全球志愿的开发者社区，Ubuntu就不可能存在。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">在旧硬件上展现更优性能</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>Ubuntu 是一款轻量且高效的操作系统，在旧硬件上安装 可提升设备性能并延长其使用寿命。</p>
+      <div class="p-cta-block">
+        <a href="https://ubuntu.com/blog/ubuntu-in-education-a-k-12-it-directors-experience">Ubuntu 在教育领域的应用 &rsaquo;</a>
       </div>
-      <div class="col-4 p-divider__block">
-        <h2>安全</h2>
-        <p>Ubuntu是最为安全的操作系统之一，其内建了防火墙和病毒保护软件。并且，长期支持的版本将提供5年的安全补丁和更新。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">支持 Raspberry Pi 创客</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>除惠普、戴尔、联想等原始设备制造商的设备外，Ubuntu Desktop 通过了 Raspberry Pi 认证，为这款强大的 Arm 设备提供了丰富的开发者体验。</p>
+      <div class="p-cta-block">
+        <a href="https://ubuntu.com/download/raspberry-pi">Raspberry Pi 上的 Ubuntu &rsaquo;</a>
       </div>
-      <div class="col-4 p-divider__block">
-        <h2>可访问</h2>
-        <p>计算用于所有人，不论国籍，性别或障碍。Ubuntu被完整地翻译成50多种语言，且包含了必要的辅助技术。</p>
-      </div>
-    </div>
-  </section>
-  
-  <section class="p-strip is-bordered">
-    <div class="row u-equal-height">
-      <div class="col-7">
-        {{
-          image(
-          url="https://assets.ubuntu.com/v1/acdf946a-Screenshot+from+2022-04-18+13-05-17.png",
-          alt="",
-          height="768",
-          width="1360",
+    {%- endif -%}
+  {%- endcall -%}
+
+  {% call(slot) vf_equal_heights(
+    title_text="企业级支持和集成",
+    image_aspect_ratio_large="auto",
+    image_aspect_ratio_medium="auto",
+    image_aspect_ratio_small="auto",
+    items=[
+      {
+        "title_text": "Ubuntu Pro Desktop",
+        "image_html": image(url="https://assets.ubuntu.com/v1/2f32b5f5-Ubuntu-Pro-logo.svg",
+          alt="Ubuntu Pro",
+          width="150",
           hi_def=True,
-          loading="lazy",
-          ) | safe
-        }}
-      </div>
-      <div class="col-4 col-start-large-9 u-vertically-center">
-        <div>
-          <h2>
-            无论在何处使用，视觉效果均令人赞叹
-          </h2>
-          <p>Ubuntu已获得高清触摸屏，桌面UI缩放，以及触摸板手势的支持。22.04 LTS更新了标志性的 Yaru 主题，具有系统范围的深色风格偏好支持、强调色和迄今为止最大的社区壁纸集。</p>
+          loading="lazy"
+        ) | safe,
+        "description_html": "<p>一项综合订阅服务，为开发人员和企业提供企业级安全防护、管理工具及扩展支持。Ubuntu Pro Desktop 供个人免费使用，企业用户可以免费试用 30 天。</p>",
+        "cta_html": "<a href='/pro'>了解 Ubuntu Pro&nbsp;&rsaquo;</a><br /><a href='https://ubuntu.com/pro/free-trial'>开始 30 天免费试用&nbsp;&rsaquo;</a>"
+      },
+      {
+        "title_text": "以 WSL 在 Windows 上运行 Ubuntu",
+        "image_html": image(url="https://assets.ubuntu.com/v1/7a019410-ms%20logo.png",
+          alt="Windows WSL",
+          width="37",
+          hi_def=True,
+          loading="lazy"
+        ) | safe,
+        "description_html": "<p>在 Windows 上使用适用于 Linux 的 Windows 子系统，即可获得完整的 Ubuntu 终端环境。无需离开 Windows即可简化 web 应用程序开发、运行尖端 AI/ML 工具、开发跨平台应用程序和管理 IT 基础架构。</p>",
+        "cta_html": "<a href='https://ubuntu.com/desktop/wsl'>如何在 WSL 上支持 Ubuntu&nbsp;&rsaquo;</a>"
+      },
+      {
+        "title_text": "使用 Amazon WorkSpaces 的虚拟桌面",
+        "image_html": image(url="https://assets.ubuntu.com/v1/c0484d42-aws_workspaces_logo.png",
+          alt="Amazon Workspaces",
+          width="40",
+          hi_def=True,
+          loading="lazy"
+        ) | safe,
+        "description_html": "<p>Amazon WorkSpaces 为开发人员提供了一个优化的 Ubuntu Desktop 环境，用于快速构建、测试和部署代码。即使开发人员远程工作，仍可确保 AWS 云中应用程序和数据的安全。</p>",
+        "cta_html": "<a href='https://ubuntu.com/aws/workspaces'>了解 Ubuntu WorkSpaces&nbsp;&rsaquo;</a>"
+      }
+    ]
+  ) %}
+    {% if slot == "description" %}
+      <p>Ubuntu Desktop 为各行各业的开发人员赋能。从汽车和航空航天领域到制药研究实验室、视觉特效公司及学术机构。借助 Canonical 与 Ubuntu Pro，轻松管理并保障您的开源堆栈安全无忧。</p>
+      <p><a href="https://ubuntu.com/desktop/organizations">了解更多面向组织的 Ubuntu Desktop 信息&nbsp;&rsaquo;</a></p>
+    {% endif %}
+  {% endcall %}
+
+  {{ vf_divided_section(
+    title={
+      "text": "汇聚全球开源力量，共享社区支持",
+    },
+    blocks=[
+      {
+        "type": "description-block",
+        "items": [
+          {
+            "type": "description",
+            "item": {
+              "type": "text",
+              "content": "开发者社区是 Ubuntu 的核心所在。使用 Ubuntu，您将共享功能设计、代码贡献、问题解决经验、学习资源等，来自全球数百万用户二十年积累的智慧结晶。"
+            }
+          }
+        ]
+      },
+      {
+        "type": "divided-block",
+        "bullet_type": "none",
+        "items": [
+          {
+            "contents": [
+              {
+                "type": "image",
+                "item": {
+                  "aspect_ratio": "",
+                  "attrs": {
+                    "src": "https://assets.ubuntu.com/v1/83e4e4c5-summit2022_crowd%201.jpg",
+                    "alt": ""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "Ask Ubuntu",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "一个供用户提问和解答关于 Ubuntu 故障排除问题的论坛，隶属于 Stack Exchange 网络。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "任何困难请随时提问&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://askubuntu.com/"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "Ubuntu Discourse",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "Ubuntu 开发人员在这里讨论新功能和进度更新，并为希望参与其中的社区成员分享教程和建议。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "加入对话&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://discourse.ubuntu.com/"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title_text": "Ubuntu flavors",
+            "contents": [
+              {
+                "type": "description",
+                "item": {
+                  "type": "text",
+                  "content": "Ubuntu 风味版（Ubuntu flavors）让您自由体验不同默认应用程序、设置的Ubuntu，其由Ubuntu 归档（Ubuntu Archive）提供软件包和更新。"
+                }
+              },
+              {
+                "type": "cta-block",
+                "item": {
+                  "link": {
+                    "content_html": "关于 Ubuntu flavors&nbsp;&rsaquo;",
+                    "attrs": {
+                      "href": "https://ubuntu.com/desktop/flavors"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  ) }}
+
+  <div class="p-section">
+    {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
+      {%- if slot == 'title' -%}
+        <h2>立即开始使用 Ubuntu</h2>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_title_1' -%}
+        <h3 class="p-heading--5">下载并安装</h3>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_description_1' -%}
+        <p>下载 Ubuntu Desktop 并替换当前的操作系统。它既可直接安装，轻松替代 Windows，亦可与 Windows 并行运行 Ubuntu。</p>
+        <div class="p-cta-block">
+          <a class="p-button--positive" href="/download#desktop">立即下载</a>
         </div>
-      </div>
-    </div>
-  </section>
-  
-  <section class="p-strip is-bordered">
-    <div class="u-fixed-width">
-      <h2>
-        在最广泛支持的硬件上安装使用Ubuntu
-      </h2>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <p>Canonical与戴尔，联想和惠普紧密合作，以证明Ubuntu可在最广泛的笔记本电脑和工作站上使用。这意味着可以提供前所未有的无缝Ubuntu体验，以及比以往更多的硬件选择。这意味着您可以获得前所未有的无缝Ubuntu体验，以及比以往更多的硬件选择。</p>
-        <p>Ubuntu不仅只适用于桌面电脑，其也被广泛地使用在世界各地的数据中心中，为各种各样的服务器提供支持，并且还是云计算中最流行的操作系统。</p>
-        <p><a href="https://partners.ubuntu.com/programmes">了解更多关于我们的合作伙伴的内容</a></p>
-      </div>
-      <div class="col-5 col-start-large-8 u-vertically-center u-hide--small">
-        {{
-          image(
-          url="https://assets.ubuntu.com/v1/a8e96807-desktop-xps13-small.png",
-          alt="Photo of laptop running Ubuntu",
-          height="630",
-          width="1088",
-          hi_def=True,
-          loading="lazy",
-          ) | safe
-        }}
-      </div>
-    </div>
-  </section>
-  
-  <section class="p-strip--light">
-    <div class="u-fixed-width">
-      <h2>
-        适用于企业的Ubuntu桌面
-      </h2>
-    </div>
-    <div class="row p-divider">
-      <div class="col-6 p-divider__block">
-        <h3>支持和管理</h3>
-        <p>Ubuntu Advantage是一个来自Canonical专家的专业支持服务包。获得24x7全天候的支持，与对您的问题有第一手经验的工程师联系。支持服务包含系统管理工具——Landscape，其可用于Ubuntu桌面系统的监控、管理、补丁和合规报告。</p>
-        <p><a href="/desktop/organisations">了解更多关于适用于企业的Ubuntu的内容&nbsp;&rsaquo;</a></p>
-      </div>
-      <div class="col-6 p-divider__block">
-        <h3>由Canonical提供支持</h3>
-        <p>Canonical是一家全球的软件公司，Ubuntu支持服务的原厂提供商。企业可选择Ubuntu专家培训，支持或者咨询，但需要支付一定费用，以支持Ubuntu的持续发展。</p>
-        <p><a href="https://canonical.com">了解更多关于Canonical的内容</a></p>
-      </div>
-    </div>
-  </section>
+      {%- endif -%}
 
-  {% include "shared/_desktop_contextual.html" %}
+      {%- if slot == 'list_item_title_2' -%}
+        <h3 class="p-heading--5">购买预装版本</h3>
+      {%- endif -%}
 
-{% endblock %}
+      {%- if slot == 'list_item_description_2' -%}
+        <p>向包括戴尔、惠普、联想等全球最大硬件制造商购买预装 Ubuntu 的设备。</p>
+        <div class="p-cta-block">
+          <a href="https://ubuntu.com/certified">浏览 Ubuntu 认证硬件清单 &rsaquo;</a>
+        </div>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_title_3' -%}
+        <h3 class="p-heading--5">专业支持</h3>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_description_3' -%}
+        <p>Canonical 可提供全天候支持，为您的 Ubuntu 桌面或服务器的部署提供全面安全防护与管理。</p>
+        <div class="p-cta-block">
+          <a href="/support">了解技术支持和托管服务 &rsaquo;</a>
+        </div>
+      {%- endif -%}
+    {%- endcall -%}
+  </div>
+
+{% endblock content %}

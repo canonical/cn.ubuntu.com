@@ -1,23 +1,141 @@
-const initNavigationSliding = () => {
-  const navigation = document.querySelector(
-    '.p-navigation, .p-navigation--reduced'
-  );
-  const secondaryNavigation = document.querySelector(
-    '.p-navigation--reduced + .p-navigation'
-  );
-  const menuButton = document.querySelector('.js-menu-button');
+const menuButton = document.querySelector('.js-menu-button');
+const secondaryNavigation = document.querySelector(
+  '.p-navigation--reduced + .p-navigation'
+);
+const secondaryNavToggle = document.querySelector(
+  '.js-secondary-menu-toggle-button'
+);
 
-  const closeAllDropdowns = () => {
-    navigation.classList.remove('has-menu-open');
+const overlay = document.querySelector('.dropdown-window-overlay');
+const dropdownWindow = document.querySelector('.dropdown-window');
+const dropdownWindowOverlay = document.querySelector(
+  '.dropdown-window-overlay'
+);
+const navigation = document.querySelector(
+  '.p-navigation, .p-navigation--reduced, .p-navigation--sliding'
+);
+
+// Override global-nav functionality that changes menu button innerHTML
+if (menuButton) {
+  const menuBtnDesc = Object.getOwnPropertyDescriptor(
+    Element.prototype,
+    'innerHTML'
+  );
+  Object.defineProperty(menuButton, 'innerHTML', {
+    set: function () {
+      menuBtnDesc.set.call(this, 'Menu');
+    },
+    get: function () {
+      return menuBtnDesc.get.call(this);
+    },
+  });
+}
+
+// Helper functions
+const isDesktop = () => window.matchMedia('(min-width: 1150px)').matches;
+
+const closeAllDropdowns = () => {
+  if (navigation && 'classList' in navigation) {
+    // Add fade and slide animation classes to hide overlay and dropdown window
+    overlay.classList.add('fade-animation');
+    dropdownWindow.classList.add('slide-animation');
+
+    // Set all "dropdown toggle" buttons to inactive state by removing "is-active" from classlist
+    const dropdownToggles = document.querySelectorAll(
+      '.p-navigation__item--dropdown-toggle'
+    );
+    for (const toggle of dropdownToggles) {
+      toggle.classList.remove('is-active');
+    }
+
+    // Hide all dropdown contents
+    const dropdownContents = dropdownWindow.children;
+    for (const content of dropdownContents) {
+      content.classList.add('u-hide');
+    }
     if (secondaryNavigation) {
       secondaryNavigation.classList.remove('has-menu-open');
     }
     menuButton.innerHTML = 'Menu';
-  };
 
-  const secondaryNavToggle = document.querySelector(
-    '.js-secondary-menu-toggle-button'
+    // Handle navigation state on mobile
+    if (!isDesktop) {
+      const navigationEl = document.querySelector('.js-navigation-items');
+      navigationEl.classList.toggle('is-active', false);
+    }
+  }
+};
+
+const closeDesktopGlobalNav = () => {
+  if (!isDesktop()) {
+    return;
+  }
+  const globalNavToggle = document.querySelector(
+    '.global-nav__dropdown-toggle'
   );
+  const globalNavBtn = globalNavToggle.querySelector('button');
+  globalNavBtn.classList.remove('is-selected');
+  globalNavBtn.setAttribute('aria-expanded', 'false');
+
+  const globalDesktopContent = document.querySelector('#all-canonical-desktop');
+  globalDesktopContent.classList.remove('show-content');
+};
+
+const toggleDropdown = (toggleEl, shouldOpen) => {
+  // Handle navigation and dropdown window states
+  navigation.classList.toggle('has-menu-open', isDesktop() ? false : true);
+
+  toggleEl.classList.remove('is-selected');
+  toggleEl.classList.toggle('is-active', shouldOpen);
+
+  const dropdownContentID = toggleEl.id + '-content';
+  const mobileContentID = isDesktop()
+    ? dropdownContentID
+    : dropdownContentID + '-mobile';
+
+  const dropdownContents = document.querySelectorAll(
+    `#${isDesktop() ? dropdownContentID : mobileContentID}`
+  );
+
+  // On mobile, add "is-active" to navigation items container when it should toggle open
+  if (!isDesktop()) {
+    const navigationEl = document.querySelector('.js-navigation-items');
+    if (shouldOpen) {
+      navigationEl.classList.add('is-active');
+    } else {
+      navigationEl.classList.remove('is-active');
+    }
+  } else {
+    // Add slide and fade animations on desktop
+    dropdownWindow.classList.toggle('slide-animation', !shouldOpen);
+    dropdownWindowOverlay.classList.toggle('fade-animation', !shouldOpen);
+  }
+
+  dropdownContents.forEach(content => {
+    if (shouldOpen) {
+      content.classList.remove('u-hide');
+      content.removeAttribute('aria-hidden');
+    } else {
+      // Delay hiding content after fade out animation
+      setTimeout(() => {
+        content.classList.add('u-hide');
+      }, 300);
+      content.setAttribute('aria-hidden', !shouldOpen);
+    }
+
+    // Handle nested "p-navigation__dropdown" inside the mobile dropdown content
+    const innerDropdown = content.querySelector('.p-navigation__dropdown');
+    if (innerDropdown) {
+      if (shouldOpen) {
+        innerDropdown.removeAttribute('aria-hidden');
+      } else {
+        innerDropdown.setAttribute('aria-hidden', 'true');
+      }
+    }
+  });
+};
+
+const initNavigationSliding = () => {
   if (secondaryNavToggle) {
     secondaryNavToggle.addEventListener('click', event => {
       event.preventDefault();
@@ -57,6 +175,14 @@ const initNavigationSliding = () => {
     }
   });
 
+  // When keyboard escape key is pressed, close all dropdowns
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' || event.key === 'Esc') {
+      closeAllDropdowns();
+      closeDesktopGlobalNav();
+    }
+  });
+
   const setListFocusable = list => {
     // turn on focusability for all direct children in the target dropdown
     if (list) {
@@ -85,7 +211,9 @@ const initNavigationSliding = () => {
     e.preventDefault();
     const target = backButton.closest('.p-navigation__dropdown');
     target.setAttribute('aria-hidden', 'true');
-    setActiveDropdown(backButton, false);
+    if (backButton) {
+      setActiveDropdown(backButton, false);
+    }
     setFocusable(target.parentNode.parentNode);
   };
 
@@ -123,3 +251,38 @@ const initNavigationSliding = () => {
 };
 
 initNavigationSliding();
+
+// Setup dropdown toggle functionality
+document.addEventListener('DOMContentLoaded', function () {
+  // Close all dropdowns when global nav toggle is clicked
+  const globalNavToggle = document.querySelector(
+    '.global-nav__dropdown-toggle'
+  );
+  const globalNavBtn = globalNavToggle.querySelector('button');
+  globalNavBtn.addEventListener('click', function () {
+    closeAllDropdowns();
+  });
+
+  const dropdownToggles = document.querySelectorAll('[data-dropdown-url]');
+  dropdownToggles.forEach(el => {
+    const anchor = el.querySelector('a');
+
+    if (anchor) {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const isOpen = el.classList.contains('is-active') ? true : false;
+        if (isOpen) {
+          // Close dropdown
+          toggleDropdown(el, false);
+        } else {
+          // Open dropdown
+          closeDesktopGlobalNav();
+          closeAllDropdowns();
+
+          toggleDropdown(el, true);
+        }
+      });
+    }
+  });
+});

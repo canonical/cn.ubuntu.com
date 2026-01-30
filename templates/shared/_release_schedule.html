@@ -1,117 +1,91 @@
-<div class="p-strip--light is-deep is-bordered">
-    <div class="u-fixed-width">
-      <h2 id="a-release-schedule-you-can-depend-on">一个您可信赖的发布时间表</h2>
-    </div>
-    <div class="u-fixed-width">
-      <p class="p-heading--4">通过定期的更新和升级保持最新。</p>
-      {% if level_1 == 'desktop' %}
-      <p>每两年就会有一个新的 Ubuntu 桌面长期支持（LTS）版本，该版本将获得五年的支持。在此期间，将会提供免费的定期安全补丁和其他关键更新。</p>
-      {% endif %}
-      {% if level_1 == 'server' %}
-      <p>默认情况下，Ubuntu服务器版的长期支持 (LTS) 版本中Ubuntu main仓库中大约2500个软件包会有为期五年的标准安全更新。每六个月，子版本都会带来新功能，而硬件支持的更新会为所有受支持的LTS版本添加对最新机器的支持。
-         所有<a href="/support/">Ubuntu Pro（Infra Only）订阅</a>包括<a href="/support/esm">扩展安全维护 (ESM)</a>，将支持生命周期延长至<strong>10年</strong>。        
-      </p>
-      <p><a href="/support/pro">Ubuntu Pro</a>订阅将安全维护扩展到30000多个软件包，长达10年，并且Canonical提供了可选的企业级电话和工单支持。
-      </p>
-     
-      {% endif %}
-    </div>
-    <div class="row">
-      <div class="col-10" style="overflow: auto;">
-        <div class="u-hide--small" id="server-desktop-eol"></div>
-        <table class="u-hide--medium u-hide--large" style="width: auto;">
-          <thead>
-            <tr>
-              <td>&nbsp;</td>
-              <th scope="col">Released</th>
-              <th scope="col">End of Life</th>
-              <th scope="col">Extended security maintenance</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Ubuntu 22.04 LTS</strong></td>
-              <td>April 2022</td>
-              <td>April 2027</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Ubuntu 21.10</td>
-              <td>October 2021</td>
-              <td>July 2022</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Ubuntu 21.04</td>
-              <td>April 2021</td>
-              <td>January 2022</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Ubuntu 20.10</td>
-              <td>October 2020</td>
-              <td>July 2021</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><strong>Ubuntu 20.04 LTS</strong></td>
-              <td>April 2020</td>
-              <td>April 2025</td>
-              <td>April 2030</td>
-            </tr>
-            <tr>
-              <td>Ubuntu 19.10</td>
-              <td>October 2019</td>
-              <td>July 2020</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Ubuntu 19.04</td>
-              <td>April 2019</td>
-              <td>January 2020</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Ubuntu 18.10</td>
-              <td>October 2018</td>
-              <td>July 2019</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><strong>Ubuntu 18.04 LTS</strong></td>
-              <td>April 2018</td>
-              <td>April 2023</td>
-              <td>April 2028</td>
-            </tr>
-            <tr>
-              <td><strong>Ubuntu 16.04 LTS</strong></td>
-              <td>April 2016</td>
-              <td>April 2021</td>
-              <td>April 2024</td>
-            </tr>
-            <tr>
-              <td><strong>Ubuntu 14.04 LTS</strong></td>
-              <td>April 2014</td>
-              <td>April 2019</td>
-              <td>April 2022</td>
-            </tr>
-            <tr>
-              <td><strong>Ubuntu 12.04 LTS</strong></td>
-              <td>April 2012</td>
-              <td>April 2017</td>
-              <td>April 2019</td>
-            </tr>
-            <tr>
-              <td><strong>Ubuntu 10.04 LTS</strong></td>
-              <td>April 2010</td>
-              <td>April 2015</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<div class="grid-row">
+  <div class="grid-col-8" style="overflow: auto;">
+    <div class="u-hide--small" id="server-desktop-eol-old"></div>
+    <div class="u-table-scroll--small">
+      <table class="u-hide--large u-hide--medium">
+        <thead>
+          <tr>
+            <td colspan="2">&nbsp;</td>
+            <th scope="col">Released</th>
+            <th scope="col">End of Standard Support</th>
+            <th scope="col">End of Ubuntu Pro Support</th>
+            <th scope="col">End of Legacy add-on coverage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="2">25.10 (Questing Quokka)</td>
+            <td>Oct 2025</td>
+            <td>Jul 2026</td>
+            <td aria-label="Not applicable">-</td>
+            <td aria-label="Not applicable">-</td>
+          </tr>
+          <tr>
+            <td colspan="2">25.04 (Plucky Puffin)</td>
+            <td>Apr 2025</td>
+            <td>Jan 2026</td>
+            <td aria-label="Not applicable">-</td>
+            <td aria-label="Not applicable">-</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <strong>24.04 LTS (Noble Numbat)</strong>
+            </td>
+            <td>Apr 2024</td>
+            <td>Apr 2029</td>
+            <td>Apr 2034</td>
+            <td>Apr 2039</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <strong>22.04 LTS (Jammy Jellyfish)</strong>
+            </td>
+            <td>Apr 2022</td>
+            <td>Apr 2027</td>
+            <td>Apr 2032</td>
+            <td>Apr 2037</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <strong>20.04 LTS (Focal Fossa)</strong>
+            </td>
+            <td>Apr 2020</td>
+            <td>May 2025</td>
+            <td>Apr 2030</td>
+            <td>Apr 2035</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <strong>18.04 LTS (Bionic Beaver)</strong>
+            </td>
+            <td>Apr 2018</td>
+            <td>May 2023</td>
+            <td>Apr 2028</td>
+            <td>Apr 2033</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <strong>16.04 LTS (Xenial Xerus)</strong>
+            </td>
+            <td>Apr 2016</td>
+            <td>Apr 2021</td>
+            <td>Apr 2026</td>
+            <td>Apr 2031</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <strong>14.04 LTS (Trusty Tahr)</strong>
+            </td>
+            <td>Apr 2014</td>
+            <td>Apr 2019</td>
+            <td>Apr 2024</td>
+            <td>Apr 2029</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-  <script src="https://ubuntu.com/static/js/dist/release-chart-manager.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://ubuntu.com/static/js/dist/release-chart-manager.js"></script>

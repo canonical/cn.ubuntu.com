@@ -1,786 +1,986 @@
 {% extends "templates/base.html" %}
 
-{% block title %}Ubuntu支持和服务 {{ page_title }}{% endblock %}
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_equal-heights.jinja" import vf_equal_heights %}
+{% from "_macros/vf_logo-section.jinja" import vf_logo_section %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+{% from "_macros/vf_basic-section.jinja" import vf_basic_section %}
+{% from "_macros/vf_divided-section.jinja" import vf_divided_section %}
+
+{% block title %}Ubuntu支持和服务 | 企业级开源技术支持和托管{% endblock %}
 
 {% block meta_description %}
-  Ubuntu订阅 Ubuntu企业版 Ubuntu许可证 Ubuntu官方支持 Linux企业服务 Linux企业支持 Linux订阅 Ubuntu服务器支持{{ meta_description }}
+  Ubuntu Pro 提供企业级开源支持，覆盖 Linux、OpenStack、Kubernetes 及常用应用，助力企业安全高效运营，全栈托管与实操知识转移服务一应俱全。
 {% endblock %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
 
 {% block content %}
 
-  <section class="p-strip--suru is-dark">
-    <div class="row u-equal-height">
-      <div class="col-8">
-        <h1>Ubuntu Pro</h1>
-        <h4>适用于企业的安全，支持和托管的开源服务</h4>
-        <p>
-          由Canonical提供的开源软件支持，从数据中心到容器再到数据库，<abbr title="日志, 监控和聚合服务">LMA</abbr>，服务器和云原生应用程序的面向未来的完整堆栈。
-        </p>
-        <p>Ubuntu Pro，是一站式、每节点的支持方案，为最全面的企业开源基础设施和应用程序提供安全和支持服务，且托管服务已可用。</p>
-        <p>
-          <a href="/contact" class="p-button--positive">联系我们</a><a class="p-button is-inline" href="/support/pro">了解更多Ubuntu Pro的内容</a>
-        </p>
-      </div>
-      <div class="col-4 u-hide--small u-vertically-center u-align--center">
-        {{ image(url="https://assets.ubuntu.com/v1/f6bbc63c-get-in-touch_chat_wht.svg",
-                alt="",
-                height="180",
-                width="180",
-                hi_def=True,
-                loading="auto") | safe
-        }}
-      </div>
-    </div>
-  </section>
+  {% call(slot) vf_hero(
+    title_text='面向全栈的企业级开源技术支持和托管服务',
+    layout='25/75'
+    ) -%}
+    {%- if slot == 'description' -%}
+      <p>由 Canonical 提供的开源软件支持，助您自信构建并实现规模化运营。我们的专业团队能够提供全年无休的服务，从基础设施到应用程序，为您的 Ubuntu 和整个开源技术栈提供支持。</p>
+    {%- endif -%}
+    {%- if slot == 'cta' -%}
+      <a href="/contact" class="p-button--positive">与我们联系</a>
+      <a href="/pro" class="p-button">探索 Ubuntu Pro + 支持</a>
+    {%- endif -%}
+  {%- endcall -%}
 
-  <section class="p-strip">
-    <div class="u-fixed-width u-align--center">
-      <div class="p-logo-section has-misaligned-images">
-        <div class="p-logo-section__items" style="justify-content:center;">
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/b1e3d2d2-bloomberg-logo.png",
+  {% call(slot) vf_equal_heights(
+    title_text="Canonical 开源支持服务特点",
+    highlight_images=true,
+    image_aspect_ratio_medium="2-3",
+    image_aspect_ratio_small="2-3",
+    items=[
+      {
+        "title_text": "单一供应商，一站式开源支持服务",
+        "image_html":  
+           image(url="https://assets.ubuntu.com/v1/4b9c7b95-dan_yi_gong_ying_shang_yi_zhan_shi_kai_yuan_zhi_chi_fu_wu.png",
+            alt="",
+            width="852",
+            height="1278",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-image-container__image"},
+            ) | safe
+      },
+      {
+        "title_text": "安心无忧，24/7 专业团队随时待命",
+        "image_html":  
+          image(url="https://assets.ubuntu.com/v1/a04d9f3b-7_zhuan_ye_tuan_dui_sui_shi_dai_ming.png",
+            alt="",
+            width="852",
+            height="1278",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-image-container__image"},
+            ) | safe
+      },
+      {
+        "title_text": "随处可用，从公有云到终端设备皆可部署",
+        "image_html":  
+          image(url="https://assets.ubuntu.com/v1/36640d1e-sui_chu_ke_yong_cong_gong_you_yun_dao_zhong_duan_she_bei_jie_ke_bu_shu.png",
+            alt="",
+            width="852",
+            height="1278",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-image-container__image"},
+            ) | safe
+      }
+    ]
+  ) %}
+  {% endcall %}
+
+  {% call(slot) vf_logo_section(
+    title={
+      "text": "深受专业人士信赖"
+    },
+    blocks=[
+      {
+        "type": "logo-block",
+        "item": {
+          "logos": [
+            image(url="https://assets.ubuntu.com/v1/5e382b40-Bloomberg-Logo.png",
                         alt="Bloomberg",
-                        width="288",
-                        height="288",
+                        width="385",
+                        height="384",
                         hi_def=True,
                         loading="lazy",
-                        attrs={"class": "p-logo-section__logo"},) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/6cd78b57-at%26t-logo.png",
-                        alt="AT&amp;T",
-                        width="288",
-                        height="288",
+                        output_mode="attrs",
+                        attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/dc042380-AT&T-Logo.png",
+                        alt="AT&T",
+                        width="357",
+                        height="384",
                         hi_def=True,
                         loading="lazy",
-                        attrs={"class": "p-logo-section__logo"},) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/c6e197c4-deutsche-telekom-logo.png",
+                        output_mode="attrs",
+                        attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/7754b212-Walmart-logo.png",
+                        alt="Walmart",
+                        width="437",
+                        height="384",
+                        hi_def=True,
+                        loading="lazy",
+                        output_mode="attrs",
+                        attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/b9529acd-deutsche-telekom.png",
                         alt="Deutsche Telekom",
-                        width="288",
-                        height="288",
+                        width="385",
+                        height="384",
                         hi_def=True,
                         loading="lazy",
-                        attrs={"class": "p-logo-section__logo"},) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/d7356bae-ebay-logo.png",
-                        alt="Ebay",
-                        width="288",
-                        height="288",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"},) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/7eebe11c-cisco-logo.png",
+                        output_mode="attrs",
+                        attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/b8ca28f0-cisco-logo.png",
                         alt="Cisco",
-                        width="288",
-                        height="288",
+                        width="232",
+                        height="384",
                         hi_def=True,
                         loading="lazy",
-                        attrs={"class": "p-logo-section__logo"},) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/f69a071a-ntt-logo.png",
+                        output_mode="attrs",
+                        attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/3a24c948-NTT-logo.png",
                         alt="NTT",
-                        width="288",
-                        height="288",
+                        width="312",
+                        height="384",
                         hi_def=True,
                         loading="lazy",
-                        attrs={"class": "p-logo-section__logo"},) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/698f7a58-best-buy-logo.png",
-                        alt="Best Buy",
-                        width="288",
-                        height="288",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"},) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/a6d62ef1-paypal-logo.png",
+                        output_mode="attrs",
+                        attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/97a2f98a-paypal-logo.png",
                         alt="Paypal",
-                        width="288",
-                        height="288",
+                        width="344",
+                        height="384",
                         hi_def=True,
                         loading="lazy",
-                        attrs={"class": "p-logo-section__logo"},) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/6c41357e-chinalife-logo.png",
-                        alt="China life",
-                        width="178",
-                        height="65",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"},) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/99381e78-hw-horizontal-.png",
-                        alt="Huawei",
-                        width="166",
-                        height="36",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"},) | safe
-            }}
-          </div>
-          <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/60af0752-newlogo-1.png",
-                        alt="新东方",
-                        width="166",
-                        height="36",
-                        hi_def=True,
-                        loading="lazy",
-                        attrs={"class": "p-logo-section__logo"},) | safe
-            }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                        output_mode="attrs",
+                        attrs={"class": "p-logo-section__logo"}),
+          ]
+        }
+      }
+    ]
+  ) -%}
+  {% endcall -%}
 
-  <section class="p-strip--light is-deep">
-    <div class="row">
-      <div class="col-10">
-        <h2>企业 Linux 和开源支持服务</h2>
-        <p>Canonical为全栈开源软件提供7x24小时的支持。客户可在2种支持服务中选择：Ubuntu Pro+基础设施和或开源应用程序支持。</p>
-      </div>
-    </div>
-    <div class="row u-equal-height">
-      <h3>Ubuntu Pro + 支持</h3>
-    </div>
-    <div class="row p-divider u-equal-height u-vertically-spaced">
-      <div class="col-6 p-divider__block">
-        <h4>应用程序</h4>
-        <p>
-          对开源数据库、<abbr title="日志, 监控和聚合服务">LMA</abbr>、服务器和云原生应用程序的安全和支持服务。
-        </p>
-        <ul class="p-list">
-          <li class="p-list__item is-ticked">Ubuntu Universe和Main仓库中的超过25000个软件包的安全补丁支持</li>
-          <li class="p-list__item is-ticked">对Ubuntu LTS版最长10年的支持</li>
-          <li class="p-list__item is-ticked">对开源数据库、LMA、云原生应用程序的补丁和运营支持</li>
-        </ul>
-      </div>
-      <div class="col-6 p-divider__block">
-        <h4>基础设施</h4>
-        <p>对开源基础设施的安全和IAAS（基础设施即服务）的支持</p>
-        <br />
-        <ul class="p-list">
-          <li class="p-list__item is-ticked">Ubuntu Main仓库中的超过2500个软件包的安全补丁服务（在免费的LTS 5年后安全补丁）</li>
-          <li class="p-list__item is-ticked">对Ubuntu LTS版最长10年的支持</li>
-          <li class="p-list__item is-ticked">
-            对<a href="/cloud/openstack">OpenStack</a>、KVM、MAAS、LXD、Ceph的补丁和运营支持
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="row u-equal-height">
-      <div class="col-6">
-        <p>
-          <a href="/support#apps-support">支持的应用程序&nbsp;&rsaquo;</a>
-        </p>
-      </div>
-      <div class="col-6">
-        <p>
-          <a href="/support/pro">支持的基础设施&nbsp;&rsaquo;</a>
-        </p>
-      </div>
-    </div>
-  </section>
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=true) -%}
+    {%- if slot == 'title' -%}
+      <h2>Ubuntu Pro + 支持</h2>
+    {%- endif -%}
 
-  <section class="p-strip is-deep is-bordered" id="what-is-ua">
-    <div class="u-fixed-width">
-      <h2>最全面的 Linux 企业订阅服务</h2>
-      <ul class="p-matrix is-trisected u-clearfix">
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--4">7x24电话支持</h3>
-            <p class="p-matrix__desc">通过网站入口，知识库或者电话直接访问我们全球企业级7x24的开源支持团队。</p>
-          </div>
+    {%- if slot == 'description' -%}
+      <p>
+        除了 Ubuntu Pro 所承诺的 10 年安全维护外，”Ubuntu Pro + 支持” 还包含实操支持与知识转移服务。
+      </p>
+      <div class="p-cta-block">
+        <a href="https://ubuntu.com/blog/security-maintenance-vs-support-whats-the-difference">了解安全维护与支持服务的区别 &rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">完全访问我们的知识库权限</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>
+        对于 Pro 客户，可借助我们的知识库提升团队专业能力。该数据库包含有关如何排查开源软件问题的文章，这些内容均基于我们 20 年的行业经验编写而成。
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">故障修复支持</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>若发生故障事件，可获取协助，针对影响您系统稳定性或安全性的技术问题，我们将提供诊断与解决支持。基于问题严重程度，我们针对首次响应和持续更新均制定了明确的服务级别协议（SLA），专家团队将提供及时解决方案，以最大限度减少停机时间并确保平稳运行。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">漏洞修复支持</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>已上报的软件漏洞可快速修复。我们的团队将充当贵组织与上游软件包维护者之间的桥梁。当上游维护团队进度滞后时，我们会加快解决业务关键问题的速度。<br />除了 Ubuntu Pro + 支持服务所承诺的 10 年安全维护外，还包含实操支持与知识转移服务。</p>
+    {%- endif -%}
+  {%- endcall -%}
+
+  {{ vf_basic_section(
+    title={"text": "在您的 Ubuntu LTS 基础上，<br />额外提供服务"},
+    items=[
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "依托全年无休的电话与工单支持，助您安心构建与运行。无论是 Ubuntu Main 还是 Universe 软件库中的 3.6 万多个软件包（涵盖最常用的开源应用与工具链）出现问题，您都能获得及时协助。"
+        }
+      },
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "我们的全天候方案的服务级别协议（SLA）不仅针对首次响应时间，更為后续的持续跟进与更新提供承诺，确保您能持续掌握进展，问题也能更快得到解决。"
+        }
+      },
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "凭借 20 年开源软件构建与维护经验，我们的专家团队为您提供支持保障。"
+        }
+      },
+      {
+        "type": "cta-block",
+        "item": {
+          "primary": {
+            "content_html": "联系我们",
+            "attrs": {
+              "href": "/contact"
+            }
+          }
+        }
+      }
+    ],
+  ) }}
+
+  {% call(slot) vf_logo_section(
+    title={
+      "text": "为超过 3.6 万个软件包提供 10 年支持"
+    },
+    blocks=[
+      {
+        "type": "logo-block",
+        "item": {
+          "logos": [
+            image(url="https://assets.ubuntu.com/v1/93af6c88-rust logo.png",
+                            alt="Rust",
+                            width="120",
+                            height="252",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/3b69f369-ruby-logo.png",
+                            alt="Ruby",
+                            width="104",
+                            height="252",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/bedc5d63-rabbitmq-logo.png",
+                            alt="RabbitMQ",
+                            width="248",
+                            height="257",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/c2cd0bc4-php-logo.png",
+                            alt="PHP",
+                            width="160",
+                            height="252",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class":"p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/86fdc1d7-openssl-logo.png",
+                            alt="OpenSSL",
+                            width="172",
+                            height="252",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/a92957da-nginex logo.png",
+                            alt="Nginx",
+                            width="184",
+                            height="258",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/0e5bcec1-mysql logo.png",
+                            alt="MySQL",
+                            width="180",
+                            height="252",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/6cdc1a69-ansible logo.png",
+                            alt="Ansible",
+                            width="124",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/605af026-apache tomcat logo.png",
+                            alt="Tomcat",
+                            width="204",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/5dbf023e-docker logo.png",
+                            alt="Docker",
+                            width="244",
+                            height="245",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/933cc587-etcd logo.png",
+                            alt="Etcd",
+                            width="196",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/1f55452f-glusterfs logo.png",
+                            alt="Glusterfs",
+                            width="196",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/973c8e10-Frame 19.png",
+                            alt="Frame",
+                            width="232",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/3ec28413-powerdns logo.png",
+                            alt="PowerDNS",
+                            width="252",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/7e68a46f-perl logo.png",
+                            alt="Perl",
+                            width="252",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/35e5c439-puppet logo.png",
+                            alt="Puppet",
+                            width="236",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/2ad3b2ba-python logo.png",
+                            alt="Python",
+                            width="252",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/8279fc01-go logo.png",
+                            alt="Go",
+                            width="168",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/94f1e342-nagios logo.png",
+                            alt="Nagios",
+                            width="252",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/56d8741e-node-logo.png",
+                            alt="Node.js",
+                            width="196",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/fa78f5b4-openjdk logo.png",
+                            alt="OpenJDK",
+                            width="240",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/05c01589-redis logo.png",
+                            alt="Redis",
+                            width="252",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"}),
+            image(url="https://assets.ubuntu.com/v1/850af73c-ruby-rails logo.png",
+                            alt="Ruby on Rails",
+                            width="240",
+                            height="253",
+                            hi_def=True,
+                            loading="lazy",
+                            output_mode="attrs",
+                            attrs={"class": "p-logo-section__logo"})
+          ]
+        }
+      }
+    ]
+  ) -%}
+  {% endcall -%}
+
+  {{ vf_basic_section(
+    title={"text": "为您的基础设施提供安心保障"},
+    items=[
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "在过去三年中，60% 的 IT 经理报告称其所在组织发生过系统中断事件。*"
+        }
+      },
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "借助全年全天候随时待命的专家团队，能在发生故障事件时，最大程度减少您 IT 基础设施的停机时间，并加快问题解决速度。通过明确界定的响应服务级别协议随时掌握进展，该协议既覆盖首次对接，也包含持续更新，确保在故障事件的每一个环节，您的团队都能保持信息同步。"
+        }
+      },
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "针对主流基础架构工具，提供明确的服务级别协议以承诺技术支持："
+        }
+      },
+      {
+        "type": "list",
+        "item": {
+          "list_items": [
+            {
+              "list_item_type": "bullet",
+              "content": "<a href='/kubernetes'>Kubernetes</a>"
+            },
+            {
+              "list_item_type": "bullet",
+              "content": "<a href='/openstack'>OpenStack</a>"
+            },
+            {
+              "list_item_type": "bullet",
+              "content": "<a href='https://ubuntu.com/ceph'>Ceph</a>"
+            },
+            {
+              "list_item_type": "bullet",
+              "content": "<a href='https://maas.io'>MAAS</a>"
+            },
+            {
+              "list_item_type": "bullet",
+              "content": "<a href='https://canonical.com/lxd'>LXD</a>"
+            },
+            {
+              "list_item_type": "bullet",
+              "content": "<a href='/microcloud'>MicroCloud</a>"
+            },
+          ]
+        }
+      },
+      {
+        "type": "description",
+        "item": {
+          "type": "text",
+          "content": "* 数据来源：<a href='https://uptimeinstitute.com/uptime_assets/5f40588be8d57272f91e4526dc8f821521950b7bec7148f815b6612651d5a9b3-annual-outages-analysis-2023.pdf'>Uptime Institute 2023 年系统中断分析报告</a>"
+        }
+      },
+    ]
+  ) }}
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=true) -%}
+    {%- if slot == 'title' -%}
+      <h2>支持多元的应用程序</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <p>
+        您是否在基础设施之上运行工作负载？无论采用何种打包格式，您都能获得针对 3.6 万余个软件包以及所有 Canonical 旗下应用程序的全栈支持。
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">Snaps：容器化软件包</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>
+        无论您是在桌面设备、服务器还是 IoT 设备上运行，借助快照，都能确保工作负载的完整集成、安全性与互操作性。针对<a href="https://snapcraft.io/publisher/canonical">快照商店</a>上所有由 Canonical 维护的快照软件包，您可获得全栈支持。
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">Rocks</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>除了在 Canonical <a href="https://github.com/orgs/canonical/packages?ecosystem=container&tab=packages&ecosystem=container&q=charmed-">GitHub</a>、<a href="https://hub.docker.com/u/ubuntu/">Docker</a> 中心和 <a href="https://gallery.ecr.aws/ubuntu">Amazon ECR</a>中列出的、符合 <a href="https://opencontainers.org/">OCI</a> 标准的容器镜像外，您还可获得针对以下内容的全面支持：</p>
+      <ul class="u-text-max-width">
+        <li>
+          <a href="https://ubuntu.com/server/docs/about-rock-images">Rocks</a> 是 Canonical 推出的新一代符合 OCI 标准的容器镜像，基于 Ubuntu LTS 构建，且针对应用程序运行进行了优化。
         </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--4">对OpenStack、K8s、LXD、MAAS和Ceph的支持</h3>
-            <p class="p-matrix__desc">一个订阅即可获得Ubuntu和一系列基础设施的安全和支持服务。</p>
-          </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--4">NGINX和PostgreSQL的支持</h3>
-            <p class="p-matrix__desc">对开源数据库、LMA、云原生应用程序组合的企业级安全和支持服务。</p>
-          </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--4">企业级安全和审计</h3>
-            <p class="p-matrix__desc">
-              通过使用 <a href="https://www.ubuntu.com/security/esm">ESM</a>、<a href="https://www.ubuntu.com/server/livepatch">Livepatch</a>和<a href="/landscape">Landscape</a>服务来进行安全修补，审计和合规报告。
-            </p>
-          </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--4">合规、认证和加固</h3>
-            <p class="p-matrix__desc">
-              Ubuntu使用<a href="https://www.ubuntu.com/security/certifications#fips">FIPS 140-2认证模块，</a><a href="https://www.ubuntu.com/security/certifications#cis">CIS加固</a>和<a href="https://www.ubuntu.com/security/certifications#common-criteria">通用标准EAL2认证</a>推动您的关键任务工作负载。
-            </p>
-          </div>
-        </li>
-        <li class="p-matrix__item">
-          <div class="p-matrix__content">
-            <h3 class="p-matrix__title p-heading--4">开源托管</h3>
-            <p class="p-matrix__desc">
-              通过托管的<a href="https://www.ubuntu.com/openstack/managed">OpenStack</a>、<a href="https://www.ubuntu.com/kubernetes/managed">Kubernetes</a>和<a href="https://www.ubuntu.com/managed">Apps</a>随时开展您的工作负载。
-            </p>
-          </div>
+        <li>
+          <a href="https://ubuntu.com/engage/chiselled-ubuntu-images-for-containers">Chiselled Ubuntu</a> 是 Canonical 推出的无发行版容器镜像，仅包含运行所需的最精简依赖项。
         </li>
       </ul>
-      <p>
-        <a href="https://assets.ubuntu.com/v1/53e01098-Canonical.Technical.Support.Handbook.04.07.22.pdf">阅读Canonical技术支持手册</a>
-      </p>
-    </div>
-  </section>
+    {%- endif -%}
 
-  <section class="p-strip" id="apps-support">
-    <div class="row">
-      <h2>应用软件的支持</h2>
-      <p>通过订阅SLA可在确保的快速响应时间的同时获得对开源应用程序的全栈支持。无论关键应用程序在哪里运行，都可以快速解决其的技术支持问题。</p>
-    </div>
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">Charms：基于 Juju 的软件运算符</h3>
+    {%- endif -%}
 
-    {% include "shared/_security-patching-logo-cloud.html" %}
+    {%- if slot == 'list_item_description_3' -%}
+      <p>借助 <a href="https://juju.is/">Juju</a>（一款面向软件运算符的开源编排引擎），彻底变革分布式系统中软件运维的速度与质量。Juju 能够在任意基础设施上，以任意规模实现应用程序的部署、集成与生命周期管理。</p>
+      <p>针对所有由 Canonical 维护的 Charms（即封装了业务逻辑的运算符），您可获得全面支持。这类运算符以可复用软件包的形式存在，能将应用生命周期的各个环节都实现自动化。</p>
+    {%- endif -%}
+  {%- endcall -%}
 
+  {{ vf_divided_section(
+    title={
+      "text": "Ubuntu Pro + 支持的热门用例",
+    },
+    blocks=[
+    {
+      "type": "divided-block",
+      "bullet_type": "none",
+      "items": [
+            {
+              "title_text": "完全支持的数据解决方案",
+              "contents": [
+                {
+                  "type": "description",
+                  "padding": "shallow",
+                  "item": {
+                    "type": "text",
+                    "content": "简化运维工作并专注于创新，解决方案涵盖 <a href='https://canonical.com/data/spark'>Spark</a>、<a href='https://canonical.com/data/kafka'>Kafka®</a>、<a href='https://canonical.com/data/mongodb'>MongoDB®</a>、<a href='https://canonical.com/data/opensearch'>OpenSearch</a>、<a href='https://canonical.com/data/mysql'>MySQL</a> 和 <a href='https://canonical.com/data/postgresql'>PostgreSQL</a>。可预期的定价方案与专家级技术支持，助您自信扩展项目规模。"
+                  }
+                },
+                {
+                  "type": "logo-block",
+                  "item": {
+                    "is_fixed_width": true,
+                    "logos": [
+                      {
+                        "attrs": image(url="https://assets.ubuntu.com/v1/6e18d17f-apache-spark-logo.png",
+                                        alt="Apache Spark",
+                                        width="150",
+                                        height="256",
+                                        hi_def=True,
+                                        loading="lazy",
+                                        output_mode="attrs",
+                                        attrs={"class": "p-logo-section__logo"})
+                      },
+                      {
+                        "attrs": image(url="https://assets.ubuntu.com/v1/c2d27381-kafka.png",
+                                        alt="Kafka",
+                                        width="228",
+                                        height="256",
+                                        hi_def=True,
+                                        loading="lazy",
+                                        output_mode="attrs",
+                                        attrs={"class": "p-logo-section__logo"})
+                      },
+                      {
+                        "attrs": image(url="https://assets.ubuntu.com/v1/662c72e2-mongodb.png",
+                                        alt="MongoDB",
+                                        width="425",
+                                        height="512",
+                                        hi_def=True,
+                                        loading="lazy",
+                                        output_mode="attrs",
+                                        attrs={"class": "p-logo-section__logo"})
+                      },
+                      {
+                        "attrs": image(url="https://assets.ubuntu.com/v1/7cf825b5-opensearch-logo.png",
+                                        alt="Opensearch",
+                                        width="407",
+                                        height="384",
+                                        hi_def=True,
+                                        loading="lazy",
+                                        output_mode="attrs",
+                                        attrs={"class": "p-logo-section__logo"})
+                      },
+                      {
+                        "attrs": image(url="https://assets.ubuntu.com/v1/0c7a5744-mysql-logo.png",
+                                        alt="MySQL",
+                                        width="490",
+                                        height="512",
+                                        hi_def=True,
+                                        loading="lazy",
+                                        output_mode="attrs",
+                                        attrs={"class": "p-logo-section__logo"})
+                      },
+                      {
+                        "attrs": image(url="https://assets.ubuntu.com/v1/3fb0b600-postgresql-logo.png",
+                                        alt="PostgreSQL",
+                                        width="67",
+                                        height="192",
+                                        hi_def=True,
+                                        loading="lazy",
+                                        output_mode="attrs",
+                                        attrs={"class": "p-logo-section__logo"})
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "cta-block",
+                  "item": {
+                    "link": {
+                      "content_html": "关于数据解决方案 &rsaquo;",
+                      "attrs": {
+                        "href": "https://canonical.com/data"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title_text": "模块化 MLOps 平台",
+              "contents": [
+                {
+                  "type": "description",
+                  "padding": "shallow",
+                  "item": {
+                    "type": "text",
+                    "content": "在 Canonical MLOps 体系中，<a href='https://canonical.com/mlops/kubeflow/what-is-kubeflow'>Kubeflow</a> 和 <a href='https://canonical.com/mlops/mlflow'>MLFlow</a> 等领先的开源工具兼具安全性与支持保障。从实验阶段到生产落地，让 Canonical 助力您的 AI 项目规模化推进。由我们的团队负责维护工作，并在出现任何意外情况时为您的团队提供支持。"
+                  }
+                },
+                {
+                  "type": "logo-block",
+                  "item": {
+                    "is_fixed_width": true,
+                    "logos": [
+                      {
+                        "attrs": image(url="https://assets.ubuntu.com/v1/fd33f39c-kubeflow_logo.png",
+                                        alt="Kubeflow",
+                                        width="306",
+                                        height="312",
+                                        hi_def=True,
+                                        loading="lazy",
+                                        output_mode="attrs",
+                                        attrs={"class": "p-logo-section__logo"})
+                      },
+                      {
+                        "attrs": image(url="https://assets.ubuntu.com/v1/3e9fb809-mlflow_logo.png",
+                                        alt="MLflow",
+                                        width="221",
+                                        height="312",
+                                        hi_def=True,
+                                        loading="lazy",
+                                        output_mode="attrs",
+                                        attrs={"class": "p-logo-section__logo"})
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "cta-block",
+                  "item": {
+                    "link": {
+                      "content_html": "关于 Canonical AI 及 MLOps &rsaquo;",
+                      "attrs": {
+                        "href": "/ai"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title_text": "高性价比的私有云和混合云",
+              "contents": [
+                {
+                  "type": "description",
+                  "padding": "shallow",
+                  "item": {
+                    "type": "text",
+                    "content": "以 <a href='/openstack'>Canonical OpenStack</a> 构建高性价比的混合多云基础设施，在专家团队的全程支持下高枕无忧。"
+                  }
+                },
+                {
+                  "type": "description",
+                  "padding": "shallow",
+                  "item": {
+                    "type": "text",
+                    "content": "您是否希望只需一条简单命令，就能在几分钟内部署好您的云环境？<a href='/microcloud'>Canonical MicroCloud</a> 是一款简单灵活的云解决方案，针对便捷且可重复的部署流程进行了优化。"
+                  }
+                },
+                {
+                  "type": "logo-block",
+                  "padding": "shallow",
+                  "item": {
+                    "is_fixed_width": true,
+                    "logos": [
+                      {
+                        "attrs": image(url="https://assets.ubuntu.com/v1/edf269a5-openstack_logo.png",
+                                        alt="OpenStack",
+                                        width="384",
+                                        height="312",
+                                        hi_def=True,
+                                        loading="lazy",
+                                        output_mode="attrs",
+                                        attrs={"class": "p-logo-section__logo"})
+                      },
+                      {
+                        "attrs": image(url="https://assets.ubuntu.com/v1/ca14457f-microcloud_logo.png",
+                                        alt="MicroCloud",
+                                        width="393",
+                                        height="312",
+                                        hi_def=True,
+                                        loading="lazy",
+                                        output_mode="attrs",
+                                        attrs={"class": "p-logo-section__logo"})
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "description",
+                  "item": {
+                    "type": "html",
+                    "content": '<hr class="p-rule--muted" />'
+                  }
+                },
+                {
+                  "type": "cta-block",
+                  "item": {
+                    "primary": {
+                      "content_html": "联系咨询需求",
+                      "attrs": {
+                        "href": "/contact"
+                      }
+                    },
+                    "secondaries": [
+                      {
+                        "content_html": "立即获取支持",
+                        "attrs": {
+                          "href": "https://ubuntu.com/pro/subscribe"
+                        }
+                      }
+                    ],
+                  }
+                }
+              ]
+            }
+      ]
+    },
+  ],
+  ) 
+  }}
+
+  <section class="p-section">
+    <hr class="p-rule is-fixed-width" />
     <div class="u-fixed-width">
-      <p>
-        <a href="/contact" class="p-button--positive">联系我们</a>
-      </p>
-      <p>
-        阅读<a href="https://ubuntu.com/engage/ros-support">通过ROS ESM支持ROS</a>的皮书
-      </p>
+      <div class="p-section--shallow">
+        <h2>服务级别</h2>
+      </div>
     </div>
-
-  </section>
-
-  <section class="p-strip--light is-deep" id="pro-all">
-    <div class="u-fixed-width">
-      <h3 class="p-heading--4 u-align--center">Ubuntu Pro</h3>
-      <table class="p-table">
+    <div class="u-fixed-width u-table-scroll--medium u-table-scroll--small">
+      <table aria-label="Ubuntu Pro security and compliance" class="u-table-horizontal-scroll__table" style="table-layout: unset">
         <thead>
           <tr>
+            <th style="width: 50%;"></th>
             <th>
-              <em>解决方案</em>
+              <span class="u-text--muted">自助支持<sup>1</sup></span>
             </th>
-            <th>
-              <em>范围</em>
+            <th colspan="2">
+              <span class="u-text--muted">工作日支持</span>
             </th>
-            <th class="u-align--center">Ubuntu Pro (仅基础设施) + 支持</th>
-            <th class="u-align--center">Ubuntu Pro + 基础设施支持</th>
-            <th class="u-align--center">Ubuntu Pro + 支持</th>
+            <th colspan="2">
+              <span class="u-text--muted">全天候支持</span>
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td rowspan="3">安全补丁</td>
-            <td>Ubuntu Main软件仓库</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Ubuntu Universe软件仓库</td>
-            <td class="u-align--center">&ndash;</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Kernel实时补丁</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="7">7x24小时支持</td>
-            <td>Ubuntu服务器版系统</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Kubernetes</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>LXD</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>OpenStack</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Ceph/Swift</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>MAAS</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>开源应用程序</td>
-            <td class="u-align--center">&ndash;</td>
-            <td class="u-align--center">&ndash;</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>系统管理</td>
             <td>
-              <a href="/landscape">Landscape</a>
+              <strong>覆盖时长</strong>
             </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
+            <td>不适用</td>
+            <td colspan="2">
+              5x8 工作日时全天候<sup>2</sup>
             </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="3">
-              <a href="https://ubuntu.com/security/certifications">合规和认证</a>
-            </td>
-            <td>
-              <a href="https://ubuntu.com/security/certifications#fips">FIPS 140-2 Level 1</a> 认证的加密模块
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
+            <td colspan="2">
+              7x24 全年全天候3<sup>3</sup>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="https://ubuntu.com/security/certifications#cis">CIS Benchmark</a>
+              <strong>可用渠道</strong>
             </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
+            <td>
+              <a href="https://support-portal.canonical.com/">知识库</a>
             </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
+            <td colspan="2">
+              <a href="https://support-portal.canonical.com/">Support portal</a>, 包括 <a href="https://support-portal.canonical.com/">知识库</a>, 电话和工单
             </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
+            <td colspan="2">
+              <a href="https://support-portal.canonical.com/">Support portal</a>, 包括 <a href="https://support-portal.canonical.com/">知识库</a>, 电话和工单
             </td>
           </tr>
           <tr>
             <td>
-              <a href="https://ubuntu.com/security/certifications#common-criteria">Common Criteria /EAL2</a>
+              <strong>允许的案例数量</strong>
             </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
+            <td>不适用</td>
+            <td colspan="2">无限制</td>
+            <td colspan="2">无限制</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>响应时间</strong>
             </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
+            <td>
+              <strong>首次响应</strong>
             </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
+            <td>
+              <strong>首次响应</strong>
             </td>
+            <td>
+              <strong>持续响应<sup>4</sup></strong>
+            </td>
+            <td>
+              <strong>首次响应</strong>
+            </td>
+            <td>
+              <strong>持续响应<sup>4</sup></strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>1 级严重程度：</strong>生产服务中断。对生产环境中核心功能造成严重影响
+            </td>
+            <td>不适用</td>
+            <td>4 个工作日小时</td>
+            <td>2 个工作日小时</td>
+            <td>1 小时</td>
+            <td>2 小时</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>2 级严重程度：</strong>生产环境中核心功能严重受损。
+            </td>
+            <td>不适用</td>
+            <td>8 个工作日小时</td>
+            <td>8 个工作日小时</td>
+            <td>2 小时</td>
+            <td>8 个工作日小时</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>3 级严重程度：</strong>问题对生产环境造成中低程度影响。
+            </td>
+            <td>不适用</td>
+            <td>12 个工作日小时</td>
+            <td>每周</td>
+            <td>6 小时</td>
+            <td>每周</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>4 级严重程度：</strong>对生产环境影响极低或无影响的非紧急请求。
+            </td>
+            <td>不适用</td>
+            <td>24 个工作日小时</td>
+            <td>不适用</td>
+            <td>12 小时</td>
+            <td>不适用</td>
           </tr>
         </tbody>
       </table>
+    </div>
+    <hr class="p-rule--muted is-fixed-width" />
+    <div class="grid-row--50-50">
+      <div class="grid-col"></div>
+      <ol class="grid-col">
+        <li>
+          包含在任何 <a href='/pro'>Ubuntu Pro</a> 订阅中
+        </li>
+        <li>
+          标准工作时间定义为 贵组织总部所在地的周一至周五，上午 8:00 至下午 6:00。周末和节假日除外。
+        </li>
+        <li>
+          全年全天候支持仅适用于 1 级严重程度的问题。其他严重程度级别的问题将在标准工作时间内处理。若发生 1 级严重程度的问题，我们将与您协作，直至问题解决，或通过临时解决方案得到缓解。一旦生产环境中的服务或核心功能恢复可用，我们将相应调整严重程度级别。我们认为，在功能恢复的整个过程中，您应保持可联络状态。
+        </li>
+        <li>
+          Canonical 支持团队在响应客户咨询后，将在规定的时间范围内提供后续更新。这些持续的响应时间范围根据问题的严重程度级别来界定，且从最新的严重程度更新时间点开始计算。
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=true) -%}
+    {%- if slot == 'title' -%}
+      <h2>更多支持服务类型</h2>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">专业支持服务</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
       <p>
-        <a href="/pricing/pro" class="p-button--positive">查看完整价格</a>
+        由一名专属支持工程师或专属技术客户经理将为您提供支持，支持方式包括远程支持或现场支持。他们将成为您的专属专家，是您所有支持咨询与问题升级的首要且最终对接人，能针对您独特的平台及配置需求，提供量身定制的指导。
       </p>
-    </div>
-  </section>
+    {%- endif -%}
 
-  <section class="p-strip is-deep" id="get-ua">
-    <div class="u-fixed-width">
-      <h2>在AWS，Azure和GCP上通过Ubuntu Pro获取支持</h2>
-      <p class="u-sv3">在亚马逊AWS和微软Azure以及谷歌Cloud上，您可以购买默认包含最全面的安全性和合规性功能的Ubuntu Pro。</p>
-    </div>
-    <div class="row p-divider u-equal-height u-vertically-center u-sv3">
-      <div class="col-4">
-        <div class="u-sv2 u-align--center">
-          {{ image(url="https://assets.ubuntu.com/v1/a82add58-profile-aws.svg",
-                    alt="AWS",
-                    width="126",
-                    height="75",
-                    hi_def=True,
-                    loading="lazy",) | safe
-          }}
-        </div>
-        <p class="u-align--center">
-          <a href="https://www.ubuntu.com/aws">了解更多AWS上的Ubuntu Pro&nbsp;&rsaquo;</a>
-        </p>
-      </div>
-      <div class="col-4">
-        <div class="u-sv2 u-align--center">
-          {{ image(url="https://assets.ubuntu.com/v1/22fd6473-MicrosoftAzure_logo.svg",
-                    alt="Microsoft Azure",
-                    width="256",
-                    height="75",
-                    hi_def=True,
-                    loading="lazy",) | safe
-          }}
-        </div>
-        <p class="u-align--center">
-          <a href="https://www.ubuntu.com/azure">了解更多Azure上的Ubuntu Pro&nbsp;&rsaquo;</a>
-        </p>
-      </div>
-      <div class="col-4">
-        <div class="u-sv2 u-align--center">
-          {{ image (
-          url="https://assets.ubuntu.com/v1/6e176d9a-Google+Cloud+stacked.svg",
-          alt="Google cloud",
-          width="91",
-          height="75",
-          hi_def=True,
-          loading="lazy"
-          ) | safe
-          }}
-        </div>
-        <p class="u-align--center">
-          <a href="https://www.ubuntu.com/gcp">了解更多GCP上的Ubuntu Pro&nbsp;&rsaquo;</a>
-        </p>
-      </div>
-    </div>
-    <div class="u-fixed-width">
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">嵌入式服务</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>您是否已掌控自身的运维支持，且专注于快速修复漏洞？可直接对接 Canonical 工程团队，这是一支由社区成员组成的全球团队，在开源软件的维护与漏洞修复方面拥有多年经验。他们将为您的团队与上游开源社区之间搭建沟通桥梁。</p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">Legacy 支持</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
       <p>
-        如您是公有云厂商，<a href="/contact">欢迎与我们联系</a>。
+        您是否仍在运行 Ubuntu 14.04 系统，且需要时间迁移至更新版本？
+        <br />
+        通过直接获取 Canonical 提供的协助，确保您平台的稳定性，同时获得足够时间迁移至更新版本。
       </p>
-    </div>
-  </section>
+      <div class="p-cta-block">
+        <a href="https://ubuntu.com/blog/canonical-expands-long-term-support-to-12-years-starting-with-ubuntu-14-04-lts">Canonical Legacy Support &rsaquo;</a>
+      </div>
+    {%- endif -%}
 
-  <section class="p-strip--light is-deep">
-    <div class="u-fixed-width">
-      <h2 class="u-sv3">2种支持级别可供选择</h2>
-      <p>从2个SLA支持级别中选择：7X24小时无休支持或5x24工作日支持</p>
-      <table class="p-table">
-        <thead>
-          <tr>
-            <th>&nbsp;</th>
-            <th class="u-align--center">UBUNTU PRO + 工作日标准支持</th>
-            <th class="u-align--center">UBUNTU PRO + 7x24高级支持</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>电话和工单支持</td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-            <td class="u-align--center">
-              <div class="lazy-loaded">
-                <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_16,h_16/https://assets.ubuntu.com/v1/f1a7515d-tick-darkaubergine.svg"
-                     alt="Included" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>SLA 1 响应时间</td>
-            <td class="u-align--center">4 小时</td>
-            <td class="u-align--center">1 小时</td>
-          </tr>
-          <tr>
-            <td>SLA 2 响应时间</td>
-            <td class="u-align--center">8个工作日小时</td>
-            <td class="u-align--center">2 小时</td>
-          </tr>
-          <tr>
-            <td>SLA 3 响应时间</td>
-            <td class="u-align--center">12个工作日小时</td>
-            <td class="u-align--center">6 小时</td>
-          </tr>
-          <tr>
-            <td>SLA 4 响应时间</td>
-            <td class="u-align--center">24个工作日小时</td>
-            <td class="u-align--center">12 小时</td>
-          </tr>
-        </tbody>
-      </table>
+    {%- if slot == 'list_item_title_4' -%}
+      <h3 class="p-heading--5">升级至托管服务</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_4' -%}
       <p>
-        不确定哪个支持级别适合您？如果您有关于支持级别的问题，请<a class="js-invoke-modal" href="/contact">联系我们</a>。
+        若遭遇紧急问题，可通过“应急支持服务”获取 Canonical 工程师提供的强化指导；您也可选择我们的<a href="https://ubuntu.com/managed">完全托管</a>解决方案，由我们负责您的环境从搭建到正式投产的全流程运营。
       </p>
-    </div>
-  </section>
-
-  <section class="p-strip">
-    <div class="u-fixed-width p-logo-section has-misaligned-images">
-      <h2 class="u-align--center">我们的合作伙伴</h2>
-      <p class="p-logo-section__title u-align--center">
-        我们的合作伙伴为您的多样化的Ubuntu操作系统采购需求提供帮助。您也可以<a href="/contact">联系我们</a>以获得合作伙伴的联系信息。
+      <p>
+        我们的托管服务产品覆盖整个基础设施层（包括 MAAS、Ceph、OpenStack、MicroCloud、LXD、Kubernetes），同时也涵盖大量应用程序（包括 Kafka®、Kubeflow、Grafana、PostgreSQL 及其他众多应用）。
       </p>
-      <div class="p-logo-section__items" style="justify-content:center;">
-        <div class="p-logo-section__item">
-          {{ image(url="https://assets.ubuntu.com/v1/1fb7ac1b-shenzhen-eden.png",
-                    alt="Shenzhen Eden",
-                    width="547",
-                    height="288",
-                    hi_def=True,
-                    loading="lazy",
-                    attrs={"class": "p-logo-section__logo"},) | safe
-          }}
-        </div>
-        <div class="p-logo-section__item">
-          {{ image(url="https://assets.ubuntu.com/v1/5989a4f3-beijing-comlan-logo.jpg",
-                    alt="Beijing ComLan",
-                    width="892",
-                    height="288",
-                    hi_def=True,
-                    loading="lazy",
-                    attrs={"class": "p-logo-section__logo"},) | safe
-          }}
-        </div>
+      <div class="p-cta-block">
+        <a href="https://ubuntu.com/managed">关于托管服务 &rsaquo;</a>
       </div>
-    </div>
-  </section>
+    {%- endif -%}
+  {%- endcall -%}
 
-  {% include "shared/_education-discount.html" %}
-
-  <section class="p-strip" id="hw-certified">
-    <div class="row u-equal-height">
-      <div class="col-8">
-        <h2>Ubuntu认证硬件</h2>
-        <p>Ubuntu认证的硬件已经通过了广泛的测试和审查过程，以确保Ubuntu可以很好地运行并且可以为您的业务做好准备。我们与OEM紧密合作，共同使Ubuntu在各种设备上可用。</p>
-        <p>通过Ubuntu官方认证的硬件，如服务器、笔记本和工作站、IoT物联网设备等等可以获得更好的支持，开箱即用的体验，且无需为繁琐的系统组件驱动和兼容性而担忧。</p>
-        <p>
-          <a href="/certified">浏览所有认证的硬件&nbsp;›</a>
-        </p>
-      </div>
-
-      <div class="col-4 u-hide--small u-align--center u-vertically-center">
-        {{ image(url="https://assets.ubuntu.com/v1/57d2e0de-Certified.svg",
-                alt="",
-                width="140",
-                height="190",
-                hi_def=True,
-                loading="auto") | safe
-        }}
-      </div>
-    </div>
-  </section>
-
-  <section id="community-support"
-           class="p-strip--light is-deep is-shallow is-bordered">
-    <div class="row u-equal-height">
-      <div class="col-8">
-        <h2>社区支持</h2>
-        <p>Ubuntu是世界上最大的开源项目之一，因此可以很容易从各种各样的来源中获得支持。看看社区论坛——正在使用Ubuntu的全球的爱好者们可以与您分享他们的专业知识和经验。</p>
-        <p>
-          <a href="https://www.ubuntu.com/support/community-support">了解更多社区支持&nbsp;&rsaquo;</a>
-        </p>
-      </div>
-      <div class="col-4 u-hide--small u-align--center u-vertically-center">
-        {{ image(url="https://assets.ubuntu.com/v1/5552afb7-community-support.svg",
-                alt="Community",
-                width="150",
-                height="150",
-                hi_def=True,
-                loading="lazy") | safe
-        }}
-      </div>
+  <hr class="p-rule is-fixed-width" />
+  
+  <section class="p-strip is-deep">
+    <div class="u-fixed-width">
+      <h2>
+        为您的开源技术栈取得全面支持。
+        <br />
+        <a href="/contact">填表咨询 &rsaquo;</a>
+      </h2>
     </div>
   </section>
 
