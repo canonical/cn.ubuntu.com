@@ -1085,12 +1085,12 @@
   resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.8.4.tgz#38fd82f35d98ab0476bc106b0d813a2719bae26c"
   integrity sha512-mCPcaqscSt/6gbT9Pmf/VDhTmyGC192xz7N+xLs18hpJuFSrNK44vT9jGwnOS5WsdDW2B7tRc78KioTtATPk2g==
 
-"@canonical/global-nav@3.7.3":
-  version "3.7.3"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.7.3.tgz#cac51536f54c88298571301e12504daa3408c1d3"
-  integrity sha512-1G4A2dgIHcqOCWfNJ5F9MWmXNSVGF39Nx53bIk2imiGXGALhDCOGFcnELx0q5uKP2aIy1pMd3D58qX93yX8tzg==
+"@canonical/global-nav@3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.8.0.tgz#3f016b337f93a2b50fccb0cbf8f13c9a10dcee5a"
+  integrity sha512-ioJE4tUENS2L8ubD/lUAA+CvIrtqXB1RTv89vyAW/6eDJWRW8U9Fks+SdKoeoa/IwOtzSC02AOWTPo7rxgj+Mw==
   dependencies:
-    vanilla-framework "4.26.1"
+    vanilla-framework "4.35.0"
 
 "@canonical/latest-news@^2.2.1":
   version "2.2.1"
@@ -5147,15 +5147,15 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-framework@4.26.1:
-  version "4.26.1"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.26.1.tgz#d076f26a7215cf8b0babae81753ef535e6486257"
-  integrity sha512-7m3qX4rm+I+go5mNjzO8gkp2qxr5m4n1jAxTh+bJ8hx/Wrsx3hiWDmJHylZ2GqjeqdtOiidvWgU2ToZJK6ELUg==
+vanilla-framework@4.35.0:
+  version "4.35.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.35.0.tgz#b01bbb525ad3211690c9f10580ca2e00a37a8ab1"
+  integrity sha512-vF8M9vsXiOpJEonFXiTVhY0rXOzNtoWpkhBcCVpyPb4+oHBx0/FaNcX5GAiQpfdT6Q/AAeRYyWwRUDObq6R8uw==
 
-vanilla-framework@4.41.0:
-  version "4.41.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.41.0.tgz#bc981035c536bd6cca5b6f3ded2abad679231499"
-  integrity sha512-UMCb+1+kfSoMFmXwwfjR/oyliojQ6pjOsBYwSRN6HgNtL14KhQc0VECYnv4YlkNTAJqQLR7VFwq95aXJrSrJSw==
+vanilla-framework@4.44.0:
+  version "4.44.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.44.0.tgz#0e8c495207b7abdadd6764258712b48f37964134"
+  integrity sha512-+TKWpSsWDMbbO/pUTEImeDOhe2pIztx/lseg79vIoVbnluxJ8u2+EbE8A1q4MrGMGjQcpTVwXoudJEgIkdMHTw==
 
 verbalize@^0.1.2:
   version "0.1.2"
