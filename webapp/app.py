@@ -1,4 +1,3 @@
-from datetime import timedelta
 import os
 
 import flask
@@ -36,12 +35,6 @@ app = FlaskBase(
     template_500="500.html",
 )
 
-# Configure Flask session
-app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=365)
-app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
-app.config["SESSION_COOKIE_HTTPONLY"] = True
-app.config["SESSION_COOKIE_SECURE"] = True
-
 
 # Initialize Flask-Caching
 app.config["CACHE_TYPE"] = "SimpleCache"
@@ -57,14 +50,12 @@ def set_cache(key, value, timeout):
     cache.set(key, value, timeout)
 
 
-cookie_service = None
-if not app.debug:
-    cookie_service = CookieConsent().init_app(
-        app,
-        get_cache_func=get_cache,
-        set_cache_func=set_cache,
-        start_health_check=True,
-    )
+cookie_service = CookieConsent().init_app(
+    app,
+    get_cache_func=get_cache,
+    set_cache_func=set_cache,
+    start_health_check=True,
+)
 
 # ChoiceLoader attempts loading templates from each path in successive order
 loader = ChoiceLoader(
