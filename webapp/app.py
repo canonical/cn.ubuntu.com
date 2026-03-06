@@ -48,6 +48,7 @@ def get_cache(key):
 def set_cache(key, value, timeout):
     cache.set(key, value, timeout)
 
+
 # ChoiceLoader attempts loading templates from each path in successive order
 loader = ChoiceLoader(
     [
