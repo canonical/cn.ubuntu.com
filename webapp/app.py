@@ -1,7 +1,7 @@
 import os
 
 import flask
-import talisker
+import requests
 import yaml
 from canonicalwebteam import image_template
 from canonicalwebteam.blog import BlogAPI, BlogViews, build_blueprint
@@ -62,7 +62,7 @@ app.jinja_loader = loader
 
 # Engage pages and takeovers from Discourse
 # This section needs to provide takeover data for /
-session = talisker.requests.get_session()
+session = requests.Session()
 
 discourse_api = DiscourseAPI(
     base_url="https://discourse.ubuntu.com/",
@@ -145,7 +145,7 @@ app.add_url_rule("/takeovers", view_func=takeovers_index)
 
 
 template_finder_view = TemplateFinder.as_view("template_finder")
-session = talisker.requests.get_session()
+session = requests.Session()
 app.add_url_rule("/", view_func=template_finder_view)
 app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
