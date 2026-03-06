@@ -8,7 +8,7 @@ from canonicalwebteam.blog import BlogAPI, BlogViews, build_blueprint
 from canonicalwebteam.discourse import DiscourseAPI, EngagePages
 from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
-from canonicalwebteam.cookie_service import CookieConsent
+# from canonicalwebteam.cookie_service import CookieConsent
 from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
 
