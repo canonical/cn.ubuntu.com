@@ -52,7 +52,6 @@ COPY --from=build-js /srv/node_modules/vanilla-framework/templates node_modules/
 
 # Set revision ID
 ARG BUILD_ID
-ENV TALISKER_REVISION_ID "${BUILD_ID}"
 
 # Setup commands to run server
 ENTRYPOINT ["./entrypoint"]

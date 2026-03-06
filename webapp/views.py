@@ -3,9 +3,9 @@ import math
 import re
 
 #  Packages
-import talisker.requests
+import requests
 
-session = talisker.requests.get_session()
+session = requests.Session()
 
 
 def build_engage_index(engage_docs):
