@@ -8,7 +8,6 @@ from canonicalwebteam.blog import BlogAPI, BlogViews, build_blueprint
 from canonicalwebteam.discourse import DiscourseAPI, EngagePages
 from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
-# from canonicalwebteam.cookie_service import CookieConsent
 from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
 
@@ -48,14 +47,6 @@ def get_cache(key):
 
 def set_cache(key, value, timeout):
     cache.set(key, value, timeout)
-
-
-# cookie_service = CookieConsent().init_app(
-#     app,
-#     get_cache_func=get_cache,
-#     set_cache_func=set_cache,
-#     start_health_check=True,
-# )
 
 # ChoiceLoader attempts loading templates from each path in successive order
 loader = ChoiceLoader(
