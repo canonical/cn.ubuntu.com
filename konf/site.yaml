@@ -23,7 +23,7 @@ env:
 
 useProxy: false
 
-readinessPath: "/_status/ping"
+readinessPath: "/_status/check"
 
 extraHosts:
   - domain: ubuntu-china.cn
