@@ -184,7 +184,9 @@ class SamlRelationData(BaseModel):
         return result
 
     @classmethod
-    def from_relation_data(cls, relation_data: ops.RelationDataContent) -> "SamlRelationData":
+    def from_relation_data(
+        cls, relation_data: ops.RelationDataContent
+    ) -> "SamlRelationData":
         """Get a SamlRelationData wrapping the relation data.
 
         Arguments:
@@ -232,7 +234,9 @@ class SamlDataAvailableEvent(ops.RelationEvent):
     def saml_relation_data(self) -> SamlRelationData:
         """Get a SamlRelationData for the relation data."""
         assert self.relation.app
-        return SamlRelationData.from_relation_data(self.relation.data[self.relation.app])
+        return SamlRelationData.from_relation_data(
+            self.relation.data[self.relation.app]
+        )
 
     @property
     def entity_id(self) -> str:
@@ -276,7 +280,9 @@ class SamlRequires(ops.Object):
 
     on = SamlRequiresEvents()
 
-    def __init__(self, charm: ops.CharmBase, relation_name: str = DEFAULT_RELATION_NAME) -> None:
+    def __init__(
+        self, charm: ops.CharmBase, relation_name: str = DEFAULT_RELATION_NAME
+    ) -> None:
         """Construct.
 
         Args:
@@ -286,7 +292,9 @@ class SamlRequires(ops.Object):
         super().__init__(charm, relation_name)
         self.charm = charm
         self.relation_name = relation_name
-        self.framework.observe(charm.on[relation_name].relation_changed, self._on_relation_changed)
+        self.framework.observe(
+            charm.on[relation_name].relation_changed, self._on_relation_changed
+        )
 
     def _on_relation_changed(self, event: ops.RelationChangedEvent) -> None:
         """Event emitted when the relation has changed.
@@ -296,7 +304,9 @@ class SamlRequires(ops.Object):
         """
         assert event.relation.app
         if event.relation.data[event.relation.app]:
-            self.on.saml_data_available.emit(event.relation, app=event.app, unit=event.unit)
+            self.on.saml_data_available.emit(
+                event.relation, app=event.app, unit=event.unit
+            )
 
     def get_relation_data(self) -> typing.Optional[SamlRelationData]:
         """Retrieve the relation data.
@@ -317,7 +327,9 @@ class SamlProvides(ops.Object):
         relations: list of charm relations.
     """
 
-    def __init__(self, charm: ops.CharmBase, relation_name: str = DEFAULT_RELATION_NAME) -> None:
+    def __init__(
+        self, charm: ops.CharmBase, relation_name: str = DEFAULT_RELATION_NAME
+    ) -> None:
         """Construct.
 
         Args:
@@ -337,7 +349,9 @@ class SamlProvides(ops.Object):
         """
         return list(self.model.relations[self.relation_name])
 
-    def update_relation_data(self, relation: ops.Relation, saml_data: SamlRelationData) -> None:
+    def update_relation_data(
+        self, relation: ops.Relation, saml_data: SamlRelationData
+    ) -> None:
         """Update the relation data.
 
         Args:

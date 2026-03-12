@@ -98,7 +98,9 @@ BUILTIN_JUJU_KEYS = {"ingress-address", "private-address", "egress-subnets"}
 DEFAULT_INTEGRATION_NAME = "openfga"
 
 
-def _update_relation_app_databag(app: Application, relation: Relation, data: Dict) -> None:
+def _update_relation_app_databag(
+    app: Application, relation: Relation, data: Dict
+) -> None:
     if relation is None:
         return
 
@@ -129,7 +131,9 @@ class DatabagModel(BaseModel):
         """Load this model from a Juju databag."""
         try:
             data = {
-                k: cls._load_value(v) for k, v in databag.items() if k not in BUILTIN_JUJU_KEYS
+                k: cls._load_value(v)
+                for k, v in databag.items()
+                if k not in BUILTIN_JUJU_KEYS
             }
         except json.JSONDecodeError:
             logger.error(f"invalid databag contents: expecting json. {databag}")
@@ -148,7 +152,9 @@ class OpenfgaProviderAppData(DatabagModel):
     """Openfga requirer application databag model."""
 
     store_id: Optional[str] = Field(description="The store_id", default=None)
-    token: Optional[str] = Field(description="The API token", default=None, exclude=True)
+    token: Optional[str] = Field(
+        description="The API token", default=None, exclude=True
+    )
     token_secret_id: Optional[str] = Field(
         description="The juju secret_id which can be used to retrieve the API token",
         default=None,
@@ -209,7 +215,9 @@ class OpenFGARequires(Object):
         self.relation_name = relation_name
         self.store_name = store_name
 
-        self.framework.observe(charm.on[relation_name].relation_created, self._on_relation_created)
+        self.framework.observe(
+            charm.on[relation_name].relation_created, self._on_relation_created
+        )
         self.framework.observe(
             charm.on[relation_name].relation_changed,
             self._on_relation_changed,
@@ -225,7 +233,9 @@ class OpenFGARequires(Object):
             return
 
         requirer_data = OpenfgaRequirerAppData(store_name=self.store_name)
-        _update_relation_app_databag(self.app, event.relation, requirer_data.model_dump())
+        _update_relation_app_databag(
+            self.app, event.relation, requirer_data.model_dump()
+        )
 
     def _on_relation_changed(self, event: RelationChangedEvent) -> None:
         """Handle the relation-changed event."""
@@ -246,9 +256,13 @@ class OpenFGARequires(Object):
 
     def _get_relation(self, relation_id: Optional[int] = None) -> Optional[Relation]:
         try:
-            relation = self.model.get_relation(self.relation_name, relation_id=relation_id)
+            relation = self.model.get_relation(
+                self.relation_name, relation_id=relation_id
+            )
         except TooManyRelatedAppsError:
-            raise RuntimeError("More than one relations are defined. Please provide a relation_id")
+            raise RuntimeError(
+                "More than one relations are defined. Please provide a relation_id"
+            )
         if not relation or not relation.app:
             return None
         return relation

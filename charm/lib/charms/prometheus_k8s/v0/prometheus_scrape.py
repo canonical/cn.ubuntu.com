@@ -414,7 +414,12 @@ class PrometheusConfig:
     }
 
     topology_relabel_config_wildcard = {
-        "source_labels": ["juju_model", "juju_model_uuid", "juju_application", "juju_unit"],
+        "source_labels": [
+            "juju_model",
+            "juju_model_uuid",
+            "juju_application",
+            "juju_unit",
+        ],
         "separator": "_",
         "target_label": "instance",
         "regex": "(.*)",
@@ -442,7 +447,9 @@ class PrometheusConfig:
             a dictionary containing a sanitized job specification.
         """
         sanitized_job = DEFAULT_JOB.copy()
-        sanitized_job.update({key: value for key, value in job.items() if key in ALLOWED_KEYS})
+        sanitized_job.update(
+            {key: value for key, value in job.items() if key in ALLOWED_KEYS}
+        )
         return sanitized_job
 
     @staticmethod
@@ -535,11 +542,14 @@ class PrometheusConfig:
                         modified_job["static_configs"] = [static_config.copy()]
                         modified_static_config = modified_job["static_configs"][0]
                         modified_static_config["targets"] = [
-                            target.replace("*", unit_hostname) for target in wildcard_targets
+                            target.replace("*", unit_hostname)
+                            for target in wildcard_targets
                         ]
 
                         unit_num = unit_name.split("/")[-1]
-                        job_name = modified_job.get("job_name", "unnamed-job") + "-" + unit_num
+                        job_name = (
+                            modified_job.get("job_name", "unnamed-job") + "-" + unit_num
+                        )
                         modified_job["job_name"] = job_name
                         modified_job["metrics_path"] = unit_path + (
                             job.get("metrics_path") or "/metrics"
@@ -563,13 +573,15 @@ class PrometheusConfig:
             if non_wildcard_static_configs:
                 modified_job = job.copy()
                 modified_job["static_configs"] = non_wildcard_static_configs
-                modified_job["metrics_path"] = modified_job.get("metrics_path") or "/metrics"
+                modified_job["metrics_path"] = (
+                    modified_job.get("metrics_path") or "/metrics"
+                )
 
                 if topology:
                     # Instance relabeling for topology should be last in order.
-                    modified_job["relabel_configs"] = modified_job.get("relabel_configs", []) + [
-                        PrometheusConfig.topology_relabel_config
-                    ]
+                    modified_job["relabel_configs"] = modified_job.get(
+                        "relabel_configs", []
+                    ) + [PrometheusConfig.topology_relabel_config]
 
                 modified_scrape_jobs.append(modified_job)
 
@@ -593,7 +605,9 @@ class PrometheusConfig:
         """
         # Make sure it's a valid url so urlparse could parse it.
         scheme = re.compile(r"^https?://")
-        sanitized = [am if scheme.search(am) else "http://" + am for am in alertmanagers]
+        sanitized = [
+            am if scheme.search(am) else "http://" + am for am in alertmanagers
+        ]
 
         # Create a mapping from paths to netlocs
         # Group alertmanager targets into a dictionary of lists:
@@ -640,10 +654,8 @@ class RelationInterfaceMismatchError(Exception):
         self.relation_name = relation_name
         self.expected_relation_interface = expected_relation_interface
         self.actual_relation_interface = actual_relation_interface
-        self.message = (
-            "The '{}' relation has '{}' as interface rather than the expected '{}'".format(
-                relation_name, actual_relation_interface, expected_relation_interface
-            )
+        self.message = "The '{}' relation has '{}' as interface rather than the expected '{}'".format(
+            relation_name, actual_relation_interface, expected_relation_interface
         )
 
         super().__init__(self.message)
@@ -661,8 +673,10 @@ class RelationRoleMismatchError(Exception):
         self.relation_name = relation_name
         self.expected_relation_interface = expected_relation_role
         self.actual_relation_role = actual_relation_role
-        self.message = "The '{}' relation has role '{}' rather than the expected '{}'".format(
-            relation_name, repr(actual_relation_role), repr(expected_relation_role)
+        self.message = (
+            "The '{}' relation has role '{}' rather than the expected '{}'".format(
+                relation_name, repr(actual_relation_role), repr(expected_relation_role)
+            )
         )
 
         super().__init__(self.message)
@@ -766,7 +780,9 @@ def _validate_relation_by_interface_and_direction(
     actual_relation_interface = relation.interface_name
     if actual_relation_interface != expected_relation_interface:
         raise RelationInterfaceMismatchError(
-            relation_name, expected_relation_interface, actual_relation_interface or "None"
+            relation_name,
+            expected_relation_interface,
+            actual_relation_interface or "None",
         )
 
     if expected_relation_role == RelationRole.provides:
@@ -780,7 +796,9 @@ def _validate_relation_by_interface_and_direction(
                 relation_name, RelationRole.requires, RelationRole.provides
             )
     else:
-        raise Exception("Unexpected RelationDirection: {}".format(expected_relation_role))
+        raise Exception(
+            "Unexpected RelationDirection: {}".format(expected_relation_role)
+        )
 
 
 class InvalidAlertRulePathError(Exception):
@@ -892,7 +910,9 @@ class MetricsEndpointConsumer(Object):
         self._relation_name = relation_name
         self._tool = CosTool(self._charm)
         events = self._charm.on[relation_name]
-        self.framework.observe(events.relation_changed, self._on_metrics_provider_relation_changed)
+        self.framework.observe(
+            events.relation_changed, self._on_metrics_provider_relation_changed
+        )
         self.framework.observe(
             events.relation_departed, self._on_metrics_provider_relation_departed
         )
@@ -948,7 +968,9 @@ class MetricsEndpointConsumer(Object):
                     self._tool.validate_scrape_jobs(static_scrape_jobs)
                 except subprocess.CalledProcessError as e:
                     if self._charm.unit.is_leader():
-                        data = json.loads(relation.data[self._charm.app].get("event", "{}"))
+                        data = json.loads(
+                            relation.data[self._charm.app].get("event", "{}")
+                        )
                         data["scrape_job_errors"] = str(e)
                         relation.data[self._charm.app]["event"] = json.dumps(data)
                 else:
@@ -1000,12 +1022,16 @@ class MetricsEndpointConsumer(Object):
             A dictionary mapping the Juju topology identifier of the source charm to
             its list of alert rule groups.
         """
-        alerts = {}  # type: Dict[str, dict] # mapping b/w juju identifiers and alert rule files
+        alerts = (
+            {}
+        )  # type: Dict[str, dict] # mapping b/w juju identifiers and alert rule files
         for relation in self._charm.model.relations[self._relation_name]:
             if not relation.units or not relation.app:
                 continue
 
-            alert_rules = json.loads(relation.data[relation.app].get("alert_rules", "{}"))
+            alert_rules = json.loads(
+                relation.data[relation.app].get("alert_rules", "{}")
+            )
             if not alert_rules:
                 continue
 
@@ -1014,7 +1040,9 @@ class MetricsEndpointConsumer(Object):
             identifier, topology = self._get_identifier_by_alert_rules(alert_rules)
             if not topology:
                 try:
-                    scrape_metadata = json.loads(relation.data[relation.app]["scrape_metadata"])
+                    scrape_metadata = json.loads(
+                        relation.data[relation.app]["scrape_metadata"]
+                    )
                     identifier = JujuTopology.from_dict(scrape_metadata).identifier
 
                 except KeyError as e:
@@ -1159,12 +1187,16 @@ class MetricsEndpointConsumer(Object):
         if not relation.units:
             return []
 
-        scrape_configs = json.loads(relation.data[relation.app].get("scrape_jobs", "[]"))
+        scrape_configs = json.loads(
+            relation.data[relation.app].get("scrape_jobs", "[]")
+        )
 
         if not scrape_configs:
             return []
 
-        scrape_metadata = json.loads(relation.data[relation.app].get("scrape_metadata", "{}"))
+        scrape_metadata = json.loads(
+            relation.data[relation.app].get("scrape_metadata", "{}")
+        )
 
         if not scrape_metadata:
             return scrape_configs
@@ -1172,7 +1204,9 @@ class MetricsEndpointConsumer(Object):
         topology = JujuTopology.from_dict(scrape_metadata)
 
         job_name_prefix = "juju_{}_prometheus_scrape".format(topology.identifier)
-        scrape_configs = PrometheusConfig.prefix_job_names(scrape_configs, job_name_prefix)
+        scrape_configs = PrometheusConfig.prefix_job_names(
+            scrape_configs, job_name_prefix
+        )
         scrape_configs = PrometheusConfig.sanitize_scrape_configs(scrape_configs)
 
         hosts = self._relation_hosts(relation)
@@ -1190,7 +1224,9 @@ class MetricsEndpointConsumer(Object):
         hosts = {}
         for unit in relation.units:
             # TODO deprecate and remove unit.name
-            unit_name = relation.data[unit].get("prometheus_scrape_unit_name") or unit.name
+            unit_name = (
+                relation.data[unit].get("prometheus_scrape_unit_name") or unit.name
+            )
             # TODO deprecate and remove "prometheus_scrape_host"
             unit_address = relation.data[unit].get(
                 "prometheus_scrape_unit_address"
@@ -1235,7 +1271,9 @@ def _dedupe_job_names(jobs: List[dict]):
     # Convert to a dict with job names as keys
     # I think this line is O(n^2) but it should be okay given the list sizes
     jobs_dict = {
-        job["job_name"]: list(filter(lambda x: x["job_name"] == job["job_name"], jobs_copy))
+        job["job_name"]: list(
+            filter(lambda x: x["job_name"] == job["job_name"], jobs_copy)
+        )
         for job in jobs_copy
     }
 
@@ -1470,7 +1508,9 @@ class MetricsEndpointProvider(Object):
 
         if external_url:
             external_url = (
-                external_url if urlparse(external_url).scheme else ("http://" + external_url)
+                external_url
+                if urlparse(external_url).scheme
+                else ("http://" + external_url)
             )
         self.external_url = external_url
         self._lookaside_jobs = lookaside_jobs_callable
@@ -1488,7 +1528,9 @@ class MetricsEndpointProvider(Object):
                 else:
                     # This is a sidecar/pebble charm
                     container = list(self._charm.meta.containers.values())[0]
-                    refresh_event = [self._charm.on[container.name.replace("-", "_")].pebble_ready]
+                    refresh_event = [
+                        self._charm.on[container.name.replace("-", "_")].pebble_ready
+                    ]
             else:
                 logger.warning(
                     "%d containers are present in metadata.yaml and "
@@ -1547,19 +1589,26 @@ class MetricsEndpointProvider(Object):
         if self._forward_alert_rules:
             alert_rules.add_path(self._alert_rules_path, recursive=True)
             alert_rules.add(
-                copy.deepcopy(generic_alert_groups.application_rules), group_name_prefix=self.topology.identifier
+                copy.deepcopy(generic_alert_groups.application_rules),
+                group_name_prefix=self.topology.identifier,
             )
         alert_rules_as_dict = alert_rules.as_dict()
 
         for relation in self._charm.model.relations[self._relation_name]:
-            relation.data[self._charm.app]["scrape_metadata"] = json.dumps(self._scrape_metadata)
-            relation.data[self._charm.app]["scrape_jobs"] = json.dumps(self._scrape_jobs)
+            relation.data[self._charm.app]["scrape_metadata"] = json.dumps(
+                self._scrape_metadata
+            )
+            relation.data[self._charm.app]["scrape_jobs"] = json.dumps(
+                self._scrape_jobs
+            )
 
             # Update relation data with the string representation of the rule file.
             # Juju topology is already included in the "scrape_metadata" field above.
             # The consumer side of the relation uses this information to name the rules file
             # that is written to the filesystem.
-            relation.data[self._charm.app]["alert_rules"] = json.dumps(alert_rules_as_dict)
+            relation.data[self._charm.app]["alert_rules"] = json.dumps(
+                alert_rules_as_dict
+            )
 
     def _set_unit_ip(self, _=None):
         """Set unit host address.
@@ -1587,7 +1636,9 @@ class MetricsEndpointProvider(Object):
                 unit_address = socket.getfqdn()
                 path = ""
 
-            relation.data[self._charm.unit]["prometheus_scrape_unit_address"] = unit_address
+            relation.data[self._charm.unit][
+                "prometheus_scrape_unit_address"
+            ] = unit_address
             relation.data[self._charm.unit]["prometheus_scrape_unit_path"] = path
             relation.data[self._charm.unit]["prometheus_scrape_unit_name"] = str(
                 self._charm.model.unit.name
@@ -1619,7 +1670,9 @@ class MetricsEndpointProvider(Object):
         """
         jobs = self._jobs or []
         if callable(self._lookaside_jobs):
-            jobs.extend(PrometheusConfig.sanitize_scrape_configs(self._lookaside_jobs()))
+            jobs.extend(
+                PrometheusConfig.sanitize_scrape_configs(self._lookaside_jobs())
+            )
         return jobs or [DEFAULT_JOB]
 
     @property
@@ -1827,7 +1880,9 @@ class MetricsEndpointAggregator(Object):
             "prometheus", "downstream-prometheus-scrape"
         )
         self._target_relation = relation_names.get("scrape_target", "prometheus-target")
-        self._alert_rules_relation = relation_names.get("alert_rules", "prometheus-rules")
+        self._alert_rules_relation = relation_names.get(
+            "alert_rules", "prometheus-rules"
+        )
 
         super().__init__(charm, self._prometheus_relation)
         self.topology = JujuTopology.from_charm(charm)
@@ -1841,21 +1896,29 @@ class MetricsEndpointAggregator(Object):
 
         # manage Prometheus charm relation events
         prometheus_events = self._charm.on[self._prometheus_relation]
-        self.framework.observe(prometheus_events.relation_joined, self._set_prometheus_data)
+        self.framework.observe(
+            prometheus_events.relation_joined, self._set_prometheus_data
+        )
 
         self.path_to_own_alert_rules = path_to_own_alert_rules
 
         # manage list of Prometheus scrape jobs from related scrape targets
         target_events = self._charm.on[self._target_relation]
-        self.framework.observe(target_events.relation_changed, self._on_prometheus_targets_changed)
+        self.framework.observe(
+            target_events.relation_changed, self._on_prometheus_targets_changed
+        )
         self.framework.observe(
             target_events.relation_departed, self._on_prometheus_targets_departed
         )
 
         # manage alert rules for Prometheus from related scrape targets
         alert_rule_events = self._charm.on[self._alert_rules_relation]
-        self.framework.observe(alert_rule_events.relation_changed, self._on_alert_rules_changed)
-        self.framework.observe(alert_rule_events.relation_departed, self._on_alert_rules_departed)
+        self.framework.observe(
+            alert_rule_events.relation_changed, self._on_alert_rules_changed
+        )
+        self.framework.observe(
+            alert_rule_events.relation_departed, self._on_alert_rules_departed
+        )
 
     def _set_prometheus_data(self, event: Optional[RelationJoinedEvent] = None):
         """Ensure every new Prometheus instances is updated.
@@ -1902,7 +1965,11 @@ class MetricsEndpointAggregator(Object):
         jobs = _dedupe_list(jobs)
 
         # Set scrape jobs and alert rules in relation data
-        relations = [event.relation] if event else self.model.relations[self._prometheus_relation]
+        relations = (
+            [event.relation]
+            if event
+            else self.model.relations[self._prometheus_relation]
+        )
         for rel in relations:
             rel.data[self._charm.app]["scrape_jobs"] = json.dumps(jobs)  # type: ignore
             rel.data[self._charm.app]["alert_rules"] = json.dumps(  # type: ignore
@@ -2089,7 +2156,8 @@ class MetricsEndpointAggregator(Object):
                 }
                 for unit_name, target in targets.items()
             ],
-            "relabel_configs": self._relabel_configs + kwargs.get("relabel_configs", []),
+            "relabel_configs": self._relabel_configs
+            + kwargs.get("relabel_configs", []),
         }
         job.update(kwargs.get("updates", {}))
 
@@ -2152,7 +2220,9 @@ class MetricsEndpointAggregator(Object):
         app_name = event.relation.app.name
         self.set_alert_rule_data(app_name, unit_rules)
 
-    def set_alert_rule_data(self, name: str, unit_rules: dict, label_rules: bool = True) -> None:
+    def set_alert_rule_data(
+        self, name: str, unit_rules: dict, label_rules: bool = True
+    ) -> None:
         """Consolidate incoming alert rules (from stored-state or event) with those from relation data.
 
         The unit rules should be a dict, which have additional Juju topology labels added. For
@@ -2170,12 +2240,16 @@ class MetricsEndpointAggregator(Object):
         updated_group = {"name": self.group_name(name), "rules": rules}
 
         for relation in self.model.relations[self._prometheus_relation]:
-            alert_rules = json.loads(relation.data[self._charm.app].get("alert_rules", "{}"))
+            alert_rules = json.loads(
+                relation.data[self._charm.app].get("alert_rules", "{}")
+            )
             groups = alert_rules.get("groups", [])
             # list of alert rule groups that have not changed
             for group in groups:
                 if group["name"] == updated_group["name"]:
-                    group["rules"] = [r for r in group["rules"] if r not in updated_group["rules"]]
+                    group["rules"] = [
+                        r for r in group["rules"] if r not in updated_group["rules"]
+                    ]
                     group["rules"].extend(updated_group["rules"])
 
             if updated_group["name"] not in [g["name"] for g in groups]:
@@ -2187,7 +2261,9 @@ class MetricsEndpointAggregator(Object):
                 {"groups": groups if self._forward_alert_rules else []}
             )
 
-            if not _type_convert_stored(self._stored.alert_rules) == groups:  # pyright: ignore
+            if (
+                not _type_convert_stored(self._stored.alert_rules) == groups
+            ):  # pyright: ignore
                 self._stored.alert_rules = groups
 
     def _on_alert_rules_departed(self, event):
@@ -2206,7 +2282,9 @@ class MetricsEndpointAggregator(Object):
             return
 
         for relation in self.model.relations[self._prometheus_relation]:
-            alert_rules = json.loads(relation.data[self._charm.app].get("alert_rules", "{}"))
+            alert_rules = json.loads(
+                relation.data[self._charm.app].get("alert_rules", "{}")
+            )
             if not alert_rules:
                 continue
 
@@ -2239,7 +2317,9 @@ class MetricsEndpointAggregator(Object):
                 {"groups": groups if self._forward_alert_rules else []}
             )
 
-            if not _type_convert_stored(self._stored.alert_rules) == groups:  # pyright: ignore
+            if (
+                not _type_convert_stored(self._stored.alert_rules) == groups
+            ):  # pyright: ignore
                 self._stored.alert_rules = groups
 
     def _get_alert_rules(self, relation) -> dict:
@@ -2282,7 +2362,9 @@ class MetricsEndpointAggregator(Object):
             a string Prometheus alert rules group name for the unit.
         """
         unit_name = re.sub(r"/", "_", unit_name)
-        return "juju_{}_{}_{}_alert_rules".format(self.model.name, self.model.uuid[:7], unit_name)
+        return "juju_{}_{}_{}_alert_rules".format(
+            self.model.name, self.model.uuid[:7], unit_name
+        )
 
     def _label_alert_rules(self, unit_rules, app_name: str) -> list:
         """Apply juju topology labels to alert rules.
@@ -2302,7 +2384,9 @@ class MetricsEndpointAggregator(Object):
                 # the new JujuTopology removed this, so build it up by hand
                 matchers = {
                     "juju_{}".format(k): v
-                    for k, v in JujuTopology(self.model.name, self.model.uuid, app_name, unit_name)
+                    for k, v in JujuTopology(
+                        self.model.name, self.model.uuid, app_name, unit_name
+                    )
                     .as_dict(excluded_keys=["charm_name"])
                     .items()
                 }
@@ -2402,11 +2486,16 @@ class CosTool:
         if not topology:
             return expression
         if not self.path:
-            logger.debug("`cos-tool` unavailable. Leaving expression unchanged: %s", expression)
+            logger.debug(
+                "`cos-tool` unavailable. Leaving expression unchanged: %s", expression
+            )
             return expression
         args = [str(self.path), "transform"]
         args.extend(
-            ["--label-matcher={}={}".format(key, value) for key, value in topology.items()]
+            [
+                "--label-matcher={}={}".format(key, value)
+                for key, value in topology.items()
+            ]
         )
 
         args.extend(["{}".format(expression)])
@@ -2414,7 +2503,9 @@ class CosTool:
         try:
             return self._exec(args)
         except subprocess.CalledProcessError as e:
-            logger.debug('Applying the expression failed: "%s", falling back to the original', e)
+            logger.debug(
+                'Applying the expression failed: "%s", falling back to the original', e
+            )
             return expression
 
     def _get_tool_path(self) -> Optional[Path]:
@@ -2429,5 +2520,7 @@ class CosTool:
         return None
 
     def _exec(self, cmd) -> str:
-        result = subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        result = subprocess.run(
+            cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT
+        )
         return result.stdout.decode("utf-8").strip()
