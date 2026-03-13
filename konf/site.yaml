@@ -44,3 +44,13 @@ staging:
   nginxConfigurationSnippet: |
     more_set_headers "X-Robots-Tag: noindex";
     more_set_headers "Link: <https://assets.ubuntu.com>; rel=preconnect; crossorigin, <https://assets.ubuntu.com>; rel=preconnect";
+
+# Overrides for demo
+demo:
+  env:
+    - name: HTTP_PROXY
+      value: http://squid.internal:3128
+    
+    - name: HTTPS_PROXY
+      value: http://squid.internal:3128
+  
