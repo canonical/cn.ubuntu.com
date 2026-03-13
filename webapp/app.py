@@ -10,6 +10,7 @@ from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
 from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
+from webapp.api import get_releases
 
 from webapp.navigation import (
     get_current_page_bubble,
@@ -38,6 +39,11 @@ app = FlaskBase(
 # Initialize Flask-Caching
 app.config["CACHE_TYPE"] = "SimpleCache"
 cache = Cache(app)
+
+# initialize releases url
+app.config["UBUNTU_COM_RELEASES"] = (
+    "https://raw.githubusercontent.com/canonical/ubuntu.com/main/releases.yaml"
+)
 
 
 # Set up cache functions for cookie consent service
@@ -167,10 +173,8 @@ app.add_url_rule(
     view_func=BlogSitemapPage.as_view("sitemap_page", blog_views=blog_views),
 )
 
-
 # read releases.yaml
-with open("releases.yaml") as releases:
-    releases = yaml.load(releases, Loader=yaml.FullLoader)
+releases = get_releases(app.config["UBUNTU_COM_RELEASES"])
 
 # read navigation-dropdown.yaml
 with open("navigation-dropdown.yaml") as dropdown_file:

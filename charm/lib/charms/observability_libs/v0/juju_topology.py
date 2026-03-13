@@ -278,7 +278,9 @@ class JujuTopology:
         produced the matchers).
         """
         items = self.label_matcher_dict.items()
-        return ", ".join(['{}="{}"'.format(key, value) for key, value in items if value])
+        return ", ".join(
+            ['{}="{}"'.format(key, value) for key, value in items if value]
+        )
 
     @property
     def model(self) -> str:

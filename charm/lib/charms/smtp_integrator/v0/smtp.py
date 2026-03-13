@@ -217,7 +217,9 @@ class SmtpDataAvailableEvent(ops.RelationEvent):
     def password_id(self) -> str:
         """Fetch the SMTP password from the relation."""
         assert self.relation.app
-        return typing.cast(str, self.relation.data[self.relation.app].get("password_id"))
+        return typing.cast(
+            str, self.relation.data[self.relation.app].get("password_id")
+        )
 
     @property
     def auth_type(self) -> AuthType:
@@ -229,7 +231,9 @@ class SmtpDataAvailableEvent(ops.RelationEvent):
     def transport_security(self) -> TransportSecurity:
         """Fetch the SMTP transport security protocol from the relation."""
         assert self.relation.app
-        return TransportSecurity(self.relation.data[self.relation.app].get("transport_security"))
+        return TransportSecurity(
+            self.relation.data[self.relation.app].get("transport_security")
+        )
 
     @property
     def domain(self) -> str:
@@ -242,7 +246,9 @@ class SmtpDataAvailableEvent(ops.RelationEvent):
         """Fetch the skip_ssl_verify flag from the relation."""
         assert self.relation.app
         return literal_eval(
-            typing.cast(str, self.relation.data[self.relation.app].get("skip_ssl_verify"))
+            typing.cast(
+                str, self.relation.data[self.relation.app].get("skip_ssl_verify")
+            )
         )
 
 
@@ -267,7 +273,9 @@ class SmtpRequires(ops.Object):
 
     on = SmtpRequiresEvents()
 
-    def __init__(self, charm: ops.CharmBase, relation_name: str = DEFAULT_RELATION_NAME) -> None:
+    def __init__(
+        self, charm: ops.CharmBase, relation_name: str = DEFAULT_RELATION_NAME
+    ) -> None:
         """Construct.
 
         Args:
@@ -277,7 +285,9 @@ class SmtpRequires(ops.Object):
         super().__init__(charm, relation_name)
         self.charm = charm
         self.relation_name = relation_name
-        self.framework.observe(charm.on[relation_name].relation_changed, self._on_relation_changed)
+        self.framework.observe(
+            charm.on[relation_name].relation_changed, self._on_relation_changed
+        )
 
     def get_relation_data(self) -> Optional[SmtpRelationData]:
         """Retrieve the relation data.
@@ -324,7 +334,9 @@ class SmtpRequires(ops.Object):
             password=password,
             password_id=relation_data.get("password_id"),
             auth_type=AuthType(relation_data.get("auth_type")),
-            transport_security=TransportSecurity(relation_data.get("transport_security")),
+            transport_security=TransportSecurity(
+                relation_data.get("transport_security")
+            ),
             domain=relation_data.get("domain"),
             skip_ssl_verify=typing.cast(bool, relation_data.get("skip_ssl_verify")),
         )
@@ -363,13 +375,17 @@ class SmtpRequires(ops.Object):
             if relation_data["transport_security"] == TransportSecurity.NONE.value:
                 logger.warning('Insecure setting: transport_security has value "none"')
             if self._is_relation_data_valid(event.relation):
-                self.on.smtp_data_available.emit(event.relation, app=event.app, unit=event.unit)
+                self.on.smtp_data_available.emit(
+                    event.relation, app=event.app, unit=event.unit
+                )
 
 
 class SmtpProvides(ops.Object):
     """Provider side of the SMTP relation."""
 
-    def __init__(self, charm: ops.CharmBase, relation_name: str = DEFAULT_RELATION_NAME) -> None:
+    def __init__(
+        self, charm: ops.CharmBase, relation_name: str = DEFAULT_RELATION_NAME
+    ) -> None:
         """Construct.
 
         Args:
@@ -380,7 +396,9 @@ class SmtpProvides(ops.Object):
         self.charm = charm
         self.relation_name = relation_name
 
-    def update_relation_data(self, relation: ops.Relation, smtp_data: SmtpRelationData) -> None:
+    def update_relation_data(
+        self, relation: ops.Relation, smtp_data: SmtpRelationData
+    ) -> None:
         """Update the relation data.
 
         Args:

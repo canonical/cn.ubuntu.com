@@ -24,6 +24,7 @@ requires:
     interface: redis
 ```
 """
+
 import logging
 import socket
 from typing import Dict, Optional
@@ -45,12 +46,14 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_REALTION_NAME = "redis"
 
+
 class RedisRelationUpdatedEvent(EventBase):
     """An event for the redis relation having been updated."""
 
 
 class RedisRelationCharmEvents(CharmEvents):
     """A class to carry custom charm events so requires can react to relation changes."""
+
     redis_relation_updated = EventSource(RedisRelationUpdatedEvent)
 
 
@@ -59,9 +62,15 @@ class RedisRequires(Object):
     def __init__(self, charm, relation_name: str = DEFAULT_REALTION_NAME):
         """A class implementing the redis requires relation."""
         super().__init__(charm, relation_name)
-        self.framework.observe(charm.on[relation_name].relation_joined, self._on_relation_changed)
-        self.framework.observe(charm.on[relation_name].relation_changed, self._on_relation_changed)
-        self.framework.observe(charm.on[relation_name].relation_broken, self._on_relation_broken)
+        self.framework.observe(
+            charm.on[relation_name].relation_joined, self._on_relation_changed
+        )
+        self.framework.observe(
+            charm.on[relation_name].relation_changed, self._on_relation_changed
+        )
+        self.framework.observe(
+            charm.on[relation_name].relation_broken, self._on_relation_broken
+        )
         self.charm = charm
         self.relation_name = relation_name
 
@@ -112,7 +121,7 @@ class RedisRequires(Object):
         """
         if not (relation_data := self.relation_data):
             return None
-            
+
         redis_host = relation_data.get("hostname")
 
         if app_data := self.app_data:
@@ -128,7 +137,9 @@ class RedisProvides(Object):
     def __init__(self, charm, port):
         """A class implementing the redis provides relation."""
         super().__init__(charm, DEFAULT_REALTION_NAME)
-        self.framework.observe(charm.on.redis_relation_changed, self._on_relation_changed)
+        self.framework.observe(
+            charm.on.redis_relation_changed, self._on_relation_changed
+        )
         self._port = port
         self._charm = charm
 

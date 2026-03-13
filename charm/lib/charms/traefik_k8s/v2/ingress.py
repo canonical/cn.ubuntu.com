@@ -50,6 +50,7 @@ class SomeCharm(CharmBase):
     def _on_ingress_revoked(self, event: IngressPerAppRevokedEvent):
         logger.info("This app no longer has ingress")
 """
+
 import ipaddress
 import json
 import logging
@@ -149,7 +150,9 @@ if PYDANTIC_IS_V1:
                 databag = {}
 
             if self._NEST_UNDER:
-                databag[self._NEST_UNDER] = self.json(by_alias=True, exclude_defaults=True)
+                databag[self._NEST_UNDER] = self.json(
+                    by_alias=True, exclude_defaults=True
+                )
                 return databag
 
             for key, value in self.dict(by_alias=True, exclude_defaults=True).items():  # type: ignore
@@ -251,16 +254,22 @@ class IngressHealthCheck(BaseModel):
 
     path: str = Field(description="The health check endpoint path (required).")
     scheme: Optional[str] = Field(
-        default=None, description="Replaces the server URL scheme for the health check endpoint."
+        default=None,
+        description="Replaces the server URL scheme for the health check endpoint.",
     )
     hostname: Optional[str] = Field(
         default=None, description="Hostname to be set in the health check request."
     )
     port: Optional[int] = Field(
-        default=None, description="Replaces the server URL port for the health check endpoint."
+        default=None,
+        description="Replaces the server URL port for the health check endpoint.",
     )
-    interval: str = Field(default="30s", description="Frequency of the health check calls.")
-    timeout: str = Field(default="5s", description="Maximum duration for a health check request.")
+    interval: str = Field(
+        default="30s", description="Frequency of the health check calls."
+    )
+    timeout: str = Field(
+        default="5s", description="Maximum duration for a health check request."
+    )
 
 
 class IngressRequirerAppData(DatabagModel):
@@ -409,7 +418,9 @@ class _IPAEvent(RelationEvent):
         super().__init__(handle, relation)
 
         if not len(self.__args__) == len(args):
-            raise TypeError("expected {} args, got {}".format(len(self.__args__), len(args)))
+            raise TypeError(
+                "expected {} args, got {}".format(len(self.__args__), len(args))
+            )
 
         for attr, obj in zip(self.__args__, args):
             setattr(self, attr, obj)
@@ -524,7 +535,9 @@ class IngressPerAppProvider(_IngressPerAppBase):
             return
         del relation.data[self.app]["ingress"]
 
-    def _get_requirer_units_data(self, relation: Relation) -> List["IngressRequirerUnitData"]:
+    def _get_requirer_units_data(
+        self, relation: Relation
+    ) -> List["IngressRequirerUnitData"]:
         """Fetch and validate the requirer's app databag."""
         out: List["IngressRequirerUnitData"] = []
 
@@ -553,7 +566,8 @@ class IngressPerAppProvider(_IngressPerAppBase):
         """Fetch the remote (requirer) app and units' databags."""
         try:
             return IngressRequirerData(
-                self._get_requirer_app_data(relation), self._get_requirer_units_data(relation)
+                self._get_requirer_app_data(relation),
+                self._get_requirer_units_data(relation),
             )
         except (pydantic.ValidationError, DataValidationError) as e:
             raise DataValidationError("failed to validate ingress requirer data") from e
@@ -593,7 +607,9 @@ class IngressPerAppProvider(_IngressPerAppBase):
             IngressProviderAppData(ingress=ingress_url).dump(relation.data[self.app])  # type: ignore
         except pydantic.ValidationError as e:
             # If we cannot validate the url as valid, publish an empty databag and log the error.
-            log.error(f"Failed to validate ingress url '{url}' - got ValidationError {e}")
+            log.error(
+                f"Failed to validate ingress url '{url}' - got ValidationError {e}"
+            )
             log.error(
                 "url was not published to ingress relation for {relation.app}.  This error is likely due to an"
                 " error or misconfiguration of the charm calling this library."
@@ -634,7 +650,9 @@ class IngressPerAppProvider(_IngressPerAppBase):
                 continue
 
             if not ingress_data:
-                log.warning(f"relation {ingress_relation} not ready yet: try again in some time.")
+                log.warning(
+                    f"relation {ingress_relation} not ready yet: try again in some time."
+                )
                 continue
 
             # Validation above means ingress cannot be None, but type checker doesn't know that.

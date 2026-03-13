@@ -110,6 +110,7 @@ class ExampleRequirerCharm(CharmBase):
 ```
 
 """
+
 import json
 import logging
 from collections import namedtuple
@@ -165,7 +166,11 @@ def diff(event: RelationChangedEvent, bucket: Union[Unit, Application]) -> Diff:
     old_data = json.loads(event.relation.data[bucket].get("data", "{}"))
     # Retrieve the new data from the event relation databag.
     new_data = (
-        {key: value for key, value in event.relation.data[event.app].items() if key != "data"}
+        {
+            key: value
+            for key, value in event.relation.data[event.app].items()
+            if key != "data"
+        }
         if event.app
         else {}
     )
@@ -176,7 +181,11 @@ def diff(event: RelationChangedEvent, bucket: Union[Unit, Application]) -> Diff:
     deleted = old_data.keys() - new_data.keys()
     # These are the keys that already existed in the databag,
     # but had their values changed.
-    changed = {key for key in old_data.keys() & new_data.keys() if old_data[key] != new_data[key]}
+    changed = {
+        key
+        for key in old_data.keys() & new_data.keys()
+        if old_data[key] != new_data[key]
+    }
 
     # TODO: evaluate the possibility of losing the diff if some error
     # happens in the charm before the diff is completely checked (DPE-412).
@@ -226,7 +235,9 @@ class S3Provider(Object):
         self.relation_name = relation_name
 
         # monitor relation changed event for changes in the credentials
-        self.framework.observe(charm.on[relation_name].relation_changed, self._on_relation_changed)
+        self.framework.observe(
+            charm.on[relation_name].relation_changed, self._on_relation_changed
+        )
 
     def _on_relation_changed(self, event: RelationChangedEvent) -> None:
         """React to the relation changed event by consuming data."""
@@ -315,7 +326,11 @@ class S3Provider(Object):
         data = {}
         for relation in self.relations:
             data[relation.id] = (
-                {key: value for key, value in relation.data[relation.app].items() if key != "data"}
+                {
+                    key: value
+                    for key, value in relation.data[relation.app].items()
+                    if key != "data"
+                }
                 if relation.app
                 else {}
             )
@@ -349,7 +364,9 @@ class S3Provider(Object):
         updated_connection_data = {}
         for configuration_option, configuration_value in connection_data.items():
             if configuration_option in s3_list_options:
-                updated_connection_data[configuration_option] = json.dumps(configuration_value)
+                updated_connection_data[configuration_option] = json.dumps(
+                    configuration_value
+                )
             else:
                 updated_connection_data[configuration_option] = configuration_value
 
@@ -639,7 +656,10 @@ class S3Requirer(Object):
     on = S3CredentialRequiresEvents()  # pyright: ignore[reportAssignmentType]
 
     def __init__(
-        self, charm: ops.charm.CharmBase, relation_name: str, bucket_name: Optional[str] = None
+        self,
+        charm: ops.charm.CharmBase,
+        relation_name: str,
+        bucket_name: Optional[str] = None,
     ):
         """Manager of the s3 client relations."""
         super().__init__(charm, relation_name)
@@ -651,7 +671,8 @@ class S3Requirer(Object):
         self.bucket = bucket_name
 
         self.framework.observe(
-            self.charm.on[self.relation_name].relation_changed, self._on_relation_changed
+            self.charm.on[self.relation_name].relation_changed,
+            self._on_relation_changed,
         )
 
         self.framework.observe(
@@ -716,14 +737,18 @@ class S3Requirer(Object):
         updated_connection_data = {}
         for configuration_option, configuration_value in connection_data.items():
             if configuration_option in s3_list_options:
-                updated_connection_data[configuration_option] = json.dumps(configuration_value)
+                updated_connection_data[configuration_option] = json.dumps(
+                    configuration_value
+                )
             else:
                 updated_connection_data[configuration_option] = configuration_value
 
         relation.data[self.local_app].update(updated_connection_data)
         logger.debug(f"Updated S3 credentials: {updated_connection_data}")
 
-    def _load_relation_data(self, raw_relation_data: RelationDataContent) -> Dict[str, str]:
+    def _load_relation_data(
+        self, raw_relation_data: RelationDataContent
+    ) -> Dict[str, str]:
         """Loads relation data from the relation data bag.
 
         Args:
@@ -783,7 +808,9 @@ class S3Requirer(Object):
 
     def _on_relation_broken(self, event: RelationBrokenEvent) -> None:
         """Notify the charm about a broken S3 credential store relation."""
-        getattr(self.on, "credentials_gone").emit(event.relation, app=event.app, unit=event.unit)
+        getattr(self.on, "credentials_gone").emit(
+            event.relation, app=event.app, unit=event.unit
+        )
 
     @property
     def relations(self) -> List[Relation]:
