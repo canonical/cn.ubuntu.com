@@ -71,13 +71,13 @@
               ]
             },
             {
-              "title_text": "Ubuntu 24.04.03 LTS",
+              "title_text": "Ubuntu " ~ releases.lts.full_version ~ " LTS",
               "contents": [
                 {
                   "type": "description",
                   "item": {
                     "type": "text",
-                    "content": "专为桌面 PC 和笔记本精心打造的 Ubuntu 长期支持（LTS）版本。LTS 意为 long-term support，24.04 LTS 将提供五年常规安全更新和维护，并可通过 Ubuntu Pro 延长至 15 年。"
+                    "content": "专为桌面 PC 和笔记本精心打造的 Ubuntu 长期支持（LTS）版本。LTS 意为 long-term support，" ~ releases.lts.short_version ~ " LTS 将提供五年常规安全更新和维护，并可通过 Ubuntu Pro 延长至 15 年。"
                   }
                 },
                 {
@@ -86,13 +86,13 @@
                     "primary": {
                       "content_html": "立即下载",
                       "attrs": {
-                        "href": "https://releases.ubuntu.com/" + releases.lts.full_version + "/ubuntu-" + releases.lts.full_version + "-desktop-amd64.iso"
+                        "href": "https://releases.ubuntu.com/" ~ releases.lts.full_version ~ "/ubuntu-" ~ releases.lts.full_version ~ "-desktop-amd64.iso"
                       }
                     },
                     "link": {
-                      "content_html": "Ubuntu 24.04 LTS 发布说明&nbsp;&rsaquo;",
+                      "content_html": "Ubuntu " ~ releases.lts.short_version ~ " LTS 发布说明&nbsp;&rsaquo;",
                       "attrs": {
-                        "href": "https://discourse.ubuntu.com/t/noble-numbat-release-notes/39890"
+                        "href": releases.lts.release_notes_url
                       }
                     }
                   }
@@ -100,13 +100,13 @@
               ]
             },
             {
-              "title_text": "Ubuntu 25.10",
+              "title_text": "Ubuntu " ~ releases.latest.full_version,
               "contents": [
                 {
                   "type": "description",
                   "item": {
                     "type": "text",
-                    "content": "为桌面 PC 和笔记本打造的最新 Ubuntu 子版本。Ubuntu 25.10 将提供九个月的常规安全更新和维护至 2026 年 7 月。"
+                    "content": "为桌面 PC 和笔记本打造的最新 Ubuntu 子版本。Ubuntu " ~ releases.latest.full_version ~ " 将提供九个月的常规安全更新和维护至 " ~ releases.latest.eol ~ "。"
                   }
                 },
                 {
@@ -116,14 +116,14 @@
                       {
                         "content_html": "立即下载",
                         "attrs": {
-                          "href": "https://releases.ubuntu.com/" + releases.latest.full_version + "/ubuntu-" + releases.latest.full_version + "-desktop-amd64.iso"
+                          "href": "https://releases.ubuntu.com/" ~ releases.latest.full_version ~ "/ubuntu-" ~ releases.latest.full_version ~ "-desktop-amd64.iso"
                         }
                       }
                     ],
                     "link": {
-                      "content_html": "Ubuntu 25.10 发布说明&nbsp;&rsaquo;",
+                      "content_html": "Ubuntu " ~ releases.latest.full_version ~ " 发布说明&nbsp;&rsaquo;",
                       "attrs": {
-                        "href": "https://discourse.ubuntu.com/t/questing-quokka-release-notes/59220"
+                        "href": releases.latest.release_notes_url
                       }
                     }
                   }
@@ -197,14 +197,14 @@
                     "type": "description",
                     "item": {
                       "type": "html",
-                      "content": "<p><strong>Ubuntu Server 24.04 LTS</strong></p>"
+                      "content": "<p><strong>Ubuntu Server " ~ releases.lts.full_version ~ " LTS</strong></p>"
                     }
                   },
                   {
                     "type": "description",
                     "item": {
                       "type": "text",
-                      "content": "最新的 Ubuntu 服务器长期支持（LTS）版本。LTS 意为 long-term support，24.04 LTS 将提供五年常规安全更新和维护，并可通过 Ubuntu Pro 延长至 15 年。"
+                      "content": "最新的 Ubuntu 服务器长期支持（LTS）版本。LTS 意为 long-term support，" ~ releases.lts.short_version ~ " LTS 将提供五年常规安全更新和维护，并可通过 Ubuntu Pro 延长至 15 年。"
                     }
                   },
                   {
@@ -214,13 +214,13 @@
                       "primary": {
                         "content_html": "立即下载",
                         "attrs": {
-                          "href": "/download/server/thank-you?version=" + releases.lts.full_version + "&architecture=amd64"
+                          "href": "/download/server/thank-you?version=" ~ releases.lts.full_version ~ "&architecture=amd64"
                         }
                       },
                       "link": {
-                        "content_html": "Ubuntu 24.04 LTS 发布说明&nbsp;&rsaquo;",
+                        "content_html": "Ubuntu " ~ releases.lts.short_version ~ " LTS 发布说明&nbsp;&rsaquo;",
                         "attrs": {
-                          "href": "https://discourse.ubuntu.com/t/noble-numbat-release-notes/39890"
+                          "href": releases.lts.release_notes_url
                         }
                       }
                     }
@@ -232,13 +232,13 @@
                 "bullet_type": "none",
                 "items": [
                   {
-                    "title_text": "Ubuntu Server 25.10",
+                    "title_text": "Ubuntu Server " ~ releases.latest.full_version,
                     "contents": [
                       {
                         "type": "description",
                         "item": {
                           "type": "text",
-                          "content": "最新 Ubuntu Server 子版本。将提供九个月的常规安全和维护更新至 2026 年 7 月。"
+                          "content": "最新 Ubuntu Server 子版本。将提供九个月的常规安全和维护更新至 " ~ releases.latest.eol ~ "。"
                         }
                       },
                       {
@@ -248,14 +248,14 @@
                             {
                               "content_html": "立即下载",
                               "attrs": {
-                                "href": "https://releases.ubuntu.com/" + releases.latest.full_version + "/ubuntu-" + releases.latest.full_version + "-live-server-amd64.iso"
+                                "href": "https://releases.ubuntu.com/" ~ releases.latest.full_version ~ "/ubuntu-" ~ releases.latest.full_version ~ "-live-server-amd64.iso"
                               }
                             }
                           ],
                           "link": {
-                            "content_html": "Ubuntu 25.10 发布说明&nbsp;&rsaquo;",
+                            "content_html": "Ubuntu " ~ releases.latest.full_version ~ " 发布说明&nbsp;&rsaquo;",
                             "attrs": {
-                              "href": "https://discourse.ubuntu.com/t/questing-quokka-release-notes/59220"
+                              "href": releases.latest.release_notes_url
                             }
                           }
                         }
