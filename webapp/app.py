@@ -1,13 +1,14 @@
 import os
 
 import flask
-import talisker
+import requests
 import yaml
 from canonicalwebteam import image_template
 from canonicalwebteam.blog import BlogAPI, BlogViews, build_blueprint
 from canonicalwebteam.discourse import DiscourseAPI, EngagePages
 from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
+from canonicalwebteam.cookie_service import CookieConsent
 from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
 from webapp.api import get_releases
@@ -55,6 +56,13 @@ def set_cache(key, value, timeout):
     cache.set(key, value, timeout)
 
 
+cookie_service = CookieConsent().init_app(
+    app,
+    get_cache_func=get_cache,
+    set_cache_func=set_cache,
+    start_health_check=True,
+)
+
 # ChoiceLoader attempts loading templates from each path in successive order
 loader = ChoiceLoader(
     [
@@ -68,7 +76,7 @@ app.jinja_loader = loader
 
 # Engage pages and takeovers from Discourse
 # This section needs to provide takeover data for /
-session = talisker.requests.get_session()
+session = requests.Session()
 
 discourse_api = DiscourseAPI(
     base_url="https://discourse.ubuntu.com/",
@@ -151,7 +159,7 @@ app.add_url_rule("/takeovers", view_func=takeovers_index)
 
 
 template_finder_view = TemplateFinder.as_view("template_finder")
-session = talisker.requests.get_session()
+session = requests.Session()
 app.add_url_rule("/", view_func=template_finder_view)
 app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
