@@ -9,3 +9,4 @@ Flask-Caching==2.1.0
 pyyaml==6.0.2
 gunicorn[gevent]
 djlint==1.36.4
+python-slugify==8.0.4

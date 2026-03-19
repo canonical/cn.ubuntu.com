@@ -11,9 +11,12 @@ from canonicalwebteam.templatefinder import TemplateFinder
 from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
 from webapp.api import get_releases
+from slugify import slugify
 
 from webapp.navigation import (
     get_current_page_bubble,
+    get_navigation,
+    split_list,
 )
 
 from webapp.views import (
@@ -173,6 +176,13 @@ app.add_url_rule(
     view_func=BlogSitemapPage.as_view("sitemap_page", blog_views=blog_views),
 )
 
+
+def navigation_nojs():
+    return flask.render_template("navigation/navigation-nojs.html")
+
+
+app.add_url_rule("/navigation", view_func=navigation_nojs)
+
 # read releases.yaml
 releases = get_releases(app.config["UBUNTU_COM_RELEASES"])
 
@@ -188,6 +198,8 @@ def context():
         "releases": releases,
         "dropdown": dropdown_data,
         "get_current_page_bubble": get_current_page_bubble,
+        "get_navigation": get_navigation,
+        "split_list": split_list,
     }
 
 
@@ -195,3 +207,8 @@ def context():
 @app.context_processor
 def utility_processor():
     return {"image": image_template}
+
+
+@app.template_filter()
+def slug(text):
+    return slugify(text)
