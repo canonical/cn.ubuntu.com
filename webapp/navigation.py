@@ -1,3 +1,5 @@
+import copy
+
 import yaml
 
 # Read secondary-navigation.yaml
@@ -70,3 +72,46 @@ def get_current_page_bubble(path):
                 current_page_bubble["children"].append(child_copy)
 
     return {"page_bubble": current_page_bubble}
+
+
+def split_list(array, parts):
+    """
+    Split an array into multiple sub-arrays of approximately equal size.
+
+    Parameters:
+    array (list): The array to be split.
+    parts (int): The number of parts to split the array into.
+
+    Returns:
+    list: A list of sub-arrays.
+    """
+    if parts <= 0:
+        raise ValueError("Number of parts must be a positive integer")
+
+    k, m = divmod(len(array), parts)
+    return [
+        array[i * k + min(i, m) : (i + 1) * k + min(i + 1, m)]  # noqa: E203
+        for i in range(parts)
+    ]
+
+
+# Read navigation.yaml
+with open("navigation-dropdown.yaml") as navigation_file:
+    navigation = yaml.load(navigation_file.read(), Loader=yaml.FullLoader)
+
+
+def get_navigation(section):
+    """
+    Set "navigation_section" as global template variable
+    """
+    sections = {}
+    navigation_sections = copy.deepcopy(navigation)
+
+    if section == "all":
+        return navigation_sections
+
+    for section_name, navigation_section in navigation_sections.items():
+        if section_name == section:
+            sections = navigation_section
+
+    return {"sections": sections}
