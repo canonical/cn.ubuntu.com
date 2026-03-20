@@ -1,5 +1,4 @@
-{% if section == "products" %}
-  <h2 class="p-heading--1 u-no-padding--left" id="products-navigation">产品和服务</h2>
-{% elif section == "solution" %}
-  <h2 class="p-heading--1 u-no-padding--left" id="solutions-navigation">解决方案</h2>
+{% set section_headings = {"products": "产品和服务", "solution": "解决方案"} %}
+{% if section in section_headings %}
+  <h2 class="p-heading--1 u-no-padding--left" id="{{ section }}-navigation">{{ section_headings[section] }}</h2>
 {% endif %}
