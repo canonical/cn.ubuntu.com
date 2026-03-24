@@ -19,4 +19,5 @@ parts:
       - flask/app/redirects.yaml
       - flask/app/releases.yaml
       - flask/app/secondary-navigation.yaml
+      - flask/app/scripts
       - flask/app/navigation-dropdown.yaml
