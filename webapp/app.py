@@ -51,6 +51,8 @@ loader = ChoiceLoader(
         FileSystemLoader(str(directory_parser_templates)),
     ]
 )
+# Loader supplied to jinja_loader overwrites default jinja_loader
+app.jinja_loader = loader
 
 # Initialize Flask-Caching
 app.config["CACHE_TYPE"] = "SimpleCache"
