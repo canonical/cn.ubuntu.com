@@ -42,13 +42,13 @@ app = FlaskBase(
 )
 
 # ChoiceLoader attempts loading templates from each path in successive order
-directory_parser_templates = Path(directory_parser.__file__).parent / "templates"
+parser_templates = Path(directory_parser.__file__).parent / "templates"
 loader = ChoiceLoader(
     [
         FileSystemLoader("templates"),
         FileSystemLoader("node_modules/vanilla-framework/templates/"),
         FileSystemLoader("static/js/modules/vanilla-framework/"),
-        FileSystemLoader(str(directory_parser_templates)),
+        FileSystemLoader(str(parser_templates)),
     ]
 )
 # Loader supplied to jinja_loader overwrites default jinja_loader
