@@ -1,8 +1,11 @@
 import os
+from pathlib import Path
 
 import flask
 import talisker
 import yaml
+
+import canonicalwebteam.directory_parser as directory_parser
 from canonicalwebteam import image_template
 from canonicalwebteam.blog import BlogAPI, BlogViews, build_blueprint
 from canonicalwebteam.discourse import DiscourseAPI, EngagePages
@@ -38,6 +41,16 @@ app = FlaskBase(
     template_500="500.html",
 )
 
+# ChoiceLoader attempts loading templates from each path in successive order
+directory_parser_templates = Path(directory_parser.__file__).parent / "templates"
+loader = ChoiceLoader(
+    [
+        FileSystemLoader("templates"),
+        FileSystemLoader("node_modules/vanilla-framework/templates/"),
+        FileSystemLoader("static/js/modules/vanilla-framework/"),
+        FileSystemLoader(str(directory_parser_templates)),
+    ]
+)
 
 # Initialize Flask-Caching
 app.config["CACHE_TYPE"] = "SimpleCache"
