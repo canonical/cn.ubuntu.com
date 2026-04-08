@@ -29,7 +29,7 @@ demo:
   env:
     - name: HTTP_PROXY
       value: http://squid.internal:3128
-    
+
     - name: HTTPS_PROXY
       value: http://squid.internal:3128
 
