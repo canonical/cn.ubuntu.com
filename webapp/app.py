@@ -179,16 +179,12 @@ def navigation_nojs():
 app.add_url_rule("/navigation", view_func=navigation_nojs)
 
 # read releases.yaml
-try:
-    releases = get_releases(
-        "https://raw.githubusercontent.com/canonical/"
-        "ubuntu.com/main/releases.yaml"
-    )
-except Exception as e:
-    app.logger.warning(f"Failed to load releases data: {e}")
-    releases = {}
+releases = get_releases(
+    "https://raw.githubusercontent.com/canonical/"
+    "ubuntu.com/main/releases.yaml"
+)
 
-# read navigation-dropdown.yamld
+# read navigation-dropdown.yaml
 with open("navigation-dropdown.yaml") as dropdown_file:
     dropdown_data = yaml.load(dropdown_file, Loader=yaml.FullLoader)
 
