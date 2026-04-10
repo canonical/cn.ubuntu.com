@@ -1,10 +1,10 @@
-canonicalwebteam.flask_base==2.6.1
+canonicalwebteam.flask_base==3.1.2
 canonicalwebteam.discourse==5.8.1
 canonicalwebteam.http==1.0.4
 canonicalwebteam.blog==6.8.2
 canonicalwebteam.templatefinder==1.0.0
 canonicalwebteam.image-template==1.9.0
-canonicalwebteam.cookie-service==2.0.1
+canonicalwebteam.cookie-service==2.1.0
 Flask-Caching==2.1.0
 pyyaml==6.0.2
 gunicorn[gevent]
