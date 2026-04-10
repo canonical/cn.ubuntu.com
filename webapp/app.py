@@ -43,11 +43,6 @@ app = FlaskBase(
 app.config["CACHE_TYPE"] = "SimpleCache"
 cache = Cache(app)
 
-# initialize releases url
-app.config["UBUNTU_COM_RELEASES"] = (
-    "https://raw.githubusercontent.com/canonical/ubuntu.com/main/releases.yaml"
-)
-
 
 # Set up cache functions for cookie consent service
 def get_cache(key):
@@ -184,7 +179,10 @@ def navigation_nojs():
 app.add_url_rule("/navigation", view_func=navigation_nojs)
 
 # read releases.yaml
-releases = get_releases(app.config["UBUNTU_COM_RELEASES"])
+releases = get_releases(
+    "https://raw.githubusercontent.com/canonical/"
+    "ubuntu.com/main/releases.yaml"
+)
 
 # read navigation-dropdown.yaml
 with open("navigation-dropdown.yaml") as dropdown_file:

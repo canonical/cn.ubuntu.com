@@ -16,8 +16,10 @@ class TestReleasesYamlReferences(TestCase):
     def setUpClass(cls):
 
         with app.app_context():
-            releases_url = app.config["UBUNTU_COM_RELEASES"]
-            cls.releases_data = get_releases(releases_url)
+            cls.releases_data = get_releases(
+                "https://raw.githubusercontent.com/canonical/"
+                "ubuntu.com/main/releases.yaml"
+            )
 
         cls.valid_paths = set()
         cls._build_paths(cls.releases_data, "releases", cls.valid_paths)
