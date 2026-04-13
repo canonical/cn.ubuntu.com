@@ -3,7 +3,7 @@ import yaml
 
 
 def get_releases(url):
-    response = requests.get(url)
+    response = requests.get(url, timeout=10)
     response.raise_for_status()
 
     data = yaml.load(response.text, Loader=yaml.FullLoader)
