@@ -1,8 +1,13 @@
+import logging
 import requests
 import yaml
 
+logger = logging.getLogger(__name__)
+RELEASES_CACHE_KEY = "releases_data"
+
 
 def get_releases(url):
+    """Fetch releases.yaml from the given URL."""
     response = requests.get(url, timeout=10)
     response.raise_for_status()
 
@@ -37,3 +42,25 @@ def get_releases(url):
                         info[key] = f"{parts[1]}年{month_map[parts[0]]}月"
 
     return data
+
+
+def get_releases_cached(cache, url):
+    """
+    Get releases from cache or fetch and cache if missing.
+    """
+    cached_data = cache.get(RELEASES_CACHE_KEY)
+
+    if cached_data is not None:
+        logger.info("Releases loaded from cache")
+        return cached_data
+
+    try:
+        logger.info(f"Fetching releases from {url}...")
+        data = get_releases(url)
+        # Set timeout to an hour
+        cache.set(RELEASES_CACHE_KEY, data, timeout=3600)
+        logger.info("Releases fetched and cached successfully")
+        return data
+    except Exception as e:
+        logger.error(f"Failed to fetch releases: {e}")
+        raise

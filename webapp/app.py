@@ -10,7 +10,7 @@ from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
 from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
-from webapp.api import get_releases
+from webapp.api import get_releases_cached
 from slugify import slugify
 
 from webapp.navigation import (
@@ -178,11 +178,6 @@ def navigation_nojs():
 
 app.add_url_rule("/navigation", view_func=navigation_nojs)
 
-# read releases.yaml
-releases = get_releases(
-    "https://raw.githubusercontent.com/canonical/"
-    "ubuntu.com/main/releases.yaml"
-)
 
 # read navigation-dropdown.yaml
 with open("navigation-dropdown.yaml") as dropdown_file:
@@ -192,8 +187,12 @@ with open("navigation-dropdown.yaml") as dropdown_file:
 # Template context
 @app.context_processor
 def context():
+    releases_url = (
+        "https://raw.githubusercontent.com/canonical/"
+        "ubuntu.com/main/releases.yaml"
+    )
     return {
-        "releases": releases,
+        "releases": get_releases_cached(cache, releases_url),
         "dropdown": dropdown_data,
         "get_current_page_bubble": get_current_page_bubble,
         "get_navigation": get_navigation,
