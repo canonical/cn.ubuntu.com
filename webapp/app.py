@@ -187,12 +187,8 @@ with open("navigation-dropdown.yaml") as dropdown_file:
 # Template context
 @app.context_processor
 def context():
-    releases_url = (
-        "https://raw.githubusercontent.com/canonical/"
-        "ubuntu.com/main/releases.yaml"
-    )
     return {
-        "releases": get_releases_cached(cache, releases_url),
+        "releases": get_releases_cached(cache),
         "dropdown": dropdown_data,
         "get_current_page_bubble": get_current_page_bubble,
         "get_navigation": get_navigation,

@@ -4,6 +4,10 @@ import yaml
 
 logger = logging.getLogger(__name__)
 RELEASES_CACHE_KEY = "releases_data"
+RELEASES_URL = (
+    "https://raw.githubusercontent.com/canonical/"
+    "ubuntu.com/main/releases.yaml"
+)
 
 
 def get_releases(url):
@@ -44,7 +48,7 @@ def get_releases(url):
     return data
 
 
-def get_releases_cached(cache, url):
+def get_releases_cached(cache):
     """
     Get releases from cache or fetch and cache if missing.
     """
@@ -55,11 +59,11 @@ def get_releases_cached(cache, url):
         return cached_data
 
     try:
-        logger.info(f"Fetching releases from {url}...")
-        data = get_releases(url)
-        # Set timeout to an hour
+        logger.info(f"Fetching releases from {RELEASES_URL}...")
+        data = get_releases(RELEASES_URL)
+        # Cache for one hour
         cache.set(RELEASES_CACHE_KEY, data, timeout=3600)
-        logger.info("Releases fetched and cached successfully")
+        logger.debug("Releases fetched and cached successfully")
         return data
     except Exception as e:
         logger.error(f"Failed to fetch releases: {e}")
