@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - fix/deployment  # remove after approval
 
 env:
   CHARMCRAFT_ENABLE_EXPERIMENTAL_EXTENSIONS: true
