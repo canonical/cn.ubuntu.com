@@ -17,6 +17,5 @@ parts:
       - flask/app/templates
       - flask/app/webapp
       - flask/app/redirects.yaml
-      - flask/app/releases.yaml
       - flask/app/secondary-navigation.yaml
       - flask/app/navigation-dropdown.yaml
