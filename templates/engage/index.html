@@ -1,6 +1,8 @@
 {% set hide_nav = False %}
 {% extends "engage/base_engage.html" %}
 
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+
 {% block title %}Ubuntu case studies, whitepapers and webinars{% endblock %}
 
 {% block meta_description %}Resources from across Ubuntu and Canonical combined into a single portal{% endblock %}
@@ -9,22 +11,40 @@
 
 {% block content %}
 
-<section class="p-strip is-shallow u-no-padding--bottom">
-  <div class="row">
+<section class="p-section--hero grid-row">
+  <div class="grid-col-start-large-3 grid-col-small-4 grid-col-medium-4 grid-col-6">
     <h1 class="u-text-align">Ubuntu 案例分享、白皮书和网络研讨会</h1>
   </div>
 </section>
 
-<section class="p-strip u-no-padding--bottom">
+{% call(slot) vf_hero(
+  title_text='Ubuntu 案例分享、白皮书和网络研讨会',
+  layout='25/75',
+) -%}
+{%- endcall -%}
+
+<section>
   <div class="grid-row">
     {% for item in metadata %}
-      {% with 
-      title=item.topic_name,
-      title_link=item.path,
-      description=item.subtitle,
-      type=item.type %}
-      {% include "/engage/shared/_article-card.html" %}
-      {% endwith %}
+      {% if loop.index <= 2 and item.image %}
+        {% with
+          title=item.topic_name,
+          title_link=item.path,
+          description=item.subtitle,
+          type=item.type,
+          image_src=item.image,
+          image_alt=item.topic_name %}
+          {% include "/engage/shared/_featured-article-card.html" %}
+        {% endwith %}
+      {% else %}
+        {% with
+          title=item.topic_name,
+          title_link=item.path,
+          description=item.subtitle,
+          type=item.type %}
+          {% include "/engage/shared/_article-card.html" %}
+        {% endwith %}
+      {% endif %}
     {% endfor %}
   </div>
   <section class="p-section--deep">
