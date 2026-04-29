@@ -10,7 +10,7 @@ from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
 from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
-from webapp.api import RELEASES_URL, get_releases_cached, get_releases
+from webapp.api import RELEASES_URL, get_releases
 from slugify import slugify
 
 from webapp.navigation import (
