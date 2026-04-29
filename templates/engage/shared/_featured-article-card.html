@@ -1,0 +1,18 @@
+{% from "_macros/vf_card.jinja" import vf_card %}
+
+{{ vf_card(
+    columns="4",
+    link=title_link,
+    heading=title,
+    image={
+      "src": image_src,
+      "alt": image_alt
+    },
+    footer={
+      "resource_type": {
+        "icon": "topic",
+        "text": type | localize_type
+      },
+    },
+    description=description
+  ) }}
