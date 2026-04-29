@@ -76,6 +76,8 @@ discourse_api = DiscourseAPI(
     get_topics_query_id=14,
 )
 
+# get releaes
+releases = get_releases(RELEASES_URL)
 
 takeovers_path = "/takeovers"
 discourse_takeovers = EngagePages(
@@ -188,7 +190,7 @@ with open("navigation-dropdown.yaml") as dropdown_file:
 @app.context_processor
 def context():
     return {
-        "releases": get_releases(RELEASES_URL),
+        "releases": releases,
         "dropdown": dropdown_data,
         "get_current_page_bubble": get_current_page_bubble,
         "get_navigation": get_navigation,
