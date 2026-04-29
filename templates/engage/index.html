@@ -11,7 +11,7 @@
 
 <section class="p-strip is-shallow u-no-padding--bottom">
   <div class="row">
-    <h1>Ubuntu 案例分享、白皮书和网络研讨会</h1>
+    <h1 class="u-text-align">Ubuntu 案例分享、白皮书和网络研讨会</h1>
   </div>
 </section>
 
@@ -27,6 +27,13 @@
       {% endwith %}
     {% endfor %}
   </div>
+  <section class="p-section--deep">
+    {% with %}
+      {% set total_pages = total_pages %}
+      {% set current_page = page %}
+      {% include "shared/_pagination.html" %}
+    {% endwith %}
+  </section>
 </section>
 
 {% endblock content %}

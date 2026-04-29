@@ -29,6 +29,10 @@ from webapp.views import (
     BlogSitemapPage,
 )
 
+from webapp.context import (
+    modify_query,
+)
+
 app = FlaskBase(
     __name__,
     "cn.ubuntu.com",
@@ -192,6 +196,7 @@ def context():
         "get_current_page_bubble": get_current_page_bubble,
         "get_navigation": get_navigation,
         "split_list": split_list,
+        "modify_query": modify_query,
     }
 
 
