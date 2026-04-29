@@ -204,3 +204,23 @@ def utility_processor():
 @app.template_filter()
 def slug(text):
     return slugify(text)
+
+
+_TYPE_LOCALIZATIONS = {
+    "blog": "博客",
+    "case study": "案例分享",
+    "datasheet": "产品说明书",
+    "event": "活动",
+    "form": "表单",
+    "guide": "指南",
+    "roadshow": "活动",
+    "whitepaper": "白皮书",
+    "webinar": "网络研讨会",
+}
+
+
+@app.template_filter()
+def localize_type(value):
+    if not value:
+        return value
+    return _TYPE_LOCALIZATIONS.get(value.strip().lower(), value)
