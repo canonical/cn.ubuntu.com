@@ -10,7 +10,7 @@ from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
 from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
-from webapp.api import get_releases_cached
+from webapp.api import RELEASES_URL, get_releases
 from slugify import slugify
 
 from webapp.navigation import (
@@ -76,6 +76,8 @@ discourse_api = DiscourseAPI(
     get_topics_query_id=14,
 )
 
+# get releaes
+releases = get_releases(RELEASES_URL)
 
 takeovers_path = "/takeovers"
 discourse_takeovers = EngagePages(
@@ -188,7 +190,7 @@ with open("navigation-dropdown.yaml") as dropdown_file:
 @app.context_processor
 def context():
     return {
-        "releases": get_releases_cached(cache),
+        "releases": releases,
         "dropdown": dropdown_data,
         "get_current_page_bubble": get_current_page_bubble,
         "get_navigation": get_navigation,
