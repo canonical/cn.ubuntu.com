@@ -9,14 +9,14 @@
 
 {% block content %}
 
-<section class="p-strip u-no-padding--bottom">
+<section class="p-strip is-shallow u-no-padding--bottom">
   <div class="row">
-    <h1>Ubuntu案例研究，白皮书和网络研讨会</h1>
+    <h1>Ubuntu 案例分享、白皮书和网络研讨会</h1>
   </div>
 </section>
 
-<section class="p-strip is-shallow" id="posts-list">
-  <div class="row u-equal-height">
+<section class="p-strip u-no-padding--bottom">
+  <div class="grid-row">
     {% for item in metadata %}
       {% with 
       title=item.topic_name,
@@ -26,8 +26,7 @@
       {% include "/engage/shared/_article-card.html" %}
       {% endwith %}
     {% endfor %}
-
   </div>
-
 </section>
+
 {% endblock content %}
