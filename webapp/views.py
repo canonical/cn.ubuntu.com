@@ -28,7 +28,6 @@ def build_engage_index(engage_docs):
 
         total_pages = math.ceil(current_total / posts_per_page)
 
-        # total_pages = math.ceil(len(topics) / posts_per_page)
         return flask.render_template(
             "engage/index.html",
             forum_url=engage_docs.api.base_url,
