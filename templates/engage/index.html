@@ -1,8 +1,6 @@
 {% set hide_nav = False %}
 {% extends "engage/base_engage.html" %}
 
-{% from "_macros/vf_hero.jinja" import vf_hero %}
-
 {% block title %}Ubuntu case studies, whitepapers and webinars{% endblock %}
 
 {% block meta_description %}Resources from across Ubuntu and Canonical combined into a single portal{% endblock %}
@@ -17,15 +15,9 @@
   </div>
 </section>
 
-{% call(slot) vf_hero(
-  title_text='Ubuntu 案例分享、白皮书和网络研讨会',
-  layout='25/75',
-) -%}
-{%- endcall -%}
-
 <section>
   {% if metadata | length > 0 %}
-    <div class="grid-row">
+    <div class="grid-row p-engage-list">
       {% for item in metadata %}
         {% if loop.index <= 2 and item.image %}
           {% with
@@ -48,13 +40,11 @@
         {% endif %}
       {% endfor %}
     </div>
-    <section class="p-section--deep">
-      {% with %}
-        {% set total_pages = total_pages %}
-        {% set current_page = page %}
-        {% include "shared/_pagination.html" %}
-      {% endwith %}
-    </section>
+    {% with %}
+      {% set total_pages = total_pages %}
+      {% set current_page = page %}
+      {% include "shared/_pagination.html" %}
+    {% endwith %}
   {% else %}
     <div class="u-fixed-width p-section">
       <h3>No results &mdash; why not try widening your search?</h3>
