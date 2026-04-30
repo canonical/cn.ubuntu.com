@@ -1,39 +1,40 @@
 @charset "UTF-8";
 
-@import 'settings';
+@import "settings";
 
 // Import Vanilla Framework
-@import 'vanilla-framework/scss/build';
+@import "vanilla-framework/scss/build";
 
 // Import footer and navigation patterns
-@import 'pattern_footer';
+@import "pattern_footer";
 @include vf-p-navigation;
 @include cn-p-footer;
 
 // Import custom styles
-@import 'custom/ubuntu_intro';
-@import 'custom/heading-icon-small';
-@import 'custom/certified-testing-list';
-@import 'pattern_blog-post';
-@import 'pattern_blog-card';
-@import 'pattern_blog-list';
-@import 'pattern_chart';
-@import 'pattern_core';
-@import 'pattern_strip';
-@import 'pattern_takeovers';
-@import 'utility_crop';
-@import 'pattern_strip-photos';
-@import 'pattern_gaming';
-@import 'pattern_card';
-@import 'pattern_contextual-footer';
-@import 'pattern_calculator';
-@import 'pattern_heading-icon';
-@import 'pattern_tabs';
-@import 'pattern_navigation';
-@import 'pattern_navigation-dropdown';
+@import "custom/ubuntu_intro";
+@import "custom/heading-icon-small";
+@import "custom/certified-testing-list";
+@import "pattern_blog-post";
+@import "pattern_blog-card";
+@import "pattern_blog-list";
+@import "pattern_chart";
+@import "pattern_core";
+@import "pattern_strip";
+@import "pattern_takeovers";
+@import "utility_crop";
+@import "pattern_strip-photos";
+@import "pattern_gaming";
+@import "pattern_card";
+@import "pattern_contextual-footer";
+@import "pattern_calculator";
+@import "pattern_heading-icon";
+@import "pattern_tabs";
+@import "pattern_navigation";
+@import "pattern_navigation-dropdown";
+@import "pattern_engage";
 
 // Import cookie policy styles
-@import '@canonical/cookie-policy/build/css/cookie-policy';
+@import "@canonical/cookie-policy/build/css/cookie-policy";
 
 @include blog-p-list;
 @include blog-p-post;
@@ -54,6 +55,7 @@
 @include ubuntu-p-navigation;
 @include ubuntu-p-navigation-reduced;
 @include ubuntu-p-navigation-dropdown;
+@include ubuntu-p-engage;
 
 html {
   scroll-behavior: smooth;
@@ -119,8 +121,7 @@ body {
 }
 
 .p-takeover-animation {
-  animation: fade-in map-get($animation-duration, 'snap')
-    map-get($animation-easing, 'in');
+  animation: fade-in map-get($animation-duration, "snap") map-get($animation-easing, "in");
   animation-delay: 2.5s;
   animation-fill-mode: backwards;
 
@@ -128,13 +129,11 @@ body {
     animation-delay: 0s !important;
 
     .grid-col-6 {
-      animation: slide-in-from-left map-get($animation-duration, 'fast')
-        map-get($animation-easing, 'out');
+      animation: slide-in-from-left map-get($animation-duration, "fast") map-get($animation-easing, "out");
     }
 
     .grid-col-2 {
-      animation: slide-in-from-right map-get($animation-duration, 'fast')
-        map-get($animation-easing, 'out');
+      animation: slide-in-from-right map-get($animation-duration, "fast") map-get($animation-easing, "out");
     }
   }
 
@@ -145,7 +144,7 @@ body {
 
 // Fix for missing desktop-hero image and responsive layout
 .desktop-hero {
-  background-image: url('#{$assets-path}2fdb0bac-desktop-22.04-hero.jpg');
+  background-image: url("#{$assets-path}2fdb0bac-desktop-22.04-hero.jpg");
   background-position: right bottom;
   background-size: 1000px auto;
 
@@ -164,7 +163,7 @@ body {
 
 // Fix for missing organisation-hero image and responsive layout
 .organisations-hero {
-  background-image: url('#{$assets-path}32d95e39-hero-laptop-org.jpg?w=1000');
+  background-image: url("#{$assets-path}32d95e39-hero-laptop-org.jpg?w=1000");
   background-position: right bottom;
   background-size: 1100px auto;
 
