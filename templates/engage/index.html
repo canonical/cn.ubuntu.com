@@ -19,7 +19,7 @@
   {% if metadata | length > 0 %}
     <div class="grid-row p-engage-list">
       {% for item in metadata %}
-        {% if loop.index <= 2 and item.image %}
+        {% if page == 1 and loop.index <= 2 and item.image %}
           {% with
             title=item.topic_name,
             title_link=item.path,
