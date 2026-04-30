@@ -62,6 +62,7 @@ env[23]/
 
 static/dist
 static/js/dist
+static/js/modules/vanilla-framework
 
 .webcache/
 .webcache_blog/
