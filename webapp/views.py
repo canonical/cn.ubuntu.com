@@ -13,7 +13,7 @@ def build_engage_index(engage_docs):
         page = flask.request.args.get("page", default=1, type=int)
         topic = flask.request.args.get("topic", default=None, type=str)
         sort = flask.request.args.get("sort", default=None, type=str)
-        posts_per_page = 14
+        posts_per_page = 6
 
         offset = (page - 1) * posts_per_page
 

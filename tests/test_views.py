@@ -93,9 +93,7 @@ class TestBuildEngageIndex(unittest.TestCase):
         self.assertEqual(kwargs["page"], 2)
         self.assertEqual(kwargs["topic"], "cloud")
         self.assertEqual(kwargs["sort"], "newest")
-        self.assertEqual(
-            kwargs["forum_url"], "https://discourse.ubuntu.com/"
-        )
+        self.assertEqual(kwargs["forum_url"], "https://discourse.ubuntu.com/")
 
 
 if __name__ == "__main__":
