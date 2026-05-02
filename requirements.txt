@@ -1,6 +1,6 @@
 flask
 canonicalwebteam.flask_base==2.6.1
-canonicalwebteam.discourse==5.8.1
+canonicalwebteam.discourse==7.2.0
 canonicalwebteam.http==1.0.4
 canonicalwebteam.blog==6.8.2
 canonicalwebteam.templatefinder==1.0.0

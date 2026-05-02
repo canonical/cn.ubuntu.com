@@ -1,0 +1,28 @@
+@mixin ubuntu-p-engage {
+  .p-engage-list {
+    .p-content-card.p-content-card--cols-4 {
+      &:not(.has-image),
+      &.has-image {
+        height: 100%;
+        min-height: max-content;
+      }
+
+      &.has-image {
+        flex-direction: column;
+      }
+
+      .p-content-card__image-wrapper {
+        width: 100%;
+      }
+
+      .p-content-card__image {
+        object-position: left;
+      }
+    }
+  }
+
+  .p-pagination__items {
+    justify-content: center;
+    width: 100%;
+  }
+}

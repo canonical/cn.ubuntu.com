@@ -9,25 +9,48 @@
 
 {% block content %}
 
-<section class="p-strip u-no-padding--bottom">
-  <div class="row">
-    <h1>Ubuntu案例研究，白皮书和网络研讨会</h1>
+<section class="p-section--hero grid-row">
+  <div class="grid-col-start-large-3 grid-col-small-4 grid-col-medium-4 grid-col-6">
+    <h1 class="u-text-align">Ubuntu 案例分享、白皮书和网络研讨会</h1>
   </div>
 </section>
 
-<section class="p-strip is-shallow" id="posts-list">
-  <div class="row u-equal-height">
-    {% for item in metadata %}
-      {% with 
-      title=item.topic_name,
-      title_link=item.path,
-      description=item.subtitle,
-      type=item.type %}
-      {% include "/engage/shared/_article-card.html" %}
-      {% endwith %}
-    {% endfor %}
-
-  </div>
-
+<section>
+  {% if metadata | length > 0 %}
+    <div class="grid-row p-engage-list">
+      {% for item in metadata %}
+        {% if page == 1 and loop.index <= 2 and item.image %}
+          {% with
+            title=item.topic_name,
+            title_link=item.path,
+            description=item.subtitle,
+            type=item.type,
+            image_src=item.meta_image,
+            image_alt=item.topic_name %}
+            {% include "/engage/shared/_featured-article-card.html" %}
+          {% endwith %}
+        {% else %}
+          {% with
+            title=item.topic_name,
+            title_link=item.path,
+            description=item.subtitle,
+            type=item.type %}
+            {% include "/engage/shared/_article-card.html" %}
+          {% endwith %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% with %}
+      {% set total_pages = total_pages %}
+      {% set current_page = page %}
+      {% include "shared/_pagination.html" %}
+    {% endwith %}
+  {% else %}
+    <div class="u-fixed-width p-section">
+      <h3>No results &mdash; why not try widening your search?</h3>
+      <p>You can do this by clearing and selecting new filters.</p>
+    </div>
+  {% endif %}
 </section>
+
 {% endblock content %}
