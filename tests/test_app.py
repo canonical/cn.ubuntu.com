@@ -50,8 +50,9 @@ class TestTemplateContext(unittest.TestCase):
     """Tests for the @app.context_processor template context"""
 
     def test_modify_query_in_context(self):
+        contexts = {}
         with app.test_request_context("/engage"):
-            contexts = app.update_template_context({})
+            app.update_template_context(contexts)
 
         self.assertIn("modify_query", contexts)
         self.assertIs(contexts["modify_query"], modify_query)
