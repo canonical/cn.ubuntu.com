@@ -1,9 +1,12 @@
 {% from "_macros/vf_card.jinja" import vf_card %}
 
+{% set card_image = {"src": image_src, "alt": title} if image_src else None %}
+
 {{ vf_card(
     columns="4",
     link=title_link,
     heading=title,
+    image=card_image,
     footer={
       "resource_type": {
         "icon": "topic",
