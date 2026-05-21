@@ -20,6 +20,16 @@ env:
     secretKeyRef:
       key: cookies-api-key
       name: cookies-canonical-com-credentials
+  
+  - name: WORDPRESS_APPLICATION_PASSWORD
+    secretKeyRef:
+      key: wordpress-application-password
+      name: wordpress-api
+
+  - name: WORDPRESS_USERNAME
+    secretKeyRef:
+      key: wordpress-username
+      name: wordpress-api
 
 useProxy: false
 
