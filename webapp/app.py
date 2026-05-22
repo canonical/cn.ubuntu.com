@@ -1,6 +1,3 @@
-import logging
-import os
-
 import flask
 import talisker
 import yaml
@@ -30,8 +27,6 @@ from webapp.views import (
     BlogSitemapIndex,
     BlogSitemapPage,
 )
-
-logger = logging.getLogger(__name__)
 
 app = FlaskBase(
     __name__,
@@ -76,8 +71,8 @@ session = talisker.requests.get_session()
 discourse_api = DiscourseAPI(
     base_url="https://discourse.ubuntu.com/",
     session=session,
-    api_key=os.getenv("DISCOURSE_API_KEY"),
-    api_username=os.getenv("DISCOURSE_API_USERNAME"),
+    api_key=get_flask_env("DISCOURSE_API_KEY"),
+    api_username=get_flask_env("DISCOURSE_API_USERNAME"),
     get_topics_query_id=14,
 )
 
@@ -159,34 +154,19 @@ app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
 app.add_url_rule("/sitemap.xml", view_func=sitemap_index)
 
-WORDPRESS_USERNAME = os.getenv("WORDPRESS_USERNAME")
-WORDPRESS_APPLICATION_PASSWORD = os.getenv("WORDPRESS_APPLICATION_PASSWORD")
-
-if WORDPRESS_USERNAME and WORDPRESS_APPLICATION_PASSWORD:
-    logger.info(
-        "WordPress credentials found: username=%s", WORDPRESS_USERNAME
-    )
-else:
-    logger.warning(
-        "WordPress credentials not found. "
-        "Blog functionality will be unavailable. "
-        "Expected env vars: WORDPRESS_USERNAME, WORDPRESS_APPLICATION_PASSWORD"
-    )
-
-try:
-    blog_api = BlogAPI(
-            session=session,
-            thumbnail_width=354,
-            thumbnail_height=199,
-            wordpress_username=WORDPRESS_USERNAME,
-            wordpress_password=WORDPRESS_APPLICATION_PASSWORD,
-        )
-except Exception as e:
-    logger.error("Error initializing BlogAPI: %s", str(e), exc_info=True)
-    blog_api = None
+WORDPRESS_USERNAME = get_flask_env("WORDPRESS_USERNAME")
+WORDPRESS_APPLICATION_PASSWORD = get_flask_env(
+    "WORDPRESS_APPLICATION_PASSWORD"
+)
 
 blog_views = BlogViews(
-    api=blog_api,
+    api=BlogAPI(
+        session=session,
+        thumbnail_width=354,
+        thumbnail_height=199,
+        wordpress_username=WORDPRESS_USERNAME,
+        wordpress_password=WORDPRESS_APPLICATION_PASSWORD,
+    ),
     tag_ids=[3265],
     blog_title="博客",
     per_page=11,
