@@ -156,19 +156,21 @@ app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
 app.add_url_rule("/sitemap.xml", view_func=sitemap_index)
 
-WORDPRESS_USERNAME = get_flask_env("WORDPRESS_USERNAME")
-WORDPRESS_APPLICATION_PASSWORD = get_flask_env(
-    "WORDPRESS_APPLICATION_PASSWORD"
-)
+WORDPRESS_USERNAME = os.getenv("WORDPRESS_USERNAME")
+WORDPRESS_APPLICATION_PASSWORD = os.getenv("WORDPRESS_APPLICATION_PASSWORD")
+
+try:
+    blog_api = BlogAPI(
+            session=session,
+            thumbnail_width=354,
+            thumbnail_height=199,
+        )
+except Exception as e:
+    blog_api = None
+    print(f"Error initializing BlogAPI: {e}")
 
 blog_views = BlogViews(
-    api=BlogAPI(
-        session=session,
-        thumbnail_width=354,
-        thumbnail_height=199,
-        wordpress_username=WORDPRESS_USERNAME,
-        wordpress_password=WORDPRESS_APPLICATION_PASSWORD
-    ),
+    api=blog_api,
     tag_ids=[3265],
     blog_title="博客",
     per_page=11,
