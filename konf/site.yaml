@@ -20,7 +20,7 @@ env:
     secretKeyRef:
       key: cookies-api-key
       name: cookies-canonical-com-credentials
-  
+
   - name: WORDPRESS_APPLICATION_PASSWORD
     secretKeyRef:
       key: wordpress-application-password
