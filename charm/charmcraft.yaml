@@ -35,3 +35,6 @@ config:
     cookie-service-api-key:
       description: "Cookie Service API Key"
       type: secret
+    wordpress:
+      type: secret
+      description: "Wordpress credentials"
