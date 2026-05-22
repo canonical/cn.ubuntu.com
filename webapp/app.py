@@ -1,3 +1,4 @@
+import logging
 import os
 
 import flask
@@ -29,6 +30,8 @@ from webapp.views import (
     BlogSitemapIndex,
     BlogSitemapPage,
 )
+
+logger = logging.getLogger(__name__)
 
 app = FlaskBase(
     __name__,
@@ -159,15 +162,28 @@ app.add_url_rule("/sitemap.xml", view_func=sitemap_index)
 WORDPRESS_USERNAME = os.getenv("WORDPRESS_USERNAME")
 WORDPRESS_APPLICATION_PASSWORD = os.getenv("WORDPRESS_APPLICATION_PASSWORD")
 
+if WORDPRESS_USERNAME and WORDPRESS_APPLICATION_PASSWORD:
+    logger.info(
+        "WordPress credentials found: username=%s", WORDPRESS_USERNAME
+    )
+else:
+    logger.warning(
+        "WordPress credentials not found. "
+        "Blog functionality will be unavailable. "
+        "Expected env vars: WORDPRESS_USERNAME, WORDPRESS_APPLICATION_PASSWORD"
+    )
+
 try:
     blog_api = BlogAPI(
             session=session,
             thumbnail_width=354,
             thumbnail_height=199,
+            wordpress_username=WORDPRESS_USERNAME,
+            wordpress_password=WORDPRESS_APPLICATION_PASSWORD,
         )
 except Exception as e:
+    logger.error("Error initializing BlogAPI: %s", str(e), exc_info=True)
     blog_api = None
-    print(f"Error initializing BlogAPI: {e}")
 
 blog_views = BlogViews(
     api=blog_api,
