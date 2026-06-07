@@ -11,6 +11,7 @@ from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
 from webapp.api import get_releases_cached
 from slugify import slugify
+from urllib.parse import parse_qs, urlencode
 
 from webapp.navigation import (
     get_current_page_bubble,
@@ -169,7 +170,7 @@ blog_views = BlogViews(
     ),
     tag_ids=[3265],
     blog_title="博客",
-    per_page=11,
+    per_page=16,
 )
 app.register_blueprint(build_blueprint(blog_views), url_prefix="/blog")
 app.add_url_rule(
@@ -193,11 +194,21 @@ app.add_url_rule("/navigation", view_func=navigation_nojs)
 with open("navigation-dropdown.yaml") as dropdown_file:
     dropdown_data = yaml.load(dropdown_file, Loader=yaml.FullLoader)
 
+# Blog pagination
+def modify_query(params):
+    query_params = parse_qs(
+        flask.request.query_string.decode("utf-8"), keep_blank_values=True
+    )
+    query_params.update(params)
+
+    return urlencode(query_params, doseq=True)
+
 
 # Template context
 @app.context_processor
 def context():
     return {
+        "modify_query": modify_query,
         "releases": get_releases_cached(cache),
         "dropdown": dropdown_data,
         "get_current_page_bubble": get_current_page_bubble,
