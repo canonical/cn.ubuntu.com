@@ -29,15 +29,14 @@
 
   .p-engage-form {
     align-self: start;
-    overflow-y: visible;
+    // Cap to the viewport so a tall form scrolls internally instead of
+    // pinning content out of reach. The scrollbar only appears when the
+    // form actually overflows, so short forms are unaffected.
+    max-height: calc(100vh - #{$spv--strip-regular});
+    overflow-y: auto;
     position: sticky;
     top: $spv--strip-regular; // Account for navigation
     z-index: 1;
-
-    &.is-scrollable {
-      max-height: calc(100vh - #{$spv--strip-regular});
-      overflow-y: auto;
-    }
   }
 
   // /engage: reorder form above body content on smaller screens
