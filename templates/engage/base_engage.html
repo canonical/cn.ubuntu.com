@@ -42,6 +42,10 @@
     {% set last_section = "related" %}
   {% endif %}
 
+  {# whichever content section renders last gets deep bottom padding #}
+  {% set body_section_class = "p-section--deep" if last_section == "body" else "p-section" %}
+  {% set video_section_class = "p-strip is-shallow p-section--deep" if last_section == "embedded_video" else "p-strip is-shallow" %}
+
   <span id="publish_date" class="u-hide">{{ metadata["publish_date"] }}</span>
   <span id="created_date" class="u-hide">{{ metadata["created_at"] }}</span>
 
@@ -88,7 +92,7 @@
   ) -%}
   {%- endcall -%}
 
-  <section class="{% if last_section == 'body' %}p-section--deep{% else %}p-section{% endif %}">
+  <section class="{{ body_section_class }}">
     <div class="u-fixed-width u-hide--small u-hide--medium">
       <hr class="p-rule" />
     </div>
@@ -130,13 +134,13 @@
       {% set channel_id = 6793 %}
     {% endif %}
     <!-- webinar -->
-    <section class="p-strip is-shallow" id="register-section">
+    <section class="{{ video_section_class }}" id="register-section">
       <div class="row" id="webinar">
         <div class="jsBrightTALKEmbedWrapper"
              style="width:100%;
                     height:100%;
                     position:relative;
-                    background: #ffffff">
+                    background: #f3f3f3">
           <script class="jsBrightTALKEmbedConfig" type="application/json">
             {
               "channelId": {
@@ -154,8 +158,7 @@
               "height": "auto"
             }
           </script>
-          <script src="https://www.brighttalk.com/clients/js/player-embed/player-embed.js"
-                  class="jsBrightTALKEmbed"></script>
+          <script src="https://www.brighttalk.com/clients/js/player-embed/player-embed.js" class="jsBrightTALKEmbed"></script>
         </div>
       </div>
     </section>
@@ -163,8 +166,7 @@
 
   {% if "youtube_id" in metadata %}
     <!-- Youtube webinars -->
-    <section class="p-strip is-shallow{% if last_section == 'embedded_video' %} p-section--deep{% endif %}"
-             id="youtube-section">
+    <section class="{{ video_section_class }}" id="youtube-section">
       <div class="row" id="webinar">
         <iframe title="Webinar"
                 width="560"
@@ -179,8 +181,7 @@
 
   {% if "vimeo_id" in metadata %}
     <!-- Vimeo webinars -->
-    <section class="p-strip is-shallow{% if last_section == 'embedded_video' %} p-section--deep{% endif %}"
-             id="vimeo-section">
+    <section class="{{ video_section_class }}" id="vimeo-section">
       <div class="row" id="webinar">
         <iframe title="Webinar"
                 src="https://player.vimeo.com/video/{{ metadata['vimeo_id'] }}"
