@@ -1,7 +1,6 @@
 {% extends "templates/base.html" %}
 
 {% from "_macros/vf_hero.jinja" import vf_hero %}
-{% from "_macros/vf_card.jinja" import vf_card %}
 
 {% block body_class %}is-paper{% endblock %}
 
@@ -17,7 +16,7 @@
 
   <section class="p-section" id="posts-list">
     <div class="grid-row">
-      {% for article in articles%}        
+      {% for article in articles %}        
         {% include "blog/blog-card.html" %}
       {% endfor %}
     </div>
