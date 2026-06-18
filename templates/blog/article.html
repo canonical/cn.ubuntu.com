@@ -11,6 +11,10 @@
 {% endblock body_class %}
 
 {% block content %}
+
+  {% set breadcrumbs = [{"name": "博客", "href": "/blog"}, {"name": "文章"}] %}
+  {% include 'partial/_breadcrumbs.html' %}
+
   <article id="main-content" class="p-section--shallow">
     <header class="row">
       <div class="aside col-3 col-medium-6">
