@@ -160,7 +160,68 @@ WORDPRESS_APPLICATION_PASSWORD = get_flask_env(
     "WORDPRESS_APPLICATION_PASSWORD"
 )
 
-blog_views = BlogViews(
+
+class CNBlogViews(BlogViews):
+    def get_tag(self, slug, page=1):
+        """Keep tag pages scoped to the site's base CN blog tags."""
+        tag = self.api.get_tag_by_slug(slug)
+
+        if not tag:
+            return None
+
+        # WordPress treats multiple tag IDs as OR, so we fetch by selected tag
+        # and then apply an in-app AND filter that also requires base CN tags.
+        required_tag_ids = set(self.tag_ids + [tag["id"]])
+        filtered_articles = []
+        source_page = 1
+        source_total_pages = 1
+
+        # Walk all source pages for the selected tag to build a fully filtered
+        # result set before applying UI pagination.
+        while source_page <= source_total_pages:
+            articles, metadata = self.api.get_articles(
+                tags=[tag["id"]],
+                tags_exclude=self.excluded_tags,
+                page=source_page,
+                per_page=100,
+                status=self.status,
+            )
+
+            # Keep only posts containing every required tag ID.
+            for article in articles:
+                article_tag_ids = set(article.get("tags", []))
+                if required_tag_ids.issubset(article_tag_ids):
+                    filtered_articles.append(article)
+
+            source_total_pages = int(metadata.get("total_pages") or 0)
+            if not articles:
+                break
+
+            source_page += 1
+
+        # Paginate after filtering so counts and pages match rendered results.
+        total_posts = len(filtered_articles)
+        total_pages = (
+            (total_posts + self.per_page - 1) // self.per_page
+            if total_posts
+            else 0
+        )
+        current_page = int(page)
+        start = (current_page - 1) * self.per_page
+        end = start + self.per_page
+        page_articles = filtered_articles[start:end]
+
+        return {
+            "current_page": current_page,
+            "total_pages": total_pages,
+            "total_posts": total_posts,
+            "articles": page_articles,
+            "title": self.blog_title,
+            "tag": tag,
+        }
+
+
+blog_views = CNBlogViews(
     api=BlogAPI(
         session=session,
         thumbnail_width=354,
