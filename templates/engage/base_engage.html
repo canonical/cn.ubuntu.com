@@ -99,15 +99,9 @@
       <div class="grid-col-2 grid-col-medium-4">
         {% if metadata["form_id"] != "" %}
           <div class="p-engage-form" id="the-form">
-            {% if "form_cta" in metadata and metadata["form_cta"] != '' %}
-              {% with id=metadata["form_id"], returnURL=metadata['path']+"/thank-you", cta=metadata['form_cta'] %}
-                {% include "engage/shared/_engage_form.html" %}
-              {% endwith %}
-            {% else %}
-              {% with id=metadata["form_id"], returnURL=metadata['path']+"/thank-you", cta="提交" %}
-                {% include "engage/shared/_engage_form.html" %}
-              {% endwith %}
-            {% endif %}
+            {% with id=metadata["form_id"], returnURL=metadata['path']+"/thank-you", cta=metadata["form_cta"] | default("提交", true) %}
+              {% include "engage/shared/_engage_form.html" %}
+            {% endwith %}
           </div>
         {% elif "primary_link" in metadata and metadata["primary_link"] != "" and metadata["primary_link"].startswith("https") %}
           {% if not metadata["webinar_code"] %}
