@@ -194,6 +194,7 @@ app.add_url_rule("/navigation", view_func=navigation_nojs)
 with open("navigation-dropdown.yaml") as dropdown_file:
     dropdown_data = yaml.load(dropdown_file, Loader=yaml.FullLoader)
 
+
 # Blog pagination
 def modify_query(params):
     query_params = parse_qs(
