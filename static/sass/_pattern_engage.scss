@@ -29,10 +29,10 @@
 
   .p-engage-form {
     align-self: start;
+    overflow-y: visible;
     position: sticky;
     top: $spv--strip-regular; // Account for navigation
     z-index: 1;
-    overflow-y: visible;
 
     &.is-scrollable {
       max-height: calc(100vh - #{$spv--strip-regular});
@@ -43,11 +43,11 @@
   // /engage: reorder form above body content on smaller screens
   @media only screen and (max-width: $breakpoint-large) {
     .p-engage-form {
+      max-height: none;
       order: 1;
+      overflow-y: visible;
       // disable custom form behavior when stacked
       position: static;
-      max-height: none;
-      overflow-y: visible;
     }
 
     .p-engage-body {
