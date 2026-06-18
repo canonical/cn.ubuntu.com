@@ -88,41 +88,44 @@
   ) -%}
   {%- endcall -%}
 
-  <section class="p-section">
-    <div class="u-fixed-width">
+  <section class="{% if last_section == 'body' %}p-section--deep{% else %}p-section{% endif %}">
+    <div class="u-fixed-width u-hide--small u-hide--medium">
       <hr class="p-rule" />
     </div>
-    <div class="p-strip is-shallow grid-row">
-      <div class="grid-col-start-large-3 grid-col-4">
+    <div class="grid-row">
+      <div class="grid-col-start-large-3 grid-col-4 grid-col-medium-4 p-engage-body">
         {{ metadata["body_html"] | safe }}
       </div>
-      {% if metadata["form_id"] != "" %}
-        <div class="grid-col-2" id="the-form">
-          {% if "form_cta" in metadata and metadata["form_cta"] != '' %}
-            {% with id=metadata["form_id"], returnURL=metadata['path']+"/thank-you", cta=metadata['form_cta'] %}
-              {% include "engage/shared/_engage_form.html" %}
-            {% endwith %}
-          {% else %}
-            {% with id=metadata["form_id"], returnURL=metadata['path']+"/thank-you", cta="提交" %}
-              {% include "engage/shared/_engage_form.html" %}
-            {% endwith %}
-          {% endif %}
-        </div>
-      {% elif "primary_link" in metadata and metadata["primary_link"] != "" and metadata["primary_link"].startswith("https") %}
-        {% if not metadata["webinar_code"] %}
-          {% if metadata['meta_image'] %}
-            <div class="p-section--shallow u-hide--small u-hide--medium">
-              <div class="p-image-container--16-9 is-highlighted">
-                <img class="p-image-container__image"
-                    src="{{ metadata['meta_image'] or 'https://assets.ubuntu.com/v1/1199af9d-fallback-thumbnail-dark.jpg' }}"
-                    alt=""
-                    width="{{ metadata['image_width'] }}" />
+      <div class="grid-col-2 grid-col-medium-4">
+        {% if metadata["form_id"] != "" %}
+          <div class="p-engage-form" id="the-form">
+            {% if "form_cta" in metadata and metadata["form_cta"] != '' %}
+              {% with id=metadata["form_id"], returnURL=metadata['path']+"/thank-you", cta=metadata['form_cta'] %}
+                {% include "engage/shared/_engage_form.html" %}
+              {% endwith %}
+            {% else %}
+              {% with id=metadata["form_id"], returnURL=metadata['path']+"/thank-you", cta="提交" %}
+                {% include "engage/shared/_engage_form.html" %}
+              {% endwith %}
+            {% endif %}
+          </div>
+        {% elif "primary_link" in metadata and metadata["primary_link"] != "" and metadata["primary_link"].startswith("https") %}
+          {% if not metadata["webinar_code"] %}
+            {% if metadata['meta_image'] %}
+              <div class="p-section--shallow u-hide--small u-hide--medium">
+                <div class="p-image-container--16-9 is-highlighted">
+                  <img class="p-image-container__image"
+                      src="{{ metadata['meta_image'] or 'https://assets.ubuntu.com/v1/1199af9d-fallback-thumbnail-dark.jpg' }}"
+                      alt=""
+                      width="{{ metadata['image_width'] }}" />
+                </div>
               </div>
-            </div>
+            {% endif %}
+            <a href="{{ metadata['primary_link'] }}" class="p-button--positive">{{ metadata["primary_cta"] }}</a>
           {% endif %}
-          <a href="{{ metadata['primary_link'] }}" class="p-button--positive">{{ metadata["primary_cta"] }}</a>
         {% endif %}
-      {% endif %}
+        <hr class="p-rule u-hide--large" />
+      </div>
     </div>
   </section>
 
