@@ -1,6 +1,6 @@
 {% extends "templates/base.html" %}
 
-{% block title %}{{article.title.rendered|safe}}{% endblock %}
+{% block title %}{{ article.title.rendered|safe }}{% endblock %}
 {% block meta_description %}{{ article.excerpt.raw | striptags }}{% endblock %}
 {% block meta_image %}{{ article.image.source_url }}{% endblock %}
 
