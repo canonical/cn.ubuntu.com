@@ -1,6 +1,7 @@
 flask
 canonicalwebteam.flask_base==2.6.1
-canonicalwebteam.discourse==7.2.0
+# canonicalwebteam.discourse==7.2.0
+git+https://github.com/canonical/canonicalwebteam.discourse.git@parse-custom-blocks
 canonicalwebteam.http==1.0.4
 canonicalwebteam.blog==6.8.4
 canonicalwebteam.templatefinder==1.0.0

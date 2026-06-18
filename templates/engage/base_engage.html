@@ -1,5 +1,6 @@
 {% extends "templates/base.html" %}
 {% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/shared/vf_article_block.jinja" import vf_article_block %}
 
 {% set section_title = "Engage Page" %}
 {% set section_path = "/engage" %}
@@ -10,11 +11,39 @@
 
 {% block meta_image %}{{ metadata['meta_image'] }}{% endblock %}
 
+{% block head_extra %}
+  {% if 'active' in metadata and metadata['active'] == "false" %}
+    <meta name="robots" content="nofollow" />
+  {% endif %}
+
+  <meta name="discourse-url" value="{{ metadata['topic_path'] }}" />
+{% endblock %}
+
 {% block meta_copydoc %}
   {metadata["meta_copydoc]}
 {% endblock meta_copydoc %}
 
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
 {% block content %}
+
+  {% if metadata["webinar_code"] is defined %}
+    {% set show_webinar = true %}
+  {% endif %}
+
+  {# identify the last section to apply deep padding to #}
+  {% set last_section = "body" %}
+  {% if show_webinar or 'youtube_id' in metadata or 'vimeo_id' in metadata %}
+    {% set last_section = "embedded_video" %}
+  {% endif %}
+  {% if related_pages_metadata|length > 0 %}
+    {% set last_section = "related" %}
+  {% endif %}
+
+  <span id="publish_date" class="u-hide">{{ metadata["publish_date"] }}</span>
+  <span id="created_date" class="u-hide">{{ metadata["created_at"] }}</span>
 
   {% call(slot) vf_hero(
     title_text=metadata["topic_name"],
@@ -79,6 +108,20 @@
             {% endwith %}
           {% endif %}
         </div>
+      {% elif "primary_link" in metadata and metadata["primary_link"] != "" and metadata["primary_link"].startswith("https") %}
+        {% if not metadata["webinar_code"] %}
+          {% if metadata['meta_image'] %}
+            <div class="p-section--shallow u-hide--small u-hide--medium">
+              <div class="p-image-container--16-9 is-highlighted">
+                <img class="p-image-container__image"
+                    src="{{ metadata['meta_image'] or 'https://assets.ubuntu.com/v1/1199af9d-fallback-thumbnail-dark.jpg' }}"
+                    alt=""
+                    width="{{ metadata['image_width'] }}" />
+              </div>
+            </div>
+          {% endif %}
+          <a href="{{ metadata['primary_link'] }}" class="p-button--positive">{{ metadata["primary_cta"] }}</a>
+        {% endif %}
       {% endif %}
     </div>
   </section>
@@ -117,6 +160,38 @@
           <script src="https://www.brighttalk.com/clients/js/player-embed/player-embed.js"
                   class="jsBrightTALKEmbed"></script>
         </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if "youtube_id" in metadata %}
+    <!-- Youtube webinars -->
+    <section class="p-strip is-shallow{% if last_section == 'embedded_video' %} p-section--deep{% endif %}"
+             id="youtube-section">
+      <div class="row" id="webinar">
+        <iframe title="Webinar"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/{{ metadata['youtube_id'] }}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if "vimeo_id" in metadata %}
+    <!-- Vimeo webinars -->
+    <section class="p-strip is-shallow{% if last_section == 'embedded_video' %} p-section--deep{% endif %}"
+             id="vimeo-section">
+      <div class="row" id="webinar">
+        <iframe title="Webinar"
+                src="https://player.vimeo.com/video/{{ metadata['vimeo_id'] }}"
+                width="560"
+                height="315"
+                frameborder="0"
+                allow="autoplay; fullscreen"
+                allowfullscreen></iframe>
       </div>
     </section>
   {% endif %}
