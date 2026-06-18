@@ -103,7 +103,7 @@
               {% include "engage/shared/_engage_form.html" %}
             {% endwith %}
           </div>
-        {% elif "primary_link" in metadata and metadata["primary_link"] != "" and metadata["primary_link"].startswith("https") %}
+        {% elif (metadata["primary_link"] | default("")).startswith("https") %}
           {% if not metadata["webinar_code"] %}
             {% if metadata['meta_image'] %}
               <div class="p-section--shallow u-hide--small u-hide--medium">
