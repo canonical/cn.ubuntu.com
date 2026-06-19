@@ -49,31 +49,27 @@
   <span id="publish_date" class="u-hide">{{ metadata["publish_date"] }}</span>
   <span id="created_date" class="u-hide">{{ metadata["created_at"] }}</span>
 
-  {% call(slot) vf_hero(
-    title_text=metadata["topic_name"],
-    layout='25/75',
-    blocks=[
-      {
-        "type": "description",
-        "padding": "shallow",
-        "item": {
-          "type": "html",
-          "content": '<h2 class="p-heading--4">' + metadata["subtitle"] + '</h2>'
-        }
-      },
-      {
-        "type": "signpost_image",
-        "item": {
-          "is_highlighted": false,
-          "attrs": {
-            "src": metadata['image'],
-            "alt": ""
-          }
-        }
-      },
-    ]
-  ) -%}
-  {%- endcall -%}
+  <section class="p-section--hero">
+    <div class="grid-row">
+      <div class="grid-col-2 u-hide--small u-hide--medium">
+        {% if metadata["image"] != '' %}
+          <div class="p-image-container--3-2" style="max-height: 240px;">
+            <img class="p-image-container__image u-no-margin--top"
+                 src="{{ metadata['image'] }}"
+                 alt=""
+                 width="{{ metadata['image_width'] }}"
+                 height="{{ metadata['image_height'] }}" />
+          </div>
+        {% endif %}
+      </div>
+      <div class="grid-col-4">
+        <div class="p-section--shallow">
+          <h1>{{ metadata["topic_name"] }}</h1>
+          <p class="u-no-padding--top p-heading--4">{{ metadata['subtitle'] }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="{{ body_section_class }}">
     <div class="u-fixed-width u-hide--small u-hide--medium">
