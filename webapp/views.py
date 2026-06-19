@@ -49,10 +49,23 @@ def build_engage_page(engage_pages):
         if not metadata:
             flask.abort(404)
         else:
+            related_pages_metadata = []
+            if "related_urls" in metadata:
+                if metadata["related_urls"].strip() != "":
+                    related_urls = metadata["related_urls"].split(",")
+                    # Only show maximum of 3 related pages
+                    for url in related_urls[:3]:
+                        page_metadata = engage_pages.get_engage_page(
+                            url.strip()
+                        )
+                        if page_metadata is not None:
+                            related_pages_metadata.append(page_metadata)
+                            
             return flask.render_template(
                 "engage/base_engage.html",
                 forum_url=engage_pages.api.base_url,
                 metadata=metadata,
+                related_pages_metadata=related_pages_metadata,
             )
 
     return engage_page
