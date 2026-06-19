@@ -15,7 +15,7 @@
   {% set breadcrumbs = [{"name": "博客", "href": "/blog"}, {"name": "文章"}] %}
   {% include 'partial/_breadcrumbs.html' %}
 
-  <article id="main-content" class="p-section--shallow">
+  <article id="main-content">
     <header class="row">
       <div class="aside col-3 col-medium-6">
         <div class="p-media-object">
@@ -92,16 +92,14 @@
             </div>
 
             <div>
-              <span>
-                <input class="u-no-margin--top"
-                       name="canonicalUpdatesOptIn"
-                       id="canonicalUpdatesOptIn"
-                       value="yes"
-                       type="checkbox" />
-                <label for="canonicalUpdatesOptIn" class="p-form__label u-no-margin--top">
-                  <small>我同意接收有关Canonical的产品和服务信息。</small>
-                </label>
-              </span>
+              <input class="u-no-margin--top"
+                     name="canonicalUpdatesOptIn"
+                     id="canonicalUpdatesOptIn"
+                     value="yes"
+                     type="checkbox" />
+              <label for="canonicalUpdatesOptIn" class="p-form__label u-no-margin--top">
+                <small>我同意接收有关<br/>Canonical的产品和服务信息。</small>
+              </label>
             </div>
 
             <p>
