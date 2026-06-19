@@ -79,40 +79,36 @@
                 method="post"
                 id="mktoForm_3647"
                 onsubmit="ga('send', 'Newsletter', 'Signup', 'New homepage newsletter signup');">
-            <div>
-              <label>
-                <span class="u-no-margin--top">工作邮箱:<span>*</span></span>
+            
+            <label class="is-required" for="email">工作邮箱:</label>
+            <input required
+                   id="email"
+                   name="email"
+                   maxlength="255"
+                   type="email"
+                   pattern="^[^ ]+@[^ ]+\.[a-z]{2,26}$" />
+
+            <div class="p-section--shallow">
+              <label class="p-checkbox">
                 <input required
-                       id="email"
-                       name="email"
-                       maxlength="255"
-                       type="email"
-                       pattern="^[^ ]+@[^ ]+\.[a-z]{2,26}$" />
+                       class="p-checkbox__input"
+                       value="yes"
+                       aria-labelledby="canonicalUpdatesOptIn"
+                       name="canonicalUpdatesOptIn"
+                       type="checkbox" />
+                <span class="p-checkbox__label" id="canonicalUpdatesOptIn">我同意接收有关Canonical的产品和服务信息。</span>
               </label>
+              
+              <p>
+                <small>在提交此表格的同时，我确认已阅读和同意的<a href="https://ubuntu.com/legal/data-privacy/newsletter">隐私声明</a>和<a href="https://ubuntu.com/legal/data-privacy">隐私政策。</a></small>
+              </p>
             </div>
-
-            <div>
-              <input class="u-no-margin--top"
-                     name="canonicalUpdatesOptIn"
-                     id="canonicalUpdatesOptIn"
-                     value="yes"
-                     type="checkbox" />
-              <label for="canonicalUpdatesOptIn" class="p-form__label u-no-margin--top">
-                <small>我同意接收有关<br/>Canonical的产品和服务信息。</small>
-              </label>
-            </div>
-
-            <p>
-              <small>在提交此表格的同时，我确认已阅读和同意的<a href="https://ubuntu.com/legal/data-privacy/newsletter">隐私声明</a>和<a href="https://ubuntu.com/legal/data-privacy">隐私政策。</a></small>
-            </p>
 
             <button type="submit" class="u-no-margin--bottom">立即订阅</button>
+            
             <input type="hidden" name="Consent_to_Processing__c" value="yes" />
             <input value="3647" name="formid" type="hidden" />
-            <input type="hidden"
-                   name="acquisition_url"
-                   aria-label="acquisition_url"
-                   value="{{ request.url }}" />
+            <input type="hidden" name="acquisition_url" aria-label="acquisition_url" value="{{ request.url }}" />
             <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_campaign" id="utm_campaign" value="" />
             <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_medium" id="utm_medium" value="" />
             <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_source" id="utm_source" value="" />
