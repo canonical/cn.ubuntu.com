@@ -1,0 +1,60 @@
+{% extends "templates/base.html" %}
+
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+
+{% block title %}{{ author.name }}{% endblock %}
+
+{% block description %}
+  {{ author.description|safe }}
+{% endblock %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
+{% block content %}
+  {% call(slot) vf_hero(
+    title_text=author.name,
+    layout='25/75',
+    blocks=[
+      {
+        "type": "description",
+        "padding": "shallow",
+        "item": {
+          "type": "html",
+          "content": '<p class="p-text--small-caps">' ~ total_posts ~ ' 篇博文</p>'
+        }
+      },
+      {
+        "type": "signpost_image",
+        "item": {
+          "is_highlighted": false,
+          "attrs": {
+            "src": 'https://assets.ubuntu.com/v1/f16c40d0-Favicon+-+CoF.svg' if author.id == 217 else author.avatar_urls['96'],
+            "alt": "Canonical logo" if author.id == 217 else author.name,
+            "width": "96",
+            "height": "96"
+          }
+        }
+      },
+    ]
+  ) -%}
+  {%- endcall -%}
+
+    <section class="p-section">
+      <div class="grid-row">
+        {% for article in articles %}
+          {% include "blog/blog-card.html" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="p-strip is-shallow">
+      {% with %}
+        {% set total_pages = total_pages %}
+        {% set current_page = current_page %}
+        {% set hide_horizontal_rule = true %}
+        {% include "shared/_pagination.html" %}
+      {% endwith %}
+    </section>
+{% endblock %}

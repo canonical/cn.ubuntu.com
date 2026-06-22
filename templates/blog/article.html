@@ -1,6 +1,6 @@
 {% extends "templates/base.html" %}
 
-{% block title %}{{article.title.rendered|safe}}{% endblock %}
+{% block title %}{{ article.title.rendered|safe }}{% endblock %}
 {% block meta_description %}{{ article.excerpt.raw | striptags }}{% endblock %}
 {% block meta_image %}{{ article.image.source_url }}{% endblock %}
 
@@ -9,7 +9,11 @@
   <div class="row">
     <div class="col-8 p-blog-post">
       <h1 class="p-heading--2">{{ article.title.rendered|safe }}</h1>
-      <p>by {{ article.author.name }} on {{ article.date }}</p>
+      <p>
+        by
+        <a href="/blog/author/{{ article.author.slug }}">{{ article.author.name }}</a>
+        on {{ article.date }}
+      </p>
       {{ article.content.rendered|safe }}
     </div>
 
