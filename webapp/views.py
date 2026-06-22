@@ -60,7 +60,7 @@ def build_engage_page(engage_pages):
                         )
                         if page_metadata is not None:
                             related_pages_metadata.append(page_metadata)
-                            
+
             return flask.render_template(
                 "engage/base_engage.html",
                 forum_url=engage_pages.api.base_url,
