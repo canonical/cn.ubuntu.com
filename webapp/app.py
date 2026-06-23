@@ -11,6 +11,7 @@ from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
 from webapp.api import get_releases_cached
 from slugify import slugify
+from urllib.parse import parse_qs, urlencode
 
 from webapp.navigation import (
     get_current_page_bubble,
@@ -159,7 +160,68 @@ WORDPRESS_APPLICATION_PASSWORD = get_flask_env(
     "WORDPRESS_APPLICATION_PASSWORD"
 )
 
-blog_views = BlogViews(
+
+class CNBlogViews(BlogViews):
+    def get_tag(self, slug, page=1):
+        """Keep tag pages scoped to the site's base CN blog tags."""
+        tag = self.api.get_tag_by_slug(slug)
+
+        if not tag:
+            return None
+
+        # WordPress treats multiple tag IDs as OR, so we fetch by selected tag
+        # and then apply an in-app AND filter that also requires base CN tags.
+        required_tag_ids = set(self.tag_ids + [tag["id"]])
+        filtered_articles = []
+        source_page = 1
+        source_total_pages = 1
+
+        # Walk all source pages for the selected tag to build a fully filtered
+        # result set before applying UI pagination.
+        while source_page <= source_total_pages:
+            articles, metadata = self.api.get_articles(
+                tags=[tag["id"]],
+                tags_exclude=self.excluded_tags,
+                page=source_page,
+                per_page=100,
+                status=self.status,
+            )
+
+            # Keep only posts containing every required tag ID.
+            for article in articles:
+                article_tag_ids = set(article.get("tags", []))
+                if required_tag_ids.issubset(article_tag_ids):
+                    filtered_articles.append(article)
+
+            source_total_pages = int(metadata.get("total_pages") or 0)
+            if not articles:
+                break
+
+            source_page += 1
+
+        # Paginate after filtering so counts and pages match rendered results.
+        total_posts = len(filtered_articles)
+        total_pages = (
+            (total_posts + self.per_page - 1) // self.per_page
+            if total_posts
+            else 0
+        )
+        current_page = int(page)
+        start = (current_page - 1) * self.per_page
+        end = start + self.per_page
+        page_articles = filtered_articles[start:end]
+
+        return {
+            "current_page": current_page,
+            "total_pages": total_pages,
+            "total_posts": total_posts,
+            "articles": page_articles,
+            "title": self.blog_title,
+            "tag": tag,
+        }
+
+
+blog_views = CNBlogViews(
     api=BlogAPI(
         session=session,
         thumbnail_width=354,
@@ -169,7 +231,7 @@ blog_views = BlogViews(
     ),
     tag_ids=[3265],
     blog_title="博客",
-    per_page=11,
+    per_page=16,
 )
 app.register_blueprint(build_blueprint(blog_views), url_prefix="/blog")
 app.add_url_rule(
@@ -194,10 +256,21 @@ with open("navigation-dropdown.yaml") as dropdown_file:
     dropdown_data = yaml.load(dropdown_file, Loader=yaml.FullLoader)
 
 
+# Blog pagination
+def modify_query(params):
+    query_params = parse_qs(
+        flask.request.query_string.decode("utf-8"), keep_blank_values=True
+    )
+    query_params.update(params)
+
+    return urlencode(query_params, doseq=True)
+
+
 # Template context
 @app.context_processor
 def context():
     return {
+        "modify_query": modify_query,
         "releases": get_releases_cached(cache),
         "dropdown": dropdown_data,
         "get_current_page_bubble": get_current_page_bubble,
