@@ -3140,6 +3140,11 @@ interpret@^3.1.1:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-3.1.1.tgz#5be0ceed67ca79c6c4bc5cf0d7ee843dcea110c4"
   integrity sha512-6xwYfHbajpoF0xLW+iwLkhwgvLoZDfjYfoFNu8ftMoXINzwuymNLd9u/KmwtdT2GbR+/Cz66otEGEVVUHX9QLQ==
 
+intl-tel-input@24.3.5:
+  version "24.3.5"
+  resolved "https://registry.yarnpkg.com/intl-tel-input/-/intl-tel-input-24.3.5.tgz#cccf416a5a8a4c6b998beaef13e182402e9123ef"
+  integrity sha512-GBKgq1c4rx+4eq7CkKxoKC00Jd/27U/hGno+1jTlQimfxa6TBzEEpeMUJd/AG1CYu9U9I2gnAsm1wDh/3Hw9og==
+
 is-arrayish@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
