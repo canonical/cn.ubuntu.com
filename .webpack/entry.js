@@ -1,4 +1,5 @@
 module.exports = {
+  ['engage-form']: './static/js/src/engage-form.js',
   ['global-nav']: './static/js/src/global-nav.js',
   ['latest-news']: './static/js/src/latest-news.js',
   ['navigation']: './static/js/src/navigation.js',
