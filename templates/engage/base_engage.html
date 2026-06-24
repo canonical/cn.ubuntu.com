@@ -1,6 +1,7 @@
 {% extends "templates/base.html" %}
 {% from "_macros/vf_hero.jinja" import vf_hero %}
 {% from "_macros/shared/vf_article_block.jinja" import vf_article_block %}
+{% from "_macros/lite_video.jinja" import lite_video %}
 
 {% set section_title = "Engage Page" %}
 {% set section_path = "/engage" %}
@@ -147,13 +148,7 @@
     <!-- Youtube webinars -->
     <section class="{{ video_section_class }}" id="youtube-section">
       <div class="row" id="webinar">
-        <iframe title="Webinar"
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/{{ metadata['youtube_id'] }}"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+        {{ lite_video(metadata['youtube_id'], "Webinar") }}
       </div>
     </section>
   {% endif %}
