@@ -5174,10 +5174,10 @@ vanilla-framework@4.26.1:
   resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.26.1.tgz#d076f26a7215cf8b0babae81753ef535e6486257"
   integrity sha512-7m3qX4rm+I+go5mNjzO8gkp2qxr5m4n1jAxTh+bJ8hx/Wrsx3hiWDmJHylZ2GqjeqdtOiidvWgU2ToZJK6ELUg==
 
-vanilla-framework@4.51.0:
-  version "4.51.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.51.0.tgz#9c9268a030ff1031c459fb90e836e210000ad02d"
-  integrity sha512-RfGQE2KOhEWeLAX2je8zPdjiKHekikzCvQNWAslijZEGvjDUVPSuhrtiG4wxSW7OyhKLfg7h4U5ApRW6fzddCA==
+vanilla-framework@4.52.0:
+  version "4.52.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.52.0.tgz#ed1b5603a146b081f730e50b2e7df92d93582ba7"
+  integrity sha512-R4AtNYdYYfYEnQa1A+ya6ADHf7R66XvDkk4d0pnxIjtdLGp9zgNf2U2xcOazO2VxQ377cedOcvQjdO6ZlLksAw==
 
 walker@^1.0.8:
   version "1.0.8"
