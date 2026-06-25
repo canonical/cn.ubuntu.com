@@ -20,6 +20,7 @@
       <div class="aside grid-col-2 grid-col-medium-4">
         <div class="p-media-object">
           {% if article.author and article.author.avatar_urls %}
+            {# '96' selects the 96x96px avatar variant returned by the WP API #}
             <img src="{{ article.author.avatar_urls['96'] }}"
                  class="p-media-object__image is-round"
                  alt=""
