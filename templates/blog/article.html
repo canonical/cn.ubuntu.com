@@ -1,50 +1,201 @@
 {% extends "templates/base.html" %}
 
+{% from "_macros/vf_blog.jinja" import vf_blog %}
+
 {% block title %}{{ article.title.rendered|safe }}{% endblock %}
 {% block meta_description %}{{ article.excerpt.raw | striptags }}{% endblock %}
 {% block meta_image %}{{ article.image.source_url }}{% endblock %}
 
+{% block body_class %}
+  is-paper blog-article
+{% endblock body_class %}
+
 {% block content %}
-<section id="main-content" class="p-strip" style="overflow-x: initial;">
-  <div class="row">
-    <div class="col-8 p-blog-post">
-      <h1 class="p-heading--2">{{ article.title.rendered|safe }}</h1>
-      <p>
-        by
-        <a href="/blog/author/{{ article.author.slug }}">{{ article.author.name }}</a>
-        on {{ article.date }}
-      </p>
-      {{ article.content.rendered|safe }}
-    </div>
 
-    <div class="col-4">
-      <div style="position: sticky; top: 2rem;">
-        {% include 'blog/newsletter-form.html' %}
+  {% set breadcrumbs = [{"name": "博客", "href": "/blog"}, {"name": "文章"}] %}
+  {% include 'partial/_breadcrumbs.html' %}
+
+  <article id="main-content">
+    <header class="grid-row">
+      <div class="aside grid-col-2 grid-col-medium-4">
+        <div class="p-media-object">
+          {% if article.author and article.author.avatar_urls %}
+            {# '96' selects the 96x96px avatar variant returned by the WP API #}
+            <img src="{{ article.author.avatar_urls['96'] }}"
+                 class="p-media-object__image is-round"
+                 alt=""
+                 style="align-self: center" />
+          {% endif %}
+
+          <div class="p-media-object__details">
+            <p class="u-no-margin--bottom">
+              {% if article.author %}
+                <span class="p-heading--5">
+                  <a href="/blog/author/{{ article.author.slug }}"
+                     title="{{ article.author.name }}">{{ article.author.name }}</a>
+                </span>
+                <br />
+              {% endif %}
+              <span>{{ article.date }}</span>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+      <div class="grid-col-6 grid-col-medium-4">
+        <div class="p-section--shallow">
+          <div class="p-section--shallow">
+            <h1>{{ article.title.rendered|safe }}</h1>
+          </div>
 
-{% if related_articles %}
-<section class="p-strip is-shallow">
-  <div class="row">
-    <div class="col-12">
-      <h3>
-        查看更多内容
-      </h3>
+          {% if tags %}
+            <div class="p-section--shallow">
+              {% for tag in tags %}
+                <a class="p-chip--information" href="/blog/tag/{{ tag.slug }}">
+                  <span class="p-chip__value">{{ tag.name }}</span>
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </header>
+    <div class="grid-row">
+      <section class="grid-col-4 grid-col-start-large-3 grid-col-medium-4">
+        <hr class="p-rule" />
+        <button type="button"
+                id="shareArticle"
+                class="p-button--base has-icon u-hide--large">
+          <i class="p-icon--share"></i>
+          <span>分享文章</span>
+        </button>
+        {{ article.content.rendered|safe }}
+      </section>
+      <aside class="aside grid-col-2 grid-col-start-large-7 grid-col-medium-4">
+        <div class="blog-article-newsletter">
+          <div class="p-section--shallow">
+            <h2 class="p-muted-heading">订阅博客文章</h2>
+          </div>
+          <form action="https://ubuntu.com/marketo/submit"
+                method="post"
+                id="mktoForm_3647"
+                onsubmit="ga('send', 'Newsletter', 'Signup', 'New homepage newsletter signup');">
+            
+            <label class="is-required" for="email">工作邮箱:</label>
+            <input required
+                   id="email"
+                   name="email"
+                   maxlength="255"
+                   type="email"
+                   pattern="^[^ ]+@[^ ]+\.[a-z]{2,26}$" />
+
+            <div class="p-section--shallow">
+              <label class="p-checkbox">
+                <input required
+                       class="p-checkbox__input"
+                       value="yes"
+                       aria-labelledby="canonicalUpdatesOptIn"
+                       name="canonicalUpdatesOptIn"
+                       type="checkbox" />
+                <span class="p-checkbox__label" id="canonicalUpdatesOptIn">我同意接收有关Canonical的产品和服务信息。</span>
+              </label>
+              
+              <p>
+                <small>在提交此表格的同时，我确认已阅读和同意的<a href="https://ubuntu.com/legal/data-privacy/newsletter">隐私声明</a>和<a href="https://ubuntu.com/legal/data-privacy">隐私政策。</a></small>
+              </p>
+            </div>
+
+            <button type="submit" class="u-no-margin--bottom">立即订阅</button>
+            
+            <input type="hidden" name="Consent_to_Processing__c" value="yes" />
+            <input value="3647" name="formid" type="hidden" />
+            <input type="hidden" name="acquisition_url" aria-label="acquisition_url" value="{{ request.url }}" />
+            <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_campaign" id="utm_campaign" value="" />
+            <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_medium" id="utm_medium" value="" />
+            <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_source" id="utm_source" value="" />
+            <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_content" id="utm_content" value="" />
+            <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_term" id="utm_term" value="" />
+            <input type="hidden" name="returnURL" value="{{ request.url }}#success" />
+          </form>
+        </div>
+        <div class="blog-article-share u-hide--medium u-hide--small">
+          <h2 class="p-muted-heading">分享</h2>
+          <ul class="p-inline-list u-no-margin--bottom">
+            <li class="p-inline-list__item">
+              <a title="分享到 X"
+                 href="https://twitter.com/share?text={{ article.title.rendered|safe|urlencode }}&amp;url=https://cn.ubuntu.com/blog/{{ article.slug }}&amp;hashtags=ubuntu">
+                <img src="https://assets.ubuntu.com/v1/4a485af7-x_icon.svg"
+                     alt="分享到 X"
+                     width="24"
+                     height="24" />
+              </a>
+            </li>
+            <li class="p-inline-list__item">
+              <a title="分享到 Facebook"
+                 href="https://www.facebook.com/sharer/sharer.php?u=https://cn.ubuntu.com/blog/{{ article.slug }}">
+                <img src="https://assets.ubuntu.com/v1/d78c98ff-fb_icon.svg"
+                     alt="分享到 Facebook"
+                     width="24"
+                     height="24" />
+              </a>
+            </li>
+            <li class="p-inline-list__item">
+              <a title="分享到 LinkedIn"
+                 href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://cn.ubuntu.com/blog/{{ article.slug }}&amp;title={{ article.title.rendered|safe|urlencode }}">
+                <img src="https://assets.ubuntu.com/v1/af14595b-li_icon.svg"
+                     alt="分享到 LinkedIn"
+                     width="24"
+                     height="24" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
     </div>
-  </div>
-  <div class="row p-divider">
-    {% for related_article in related_articles %}
-    <div class="col-4 p-divider__block">
-      <h4>
-        <a href="/blog/{{ related_article.slug }}">
-          {{ related_article.title.rendered|safe }}
-        </a>
-      </h4>
-      <p>{{ related_article.excerpt.raw }}</p>
-    </div>
+  </article>
+
+  {% if related_articles %}
+    {% set blog_articles = [] %}
+    {% for article in related_articles %}
+      {% set blog_article = {
+        "title": {
+          "text": article.title.rendered|safe,
+          "link_attrs": {"href": "/blog/" + article.slug}
+        },
+        "description": {
+          "text": article.excerpt.raw.replace('[…]', '')|striptags|truncate(180)
+        },
+        "metadata": {
+          "authors": [{
+            "text": article.author.name,
+            "link_attrs": {"href": "/blog/author/" + article.author.slug}
+          }],
+          "date": {"text": article.date}
+        }
+      } %}
+      {% if article.image and article.image.source_url %}
+        {% set _ = blog_article.update({"image": {"attrs": {"src": article.image.source_url, "alt": ""}}}) %}
+      {% endif %}
+      {% set _ = blog_articles.append(blog_article) %}
     {% endfor %}
-  </div>
-</section>
-{% endif %} {% endblock %}
+
+    {{ vf_blog(
+      title={"text": "查看更多内容"},
+      articles=blog_articles,
+      padding="deep"
+    ) }}
+  {% endif %}
+
+  <script>
+    document
+      .getElementById("shareArticle")
+      ?.addEventListener("click", function () {
+        if (navigator.share) {
+          navigator.share({
+            title: document.title,
+            url: window.location.href,
+          });
+        }
+      });
+  </script>
+{% endblock %}
