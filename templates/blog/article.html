@@ -16,8 +16,8 @@
   {% include 'partial/_breadcrumbs.html' %}
 
   <article id="main-content">
-    <header class="row">
-      <div class="aside col-3 col-medium-6">
+    <header class="grid-row">
+      <div class="aside grid-col-2 grid-col-medium-4">
         <div class="p-media-object">
           {% if article.author and article.author.avatar_urls %}
             <img src="{{ article.author.avatar_urls['96'] }}"
@@ -40,7 +40,7 @@
           </div>
         </div>
       </div>
-      <div class="col-9 col-medium-6">
+      <div class="grid-col-6 grid-col-medium-4">
         <div class="p-section--shallow">
           <div class="p-section--shallow">
             <h1>{{ article.title.rendered|safe }}</h1>
@@ -59,8 +59,8 @@
         </div>
       </div>
     </header>
-    <div class="row">
-      <section class="col-6 col-start-large-4 col-medium-6">
+    <div class="grid-row">
+      <section class="grid-col-4 grid-col-start-large-3 grid-col-medium-4">
         <hr class="p-rule" />
         <button type="button"
                 id="shareArticle"
@@ -70,7 +70,7 @@
         </button>
         {{ article.content.rendered|safe }}
       </section>
-      <aside class="aside col-3 col-start-large-10 col-medium-6">
+      <aside class="aside grid-col-2 grid-col-start-large-7 grid-col-medium-4">
         <div class="blog-article-newsletter">
           <div class="p-section--shallow">
             <h2 class="p-muted-heading">订阅博客文章</h2>
