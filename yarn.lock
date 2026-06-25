@@ -3140,6 +3140,11 @@ interpret@^3.1.1:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-3.1.1.tgz#5be0ceed67ca79c6c4bc5cf0d7ee843dcea110c4"
   integrity sha512-6xwYfHbajpoF0xLW+iwLkhwgvLoZDfjYfoFNu8ftMoXINzwuymNLd9u/KmwtdT2GbR+/Cz66otEGEVVUHX9QLQ==
 
+intl-tel-input@24.3.5:
+  version "24.3.5"
+  resolved "https://registry.yarnpkg.com/intl-tel-input/-/intl-tel-input-24.3.5.tgz#cccf416a5a8a4c6b998beaef13e182402e9123ef"
+  integrity sha512-GBKgq1c4rx+4eq7CkKxoKC00Jd/27U/hGno+1jTlQimfxa6TBzEEpeMUJd/AG1CYu9U9I2gnAsm1wDh/3Hw9og==
+
 is-arrayish@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
@@ -5174,10 +5179,10 @@ vanilla-framework@4.26.1:
   resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.26.1.tgz#d076f26a7215cf8b0babae81753ef535e6486257"
   integrity sha512-7m3qX4rm+I+go5mNjzO8gkp2qxr5m4n1jAxTh+bJ8hx/Wrsx3hiWDmJHylZ2GqjeqdtOiidvWgU2ToZJK6ELUg==
 
-vanilla-framework@4.50.0:
-  version "4.50.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.50.0.tgz#510a56d73b876eb357deb95a6495a8eef5113c9b"
-  integrity sha512-eDGesUKYO0v+uIsRNHvg8XWcb+do0n6SYsLt/P7XVZSneUFvGbAx702mZXma/BliOI4tygB0EGZ/6bXuTsTTPA==
+vanilla-framework@4.52.0:
+  version "4.52.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.52.0.tgz#ed1b5603a146b081f730e50b2e7df92d93582ba7"
+  integrity sha512-R4AtNYdYYfYEnQa1A+ya6ADHf7R66XvDkk4d0pnxIjtdLGp9zgNf2U2xcOazO2VxQ377cedOcvQjdO6ZlLksAw==
 
 walker@^1.0.8:
   version "1.0.8"
