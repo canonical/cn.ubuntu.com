@@ -221,7 +221,7 @@ class CNBlogViews(BlogViews):
         }
 
 
-blog_views = CNBlogViews(
+blog_views = BlogViews(
     api=BlogAPI(
         session=session,
         thumbnail_width=354,
@@ -229,7 +229,8 @@ blog_views = CNBlogViews(
         wordpress_username=WORDPRESS_USERNAME,
         wordpress_password=WORDPRESS_APPLICATION_PASSWORD,
     ),
-    tag_ids=[3265],
+    # tag_ids=[3265],
+    category_ids=[4879],
     blog_title="博客",
     per_page=16,
 )
