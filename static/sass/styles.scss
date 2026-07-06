@@ -35,6 +35,7 @@
 
 // Import cookie policy styles
 @import '@canonical/cookie-policy/build/css/cookie-policy';
+@import 'intl-tel-input/build/css/intlTelInput';
 
 @include blog-p-list;
 @include blog-p-post;
