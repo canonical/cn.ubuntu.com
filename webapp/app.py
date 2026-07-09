@@ -43,6 +43,26 @@ app.config["CACHE_TYPE"] = "SimpleCache"
 cache = Cache(app)
 
 
+@app.after_request
+def set_default_cache_control(response):
+    """
+    Cache responses for 1 hour instead of flask-base's 60s default.
+    Runs before flask-base's hook, which keeps an existing max-age.
+    Views that set their own Cache-Control are left untouched.
+    """
+    if (
+        not flask.request.path.startswith("/_status")
+        and response.status_code == 200
+        and response.cache_control.max_age is None
+        and not response.cache_control.no_store
+        and not response.cache_control.no_cache
+        and not response.cache_control.private
+    ):
+        response.cache_control.max_age = 3600
+
+    return response
+
+
 # Set up cache functions for cookie consent service
 def get_cache(key):
     return cache.get(key)
