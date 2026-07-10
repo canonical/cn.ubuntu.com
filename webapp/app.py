@@ -10,6 +10,7 @@ from canonicalwebteam.templatefinder import TemplateFinder
 from flask_caching import Cache
 from jinja2 import ChoiceLoader, FileSystemLoader
 from webapp.api import get_releases_cached
+from webapp.database import build_cache
 from slugify import slugify
 
 from webapp.navigation import (
@@ -74,6 +75,7 @@ discourse_api = DiscourseAPI(
     api_key=get_flask_env("DISCOURSE_API_KEY"),
     api_username=get_flask_env("DISCOURSE_API_USERNAME"),
     get_topics_query_id=14,
+    cache=build_cache("cn-ubuntu-com-discourse"),
 )
 
 takeovers_path = "/takeovers"

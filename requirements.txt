@@ -1,6 +1,6 @@
 flask
 canonicalwebteam.flask_base==2.6.1
-canonicalwebteam.discourse==7.2.0
+canonicalwebteam.discourse==8.0.0
 canonicalwebteam.http==1.0.4
 canonicalwebteam.blog==6.8.4
 canonicalwebteam.templatefinder==1.0.0
@@ -11,3 +11,4 @@ pyyaml==6.0.3
 gunicorn[gevent]
 djlint==1.36.4
 python-slugify==8.0.4
+psycogreen==1.0.2

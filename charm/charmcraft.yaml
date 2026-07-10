@@ -32,6 +32,9 @@ config:
       type: string
       description: "Discourse API username"
       default: "discourse_api_username"
+    database-url:
+      type: secret
+      description: "Postgres connection string for the Discourse response cache"
     cookie-service-api-key:
       description: "Cookie Service API Key"
       type: secret
