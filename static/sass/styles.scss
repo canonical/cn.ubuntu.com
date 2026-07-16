@@ -17,6 +17,7 @@
 @import 'pattern_blog-post';
 @import 'pattern_blog-card';
 @import 'pattern_blog-list';
+@import 'pattern_blog-article';
 @import 'pattern_chart';
 @import 'pattern_core';
 @import 'pattern_strip';
@@ -38,6 +39,7 @@
 @include blog-p-list;
 @include blog-p-post;
 @include blog-p-card;
+@include blog-p-article;
 @include blog-u-crop;
 @include ubuntu-p-core;
 @include ubuntu-p-strip;
