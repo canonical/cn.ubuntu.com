@@ -31,9 +31,11 @@
 @import 'pattern_tabs';
 @import 'pattern_navigation';
 @import 'pattern_navigation-dropdown';
+@import 'pattern_engage';
 
 // Import cookie policy styles
 @import '@canonical/cookie-policy/build/css/cookie-policy';
+@import 'intl-tel-input/build/css/intlTelInput';
 
 @include blog-p-list;
 @include blog-p-post;
@@ -54,6 +56,7 @@
 @include ubuntu-p-navigation;
 @include ubuntu-p-navigation-reduced;
 @include ubuntu-p-navigation-dropdown;
+@include ubuntu-p-engage;
 
 html {
   scroll-behavior: smooth;

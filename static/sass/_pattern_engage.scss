@@ -1,0 +1,60 @@
+@mixin ubuntu-p-engage {
+  .p-engage-list {
+    .p-content-card.p-content-card--cols-4 {
+      height: 100%;
+      min-height: max-content;
+
+      &.has-image {
+        flex-direction: column;
+      }
+
+      .p-content-card__image-wrapper {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+      }
+
+      .p-content-card__image {
+        height: 100%;
+        object-fit: contain;
+        object-position: left;
+        width: 100%;
+      }
+    }
+  }
+
+  .p-pagination__items {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .p-engage-form {
+    align-self: start;
+    // Cap to the viewport so a tall form scrolls internally instead of
+    // pinning content out of reach. The scrollbar only appears when the
+    // form actually overflows, so short forms are unaffected.
+    max-height: calc(100vh - #{$spv--strip-regular});
+    overflow-y: auto;
+    position: sticky;
+    top: $spv--strip-regular; // Account for navigation
+    z-index: 1;
+
+    .iti {
+      width: 100%;
+    }
+  }
+
+  // /engage: reorder form above body content on smaller screens
+  @media only screen and (max-width: $breakpoint-large) {
+    .p-engage-form {
+      max-height: none;
+      order: 1;
+      overflow-y: visible;
+      // disable custom form behavior when stacked
+      position: static;
+    }
+
+    .p-engage-body {
+      order: 2;
+    }
+  }
+}
