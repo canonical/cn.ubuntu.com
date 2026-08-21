@@ -1089,17 +1089,17 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@canonical/cookie-policy@3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.9.0.tgz#8fa2a24f2b884a8f9221f062b2495c2e81a94c5c"
-  integrity sha512-ql3eO/SQD+x9tO+PqPR2CFKAoleHUvi3j0oxkbSjKZ3d2Ddzu05YA/fq40QiojDc7tT/64GoIzSi29n6Nwjtng==
+"@canonical/cookie-policy@3.10.0":
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.10.0.tgz#bc17a6900b3014c2f262948d5a8b3a52acba9926"
+  integrity sha512-sAVw8fdD2RgwSI2YImvlOfn79FRFbbqd0TaD3UHYXfL58qVRAXFxqqymbp4qISN4agi8UuZ2+kqq9zOcW7ZbTA==
 
-"@canonical/global-nav@3.7.3":
-  version "3.7.3"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.7.3.tgz#cac51536f54c88298571301e12504daa3408c1d3"
-  integrity sha512-1G4A2dgIHcqOCWfNJ5F9MWmXNSVGF39Nx53bIk2imiGXGALhDCOGFcnELx0q5uKP2aIy1pMd3D58qX93yX8tzg==
+"@canonical/global-nav@3.9.0":
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.9.0.tgz#00708ea529e85f25f217d2da3c2891328847813d"
+  integrity sha512-dFE9ioSSh5BZkG/s9o1HVNUB23HFbkfD4VWPFFxR+YRNNgHjtY5c3WdEMcsHnSL+OnYj0xv5ZqSl/rppI9hdCQ==
   dependencies:
-    vanilla-framework "4.26.1"
+    vanilla-framework "4.35.0"
 
 "@canonical/latest-news@^2.2.1":
   version "2.2.1"
@@ -5174,15 +5174,15 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-framework@4.26.1:
-  version "4.26.1"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.26.1.tgz#d076f26a7215cf8b0babae81753ef535e6486257"
-  integrity sha512-7m3qX4rm+I+go5mNjzO8gkp2qxr5m4n1jAxTh+bJ8hx/Wrsx3hiWDmJHylZ2GqjeqdtOiidvWgU2ToZJK6ELUg==
+vanilla-framework@4.35.0:
+  version "4.35.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.35.0.tgz#b01bbb525ad3211690c9f10580ca2e00a37a8ab1"
+  integrity sha512-vF8M9vsXiOpJEonFXiTVhY0rXOzNtoWpkhBcCVpyPb4+oHBx0/FaNcX5GAiQpfdT6Q/AAeRYyWwRUDObq6R8uw==
 
-vanilla-framework@4.52.0:
-  version "4.52.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.52.0.tgz#ed1b5603a146b081f730e50b2e7df92d93582ba7"
-  integrity sha512-R4AtNYdYYfYEnQa1A+ya6ADHf7R66XvDkk4d0pnxIjtdLGp9zgNf2U2xcOazO2VxQ377cedOcvQjdO6ZlLksAw==
+vanilla-framework@4.58.0:
+  version "4.58.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.58.0.tgz#6b49cea0b24d56ed79d84b50c4d1719d3f1fa4b5"
+  integrity sha512-NCcDakrhhbocYkLxaHc5k5H1Wk9AsjaUqwi/RCpdI1gZMEuJc4Stx9Af51K0LQHAyGl1fXd74AzrqDfkjfj/5Q==
 
 walker@^1.0.8:
   version "1.0.8"
