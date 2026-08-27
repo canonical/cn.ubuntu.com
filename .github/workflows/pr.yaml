@@ -135,7 +135,7 @@ jobs:
       - name: Install python dependencies
         run: |
           python3 -m pip install --upgrade pip
-          sudo pip3 install djlint
+          sudo pip3 install --upgrade djlint click
 
       - name: Get changed HTML files in the templates folder
         id: changed-files

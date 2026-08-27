@@ -29,6 +29,10 @@ from webapp.views import (
     BlogSitemapPage,
 )
 
+from webapp.context import (
+    modify_query,
+)
+
 app = FlaskBase(
     __name__,
     "cn.ubuntu.com",
@@ -42,6 +46,26 @@ app = FlaskBase(
 # Initialize Flask-Caching
 app.config["CACHE_TYPE"] = "SimpleCache"
 cache = Cache(app)
+
+
+@app.after_request
+def set_default_cache_control(response):
+    """
+    Cache responses for 1 hour instead of flask-base's 60s default.
+    Runs before flask-base's hook, which keeps an existing max-age.
+    Views that set their own Cache-Control are left untouched.
+    """
+    if (
+        not flask.request.path.startswith("/_status")
+        and response.status_code == 200
+        and response.cache_control.max_age is None
+        and not response.cache_control.no_store
+        and not response.cache_control.no_cache
+        and not response.cache_control.private
+    ):
+        response.cache_control.max_age = 3600
+
+    return response
 
 
 # Set up cache functions for cookie consent service
@@ -216,6 +240,7 @@ def context():
         "get_current_page_bubble": get_current_page_bubble,
         "get_navigation": get_navigation,
         "split_list": split_list,
+        "modify_query": modify_query,
     }
 
 
@@ -228,3 +253,23 @@ def utility_processor():
 @app.template_filter()
 def slug(text):
     return slugify(text)
+
+
+_TYPE_LOCALIZATIONS = {
+    "blog": "博客",
+    "case study": "案例分享",
+    "datasheet": "产品说明书",
+    "event": "活动",
+    "form": "表单",
+    "guide": "指南",
+    "roadshow": "活动",
+    "whitepaper": "白皮书",
+    "webinar": "网络研讨会",
+}
+
+
+@app.template_filter()
+def localize_type(value):
+    if not value:
+        return value
+    return _TYPE_LOCALIZATIONS.get(value.strip().lower(), value)

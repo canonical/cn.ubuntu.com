@@ -1,0 +1,39 @@
+{#-
+  This macro embeds YouTube videos using the Lite YouTube player.
+
+  Params:
+    video_id (required):    ID of the YouTube video to embed
+    video_title (required): Title of the video for accessibility
+    ns (optional):          a namespace() created by the caller to dedupe the
+                            player script across multiple calls on one page:
+
+                              {% set lite_video_ns = namespace(script_loaded=false) %}
+                              {{ lite_video(id_a, title_a, lite_video_ns) }}
+                              {{ lite_video(id_b, title_b, lite_video_ns) }}
+
+                            When omitted the script is always emitted; that is
+                            safe because the browser only evaluates a given ES
+                            module URL once.
+
+  Note: the dedupe state is held in a caller-supplied namespace rather than a
+  module-level variable. An imported macro's module is cached for the lifetime
+  of the process, so a module-level flag would leak across requests and stop
+  emitting the script after the very first render.
+-#}
+
+{%- macro lite_video(video_id, video_title, ns=none) -%}
+    <div class="u-embedded-media">
+        <lite-youtube videoid="{{ video_id }}" posterquality="maxresdefault" videotitle="{{ video_title }}">
+        <a href="https://www.youtube.com/embed/{{ video_id }}?rel=0"
+           title="Play Video">
+            <span class="lyt-visually-hidden">{{ video_title }}</span>
+        </a>
+        </lite-youtube>
+    </div>
+
+    {% if ns is none or not ns.script_loaded %}
+        <script type="module"
+                src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+        {% if ns is not none %}{% set ns.script_loaded = true %}{% endif %}
+    {% endif %}
+{%- endmacro -%}

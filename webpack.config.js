@@ -10,6 +10,7 @@ module.exports = {
   output: {
     filename: '[name].min.js',
     path: __dirname + '/static/js/dist',
+    publicPath: '/static/js/dist/',
   },
   mode: production ? 'production' : 'development',
   devtool: production ? 'source-map' : 'eval-source-map',
