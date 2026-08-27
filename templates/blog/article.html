@@ -174,7 +174,11 @@
         }
       } %}
       {% if article.image and article.image.source_url %}
-        {% set _ = blog_article.update({"image": {"attrs": {"src": article.image.source_url, "alt": ""}}}) %}
+        {% set _ = blog_article.update({
+          "image": {
+            "attrs": {"src": article.image.source_url, "alt": ""}
+          }
+        }) %}
       {% endif %}
       {% set _ = blog_articles.append(blog_article) %}
     {% endfor %}
