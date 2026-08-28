@@ -183,6 +183,7 @@ WORDPRESS_APPLICATION_PASSWORD = get_flask_env(
     "WORDPRESS_APPLICATION_PASSWORD"
 )
 
+
 blog_views = BlogViews(
     api=BlogAPI(
         session=session,
@@ -191,9 +192,9 @@ blog_views = BlogViews(
         wordpress_username=WORDPRESS_USERNAME,
         wordpress_password=WORDPRESS_APPLICATION_PASSWORD,
     ),
-    tag_ids=[3265],
+    category_ids=[4879],
     blog_title="博客",
-    per_page=11,
+    per_page=16,
 )
 app.register_blueprint(build_blueprint(blog_views), url_prefix="/blog")
 app.add_url_rule(
@@ -222,12 +223,12 @@ with open("navigation-dropdown.yaml") as dropdown_file:
 @app.context_processor
 def context():
     return {
+        "modify_query": modify_query,
         "releases": get_releases_cached(cache),
         "dropdown": dropdown_data,
         "get_current_page_bubble": get_current_page_bubble,
         "get_navigation": get_navigation,
         "split_list": split_list,
-        "modify_query": modify_query,
     }
 
 
