@@ -972,6 +972,30 @@
     {%- endif -%}
   {%- endcall -%}
 
+  {% call(slot) vf_logo_section(
+    title={
+      "text": "联系我们的合作伙伴"
+    },
+    blocks=[
+      {
+        "type": "logo-block",        
+        "item": {
+          "logos": [
+            image(url="https://assets.ubuntu.com/v1/97e05108-digitalchina_v1.png",
+                        alt="神州数码",
+                        width="385",
+                        height="480",
+                        hi_def=True,
+                        loading="lazy",
+                        output_mode="attrs",
+                        attrs={"class": "p-logo-section__logo"}),
+          ]
+        }
+      }
+    ]
+  ) -%}
+  {% endcall -%}
+
   <hr class="p-rule is-fixed-width" />
   
   <section class="p-strip is-deep">
