@@ -73,10 +73,10 @@
   </section>
 
   <section class="{{ body_section_class }}">
-    <div class="u-fixed-width u-hide--small u-hide--medium">
-      <hr class="p-rule" />
-    </div>
     <div class="grid-row">
+      <div class="u-fixed-width u-hide--small u-hide--medium grid-col-start-large-3">
+        <hr class="p-rule" />
+      </div>
       <div class="grid-col-start-large-3 grid-col-4 grid-col-medium-4 p-engage-body">
         {{ metadata["body_html"] | safe }}
       </div>
@@ -87,7 +87,7 @@
               {% include "engage/shared/_engage_form.html" %}
             {% endwith %}
           </div>
-        {% elif (metadata["primary_link"] | default("")).startswith("https") %}
+        {% elif metadata.get("primary_link", "").startswith(("https://", "/")) %}
           {% if not metadata["webinar_code"] %}
             {% if metadata['meta_image'] %}
               <div class="p-section--shallow u-hide--small u-hide--medium">
