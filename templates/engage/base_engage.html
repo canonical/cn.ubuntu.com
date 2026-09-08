@@ -73,10 +73,10 @@
   </section>
 
   <section class="{{ body_section_class }}">
-    <div class="u-fixed-width u-hide--small u-hide--medium">
-      <hr class="p-rule" />
-    </div>
     <div class="grid-row">
+      <div class="u-fixed-width u-hide--small u-hide--medium grid-col-start-large-3">
+        <hr class="p-rule" />
+      </div>
       <div class="grid-col-start-large-3 grid-col-4 grid-col-medium-4 p-engage-body">
         {{ metadata["body_html"] | safe }}
       </div>
@@ -87,7 +87,7 @@
               {% include "engage/shared/_engage_form.html" %}
             {% endwith %}
           </div>
-        {% elif (metadata["primary_link"] | default("")).startswith("https") %}
+        {% elif metadata.get("primary_link", "").startswith(("https://", "/")) %}
           {% if not metadata["webinar_code"] %}
             {% if metadata['meta_image'] %}
               <div class="p-section--shallow u-hide--small u-hide--medium">
@@ -115,7 +115,7 @@
     {% endif %}
     <!-- webinar -->
     <section class="{{ video_section_class }}" id="register-section">
-      <div class="row" id="webinar">
+      <div class="row" id="webinar-brighttalk">
         <div class="jsBrightTALKEmbedWrapper"
              style="width:100%;
                     height:100%;
@@ -147,7 +147,7 @@
   {% if "youtube_id" in metadata %}
     <!-- Youtube webinars -->
     <section class="{{ video_section_class }}" id="youtube-section">
-      <div class="row" id="webinar">
+      <div class="row" id="webinar-youtube">
         {{ lite_video(metadata['youtube_id'], "Webinar") }}
       </div>
     </section>
@@ -156,7 +156,7 @@
   {% if "vimeo_id" in metadata %}
     <!-- Vimeo webinars -->
     <section class="{{ video_section_class }}" id="vimeo-section">
-      <div class="row" id="webinar">
+      <div class="row" id="webinar-vimeo">
         <iframe title="Webinar"
                 src="https://player.vimeo.com/video/{{ metadata['vimeo_id'] }}"
                 width="560"
