@@ -54,6 +54,6 @@
     "@canonical/global-nav": "3.7.3",
     "@canonical/latest-news": "^2.2.1",
     "intl-tel-input": "24.3.5",
-    "vanilla-framework": "4.52.0"
+    "vanilla-framework": "4.62.2"
   }
 }
